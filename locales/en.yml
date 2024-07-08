@@ -1,0 +1,17 @@
+global:
+  about: About
+  sample: Sample
+main:
+  title: Welcome, Nightrunner
+about:
+  title: About Nightrunner
+  summary: >-
+    Nightrunner is a simple, fast, and ready to use starter template for Nuxt 3.
+    It features the necessary tools to get you started immediately on your next project.
+  features: 'Nightrunner uses the following technologies:'
+  config: >-
+    On top of that, it contains little helpers to help with localization,
+    color schemes, and even a sensible configuration for ESLint and VSCode.
+theme:
+  dark: Dark
+  light: Light

@@ -1,0 +1,16 @@
+global:
+  about: 詳細
+  sample: サンプル
+main:
+  title: ようこそ、Nightrunner
+about:
+  title: Nightrunnerについて
+  summary: >-
+    Nightrunnerは、Nuxt 3用のシンプルで高速、そしてすぐに使えるスターター・テンプレートです。
+    次のプロジェクトをすぐに始めるために必要なツールを備えています。
+  features: 'Nightrunnerでは、以下の技術を使用しています:'
+  config: >-
+    さらに、ローカライズに役立つ小さなヘルパーや配色、そしてESLintやVSCodeに適した設定も含まれています。
+theme:
+  dark: ダークテーマ
+  light: ライトテーマ

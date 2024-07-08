@@ -1,0 +1,34 @@
+{
+  "name": "nightrunner",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "nuxi": "nuxi",
+    "taze": "taze major -I"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.13.2",
+    "@iconify-json/tabler": "^1.1.109",
+    "@nuxtjs/color-mode": "^3.3.3",
+    "@nuxtjs/critters": "^0.7.1",
+    "@nuxtjs/i18n": "^8.3.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@unocss/nuxt": "^0.59.0",
+    "@unocss/reset": "^0.59.0",
+    "@vueuse/core": "^10.9.0",
+    "@vueuse/nuxt": "^10.9.0",
+    "class-variance-authority": "^0.7.0",
+    "consola": "^3.2.3",
+    "eslint": "^8.57.0",
+    "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
+    "sass": "^1.74.1",
+    "taze": "^0.13.3"
+  }
+}
