@@ -17,3 +17,21 @@ tryOnBeforeMount(() => {
     </NuxtLayout>
   </div>
 </template>
+
+<style>
+:root {
+  --blue-ratp: #0a0082;
+  --blue-ratp-paper: #233B8B;
+  --yellow-ratp: #ffbe00;
+
+  --background-color: #eaeaea;
+
+  --metro-3: #82C8E6;
+}
+
+body {
+  font-size: 32px;
+  font-family: 'Parisine', sans-serif;
+  color: var(--blue-ratp-paper);
+}
+</style>

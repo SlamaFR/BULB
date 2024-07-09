@@ -1,10 +1,10 @@
 {
-  "name": "nightrunner",
+  "name": "bulb",
   "type": "module",
   "private": true,
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev",
+    "dev": "nuxt dev --host",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
@@ -19,6 +19,7 @@
     "@nuxtjs/critters": "^0.7.1",
     "@nuxtjs/i18n": "^8.3.0",
     "@pinia/nuxt": "^0.5.1",
+    "@primevue/nuxt-module": "^4.0.0",
     "@unocss/nuxt": "^0.59.0",
     "@unocss/reset": "^0.59.0",
     "@vueuse/core": "^10.9.0",
@@ -28,6 +29,7 @@
     "eslint": "^8.57.0",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
+    "primevue": "^4.0.0",
     "sass": "^1.74.1",
     "taze": "^0.13.3"
   }

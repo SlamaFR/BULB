@@ -1,16 +1,8 @@
-import fs from 'node:fs'
-
-const locales = fs.readdirSync('locales')
-  .map(file => ({
-    code: file.replace(/\.(yml|yaml|json)$/, ''),
-    file,
-  }))
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Nightrunner',
+      title: 'BULB • Beautiful Urban Line Builder',
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
@@ -57,17 +49,16 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
+    '@primevue/nuxt-module',
   ],
-  i18n: {
-    langDir: 'locales',
-    defaultLocale: 'en',
-    locales,
-  },
   colorMode: {
     preference: 'system',
     fallback: 'light',
     classPrefix: '',
     classSuffix: '',
     storageKey: 'color-scheme',
+  },
+  primevue: {
+    /* Configuration */
   },
 })
