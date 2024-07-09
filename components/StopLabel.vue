@@ -11,7 +11,7 @@ const {
 <template>
   <div class="stop-label">
     <div class="label" :class="{ terminus }">
-      {{ stopName }}
+      <div>{{ stopName }}</div>
     </div>
   </div>
 </template>
@@ -32,6 +32,10 @@ const {
     padding: .125em .25em;
     background-color: var(--blue-ratp-paper);
     color: white;
+
+    & > div {
+      transform: translateY(-.0625em);
+    }
   }
 }
 </style>

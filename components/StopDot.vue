@@ -24,14 +24,14 @@ const {
 
   &.connection {
     background-color: white;
-    border: .125em solid black;
+    border: .1875em solid black;
   }
 
   &.terminus {
     background-color: v-bind(color);
-    border: .125em solid black;
+    border: .1875em solid black;
     outline: .125em solid white;
-    outline-offset: -.25em;
+    outline-offset: calc(.1875em * -2 + 0.0625em);
   }
 }
 </style>

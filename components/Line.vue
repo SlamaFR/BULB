@@ -1,8 +1,8 @@
 <script setup lang="ts">
 const {
-  lineColor,
+  color,
 } = defineProps<{
-  lineColor: string
+  color: string
 }>()
 </script>
 
@@ -17,17 +17,17 @@ const {
 
 <style scoped>
 .line-container {
-  max-width: fit-content;
+  width: fit-content;
 }
 
 .line {
   position: absolute;
-  top: 50%;
+  top: 0;
   left: 0;
-  transform: translateY(-50%);
-  width: calc(100% - 5em);
+  transform: translateY(100%);
+  width: calc(100%);
   height: .375em;
   z-index: -1;
-  background-color: v-bind(lineColor);
+  background-color: v-bind(color);
 }
 </style>

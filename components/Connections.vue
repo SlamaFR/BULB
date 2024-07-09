@@ -30,7 +30,7 @@ const {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .mode-connections {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -39,7 +39,7 @@ const {
 
 .lines-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 1em);
   gap: .125em;
 
   img {

@@ -3,10 +3,10 @@
 
 <template>
   <div class="px-25 py-50">
-    <Line line-color="#82C8E6">
+    <Line color="#82C8E6">
       <Stop
-        stop-color="#82C8E6"
-        stop-name="Porte des Lilas"
+        color="#82C8E6"
+        name="Porte des Lilas"
         :connections="[
           { mode: 'METRO', lines: ['11'] },
           { mode: 'TRAM', lines: ['3b'] },
@@ -14,16 +14,16 @@
         terminus
       />
       <Stop
-        stop-color="#82C8E6"
-        stop-name="Saint-Fargeau"
+        color="#82C8E6"
+        name="Saint-Fargeau"
       />
       <Stop
-        stop-color="#82C8E6"
-        stop-name="Pelleport"
+        color="#82C8E6"
+        name="Pelleport"
       />
       <Stop
-        stop-color="#82C8E6"
-        stop-name="Gambetta"
+        color="#82C8E6"
+        name="Gambetta"
         :connections="[
           { mode: 'METRO', lines: ['3'] },
         ]"

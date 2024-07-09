@@ -10,12 +10,9 @@ tryOnBeforeMount(() => {
 </script>
 
 <template>
-  <div font="text">
-    <NuxtLoadingIndicator />
-    <NuxtLayout>
-      <NuxtPage />
-    </NuxtLayout>
-  </div>
+  <NuxtLayout>
+    <NuxtPage />
+  </NuxtLayout>
 </template>
 
 <style>
@@ -23,6 +20,7 @@ tryOnBeforeMount(() => {
   --blue-ratp: #0a0082;
   --blue-ratp-paper: #233B8B;
   --yellow-ratp: #ffbe00;
+  --place-brown: #80551A;
 
   --background-color: #eaeaea;
 
@@ -30,8 +28,8 @@ tryOnBeforeMount(() => {
 }
 
 body {
-  font-size: 32px;
-  font-family: 'Parisine', sans-serif;
+  font-size: 24px;
+  font-family: 'Parisine Std', sans-serif;
   color: var(--blue-ratp-paper);
 }
 </style>
