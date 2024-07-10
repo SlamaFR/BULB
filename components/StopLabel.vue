@@ -27,6 +27,7 @@ const {
 .label {
   white-space: pre-line;
   line-height: 1.125;
+  text-wrap: nowrap;
 
   &.terminus {
     padding: .125em .25em;

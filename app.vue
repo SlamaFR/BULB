@@ -31,5 +31,6 @@ body {
   font-size: 24px;
   font-family: 'Parisine Std', sans-serif;
   color: var(--blue-ratp-paper);
+  background-color: white;
 }
 </style>

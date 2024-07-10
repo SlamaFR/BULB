@@ -2,31 +2,148 @@
 </script>
 
 <template>
-  <div class="px-25 py-50">
+  <div class="px-25 py-50 flex flex-col gap-40">
+    <div class="flex flex-row gap-40">
+      <Line color="#82C8E6">
+        <Stop
+          color="#82C8E6"
+          name="Terminus 1 ligne"
+          place-name="Lieu remarquable"
+          terminus
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+          place-name="Lieu remarquable"
+        />
+        <Stop
+          color="#82C8E6"
+          :name="'Nom très long\nsur 2 lignes'"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+          place-name="Lieu remarquable avec un nom très long"
+        />
+        <Stop
+          color="#82C8E6"
+          :name="'Terminus\n2 lignes'"
+          place-name="Lieu remarquable"
+          terminus
+        />
+      </Line>
+
+      <Line color="#82C8E6">
+        <Stop
+          color="#82C8E6"
+          name="Terminus 1 ligne"
+          place-name="Lieu remarquable"
+          terminus
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+          place-name="Lieu remarquable"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Terminus 1 ligne"
+          place-name="Lieu remarquable"
+          terminus
+        />
+      </Line>
+    </div>
+
+    <div class="flex flex-row gap-40">
+      <Line color="#82C8E6">
+        <Stop
+          color="#82C8E6"
+          :name="'Terminus\n2 lignes'"
+          place-name="Lieu remarquable"
+          terminus
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+          place-name="Lieu remarquable"
+        />
+        <Stop
+          color="#82C8E6"
+          :name="'Nom très long\nsur 2 lignes'"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+          place-name="Lieu remarquable avec un nom très long"
+        />
+        <Stop
+          color="#82C8E6"
+          :name="'Terminus\n2 lignes'"
+          terminus
+        />
+      </Line>
+
+      <Line color="#82C8E6">
+        <Stop
+          color="#82C8E6"
+          name="Terminus 1 ligne"
+          place-name="Lieu remarquable"
+          terminus
+        />
+        <Stop
+          color="#82C8E6"
+          name="Nom court"
+        />
+        <Stop
+          color="#82C8E6"
+          name="Terminus 1 ligne"
+          terminus
+        />
+      </Line>
+    </div>
+
     <Line color="#82C8E6">
       <Stop
         color="#82C8E6"
-        name="Porte des Lilas"
-        :connections="[
-          { mode: 'METRO', lines: ['11'] },
-          { mode: 'TRAM', lines: ['3b'] },
-        ]"
+        :name="'Terminus\n2 lignes'"
+        place-name="Lieu remarquable"
         terminus
       />
       <Stop
         color="#82C8E6"
-        name="Saint-Fargeau"
+        name="Nom court"
+        place-name="Moulin Rouge"
       />
       <Stop
         color="#82C8E6"
-        name="Pelleport"
+        :name="'Nom très long\nsur 2 lignes'"
       />
       <Stop
         color="#82C8E6"
-        name="Gambetta"
-        :connections="[
-          { mode: 'METRO', lines: ['3'] },
-        ]"
+        :name="'Nom très long\nsur 2 lignes'"
+        place-name="Lieu remarquable"
+      />
+      <Stop
+        color="#82C8E6"
+        :name="'Nom très long\nsur 2 lignes'"
+      />
+      <Stop
+        color="#82C8E6"
+        :name="'Nom très long\nsur 2 lignes'"
+        place-name="Lieu remarquable avec un nom très long"
+      />
+      <Stop
+        color="#82C8E6"
+        :name="'Terminus\n2 lignes'"
+        place-name="Lieu remarquable"
         terminus
       />
     </Line>

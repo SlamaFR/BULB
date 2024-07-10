@@ -46,8 +46,8 @@ const pictoUrl = computed(() => `url(${picto.value})`)
 
 <style scoped lang="scss">
 .picto {
-  width: 1em;
-  height: 1em;
+  min-width: 1em;
+  min-height: 1em;
   background-color: var(--blue-ratp-paper);
   mask: v-bind(pictoUrl) no-repeat center;
 }
