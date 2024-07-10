@@ -81,7 +81,7 @@
         />
         <Stop
           color="#82C8E6"
-          name="Nom court"
+          name="Nom plutôt long"
           place-name="Lieu remarquable avec un nom très long"
         />
         <Stop
