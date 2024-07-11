@@ -1,7 +1,7 @@
 <script setup lang="ts">
 export interface Connection {
   mode: Mode
-  lines: MetroLine[] | RerLine[] | TrainLine[] | TramLine[]
+  lines?: MetroLine[] | RerLine[] | TrainLine[] | TramLine[]
 }
 
 const {

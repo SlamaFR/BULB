@@ -4,6 +4,7 @@ import BUS from '~/assets/svg/modes/bus.svg'
 import CABLE from '~/assets/svg/modes/cable.svg'
 import METRO from '~/assets/svg/modes/metro.svg'
 import RER from '~/assets/svg/modes/rer.svg'
+import TER from '~/assets/svg/modes/ter.svg'
 import TRAIN from '~/assets/svg/modes/train.svg'
 import TRAIN_RER from '~/assets/svg/modes/train_rer.svg'
 import TRAM from '~/assets/svg/modes/tram.svg'
@@ -27,6 +28,8 @@ const picto = computed(() => {
       return METRO
     case 'RER':
       return RER
+    case 'TER':
+      return TER
     case 'TRAIN':
       return TRAIN
     case 'TRAIN_RER':

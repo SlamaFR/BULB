@@ -37,7 +37,7 @@
         />
       </Line>
 
-      <Line color="#82C8E6">
+      <Line v-if="false" color="#82C8E6">
         <Stop
           color="#82C8E6"
           name="Terminus 1 ligne"
@@ -81,8 +81,8 @@
         />
         <Stop
           color="#82C8E6"
-          name="Nom plutôt long"
-          place-name="Lieu remarquable avec un nom très long"
+          name="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+          place-name="Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long"
         />
         <Stop
           color="#82C8E6"
@@ -113,18 +113,29 @@
     <Line color="#82C8E6">
       <Stop
         color="#82C8E6"
-        :name="'Terminus\n2 lignes'"
-        place-name="Lieu remarquable"
+        name="Pontoise"
+        :connections="[
+          { mode: 'TRAIN', lines: ['N', 'U'] },
+        ]"
         terminus
       />
       <Stop
         color="#82C8E6"
-        name="Nom court"
-        place-name="Moulin Rouge"
+        name="Paris–Gare du Nord"
+        :connections="[
+          { mode: 'METRO', lines: ['2', '4', '5', '7'] },
+          { mode: 'RER', lines: ['B', 'D', 'E'] },
+          { mode: 'TRAIN', lines: ['H', 'K'] },
+          { mode: 'TER' },
+        ]"
       />
       <Stop
         color="#82C8E6"
-        :name="'Nom très long\nsur 2 lignes'"
+        :name="'Saint-Michel\nNotre-Dame'"
+        :connections="[
+          { mode: 'RER', lines: ['B'] },
+          { mode: 'METRO', lines: ['4', '10'] },
+        ]"
       />
       <Stop
         color="#82C8E6"

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Connection } from '~/components/Connections.vue'
+import { goesBelowLine } from '~/utils/text'
 
 const {
   name,
@@ -16,6 +17,7 @@ const {
 }>()
 
 const nameParts = computed(() => name.split('\n'))
+const nameGoesBelowBaseline = computed(() => goesBelowLine(name))
 </script>
 
 <template>
@@ -24,6 +26,7 @@ const nameParts = computed(() => name.split('\n'))
     :class="{
       'multiline': nameParts.length > 1,
       'with-place': placeName,
+      'lower-baseline': nameGoesBelowBaseline,
       terminus,
     }"
   >
@@ -104,32 +107,6 @@ const nameParts = computed(() => name.split('\n'))
   }
 }
 
-/*
-.wrapper.multiline:not(:first-child) {
-  margin-left: 1em;
-
-  &:has(.terminus) {
-    margin-left: 1.5em;
-  }
-}
-.wrapper.multiline.with-place {
-  margin: 0 1.25em;
-
-  & .names {
-    transform: translateX(calc(-1em / 2));
-  }
-}
-
-.wrapper.with-place:has(.terminus) {
-  margin-left: 1.5em;
-}
-
-.wrapper:last-child {
-  min-width: 0;
-  max-width: 0;
-}
- */
-
 .terminus.with-place .names {
   transform: translateX(calc(-1.65em / 2));
 }
@@ -160,12 +137,16 @@ const nameParts = computed(() => name.split('\n'))
   top: -.25em;
   transform: translateY(-100%);
 
+  .lower-baseline:not(.terminus) & {
+    margin-left: .375em;
+  }
+
   .terminus.with-place & {
-    left: 1.65em;
+    left: 1.75em;
   }
 
   .multiline & {
-    left: 2.65em;
+    left: 2.375em;
   }
 }
 </style>
