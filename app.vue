@@ -21,6 +21,7 @@ tryOnBeforeMount(() => {
   --blue-ratp-paper: #233B8B;
   --yellow-ratp: #ffbe00;
   --place-brown: #80551A;
+  --gray: #414241;
 
   --background-color: #eaeaea;
 
@@ -30,7 +31,7 @@ tryOnBeforeMount(() => {
 }
 
 html {
-  font-size: 16px;
+  font-size: 32px;
   font-family: 'Parisine Std', sans-serif;
   color: var(--blue-ratp-paper);
   background-color: white;

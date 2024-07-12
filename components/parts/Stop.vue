@@ -100,7 +100,7 @@ const lineContext = inject<LineContext>(LineContextKey)
   }
 
   &.with-pedestrian-connection {
-    //margin-left: .875em;
+    margin-left: .875em;
   }
 }
 

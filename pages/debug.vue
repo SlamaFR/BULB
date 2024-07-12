@@ -1,183 +1,192 @@
 <script setup lang="ts">
+// import type { Connection, ModeConnection } from '~/types'
+
+const connections: (ModeConnection | ServiceConnection)[] = [
+  {
+    mode: 'METRO',
+    lines: [
+      { lineIndex: '1' },
+      { lineIndex: '2' },
+      { lineIndex: '3' },
+      { lineIndex: '4' },
+    ],
+  },
+  {
+    mode: 'RER',
+    lines: [
+      { lineIndex: 'A' },
+      { lineIndex: 'B' },
+      { lineIndex: 'C' },
+      { lineIndex: 'D' },
+      { lineIndex: 'E' },
+    ],
+  },
+  {
+    mode: 'RER',
+    lines: [
+      {
+        lineIndex: 'B',
+        ornament: {
+          position: 'BOTTOM',
+          text: 'Gare du Nord',
+        },
+      },
+    ],
+  },
+  {
+    mode: 'RER',
+    walk: true,
+    lines: [
+      {
+        lineIndex: 'B',
+        ornament: {
+          position: 'RIGHT',
+          text: 'Gare\ndu Nord',
+        },
+      },
+    ],
+  },
+  {
+    mode: 'METRO',
+    lines: [
+      {
+        lineIndex: '14',
+        ornament: {
+          position: 'RIGHT',
+          airport: 'ORY',
+        },
+      },
+    ],
+  },
+  {
+    mode: 'TRAM',
+    lines: [
+      { lineIndex: '1' },
+      { lineIndex: '2' },
+      { lineIndex: '3a' },
+      {
+        lineIndex: '11',
+        ornament: {
+          position: 'RIGHT',
+          airport: 'GENERIC',
+        },
+      },
+    ],
+  },
+  {
+    mode: 'TRAIN',
+    lines: [
+      { lineIndex: 'J' },
+      { lineIndex: 'N' },
+    ],
+  },
+  {
+    services: [
+      {
+        service: 'MAIN_STATION',
+        ornament: {
+          position: 'RIGHT',
+          text: 'Gare\nde Lyon',
+        },
+      },
+    ],
+    walk: true,
+  },
+]
+
+const chatelet: (ModeConnection | ServiceConnection)[] = [
+  {
+    mode: 'METRO',
+    lines: [
+      { lineIndex: '1' },
+      { lineIndex: '4' },
+      { lineIndex: '7' },
+      { lineIndex: '11' },
+      {
+        lineIndex: '14',
+        ornament: {
+          position: 'RIGHT',
+          airport: 'ORY',
+        },
+      },
+    ],
+  },
+  {
+    mode: 'RER',
+    lines: [
+      { lineIndex: 'A' },
+      {
+        lineIndex: 'B',
+        ornament: {
+          position: 'BOTTOM',
+          airport: 'CDG',
+        },
+      },
+      { lineIndex: 'D' },
+    ],
+  },
+]
 </script>
 
 <template>
-  <div class="px-25 py-50 flex flex-col gap-40">
-    <div class="flex flex-row gap-40">
-      <Line color="#82C8E6">
-        <Stop
-          color="#82C8E6"
-          name="Terminus 1 ligne"
-          place-name="Lieu remarquable"
-          terminus
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-          place-name="Lieu remarquable"
-        />
-        <Stop
-          color="#82C8E6"
-          :name="'Nom très long\nsur 2 lignes'"
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-          place-name="Lieu remarquable avec un nom très long"
-        />
-        <Stop
-          color="#82C8E6"
-          :name="'Terminus\n2 lignes'"
-          place-name="Lieu remarquable"
-          terminus
-        />
-      </Line>
-
-      <Line v-if="false" color="#82C8E6">
-        <Stop
-          color="#82C8E6"
-          name="Terminus 1 ligne"
-          place-name="Lieu remarquable"
-          terminus
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-          place-name="Lieu remarquable"
-        />
-        <Stop
-          color="#82C8E6"
-          name="Terminus 1 ligne"
-          place-name="Lieu remarquable"
-          terminus
-        />
-      </Line>
-    </div>
-
-    <div class="flex flex-row gap-40">
-      <Line color="#82C8E6">
-        <Stop
-          color="#82C8E6"
-          :name="'Terminus\n2 lignes'"
-          place-name="Lieu remarquable"
-          terminus
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-          place-name="Lieu remarquable"
-        />
-        <Stop
-          color="#82C8E6"
-          :name="'Nom très long\nsur 2 lignes'"
-        />
-        <Stop
-          color="#82C8E6"
-          name="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-          place-name="Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long Lieu remarquable avec un nom très long"
-        />
-        <Stop
-          color="#82C8E6"
-          :name="'Terminus\n2 lignes'"
-          terminus
-        />
-      </Line>
-
-      <Line color="#82C8E6">
-        <Stop
-          color="#82C8E6"
-          name="Terminus 1 ligne"
-          place-name="Lieu remarquable"
-          terminus
-        />
-        <Stop
-          color="#82C8E6"
-          name="Nom court"
-        />
-        <Stop
-          color="#82C8E6"
-          name="Terminus 1 ligne"
-          terminus
-        />
-      </Line>
-    </div>
-
-    <Line color="#82C8E6">
+  <div class="pt-30 p-10 flex flex-row gap-10">
+    <Line color="red">
       <Stop
-        color="#82C8E6"
-        name="Pontoise"
-        :connections="[
-          { mode: 'TRAIN', lines: ['N', 'U'] },
-        ]"
+        :name="'L’Enfer\nsur Terre'"
+        :connections="connections"
         terminus
       />
       <Stop
-        color="#82C8E6"
-        name="Paris–Gare du Nord"
+        name="Châtelet – Les Halles"
+        :connections="chatelet"
+      />
+      <Stop
+        name="Anvers"
+        subtitle="Sacré-Cœur"
+        subtitle-interest-point
         :connections="[
-          { mode: 'METRO', lines: ['2', '4', '5', '7'] },
-          { mode: 'RER', lines: ['B', 'D', 'E'] },
-          { mode: 'TRAIN', lines: ['H', 'K'] },
-          { mode: 'TER' },
+          {
+            services: [
+              {
+                service: 'FUNICULAR',
+                ornament: {
+                  position: 'BOTTOM',
+                  text: 'Funiculaire\nde Montmartre',
+                },
+              },
+            ],
+            walk: true,
+          },
         ]"
-      />
-      <Stop
-        color="#82C8E6"
-        :name="'Saint-Michel\nNotre-Dame'"
-        :connections="[
-          { mode: 'RER', lines: ['B'] },
-          { mode: 'METRO', lines: ['4', '10'] },
-        ]"
-      />
-      <Stop
-        color="#82C8E6"
-        :name="'Nom très long\nsur 2 lignes'"
-        place-name="Lieu remarquable"
-      />
-      <Stop
-        color="#82C8E6"
-        :name="'Nom très long\nsur 2 lignes'"
-      />
-      <Stop
-        color="#82C8E6"
-        :name="'Nom très long\nsur 2 lignes'"
-        place-name="Lieu remarquable avec un nom très long"
-      />
-      <Stop
-        color="#82C8E6"
-        :name="'Terminus\n2 lignes'"
-        place-name="Lieu remarquable"
-        terminus
       />
     </Line>
   </div>
-  <!--
-  <div class="p-20 flex flex-row items-end">
-    <StopLabel stop-name="Havre–Caumartin" />
-    <StopLabel :stop-name="'Charles-de-Gaulle\nÉtoile'" terminus />
-    <StopLabel :stop-name="'Charles-de-Gaulle\nÉtoile'" />
-  </div>
-  <div class="p-20 flex flex-row gap-3 items-end">
-    <Connections
-      :connections="[
-        { mode: 'METRO', lines: ['3', '12', '13', '14'] },
-        { mode: 'RER', lines: ['E'] },
-        { mode: 'TRAIN', lines: ['J', 'L'] },
-      ]"
-    />
-  </div>
-  <div class="p-20 flex flex-row gap-3 items-end">
-    <StopDot color="#82C8E6" />
-    <StopDot color="#82C8E6" connection />
-    <StopDot color="#82C8E6" terminus />
-  </div>
-  -->
 </template>
+
+<style>
+.test-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5em;
+}
+
+.width-one {
+  height: 1em;
+  width: 1em;
+  background-color: red;
+}
+
+.width-two {
+  height: 1em;
+  width: 2.5em;
+  background-color: blue;
+  grid-column: span 2;
+}
+
+.width-two-vertical {
+  height: 2.5em;
+  width: 1em;
+  background-color: blue;
+  grid-row: span 2;
+}
+</style>
