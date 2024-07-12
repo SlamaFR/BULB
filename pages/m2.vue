@@ -20,6 +20,7 @@
       <Stop
         color="#006db8"
         :name="'Charles de Gaulle\nÉtoile'"
+        place-name="Arc de Triomphe"
         :connections="[
           { mode: 'METRO', lines: ['1', '6'] },
           { mode: 'RER', lines: ['A'] },
@@ -62,6 +63,7 @@
       <Stop
         color="#006db8"
         name="Pigalle"
+        place-name="Moulin Rouge"
         :connections="[
           { mode: 'METRO', lines: ['12'] },
         ]"
@@ -122,6 +124,7 @@
       <Stop
         color="#006db8"
         name="Père Lachaise"
+        place-name="Cimetière du Père Lachaise"
         :connections="[
           { mode: 'METRO', lines: ['3'] },
         ]"

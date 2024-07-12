@@ -99,7 +99,7 @@
       />
       <Stop
         color="#ffcd02"
-        name="Hotel de Ville"
+        name="Hôtel de Ville"
         :connections="[
           { mode: 'METRO', lines: ['11'] },
         ]"

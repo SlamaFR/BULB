@@ -1,14 +1,22 @@
 <script setup lang="ts">
+export interface LineContext {
+  color: string
+}
+
 const {
   color,
 } = defineProps<{
   color: string
 }>()
+
+provide<LineContext>(LineContextKey, {
+  color,
+})
 </script>
 
 <template>
   <div class="relative line-container">
-    <div class="flex flex-row gap-3 items-start">
+    <div class="flex flex-row items-start">
       <slot />
     </div>
     <div class="line" />

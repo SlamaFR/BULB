@@ -25,10 +25,12 @@ tryOnBeforeMount(() => {
   --background-color: #eaeaea;
 
   --metro-3: #82C8E6;
+
+  --font-shift-correction: -.0625em;
 }
 
-body {
-  font-size: 24px;
+html {
+  font-size: 16px;
   font-family: 'Parisine Std', sans-serif;
   color: var(--blue-ratp-paper);
   background-color: white;

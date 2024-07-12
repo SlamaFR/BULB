@@ -18,25 +18,28 @@ const {
 
 <style scoped lang="scss">
 .stop-label {
-  width: max-content;
-  font-weight: 600;
-  rotate: -30deg;
-  transform-origin: bottom left;
+  font-weight: bold;
 }
 
 .label {
-  white-space: pre-line;
+  height: 1em;
   line-height: 1.125;
+  white-space: pre-line;
   text-wrap: nowrap;
+  width: fit-content;
+  rotate: -30deg;
+  transform-origin: bottom left;
 
   &.terminus {
+    height: fit-content;
     padding: .125em .25em;
     background-color: var(--blue-ratp-paper);
     color: white;
 
-    & > div {
-      transform: translateY(-.0625em);
-    }
+  }
+
+  & > div {
+    transform: translateY(var(--font-shift-correction));
   }
 }
 </style>
