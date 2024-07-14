@@ -25,7 +25,7 @@ declare global {
 
   export interface ConnectionLine {
     lineIndex: string
-    walk?: boolean
+    walk: boolean
     ornament?: Ornament | null
   }
   export interface ConnectionService {
@@ -35,20 +35,21 @@ declare global {
 
   export interface ModeConnection {
     mode: Mode
-    walk?: boolean
-    lines?: ConnectionLine[]
+    walk: boolean
+    lines: ConnectionLine[]
   }
   export interface ServiceConnection {
     services: ConnectionService[]
-    walk?: boolean
+    walk: boolean
   }
+  export type Connection = ModeConnection | ServiceConnection
 
   export interface Stop {
     name: string
     subtitle?: string | null
-    preventSubtitleOverlapping?: boolean | false
-    interestPoint?: boolean | false
-    connections?: (ModeConnection | ServiceConnection)[] | []
+    preventSubtitleOverlapping: boolean
+    interestPoint: boolean
+    connections: Connection[]
   }
 
   export interface Line {

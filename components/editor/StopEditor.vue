@@ -37,7 +37,7 @@ const showConnectionsEditor = ref(false)
       </div>
 
       <div class="flex flex-col gap-2">
-        <label>Lieu d’intérêt</label>
+        <span>Lieu d’intérêt</span>
         <div class="flex flex-wrap gap-4">
           <div class="flex items-center">
             <RadioButton v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}_on`" :value="true" />
@@ -51,7 +51,7 @@ const showConnectionsEditor = ref(false)
       </div>
 
       <div class="flex flex-col gap-2">
-        <label>Empêcher la collision entre le titre et le sous-titre</label>
+        <span>Empêcher la collision entre le titre et le sous-titre</span>
         <div class="flex flex-wrap gap-4">
           <div class="flex items-center">
             <RadioButton v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_on`" :value="true" />
@@ -68,9 +68,10 @@ const showConnectionsEditor = ref(false)
         <Button
           label="Correspondances"
           icon="i-tabler-pencil"
+          outlined
           @click="showConnectionsEditor = true"
         />
-        <Button label="Déplacer" icon="i-tabler-arrows-move" />
+        <Button label="Déplacer" icon="i-tabler-arrows-move" outlined />
         <Button label="Supprimer" icon="i-tabler-trash" severity="danger" />
       </div>
     </div>

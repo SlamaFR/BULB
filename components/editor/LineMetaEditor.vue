@@ -1,11 +1,4 @@
 <script setup lang="ts">
-const modes = [
-  { name: 'Métro', value: 'METRO' },
-  { name: 'RER', value: 'RER' },
-  { name: 'Transilien', value: 'TRAIN' },
-  { name: 'Tram', value: 'TRAM' },
-]
-
 // Couleurs charte graphique IDFM
 const colors = [
   { name: 'Rouge coquelicot', value: '#ed1c2a', textColor: 'white' },
@@ -37,7 +30,7 @@ watch(selectedColor, val => color.value = val.value)
 <template>
   <div class="flex flex-col gap-4 mb-8">
     <div class="flex items-center gap-4">
-      <label for="username" class="w-24">Mode</label>
+      <span class="w-24">Mode</span>
       <Select
         v-model="mode"
         :options="modes"
@@ -48,15 +41,16 @@ watch(selectedColor, val => color.value = val.value)
       />
     </div>
     <div class="flex items-center gap-4">
-      <label for="email" class="w-24">Indice</label>
+      <label for="line_index" class="w-24">Indice</label>
       <InputText
+        id="line_index"
         v-model="index"
         class="flex-auto"
         autocomplete="off"
       />
     </div>
     <div class="flex items-center gap-4">
-      <label for="email" class="w-24">Couleur</label>
+      <span class="w-24">Couleur</span>
       <Select
         v-model="selectedColor"
         :options="colors"
