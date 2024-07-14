@@ -56,8 +56,8 @@ const lineContext = inject<LineContext>(LineContextKey)
         <SubtitleLabel :value="subtitle" :interest-point="subtitleInterestPoint" />
       </div>
     </div>
-    <StopDot :terminus="terminus" :connection="connections.length > 0" :color="color ?? lineContext?.color ?? '#FF0000'" />
-    <div class="ml--.5em mr-1.5em">
+    <StopDot :terminus="terminus" :connection="connections.length > 0" :color="color ?? lineContext?.color.value ?? '#FF0000'" />
+    <div class="translate-x--.5em">
       <Connections :connections="connections" />
     </div>
   </div>
@@ -65,7 +65,8 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 <style scoped lang="scss">
 .wrapper {
-  min-width: 3.5em;
+  min-width: 2.5em;
+  z-index: 2;
 
   &:first-child {
     margin-left: 0 !important;

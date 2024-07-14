@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import pedestrian from '~/assets/svg/pedestrian.svg'
 import VerticalLine from '~/components/parts/connection/VerticalLine.vue'
 
 const {
@@ -7,20 +6,18 @@ const {
 } = defineProps<{
   connection: ModeConnection
 }>()
-
-const pedestrianUrl = computed(() => `url(${pedestrian})`)
 </script>
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start">
-      <div v-if="connection.walk" class="pedestrian" />
+    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.walk }">
+      <Pedestrian v-if="connection.walk" />
       <Mode :mode="connection.mode" />
     </div>
     <VerticalLine inner />
   </div>
   <div class="connection-group-lines">
-    <IconOrnament v-for="line in connection.lines" :ornament="line.ornament">
+    <IconOrnament v-for="line in connection.lines" :ornament="line.ornament" :walk="line.walk">
       <Metro v-if="connection.mode === 'METRO'" :line="line.lineIndex" />
       <ExpressTrain v-else-if="connection.mode === 'RER'" :line="line.lineIndex" />
       <Train v-else-if="connection.mode === 'TRAIN'" :line="line.lineIndex" />
@@ -41,14 +38,6 @@ const pedestrianUrl = computed(() => `url(${pedestrian})`)
   }
 }
 
-.connection-group-mode .pedestrian {
-  margin-top: .125em;
-  width: .875em;
-  height: .875em;
-  mask: v-bind(pedestrianUrl);
-  background-color: var(--blue-ratp-paper);
-}
-
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);
@@ -60,7 +49,7 @@ const pedestrianUrl = computed(() => `url(${pedestrian})`)
   }
 }
 
-.mode-wrapper:has(.pedestrian) {
-  margin-left: -1em;
+.mode-wrapper.pedestrian {
+  margin-left: -1.125em;
 }
 </style>

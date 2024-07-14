@@ -1,9 +1,8 @@
-<script setup lang="ts">
-const line: Line = {
-  mode: 'METRO',
-  index: '1',
-  color: '#ffcd02',
-  stops: [
+export const useLine = defineStore('line', () => {
+  const mode = ref<Mode>('METRO')
+  const index = ref<string>('1')
+  const color = ref<string>('#ffcd02')
+  const stops = ref<Stop[]>([
     {
       name: 'La Défense',
       subtitle: 'Grande Arche',
@@ -246,10 +245,24 @@ const line: Line = {
         },
       ],
     },
-  ],
-}
-</script>
+  ])
 
-<template>
-  <LineMap :line="line" />
-</template>
+  const line = computed<Line>(() => ({
+    mode: mode.value,
+    index: index.value,
+    color: color.value,
+    stops: stops.value,
+  }))
+
+  return {
+    mode,
+    index,
+    color,
+    stops,
+    line,
+  }
+}, {
+  persist: {
+    storage: persistedState.localStorage,
+  },
+})

@@ -2,7 +2,7 @@ declare global {
   // declare your types here
 
   type Mode = 'BOAT' | 'BUS' | 'CABLE' | 'METRO' | 'RER' | 'TER' | 'TRAIN' | 'TRAIN_RER' | 'TRAM' | 'VELO'
-  type Service = 'FUNICULAR' | 'MAIN_STATION'
+  type Service = 'FUNICULAR' | 'MAIN_STATION' | 'AIRPORT'
 
   type CableLine = '1' | string
   type MetroLine = '1' | '2' | '3' | '3bis' | '4' | '5' | '6' | '7' | '7bis' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17' | '18' | string
@@ -21,14 +21,16 @@ declare global {
     position: OrnamentPosition
     text: string
   }
+  type Ornament = AirportOrnament | TextOrnament
 
   export interface ConnectionLine {
     lineIndex: string
-    ornament?: AirportOrnament | TextOrnament | null
+    walk?: boolean
+    ornament?: Ornament | null
   }
   export interface ConnectionService {
     service: Service
-    ornament?: AirportOrnament | TextOrnament | null
+    ornament?: Ornament | null
   }
 
   export interface ModeConnection {

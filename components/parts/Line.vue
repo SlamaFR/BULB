@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import type { Ref } from 'vue'
+
 export interface LineContext {
-  color: string
+  color: Ref<string>
 }
 
 const {
@@ -10,13 +12,13 @@ const {
 }>()
 
 provide<LineContext>(LineContextKey, {
-  color,
+  color: toRef(() => color),
 })
 </script>
 
 <template>
   <div class="relative line-container">
-    <div class="flex flex-row items-start">
+    <div class="flex flex-row items-start gap-4">
       <slot />
     </div>
     <div class="line" />
@@ -35,7 +37,7 @@ provide<LineContext>(LineContextKey, {
   transform: translateY(100%);
   width: calc(100%);
   height: .375em;
-  z-index: -1;
+  z-index: 0;
   background-color: v-bind(color);
 }
 </style>

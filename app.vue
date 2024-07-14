@@ -15,7 +15,7 @@ tryOnBeforeMount(() => {
   </NuxtLayout>
 </template>
 
-<style>
+<style lang="scss">
 :root {
   --blue-ratp: #0a0082;
   --blue-ratp-paper: #233B8B;
@@ -30,10 +30,7 @@ tryOnBeforeMount(() => {
   --font-shift-correction: -.0625em;
 }
 
-html {
-  font-size: 32px;
-  font-family: 'Parisine Std', sans-serif;
-  color: var(--blue-ratp-paper);
-  background-color: white;
+html, body {
+  font-size: 16px;
 }
 </style>

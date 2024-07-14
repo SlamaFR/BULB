@@ -1,0 +1,80 @@
+<script setup lang="ts">
+import ConnectionsEditor from '~/components/editor/ConnectionsEditor.vue'
+
+const {
+  index,
+  stop,
+} = defineProps<{
+  index: number
+  stop: Stop
+}>()
+
+const showConnectionsEditor = ref(false)
+</script>
+
+<template>
+  <Panel :header="`Arrêt #${index}`">
+    <div class="flex flex-col gap-2">
+      <div class="flex flex-col gap-2">
+        <label :for="`name_stop_${index}`">Nom</label>
+        <Textarea
+          :id="`name_stop_${index}`"
+          v-model="stop.name"
+          rows="2"
+          class="flex-auto"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label :for="`subtitle_stop_${index}`">Sous-titre</label>
+        <InputText
+          :id="`subtitle_stop_${index}`"
+          v-model="stop.subtitle"
+          class="flex-auto"
+          autocomplete="off"
+        />
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label>Lieu d’intérêt</label>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+            <RadioButton v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}_on`" :value="true" />
+            <label :for="`interest_point_stop_${index}_on`" class="ml-2">Oui</label>
+          </div>
+          <div class="flex items-center">
+            <RadioButton v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}_off`" :value="false" />
+            <label :for="`interest_point_stop_${index}_off`" class="ml-2">Non</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <label>Empêcher la collision entre le titre et le sous-titre</label>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center">
+            <RadioButton v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_on`" :value="true" />
+            <label :for="`prevent_overlapping_stop_${index}_on`" class="ml-2">Oui</label>
+          </div>
+          <div class="flex items-center">
+            <RadioButton v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_off`" :value="false" />
+            <label :for="`prevent_overlapping_stop_${index}_off`" class="ml-2">Non</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-4 flex flex-row justify-between gap-2">
+        <Button
+          label="Correspondances"
+          icon="i-tabler-pencil"
+          @click="showConnectionsEditor = true"
+        />
+        <Button label="Déplacer" icon="i-tabler-arrows-move" />
+        <Button label="Supprimer" icon="i-tabler-trash" severity="danger" />
+      </div>
+    </div>
+  </Panel>
+
+  <ConnectionsEditor v-model:visible="showConnectionsEditor" :stop="stop" />
+</template>

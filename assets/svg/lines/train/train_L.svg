@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="377.953" height="377.953" viewBox="0 0 283.465 283.465"><g data-name="Layer"><clipPath id="a"><path transform="matrix(1 0 0 -1 0 283.465)" d="M0 283.465h283.465V0H0z"/></clipPath><g clip-path="url(#a)"><path d="M219.67 283.465H63.77C28.548 283.465 0 254.904 0 219.68V63.786C0 28.562 28.548 0 63.77 0h155.9c35.222 0 63.795 28.562 63.795 63.786V219.68c0 35.224-28.573 63.785-63.795 63.785" fill="#c5a3cd"/><path d="M94.728 216.67V66.538H127.9v123.12h60.833v27.012z"/></g></g></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="377.953" height="377.953" viewBox="0 0 283.465 283.465">
+  <g data-name="Layer">
+    <clipPath id="a">
+      <path transform="matrix(1 0 0 -1 0 283.465)" d="M0 283.465h283.465V0H0z"/>
+    </clipPath>
+    <g clip-path="url(#a)">
+      <path
+        d="M219.67 283.465H63.77C28.548 283.465 0 254.904 0 219.68V63.786C0 28.562 28.548 0 63.77 0h155.9c35.222 0 63.795 28.562 63.795 63.786V219.68c0 35.224-28.573 63.785-63.795 63.785"
+        fill="#c5a3cd"/>
+      <path d="M94.728 216.67V66.538H127.9v123.12h60.833v27.012z"/>
+    </g>
+  </g>
+</svg>

@@ -15,22 +15,12 @@ const pedestrianUrl = computed(() => `url(${pedestrian})`)
   <div class="connection-group-mode">
     <div class="mode-wrapper flex flex-row gap-.5 items-start">
       <div v-if="connection.walk" class="pedestrian" />
-      <IconOrnament v-for="service in connection.services" :ornament="service.ornament">
+      <IconOrnament v-for="(service, index) in connection.services" :key="index" :ornament="service.ornament">
         <Service :service="service.service" />
       </IconOrnament>
     </div>
     <VerticalLine inner />
   </div>
-  <!--
-  <div class="connection-group-lines">
-    <IconOrnament v-for="line in connection.lines" :ornament="line.ornament">
-      <Metro v-if="connection.mode === 'METRO'" :line="line.lineIndex" />
-      <ExpressTrain v-else-if="connection.mode === 'RER'" :line="line.lineIndex" />
-      <Train v-else-if="connection.mode === 'TRAIN'" :line="line.lineIndex" />
-      <Tram v-else-if="connection.mode === 'TRAM'" :line="line.lineIndex" />
-    </IconOrnament>
-  </div>
-  -->
 </template>
 
 <style scoped lang="scss">

@@ -16,7 +16,10 @@ const connections: (ModeConnection | ServiceConnection)[] = [
     lines: [
       { lineIndex: 'A' },
       { lineIndex: 'B' },
-      { lineIndex: 'C' },
+      {
+        lineIndex: 'C',
+        walk: true,
+      },
       { lineIndex: 'D' },
       { lineIndex: 'E' },
     ],
@@ -117,6 +120,7 @@ const chatelet: (ModeConnection | ServiceConnection)[] = [
       { lineIndex: 'A' },
       {
         lineIndex: 'B',
+        walk: true,
         ornament: {
           position: 'BOTTOM',
           airport: 'CDG',

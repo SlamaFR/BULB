@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import funicular from '~/assets/svg/funicular.svg'
 import mainStation from '~/assets/svg/main_station.svg'
+import airport from '~/assets/svg/airport/airport-generic.svg'
 
 const {
   service,
@@ -14,6 +15,8 @@ const icon = computed(() => {
       return funicular
     case 'MAIN_STATION':
       return mainStation
+    case 'AIRPORT':
+      return airport
   }
 })
 </script>

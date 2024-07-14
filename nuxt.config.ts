@@ -1,3 +1,5 @@
+import Aura from '@primevue/themes/aura'
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
@@ -33,13 +35,18 @@ export default defineNuxtConfig({
   },
 
   // uncomment to disable SSR. This will basically make the app a SPA, like a normal Vue app, but with all the Nuxt goodies
-  // ssr: false,
+  ssr: false,
 
   // global CSS files
   css: [
     '@unocss/reset/tailwind.css',
     '@/assets/css/reset.css',
   ],
+  fonts: {
+    families: [
+      { name: 'Parisine Std', provider: 'local', weights: ['normal', 'bold'], styles: ['normal', 'italic'] },
+    ],
+  },
 
   // plugin configurations
   modules: [
@@ -49,7 +56,9 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
+    '@pinia-plugin-persistedstate/nuxt',
     '@primevue/nuxt-module',
+    '@nuxt/fonts',
   ],
   colorMode: {
     preference: 'system',
@@ -59,6 +68,13 @@ export default defineNuxtConfig({
     storageKey: 'color-scheme',
   },
   primevue: {
-    /* Configuration */
+    options: {
+      theme: {
+        preset: Aura,
+        options: {
+          darkModeSelector: '.dark-mode',
+        },
+      },
+    },
   },
 })

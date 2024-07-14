@@ -28,10 +28,10 @@ const {
   }
 
   &.terminus {
-    background-color: v-bind(color);
-    border: .3em solid black;
-    outline: .2em solid white;
-    outline-offset: calc(-.35em);
+    background-color: white;
+    border: .15em solid black;
+    outline: .25em solid v-bind(color);
+    outline-offset: calc(-1em);
   }
 }
 </style>
