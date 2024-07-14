@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ConnectionsEditor from '~/components/editor/ConnectionsEditor.vue'
-
 const {
   index,
   stop,

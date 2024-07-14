@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import VerticalLine from '~/components/parts/connection/VerticalLine.vue'
-
 const {
   connection,
 } = defineProps<{

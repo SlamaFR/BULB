@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import ConnectionGroupEditor from '~/components/editor/ConnectionGroupEditor.vue'
-
 const {
   stop,
 } = defineProps<{

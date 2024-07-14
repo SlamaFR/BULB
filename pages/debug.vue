@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// import type { Connection, ModeConnection } from '~/types'
-
 const connections: (ModeConnection | ServiceConnection)[] = [
   {
     mode: 'METRO',

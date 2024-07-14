@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import LineMetaEditor from '~/components/editor/LineMetaEditor.vue'
-import StopsEditor from '~/components/editor/StopsEditor.vue'
-
 const lineStore = useLine()
 const { line } = storeToRefs(lineStore)
 
