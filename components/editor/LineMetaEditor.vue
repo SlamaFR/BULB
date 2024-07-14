@@ -81,5 +81,8 @@ watch(selectedColor, val => color.value = val.value)
         </template>
       </Select>
     </div>
+
+    <Divider />
+    <Button outlined size="large" label="Utiliser un préréglage" />
   </div>
 </template>

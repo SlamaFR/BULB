@@ -13,38 +13,38 @@ declare global {
   type OrnamentPosition = 'RIGHT' | 'BOTTOM'
   type Airport = 'CDG' | 'ORY' | 'BOTH' | 'GENERIC'
 
-  export interface AirportOrnament {
+  interface AirportOrnament {
     position: OrnamentPosition
     airport: Airport
   }
-  export interface TextOrnament {
+  interface TextOrnament {
     position: OrnamentPosition
     text: string
   }
   type Ornament = AirportOrnament | TextOrnament
 
-  export interface ConnectionLine {
+  interface ConnectionLine {
     lineIndex: string
     walk: boolean
     ornament?: Ornament | null
   }
-  export interface ConnectionService {
+  interface ConnectionService {
     service: Service
     ornament?: Ornament | null
   }
 
-  export interface ModeConnection {
+  interface ModeConnection {
     mode: Mode
     walk: boolean
     lines: ConnectionLine[]
   }
-  export interface ServiceConnection {
+  interface ServiceConnection {
     services: ConnectionService[]
     walk: boolean
   }
-  export type Connection = ModeConnection | ServiceConnection
+  type Connection = ModeConnection | ServiceConnection
 
-  export interface Stop {
+  interface Stop {
     name: string
     subtitle?: string | null
     preventSubtitleOverlapping: boolean
@@ -52,7 +52,7 @@ declare global {
     connections: Connection[]
   }
 
-  export interface Line {
+  interface Line {
     mode: Mode
     index: string
     color: string

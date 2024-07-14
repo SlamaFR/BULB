@@ -18,7 +18,7 @@ const visible = defineModel<boolean>('visible')
       header: { class: 'gap-6' },
     }"
   >
-    <div v-if="(stop?.connections?.length ?? 0) > 0" class="flex flex-col gap-3">
+    <div class="connections">
       <ConnectionGroupEditor
         v-for="(connection, index) in stop?.connections"
         :key="index"
@@ -26,17 +26,22 @@ const visible = defineModel<boolean>('visible')
         :total="stop?.connections?.length ?? 0"
         :connection="connection"
       />
-    </div>
-
-    <div v-else div="flex items-center justify-center">
-      <span>Aucune correspondance</span>
-    </div>
-
-    <div class="mt-4 flex flex-row justify-end gap-2">
-      <Button label="Ajouter un groupe" icon="i-tabler-plus" />
+      <div class="min-w-30em p-panel p-8 flex flex-col items-center justify-center">
+        <!-- add mode or add service -->
+        <Button severity="success" icon="i-tabler-plus" label="Mode de transport" />
+        <Divider align="center" type="dotted">
+          <b>Ou</b>
+        </Divider>
+        <Button severity="info" icon="i-tabler-plus" label="Services de transport" />
+      </div>
     </div>
   </Dialog>
 </template>
 
 <style scoped>
+.connections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: .75em;
+}
 </style>

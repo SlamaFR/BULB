@@ -5,10 +5,7 @@ import StopsEditor from '~/components/editor/StopsEditor.vue'
 const lineStore = useLine()
 const { line } = storeToRefs(lineStore)
 
-function toggleColorScheme() {
-  const root = document.querySelector('html')!
-  root.classList.toggle('dark-mode')
-}
+const { toggle, isDark } = useDark()
 </script>
 
 <template>
@@ -24,12 +21,21 @@ function toggleColorScheme() {
       </template>
 
       <template #end>
-        <div class="flex flex-row gap-5 items-center">
-          <Button text rounded icon="i-tabler-sun-moon" @click="toggleColorScheme()" />
-          <span class="mr-2">Fait avec ❤️ par <a href="https://x.com/SlamaFR">Slama</a></span>
+        <div class="flex flex-row gap-4 items-center">
+          <span class="mr-2">Pas mal non ? C'est français 🇫🇷</span>
+          <div class="flex flex-row gap-1 items-center">
+            <Button text rounded :icon="isDark ? 'i-tabler-moon' : 'i-tabler-sun'" @click="toggle()" />
+            <Button text rounded icon="i-tabler-brand-x" as="a" href="https://x.com/SlamaFR" target="_blank" />
+          </div>
         </div>
       </template>
     </Menubar>
+
+    <Panel header="Prévisualisation du plan">
+      <div class="border-1 border-[var(--blue-ratp-paper)] overflow-x-auto bg-white">
+        <LineMap :line="line" />
+      </div>
+    </Panel>
 
     <div class="grid cols-3 gap-5">
       <Panel header="Option du plan">
@@ -40,11 +46,5 @@ function toggleColorScheme() {
         <StopsEditor />
       </Panel>
     </div>
-
-    <Panel header="Prévisualisation du plan">
-      <div class="border-1 border-[var(--blue-ratp-paper)] overflow-x-auto bg-white">
-        <LineMap :line="line" />
-      </div>
-    </Panel>
   </div>
 </template>

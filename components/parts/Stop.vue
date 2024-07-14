@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { LineContext } from './Line.vue'
-import type { Connection } from '~/components/Connections.vue'
 import { goesBelowLine } from '~/utils/text'
 
 const {

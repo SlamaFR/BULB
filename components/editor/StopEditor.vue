@@ -13,7 +13,7 @@ const showConnectionsEditor = ref(false)
 </script>
 
 <template>
-  <Panel :header="`Arrêt #${index}`">
+  <Panel class="min-w-25em" :header="`Arrêt #${index}`">
     <div class="flex flex-col gap-2">
       <div class="flex flex-col gap-2">
         <label :for="`name_stop_${index}`">Nom</label>
@@ -54,24 +54,29 @@ const showConnectionsEditor = ref(false)
         <span>Empêcher la collision entre le titre et le sous-titre</span>
         <div class="flex flex-wrap gap-4">
           <div class="flex items-center">
-            <RadioButton v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_on`" :value="true" />
+            <RadioButton
+              v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_on`"
+              :value="true"
+            />
             <label :for="`prevent_overlapping_stop_${index}_on`" class="ml-2">Oui</label>
           </div>
           <div class="flex items-center">
-            <RadioButton v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_off`" :value="false" />
+            <RadioButton
+              v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_off`"
+              :value="false"
+            />
             <label :for="`prevent_overlapping_stop_${index}_off`" class="ml-2">Non</label>
           </div>
         </div>
       </div>
 
-      <div class="mt-4 flex flex-row justify-between gap-2">
+      <div class="mt-8 flex flex-row justify-between gap-2">
         <Button
           label="Correspondances"
           icon="i-tabler-pencil"
-          outlined
+          text
           @click="showConnectionsEditor = true"
         />
-        <Button label="Déplacer" icon="i-tabler-arrows-move" outlined />
         <Button label="Supprimer" icon="i-tabler-trash" severity="danger" />
       </div>
     </div>
