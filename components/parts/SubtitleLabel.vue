@@ -25,7 +25,7 @@ const {
 .label {
   height: calc(1em + .1875em + .1875em); // 1.375em
   line-height: 1;
-  white-space: pre-line;
+  white-space-collapse: preserve-breaks;
   text-wrap: nowrap;
   width: fit-content;
   rotate: -30deg;

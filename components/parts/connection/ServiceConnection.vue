@@ -1,20 +1,15 @@
 <script setup lang="ts">
-import pedestrian from '~/assets/svg/pedestrian.svg'
-import VerticalLine from '~/components/parts/connection/VerticalLine.vue'
-
 const {
   connection,
 } = defineProps<{
   connection: ServiceConnection
 }>()
-
-const pedestrianUrl = computed(() => `url(${pedestrian})`)
 </script>
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start">
-      <div v-if="connection.walk" class="pedestrian" />
+    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.walk }">
+      <Pedestrian v-if="connection.walk" />
       <IconOrnament v-for="(service, index) in connection.services" :key="index" :ornament="service.ornament">
         <Service :service="service.service" />
       </IconOrnament>
@@ -35,14 +30,6 @@ const pedestrianUrl = computed(() => `url(${pedestrian})`)
   }
 }
 
-.connection-group-mode .pedestrian {
-  margin-top: .125em;
-  width: .875em;
-  height: .875em;
-  mask: v-bind(pedestrianUrl);
-  background-color: var(--blue-ratp-paper);
-}
-
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);
@@ -54,7 +41,7 @@ const pedestrianUrl = computed(() => `url(${pedestrian})`)
   }
 }
 
-.mode-wrapper:has(.pedestrian) {
-  margin-left: -1em;
+.mode-wrapper.pedestrian {
+  margin-left: -1.125em;
 }
 </style>

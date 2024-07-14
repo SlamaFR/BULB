@@ -80,7 +80,7 @@ const {
   align-items: center;
   line-height: 1;
   font-size: .375em;
-  white-space: pre-line;
+  white-space-collapse: preserve-breaks;
   text-wrap: nowrap;
 }
 

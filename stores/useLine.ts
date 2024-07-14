@@ -269,7 +269,7 @@ export const useLine = defineStore('line', () => {
         },
         {
           services: [{ service: 'MAIN_STATION' }],
-          walk: false,
+          walk: true,
         },
       ],
     },

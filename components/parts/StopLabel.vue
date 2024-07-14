@@ -24,7 +24,7 @@ const {
 .label {
   height: 1em;
   line-height: 1.125;
-  white-space: pre-line;
+  white-space-collapse: preserve-breaks;
   text-wrap: nowrap;
   width: fit-content;
   rotate: -30deg;
