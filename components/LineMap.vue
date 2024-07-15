@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LineIndex from '~/components/picto/LineIndex.vue'
+
 const { line } = defineProps<{
   line: Line
 }>()
@@ -11,10 +13,7 @@ const { line } = defineProps<{
       <div class="p-3">
         <div class="w-full flex flex-row gap-2 justify-center items-center text-3em">
           <Mode :mode="line.mode" />
-          <Metro v-if="line.mode === 'METRO'" :line="line.index" />
-          <ExpressTrain v-else-if="line.mode === 'RER'" :line="line.index" />
-          <Train v-else-if="line.mode === 'TRAIN'" :line="line.index" />
-          <Tram v-else-if="line.mode === 'TRAM'" :line="line.index" />
+          <LineIndex :mode="line.mode" :index="line.index" />
         </div>
       </div>
     </div>

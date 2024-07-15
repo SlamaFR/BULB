@@ -28,7 +28,7 @@ watch(selectedColor, val => color.value = val.value)
 </script>
 
 <template>
-  <div class="flex flex-col gap-4 mb-8">
+  <div class="flex flex-col gap-2">
     <div class="flex items-center gap-4">
       <span class="w-24">Mode</span>
       <Select
@@ -82,7 +82,15 @@ watch(selectedColor, val => color.value = val.value)
       </Select>
     </div>
 
-    <Divider />
-    <Button outlined size="large" label="Utiliser un préréglage" />
+    <div class="mt-4 flex flex-row justify-end">
+      <Button text label="Utiliser un préréglage" icon="i-tabler-adjustments" />
+    </div>
+  </div>
+
+  <Divider />
+
+  <div class="flex flex-row items-center content-end flex-grow gap-4">
+    <Button class="flex-grow" label="Importer un projet" icon="i-tabler-file-import" />
+    <Button class="flex-grow" label="Exporter le projet" icon="i-tabler-file-export" />
   </div>
 </template>

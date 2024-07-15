@@ -1,11 +1,10 @@
 <script setup lang="ts">
 const {
   index,
-  stop,
 } = defineProps<{
   index: number
-  stop: Stop
 }>()
+const stop = defineModel<Stop>('stop', { required: true })
 
 const showConnectionsEditor = ref(false)
 </script>

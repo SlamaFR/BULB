@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import LineIndex from '~/components/picto/LineIndex.vue'
+
 const {
   connection,
 } = defineProps<{
@@ -16,10 +18,7 @@ const {
   </div>
   <div class="connection-group-lines">
     <IconOrnament v-for="line in connection.lines" :ornament="line.ornament" :walk="line.walk">
-      <Metro v-if="connection.mode === 'METRO'" :line="line.lineIndex" />
-      <ExpressTrain v-else-if="connection.mode === 'RER'" :line="line.lineIndex" />
-      <Train v-else-if="connection.mode === 'TRAIN'" :line="line.lineIndex" />
-      <Tram v-else-if="connection.mode === 'TRAM'" :line="line.lineIndex" />
+      <LineIndex :mode="connection.mode" :index="line.lineIndex" />
     </IconOrnament>
   </div>
 </template>

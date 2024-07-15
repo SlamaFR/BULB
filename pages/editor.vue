@@ -35,8 +35,8 @@ const { toggle, isDark } = useDark()
     </Panel>
 
     <div class="grid cols-3 gap-5">
-      <Panel header="Option du plan">
-        <LineMetaEditor />
+      <Panel header="Réglages généraux">
+        <GeneralMapSettings />
       </Panel>
 
       <Panel class="col-span-2" header="Liste des arrêts">
