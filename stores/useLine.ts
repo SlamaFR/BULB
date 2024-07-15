@@ -2,7 +2,7 @@ export const useLine = defineStore('line', () => {
   const mode = ref<Mode>('METRO')
   const index = ref<string>('1')
   const color = ref<string>('#ffcd02')
-  const stops = reactive<Stop[]>([
+  const stops = ref<Stop[]>([
     {
       name: 'La Défense',
       subtitle: 'Grande Arche',
@@ -350,7 +350,7 @@ export const useLine = defineStore('line', () => {
     mode: mode.value,
     index: index.value,
     color: color.value,
-    stops,
+    stops: stops.value,
   }))
 
   return {

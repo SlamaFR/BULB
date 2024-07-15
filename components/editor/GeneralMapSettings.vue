@@ -1,60 +1,112 @@
 <script setup lang="ts">
-// Couleurs charte graphique IDFM
-const colors = [
-  { name: 'Rouge coquelicot', value: '#ed1c2a', textColor: 'white' },
-  { name: 'Orange', value: '#f78f4b', textColor: 'black' },
-  { name: 'Jaune Vif', value: '#ffcd02', textColor: 'black' },
-  { name: 'Jaune Ocre', value: '#e0b03b', textColor: 'black' },
-  { name: 'Maron', value: '#8d6539', textColor: 'white' },
-  { name: 'Olive Clair', value: '#cec92a', textColor: 'black' },
-  { name: 'Olive Foncé', value: '#9b993b', textColor: 'white' },
-  { name: 'Vert Foncé', value: '#008c5a', textColor: 'white' },
-  { name: 'Vert Clair', value: '#77c696', textColor: 'black' },
-  { name: 'Turquoise', value: '#00b397', textColor: 'white' },
-  { name: 'Bleu Clair', value: '#87d3df', textColor: 'black' },
-  { name: 'Bleu Outremer', value: '#4c90cd', textColor: 'white' },
-  { name: 'Bleu Foncé', value: '#006db8', textColor: 'black' },
-  { name: 'Violet', value: '#662c91', textColor: 'white' },
-  { name: 'Magenta', value: '#bb4a9b', textColor: 'white' },
-  { name: 'Lilas', value: '#c5a3cd', textColor: 'black' },
-  { name: 'Rose', value: '#f59fb3', textColor: 'black' },
-  { name: 'Rouge Framboise', value: '#b80b4b', textColor: 'white' },
-]
+import {
+  METRO_LINES,
+  RER_LINES,
+  TRAIN_LINES,
+  TRAM_LINES,
+  findColorByValue,
+  findLineByValueAndMode,
+  findModeByValue,
+} from '~/utils/data'
 
 const { mode, index, color } = storeToRefs(useLine())
 
-const selectedColor = ref(colors.find(c => c.value === color.value) ?? colors[0])
+const availableLines = computed(() => {
+  switch (mode.value) {
+    case 'METRO':
+      return METRO_LINES
+    case 'RER':
+      return RER_LINES
+    case 'TRAIN':
+      return TRAIN_LINES
+    case 'TRAM':
+      return TRAM_LINES
+    default:
+      return []
+  }
+})
+
+const selectedMode = ref(findModeByValue(mode.value))
+watch(selectedMode, val => mode.value = val.value)
+
+const selectedLine = ref(findLineByValueAndMode(index.value, mode.value))
+watch(selectedLine, val => index.value = val.value)
+
+const selectedColor = ref(findColorByValue(color.value))
 watch(selectedColor, val => color.value = val.value)
+
+watch([mode, index, color], (val) => {
+  selectedMode.value = findModeByValue(val[0])
+  selectedLine.value = findLineByValueAndMode(val[1], val[0])
+  selectedColor.value = findColorByValue(val[2])
+})
+
+onMounted(() => {
+  selectedMode.value = findModeByValue(mode.value)
+  selectedLine.value = findLineByValueAndMode(index.value, mode.value)
+  selectedColor.value = findColorByValue(color.value)
+})
+
+const showPresetSelector = ref(false)
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
-    <div class="flex items-center gap-4">
-      <span class="w-24">Mode</span>
+    <div class="form items-center gap-x-4 gap-y-2">
+      <span class="text-nowrap">Mode de transport</span>
       <Select
-        v-model="mode"
-        :options="modes"
-        option-label="name"
-        option-value="value"
+        v-model="selectedMode"
+        :options="MODES"
         placeholder="Selectionner un mode"
         class="flex-auto"
-      />
-    </div>
-    <div class="flex items-center gap-4">
-      <label for="line_index" class="w-24">Indice</label>
-      <InputText
-        id="line_index"
-        v-model="index"
+      >
+        <template #value="slotProps">
+          <div class="flex items-center gap-3">
+            <div :class="{ 'bg-white rounded': slotProps.value.background, 'rounded-full': slotProps.value.round }">
+              <Mode class="text-xl" :mode="slotProps.value.value" />
+            </div>
+            <span>{{ slotProps.value.label }}</span>
+          </div>
+        </template>
+        <template #option="slotProps">
+          <div class="flex items-center gap-3">
+            <div :class="{ 'bg-white rounded': slotProps.option.background, 'rounded-full': slotProps.option.round }">
+              <Mode class="text-xl" :mode="slotProps.option.value" />
+            </div>
+            <span>{{ slotProps.option.label }}</span>
+          </div>
+        </template>
+      </Select>
+
+      <label class="text-nowrap">Indice de ligne</label>
+      <Select
+        v-model="selectedLine"
+        :options="availableLines"
+        placeholder="Selectionner une ligne"
         class="flex-auto"
-        autocomplete="off"
-      />
-    </div>
-    <div class="flex items-center gap-4">
-      <span class="w-24">Couleur</span>
+      >
+        <template #value="slotProps">
+          <div class="flex items-center gap-3">
+            <div class="w-1.25em" :class="{ 'bg-white rounded': slotProps.value.mode === 'TRAM' }">
+              <LineIndex class="text-xl" :mode="slotProps.value.mode" :index="slotProps.value.value" />
+            </div>
+            <span>{{ slotProps.value.label }}</span>
+          </div>
+        </template>
+        <template #option="slotProps">
+          <div class="flex items-center gap-3">
+            <div :class="{ 'bg-white rounded': slotProps.option.mode === 'TRAM' }">
+              <LineIndex class="text-xl" :mode="slotProps.option.mode" :index="slotProps.option.value" />
+            </div>
+            <span>{{ slotProps.option.label }}</span>
+          </div>
+        </template>
+      </Select>
+
+      <span class="text-nowrap">Couleur du plan</span>
       <Select
         v-model="selectedColor"
-        :options="colors"
-        option-label="name"
+        :options="COLORS"
         placeholder="Selectionner une couleur"
         class="flex-auto"
       >
@@ -64,9 +116,9 @@ watch(selectedColor, val => color.value = val.value)
               backgroundColor: slotProps.value.value,
               color: slotProps.value.textColor,
               width: 'fit-content',
-            }" class="rounded-lg px-2 py-.5"
+            }" class="rounded px-1.5 py-.5 text-sm"
           >
-            {{ slotProps.value.name }}
+            {{ slotProps.value.label }}
           </div>
         </template>
         <template #option="slotProps">
@@ -74,16 +126,16 @@ watch(selectedColor, val => color.value = val.value)
             :style="{
               backgroundColor: slotProps.option.value,
               color: slotProps.option.textColor,
-            }" class="rounded-lg px-2 py-.5"
+            }" class="rounded px-1.5 py-.5 text-sm"
           >
-            {{ slotProps.option.name }}
+            {{ slotProps.option.label }}
           </div>
         </template>
       </Select>
     </div>
 
     <div class="mt-4 flex flex-row justify-end">
-      <Button text label="Utiliser un préréglage" icon="i-tabler-adjustments" />
+      <Button text label="Utiliser un préréglage" icon="i-tabler-adjustments" @click="showPresetSelector = true" />
     </div>
   </div>
 
@@ -93,4 +145,13 @@ watch(selectedColor, val => color.value = val.value)
     <Button class="flex-grow" label="Importer un projet" icon="i-tabler-file-import" />
     <Button class="flex-grow" label="Exporter le projet" icon="i-tabler-file-export" />
   </div>
+
+  <PresetSelector v-model:visible="showPresetSelector" />
 </template>
+
+<style scoped>
+.form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+</style>
