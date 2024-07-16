@@ -22,29 +22,7 @@ watch(selectedLine, val => service.value.service = val.value)
   <div class="p-3 p-panel flex flex-col gap-2">
     <div class="flex flex-col gap-3">
       <div class="flex flex-row items-center gap-3">
-        <Select
-          v-model="selectedLine"
-          :options="availableServices"
-          placeholder="Selectionner une ligne"
-          class="flex-auto"
-        >
-          <template #value="slotProps">
-            <div class="flex items-center gap-3">
-              <div class="w-1.25em" :class="{ 'bg-white': slotProps.value.background }">
-                <Service class="text-xl" :service="slotProps.value.value" />
-              </div>
-              <span>{{ slotProps.value.label }}</span>
-            </div>
-          </template>
-          <template #option="slotProps">
-            <div class="flex items-center gap-3">
-              <div class="w-1.25em" :class="{ 'bg-white': slotProps.option.background }">
-                <Service class="text-xl" :service="slotProps.option.value" />
-              </div>
-              <span>{{ slotProps.option.label }}</span>
-            </div>
-          </template>
-        </Select>
+        <ServiceSelect v-model="service" />
       </div>
       <!--
       <div class="flex flex-row items-center gap-3">

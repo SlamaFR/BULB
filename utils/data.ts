@@ -1,4 +1,4 @@
-export const COLORS = [
+export const COLORS: ColorChoice[] = [
   { value: '#ed1c2a', label: 'Rouge coquelicot', textColor: 'white' },
   { value: '#f78f4b', label: 'Orange', textColor: 'black' },
   { value: '#ffcd02', label: 'Jaune Vif', textColor: 'black' },
@@ -19,28 +19,22 @@ export const COLORS = [
   { value: '#b80b4b', label: 'Rouge Framboise', textColor: 'white' },
 ]
 
-export function findColorByValue(value: string) {
-  return COLORS.find(color => color.value === value) ?? COLORS[0]
-}
-
-interface ModeChoice {
-  value: Mode
-  label: string
-  background: boolean
-  round: boolean
-}
 export const MODES: ModeChoice[] = [
-  { value: 'METRO', label: 'Métro', background: true, round: true },
-  { value: 'RER', label: 'RER', background: true, round: false },
-  { value: 'TRAIN', label: 'Transilien', background: true, round: false },
-  { value: 'TRAM', label: 'Tramway', background: true, round: false },
+  { value: 'BOAT', label: 'Navette fluviale' },
+  { value: 'BUS', label: 'Bus' },
+  { value: 'CABLE', label: 'Téléphérique' },
+  { value: 'METRO', label: 'Métro' },
+  { value: 'RER', label: 'RER' },
+  { value: 'TRAIN', label: 'Transilien' },
+  { value: 'TRAM', label: 'Tramway' },
+  { value: 'VELO', label: 'Vélo' },
 ]
 
-export function findModeByValue(value: Mode) {
-  return MODES.find(mode => mode.value === value) ?? MODES[0]
-}
+export const CABLE_LINES: IndexChoice[] = [
+  { value: '1', label: 'Câble 1', color: '#4c90cd', mode: 'CABLE' },
+]
 
-export const METRO_LINES = [
+export const METRO_LINES: IndexChoice[] = [
   { value: '1', label: 'Ligne 1', color: '#ffcd02', mode: 'METRO' },
   { value: '2', label: 'Ligne 2', color: '#006db8', mode: 'METRO' },
   { value: '3', label: 'Ligne 3', color: '#9b993b', mode: 'METRO' },
@@ -63,7 +57,7 @@ export const METRO_LINES = [
   { value: '18', label: 'Ligne 18', color: '#00b397', mode: 'METRO' },
 ]
 
-export const RER_LINES = [
+export const RER_LINES: IndexChoice[] = [
   { value: 'A', label: 'RER A', color: '#ed1c2a', mode: 'RER' },
   { value: 'B', label: 'RER B', color: '#4c90cd', mode: 'RER' },
   { value: 'C', label: 'RER C', color: '#ffcd02', mode: 'RER' },
@@ -71,7 +65,7 @@ export const RER_LINES = [
   { value: 'E', label: 'RER E', color: '#bb4a9b', mode: 'RER' },
 ]
 
-export const TRAIN_LINES = [
+export const TRAIN_LINES: IndexChoice[] = [
   { value: 'H', label: 'Transilien H', color: '#8d6539', mode: 'TRAIN' },
   { value: 'J', label: 'Transilien J', color: '#cec92a', mode: 'TRAIN' },
   { value: 'K', label: 'Transilien K', color: '#9b993b', mode: 'TRAIN' },
@@ -83,7 +77,7 @@ export const TRAIN_LINES = [
   { value: 'V', label: 'Transilien V', color: '#9b993b', mode: 'TRAIN' },
 ]
 
-export const TRAM_LINES = [
+export const TRAM_LINES: IndexChoice[] = [
   { value: '1', label: 'Tramway 1', color: '#006db8', mode: 'TRAM' },
   { value: '2', label: 'Tramway 2', color: '#bb4a9b', mode: 'TRAM' },
   { value: '3a', label: 'Tramway 3a', color: '#f78f4b', mode: 'TRAM' },
@@ -101,21 +95,62 @@ export const TRAM_LINES = [
   { value: '14', label: 'Tramway 14', color: '#00b397', mode: 'TRAM' },
 ]
 
-export function findLineByValueAndMode(value: string, mode: Mode) {
+export const SERVICES: ServiceChoice[] = [
+  { value: 'MAIN_STATION', label: 'Grande gare', background: true },
+  { value: 'FUNICULAR', label: 'Funiculaire', background: true },
+  { value: 'AIRPORT', label: 'Aéroport', background: false },
+]
+
+export const AIRPORTS: AirportChoice[] = [
+  { value: 'GENERIC', label: 'Générique' },
+  { value: 'CDG', label: 'Charles de Gaulle' },
+  { value: 'ORY', label: 'Orly' },
+  { value: 'BOTH', label: 'CDG + ORY' },
+]
+
+export function findModeByValue(value: Mode) {
+  return MODES.find(mode => mode.value === value) ?? MODES[0]
+}
+
+export function findLineByValueAndMode(value: string, mode: Mode): IndexChoice {
+  const lines = getLinesByMode(mode)
+
+  if (lines.length === 0) {
+    return {
+      value: '',
+      label: '',
+      color: '',
+      mode: 'METRO',
+    }
+  }
+
+  return lines.find(line => line.value === value) ?? lines[0]
+}
+
+export function getLinesByMode(mode: Mode) {
   switch (mode) {
+    case 'CABLE':
+      return CABLE_LINES
     case 'METRO':
-      return METRO_LINES.find(line => line.value === value) ?? METRO_LINES[0]
+      return METRO_LINES
     case 'RER':
-      return RER_LINES.find(line => line.value === value) ?? RER_LINES[0]
+      return RER_LINES
     case 'TRAIN':
-      return TRAIN_LINES.find(line => line.value === value) ?? TRAIN_LINES[0]
+      return TRAIN_LINES
     case 'TRAM':
-      return TRAM_LINES.find(line => line.value === value) ?? TRAM_LINES[0]
+      return TRAM_LINES
   }
-  return {
-    value: '',
-    label: '',
-    color: '',
-    mode: '',
-  }
+  return []
+}
+
+export function findColorByValue(value: string) {
+  return COLORS.find(color => color.value === value) ?? COLORS[0]
+}
+
+export function findServiceByValue(value: Service) {
+  return SERVICES.find(service => service.value === value) ?? SERVICES[0]
+}
+
+export function findAirportVyValue(value: Airport) {
+  return AIRPORTS.find(airport => airport.value === value) ?? AIRPORTS[0]
 }

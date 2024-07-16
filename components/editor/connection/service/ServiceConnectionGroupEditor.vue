@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HorizontalScrollContainer from '~/components/HorizontalScrollContainer.vue'
-
 const {
   index,
 } = defineProps<{

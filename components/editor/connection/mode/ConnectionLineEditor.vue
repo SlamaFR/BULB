@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { METRO_LINES, RER_LINES, TRAIN_LINES, TRAM_LINES } from '~/utils/data'
-
 const {
   index,
   groupIndex,
@@ -13,24 +11,8 @@ const {
   mode: Mode
 }>()
 
-const availableLines = computed(() => {
-  switch (mode) {
-    case 'METRO':
-      return METRO_LINES
-    case 'RER':
-      return RER_LINES
-    case 'TRAIN':
-      return TRAIN_LINES
-    case 'TRAM':
-      return TRAM_LINES
-    default:
-      return []
-  }
-})
-
 const line = defineModel<ConnectionLine>('line', { required: true })
-const selectedLine = ref(availableLines.value.find(it => it.value === line.value.lineIndex) ?? availableLines.value[0])
-watch(selectedLine, val => line.value.lineIndex = val.value)
+const ornamentEditorButtonSeverity = computed(() => line.value.ornament ? 'primary' : 'secondary')
 
 const showOrnamentEditor = ref(false)
 </script>
@@ -39,29 +21,7 @@ const showOrnamentEditor = ref(false)
   <div class="p-3 p-panel flex flex-col gap-2">
     <div class="flex flex-col gap-3">
       <div class="flex flex-row items-center gap-3">
-        <Select
-          v-model="selectedLine"
-          :options="availableLines"
-          placeholder="Selectionner une ligne"
-          class="flex-auto"
-        >
-          <template #value="slotProps">
-            <div class="flex items-center gap-3">
-              <div class="w-1.25em" :class="{ 'bg-white rounded': slotProps.value.mode === 'TRAM' }">
-                <LineIndex class="text-xl" :mode="slotProps.value.mode" :index="slotProps.value.value" />
-              </div>
-              <span>{{ slotProps.value.label }}</span>
-            </div>
-          </template>
-          <template #option="slotProps">
-            <div class="flex items-center gap-3">
-              <div :class="{ 'bg-white rounded': slotProps.option.mode === 'TRAM' }">
-                <LineIndex class="text-xl" :mode="slotProps.option.mode" :index="slotProps.option.value" />
-              </div>
-              <span>{{ slotProps.option.label }}</span>
-            </div>
-          </template>
-        </Select>
+        <IndexSelect v-model="line.lineIndex" :mode="mode" />
       </div>
       <div class="flex flex-row items-center gap-3">
         <Checkbox v-model="line.walk" :input-id="`walk_connection_${groupIndex}_line_${index}`" binary />
@@ -69,7 +29,7 @@ const showOrnamentEditor = ref(false)
       </div>
 
       <div class="flex flex-row gap-2 items-center">
-        <Button outlined class="flex-grow" size="small" label="Décoration" @click="showOrnamentEditor = true" />
+        <Button outlined :severity="ornamentEditorButtonSeverity" class="flex-grow" size="small" label="Décoration" @click="showOrnamentEditor = true" />
         <!--
         <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-left" :disabled="index <= 0" />
         <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-right" :disabled="index >= total - 1" />

@@ -33,38 +33,14 @@ const showConnectionsEditor = ref(false)
         />
       </div>
 
-      <div class="flex flex-col gap-2">
-        <span>Lieu d’intérêt</span>
-        <div class="flex flex-wrap gap-4">
-          <div class="flex items-center">
-            <RadioButton v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}_on`" :value="true" />
-            <label :for="`interest_point_stop_${index}_on`" class="ml-2">Oui</label>
-          </div>
-          <div class="flex items-center">
-            <RadioButton v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}_off`" :value="false" />
-            <label :for="`interest_point_stop_${index}_off`" class="ml-2">Non</label>
-          </div>
-        </div>
+      <div class="flex flex-row items-center gap-2 pt-2">
+        <Checkbox v-model="stop.interestPoint" :input-id="`interest_point_stop_${index}`" binary />
+        <label :for="`interest_point_stop_${index}`" class="text-nowrap">Lieu d’intérêt</label>
       </div>
 
-      <div class="flex flex-col gap-2">
-        <span>Empêcher la collision entre le titre et le sous-titre</span>
-        <div class="flex flex-wrap gap-4">
-          <div class="flex items-center">
-            <RadioButton
-              v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_on`"
-              :value="true"
-            />
-            <label :for="`prevent_overlapping_stop_${index}_on`" class="ml-2">Oui</label>
-          </div>
-          <div class="flex items-center">
-            <RadioButton
-              v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}_off`"
-              :value="false"
-            />
-            <label :for="`prevent_overlapping_stop_${index}_off`" class="ml-2">Non</label>
-          </div>
-        </div>
+      <div class="flex flex-row items-center gap-2">
+        <Checkbox v-model="stop.preventSubtitleOverlapping" :input-id="`prevent_overlapping_stop_${index}`" binary :true-value="false" :false-value="true" />
+        <label :for="`prevent_overlapping_stop_${index}`">Permettre la collision des titres</label>
       </div>
 
       <div class="mt-8 flex flex-row justify-between gap-2">

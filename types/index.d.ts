@@ -22,15 +22,16 @@ declare global {
     text: string
   }
   type Ornament = AirportOrnament | TextOrnament
+  type OrnamentType = 'AIRPORT' | 'TEXT'
 
   interface ConnectionLine {
     lineIndex: string
     walk: boolean
-    ornament?: Ornament | null
+    ornament: Ornament | null
   }
   interface ConnectionService {
     service: Service
-    ornament?: Ornament | null
+    ornament: Ornament | null
   }
 
   interface ModeConnection {
@@ -57,6 +58,31 @@ declare global {
     index: string
     color: string
     stops: Stop[]
+  }
+
+  interface ColorChoice {
+    value: string
+    label: string
+    textColor: string
+  }
+  interface ModeChoice {
+    value: Mode
+    label: string
+  }
+  interface IndexChoice {
+    value: string
+    label: string
+    color: string
+    mode: Mode
+  }
+  interface ServiceChoice {
+    value: Service
+    label: string
+    background: boolean
+  }
+  interface AirportChoice {
+    value: Airport
+    label: string
   }
 }
 

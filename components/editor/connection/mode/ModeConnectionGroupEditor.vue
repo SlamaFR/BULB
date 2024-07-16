@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import HorizontalScrollContainer from '~/components/HorizontalScrollContainer.vue'
-
 const {
   index: groupIndex,
 } = defineProps<{
@@ -15,15 +13,7 @@ const connection = defineModel<ModeConnection>('connection', { required: true })
     <div class="flex flex-row gap-3">
       <div class="flex flex-grow items-center gap-4">
         <span>Mode</span>
-        <Select
-          v-model="connection.mode"
-          :options="modes"
-          option-label="name"
-          option-value="value"
-          placeholder="Selectionner un mode"
-          class="flex-auto"
-          size="small"
-        />
+        <ModeSelect v-model="connection.mode" />
       </div>
 
       <div class="flex items-center">
