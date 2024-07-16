@@ -131,64 +131,33 @@ const chatelet: (ModeConnection | ServiceConnection)[] = [
 </script>
 
 <template>
-  <div class="pt-30 p-10 flex flex-row gap-10">
-    <Line color="red">
-      <Stop
-        :name="'L’Enfer\nsur Terre'"
-        :connections="connections"
-        terminus
-      />
-      <Stop
-        name="Châtelet – Les Halles"
-        :connections="chatelet"
-      />
-      <Stop
-        name="Anvers"
-        subtitle="Sacré-Cœur"
-        subtitle-interest-point
-        :connections="[
-          {
-            services: [
-              {
-                service: 'FUNICULAR',
-                ornament: {
-                  position: 'BOTTOM',
-                  text: 'Funiculaire\nde Montmartre',
-                },
-              },
-            ],
-            walk: true,
-          },
-        ]"
-      />
-    </Line>
+  <div class="flex flex-col gap-3">
+    <div class="flex gap-3 text-3em">
+      <Mode mode="METRO" />
+      <Mode mode="RER" />
+      <Mode mode="TER" />
+      <Mode mode="TRAIN" />
+      <Mode mode="TRAIN_RER" />
+      <Mode mode="BOAT" />
+      <Mode mode="BUS" />
+      <Mode mode="CABLE" />
+      <Mode mode="TRAM" />
+      <Mode mode="VELO" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <Mode plain mode="METRO" />
+      <Mode plain mode="RER" />
+      <Mode plain mode="TER" />
+      <Mode plain mode="TRAIN" />
+      <Mode plain mode="TRAIN_RER" />
+      <Mode plain mode="BOAT" />
+      <Mode plain mode="BUS" />
+      <Mode plain mode="CABLE" />
+      <Mode plain mode="TRAM" />
+      <Mode plain mode="VELO" />
+    </div>
   </div>
 </template>
 
 <style>
-.test-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: .5em;
-}
-
-.width-one {
-  height: 1em;
-  width: 1em;
-  background-color: red;
-}
-
-.width-two {
-  height: 1em;
-  width: 2.5em;
-  background-color: blue;
-  grid-column: span 2;
-}
-
-.width-two-vertical {
-  height: 2.5em;
-  width: 1em;
-  background-color: blue;
-  grid-row: span 2;
-}
 </style>
