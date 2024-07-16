@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import LineIndex from '~/components/picto/LineIndex.vue'
-
 const {
   connection,
 } = defineProps<{

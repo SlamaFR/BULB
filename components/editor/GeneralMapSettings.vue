@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const { mode, index, color } = storeToRefs(useLine())
+const { mode, index, color, stopSpacing } = storeToRefs(useLine())
 const showPresetSelector = ref(false)
 </script>
 
 <template>
   <div class="flex flex-col gap-2">
-    <div class="form items-center gap-x-4 gap-y-2">
+    <div class="form items-center gap-x-5 gap-y-2">
       <span class="text-nowrap">Mode de transport</span>
       <ModeSelect v-model="mode" />
 
@@ -14,6 +14,23 @@ const showPresetSelector = ref(false)
 
       <span class="text-nowrap">Couleur du plan</span>
       <ColorSelect v-model="color" />
+
+      <span>Espacement minimum<br>des arrêts</span>
+      <InputNumber
+        v-model="stopSpacing"
+        class="flex-auto"
+        min="1"
+        suffix=" unité(s)"
+        show-buttons
+        button-layout="horizontal"
+      >
+        <template #incrementbuttonicon>
+          <span class="i-tabler-plus" />
+        </template>
+        <template #decrementbuttonicon>
+          <span class="i-tabler-minus" />
+        </template>
+      </InputNumber>
     </div>
 
     <div class="mt-4 flex flex-row justify-end">

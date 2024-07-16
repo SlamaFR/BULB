@@ -7,12 +7,15 @@ const {
   total: number
 }>()
 
+const emit = defineEmits<{
+  delete: [number]
+}>()
 const connection = defineModel<ModeConnection | ServiceConnection>('connection', { required: true })
 </script>
 
 <template>
   <Panel
-    class="min-w-30em max-w-40em"
+    class="min-w-35em max-w-40em"
     :header="`Groupe de correspondances #${index + 1}`"
     :pt="{
       root: { class: 'flex flex-col' },
@@ -41,7 +44,7 @@ const connection = defineModel<ModeConnection | ServiceConnection>('connection',
           <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-down" :disabled="index >= total - 1" />
           -->
         </div>
-        <Button size="small" label="Supprimer" icon="i-tabler-trash" severity="danger" />
+        <Button size="small" label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
       </div>
     </div>
   </Panel>

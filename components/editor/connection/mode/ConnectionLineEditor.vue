@@ -8,9 +8,12 @@ const {
   index: number
   groupIndex: number
   total: number
-  mode: Mode
+  mode: Mode | null
 }>()
 
+const emit = defineEmits<{
+  delete: [number]
+}>()
 const line = defineModel<ConnectionLine>('line', { required: true })
 const ornamentEditorButtonSeverity = computed(() => line.value.ornament ? 'primary' : 'secondary')
 
@@ -29,12 +32,20 @@ const showOrnamentEditor = ref(false)
       </div>
 
       <div class="flex flex-row gap-2 items-center">
-        <Button outlined :severity="ornamentEditorButtonSeverity" class="flex-grow" size="small" label="Décoration" @click="showOrnamentEditor = true" />
-        <!--
-        <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-left" :disabled="index <= 0" />
-        <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-right" :disabled="index >= total - 1" />
-        -->
-        <Button size="small" severity="danger" icon="i-tabler-trash" />
+        <Button
+          class="flex-grow"
+          size="small"
+          label="Décoration"
+          :severity="ornamentEditorButtonSeverity"
+          outlined
+          @click="showOrnamentEditor = true"
+        />
+        <Button
+          size="small"
+          severity="danger"
+          icon="i-tabler-trash"
+          @click="emit('delete', index)"
+        />
       </div>
     </div>
   </div>

@@ -108,26 +108,15 @@ export const AIRPORTS: AirportChoice[] = [
   { value: 'BOTH', label: 'CDG + ORY' },
 ]
 
-export function findModeByValue(value: Mode) {
-  return MODES.find(mode => mode.value === value) ?? MODES[0]
+export function findModeByValue(value: Mode | null) {
+  return MODES.find(mode => mode.value === value) ?? null
 }
 
-export function findLineByValueAndMode(value: string, mode: Mode): IndexChoice {
-  const lines = getLinesByMode(mode)
-
-  if (lines.length === 0) {
-    return {
-      value: '',
-      label: '',
-      color: '',
-      mode: 'METRO',
-    }
-  }
-
-  return lines.find(line => line.value === value) ?? lines[0]
+export function findLineByValueAndMode(value: string | null, mode: Mode | null) {
+  return getLinesByMode(mode).find(line => line.value === value) ?? null
 }
 
-export function getLinesByMode(mode: Mode) {
+export function getLinesByMode(mode: Mode | null) {
   switch (mode) {
     case 'CABLE':
       return CABLE_LINES
@@ -143,14 +132,14 @@ export function getLinesByMode(mode: Mode) {
   return []
 }
 
-export function findColorByValue(value: string) {
-  return COLORS.find(color => color.value === value) ?? COLORS[0]
+export function findColorByValue(value: string | null) {
+  return COLORS.find(color => color.value === value) ?? null
 }
 
-export function findServiceByValue(value: Service) {
-  return SERVICES.find(service => service.value === value) ?? SERVICES[0]
+export function findServiceByValue(value: Service | null) {
+  return SERVICES.find(service => service.value === value) ?? null
 }
 
-export function findAirportVyValue(value: Airport) {
-  return AIRPORTS.find(airport => airport.value === value) ?? AIRPORTS[0]
+export function findAirportVyValue(value: Airport | null) {
+  return AIRPORTS.find(airport => airport.value === value) ?? null
 }

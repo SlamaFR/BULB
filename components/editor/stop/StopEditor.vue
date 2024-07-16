@@ -4,13 +4,15 @@ const {
 } = defineProps<{
   index: number
 }>()
+const emit = defineEmits<{
+  delete: [number]
+}>()
 const stop = defineModel<Stop>('stop', { required: true })
-
 const showConnectionsEditor = ref(false)
 </script>
 
 <template>
-  <Panel class="min-w-25em" :header="`Arrêt #${index}`">
+  <Panel class="min-w-25em" :header="`Arrêt #${index + 1}`">
     <div class="flex flex-col gap-2">
       <div class="flex flex-col gap-2">
         <label :for="`name_stop_${index}`">Nom</label>
@@ -50,7 +52,7 @@ const showConnectionsEditor = ref(false)
           text
           @click="showConnectionsEditor = true"
         />
-        <Button label="Supprimer" icon="i-tabler-trash" severity="danger" />
+        <Button label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
       </div>
     </div>
   </Panel>

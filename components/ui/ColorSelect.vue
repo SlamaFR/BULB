@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const color = defineModel<string>({ required: true })
+const color = defineModel<string | null>({ required: true })
 
-const selectedColor = ref<ColorChoice>(findColorByValue(color.value))
+const selectedColor = ref<ColorChoice | null>(findColorByValue(color.value))
 
-watch(selectedColor, val => color.value = val.value)
+watch(selectedColor, val => color.value = val?.value ?? null)
 watch(color, val => selectedColor.value = findColorByValue(val))
 </script>
 
@@ -16,6 +16,7 @@ watch(color, val => selectedColor.value = findColorByValue(val))
   >
     <template #value="slotProps">
       <div
+        v-if="slotProps.value"
         :style="{
           backgroundColor: slotProps.value.value,
           color: slotProps.value.textColor,

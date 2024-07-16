@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const service = defineModel<Service>({ required: true })
+const service = defineModel<Service | null>({ required: true })
 
-const selectedService = ref<ServiceChoice>(findServiceByValue(service.value))
+const selectedService = ref<ServiceChoice | null>(findServiceByValue(service.value))
 
-watch(selectedService, val => service.value = val.value)
+watch(selectedService, val => service.value = val?.value ?? null)
 watch(service, val => selectedService.value = findServiceByValue(val))
 </script>
 
@@ -15,7 +15,7 @@ watch(service, val => selectedService.value = findServiceByValue(val))
     class="flex-auto"
   >
     <template #value="slotProps">
-      <div class="flex items-center gap-3">
+      <div v-if="slotProps.value" class="flex items-center gap-3">
         <div :class="{ 'bg-white': slotProps.value.background, 'rounded-full': slotProps.value.round }">
           <Service class="text-xl" :service="slotProps.value.value" />
         </div>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const airport = defineModel<Airport>({ required: true })
+const airport = defineModel<Airport | null>({ required: true })
 
-const selectedAirport = ref<AirportChoice>(findAirportVyValue(airport.value))
+const selectedAirport = ref<AirportChoice | null>(findAirportVyValue(airport.value))
 
-watch(selectedAirport, val => airport.value = val.value)
+watch(selectedAirport, val => airport.value = val?.value ?? null)
 watch(airport, val => selectedAirport.value = findAirportVyValue(val))
 </script>
 
@@ -15,7 +15,7 @@ watch(airport, val => selectedAirport.value = findAirportVyValue(val))
     class="flex-auto"
   >
     <template #value="slotProps">
-      <div class="flex items-center gap-3">
+      <div v-if="slotProps.value" class="flex items-center gap-3">
         <Airport class="text-xl" :airport="slotProps.value.value" />
         <span>{{ slotProps.value.label }}</span>
       </div>

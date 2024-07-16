@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const mode = defineModel<Mode>({ required: true })
+const mode = defineModel<Mode | null>({ required: true })
 
-const selectedMode = ref<ModeChoice>(findModeByValue(mode.value))
+const selectedMode = ref<ModeChoice | null>(findModeByValue(mode.value))
 
-watch(selectedMode, val => mode.value = val.value)
+watch(selectedMode, val => mode.value = val?.value ?? null)
 watch(mode, val => selectedMode.value = findModeByValue(val))
 </script>
 
@@ -15,7 +15,7 @@ watch(mode, val => selectedMode.value = findModeByValue(val))
     class="flex-auto"
   >
     <template #value="slotProps">
-      <div class="flex items-center gap-3">
+      <div v-if="slotProps.value" class="flex items-center gap-3">
         <Mode class="text-xl" plain :mode="slotProps.value.value" />
         <span>{{ slotProps.value.label }}</span>
       </div>

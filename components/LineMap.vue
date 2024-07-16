@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import LineIndex from '~/components/picto/LineIndex.vue'
-
 const { line } = defineProps<{
   line: Line
 }>()
@@ -17,8 +15,8 @@ const { line } = defineProps<{
         </div>
       </div>
     </div>
-    <div class="pt-35 ml-1em">
-      <Line :color="line.color">
+    <div class="pt-35 pb-10 ml-1em">
+      <Line :color="line.color" :stop-spacing="line.stopSpacing">
         <Stop
           v-for="(stop, index) in line.stops"
           :key="index"

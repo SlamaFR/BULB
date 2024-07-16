@@ -1,6 +1,25 @@
 <script setup lang="ts">
 const visible = defineModel<boolean>('visible')
 const stop = defineModel<Stop>('stop', { required: true })
+
+function addModeConnection() {
+  stop.value.connections.push({
+    mode: null,
+    lines: [],
+    walk: false,
+  })
+}
+
+function addServiceConnection() {
+  stop.value.connections.push({
+    services: [],
+    walk: false,
+  })
+}
+
+function deleteConnection(index: number) {
+  stop.value.connections.splice(index, 1)
+}
 </script>
 
 <template>
@@ -19,14 +38,15 @@ const stop = defineModel<Stop>('stop', { required: true })
         v-model:connection="stop.connections[index]"
         :index="index"
         :total="stop.connections.length ?? 0"
+        @delete="deleteConnection"
       />
       <div class="min-w-30em p-panel p-8 flex flex-col items-center justify-center">
         <!-- add mode or add service -->
-        <Button severity="warn" icon="i-tabler-plus" label="Mode de transport" />
+        <Button severity="warn" icon="i-tabler-plus" label="Mode de transport" @click="addModeConnection()" />
         <Divider align="center" type="dotted">
           <b>Ou</b>
         </Divider>
-        <Button severity="info" icon="i-tabler-plus" label="Services de transport" />
+        <Button severity="info" icon="i-tabler-plus" label="Services de transport" @click="addServiceConnection()" />
       </div>
     </div>
   </Dialog>

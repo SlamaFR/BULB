@@ -7,18 +7,23 @@ export interface LineContext {
 
 const {
   color,
+  stopSpacing,
 } = defineProps<{
-  color: string
+  color: string | null
+  stopSpacing: number
 }>()
 
+const lineColor = computed(() => color ?? 'black')
+const lineStopSpacing = computed(() => `${stopSpacing}em`)
+
 provide<LineContext>(LineContextKey, {
-  color: toRef(() => color),
+  color: lineColor,
 })
 </script>
 
 <template>
   <div class="relative line-container">
-    <div class="flex flex-row items-start gap-4">
+    <div class="stops flex flex-row items-start">
       <slot />
     </div>
     <div class="line" />
@@ -30,6 +35,10 @@ provide<LineContext>(LineContextKey, {
   width: fit-content;
 }
 
+.stops {
+  gap: v-bind(lineStopSpacing);
+}
+
 .line {
   position: absolute;
   top: 0;
@@ -38,6 +47,6 @@ provide<LineContext>(LineContextKey, {
   width: calc(100%);
   height: .375em;
   z-index: 0;
-  background-color: v-bind(color);
+  background-color: v-bind(lineColor);
 }
 </style>

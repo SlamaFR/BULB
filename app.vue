@@ -1,12 +1,8 @@
 <script setup lang="ts">
-// switch to preferred locale on load
-const router = useRouter()
-const switchLocalePath = useSwitchLocalePath()
-const locale = useLocale()
+import { fr } from '~/assets/locales/fr.json'
 
-tryOnBeforeMount(() => {
-  router.replace(switchLocalePath(locale.value))
-})
+const { config } = usePrimeVue()
+config.locale = fr
 </script>
 
 <template>
@@ -22,10 +18,7 @@ tryOnBeforeMount(() => {
   --yellow-ratp: #ffbe00;
   --place-brown: #80551A;
   --gray: #414241;
-
   --background-color: #eaeaea;
-
-  --metro-3: #82C8E6;
 
   --font-shift-correction: -.0625em;
 }

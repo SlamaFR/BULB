@@ -55,7 +55,7 @@ const lineContext = inject<LineContext>(LineContextKey)
         <SubtitleLabel :value="subtitle" :interest-point="subtitleInterestPoint" />
       </div>
     </div>
-    <StopDot :terminus="terminus" :connection="connections.length > 0" :color="color ?? lineContext?.color.value ?? '#FF0000'" />
+    <StopDot :terminus="terminus" :connection="connections.length > 0" :color="color ?? lineContext?.color.value ?? '#000000'" />
     <div class="translate-x--.5em">
       <Connections :connections="connections" />
     </div>

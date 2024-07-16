@@ -6,7 +6,7 @@ const { toggle, isDark } = useDark()
 </script>
 
 <template>
-  <div class="flex flex-col gap-5">
+  <div class="flex flex-col gap-5 h-full">
     <Menubar>
       <template #start>
         <div class="flex flex-row gap-2 items-start">
@@ -34,12 +34,12 @@ const { toggle, isDark } = useDark()
       </div>
     </Panel>
 
-    <div class="grid cols-3 gap-5">
-      <Panel header="Réglages généraux">
+    <div class="grid cols-5 gap-5 flex-grow">
+      <Panel class="col-span-2" header="Réglages généraux">
         <GeneralMapSettings />
       </Panel>
 
-      <Panel class="col-span-2" header="Liste des arrêts">
+      <Panel class="col-span-3" header="Liste des arrêts">
         <StopsEditor />
       </Panel>
     </div>

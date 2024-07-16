@@ -6,6 +6,18 @@ const {
 }>()
 
 const connection = defineModel<ModeConnection>('connection', { required: true })
+
+function addLine() {
+  connection.value.lines.push({
+    lineIndex: null,
+    walk: false,
+    ornament: null,
+  })
+}
+
+function deleteLine(index: number) {
+  connection.value.lines.splice(index, 1)
+}
 </script>
 
 <template>
@@ -29,16 +41,17 @@ const connection = defineModel<ModeConnection>('connection', { required: true })
       <HorizontalScrollContainer>
         <div class="flex flex-row gap-2 overflow-x-scroll">
           <ConnectionLineEditor
-            v-for="(line, index) in connection.lines"
-            :key="index"
-            v-model:line="connection.lines[index]"
-            :index="index"
+            v-for="(_, i) in connection.lines"
+            :key="i"
+            v-model:line="connection.lines[i]"
+            :index="i"
             :group-index="groupIndex"
             :total="connection.lines.length"
             :mode="connection.mode"
+            @delete="deleteLine"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button icon="i-tabler-plus" label="Ajouter une ligne" class="text-nowrap" />
+            <Button icon="i-tabler-plus" label="Ajouter une ligne" class="text-nowrap" @click="addLine()" />
           </div>
         </div>
       </HorizontalScrollContainer>

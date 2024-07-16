@@ -3,13 +3,13 @@ const {
   mode,
   plain = false,
 } = defineProps<{
-  mode: Mode
+  mode: Mode | null
   plain?: boolean
 }>()
 
 const circle = computed(() => mode === 'METRO')
-const roundRectangle = computed(() => ['RER', 'TER', 'TRAIN', 'TRAIN_RER'].includes(mode))
-const square = computed(() => ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(mode))
+const roundRectangle = computed(() => ['RER', 'TER', 'TRAIN', 'TRAIN_RER'].includes(mode ?? ''))
+const square = computed(() => ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(mode ?? ''))
 </script>
 
 <template>

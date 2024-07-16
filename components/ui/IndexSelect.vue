@@ -1,13 +1,13 @@
 <script setup lang="ts">
 const { mode } = defineProps<{
-  mode: Mode
+  mode: Mode | null
 }>()
-const index = defineModel<string>({ required: true })
+const index = defineModel<string | null>({ required: true })
 
-const selectedIndex = ref<IndexChoice>(findLineByValueAndMode(index.value, mode))
+const selectedIndex = ref<IndexChoice | null>(findLineByValueAndMode(index.value, mode))
 const availableLines = computed(() => getLinesByMode(mode))
 
-watch(selectedIndex, val => index.value = val.value)
+watch(selectedIndex, val => index.value = val?.value ?? null)
 watch([() => mode, index], val => selectedIndex.value = findLineByValueAndMode(val[1], val[0]))
 </script>
 
@@ -19,7 +19,7 @@ watch([() => mode, index], val => selectedIndex.value = findLineByValueAndMode(v
     class="flex-auto"
   >
     <template #value="slotProps">
-      <div class="flex items-center gap-3">
+      <div v-if="slotProps.value" class="flex items-center gap-3">
         <div class="w-1.25em" :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.value.mode) }">
           <LineIndex class="text-xl" :mode="slotProps.value.mode" :index="slotProps.value.value" />
         </div>
