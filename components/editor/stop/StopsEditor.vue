@@ -1,4 +1,5 @@
 <script setup lang="ts">
+const confirm = useConfirm()
 const lineStore = useLine()
 const { addStop, deleteStop } = lineStore
 const { stops } = storeToRefs(lineStore)
@@ -17,6 +18,23 @@ const items = [
     command: () => {},
   },
 ]
+
+function deleteAllStops() {
+  confirm.require({
+    header: 'Pas si vite !',
+    message: 'Cette action est irréversible. Êtes-vous sûr(e) de vouloir continuer ?',
+    acceptProps: {
+      label: 'Supprimer tous les arrêts',
+      severity: 'danger',
+    },
+    rejectProps: {
+      label: 'Annuler',
+      text: true,
+      severity: 'secondary',
+    },
+    accept: () => stops.value.splice(0),
+  })
+}
 </script>
 
 <template>
@@ -35,7 +53,7 @@ const items = [
         <SplitButton icon="i-tabler-plus" label="Ajouter un arrêt" :model="items" @click="addStop(stops.length)" />
         <Button label="Réorganiser" icon="i-tabler-switch-horizontal" />
       </div>
-      <Button label="Supprimer tous les arrêts" icon="i-tabler-trash-x" severity="danger" />
+      <Button label="Supprimer tous les arrêts" icon="i-tabler-trash-x" severity="danger" @click="deleteAllStops()" />
     </div>
   </div>
 

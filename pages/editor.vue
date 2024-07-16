@@ -44,4 +44,6 @@ const { toggle, isDark } = useDark()
       </Panel>
     </div>
   </div>
+
+  <ConfirmDialog />
 </template>

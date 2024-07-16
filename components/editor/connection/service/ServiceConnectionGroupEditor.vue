@@ -24,10 +24,10 @@ const connection = defineModel<ServiceConnection>('connection', { required: true
       <HorizontalScrollContainer>
         <div class="flex flex-row gap-2 overflow-x-scroll">
           <ConnectionServiceEditor
-            v-for="(line, index) in connection.services"
-            :key="index"
-            v-model:service="connection.services[index]"
-            :index="index"
+            v-for="(_, i) in connection.services"
+            :key="i"
+            v-model:service="connection.services[i]"
+            :index="i"
             :total="connection.services.length"
           />
           <div class="p-panel p-8 flex items-center justify-center">
