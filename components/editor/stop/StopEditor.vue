@@ -20,6 +20,7 @@ const showConnectionsEditor = ref(false)
           :id="`name_stop_${index}`"
           v-model="stop.name"
           rows="2"
+          auto-resize
           class="flex-auto"
           autocomplete="off"
         />

@@ -46,7 +46,7 @@ function deleteConnection(index: number) {
         <Divider align="center" type="dotted">
           <b>Ou</b>
         </Divider>
-        <Button severity="info" icon="i-tabler-plus" label="Services de transport" @click="addServiceConnection()" />
+        <Button disabled severity="info" icon="i-tabler-plus" label="Services de transport" @click="addServiceConnection()" />
       </div>
     </div>
   </Dialog>

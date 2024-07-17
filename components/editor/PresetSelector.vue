@@ -20,7 +20,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :key="metro"
           text
           severity="secondary"
-          class="p-1 text-5xl"
+          :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('METRO', metro.value, metro.color)"
         >
           <Metro :line="metro.value" />
@@ -34,7 +34,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :key="rer"
           text
           severity="secondary"
-          class="p-1 text-5xl"
+          :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('RER', rer.value, rer.color)"
         >
           <ExpressTrain :line="rer.value" />
@@ -48,7 +48,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :key="train"
           text
           severity="secondary"
-          class="p-1 text-5xl"
+          :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('TRAIN', train.value, train.color)"
         >
           <Train :line="train.value" />
@@ -62,7 +62,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :key="tram"
           text
           severity="secondary"
-          class="p-1 text-5xl"
+          :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('TRAM', tram.value, tram.color)"
         >
           <div class="bg-white rounded">

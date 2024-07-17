@@ -16,6 +16,7 @@ const items = [
   {
     label: 'Position personnalisée',
     command: () => {},
+    disabled: true,
   },
 ]
 
@@ -51,7 +52,7 @@ function deleteAllStops() {
     <div class="flex flex-row justify-between gap-2">
       <div class="flex flex-row gap-2">
         <SplitButton icon="i-tabler-plus" label="Ajouter un arrêt" :model="items" @click="addStop(stops.length)" />
-        <Button label="Réorganiser" icon="i-tabler-switch-horizontal" />
+        <Button disabled label="Réorganiser" icon="i-tabler-switch-horizontal" />
       </div>
       <Button label="Supprimer tous les arrêts" icon="i-tabler-trash-x" severity="danger" @click="deleteAllStops()" />
     </div>
@@ -60,7 +61,7 @@ function deleteAllStops() {
   <div v-if="stops.length === 0" class="flex flex-col items-center justify-center p-20">
     <span class="text-3xl">Ligne vierge</span>
     <span>
-      <Button label="Ajouter un arrêt" link class="p-1" @click="addStop(0)" />
+      <Button label="Ajouter un arrêt" link pt:root:class="important-p-1" @click="addStop(0)" />
       <span class="opacity-50">pour commencer</span>
     </span>
   </div>

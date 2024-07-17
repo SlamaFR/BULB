@@ -93,7 +93,7 @@ const positions = [
                 option-label="label"
               />
               <span>Texte</span>
-              <Textarea v-model="ornament.text" />
+              <Textarea v-model="ornament.text" row="2" auto-resize />
             </div>
           </TabPanel>
         </TabPanels>
