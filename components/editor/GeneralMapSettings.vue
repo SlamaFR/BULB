@@ -1,6 +1,10 @@
 <script setup lang="ts">
 const { mode, index, color, stopSpacing } = storeToRefs(useLine())
+
 const showPresetSelector = ref(false)
+const showExportDialog = ref(false)
+
+const importProject = useLoadProject()
 </script>
 
 <template>
@@ -19,7 +23,8 @@ const showPresetSelector = ref(false)
       <InputNumber
         v-model="stopSpacing"
         class="flex-auto"
-        min="1"
+        :min="1"
+        :allow-empty="false"
         suffix=" unité(s)"
         show-buttons
         button-layout="horizontal"
@@ -41,11 +46,12 @@ const showPresetSelector = ref(false)
   <Divider />
 
   <div class="flex flex-row items-center content-end flex-grow gap-4">
-    <Button class="flex-grow" label="Importer un projet" icon="i-tabler-file-import" />
-    <Button class="flex-grow" label="Exporter le projet" icon="i-tabler-file-export" />
+    <Button class="flex-grow" label="Importer un projet" icon="i-tabler-file-import" @click="importProject()" />
+    <Button class="flex-grow" label="Exporter le projet" icon="i-tabler-file-export" @click="showExportDialog = true" />
   </div>
 
   <PresetSelector v-model:visible="showPresetSelector" />
+  <ExportDialog v-model:visible="showExportDialog" />
 </template>
 
 <style scoped>
