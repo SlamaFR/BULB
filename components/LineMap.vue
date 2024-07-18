@@ -2,10 +2,21 @@
 const { line } = defineProps<{
   line: Line
 }>()
+
+const exportMap = useExportMap()
+const el = ref()
+
+const exportSignal = useEventBus(ExportSignal)
+function doExport() {
+  exportMap(el.value)
+}
+
+onMounted(() => exportSignal.on(doExport))
+onBeforeUnmount(() => exportSignal.off(doExport))
 </script>
 
 <template>
-  <div class="line-map flex flex-row gap-10">
+  <div ref="el" class="line-map flex flex-row gap-10 pr-10em">
     <div class="flex flex-col min-w-fit">
       <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
       <div class="p-3">
@@ -37,5 +48,6 @@ const { line } = defineProps<{
   font-family: 'Parisine Std', sans-serif;
   background: white;
   color: var(--blue-ratp-paper);
+  width: max-content;
 }
 </style>

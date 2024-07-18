@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-black sticky top-0 z-10">
+  <div class="bg-[var(--p-primary-contrast-color)] sticky top-0 z-10">
     <Message severity="warn" pt:root:class="important-rounded-none">
       <span><b>RAPPEL</b> : </span>
       Application en phase de développement.

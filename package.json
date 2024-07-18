@@ -30,6 +30,8 @@
     "class-variance-authority": "^0.7.0",
     "consola": "^3.2.3",
     "eslint": "^9.7.0",
+    "html-to-image": "^1.11.11",
+    "html2canvas": "^1.4.1",
     "nuxt": "^3.11.2",
     "pinia": "^2.1.7",
     "primevue": "^4.0.0",

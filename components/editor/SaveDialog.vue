@@ -18,15 +18,18 @@ function doExport() {
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" modal header="Exporter le projet">
-    <div class="flex flex-col gap-4">
+  <Dialog v-model:visible="visible" modal header="Sauvegarder le projet">
+    <div class="flex flex-col gap-5">
       <div class="flex flex-row items-center gap-4">
         <span class="text-nowrap">Nom du projet</span>
-        <InputText v-model="name" />
+        <InputGroup>
+          <InputText v-model="name" />
+          <InputGroupAddon>.json</InputGroupAddon>
+        </InputGroup>
       </div>
       <div class="flex flex-row items-center justify-end flex-grow gap-4">
-        <Button text label="Annuler" @click="visible = false" />
-        <Button label="Exporter" @click="doExport()" />
+        <Button text severity="secondary" label="Annuler" @click="visible = false" />
+        <Button label="Sauvegarder" @click="doExport()" />
       </div>
     </div>
   </Dialog>

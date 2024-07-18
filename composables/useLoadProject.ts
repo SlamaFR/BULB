@@ -17,10 +17,17 @@ export default function useLoadProject() {
       lineStore.color.value = line.color
       lineStore.stops.value = line.stops
       lineStore.stopSpacing.value = line.stopSpacing
+
+      toast.add({
+        summary: 'Chargement réussi',
+        detail: 'Le projet a été chargé avec succès',
+        severity: 'success',
+        life: 5000,
+      })
     } catch (e) {
       toast.add({
-        summary: 'Fichier illisible',
-        detail: 'Le fichier est invalide ou corrompu.',
+        summary: 'Chargement échoué',
+        detail: 'Le fichier est invalide ou corrompu',
         severity: 'error',
         life: 5000,
       })
@@ -28,8 +35,8 @@ export default function useLoadProject() {
   }
   reader.onerror = (ev) => {
     toast.add({
-      summary: 'Erreur de chargement',
-      detail: 'Le fichier n’a pas pu être lu.',
+      summary: 'Chargement échoué',
+      detail: 'Le fichier n’a pas pu être lu',
       severity: 'error',
       life: 5000,
     })

@@ -132,7 +132,7 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 .subtitle-label-wrapper {
   position: absolute;
-  left: 1.2031em;
+  left: 1.25em;
   margin-left: .25em;
   top: calc(-.125em + var(--font-shift-correction));
   transform: translateY(-100%);

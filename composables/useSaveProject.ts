@@ -12,8 +12,8 @@ export default function useSaveProject() {
     a.click()
 
     toast.add({
-      summary: 'Projet sauvegardé',
-      detail: 'Le projet a été sauvegardé avec succès.',
+      summary: 'Sauvegarde réussie',
+      detail: 'Le projet a été sauvegardé avec succès',
       severity: 'success',
       life: 5000,
     })

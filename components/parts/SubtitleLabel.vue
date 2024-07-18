@@ -23,7 +23,7 @@ const {
 }
 
 .label {
-  height: calc(1em + .1875em + .1875em); // 1.375em
+  height: calc(1em + .25em + .25em); // 1.375em
   line-height: 1;
   white-space-collapse: preserve-breaks;
   text-wrap: nowrap;
@@ -31,12 +31,12 @@ const {
   rotate: -30deg;
   transform-origin: bottom left;
 
-  font-size: .45em;
+  font-size: .4375em;
   font-weight: bold;
   font-style: italic;
 
   &.interest-point {
-    padding: .1875em .25em;
+    padding: .25em .375em;
     background-color: var(--place-brown);
     color: white;
     font-weight: normal;
