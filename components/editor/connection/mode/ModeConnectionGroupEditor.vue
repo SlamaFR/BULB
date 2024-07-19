@@ -51,7 +51,7 @@ function deleteLine(index: number) {
             @delete="deleteLine"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button icon="i-tabler-plus" label="Ajouter une ligne" class="text-nowrap" @click="addLine()" />
+            <Button text icon="i-tabler-plus" label="Ajouter une ligne" class="text-nowrap" @click="addLine()" />
           </div>
         </div>
       </HorizontalScrollContainer>

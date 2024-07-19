@@ -15,7 +15,6 @@ const emit = defineEmits<{
   delete: [number]
 }>()
 const line = defineModel<ConnectionLine>('line', { required: true })
-const ornamentEditorButtonSeverity = computed(() => line.value.ornament ? 'primary' : 'secondary')
 
 const showOrnamentEditor = ref(false)
 </script>
@@ -36,8 +35,7 @@ const showOrnamentEditor = ref(false)
           class="flex-grow"
           size="small"
           label="Décoration"
-          :severity="ornamentEditorButtonSeverity"
-          outlined
+          :severity="line.ornament ? 'primary' : 'secondary'"
           @click="showOrnamentEditor = true"
         />
         <Button

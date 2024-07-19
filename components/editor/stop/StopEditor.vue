@@ -51,6 +51,7 @@ const showConnectionsEditor = ref(false)
           label="Correspondances"
           icon="i-tabler-pencil"
           text
+          :severity="stop.connections.length > 0 ? 'primary' : 'secondary'"
           @click="showConnectionsEditor = true"
         />
         <Button label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
