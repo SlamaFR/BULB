@@ -6,6 +6,18 @@ const {
 }>()
 
 const connection = defineModel<ServiceConnection>('connection', { required: true })
+
+function addService() {
+  connection.value.services.push({
+    service: null,
+    // walk: false,
+    ornament: null,
+  })
+}
+
+function deleteService(index: number) {
+  connection.value.services.splice(index, 1)
+}
 </script>
 
 <template>
@@ -29,9 +41,10 @@ const connection = defineModel<ServiceConnection>('connection', { required: true
             v-model:service="connection.services[i]"
             :index="i"
             :total="connection.services.length"
+            @delete="deleteService"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button icon="i-tabler-plus" label="Ajouter un service" class="text-nowrap" />
+            <Button text icon="i-tabler-plus" label="Ajouter un service" class="text-nowrap" @click="addService()" />
           </div>
         </div>
       </HorizontalScrollContainer>

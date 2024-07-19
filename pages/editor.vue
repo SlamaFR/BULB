@@ -13,7 +13,7 @@ const { toggle, isDark } = useDark()
           <h1 class="text-3xl">
             <strong>Beautiful Urban Line Builder</strong>
           </h1>
-          <small class="text-gray">v0.1.2-alpha</small>
+          <small class="text-gray">v0.1.3-alpha</small>
         </div>
       </template>
 

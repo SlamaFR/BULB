@@ -20,7 +20,7 @@ const showOrnamentEditor = ref(false)
 </script>
 
 <template>
-  <div class="p-3 p-panel flex flex-col gap-2">
+  <div class="p-3 p-panel flex flex-col gap-2 flex-shrink-0">
     <div class="flex flex-col gap-3">
       <div class="flex flex-row items-center gap-3">
         <IndexSelect v-model="line.lineIndex" :mode="mode" />
