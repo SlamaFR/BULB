@@ -27,13 +27,16 @@ export default defineNuxtConfig({
       link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     },
   },
+
   imports: { // add folders here to auto-import them in your application
     dirs: [
       'stores',
       'composables/**',
     ],
   },
+
   components: [{ path: '~/components', pathPrefix: false }],
+
   typescript: {
     tsConfig: {
       compilerOptions: {
@@ -41,6 +44,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   vite: {
     vue: {
       script: {
@@ -49,6 +53,7 @@ export default defineNuxtConfig({
       },
     },
   },
+
   experimental: {
     typedPages: true,
   },
@@ -60,6 +65,7 @@ export default defineNuxtConfig({
   css: [
     '@unocss/reset/tailwind-compat.css',
   ],
+
   fonts: {
     families: [
       { name: 'Parisine Std', provider: 'local', weights: ['normal', 'bold'], styles: ['normal', 'italic'] },
@@ -78,6 +84,7 @@ export default defineNuxtConfig({
     '@primevue/nuxt-module',
     '@nuxt/fonts',
   ],
+
   colorMode: {
     preference: 'system',
     fallback: 'light',
@@ -85,6 +92,7 @@ export default defineNuxtConfig({
     classSuffix: '-mode',
     storageKey: 'color-scheme',
   },
+
   primevue: {
     options: {
       theme: {
@@ -95,4 +103,6 @@ export default defineNuxtConfig({
       },
     },
   },
+
+  compatibilityDate: '2024-07-20',
 })
