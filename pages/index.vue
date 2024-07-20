@@ -1,3 +1,3 @@
 <script setup lang="ts">
-onMounted(() => navigateTo('/editor', { replace: true }))
+onMounted(() => navigateTo('/faq', { replace: true }))
 </script>
