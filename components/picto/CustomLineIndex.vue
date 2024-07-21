@@ -2,32 +2,43 @@
 const {
   index,
   prefix = 'T',
-  suffix,
+  suffix = '',
   shape,
   color,
-  textColor = '#231f20',
+  textColor = 'auto',
 } = defineProps<{
   index: string
   prefix?: string
   suffix?: string
   shape: 'CIRCLE' | 'SQUARE' | 'LINES'
   color: string
-  textColor?: string
+  textColor?: 'black' | 'white' | 'auto'
 }>()
+
+const autoColor = computed(() => textContrast(color) ? 'white' : '#231f20')
+const realTextColor = computed(() => {
+  switch (textColor) {
+    case 'black':
+      return '#231f20'
+    case 'white':
+      return 'white'
+  }
+  return autoColor.value
+})
 </script>
 
 <template>
   <div
-    class="relative"
+    class="wrapper"
     :class="{
       circle: shape === 'CIRCLE',
       square: shape === 'SQUARE',
       lines: shape === 'LINES',
     }"
   >
-    <div class="container" />
+    <Shape :shape="shape" :color="color" />
     <span class="index">
-      <span v-if="shape === 'LINES'" class="mr-.5" :class="{ narrow: ['V'].includes(prefix) }">{{ prefix }}</span>
+      <span v-if="shape === 'LINES'" class="mr-.5">{{ prefix }}</span>
       <span v-for="c in index" :class="{ narrow: c === '1' && (index.length > 1 || shape === 'LINES') }">{{ c }}</span>
       <span v-if="suffix" class="suffix">{{ suffix }}</span>
     </span>
@@ -35,11 +46,18 @@ const {
 </template>
 
 <style scoped>
-.container {
+.wrapper {
+  position: relative;
+  display: block;
   min-width: 1em;
-  max-width: 1em;
+  width: 1em;
   min-height: 1em;
-  max-height: 1em;
+  height: 1em;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
   background-color: v-bind(color);
 }
 
@@ -55,7 +73,7 @@ const {
   left: 50%;
   transform: translate(-50%, -50%);
   margin-top: -.0625em;
-  color: v-bind(textColor);
+  color: v-bind(realTextColor);
 
   .narrow {
     letter-spacing: -.1em;
@@ -70,6 +88,12 @@ const {
 .circle {
   .container {
     mask: url(assets/svg/masks/circle.svg) no-repeat;
+  }
+
+  .index .suffix {
+    font-size: 0.375em;
+    margin-top: calc(1.375em - .0625em);
+    margin-right: -.25em;
   }
 }
 

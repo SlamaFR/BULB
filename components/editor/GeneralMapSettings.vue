@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { mode, index, color, stopSpacing } = storeToRefs(useLine())
 
+const showLineIndexEditor = ref(false)
 const showPresetSelector = ref(false)
 const showSaveDialog = ref(false)
 
@@ -51,6 +52,7 @@ function exportMap() {
     </div>
 
     <div class="mt-4 flex flex-row justify-end">
+      <Button text severity="secondary" label="Éditeur d’indice" icon="i-tabler-edit-circle" @click="showLineIndexEditor = true" />
       <Button text severity="secondary" label="Réinitialiser" icon="i-tabler-arrow-back-up" @click="resetMap()" />
       <Button text label="Utiliser un préréglage" icon="i-tabler-adjustments" @click="showPresetSelector = true" />
     </div>
@@ -64,6 +66,7 @@ function exportMap() {
     <Button class="flex-grow" label="Exporter" icon="i-tabler-map-share" @click="exportMap()" />
   </div>
 
+  <LineIndexEditorDialog v-model:visible="showLineIndexEditor" />
   <PresetSelector v-model:visible="showPresetSelector" />
   <SaveDialog v-model:visible="showSaveDialog" />
 </template>

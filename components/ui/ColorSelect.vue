@@ -19,7 +19,7 @@ watch(color, val => selectedColor.value = findColorByValue(val))
         v-if="slotProps.value"
         :style="{
           backgroundColor: slotProps.value.value,
-          color: slotProps.value.textColor,
+          color: textContrast(slotProps.value.value) ? 'white' : '#231f20',
           width: 'fit-content',
         }" class="rounded px-1.5 py-.5 text-sm"
       >
@@ -30,7 +30,7 @@ watch(color, val => selectedColor.value = findColorByValue(val))
       <div
         :style="{
           backgroundColor: slotProps.option.value,
-          color: slotProps.option.textColor,
+          color: textContrast(slotProps.option.value) ? 'white' : '#231f20',
         }" class="rounded px-1.5 py-.5 text-sm"
       >
         {{ slotProps.option.label }}

@@ -13,6 +13,8 @@ declare global {
   type OrnamentPosition = 'RIGHT' | 'BOTTOM'
   type Airport = 'CDG' | 'ORY' | 'BOTH' | 'GENERIC'
 
+  type IndexShape = 'CIRCLE' | 'SQUARE' | 'LINES'
+
   interface AirportOrnament {
     position: OrnamentPosition
     airport: Airport
@@ -64,7 +66,6 @@ declare global {
   interface ColorChoice {
     value: string
     label: string
-    textColor: string
   }
   interface ModeChoice {
     value: Mode
@@ -83,6 +84,10 @@ declare global {
   }
   interface AirportChoice {
     value: Airport
+    label: string
+  }
+  interface ShapeChoice {
+    value: IndexShape
     label: string
   }
 }

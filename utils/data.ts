@@ -1,22 +1,22 @@
 export const COLORS: ColorChoice[] = [
-  { value: '#ed1c2a', label: 'Rouge coquelicot', textColor: 'white' },
-  { value: '#f78f4b', label: 'Orange', textColor: 'black' },
-  { value: '#ffcd02', label: 'Jaune Vif', textColor: 'black' },
-  { value: '#e0b03b', label: 'Jaune Ocre', textColor: 'black' },
-  { value: '#8d6539', label: 'Maron', textColor: 'white' },
-  { value: '#cec92a', label: 'Olive Clair', textColor: 'black' },
-  { value: '#9b993b', label: 'Olive Foncé', textColor: 'white' },
-  { value: '#008c5a', label: 'Vert Foncé', textColor: 'white' },
-  { value: '#77c696', label: 'Vert Clair', textColor: 'black' },
-  { value: '#00b397', label: 'Turquoise', textColor: 'white' },
-  { value: '#87d3df', label: 'Bleu Clair', textColor: 'black' },
-  { value: '#4c90cd', label: 'Bleu Outremer', textColor: 'white' },
-  { value: '#006db8', label: 'Bleu Foncé', textColor: 'black' },
-  { value: '#662c91', label: 'Violet', textColor: 'white' },
-  { value: '#bb4a9b', label: 'Magenta', textColor: 'white' },
-  { value: '#c5a3cd', label: 'Lilas', textColor: 'black' },
-  { value: '#f59fb3', label: 'Rose', textColor: 'black' },
-  { value: '#b80b4b', label: 'Rouge Framboise', textColor: 'white' },
+  { value: '#ed1c2a', label: 'Rouge Coquelicot' },
+  { value: '#f78f4b', label: 'Orange' },
+  { value: '#ffcd02', label: 'Jaune Vif' },
+  { value: '#e0b03b', label: 'Jaune Ocre' },
+  { value: '#8d6539', label: 'Maron' },
+  { value: '#cec92a', label: 'Olive Clair' },
+  { value: '#9b993b', label: 'Olive Foncé' },
+  { value: '#008c5a', label: 'Vert Foncé' },
+  { value: '#77c696', label: 'Vert Clair' },
+  { value: '#00b397', label: 'Turquoise' },
+  { value: '#87d3df', label: 'Bleu Clair' },
+  { value: '#4c90cd', label: 'Bleu Outremer' },
+  { value: '#006db8', label: 'Bleu Foncé' },
+  { value: '#662c91', label: 'Violet' },
+  { value: '#bb4a9b', label: 'Magenta' },
+  { value: '#c5a3cd', label: 'Lilas' },
+  { value: '#f59fb3', label: 'Rose' },
+  { value: '#b80b4b', label: 'Rouge Framboise' },
 ]
 
 export const MODES: ModeChoice[] = [
@@ -108,6 +108,12 @@ export const AIRPORTS: AirportChoice[] = [
   { value: 'BOTH', label: 'CDG + ORY' },
 ]
 
+export const SHAPES: ShapeChoice[] = [
+  { value: 'CIRCLE', label: 'Cercle' },
+  { value: 'SQUARE', label: 'Carré' },
+  { value: 'LINES', label: 'Lignes' },
+]
+
 export function findModeByValue(value: Mode | null) {
   return MODES.find(mode => mode.value === value) ?? null
 }
@@ -133,7 +139,10 @@ export function getLinesByMode(mode: Mode | null) {
 }
 
 export function findColorByValue(value: string | null) {
-  return COLORS.find(color => color.value === value) ?? null
+  return COLORS.find(color => color.value === value) ?? {
+    value,
+    label: 'Personnalisée',
+  } as ColorChoice
 }
 
 export function findServiceByValue(value: Service | null) {
@@ -142,4 +151,8 @@ export function findServiceByValue(value: Service | null) {
 
 export function findAirportVyValue(value: Airport | null) {
   return AIRPORTS.find(airport => airport.value === value) ?? null
+}
+
+export function findShapeByValue(value: IndexShape | null) {
+  return SHAPES.find(shape => shape.value === value) ?? null
 }
