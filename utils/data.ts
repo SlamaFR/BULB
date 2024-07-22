@@ -1,33 +1,37 @@
+import * as Colors from '~/data/colors'
+import * as Modes from '~/data/modes'
+import * as Services from '~/data/services'
+
 export const COLORS: ColorChoice[] = [
-  { value: '#ed1c2a', label: 'Rouge Coquelicot' },
-  { value: '#f78f4b', label: 'Orange' },
-  { value: '#ffcd02', label: 'Jaune Vif' },
-  { value: '#e0b03b', label: 'Jaune Ocre' },
-  { value: '#8d6539', label: 'Maron' },
-  { value: '#cec92a', label: 'Olive Clair' },
-  { value: '#9b993b', label: 'Olive Foncé' },
-  { value: '#008c5a', label: 'Vert Foncé' },
-  { value: '#77c696', label: 'Vert Clair' },
-  { value: '#00b397', label: 'Turquoise' },
-  { value: '#87d3df', label: 'Bleu Clair' },
-  { value: '#4c90cd', label: 'Bleu Outremer' },
-  { value: '#006db8', label: 'Bleu Foncé' },
-  { value: '#662c91', label: 'Violet' },
-  { value: '#bb4a9b', label: 'Magenta' },
-  { value: '#c5a3cd', label: 'Lilas' },
-  { value: '#f59fb3', label: 'Rose' },
-  { value: '#b80b4b', label: 'Rouge Framboise' },
+  Colors.ROUGE_COQUELICOT,
+  Colors.ORANGE,
+  Colors.JAUNE_VIF,
+  Colors.JAUNE_OCRE,
+  Colors.MARON,
+  Colors.OLIVE_CLAIR,
+  Colors.OLIVE_FONCE,
+  Colors.VERT_FONCE,
+  Colors.VERT_CLAIR,
+  Colors.TURQUOISE,
+  Colors.BLEU_CLAIR,
+  Colors.BLEU_OUTREMER,
+  Colors.BLEU_FONCE,
+  Colors.VIOLET,
+  Colors.MAGENTA,
+  Colors.LILAS,
+  Colors.ROSE,
+  Colors.ROUGE_FRAMBOISE,
 ]
 
 export const MODES: ModeChoice[] = [
-  { value: 'BOAT', label: 'Navette fluviale' },
-  { value: 'BUS', label: 'Bus' },
-  { value: 'CABLE', label: 'Téléphérique' },
-  { value: 'METRO', label: 'Métro' },
-  { value: 'RER', label: 'RER' },
-  { value: 'TRAIN', label: 'Transilien' },
-  { value: 'TRAM', label: 'Tramway' },
-  { value: 'VELO', label: 'Vélo' },
+  Modes.BOAT,
+  Modes.BUS,
+  Modes.CABLE,
+  Modes.METRO,
+  Modes.RER,
+  Modes.TRAIN,
+  Modes.TRAM,
+  Modes.VELO,
 ]
 
 export const CABLE_LINES: IndexChoice[] = [
@@ -96,9 +100,9 @@ export const TRAM_LINES: IndexChoice[] = [
 ]
 
 export const SERVICES: ServiceChoice[] = [
-  { value: 'MAIN_STATION', label: 'Grande gare', background: true },
-  { value: 'FUNICULAR', label: 'Funiculaire', background: true },
-  { value: 'AIRPORT', label: 'Aéroport', background: false },
+  Services.MAIN_STATION,
+  Services.FUNICULAR,
+  Services.AIRPORT,
 ]
 
 export const AIRPORTS: AirportChoice[] = [
@@ -139,6 +143,7 @@ export function getLinesByMode(mode: Mode | null) {
 }
 
 export function findColorByValue(value: string | null) {
+  if (value === null) return null
   return COLORS.find(color => color.value === value) ?? {
     value,
     label: 'Personnalisée',

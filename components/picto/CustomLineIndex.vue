@@ -5,26 +5,15 @@ const {
   suffix = '',
   shape,
   color,
-  textColor = 'auto',
 } = defineProps<{
   index: string
   prefix?: string
   suffix?: string
   shape: 'CIRCLE' | 'SQUARE' | 'LINES'
   color: string
-  textColor?: 'black' | 'white' | 'auto'
 }>()
 
-const autoColor = computed(() => textContrast(color) ? 'white' : '#231f20')
-const realTextColor = computed(() => {
-  switch (textColor) {
-    case 'black':
-      return '#231f20'
-    case 'white':
-      return 'white'
-  }
-  return autoColor.value
-})
+const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
 </script>
 
 <template>
@@ -71,9 +60,14 @@ const realTextColor = computed(() => {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, calc(-50% - 0.033em));
   margin-top: -.0625em;
-  color: v-bind(realTextColor);
+  color: v-bind(textColor);
+
+  .circle &:has(.narrow),
+  .square &:has(.narrow) {
+    transform: translate(calc(-50% - 0.033em), calc(-50% - 0.033em));
+  }
 
   .narrow {
     letter-spacing: -.1em;

@@ -4,52 +4,56 @@ import BColorPicker from '~/components/ui/BColorPicker.vue'
 const visible = defineModel<boolean>('visible')
 
 const indexProps = reactive({
-  shape: 'LINES',
-  index: '1',
-  prefix: 'T',
-  suffix: 'a',
-  color: '#000000',
+  shape: null,
+  index: '',
+  prefix: '',
+  suffix: '',
+  color: null,
 })
 </script>
 
 <template>
   <Dialog
     v-model:visible="visible"
-    header="Éditeur d’indice de ligne"
     modal
     pt:root:class="min-w-25em"
     pt:header:class="gap-6"
   >
+    <template #header>
+      <div class="flex flex-row gap-2 items-center">
+        <span class="p-dialog-title">Éditeur d’indice de ligne</span>
+        <Tag rounded severity="info" value="Nouveau" />
+      </div>
+    </template>
     <div class="content">
       <div class="form">
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-1 col-span-2">
           <label>Forme</label>
           <ShapeSelect v-model="indexProps.shape" />
         </div>
-        <div class="flex flex-col gap-1">
+        <div class="flex flex-col gap-1 col-span-2">
           <label for="index_editor_index">Indice</label>
-          <InputText
-            id="index_editor_index"
-            v-model="indexProps.index"
-          />
-        </div>
-        <div class="flex flex-col gap-1">
-          <label for="index_editor_prefix">Préfixe</label>
-          <InputText
-            id="index_editor_prefix"
-            v-model="indexProps.prefix"
-            :disabled="indexProps.shape !== 'LINES'"
-          />
-        </div>
-        <div class="flex flex-col gap-1">
-          <label for="index_editor_suffix">Suffixe</label>
-          <InputText
-            id="index_editor_suffix"
-            v-model="indexProps.suffix"
-          />
+          <InputGroup>
+            <InputText
+              id="index_editor_prefix"
+              v-model="indexProps.prefix"
+              :disabled="indexProps.shape !== 'LINES'"
+              placeholder="Préfixe"
+            />
+            <InputText
+              id="index_editor_index"
+              v-model="indexProps.index"
+              placeholder="Valeur"
+            />
+            <InputText
+              id="index_editor_suffix"
+              v-model="indexProps.suffix"
+              placeholder="Suffixe"
+            />
+          </InputGroup>
         </div>
         <div class="flex flex-col gap-1 col-span-2">
-          <label for="index_editor_suffix">Couleur</label>
+          <label>Couleur</label>
           <div class="grid cols-2 items-center gap-4">
             <ColorSelect v-model="indexProps.color" />
             <BColorPicker v-model="indexProps.color" />
@@ -82,6 +86,7 @@ const indexProps = reactive({
 
 .form {
   display: grid;
+  max-width: 25em;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }

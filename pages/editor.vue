@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import CustomLineIndexDirectoryDialog from '~/components/editor/CustomLineIndexDirectoryDialog.vue'
+
 const lineStore = useLine()
 const { line } = storeToRefs(lineStore)
 </script>
@@ -13,16 +15,27 @@ const { line } = storeToRefs(lineStore)
       </div>
     </Panel>
 
-    <div class="grid cols-5 gap-5 flex-grow">
-      <Panel class="col-span-2" header="Réglages généraux">
+    <div class="bottom-container">
+      <Panel header="Réglages généraux">
         <GeneralMapSettings />
       </Panel>
 
-      <Panel class="col-span-3" header="Liste des arrêts">
+      <Panel class="overflow-x-auto" header="Liste des arrêts">
         <StopsEditor />
       </Panel>
     </div>
   </div>
 
   <ConfirmDialog />
+  <CustomLineIndexDirectoryDialog visible />
 </template>
+
+<style scoped>
+.bottom-container {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  width: 100%;
+  gap: 1rem;
+  align-items: stretch;
+}
+</style>

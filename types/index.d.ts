@@ -90,6 +90,14 @@ declare global {
     value: IndexShape
     label: string
   }
+
+  interface CustomLineIndex {
+    index: string
+    prefix?: string
+    suffix?: string
+    shape: IndexShape
+    color: string
+  }
 }
 
 export {}
