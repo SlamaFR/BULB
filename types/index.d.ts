@@ -27,7 +27,7 @@ declare global {
   type OrnamentType = 'AIRPORT' | 'TEXT'
 
   interface ConnectionLine {
-    lineIndex: string | null
+    lineIndex: string | CustomLineIndex | null
     walk: boolean
     ornament: Ornament | null
   }
@@ -57,7 +57,7 @@ declare global {
 
   interface Line {
     mode: Mode | null
-    index: string | null
+    index: string | CustomLineIndex | null
     color: string | null
     stops: Stop[]
     stopSpacing: number
@@ -72,7 +72,7 @@ declare global {
     label: string
   }
   interface IndexChoice {
-    value: string
+    value: string | CustomLineIndex
     label: string
     color: string
     mode: Mode

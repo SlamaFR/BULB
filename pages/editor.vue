@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import CustomLineIndexDirectoryDialog from '~/components/editor/CustomLineIndexDirectoryDialog.vue'
-
 const lineStore = useLine()
 const { line } = storeToRefs(lineStore)
 </script>
@@ -16,7 +14,11 @@ const { line } = storeToRefs(lineStore)
     </Panel>
 
     <div class="bottom-container">
-      <Panel header="Réglages généraux">
+      <Panel header="Menu principal">
+        <MainMenu />
+      </Panel>
+
+      <Panel header="Réglages du projet">
         <GeneralMapSettings />
       </Panel>
 
@@ -26,14 +28,13 @@ const { line } = storeToRefs(lineStore)
     </div>
   </div>
 
-  <ConfirmDialog />
-  <CustomLineIndexDirectoryDialog visible />
+  <ConfirmDialog pt:root:class="max-w-40em" />
 </template>
 
 <style scoped>
 .bottom-container {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto auto 1fr;
   width: 100%;
   gap: 1rem;
   align-items: stretch;

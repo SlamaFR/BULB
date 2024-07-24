@@ -35,7 +35,7 @@ export const MODES: ModeChoice[] = [
 ]
 
 export const CABLE_LINES: IndexChoice[] = [
-  { value: '1', label: 'Câble 1', color: '#4c90cd', mode: 'CABLE' },
+  { value: '1', label: 'Câble C1', color: '#4c90cd', mode: 'CABLE' },
 ]
 
 export const METRO_LINES: IndexChoice[] = [
@@ -82,21 +82,21 @@ export const TRAIN_LINES: IndexChoice[] = [
 ]
 
 export const TRAM_LINES: IndexChoice[] = [
-  { value: '1', label: 'Tramway 1', color: '#006db8', mode: 'TRAM' },
-  { value: '2', label: 'Tramway 2', color: '#bb4a9b', mode: 'TRAM' },
-  { value: '3a', label: 'Tramway 3a', color: '#f78f4b', mode: 'TRAM' },
-  { value: '3b', label: 'Tramway 3b', color: '#008c5a', mode: 'TRAM' },
-  { value: '4', label: 'Tramway 4', color: '#e0b03b', mode: 'TRAM' },
-  { value: '5', label: 'Tramway 5', color: '#662c91', mode: 'TRAM' },
-  { value: '6', label: 'Tramway 6', color: '#ed1c2a', mode: 'TRAM' },
-  { value: '7', label: 'Tramway 7', color: '#8d6539', mode: 'TRAM' },
-  { value: '8', label: 'Tramway 8', color: '#9b993b', mode: 'TRAM' },
-  { value: '9', label: 'Tramway 9', color: '#4c90cd', mode: 'TRAM' },
-  { value: '10', label: 'Tramway 10', color: '#9b993b', mode: 'TRAM' },
-  { value: '11', label: 'Tramway 11', color: '#f78f4b', mode: 'TRAM' },
-  { value: '12', label: 'Tramway 12', color: '#b80b4b', mode: 'TRAM' },
-  { value: '13', label: 'Tramway 13', color: '#8d6539', mode: 'TRAM' },
-  { value: '14', label: 'Tramway 14', color: '#00b397', mode: 'TRAM' },
+  { value: '1', label: 'Tramway T1', color: '#006db8', mode: 'TRAM' },
+  { value: '2', label: 'Tramway T2', color: '#bb4a9b', mode: 'TRAM' },
+  { value: '3a', label: 'Tramway T3a', color: '#f78f4b', mode: 'TRAM' },
+  { value: '3b', label: 'Tramway T3b', color: '#008c5a', mode: 'TRAM' },
+  { value: '4', label: 'Tramway T4', color: '#e0b03b', mode: 'TRAM' },
+  { value: '5', label: 'Tramway T5', color: '#662c91', mode: 'TRAM' },
+  { value: '6', label: 'Tramway T6', color: '#ed1c2a', mode: 'TRAM' },
+  { value: '7', label: 'Tramway T7', color: '#8d6539', mode: 'TRAM' },
+  { value: '8', label: 'Tramway T8', color: '#9b993b', mode: 'TRAM' },
+  { value: '9', label: 'Tramway T9', color: '#4c90cd', mode: 'TRAM' },
+  { value: '10', label: 'Tramway T10', color: '#9b993b', mode: 'TRAM' },
+  { value: '11', label: 'Tramway T11', color: '#f78f4b', mode: 'TRAM' },
+  { value: '12', label: 'Tramway T12', color: '#b80b4b', mode: 'TRAM' },
+  { value: '13', label: 'Tramway T13', color: '#8d6539', mode: 'TRAM' },
+  { value: '14', label: 'Tramway T14', color: '#00b397', mode: 'TRAM' },
 ]
 
 export const SERVICES: ServiceChoice[] = [

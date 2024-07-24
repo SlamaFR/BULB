@@ -1,14 +1,47 @@
 <script setup lang="ts">
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+
 const { mode } = defineProps<{
   mode: Mode | null
 }>()
-const index = defineModel<string | null>({ required: true })
+const index = defineModel<string | CustomLineIndex | null>({ required: true })
+const { getModeIndices } = useCustomLineIndices()
 
-const selectedIndex = ref<IndexChoice | null>(findLineByValueAndMode(index.value, mode))
-const availableLines = computed(() => getLinesByMode(mode))
+const selectedIndex = ref<IndexChoice | null>(indexToChoice(index.value, mode))
+const availableDefaultLines = computed(() => getLinesByMode(mode))
+const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
+  value: it,
+  label: `Ligne ${it.prefix}${it.index}${it.suffix}`,
+  color: it.color,
+  mode,
+})))
+const availableLines = computed(() => [
+  {
+    label: 'Indices officiels',
+    items: availableDefaultLines.value,
+  },
+  {
+    label: 'Indices personnalisés',
+    items: availableCustomLines.value,
+  },
+])
 
 watch(selectedIndex, val => index.value = val?.value ?? null)
-watch([() => mode, index], val => selectedIndex.value = findLineByValueAndMode(val[1], val[0]))
+watch([() => mode, index], val => selectedIndex.value = indexToChoice(val[1], val[0]))
+
+function indexToChoice(index: string | CustomLineIndex | null, mode: Mode | null) {
+  if (index === null) return null
+  if (isDefaultIndex(index)) return findLineByValueAndMode(index, mode)
+  if (isCustomIndex(index)) {
+    return {
+      value: index,
+      label: `Ligne ${index.prefix}${index.index}${index.suffix}`,
+      color: index.color,
+      mode,
+    } as IndexChoice
+  }
+  return null
+}
 </script>
 
 <template>
@@ -16,6 +49,8 @@ watch([() => mode, index], val => selectedIndex.value = findLineByValueAndMode(v
     v-model="selectedIndex"
     :options="availableLines"
     placeholder="Selectionner un indice"
+    option-group-children="items"
+    option-group-label="label"
     class="flex-auto"
   >
     <template #value="slotProps">

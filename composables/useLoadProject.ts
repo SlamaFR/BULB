@@ -24,7 +24,7 @@ export default function useLoadProject() {
         severity: 'success',
         life: 5000,
       })
-    } catch (e) {
+    } catch (_) {
       toast.add({
         summary: 'Chargement échoué',
         detail: 'Le fichier est invalide ou corrompu',
@@ -33,7 +33,7 @@ export default function useLoadProject() {
       })
     }
   }
-  reader.onerror = (ev) => {
+  reader.onerror = () => {
     toast.add({
       summary: 'Chargement échoué',
       detail: 'Le fichier n’a pas pu être lu',

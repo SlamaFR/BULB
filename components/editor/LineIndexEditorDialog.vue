@@ -1,15 +1,8 @@
 <script setup lang="ts">
 import BColorPicker from '~/components/ui/BColorPicker.vue'
 
+const index = defineModel<CustomLineIndex>({ required: true })
 const visible = defineModel<boolean>('visible')
-
-const indexProps = reactive({
-  shape: null,
-  index: '',
-  prefix: '',
-  suffix: '',
-  color: null,
-})
 </script>
 
 <template>
@@ -22,32 +15,32 @@ const indexProps = reactive({
     <template #header>
       <div class="flex flex-row gap-2 items-center">
         <span class="p-dialog-title">Éditeur d’indice de ligne</span>
-        <Tag rounded severity="info" value="Nouveau" />
+        <Tag rounded severity="info" value="Bêta" />
       </div>
     </template>
     <div class="content">
       <div class="form">
         <div class="flex flex-col gap-1 col-span-2">
           <label>Forme</label>
-          <ShapeSelect v-model="indexProps.shape" />
+          <ShapeSelect v-model="index.shape" />
         </div>
         <div class="flex flex-col gap-1 col-span-2">
           <label for="index_editor_index">Indice</label>
           <InputGroup>
             <InputText
               id="index_editor_prefix"
-              v-model="indexProps.prefix"
-              :disabled="indexProps.shape !== 'LINES'"
+              v-model="index.prefix"
+              :disabled="index.shape !== 'LINES'"
               placeholder="Préfixe"
             />
             <InputText
               id="index_editor_index"
-              v-model="indexProps.index"
+              v-model="index.index"
               placeholder="Valeur"
             />
             <InputText
               id="index_editor_suffix"
-              v-model="indexProps.suffix"
+              v-model="index.suffix"
               placeholder="Suffixe"
             />
           </InputGroup>
@@ -55,19 +48,19 @@ const indexProps = reactive({
         <div class="flex flex-col gap-1 col-span-2">
           <label>Couleur</label>
           <div class="grid cols-2 items-center gap-4">
-            <ColorSelect v-model="indexProps.color" />
-            <BColorPicker v-model="indexProps.color" />
+            <ColorSelect v-model="index.color" />
+            <BColorPicker v-model="index.color" />
           </div>
         </div>
       </div>
       <Panel header="Prévisualisation">
         <div class="text-10em bg-white p-3 rounded-lg">
           <CustomLineIndex
-            :shape="indexProps.shape"
-            :index="indexProps.index"
-            :prefix="indexProps.prefix"
-            :suffix="indexProps.suffix"
-            :color="indexProps.color"
+            :shape="index.shape"
+            :index="index.index"
+            :prefix="index.prefix"
+            :suffix="index.suffix"
+            :color="index.color"
             text-color="auto"
           />
         </div>

@@ -1,5 +1,21 @@
 <script setup lang="ts">
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+
 const visible = defineModel<boolean>('visible')
+const { getModeIndices, createNewIndex } = useCustomLineIndices()
+
+const showEditor = ref(false)
+const selectedIndex = ref<CustomLineIndex | null>(null)
+
+function create(mode: Mode) {
+  selectedIndex.value = createNewIndex(mode)
+  showEditor.value = true
+}
+
+function edit(index: CustomLineIndex) {
+  selectedIndex.value = index
+  showEditor.value = true
+}
 </script>
 
 <template>
@@ -13,14 +29,18 @@ const visible = defineModel<boolean>('visible')
       </template>
       <div class="btn-group">
         <Button
+          v-for="index in getModeIndices(mode.value)"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
+          @click="edit(index)"
         >
           <CustomLineIndex
-            shape="CIRCLE"
-            index="19"
-            color="#2CA90FFF"
+            :shape="index.shape"
+            :prefix="index.prefix"
+            :index="index.index"
+            :suffix="index.suffix"
+            :color="index.color"
           />
         </Button>
         <Button
@@ -28,10 +48,13 @@ const visible = defineModel<boolean>('visible')
           severity="secondary"
           icon="i-tabler-plus"
           :pt="{ root: { class: 'important-p-1 important-text-2xl important-w-3.625rem important-h-3.625rem' } }"
+          @click="create(mode.value)"
         />
       </div>
     </Fieldset>
   </Dialog>
+
+  <LineIndexEditorDialog v-model="selectedIndex" v-model:visible="showEditor" />
 </template>
 
 <style scoped>
