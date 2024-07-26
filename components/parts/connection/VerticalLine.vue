@@ -9,7 +9,7 @@ const {
 </script>
 
 <template>
-  <div class="sep-line" :class="{ large }" />
+  <div class="sep-line" :class="{ large, inner }" />
 </template>
 
 <style scoped lang="scss">
@@ -29,6 +29,10 @@ const {
   &.inner {
     position: absolute;
     height: calc(100% - 1em - (.0625em * 2));
+  }
+
+  .connection-group:last-child & {
+    display: none;
   }
 }
 </style>

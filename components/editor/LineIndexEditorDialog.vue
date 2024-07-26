@@ -6,8 +6,6 @@ const emit = defineEmits<{
 }>()
 const index = defineModel<CustomLineIndexDescription>({ required: true })
 const visible = defineModel<boolean>('visible')
-
-const e = reactive(index)
 </script>
 
 <template>

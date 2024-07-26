@@ -65,7 +65,7 @@ const positions = [
           </Tab>
         </TabList>
         <TabPanels>
-          <TabPanel :value="null">
+          <TabPanel value="">
             <span class="opacity-50">Aucune décoration disponible</span>
           </TabPanel>
           <TabPanel value="AIRPORT">

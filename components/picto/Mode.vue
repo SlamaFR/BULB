@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const {
   mode,
-  plain = false,
 } = defineProps<{
   mode: Mode | null
-  plain?: boolean
 }>()
 
 const circle = computed(() => mode === 'METRO')

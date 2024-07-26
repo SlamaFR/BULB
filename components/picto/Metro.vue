@@ -69,11 +69,12 @@ const picto = computed(() => {
     case '18':
       return LINE_18
   }
+  return null
 })
 </script>
 
 <template>
-  <img :src="picto" alt="metro" class="picto">
+  <img v-if="picto" :src="picto" alt="metro" class="picto">
 </template>
 
 <style scoped lang="scss">

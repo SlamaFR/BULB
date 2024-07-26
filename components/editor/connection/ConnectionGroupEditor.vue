@@ -1,10 +1,8 @@
 <script setup lang="ts">
 const {
   index,
-  total,
 } = defineProps<{
   index: number
-  total: number
 }>()
 
 const emit = defineEmits<{

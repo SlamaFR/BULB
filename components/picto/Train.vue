@@ -36,11 +36,12 @@ const picto = computed(() => {
     case 'V':
       return TRAIN_V
   }
+  return null
 })
 </script>
 
 <template>
-  <img :src="picto" alt="metro" class="picto">
+  <img v-if="picto" :src="picto" alt="metro" class="picto">
 </template>
 
 <style scoped lang="scss">

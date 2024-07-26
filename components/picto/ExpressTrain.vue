@@ -24,11 +24,12 @@ const picto = computed(() => {
     case 'E':
       return RER_E
   }
+  return null
 })
 </script>
 
 <template>
-  <img :src="picto" alt="rer" class="picto">
+  <img v-if="picto" :src="picto" alt="rer" class="picto">
 </template>
 
 <style scoped lang="scss">

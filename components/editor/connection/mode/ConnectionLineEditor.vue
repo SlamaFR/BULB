@@ -2,12 +2,10 @@
 const {
   index,
   groupIndex,
-  total,
   mode,
 } = defineProps<{
   index: number
   groupIndex: number
-  total: number
   mode: Mode | null
 }>()
 

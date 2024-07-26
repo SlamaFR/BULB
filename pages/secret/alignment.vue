@@ -10,7 +10,7 @@ const innerCombination = name.flatMap(name => placeName.map(placeName => ({ name
 <template>
   <div v-for="combination1 in combinations" class="px-15 pt-30 flex flex-col gap-30">
     <div v-for="combination2 in innerCombination" class="flex flex-row gap-40">
-      <Line v-for="combination3 in combinations" color="#82C8E6">
+      <Line v-for="combination3 in combinations" color="#82C8E6" stop-spacing="1">
         <Stop
           :name="combination1.name"
           :subtitle="combination1.placeName"

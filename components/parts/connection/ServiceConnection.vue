@@ -19,17 +19,6 @@ const {
 </template>
 
 <style scoped lang="scss">
-.connection-group {
-  & .connection-group-mode .sep-line {
-    position: absolute;
-    height: calc(100% - 1em - (.0625em * 2));
-  }
-
-  &:last-child .connection-group-mode .sep-line {
-    display: none;
-  }
-}
-
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);
