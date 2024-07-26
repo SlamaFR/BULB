@@ -2,19 +2,26 @@
 import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 
 const visible = defineModel<boolean>('visible')
-const { getModeIndices, createNewIndex } = useCustomLineIndices()
+const { getModeIndices, createNewIndex, deleteById } = useCustomLineIndices()
 
 const showEditor = ref(false)
-const selectedIndex = ref<CustomLineIndex | null>(null)
+const selectedIndex = ref<CustomLineIndexDescription | null>(null)
 
 function create(mode: Mode) {
   selectedIndex.value = createNewIndex(mode)
   showEditor.value = true
 }
 
-function edit(index: CustomLineIndex) {
+function edit(index: CustomLineIndexDescription) {
   selectedIndex.value = index
   showEditor.value = true
+}
+
+function deleteIndex() {
+  if (selectedIndex.value) {
+    deleteById(selectedIndex.value.id)
+    showEditor.value = false
+  }
 }
 </script>
 
@@ -54,7 +61,12 @@ function edit(index: CustomLineIndex) {
     </Fieldset>
   </Dialog>
 
-  <LineIndexEditorDialog v-model="selectedIndex" v-model:visible="showEditor" />
+  <LineIndexEditorDialog
+    v-if="selectedIndex"
+    v-model="selectedIndex"
+    v-model:visible="showEditor"
+    @delete="deleteIndex"
+  />
 </template>
 
 <style scoped>

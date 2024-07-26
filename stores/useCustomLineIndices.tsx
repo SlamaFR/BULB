@@ -1,29 +1,34 @@
-interface ModeIndices {
-  [mode: string]: CustomLineIndex[]
-}
+import { v4 as uuidv4 } from 'uuid'
 
 export const useCustomLineIndices = defineStore('customLineIndices', () => {
-  const indices = reactive<ModeIndices>({})
-  const keys = computed(() => Object.keys(indices) as Mode[])
+  const indices = ref<CustomLineIndexDescription[]>([])
 
-  function getModeIndices(mode: Mode | null): CustomLineIndex[] {
-    if (mode === null) return []
-    if (!keys.value.includes(mode)) {
-      indices[mode] = []
-    }
-    return indices[mode]
+  function getModeIndices(mode: Mode | null): CustomLineIndexDescription[] {
+    return indices.value.filter(index => index.mode === mode)
   }
 
-  function createNewIndex(mode: Mode) {
-    const modeIndices = getModeIndices(mode) as CustomLineIndex[]
-    const newIndex = {
-      shape: 'CIRCLE' as IndexShape,
+  function findIndexById(id: string): CustomLineIndexDescription | null {
+    return indices.value.find(index => index.id === id) ?? null
+  }
+
+  function deleteById(id: string): void {
+    const index = findIndexById(id)
+    if (index) {
+      indices.value.splice(indices.value.indexOf(index), 1)
+    }
+  }
+
+  function createNewIndex(mode: Mode): CustomLineIndexDescription {
+    const newIndex: CustomLineIndexDescription = {
+      id: uuidv4(),
+      shape: 'CIRCLE',
+      mode,
       prefix: '',
       index: '',
       suffix: '',
       color: '#000000',
     }
-    modeIndices.push(newIndex)
+    indices.value.push(newIndex)
 
     return newIndex
   }
@@ -31,6 +36,8 @@ export const useCustomLineIndices = defineStore('customLineIndices', () => {
   return {
     indices,
     getModeIndices,
+    findIndexById,
+    deleteById,
     createNewIndex,
   }
 }, {

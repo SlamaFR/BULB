@@ -34,69 +34,69 @@ export const MODES: ModeChoice[] = [
   Modes.VELO,
 ]
 
-export const CABLE_LINES: IndexChoice[] = [
-  { value: '1', label: 'Câble C1', color: '#4c90cd', mode: 'CABLE' },
+export const CABLE_LINES: IndexChoice<BuiltinLineIndex>[] = [
+  { value: { index: '1', mode: 'CABLE' }, label: 'Câble C1', color: '#4c90cd' },
 ]
 
-export const METRO_LINES: IndexChoice[] = [
-  { value: '1', label: 'Ligne 1', color: '#ffcd02', mode: 'METRO' },
-  { value: '2', label: 'Ligne 2', color: '#006db8', mode: 'METRO' },
-  { value: '3', label: 'Ligne 3', color: '#9b993b', mode: 'METRO' },
-  { value: '3bis', label: 'Ligne 3 bis', color: '#87d3df', mode: 'METRO' },
-  { value: '4', label: 'Ligne 4', color: '#bb4a9b', mode: 'METRO' },
-  { value: '5', label: 'Ligne 5', color: '#f78f4b', mode: 'METRO' },
-  { value: '6', label: 'Ligne 6', color: '#77c696', mode: 'METRO' },
-  { value: '7', label: 'Ligne 7', color: '#f59fb3', mode: 'METRO' },
-  { value: '7bis', label: 'Ligne 7 bis', color: '#77c696', mode: 'METRO' },
-  { value: '8', label: 'Ligne 8', color: '#c5a3cd', mode: 'METRO' },
-  { value: '9', label: 'Ligne 9', color: '#cec92a', mode: 'METRO' },
-  { value: '10', label: 'Ligne 10', color: '#e0b03b', mode: 'METRO' },
-  { value: '11', label: 'Ligne 11', color: '#8d6539', mode: 'METRO' },
-  { value: '12', label: 'Ligne 12', color: '#008c5a', mode: 'METRO' },
-  { value: '13', label: 'Ligne 13', color: '#87d3df', mode: 'METRO' },
-  { value: '14', label: 'Ligne 14', color: '#662c91', mode: 'METRO' },
-  { value: '15', label: 'Ligne 15', color: '#b80b4b', mode: 'METRO' },
-  { value: '16', label: 'Ligne 16', color: '#f59fb3', mode: 'METRO' },
-  { value: '17', label: 'Ligne 17', color: '#cec92a', mode: 'METRO' },
-  { value: '18', label: 'Ligne 18', color: '#00b397', mode: 'METRO' },
+export const METRO_LINES: IndexChoice<BuiltinLineIndex>[] = [
+  { value: { index: '1', mode: 'METRO' }, label: 'Ligne 1', color: '#ffcd02' },
+  { value: { index: '2', mode: 'METRO' }, label: 'Ligne 2', color: '#006db8' },
+  { value: { index: '3', mode: 'METRO' }, label: 'Ligne 3', color: '#9b993b' },
+  { value: { index: '3bis', mode: 'METRO' }, label: 'Ligne 3 bis', color: '#87d3df' },
+  { value: { index: '4', mode: 'METRO' }, label: 'Ligne 4', color: '#bb4a9b' },
+  { value: { index: '5', mode: 'METRO' }, label: 'Ligne 5', color: '#f78f4b' },
+  { value: { index: '6', mode: 'METRO' }, label: 'Ligne 6', color: '#77c696' },
+  { value: { index: '7', mode: 'METRO' }, label: 'Ligne 7', color: '#f59fb3' },
+  { value: { index: '7bis', mode: 'METRO' }, label: 'Ligne 7 bis', color: '#77c696' },
+  { value: { index: '8', mode: 'METRO' }, label: 'Ligne 8', color: '#c5a3cd' },
+  { value: { index: '9', mode: 'METRO' }, label: 'Ligne 9', color: '#cec92a' },
+  { value: { index: '10', mode: 'METRO' }, label: 'Ligne 10', color: '#e0b03b' },
+  { value: { index: '11', mode: 'METRO' }, label: 'Ligne 11', color: '#8d6539' },
+  { value: { index: '12', mode: 'METRO' }, label: 'Ligne 12', color: '#008c5a' },
+  { value: { index: '13', mode: 'METRO' }, label: 'Ligne 13', color: '#87d3df' },
+  { value: { index: '14', mode: 'METRO' }, label: 'Ligne 14', color: '#662c91' },
+  { value: { index: '15', mode: 'METRO' }, label: 'Ligne 15', color: '#b80b4b' },
+  { value: { index: '16', mode: 'METRO' }, label: 'Ligne 16', color: '#f59fb3' },
+  { value: { index: '17', mode: 'METRO' }, label: 'Ligne 17', color: '#cec92a' },
+  { value: { index: '18', mode: 'METRO' }, label: 'Ligne 18', color: '#00b397' },
 ]
 
-export const RER_LINES: IndexChoice[] = [
-  { value: 'A', label: 'RER A', color: '#ed1c2a', mode: 'RER' },
-  { value: 'B', label: 'RER B', color: '#4c90cd', mode: 'RER' },
-  { value: 'C', label: 'RER C', color: '#ffcd02', mode: 'RER' },
-  { value: 'D', label: 'RER D', color: '#008c5a', mode: 'RER' },
-  { value: 'E', label: 'RER E', color: '#bb4a9b', mode: 'RER' },
+export const RER_LINES: IndexChoice<BuiltinLineIndex>[] = [
+  { value: { index: 'A', mode: 'RER' }, label: 'RER A', color: '#ed1c2a' },
+  { value: { index: 'B', mode: 'RER' }, label: 'RER B', color: '#4c90cd' },
+  { value: { index: 'C', mode: 'RER' }, label: 'RER C', color: '#ffcd02' },
+  { value: { index: 'D', mode: 'RER' }, label: 'RER D', color: '#008c5a' },
+  { value: { index: 'E', mode: 'RER' }, label: 'RER E', color: '#bb4a9b' },
 ]
 
-export const TRAIN_LINES: IndexChoice[] = [
-  { value: 'H', label: 'Transilien H', color: '#8d6539', mode: 'TRAIN' },
-  { value: 'J', label: 'Transilien J', color: '#cec92a', mode: 'TRAIN' },
-  { value: 'K', label: 'Transilien K', color: '#9b993b', mode: 'TRAIN' },
-  { value: 'L', label: 'Transilien L', color: '#c5a3cd', mode: 'TRAIN' },
-  { value: 'N', label: 'Transilien N', color: '#00b397', mode: 'TRAIN' },
-  { value: 'P', label: 'Transilien P', color: '#f78f4b', mode: 'TRAIN' },
-  { value: 'R', label: 'Transilien R', color: '#f59fb3', mode: 'TRAIN' },
-  { value: 'U', label: 'Transilien U', color: '#b80b4b', mode: 'TRAIN' },
-  { value: 'V', label: 'Transilien V', color: '#9b993b', mode: 'TRAIN' },
+export const TRAIN_LINES: IndexChoice<BuiltinLineIndex>[] = [
+  { value: { index: 'H', mode: 'TRAIN' }, label: 'Transilien H', color: '#8d6539' },
+  { value: { index: 'J', mode: 'TRAIN' }, label: 'Transilien J', color: '#cec92a' },
+  { value: { index: 'K', mode: 'TRAIN' }, label: 'Transilien K', color: '#9b993b' },
+  { value: { index: 'L', mode: 'TRAIN' }, label: 'Transilien L', color: '#c5a3cd' },
+  { value: { index: 'N', mode: 'TRAIN' }, label: 'Transilien N', color: '#00b397' },
+  { value: { index: 'P', mode: 'TRAIN' }, label: 'Transilien P', color: '#f78f4b' },
+  { value: { index: 'R', mode: 'TRAIN' }, label: 'Transilien R', color: '#f59fb3' },
+  { value: { index: 'U', mode: 'TRAIN' }, label: 'Transilien U', color: '#b80b4b' },
+  { value: { index: 'V', mode: 'TRAIN' }, label: 'Transilien V', color: '#9b993b' },
 ]
 
-export const TRAM_LINES: IndexChoice[] = [
-  { value: '1', label: 'Tramway T1', color: '#006db8', mode: 'TRAM' },
-  { value: '2', label: 'Tramway T2', color: '#bb4a9b', mode: 'TRAM' },
-  { value: '3a', label: 'Tramway T3a', color: '#f78f4b', mode: 'TRAM' },
-  { value: '3b', label: 'Tramway T3b', color: '#008c5a', mode: 'TRAM' },
-  { value: '4', label: 'Tramway T4', color: '#e0b03b', mode: 'TRAM' },
-  { value: '5', label: 'Tramway T5', color: '#662c91', mode: 'TRAM' },
-  { value: '6', label: 'Tramway T6', color: '#ed1c2a', mode: 'TRAM' },
-  { value: '7', label: 'Tramway T7', color: '#8d6539', mode: 'TRAM' },
-  { value: '8', label: 'Tramway T8', color: '#9b993b', mode: 'TRAM' },
-  { value: '9', label: 'Tramway T9', color: '#4c90cd', mode: 'TRAM' },
-  { value: '10', label: 'Tramway T10', color: '#9b993b', mode: 'TRAM' },
-  { value: '11', label: 'Tramway T11', color: '#f78f4b', mode: 'TRAM' },
-  { value: '12', label: 'Tramway T12', color: '#b80b4b', mode: 'TRAM' },
-  { value: '13', label: 'Tramway T13', color: '#8d6539', mode: 'TRAM' },
-  { value: '14', label: 'Tramway T14', color: '#00b397', mode: 'TRAM' },
+export const TRAM_LINES: IndexChoice<BuiltinLineIndex>[] = [
+  { value: { index: '1', mode: 'TRAM' }, label: 'Tramway T1', color: '#006db8' },
+  { value: { index: '2', mode: 'TRAM' }, label: 'Tramway T2', color: '#bb4a9b' },
+  { value: { index: '3a', mode: 'TRAM' }, label: 'Tramway T3a', color: '#f78f4b' },
+  { value: { index: '3b', mode: 'TRAM' }, label: 'Tramway T3b', color: '#008c5a' },
+  { value: { index: '4', mode: 'TRAM' }, label: 'Tramway T4', color: '#e0b03b' },
+  { value: { index: '5', mode: 'TRAM' }, label: 'Tramway T5', color: '#662c91' },
+  { value: { index: '6', mode: 'TRAM' }, label: 'Tramway T6', color: '#ed1c2a' },
+  { value: { index: '7', mode: 'TRAM' }, label: 'Tramway T7', color: '#8d6539' },
+  { value: { index: '8', mode: 'TRAM' }, label: 'Tramway T8', color: '#9b993b' },
+  { value: { index: '9', mode: 'TRAM' }, label: 'Tramway T9', color: '#4c90cd' },
+  { value: { index: '10', mode: 'TRAM' }, label: 'Tramway T10', color: '#9b993b' },
+  { value: { index: '11', mode: 'TRAM' }, label: 'Tramway T11', color: '#f78f4b' },
+  { value: { index: '12', mode: 'TRAM' }, label: 'Tramway T12', color: '#b80b4b' },
+  { value: { index: '13', mode: 'TRAM' }, label: 'Tramway T13', color: '#8d6539' },
+  { value: { index: '14', mode: 'TRAM' }, label: 'Tramway T14', color: '#00b397' },
 ]
 
 export const SERVICES: ServiceChoice[] = [
@@ -118,46 +118,43 @@ export const SHAPES: ShapeChoice[] = [
   { value: 'LINES', label: 'Lignes' },
 ]
 
-export function findModeByValue(value: Mode | null) {
+const BUILTIN_LINES: IndexChoice<BuiltinLineIndex>[] = Array.of(
+  ...CABLE_LINES,
+  ...METRO_LINES,
+  ...RER_LINES,
+  ...TRAIN_LINES,
+  ...TRAM_LINES,
+)
+
+export function findModeByValue(value: Mode | null): ModeChoice | null {
   return MODES.find(mode => mode.value === value) ?? null
 }
 
-export function findLineByValueAndMode(value: string | null, mode: Mode | null) {
-  return getLinesByMode(mode).find(line => line.value === value) ?? null
+export function findLineByValue(index: BuiltinLineIndex): IndexChoice<BuiltinLineIndex> | null {
+  return getLinesByMode(index.mode)
+    .find(it => it.value.index === index.index) ?? null
 }
 
-export function getLinesByMode(mode: Mode | null) {
-  switch (mode) {
-    case 'CABLE':
-      return CABLE_LINES
-    case 'METRO':
-      return METRO_LINES
-    case 'RER':
-      return RER_LINES
-    case 'TRAIN':
-      return TRAIN_LINES
-    case 'TRAM':
-      return TRAM_LINES
-  }
-  return []
+export function getLinesByMode(mode: Mode | null): IndexChoice<BuiltinLineIndex>[] {
+  return BUILTIN_LINES.filter(it => it.value.mode === mode)
 }
 
-export function findColorByValue(value: string | null) {
+export function findColorByValue(value: string | null): ColorChoice | null {
   if (value === null) return null
   return COLORS.find(color => color.value === value) ?? {
     value,
     label: 'Personnalisée',
-  } as ColorChoice
+  }
 }
 
-export function findServiceByValue(value: Service | null) {
+export function findServiceByValue(value: Service | null): ServiceChoice | null {
   return SERVICES.find(service => service.value === value) ?? null
 }
 
-export function findAirportVyValue(value: Airport | null) {
+export function findAirportVyValue(value: Airport | null): AirportChoice | null {
   return AIRPORTS.find(airport => airport.value === value) ?? null
 }
 
-export function findShapeByValue(value: IndexShape | null) {
+export function findShapeByValue(value: IndexShape | null): ShapeChoice | null {
   return SHAPES.find(shape => shape.value === value) ?? null
 }

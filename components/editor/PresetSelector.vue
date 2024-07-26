@@ -3,7 +3,7 @@ const visible = defineModel<boolean>('visible')
 
 const { mode, index, color } = storeToRefs(useLine())
 
-function loadPreset(_mode: Mode, _index: string, _color: string) {
+function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
   mode.value = _mode
   index.value = _index
   color.value = _color
@@ -23,7 +23,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('METRO', metro.value, metro.color)"
         >
-          <Metro :line="metro.value" />
+          <LineIndex mode="METRO" :index="metro.value" />
         </Button>
       </div>
     </Fieldset>
@@ -37,7 +37,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('RER', rer.value, rer.color)"
         >
-          <ExpressTrain :line="rer.value" />
+          <LineIndex mode="RER" :index="rer.value" />
         </Button>
       </div>
     </Fieldset>
@@ -51,7 +51,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('TRAIN', train.value, train.color)"
         >
-          <Train :line="train.value" />
+          <LineIndex mode="TRAIN" :index="train.value" />
         </Button>
       </div>
     </Fieldset>
@@ -66,7 +66,7 @@ function loadPreset(_mode: Mode, _index: string, _color: string) {
           @click="loadPreset('TRAM', tram.value, tram.color)"
         >
           <div class="bg-white rounded">
-            <Tram :line="tram.value" />
+            <LineIndex mode="TRAM" :index="tram.value" />
           </div>
         </Button>
       </div>

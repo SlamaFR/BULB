@@ -23,6 +23,7 @@
     "@pinia/nuxt": "^0.5.1",
     "@primevue/nuxt-module": "^4.0.0",
     "@primevue/themes": "^4.0.0",
+    "@types/uuid": "^10.0.0",
     "@unocss/nuxt": "^0.61.5",
     "@unocss/reset": "^0.61.5",
     "@vueuse/core": "^10.11.0",
@@ -36,6 +37,7 @@
     "pinia": "^2.1.7",
     "primevue": "^4.0.0",
     "sass": "^1.77.8",
-    "taze": "^0.16.1"
+    "taze": "^0.16.1",
+    "uuid": "^10.0.0"
   }
 }

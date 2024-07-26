@@ -1,13 +1,27 @@
 <script setup lang="ts">
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+
 const visible = defineModel<boolean>('visible', { required: true })
 
 const save = useSaveProject()
 const { line } = storeToRefs(useLine())
+const { findIndexById } = useCustomLineIndices()
+
 const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
+const lineIndex = computed(() => {
+  if (line.value.index === null) return ''
+  if (isDefaultIndex(line.value.index)) {
+    return line.value.index.index
+  } else {
+    const index = findIndexById(line.value.index.id)
+    if (index === null) return ''
+    return (`${index.suffix}${index.index}${index.suffix}`).toLowerCase()
+  }
+})
 
 watch(visible, (val) => {
   if (val) {
-    name.value = `${line.value.mode}_${line.value.index}`.toLowerCase()
+    name.value = `${line.value.mode}_${lineIndex.value ?? 'unknown'}`.toLowerCase()
   }
 })
 

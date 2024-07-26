@@ -4,16 +4,17 @@ import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 const { mode } = defineProps<{
   mode: Mode | null
 }>()
-const index = defineModel<string | CustomLineIndex | null>({ required: true })
-const { getModeIndices } = useCustomLineIndices()
+const index = defineModel<LineIndex | null>({ required: true })
+const { getModeIndices, findIndexById } = useCustomLineIndices()
 
-const selectedIndex = ref<IndexChoice | null>(indexToChoice(index.value, mode))
+const selectedIndex = ref<IndexChoice<LineIndex> | null>(indexToChoice(index.value))
 const availableDefaultLines = computed(() => getLinesByMode(mode))
 const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
-  value: it,
+  value: {
+    id: it.id,
+    mode: it.mode,
+  },
   label: `Ligne ${it.prefix}${it.index}${it.suffix}`,
-  color: it.color,
-  mode,
 })))
 const availableLines = computed(() => [
   {
@@ -27,18 +28,20 @@ const availableLines = computed(() => [
 ])
 
 watch(selectedIndex, val => index.value = val?.value ?? null)
-watch([() => mode, index], val => selectedIndex.value = indexToChoice(val[1], val[0]))
+watch(index, val => selectedIndex.value = indexToChoice(val))
 
-function indexToChoice(index: string | CustomLineIndex | null, mode: Mode | null) {
+function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   if (index === null) return null
-  if (isDefaultIndex(index)) return findLineByValueAndMode(index, mode)
+  if (isDefaultIndex(index)) {
+    return findLineByValue(index)
+  }
   if (isCustomIndex(index)) {
+    const customIndex = findIndexById(index.id)
+    if (customIndex === null) return null
     return {
       value: index,
-      label: `Ligne ${index.prefix}${index.index}${index.suffix}`,
-      color: index.color,
-      mode,
-    } as IndexChoice
+      label: `Ligne ${customIndex.prefix}${customIndex.index}${customIndex.suffix}`,
+    }
   }
   return null
 }
@@ -56,7 +59,7 @@ function indexToChoice(index: string | CustomLineIndex | null, mode: Mode | null
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
         <div class="w-1.25em" :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.value.mode) }">
-          <LineIndex class="text-xl" :mode="slotProps.value.mode" :index="slotProps.value.value" />
+          <LineIndex class="text-xl" :index="slotProps.value.value" />
         </div>
         <span>{{ slotProps.value.label }}</span>
       </div>
@@ -64,7 +67,7 @@ function indexToChoice(index: string | CustomLineIndex | null, mode: Mode | null
     <template #option="slotProps">
       <div class="flex items-center gap-3">
         <div :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.option.mode) }">
-          <LineIndex class="text-xl" :mode="slotProps.option.mode" :index="slotProps.option.value" />
+          <LineIndex class="text-xl" :index="slotProps.option.value" />
         </div>
         <span>{{ slotProps.option.label }}</span>
       </div>

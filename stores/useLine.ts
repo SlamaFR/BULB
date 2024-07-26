@@ -1,6 +1,6 @@
 export const useLine = defineStore('line', () => {
   const mode = ref<Mode | null>(null)
-  const index = ref<string | CustomLineIndex | null>(null)
+  const index = ref<LineIndex | null>(null)
   const color = ref<string | null>(null)
   const stopSpacing = ref<number>(1)
   const stops = ref<Stop[]>([])

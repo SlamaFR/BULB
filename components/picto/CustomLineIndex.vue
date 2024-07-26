@@ -20,14 +20,15 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   <div
     class="wrapper"
     :class="{
-      circle: shape === 'CIRCLE',
-      square: shape === 'SQUARE',
-      lines: shape === 'LINES',
+      'circle': shape === 'CIRCLE',
+      'square': shape === 'SQUARE',
+      'lines': shape === 'LINES',
+      'bg-white rounded': shape === 'LINES',
     }"
   >
     <Shape :shape="shape" :color="color" />
     <span class="index">
-      <span v-if="shape === 'LINES'" class="mr-.5">{{ prefix }}</span>
+      <span v-if="shape === 'LINES'" class="prefix">{{ prefix }}</span>
       <span v-for="c in index" :class="{ narrow: c === '1' && (index.length > 1 || shape === 'LINES') }">{{ c }}</span>
       <span v-if="suffix" class="suffix">{{ suffix }}</span>
     </span>
@@ -60,17 +61,20 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% - 0.033em));
-  margin-top: -.0625em;
+  transform: translate(-50%, calc(-50% - 0.0625em));
   color: v-bind(textColor);
 
   .circle &:has(.narrow),
   .square &:has(.narrow) {
-    transform: translate(calc(-50% - 0.033em), calc(-50% - 0.033em));
+    transform: translate(calc(-50% - 0.0625em), calc(-50% - 0.0625em));
   }
 
   .narrow {
     letter-spacing: -.1em;
+  }
+
+  .prefix {
+    margin-right: .0625em;
   }
 
   .suffix {
@@ -103,7 +107,7 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   }
 
   .index {
-    font-size: 0.55em;
+    font-size: 0.5625em;
     color: #231f20;
   }
 }

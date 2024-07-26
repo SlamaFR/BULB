@@ -1,8 +1,13 @@
 <script setup lang="ts">
 import BColorPicker from '~/components/ui/BColorPicker.vue'
 
-const index = defineModel<CustomLineIndex>({ required: true })
+const emit = defineEmits<{
+  delete: []
+}>()
+const index = defineModel<CustomLineIndexDescription>({ required: true })
 const visible = defineModel<boolean>('visible')
+
+const e = reactive(index)
 </script>
 
 <template>
@@ -20,7 +25,11 @@ const visible = defineModel<boolean>('visible')
     </template>
     <div class="content">
       <div class="form">
-        <div class="flex flex-col gap-1 col-span-2">
+        <div class="flex flex-col gap-1">
+          <label>Mode</label>
+          <ModeSelect v-model="index.mode" />
+        </div>
+        <div class="flex flex-col gap-1">
           <label>Forme</label>
           <ShapeSelect v-model="index.shape" />
         </div>
@@ -66,6 +75,13 @@ const visible = defineModel<boolean>('visible')
         </div>
       </Panel>
     </div>
+    <template #footer>
+      <div class="flex flex-row gap-2 items-center justify-between flex-grow">
+        <div class="flex flex-row gap-2 items-center">
+          <Button text label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete')" />
+        </div>
+      </div>
+    </template>
   </Dialog>
 </template>
 
