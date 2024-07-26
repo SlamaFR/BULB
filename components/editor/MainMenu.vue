@@ -22,6 +22,26 @@ function newProject() {
       text: true,
     },
     accept: () => {
+      localStorage.removeItem('line')
+      localStorage.removeItem('customLineIndices')
+    },
+  })
+}
+
+function resetStores() {
+  confirm.require({
+    header: 'Oula oula !',
+    message: 'En réinitialisant les stores, vous perdrez votre projet en cours, ainsi que vos indices personnalisés. Êtes-vous sûr de vouloir continuer ?',
+    acceptProps: {
+      label: 'Procéder',
+      severity: 'danger',
+    },
+    rejectProps: {
+      label: 'Annuler',
+      severity: 'secondary',
+      text: true,
+    },
+    accept: () => {
       mode.value = null
       index.value = null
       color.value = null
@@ -44,6 +64,8 @@ function exportMap() {
     <Button text pt:root:class="important-justify-start" label="Ouvrir" severity="secondary" icon="i-tabler-folder" @click="importProject()" />
     <Button text pt:root:class="important-justify-start" label="Sauvegarder" severity="secondary" icon="i-tabler-device-floppy" @click="showSaveDialog = true" />
     <Button text pt:root:class="important-justify-start" label="Exporter" icon="i-tabler-map-share" @click="exportMap()" />
+    <Divider />
+    <Button pt:root:class="important-justify-start" label="Réinitialiser les stores" severity="danger" icon="i-tabler-refresh" @click="resetStores()" />
   </div>
 
   <CustomLineIndexDirectoryDialog v-model:visible="showLineIndexDirectory" />
