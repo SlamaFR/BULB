@@ -21,7 +21,7 @@ export const useCustomLineIndices = defineStore('customLineIndices', () => {
   function createNewIndex(mode: Mode): CustomLineIndexDescription {
     const newIndex: CustomLineIndexDescription = {
       id: uuidv4(),
-      shape: 'CIRCLE',
+      shape: modeToShape(mode),
       mode,
       prefix: '',
       index: '',

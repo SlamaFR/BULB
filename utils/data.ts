@@ -158,3 +158,20 @@ export function findAirportVyValue(value: Airport | null): AirportChoice | null 
 export function findShapeByValue(value: IndexShape | null): ShapeChoice | null {
   return SHAPES.find(shape => shape.value === value) ?? null
 }
+
+export function modeToShape(mode: Mode): IndexShape {
+  switch (mode) {
+    case 'METRO':
+      return 'CIRCLE'
+    case 'RER':
+    case 'TRAIN':
+    case 'TRAIN_RER':
+      return 'SQUARE'
+    case 'BOAT':
+    case 'BUS':
+    case 'CABLE':
+    case 'VELO':
+    case 'TRAM':
+      return 'LINES'
+  }
+}

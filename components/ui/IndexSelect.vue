@@ -2,10 +2,12 @@
 const { mode } = defineProps<{
   mode: Mode | null
 }>()
+const emit = defineEmits<{
+  updateColor: [color: string | null]
+}>()
 const index = defineModel<LineIndex | null>({ required: true })
 const { getModeIndices, findIndexById } = useCustomLineIndices()
 
-const selectedIndex = ref<IndexChoice<LineIndex> | null>(indexToChoice(index.value))
 const availableDefaultLines = computed(() => getLinesByMode(mode))
 const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
   value: {
@@ -25,8 +27,7 @@ const availableLines = computed(() => [
   },
 ])
 
-watch(selectedIndex, val => index.value = val?.value ?? null)
-watch(index, val => selectedIndex.value = indexToChoice(val))
+watch(index, val => emit('updateColor', indexToChoice(val)?.color ?? null))
 
 function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   if (index === null) return null
@@ -39,6 +40,7 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
     return {
       value: index,
       label: `Ligne ${customIndex.prefix}${customIndex.index}${customIndex.suffix}`,
+      color: customIndex.color,
     }
   }
   return null
@@ -47,19 +49,20 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
 
 <template>
   <Select
-    v-model="selectedIndex"
+    v-model="index"
     :options="availableLines"
     placeholder="Selectionner un indice"
     option-group-children="items"
     option-group-label="label"
+    option-value="value"
     class="flex-auto"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
         <div class="w-1.25em" :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.value.mode) }">
-          <LineIndex class="text-xl" :index="slotProps.value.value" />
+          <LineIndex class="text-xl" :index="slotProps.value" />
         </div>
-        <span>{{ slotProps.value.label }}</span>
+        <span>{{ indexToChoice(slotProps.value)?.label }}</span>
       </div>
     </template>
     <template #option="slotProps">

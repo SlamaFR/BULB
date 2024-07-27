@@ -1,7 +1,7 @@
 declare global {
   // declare your types here
 
-  type Mode = 'BOAT' | 'BUS' | 'CABLE' | 'METRO' | 'RER' | 'TER' | 'TRAIN' | 'TRAIN_RER' | 'TRAM' | 'VELO'
+  type Mode = 'BOAT' | 'BUS' | 'CABLE' | 'METRO' | 'RER' | 'TRAIN' | 'TRAIN_RER' | 'TRAM' | 'VELO'
   type Service = 'FUNICULAR' | 'MAIN_STATION' | 'AIRPORT'
 
   type CableLine = '1' | string

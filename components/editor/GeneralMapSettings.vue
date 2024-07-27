@@ -2,6 +2,10 @@
 const { mode, index, color, stopSpacing } = storeToRefs(useLine())
 
 const showPresetSelector = ref(false)
+
+function updateColor(newColor: string | null) {
+  if (newColor !== null) color.value = newColor
+}
 </script>
 
 <template>
@@ -14,7 +18,7 @@ const showPresetSelector = ref(false)
 
       <div class="flex flex-col gap-1 flex-auto">
         <label class="text-nowrap">Indice de ligne</label>
-        <IndexSelect v-model="index" :mode="mode" />
+        <IndexSelect v-model="index" :mode="mode" @update-color="updateColor" />
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
