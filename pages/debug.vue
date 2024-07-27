@@ -1,133 +1,4 @@
 <script setup lang="ts">
-const connections: (ModeConnection | ServiceConnection)[] = [
-  {
-    mode: 'METRO',
-    lines: [
-      { lineIndex: '1' },
-      { lineIndex: '2' },
-      { lineIndex: '3' },
-      { lineIndex: '4' },
-    ],
-  },
-  {
-    mode: 'RER',
-    lines: [
-      { lineIndex: 'A' },
-      { lineIndex: 'B' },
-      {
-        lineIndex: 'C',
-        walk: true,
-      },
-      { lineIndex: 'D' },
-      { lineIndex: 'E' },
-    ],
-  },
-  {
-    mode: 'RER',
-    lines: [
-      {
-        lineIndex: 'B',
-        ornament: {
-          position: 'BOTTOM',
-          text: 'Gare du Nord',
-        },
-      },
-    ],
-  },
-  {
-    mode: 'RER',
-    walk: true,
-    lines: [
-      {
-        lineIndex: 'B',
-        ornament: {
-          position: 'RIGHT',
-          text: 'Gare\ndu Nord',
-        },
-      },
-    ],
-  },
-  {
-    mode: 'METRO',
-    lines: [
-      {
-        lineIndex: '14',
-        ornament: {
-          position: 'RIGHT',
-          airport: 'ORY',
-        },
-      },
-    ],
-  },
-  {
-    mode: 'TRAM',
-    lines: [
-      { lineIndex: '1' },
-      { lineIndex: '2' },
-      { lineIndex: '3a' },
-      {
-        lineIndex: '11',
-        ornament: {
-          position: 'RIGHT',
-          airport: 'GENERIC',
-        },
-      },
-    ],
-  },
-  {
-    mode: 'TRAIN',
-    lines: [
-      { lineIndex: 'J' },
-      { lineIndex: 'N' },
-    ],
-  },
-  {
-    services: [
-      {
-        service: 'MAIN_STATION',
-        ornament: {
-          position: 'RIGHT',
-          text: 'Gare\nde Lyon',
-        },
-      },
-    ],
-    walk: true,
-  },
-]
-
-const chatelet: (ModeConnection | ServiceConnection)[] = [
-  {
-    mode: 'METRO',
-    lines: [
-      { lineIndex: '1' },
-      { lineIndex: '4' },
-      { lineIndex: '7' },
-      { lineIndex: '11' },
-      {
-        lineIndex: '14',
-        ornament: {
-          position: 'RIGHT',
-          airport: 'ORY',
-        },
-      },
-    ],
-  },
-  {
-    mode: 'RER',
-    lines: [
-      { lineIndex: 'A' },
-      {
-        lineIndex: 'B',
-        walk: true,
-        ornament: {
-          position: 'BOTTOM',
-          airport: 'CDG',
-        },
-      },
-      { lineIndex: 'D' },
-    ],
-  },
-]
 </script>
 
 <template>
@@ -135,7 +6,6 @@ const chatelet: (ModeConnection | ServiceConnection)[] = [
     <div class="flex gap-3 text-3em">
       <Mode mode="METRO" />
       <Mode mode="RER" />
-      <Mode mode="TER" />
       <Mode mode="TRAIN" />
       <Mode mode="TRAIN_RER" />
       <Mode mode="BOAT" />
@@ -147,7 +17,6 @@ const chatelet: (ModeConnection | ServiceConnection)[] = [
     <div class="flex gap-3 text-3em">
       <Mode plain mode="METRO" />
       <Mode plain mode="RER" />
-      <Mode plain mode="TER" />
       <Mode plain mode="TRAIN" />
       <Mode plain mode="TRAIN_RER" />
       <Mode plain mode="BOAT" />
@@ -321,6 +190,67 @@ const chatelet: (ModeConnection | ServiceConnection)[] = [
       <CustomLineIndex index="12" color="#b80b4b" shape="LINES" />
       <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
       <CustomLineIndex index="14" color="#00b397" shape="LINES" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <CustomLineIndex index="1" color="#006db8" shape="LINES" />
+      <CustomLineIndex index="2" color="#bb4a9b" shape="LINES" />
+      <CustomLineIndex index="3" suffix="a" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex index="3" suffix="b" color="#008c5a" shape="LINES" />
+      <CustomLineIndex index="4" color="#e0b03b" shape="LINES" />
+      <CustomLineIndex index="5" color="#662c91" shape="LINES" />
+      <CustomLineIndex index="6" color="#ed1c2a" shape="LINES" />
+      <CustomLineIndex index="7" color="#8d6539" shape="LINES" />
+      <CustomLineIndex index="8" color="#9b993b" shape="LINES" />
+      <CustomLineIndex index="9" color="#4c90cd" shape="LINES" />
+      <CustomLineIndex index="10" color="#9b993b" shape="LINES" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex index="12" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
+      <CustomLineIndex index="14" color="#00b397" shape="LINES" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <CustomLineIndex index="1" color="#006db8" shape="SQUARE" />
+      <CustomLineIndex index="2" color="#bb4a9b" shape="SQUARE" />
+      <CustomLineIndex index="3" color="#f78f4b" shape="SQUARE" />
+      <CustomLineIndex index="3" color="#008c5a" shape="SQUARE" />
+      <CustomLineIndex index="4" color="#e0b03b" shape="SQUARE" />
+      <CustomLineIndex index="5" color="#662c91" shape="SQUARE" />
+      <CustomLineIndex index="6" color="#ed1c2a" shape="SQUARE" />
+      <CustomLineIndex index="7" color="#8d6539" shape="SQUARE" />
+      <CustomLineIndex index="8" color="#9b993b" shape="SQUARE" />
+      <CustomLineIndex index="9" color="#4c90cd" shape="SQUARE" />
+      <CustomLineIndex index="10" color="#9b993b" shape="SQUARE" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="SQUARE" />
+      <CustomLineIndex index="12" color="#b80b4b" shape="SQUARE" />
+      <CustomLineIndex index="13" color="#8d6539" shape="SQUARE" />
+      <CustomLineIndex index="14" color="#00b397" shape="SQUARE" />
+      <CustomLineIndex index="01" color="#9b993b" shape="SQUARE" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="SQUARE" />
+      <CustomLineIndex index="21" color="#b80b4b" shape="SQUARE" />
+      <CustomLineIndex index="31" color="#8d6539" shape="SQUARE" />
+      <CustomLineIndex index="41" color="#00b397" shape="SQUARE" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <CustomLineIndex index="1" color="#006db8" shape="CIRCLE" />
+      <CustomLineIndex index="2" color="#bb4a9b" shape="CIRCLE" />
+      <CustomLineIndex index="3" color="#f78f4b" shape="CIRCLE" />
+      <CustomLineIndex index="3" color="#008c5a" shape="CIRCLE" />
+      <CustomLineIndex index="4" color="#e0b03b" shape="CIRCLE" />
+      <CustomLineIndex index="5" color="#662c91" shape="CIRCLE" />
+      <CustomLineIndex index="6" color="#ed1c2a" shape="CIRCLE" />
+      <CustomLineIndex index="7" color="#8d6539" shape="CIRCLE" />
+      <CustomLineIndex index="8" color="#9b993b" shape="CIRCLE" />
+      <CustomLineIndex index="9" color="#4c90cd" shape="CIRCLE" />
+      <CustomLineIndex index="10" color="#9b993b" shape="CIRCLE" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="CIRCLE" />
+      <CustomLineIndex index="12" color="#b80b4b" shape="CIRCLE" />
+      <CustomLineIndex index="13" color="#8d6539" shape="CIRCLE" />
+      <CustomLineIndex index="14" color="#00b397" shape="CIRCLE" />
+      <CustomLineIndex index="01" color="#9b993b" shape="CIRCLE" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="CIRCLE" />
+      <CustomLineIndex index="21" color="#b80b4b" shape="CIRCLE" />
+      <CustomLineIndex index="31" color="#8d6539" shape="CIRCLE" />
+      <CustomLineIndex index="41" color="#00b397" shape="CIRCLE" />
     </div>
   </div>
 </template>

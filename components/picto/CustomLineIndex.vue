@@ -72,6 +72,12 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   .narrow {
     letter-spacing: -.1em;
   }
+  .narrow:first-child:has(+ :not(.narrow)) {
+    margin-left: 0.0625em;
+  }
+  :not(.narrow) + .narrow:last-child {
+    margin-right: -0.125em;
+  }
 
   .prefix {
     margin-right: .0625em;
