@@ -8,6 +8,7 @@ const { line } = storeToRefs(useLine())
 const { findIndexById } = useCustomLineIndices()
 
 const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
+const bundleCustomIndices = ref(false)
 const lineIndex = computed(() => {
   if (line.value.index === null) return ''
   if (isDefaultIndex(line.value.index)) {
@@ -26,7 +27,7 @@ watch(visible, (val) => {
 })
 
 function doExport() {
-  save(name.value)
+  save(name.value, bundleCustomIndices.value)
   visible.value = false
 }
 </script>
@@ -40,6 +41,10 @@ function doExport() {
           <InputText v-model="name" />
           <InputGroupAddon>.json</InputGroupAddon>
         </InputGroup>
+      </div>
+      <div class="flex items-center">
+        <Checkbox v-model="bundleCustomIndices" input-id="save_include_custom_indices" binary />
+        <label for="save_include_custom_indices" class="ml-2">Incorporer les indices personnalisés</label>
       </div>
       <div class="flex flex-row items-center justify-end flex-grow gap-4">
         <Button text severity="secondary" label="Annuler" @click="visible = false" />

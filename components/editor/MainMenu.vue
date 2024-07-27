@@ -22,8 +22,11 @@ function newProject() {
       text: true,
     },
     accept: () => {
-      localStorage.removeItem('line')
-      localStorage.removeItem('customLineIndices')
+      mode.value = null
+      index.value = null
+      color.value = null
+      stopSpacing.value = 1
+      stops.value = []
     },
   })
 }
@@ -31,7 +34,7 @@ function newProject() {
 function resetStores() {
   confirm.require({
     header: 'Oula oula !',
-    message: 'En réinitialisant les stores, vous perdrez votre projet en cours, ainsi que vos indices personnalisés. Êtes-vous sûr de vouloir continuer ?',
+    message: 'En réinitialisant les stores, vous perdrez les modifications non enregistrées, ainsi que vos indices personnalisés. Êtes-vous sûr(e) de vouloir continuer ?',
     acceptProps: {
       label: 'Procéder',
       severity: 'danger',
@@ -42,11 +45,8 @@ function resetStores() {
       text: true,
     },
     accept: () => {
-      mode.value = null
-      index.value = null
-      color.value = null
-      stopSpacing.value = 1
-      stops.value = []
+      localStorage.removeItem('line')
+      localStorage.removeItem('customLineIndices')
     },
   })
 }

@@ -109,6 +109,11 @@ declare global {
   }
 
   type LineIndex = BuiltinLineIndex | CustomLineIndex
+
+  interface Project {
+    line: Line
+    customIndices: CustomLineIndexDescription[]
+  }
 }
 
 export {}
