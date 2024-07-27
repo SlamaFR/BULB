@@ -9,6 +9,10 @@ const emit = defineEmits<{
 }>()
 const stop = defineModel<Stop>('stop', { required: true })
 const showConnectionsEditor = ref(false)
+
+watch(() => stop.value.name, (val) => {
+  stop.value.name = val.replace(/ – | - | — /g, ' – ')
+})
 </script>
 
 <template>
