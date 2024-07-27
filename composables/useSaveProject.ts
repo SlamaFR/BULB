@@ -1,15 +1,13 @@
-import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
-
 export default function useSaveProject() {
   const toast = useToast()
-  const { line } = useLine()
-  const { indices } = useCustomLineIndices()
+  const { line } = storeToRefs(useLine())
+  const { indices } = storeToRefs(useCustomLineIndices())
 
   function stringifyLine(bundleCustomIndices: boolean) {
     let customIndices: CustomLineIndexDescription[] = []
 
     if (bundleCustomIndices) {
-      const usedCustomIndicesIds = line.stops
+      const usedCustomIndicesIds = line.value.stops
         .flatMap(stop => stop.connections)
         .filter(isModeConnection)
         .flatMap(connection => connection.lines)
@@ -17,7 +15,7 @@ export default function useSaveProject() {
         .filter(isCustomIndex)
         .map(index => index.id)
 
-      customIndices = indices.filter(index => usedCustomIndicesIds.includes(index.id))
+      customIndices = indices.value.filter(index => usedCustomIndicesIds.includes(index.id))
     }
 
     return JSON.stringify({
