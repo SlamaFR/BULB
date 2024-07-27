@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
-
 const visible = defineModel<boolean>('visible', { required: true })
 
 const save = useSaveProject()

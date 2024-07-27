@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
-
 const {
   index,
 } = defineProps<{

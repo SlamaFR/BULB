@@ -31,17 +31,20 @@ const connection = defineModel<ModeConnection | ServiceConnection>('connection',
     </template>
 
     <div class="h-full flex flex-col gap-2 justify-between">
-      <ModeConnectionGroupEditor v-if="isModeConnection(connection)" v-model:connection="connection" :index="index" />
-      <ServiceConnectionGroupEditor v-else-if="isServiceConnection(connection)" v-model:connection="connection" :index="index" />
+      <ModeConnectionGroupEditor
+        v-if="isModeConnection(connection)"
+        v-model:connection="connection"
+        :index="index"
+      />
+      <ServiceConnectionGroupEditor
+        v-else-if="isServiceConnection(connection)"
+        v-model:connection="connection"
+        :index="index"
+      />
       <div v-else />
 
       <div class="flex flex-row items-center justify-between gap-2">
-        <div class="flex flex-row items-center gap-2">
-          <!--
-          <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-up" :disabled="index <= 0" />
-          <Button outlined size="small" severity="secondary" icon="i-tabler-chevron-down" :disabled="index >= total - 1" />
-          -->
-        </div>
+        <div />
         <Button size="small" label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
       </div>
     </div>

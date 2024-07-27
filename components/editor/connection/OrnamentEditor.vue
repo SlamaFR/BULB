@@ -6,6 +6,12 @@ const hasOrnament = ref(!!ornament.value)
 const id = useId()
 
 const type = ref<OrnamentType | null>(getOrnamentType(ornament.value))
+const tabType = ref<OrnamentType | ''>('')
+
+watch(tabType, (val) => {
+  if (val !== '') type.value = val
+})
+watch(type, val => tabType.value = val ?? '')
 
 watch(hasOrnament, (val) => {
   if (val) {
@@ -55,7 +61,7 @@ const positions = [
         <label :for="id">Afficher une décoration</label>
       </div>
 
-      <Tabs v-model:value="type">
+      <Tabs v-model:value="tabType">
         <TabList>
           <Tab value="AIRPORT" :disabled="!hasOrnament">
             Aéroport

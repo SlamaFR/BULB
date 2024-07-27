@@ -42,7 +42,7 @@ function deleteAllStops() {
   <div v-if="stops.length > 0" class="flex flex-col gap-4 h-full">
     <div class="flex flex-row gap-3 flex-grow overflow-x-auto">
       <StopEditor
-        v-for="(stop, index) in stops"
+        v-for="(_, index) in stops"
         :key="index"
         v-model:stop="stops[index]"
         :index="index"
@@ -59,7 +59,7 @@ function deleteAllStops() {
   </div>
 
   <div v-if="stops.length === 0" class="flex flex-col items-center justify-center p-20">
-    <span class="text-3xl">Ligne vierge</span>
+    <span class="text-2xl">Ligne vierge</span>
     <span>
       <Button label="Ajouter un arrêt" link pt:root:class="important-p-1" @click="addStop(0)" />
       <span class="opacity-50">pour commencer</span>

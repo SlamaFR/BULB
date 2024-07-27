@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import BColorPicker from '~/components/ui/BColorPicker.vue'
-
 const emit = defineEmits<{
-  delete: []
+  delete: [id: string]
 }>()
 const index = defineModel<CustomLineIndexDescription>({ required: true })
 const visible = defineModel<boolean>('visible')
@@ -76,7 +74,7 @@ const visible = defineModel<boolean>('visible')
     <template #footer>
       <div class="flex flex-row gap-2 items-center justify-between flex-grow">
         <div class="flex flex-row gap-2 items-center">
-          <Button text label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete')" />
+          <Button text label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index.id)" />
         </div>
       </div>
     </template>

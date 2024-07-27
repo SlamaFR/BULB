@@ -34,7 +34,7 @@ function newProject() {
 function resetStores() {
   confirm.require({
     header: 'Oula oula !',
-    message: 'En réinitialisant les stores, vous perdrez les modifications non enregistrées, ainsi que vos indices personnalisés. Êtes-vous sûr(e) de vouloir continuer ?',
+    message: 'En réinitialisant les stores, vous perdrez les modifications non enregistrées, ainsi que vos indices personnalisés. Cette action est généralement nécessaire lors d’une mise à jour comportant des changements bloquants. Êtes-vous sûr(e) de vouloir continuer ?',
     acceptProps: {
       label: 'Procéder',
       severity: 'danger',
@@ -58,14 +58,54 @@ function exportMap() {
 
 <template>
   <div class="flex flex-col items-stretch flex-grow">
-    <Button text pt:root:class="important-justify-start" label="Indices personnalisés" severity="secondary" icon="i-tabler-edit-circle" @click="showLineIndexDirectory = true" />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Indices personnalisés"
+      severity="secondary"
+      icon="i-tabler-edit-circle"
+      text
+      @click="showLineIndexDirectory = true"
+    />
     <Divider />
-    <Button text pt:root:class="important-justify-start" label="Nouveau projet" severity="secondary" icon="i-tabler-file" @click="newProject()" />
-    <Button text pt:root:class="important-justify-start" label="Ouvrir" severity="secondary" icon="i-tabler-folder" @click="importProject()" />
-    <Button text pt:root:class="important-justify-start" label="Sauvegarder" severity="secondary" icon="i-tabler-device-floppy" @click="showSaveDialog = true" />
-    <Button text pt:root:class="important-justify-start" label="Exporter" icon="i-tabler-map-share" @click="exportMap()" />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Nouveau projet"
+      severity="secondary"
+      icon="i-tabler-file"
+      text
+      @click="newProject()"
+    />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Ouvrir"
+      severity="secondary"
+      icon="i-tabler-folder"
+      text
+      @click="importProject()"
+    />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Sauvegarder"
+      severity="secondary"
+      icon="i-tabler-device-floppy"
+      text
+      @click="showSaveDialog = true"
+    />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Exporter"
+      icon="i-tabler-map-share"
+      text
+      @click="exportMap()"
+    />
     <Divider />
-    <Button pt:root:class="important-justify-start" label="Réinitialiser les stores" severity="danger" icon="i-tabler-refresh" @click="resetStores()" />
+    <Button
+      pt:root:class="important-justify-start"
+      label="Réinitialiser les stores"
+      severity="danger"
+      icon="i-tabler-refresh"
+      @click="resetStores()"
+    />
   </div>
 
   <CustomLineIndexDirectoryDialog v-model:visible="showLineIndexDirectory" />

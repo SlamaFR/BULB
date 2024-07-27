@@ -3,10 +3,10 @@ const visible = defineModel<boolean>('visible')
 
 const { mode, index, color } = storeToRefs(useLine())
 
-function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
+function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
   mode.value = _mode
   index.value = _index
-  color.value = _color
+  if (_color) color.value = _color
   visible.value = false
 }
 </script>
@@ -17,7 +17,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
       <div class="btn-group">
         <Button
           v-for="metro in METRO_LINES"
-          :key="metro"
+          :key="metro.label"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
@@ -31,7 +31,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
       <div class="btn-group">
         <Button
           v-for="rer in RER_LINES"
-          :key="rer"
+          :key="rer.label"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
@@ -45,7 +45,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
       <div class="btn-group">
         <Button
           v-for="train in TRAIN_LINES"
-          :key="train"
+          :key="train.label"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
@@ -59,7 +59,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color: string) {
       <div class="btn-group">
         <Button
           v-for="tram in TRAM_LINES"
-          :key="tram"
+          :key="tram.label"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"

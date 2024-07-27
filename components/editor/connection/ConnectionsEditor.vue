@@ -33,7 +33,7 @@ function deleteConnection(index: number) {
   >
     <div class="connections">
       <ConnectionGroupEditor
-        v-for="(connection, index) in stop.connections"
+        v-for="(_, index) in stop.connections"
         :key="index"
         v-model:connection="stop.connections[index]"
         :index="index"
@@ -41,7 +41,6 @@ function deleteConnection(index: number) {
         @delete="deleteConnection"
       />
       <div class="min-w-30em min-h-25em p-panel p-8 flex flex-col items-center justify-center">
-        <!-- add mode or add service -->
         <Button text severity="warn" icon="i-tabler-plus" label="Mode de transport" @click="addModeConnection()" />
         <Divider align="center" type="dotted">
           <b>Ou</b>

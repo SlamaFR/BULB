@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { isServiceConnection } from '~/utils/connections'
-
 const {
   connections,
 } = defineProps<{

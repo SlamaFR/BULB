@@ -74,6 +74,7 @@ declare global {
   interface IndexChoice<I extends LineIndex> {
     value: I
     label: string
+    color?: string
   }
   interface ServiceChoice {
     value: Service

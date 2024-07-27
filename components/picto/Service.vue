@@ -6,7 +6,7 @@ import airport from '~/assets/svg/airport/airport-generic.svg'
 const {
   service,
 } = defineProps<{
-  service: Service
+  service: Service | null
 }>()
 
 const icon = computed(() => {
@@ -18,11 +18,12 @@ const icon = computed(() => {
     case 'AIRPORT':
       return airport
   }
+  return null
 })
 </script>
 
 <template>
-  <img :src="icon" alt="service" class="picto">
+  <img v-if="icon" :src="icon" alt="service" class="picto">
 </template>
 
 <style scoped lang="scss">

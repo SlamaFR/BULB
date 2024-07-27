@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
-
 const visible = defineModel<boolean>('visible')
 const { getModeIndices, createNewIndex, deleteById } = useCustomLineIndices()
 
@@ -17,9 +15,9 @@ function edit(index: CustomLineIndexDescription) {
   showEditor.value = true
 }
 
-function deleteIndex() {
+function deleteIndex(id: string) {
   if (selectedIndex.value) {
-    deleteById(selectedIndex.value.id)
+    deleteById(id)
     showEditor.value = false
   }
 }
@@ -27,7 +25,7 @@ function deleteIndex() {
 
 <template>
   <Dialog v-model:visible="visible" modal header="Répertoire d’indices personnalisés">
-    <Fieldset v-for="mode in MODES" :legend="mode.label">
+    <Fieldset v-for="mode in MODES" :key="mode.label" :legend="mode.label">
       <template #legend>
         <div class="flex items-center gap-2">
           <Mode class="text-xl" :mode="mode.value" />
@@ -37,6 +35,7 @@ function deleteIndex() {
       <div class="btn-group">
         <Button
           v-for="index in getModeIndices(mode.value)"
+          :key="index.id"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"

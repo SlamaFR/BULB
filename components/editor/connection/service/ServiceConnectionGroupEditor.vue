@@ -10,7 +10,6 @@ const connection = defineModel<ServiceConnection>('connection', { required: true
 function addService() {
   connection.value.services.push({
     service: null,
-    // walk: false,
     ornament: null,
   })
 }
