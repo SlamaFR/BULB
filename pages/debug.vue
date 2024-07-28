@@ -39,11 +39,11 @@
     <div class="flex gap-3 text-3em">
       <CustomLineIndex index="1" color="#ffcd02" shape="CIRCLE" />
       <CustomLineIndex index="A" color="#ed1c2a" text-color="white" shape="SQUARE" />
-      <CustomLineIndex index="1" color="#006db8" shape="LINES" />
-      <CustomLineIndex index="3" suffix="a" color="#f78f4b" shape="LINES" />
-      <CustomLineIndex index="3" suffix="b" color="#008c5a" shape="LINES" />
-      <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
-      <CustomLineIndex index="14" color="#00b397" shape="LINES" />
+      <CustomLineIndex prefix="T" index="1" color="#006db8" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" suffix="a" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" suffix="b" color="#008c5a" shape="LINES" />
+      <CustomLineIndex prefix="T" index="13" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="14" color="#00b397" shape="LINES" />
       <CustomLineIndex index="3" suffix="bis" color="#87d3df" shape="CIRCLE" />
     </div>
     <div class="flex gap-3 text-3em">
@@ -175,38 +175,21 @@
       <Tram line="14" />
     </div>
     <div class="flex gap-3 text-3em">
-      <CustomLineIndex index="1" color="#006db8" shape="LINES" />
-      <CustomLineIndex index="2" color="#bb4a9b" shape="LINES" />
-      <CustomLineIndex index="3" suffix="a" color="#f78f4b" shape="LINES" />
-      <CustomLineIndex index="3" suffix="b" color="#008c5a" shape="LINES" />
-      <CustomLineIndex index="4" color="#e0b03b" shape="LINES" />
-      <CustomLineIndex index="5" color="#662c91" shape="LINES" />
-      <CustomLineIndex index="6" color="#ed1c2a" shape="LINES" />
-      <CustomLineIndex index="7" color="#8d6539" shape="LINES" />
-      <CustomLineIndex index="8" color="#9b993b" shape="LINES" />
-      <CustomLineIndex index="9" color="#4c90cd" shape="LINES" />
-      <CustomLineIndex index="10" color="#9b993b" shape="LINES" />
-      <CustomLineIndex index="11" color="#f78f4b" shape="LINES" />
-      <CustomLineIndex index="12" color="#b80b4b" shape="LINES" />
-      <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
-      <CustomLineIndex index="14" color="#00b397" shape="LINES" />
-    </div>
-    <div class="flex gap-3 text-3em">
-      <CustomLineIndex index="1" color="#006db8" shape="LINES" />
-      <CustomLineIndex index="2" color="#bb4a9b" shape="LINES" />
-      <CustomLineIndex index="3" suffix="a" color="#f78f4b" shape="LINES" />
-      <CustomLineIndex index="3" suffix="b" color="#008c5a" shape="LINES" />
-      <CustomLineIndex index="4" color="#e0b03b" shape="LINES" />
-      <CustomLineIndex index="5" color="#662c91" shape="LINES" />
-      <CustomLineIndex index="6" color="#ed1c2a" shape="LINES" />
-      <CustomLineIndex index="7" color="#8d6539" shape="LINES" />
-      <CustomLineIndex index="8" color="#9b993b" shape="LINES" />
-      <CustomLineIndex index="9" color="#4c90cd" shape="LINES" />
-      <CustomLineIndex index="10" color="#9b993b" shape="LINES" />
-      <CustomLineIndex index="11" color="#f78f4b" shape="LINES" />
-      <CustomLineIndex index="12" color="#b80b4b" shape="LINES" />
-      <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
-      <CustomLineIndex index="14" color="#00b397" shape="LINES" />
+      <CustomLineIndex prefix="T" index="1" color="#006db8" shape="LINES" />
+      <CustomLineIndex prefix="T" index="2" color="#bb4a9b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" suffix="a" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" suffix="b" color="#008c5a" shape="LINES" />
+      <CustomLineIndex prefix="T" index="4" color="#e0b03b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="5" color="#662c91" shape="LINES" />
+      <CustomLineIndex prefix="T" index="6" color="#ed1c2a" shape="LINES" />
+      <CustomLineIndex prefix="T" index="7" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="8" color="#9b993b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="9" color="#4c90cd" shape="LINES" />
+      <CustomLineIndex prefix="T" index="10" color="#9b993b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="12" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="13" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="14" color="#00b397" shape="LINES" />
     </div>
     <div class="flex gap-3 text-3em">
       <CustomLineIndex index="1" color="#006db8" shape="SQUARE" />
@@ -251,6 +234,61 @@
       <CustomLineIndex index="21" color="#b80b4b" shape="CIRCLE" />
       <CustomLineIndex index="31" color="#8d6539" shape="CIRCLE" />
       <CustomLineIndex index="41" color="#00b397" shape="CIRCLE" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <CustomLineIndex index="1" color="#006db8" shape="LINES" />
+      <CustomLineIndex index="2" color="#bb4a9b" shape="LINES" />
+      <CustomLineIndex index="3" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex index="3" color="#008c5a" shape="LINES" />
+      <CustomLineIndex index="4" color="#e0b03b" shape="LINES" />
+      <CustomLineIndex index="5" color="#662c91" shape="LINES" />
+      <CustomLineIndex index="6" color="#ed1c2a" shape="LINES" />
+      <CustomLineIndex index="7" color="#8d6539" shape="LINES" />
+      <CustomLineIndex index="8" color="#9b993b" shape="LINES" />
+      <CustomLineIndex index="9" color="#4c90cd" shape="LINES" />
+      <CustomLineIndex index="10" color="#9b993b" shape="LINES" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex index="12" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex index="13" color="#8d6539" shape="LINES" />
+      <CustomLineIndex index="14" color="#00b397" shape="LINES" />
+      <CustomLineIndex index="01" color="#9b993b" shape="LINES" />
+      <CustomLineIndex index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex index="21" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex index="31" color="#8d6539" shape="LINES" />
+      <CustomLineIndex index="41" color="#00b397" shape="LINES" />
+    </div>
+    <div class="flex gap-3 text-3em">
+      <CustomLineIndex prefix="T" index="1" color="#006db8" shape="LINES" />
+      <CustomLineIndex prefix="T" index="2" color="#bb4a9b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="3" color="#008c5a" shape="LINES" />
+      <CustomLineIndex prefix="T" index="4" color="#e0b03b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="5" color="#662c91" shape="LINES" />
+      <CustomLineIndex prefix="T" index="6" color="#ed1c2a" shape="LINES" />
+      <CustomLineIndex prefix="T" index="7" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="8" color="#9b993b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="9" color="#4c90cd" shape="LINES" />
+      <CustomLineIndex prefix="T" index="10" color="#9b993b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="12" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="13" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="14" color="#00b397" shape="LINES" />
+      <CustomLineIndex prefix="T" index="01" color="#9b993b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="11" color="#f78f4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="21" color="#b80b4b" shape="LINES" />
+      <CustomLineIndex prefix="T" index="31" color="#8d6539" shape="LINES" />
+      <CustomLineIndex prefix="T" index="41" color="#00b397" shape="LINES" />
+    </div>
+    <div class="flex gap-3">
+      <div class="text-3em">
+        <CustomLineIndex index="3" suffix="bis" color="#006db8" shape="CIRCLE" />
+      </div>
+      <div class="text-2em">
+        <CustomLineIndex index="3" suffix="bis" color="#006db8" shape="CIRCLE" />
+      </div>
+      <div class="text-1em">
+        <CustomLineIndex index="3" suffix="bis" color="#006db8" shape="CIRCLE" />
+      </div>
     </div>
   </div>
 </template>

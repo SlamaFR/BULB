@@ -59,17 +59,13 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
-        <div class="w-1.25em" :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.value.mode) }">
-          <LineIndex class="text-xl" :index="slotProps.value" />
-        </div>
+        <LineIndex class="text-1.25em" :index="slotProps.value" />
         <span>{{ indexToChoice(slotProps.value)?.label }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
-        <div :class="{ 'bg-white rounded-sm': ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(slotProps.option.mode) }">
-          <LineIndex class="text-xl" :index="slotProps.option.value" />
-        </div>
+        <LineIndex class="text-1.25em" :index="slotProps.option.value" />
         <span>{{ slotProps.option.label }}</span>
       </div>
     </template>

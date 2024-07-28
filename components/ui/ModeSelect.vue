@@ -16,13 +16,13 @@ watch(mode, val => selectedMode.value = findModeByValue(val))
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
-        <Mode class="text-xl" plain :mode="slotProps.value.value" />
+        <Mode class="text-1.25em" plain :mode="slotProps.value.value" />
         <span>{{ slotProps.value.label }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
-        <Mode class="text-xl" plain :mode="slotProps.option.value" />
+        <Mode class="text-1.25em" plain :mode="slotProps.option.value" />
         <span>{{ slotProps.option.label }}</span>
       </div>
     </template>

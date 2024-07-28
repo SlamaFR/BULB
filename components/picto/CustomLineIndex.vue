@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const {
   index,
-  prefix = 'T',
+  prefix = '',
   suffix = '',
   shape,
   color,
@@ -12,6 +12,8 @@ const {
   shape: 'CIRCLE' | 'SQUARE' | 'LINES'
   color: string
 }>()
+
+const NARROW_CHARS = ['1', 'I', 'l']
 
 const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
 </script>
@@ -28,14 +30,14 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   >
     <Shape :shape="shape" :color="color" />
     <span class="index">
-      <span v-if="shape === 'LINES'" class="prefix">{{ prefix }}</span>
-      <span v-for="c in index" :class="{ narrow: c === '1' && (index.length > 1 || shape === 'LINES') }">{{ c }}</span>
+      <span v-if="prefix && shape === 'LINES'" class="prefix">{{ prefix }}</span>
+      <span v-for="c in index" :class="{ narrow: NARROW_CHARS.includes(c) }">{{ c }}</span>
       <span v-if="suffix" class="suffix">{{ suffix }}</span>
     </span>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .wrapper {
   position: relative;
   display: block;
@@ -61,26 +63,21 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% - 0.0625em));
+  transform: translate(-50%, calc(-50% - 0.0875em));
   color: v-bind(textColor);
-
-  .circle &:has(.narrow),
-  .square &:has(.narrow) {
-    transform: translate(calc(-50% - 0.0625em), calc(-50% - 0.0625em));
-  }
 
   .narrow {
     letter-spacing: -.1em;
   }
-  .narrow:first-child:has(+ :not(.narrow)) {
-    margin-left: 0.0625em;
+  :first-child.narrow {
+    margin-left: -.0625em;
   }
-  :not(.narrow) + .narrow:last-child {
-    margin-right: -0.125em;
+  :first-child.narrow:has(+ .narrow) {
+    margin-left: -.125em;
   }
 
   .prefix {
-    margin-right: .0625em;
+    margin-right: .125em;
   }
 
   .suffix {
@@ -113,7 +110,8 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   }
 
   .index {
-    font-size: 0.5625em;
+    font-size: 0.5375em;
+    transform: translate(-50%, calc(-50% - 0.0625em));
     color: #231f20;
   }
 }

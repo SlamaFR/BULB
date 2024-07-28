@@ -38,7 +38,7 @@ function deleteIndex(id: string) {
           :key="index.id"
           text
           severity="secondary"
-          :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
+          :pt="{ root: { class: 'important-p-1 important-text-1em' } }"
           @click="edit(index)"
         >
           <CustomLineIndex
