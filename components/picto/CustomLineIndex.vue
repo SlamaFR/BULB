@@ -63,15 +63,18 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, calc(-50% - 0.0875em));
+  transform: translate(-50%, -50%);
+  padding-bottom: .125em;
   color: v-bind(textColor);
 
   .narrow {
     letter-spacing: -.1em;
   }
+
   :first-child.narrow {
     margin-left: -.0625em;
   }
+
   :first-child.narrow:has(+ .narrow) {
     margin-left: -.125em;
   }
@@ -93,7 +96,7 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
 
   .index .suffix {
     font-size: 0.375em;
-    margin-top: calc(1.375em - .0625em);
+    margin-top: calc(1.5em - .125em);
     margin-right: -.25em;
   }
 }
@@ -111,7 +114,6 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
 
   .index {
     font-size: 0.5375em;
-    transform: translate(-50%, calc(-50% - 0.0625em));
     color: #231f20;
   }
 }
