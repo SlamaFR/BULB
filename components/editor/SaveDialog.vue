@@ -14,7 +14,7 @@ const lineIndex = computed(() => {
   } else {
     const index = findIndexById(line.value.index.id)
     if (index === null) return ''
-    return (`${index.suffix}${index.index}${index.suffix}`).toLowerCase()
+    return (`${index.prefix}${index.index}${index.suffix}`).toLowerCase()
   }
 })
 

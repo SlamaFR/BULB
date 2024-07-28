@@ -19,7 +19,7 @@ export default function useSaveProject() {
     }
 
     return JSON.stringify({
-      line,
+      line: line.value,
       customIndices,
     })
   }
