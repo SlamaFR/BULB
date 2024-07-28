@@ -5,16 +5,16 @@ const { toggle, isDark } = useDark()
 <template>
   <Menubar>
     <template #start>
-      <div class="flex flex-row gap-2 items-start">
+      <div class="flex flex-col lg:flex-row gap-2 items-start">
         <h1 class="text-3xl">
           <strong>Beautiful Urban Line Builder</strong>
         </h1>
-        <small class="text-gray">v0.4.4-alpha</small>
+        <small class="text-gray">v0.5.0-alpha</small>
       </div>
     </template>
 
     <template #end>
-      <div class="flex flex-row gap-4 items-center">
+      <div class="flex flex-col-reverse lg:flex-row gap-4 items-end lg:items-center">
         <span class="mr-2">Pas mal non ? C'est français 🇫🇷</span>
         <div class="flex flex-row gap-1 items-center">
           <Button text rounded :icon="isDark ? 'i-tabler-moon' : 'i-tabler-sun'" @click="toggle()" />

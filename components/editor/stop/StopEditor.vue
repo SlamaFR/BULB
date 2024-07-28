@@ -16,7 +16,7 @@ watch(() => stop.value.name, (val) => {
 </script>
 
 <template>
-  <Panel class="min-w-25em" :header="`Arrêt #${index + 1}`">
+  <Panel class="md:min-w-25em" :header="`Arrêt #${index + 1}`">
     <div class="flex flex-col gap-2">
       <div class="flex flex-col gap-2">
         <label :for="`name_stop_${index}`">Nom</label>

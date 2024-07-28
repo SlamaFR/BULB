@@ -13,7 +13,7 @@ const { line } = storeToRefs(lineStore)
       </div>
     </Panel>
 
-    <div class="bottom-container">
+    <div class="bottom-container cols-3">
       <Panel header="Menu principal">
         <MainMenu />
       </Panel>
@@ -22,7 +22,7 @@ const { line } = storeToRefs(lineStore)
         <GeneralMapSettings />
       </Panel>
 
-      <Panel class="overflow-x-auto" header="Liste des arrêts">
+      <Panel class="overflow-x-auto wide" header="Liste des arrêts">
         <StopsEditor />
       </Panel>
     </div>
@@ -31,12 +31,28 @@ const { line } = storeToRefs(lineStore)
   <ConfirmDialog pt:root:class="max-w-40em" />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .bottom-container {
   display: grid;
-  grid-template-columns: auto auto 1fr;
+  grid-template-columns: auto auto auto;
   width: 100%;
   gap: 1rem;
   align-items: stretch;
+}
+
+@media (max-width: 640px) {
+  .bottom-container {
+    grid-template-columns: auto;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .bottom-container {
+    grid-template-columns: auto auto;
+
+    .wide {
+      grid-column: span 2;
+    }
+  }
 }
 </style>
