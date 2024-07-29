@@ -10,7 +10,7 @@ const visible = defineModel<boolean>('visible')
   <Dialog
     v-model:visible="visible"
     modal
-    pt:root:class="min-w-25em"
+    pt:root:class="md:min-w-25em"
     pt:header:class="gap-6"
   >
     <template #header>
@@ -87,6 +87,15 @@ const visible = defineModel<boolean>('visible')
   grid-template-columns: 1fr auto;
   gap: 1rem;
   align-items: start;
+}
+
+@media (max-width: 640px) {
+  .content {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: 2em;
+    align-items: center;
+  }
 }
 
 .form {

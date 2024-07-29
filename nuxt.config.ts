@@ -102,7 +102,10 @@ export default defineNuxtConfig({
         },
       },
     },
+    importPT: {
+      as: 'Passthrough',
+      from: '/utils/passthrough.ts',
+    },
   },
-
   compatibilityDate: '2024-07-20',
 })

@@ -28,7 +28,7 @@ const { line } = storeToRefs(lineStore)
     </div>
   </div>
 
-  <ConfirmDialog pt:root:class="max-w-40em" />
+  <ConfirmDialog />
 </template>
 
 <style scoped lang="scss">

@@ -84,7 +84,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
 
 @media (max-width: 640px) {
   .btn-group {
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
