@@ -13,7 +13,7 @@ const connection = defineModel<ModeConnection | ServiceConnection>('connection',
 
 <template>
   <Panel
-    class="min-w-35em max-w-40em"
+    class="md:min-w-35em md:max-w-40em"
     :header="`Groupe de correspondances #${index + 1}`"
     :pt="{
       root: { class: 'flex flex-col' },

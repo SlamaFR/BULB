@@ -21,7 +21,7 @@ function deleteService(index: number) {
 
 <template>
   <div class="flex flex-col gap-1">
-    <div class="flex flex-row gap-3">
+    <div class="flex flex-col md:flex-row gap-3">
       <div class="flex items-center">
         <Checkbox v-model="connection.walk" :input-id="`walk_connection_${index}`" binary />
         <label :for="`walk_connection_${index}`" class="ml-2">Correspondance piétonne</label>
@@ -33,7 +33,7 @@ function deleteService(index: number) {
         <b>Lignes</b>
       </Divider>
       <HorizontalScrollContainer>
-        <div class="flex flex-row gap-2 overflow-x-scroll">
+        <div class="flex flex-col md:flex-row gap-2 overflow-y-auto max-h-20em md:overflow-x-scroll">
           <ConnectionServiceEditor
             v-for="(_, i) in connection.services"
             :key="i"

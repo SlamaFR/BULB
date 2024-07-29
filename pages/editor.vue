@@ -34,7 +34,7 @@ const { line } = storeToRefs(lineStore)
 <style scoped lang="scss">
 .bottom-container {
   display: grid;
-  grid-template-columns: auto auto auto;
+  grid-template-columns: auto auto 1fr;
   width: 100%;
   gap: 1rem;
   align-items: stretch;

@@ -47,12 +47,6 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   height: 1em;
 }
 
-.container {
-  width: 100%;
-  height: 100%;
-  background-color: v-bind(color);
-}
-
 .index {
   display: flex;
   flex-direction: row;
@@ -90,10 +84,6 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
 }
 
 .circle {
-  .container {
-    mask: url(assets/svg/masks/circle.svg) no-repeat;
-  }
-
   .index .suffix {
     font-size: 0.375em;
     margin-top: calc(1.5em - .125em);
@@ -101,17 +91,7 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   }
 }
 
-.square {
-  .container {
-    mask: url(assets/svg/masks/square.svg) no-repeat;
-  }
-}
-
 .lines {
-  .container {
-    mask: url(assets/svg/masks/lines.svg) no-repeat;
-  }
-
   .index {
     font-size: 0.5375em;
     color: #231f20;

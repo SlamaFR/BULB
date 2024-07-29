@@ -40,7 +40,7 @@ function deleteConnection(index: number) {
         :total="stop.connections.length ?? 0"
         @delete="deleteConnection"
       />
-      <div class="min-w-30em min-h-25em p-panel p-8 flex flex-col items-center justify-center">
+      <div class="md:min-w-30em md:min-h-25em p-panel p-8 flex flex-col items-center justify-center">
         <Button text severity="warn" icon="i-tabler-plus" label="Mode de transport" @click="addModeConnection()" />
         <Divider align="center" type="dotted">
           <b>Ou</b>
@@ -56,5 +56,11 @@ function deleteConnection(index: number) {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: .75em;
+}
+
+@media (max-width: 1024px) {
+  .connections {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 </style>

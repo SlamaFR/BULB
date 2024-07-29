@@ -75,4 +75,16 @@ function deleteIndex(id: string) {
   gap: .125em;
   font-size: 3em;
 }
+
+@media (max-width: 640px) {
+  .btn-group {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .btn-group {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
 </style>

@@ -22,7 +22,7 @@ function deleteLine(index: number) {
 
 <template>
   <div class="flex flex-col gap-1">
-    <div class="flex flex-row gap-3">
+    <div class="flex flex-col md:flex-row gap-3">
       <div class="flex flex-grow items-center gap-4">
         <span>Mode</span>
         <ModeSelect v-model="connection.mode" />
@@ -39,7 +39,7 @@ function deleteLine(index: number) {
         <b>Lignes</b>
       </Divider>
       <HorizontalScrollContainer>
-        <div class="flex flex-row gap-2 overflow-x-scroll">
+        <div class="flex flex-col md:flex-row gap-2 overflow-y-auto max-h-20em md:overflow-x-scroll">
           <ConnectionLineEditor
             v-for="(_, i) in connection.lines"
             :key="i"
