@@ -59,6 +59,9 @@ importers:
       consola:
         specifier: ^3.2.3
         version: 3.2.3
+      dotenv:
+        specifier: ^16.4.5
+        version: 16.4.5
       eslint:
         specifier: ^9.0.0
         version: 9.7.0

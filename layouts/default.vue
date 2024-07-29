@@ -25,4 +25,5 @@
   </div>
 
   <Toast position="bottom-right" />
+  <ConfirmDialog pt:root:class="max-w-40em m-4" />
 </template>

@@ -5,7 +5,7 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev --host",
-    "generate": "nuxt generate",
+    "generate": "node scripts/set-version.cjs & nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
@@ -30,6 +30,7 @@
     "@vueuse/nuxt": "^10.11.0",
     "class-variance-authority": "^0.7.0",
     "consola": "^3.2.3",
+    "dotenv": "^16.4.5",
     "eslint": "^9.0.0",
     "html-to-image": "^1.11.11",
     "html2canvas": "^1.4.1",

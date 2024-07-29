@@ -2,6 +2,7 @@
 import { fr } from '~/assets/locales/fr.json'
 
 const { config } = usePrimeVue()
+useVersionTracking()
 config.locale = fr
 </script>
 

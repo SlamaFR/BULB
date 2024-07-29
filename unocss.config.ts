@@ -24,6 +24,5 @@ export default defineConfig({
   ],
   safelist: [
     'm-4',
-    'max-w-40em',
   ],
 })

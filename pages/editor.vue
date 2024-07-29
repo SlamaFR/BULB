@@ -27,8 +27,6 @@ const { line } = storeToRefs(lineStore)
       </Panel>
     </div>
   </div>
-
-  <ConfirmDialog />
 </template>
 
 <style scoped lang="scss">

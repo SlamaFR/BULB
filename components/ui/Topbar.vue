@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { toggle, isDark } = useDark()
+const version = useVersion()
 </script>
 
 <template>
@@ -10,7 +11,7 @@ const { toggle, isDark } = useDark()
           <strong class="hidden md:block">Beautiful Urban Line Builder</strong>
           <strong class="md:hidden visible">BULB</strong>
         </h1>
-        <small class="text-gray">v0.5.2-alpha</small>
+        <small class="text-gray"><span>v</span>{{ version }}</small>
       </div>
     </template>
 
