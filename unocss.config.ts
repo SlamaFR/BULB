@@ -23,6 +23,6 @@ export default defineConfig({
     transformerVariantGroup(),
   ],
   safelist: [
-    'm-4',
+    'important-m-4',
   ],
 })
