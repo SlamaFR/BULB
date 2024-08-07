@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type { LineContext } from './Line.vue'
 import { goesBelowLine } from '~/utils/text'
 
 const {
@@ -55,8 +54,11 @@ const lineContext = inject<LineContext>(LineContextKey)
         <SubtitleLabel :value="subtitle" :interest-point="subtitleInterestPoint" />
       </div>
     </div>
-    <StopDot :terminus="terminus" :connection="connections.length > 0" :color="color ?? lineContext?.color.value ?? '#000000'" />
-    <div class="translate-x--.5em">
+    <StopDot
+      :terminus="terminus" :connection="connections.length > 0"
+      :color="color ?? lineContext?.color.value ?? '#000000'"
+    />
+    <div class="h-0 translate-x--.5em mt-.125em">
       <Connections :connections="connections" />
     </div>
   </div>
@@ -112,7 +114,7 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 .stop-label-wrapper {
   position: absolute;
-  top: -.125em;
+  top: -.25em;
   transform: translateY(-100%);
 }
 
@@ -133,7 +135,6 @@ const lineContext = inject<LineContext>(LineContextKey)
 .subtitle-label-wrapper {
   position: absolute;
   left: 1.25em;
-  margin-left: .25em;
   top: calc(-.125em + var(--font-shift-correction));
   transform: translateY(-100%);
 
@@ -142,7 +143,7 @@ const lineContext = inject<LineContext>(LineContextKey)
   }
 
   .prevent-subtitle-overlap.lower-baseline:not(.terminus) & {
-    margin-left: calc(.25em + .375em);
+    margin-left: calc(.375em);
   }
 
   .prevent-subtitle-overlap.multiline.lower-baseline:not(.terminus) & {

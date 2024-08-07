@@ -8,15 +8,15 @@ const {
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.walk }">
-      <Pedestrian v-if="connection.walk" />
-      <Mode :mode="connection.mode" />
+    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.$modeConnection.walk }">
+      <Pedestrian v-if="connection.$modeConnection.walk" />
+      <Mode :mode="connection.$modeConnection.mode" />
     </div>
     <VerticalLine inner />
   </div>
   <div class="connection-group-lines">
-    <IconOrnament v-for="line in connection.lines" :ornament="line.ornament" :walk="line.walk">
-      <LineIndex :mode="connection.mode" :index="line.lineIndex" />
+    <IconOrnament v-for="line in connection.$modeConnection.elements" :ornament="line.$modeConnectionElement.ornament" :walk="line.$modeConnectionElement.walk">
+      <LineIndex :mode="connection.$modeConnection.mode" :index="line.$modeConnectionElement.lineIndex" />
     </IconOrnament>
   </div>
 </template>

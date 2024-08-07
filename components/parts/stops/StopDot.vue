@@ -11,7 +11,9 @@ const {
 </script>
 
 <template>
-  <div class="dot" :class="{ terminus, connection }" />
+  <div class="w-1em h-1em flex items-center justify-center relative left--.5em">
+    <div class="absolute dot" :class="{ terminus, connection }" />
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -20,7 +22,6 @@ const {
   height: 1.125em;
   border-radius: 50%;
   background-color: v-bind(color);
-  transform: translateX(-50%);
 
   &.connection {
     background-color: white;

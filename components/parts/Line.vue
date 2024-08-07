@@ -1,20 +1,11 @@
 <script setup lang="ts">
-import type { Ref } from 'vue'
-
-export interface LineContext {
-  color: Ref<string>
-}
-
 const {
-  color,
-  stopSpacing,
+  line,
 } = defineProps<{
-  color: string | null
-  stopSpacing: number
+  line: Line
 }>()
 
-const lineColor = computed(() => color ?? 'black')
-const lineStopSpacing = computed(() => `${stopSpacing}em`)
+const lineColor = computed(() => line.color ?? 'black')
 
 provide<LineContext>(LineContextKey, {
   color: lineColor,
@@ -22,31 +13,14 @@ provide<LineContext>(LineContextKey, {
 </script>
 
 <template>
-  <div class="relative line-container">
-    <div class="stops flex flex-row items-start">
-      <slot />
-    </div>
-    <div class="line" />
+  <div class="flex flex-row outline-cyan outline-1 p-1 outline-solid">
+    <LineSection v-for="section in line.lineTopology" :section="section" />
   </div>
 </template>
 
 <style scoped>
-.line-container {
-  width: fit-content;
-}
-
-.stops {
-  gap: v-bind(lineStopSpacing);
-}
-
-.line {
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: translateY(100%);
-  width: calc(100%);
-  height: .375em;
-  z-index: 0;
-  background-color: v-bind(lineColor);
+* {
+  font-family: 'Parisine Std';
+  color: var(--blue-ratp-paper);
 }
 </style>

@@ -30,6 +30,7 @@ const {
   width: fit-content;
   rotate: -30deg;
   transform-origin: bottom left;
+  color: var(--blue-ratp-paper);
 
   font-size: .4375em;
   font-weight: bold;

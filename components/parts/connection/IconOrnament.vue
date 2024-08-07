@@ -3,9 +3,17 @@ const {
   ornament = null,
   walk = false,
 } = defineProps<{
-  ornament?: AirportOrnament | TextOrnament | null
+  ornament?: Ornament | null
   walk?: boolean
 }>()
+
+function isAirport(ornament: Ornament): ornament is AirportOrnament {
+  return '$airportOrnament' in ornament
+}
+
+function isText(ornament: Ornament): ornament is TextOrnament {
+  return '$textOrnament' in ornament
+}
 </script>
 
 <template>
@@ -21,11 +29,11 @@ const {
       <Pedestrian v-if="walk" />
       <slot />
     </div>
-    <div v-if="ornament && isAirportOrnament(ornament)" class="relative">
+    <div v-if="ornament && isAirport(ornament)" class="relative">
       <div class="joint" />
       <Airport :airport="ornament.airport" />
     </div>
-    <div v-if="ornament && isTextOrnament(ornament)" class="text-ornament">
+    <div v-if="ornament && isText(ornament)" class="text-ornament">
       <span>{{ ornament.text }}</span>
     </div>
   </div>

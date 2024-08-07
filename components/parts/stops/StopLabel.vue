@@ -29,13 +29,13 @@ const {
   width: fit-content;
   rotate: -30deg;
   transform-origin: bottom left;
+  color: var(--blue-ratp-paper);
 
   &.terminus {
     height: fit-content;
     padding: .125em .25em;
     background-color: var(--blue-ratp-paper);
     color: white;
-
   }
 
   & > div {

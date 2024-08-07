@@ -28,9 +28,19 @@ const unknownCustomIndex: CustomLineIndexDescription = {
   suffix: '',
   color: '#000000',
 }
+
+function isBuiltin(index: LineIndex | null): index is BuiltinLineIndex {
+  if (index === null) return false
+  return '$builtinLineIndex' in index
+}
+function isCustom(index: LineIndex | null): index is CustomLineIndex {
+  if (index === null) return false
+  return '$customLineIndex' in index
+}
+
 const customIndex = computed(() => {
-  if (isCustomIndex(index)) {
-    return findIndexById(index.id) ?? unknownCustomIndex
+  if (isCustom(index)) {
+    return findIndexById(index.$customLineIndex.id) ?? unknownCustomIndex
   }
   return unknownCustomIndex
 })
@@ -38,11 +48,11 @@ const customIndex = computed(() => {
 
 <template>
   <div v-if="index !== null" class="aspect-square" :class="{ 'bg-white rounded': transparent }">
-    <Cable v-if="isDefaultIndex(index) && index.mode === 'CABLE'" :line="index.index" />
-    <Metro v-else-if="isDefaultIndex(index) && index.mode === 'METRO'" :line="index.index" />
-    <ExpressTrain v-else-if="isDefaultIndex(index) && index.mode === 'RER'" :line="index.index" />
-    <Train v-else-if="isDefaultIndex(index) && index.mode === 'TRAIN'" :line="index.index" />
-    <Tram v-else-if="isDefaultIndex(index) && index.mode === 'TRAM'" :line="index.index" />
+    <Cable v-if="isBuiltin(index) && index.$builtinLineIndex.mode === 'CABLE'" :line="index.$builtinLineIndex.index" />
+    <Metro v-else-if="isBuiltin(index) && index.$builtinLineIndex.mode === 'METRO'" :line="index.$builtinLineIndex.index" />
+    <ExpressTrain v-else-if="isBuiltin(index) && index.$builtinLineIndex.mode === 'RER'" :line="index.$builtinLineIndex.index" />
+    <Train v-else-if="isBuiltin(index) && index.$builtinLineIndex.mode === 'TRAIN'" :line="index.$builtinLineIndex.index" />
+    <Tram v-else-if="isBuiltin(index) && index.$builtinLineIndex.mode === 'TRAM'" :line="index.$builtinLineIndex.index" />
     <CustomLineIndex
       v-else-if="customIndex"
       :shape="customIndex.shape"
