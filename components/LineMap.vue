@@ -30,7 +30,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
       <Line :color="line.color" :stop-spacing="line.stopSpacing">
         <Stop
           v-for="(stop, index) in line.stops"
-          :key="index"
+          :key="stop.id"
           :name="stop.name"
           :subtitle="stop.subtitle"
           :subtitle-interest-point="stop.interestPoint"

@@ -33,8 +33,8 @@ function deleteConnection(index: number) {
   >
     <div class="connections">
       <ConnectionGroupEditor
-        v-for="(_, index) in stop.connections"
-        :key="index"
+        v-for="(connection, index) in stop.connections"
+        :key="connection.id"
         v-model:connection="stop.connections[index]"
         :index="index"
         :total="stop.connections.length ?? 0"

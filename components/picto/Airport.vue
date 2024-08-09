@@ -18,9 +18,8 @@ const icon = computed(() => {
       return CDG
     case 'BOTH':
       return BOTH
-    case 'GENERIC':
-      return GENERIC
   }
+  return GENERIC
 })
 </script>
 

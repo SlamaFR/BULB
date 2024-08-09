@@ -15,7 +15,12 @@ const {
     <VerticalLine inner />
   </div>
   <div class="connection-group-lines">
-    <IconOrnament v-for="line in connection.$modeConnection.elements" :ornament="line.$modeConnectionElement.ornament" :walk="line.$modeConnectionElement.walk">
+    <IconOrnament
+      v-for="line in connection.$modeConnection.elements"
+      :key="line.id"
+      :ornament="line.$modeConnectionElement.ornament"
+      :walk="line.$modeConnectionElement.walk"
+    >
       <LineIndex :mode="connection.$modeConnection.mode" :index="line.$modeConnectionElement.lineIndex" />
     </IconOrnament>
   </div>

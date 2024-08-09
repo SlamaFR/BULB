@@ -61,12 +61,14 @@ declare global {
   type Airport = 'CDG' | 'ORY' | 'BOTH' | 'GENERIC'
 
   interface AirportOrnament {
+    id: string
     $airportOrnament: {
       position: OrnamentPosition
       airport: Airport
     }
   }
   interface TextOrnament {
+    id: string
     $textOrnament: {
       position: OrnamentPosition
       text: string
@@ -75,6 +77,7 @@ declare global {
   type Ornament = AirportOrnament | TextOrnament
 
   interface ModeConnectionElement {
+    id: string
     $modeConnectionElement: {
       lineIndex: LineIndex | null
       walk: boolean
@@ -82,6 +85,7 @@ declare global {
     }
   }
   interface ServiceConnectionElement {
+    id: string
     $serviceConnectionElement: {
       service: Service | null
       ornament: Ornament | null
@@ -89,6 +93,7 @@ declare global {
   }
 
   interface ModeConnection {
+    id: string
     $modeConnection: {
       mode: Mode | null
       elements: ModeConnectionElement[]
@@ -96,6 +101,7 @@ declare global {
     }
   }
   interface ServiceConnection {
+    id: string
     $serviceConnection: {
       elements: ServiceConnectionElement[]
       walk: boolean
@@ -104,6 +110,7 @@ declare global {
   type Connection = ModeConnection | ServiceConnection
 
   interface Stop {
+    id: string
     name: string
     subtitle?: string
     preventSubtitleOverlapping: boolean
@@ -112,13 +119,17 @@ declare global {
   }
 
   interface Branch {
+    id: string
     $branch: {
       stopSpacing: number
       levelOffset: number
+      leftMargin?: number
+      rightMargin?: number
       stops: Stop[]
     }
   }
   interface Fork {
+    id: string
     $fork: {
       toward: 'LEFT' | 'RIGHT'
       originOffset: number
@@ -126,18 +137,21 @@ declare global {
     }
   }
   interface Shift {
+    id: string
     $shift: {
       fromOffset: number
       toOffset: number
     }
   }
   interface ParallelBranches {
+    id: string
     $parallelBranches: {
       alignement: 'FLUID' | 'LEFT' | 'RIGHT'
       sections: [LineSection, LineSection]
     }
   }
   interface Loop {
+    id: string
     $loop: {
       toward: 'LEFT' | 'RIGHT'
       linksOffsets: [number, number]
@@ -147,6 +161,7 @@ declare global {
   type LineElement = Branch | Fork | ParallelBranches | Loop
 
   interface LineSection {
+    id: string
     $lineSection: {
       title?: string
       subtitle?: string

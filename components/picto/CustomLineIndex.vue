@@ -31,7 +31,7 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
     <Shape :shape="shape" :color="color" />
     <span class="index">
       <span v-if="prefix && shape === 'LINES'" class="prefix">{{ prefix }}</span>
-      <span v-for="c in index" :class="{ narrow: NARROW_CHARS.includes(c) }">{{ c }}</span>
+      <span v-for="(c, i) in index" :key="i" :class="{ narrow: NARROW_CHARS.includes(c) }">{{ c }}</span>
       <span v-if="suffix" class="suffix">{{ suffix }}</span>
     </span>
   </div>

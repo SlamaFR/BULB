@@ -1,25 +1,37 @@
 <script setup lang="ts">
 const {
   meta,
-  inner = false,
+  fluid = false,
 } = defineProps<{
   meta: Branch
-  inner?: boolean
+  fluid?: boolean
 }>()
 
 const lineContext = inject<LineContext>(LineContextKey)
 
 const stopSpacing = computed(() => `${meta.$branch.stopSpacing}em`)
+const leftMargin = computed(() => `${meta.$branch.leftMargin ?? 0}em`)
+const rightMargin = computed(() => `${meta.$branch.rightMargin ?? 0}em`)
+
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const offset = computed(() => `calc(${meta.$branch.levelOffset} * -2.75em)`)
 </script>
 
 <template>
-  <div class="outline-1 outline-red outline-solid bg-red/25 branch-wrapper">
+  <div
+    class="outline-1 outline-red outline-solid bg-red/25 branch-wrapper" :class="{
+      fluid,
+      negativeLeftMargin: meta.$branch.leftMargin < 0,
+      negativeRightMargin: meta.$branch.rightMargin < 0,
+      positiveLeftMargin: meta.$branch.leftMargin > 0,
+      positiveRightMargin: meta.$branch.rightMargin > 0,
+    }"
+  >
     <span v-if="false" class="absolute top--1.5em left-0 text-red text-sm">Branch</span>
-    <div class="branch" :class="{ inner }">
+    <div class="branch">
       <Stop
         v-for="stop in meta.$branch.stops"
+        :key="stop.id"
         :name="stop.name"
         :subtitle="stop.subtitle"
         :subtitle-interest-point="stop.interestPoint"
@@ -35,7 +47,26 @@ const offset = computed(() => `calc(${meta.$branch.levelOffset} * -2.75em)`)
 .branch-wrapper {
   position: relative;
   transform: translateY(v-bind(offset));
-  width: 100%;
+
+  &.fluid {
+    flex-grow: 1;
+  }
+
+  &.negativeLeftMargin {
+    margin-left: v-bind(leftMargin);
+  }
+
+  &.negativeRightMargin {
+    margin-right: v-bind(rightMargin);
+  }
+
+  &.positiveLeftMargin {
+    padding-left: v-bind(leftMargin);
+  }
+
+  &.positiveRightMargin {
+    padding-right: v-bind(rightMargin);
+  }
 }
 
 .branch {
@@ -45,10 +76,6 @@ const offset = computed(() => `calc(${meta.$branch.levelOffset} * -2.75em)`)
   justify-content: space-evenly;
   gap: v-bind(stopSpacing);
   height: 1em;
-}
-
-.inner {
-  //padding: 0 2em;
 }
 
 .line {

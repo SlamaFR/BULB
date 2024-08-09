@@ -44,8 +44,8 @@ const lineContext = inject<LineContext>(LineContextKey)
       </div>
       <div v-else class="stop-multi-label-wrapper">
         <StopLabel
-          v-for="(namePart, index) of name.split('\n')"
-          :key="index"
+          v-for="namePart in name.split('\n')"
+          :key="namePart"
           :stop-name="namePart"
           :terminus="terminus"
         />

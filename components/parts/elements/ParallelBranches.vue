@@ -15,8 +15,8 @@ const {
       fluid: meta.$parallelBranches.alignement === 'FLUID',
     }"
   >
-    <div v-for="section in meta.$parallelBranches.sections" class="child-branch">
-      <LineSection :section="section" />
+    <div v-for="section in meta.$parallelBranches.sections" :key="section.id" class="child-branch">
+      <LineSection :section="section" :fluid="meta.$parallelBranches.alignement === 'FLUID'" />
     </div>
   </div>
 </template>

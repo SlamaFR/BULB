@@ -42,8 +42,8 @@ function deleteAllStops() {
   <div v-if="stops.length > 0" class="flex flex-col gap-4 h-full">
     <div class="flex flex-col md:flex-row gap-3 flex-grow max-h-30em overflow-y-auto md:overflow-x-auto">
       <StopEditor
-        v-for="(_, index) in stops"
-        :key="index"
+        v-for="(stop, index) in stops"
+        :key="stop.id"
         v-model:stop="stops[index]"
         :index="index"
         @delete="deleteStop"

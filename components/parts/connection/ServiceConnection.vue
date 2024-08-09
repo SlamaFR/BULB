@@ -8,10 +8,10 @@ const {
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.walk }">
-      <Pedestrian v-if="connection.walk" />
-      <IconOrnament v-for="(service, index) in connection.services" :key="index" :ornament="service.ornament">
-        <Service :service="service.service" />
+    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.$serviceConnection.walk }">
+      <Pedestrian v-if="connection.$serviceConnection.walk" />
+      <IconOrnament v-for="service in connection.$serviceConnection.elements" :key="service.id" :ornament="service.$serviceConnectionElement.ornament">
+        <Service :service="service.$serviceConnectionElement.service" />
       </IconOrnament>
     </div>
     <VerticalLine inner />

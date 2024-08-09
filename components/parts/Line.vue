@@ -14,7 +14,7 @@ provide<LineContext>(LineContextKey, {
 
 <template>
   <div class="flex flex-row outline-cyan outline-1 p-1 outline-solid">
-    <LineSection v-for="section in line.lineTopology" :section="section" />
+    <LineSection v-for="section in line.lineTopology" :key="section.id" :section="section" />
   </div>
 </template>
 

@@ -17,7 +17,7 @@ function isService(connection: Connection): connection is ServiceConnection {
 <template>
   <div v-if="connections.length > 0">
     <VerticalLine large />
-    <div v-for="(connection, index) in connections" :key="index" class="connection-group">
+    <div v-for="connection in connections" :key="connection.id" class="connection-group">
       <ModeConnection v-if="isMode(connection)" :connection="connection" />
       <ServiceConnection v-else-if="isService(connection)" :connection="connection" />
       <span v-else>?</span>
