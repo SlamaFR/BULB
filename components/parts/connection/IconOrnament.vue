@@ -7,13 +7,8 @@ const {
   walk?: boolean
 }>()
 
-function isAirport(ornament: Ornament): ornament is AirportOrnament {
-  return '$airportOrnament' in ornament
-}
-
-function isText(ornament: Ornament): ornament is TextOrnament {
-  return '$textOrnament' in ornament
-}
+const isAirport = (ornament: Ornament): ornament is AirportOrnament => '$airportOrnament' in ornament
+const isText = (ornament: Ornament): ornament is TextOrnament => '$textOrnament' in ornament
 </script>
 
 <template>

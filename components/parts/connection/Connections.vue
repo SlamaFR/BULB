@@ -5,13 +5,8 @@ const {
   connections: Connection[]
 }>()
 
-function isMode(connection: Connection): connection is ModeConnection {
-  return '$modeConnection' in connection
-}
-
-function isService(connection: Connection): connection is ServiceConnection {
-  return '$serviceConnection' in connection
-}
+const isMode = (connection: Connection): connection is ModeConnection => '$modeConnection' in connection
+const isService = (connection: Connection): connection is ServiceConnection => '$serviceConnection' in connection
 </script>
 
 <template>
