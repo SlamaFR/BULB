@@ -120,7 +120,7 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 .stop-multi-label-wrapper {
   position: absolute;
-  top: -.125em;
+  top: -.25em;
   transform: translate(0, -100%);
 
   display: flex;

@@ -4,21 +4,25 @@ const {
 } = defineProps<{
   meta: Fork
 }>()
+const SLOPE_WIDTH = 76
+const CLEARANCE = 32
 
 const lineContext = inject<LineContext>(LineContextKey)
-
 const color = computed(() => lineContext?.color.value ?? '#000000')
+const lineWidth = computed(() => lineContext?.lineWidth.value ?? 1)
 
 const maxHeight = computed(() => {
-  return Math.abs(meta.$fork.linksOffset[0] - meta.$fork.linksOffset[1]) * 2.75 * 16 + (16)
+  return (meta.$fork.offsetMultiplier ?? 1) * Math.abs(meta.$fork.linksOffset[0] - meta.$fork.linksOffset[1]) * 2.75 * 16 + (16 * lineWidth.value)
 })
+
+const normalWidth = SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + CLEARANCE * 2
 
 const orientation = computed(() => {
   switch (meta.$fork.toward) {
     case 'LEFT':
-      return [164, 0, -1]
+      return [normalWidth, 0, -1]
     case 'RIGHT':
-      return [0, 164, 1]
+      return [0, normalWidth, 1]
   }
   return [0, 0, 0]
 })
@@ -26,25 +30,31 @@ const orientation = computed(() => {
 const lowestOffset = computed(() => Math.min(meta.$fork.linksOffset[0], meta.$fork.linksOffset[1]))
 const highestOffset = computed(() => Math.max(meta.$fork.linksOffset[0], meta.$fork.linksOffset[1]))
 const offset = computed(() => (lowestOffset.value + highestOffset.value) / 2)
-const wrapperOffset = computed(() => `calc(${offset.value} * -2.75em)`)
+const wrapperOffset = computed(() => `calc(${offset.value * (meta.$fork.offsetMultiplier ?? 1)} * -2.75em)`)
 
 function getPath(fromOffset: number, toOffset: number) {
   const [fromX, toX, flip] = orientation.value
-  const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * 16)
-  const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * 16)
-  return `M ${fromX} ${fromY} L ${fromX + 24 * flip} ${fromY} L ${toX - 24 * flip} ${toY} L ${toX} ${toY}`
+  const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * 16) * (meta.$fork.offsetMultiplier ?? 1)
+  const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * 16) * (meta.$fork.offsetMultiplier ?? 1)
+  return `M ${fromX} ${fromY} L ${fromX + CLEARANCE * flip} ${fromY} L ${toX - CLEARANCE * flip} ${toY} L ${toX} ${toY}`
 }
 </script>
 
 <template>
-  <div class="fork w-10.25em outline-blue outline-1 bg-blue/25 outline-solid outline-dashed flex-shrink-0">
+  <div
+    class="fork flex-shrink-0" :style="{
+      width: `${normalWidth}px`,
+    }"
+  >
     <svg width="100%" :height="`${maxHeight}px`">
       <path
-        :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[0])" :stroke="color" stroke-width=".375em"
+        :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[0])" :stroke="color"
+        :stroke-width="`${lineWidth}em`"
         fill="transparent" stroke-linejoin="round"
       />
       <path
-        :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[1])" :stroke="color" stroke-width=".375em"
+        :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[1])" :stroke="color"
+        :stroke-width="`${lineWidth}em`"
         fill="transparent" stroke-linejoin="round"
       />
     </svg>
@@ -54,5 +64,6 @@ function getPath(fromOffset: number, toOffset: number) {
 <style scoped>
 .fork {
   transform: translateY(v-bind(wrapperOffset));
+  z-index: 1;
 }
 </style>

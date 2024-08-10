@@ -5,16 +5,15 @@ const {
   line: Line
 }>()
 
-const lineColor = computed(() => line.color ?? 'black')
-
 provide<LineContext>(LineContextKey, {
-  color: lineColor,
+  color: computed(() => line.color ?? 'black'),
+  lineWidth: computed(() => line.lineWidth),
 })
 </script>
 
 <template>
-  <div class="flex flex-row outline-cyan outline-1 p-1 outline-solid">
-    <LineSection v-for="section in line.lineTopology" :key="section.id" :section="section" />
+  <div class="flex flex-row">
+    <LineSection v-for="section in line.topology" :key="section.id" :section="section" />
   </div>
 </template>
 

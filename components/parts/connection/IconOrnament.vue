@@ -31,10 +31,10 @@ function isText(ornament: Ornament): ornament is TextOrnament {
     </div>
     <div v-if="ornament && isAirport(ornament)" class="relative">
       <div class="joint" />
-      <Airport :airport="ornament.airport" />
+      <Airport :airport="ornament.$airportOrnament.airport" />
     </div>
     <div v-if="ornament && isText(ornament)" class="text-ornament">
-      <span>{{ ornament.text }}</span>
+      <span>{{ ornament.$textOrnament.text }}</span>
     </div>
   </div>
 </template>

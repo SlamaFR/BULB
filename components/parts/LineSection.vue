@@ -11,7 +11,7 @@ const offset = computed(() => `calc(${section.$lineSection.levelOffset} * -2.75e
 </script>
 
 <template>
-  <div class="py-2 outline-[magenta] outline-1 outline-solid section flex flex-row items-center w-full">
+  <div class="section flex flex-row items-center w-full">
     <LineElement v-for="element in section.$lineSection.elements" :key="element.id" :element="element" :fluid="fluid" />
   </div>
 </template>
@@ -19,5 +19,6 @@ const offset = computed(() => `calc(${section.$lineSection.levelOffset} * -2.75e
 <style scoped>
 .section {
   transform: translateY(v-bind(offset));
+  z-index: 2;
 }
 </style>

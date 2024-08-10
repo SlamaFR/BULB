@@ -122,7 +122,6 @@ declare global {
     id: string
     $branch: {
       stopSpacing: number
-      levelOffset: number
       leftMargin?: number
       rightMargin?: number
       stops: Stop[]
@@ -134,13 +133,7 @@ declare global {
       toward: 'LEFT' | 'RIGHT'
       originOffset: number
       linksOffset: [number, number]
-    }
-  }
-  interface Shift {
-    id: string
-    $shift: {
-      fromOffset: number
-      toOffset: number
+      offsetMultiplier?: number
     }
   }
   interface ParallelBranches {
@@ -188,11 +181,13 @@ declare global {
     mode: Mode | null
     index: LineIndex | null
     color: string | null
-    lineTopology: LineSection[]
+    lineWidth: number
+    topology: LineSection[]
   }
 
   export interface LineContext {
     color: Ref<string>
+    lineWidth: Ref<number>
   }
 }
 
