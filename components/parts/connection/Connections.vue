@@ -4,9 +4,6 @@ const {
 } = defineProps<{
   connections: Connection[]
 }>()
-
-const isMode = (connection: Connection): connection is ModeConnection => '$modeConnection' in connection
-const isService = (connection: Connection): connection is ServiceConnection => '$serviceConnection' in connection
 </script>
 
 <template>

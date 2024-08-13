@@ -26,19 +26,8 @@ onBeforeUnmount(() => exportSignal.off(doExport))
         </div>
       </div>
     </div>
-    <div class="pt-35 pb-10 ml-1em">
-      <Line :color="line.color" :stop-spacing="line.stopSpacing">
-        <Stop
-          v-for="(stop, index) in line.stops"
-          :key="stop.id"
-          :name="stop.name"
-          :subtitle="stop.subtitle"
-          :subtitle-interest-point="stop.interestPoint"
-          :prevent-subtitle-overlap="stop.preventSubtitleOverlapping"
-          :connections="stop.connections"
-          :terminus="index === 0 || index === line.stops.length - 1"
-        />
-      </Line>
+    <div class="py-10 ml-1em">
+      <Line :line="line" />
     </div>
   </div>
 </template>

@@ -4,15 +4,16 @@ const {
 } = defineProps<{
   meta: Fork
 }>()
-const SLOPE_WIDTH = 76
 const CLEARANCE = 32
+const SIZE = 16
+const SLOPE_WIDTH = SIZE * 4.75
 
 const lineContext = inject<LineContext>(LineContextKey)
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => lineContext?.lineWidth.value ?? 1)
 
 const maxHeight = computed(() => {
-  return (meta.$fork.offsetMultiplier ?? 1) * Math.abs(meta.$fork.linksOffset[0] - meta.$fork.linksOffset[1]) * 2.75 * 16 + (16 * lineWidth.value)
+  return (meta.$fork.offsetMultiplier ?? 1) * Math.abs(meta.$fork.linksOffset[0] - meta.$fork.linksOffset[1]) * 2.75 * SIZE + (SIZE * lineWidth.value)
 })
 
 const normalWidth = SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + CLEARANCE * 2
@@ -34,8 +35,8 @@ const wrapperOffset = computed(() => `calc(${offset.value * (meta.$fork.offsetMu
 
 function getPath(fromOffset: number, toOffset: number) {
   const [fromX, toX, flip] = orientation.value
-  const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * 16) * (meta.$fork.offsetMultiplier ?? 1)
-  const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * 16) * (meta.$fork.offsetMultiplier ?? 1)
+  const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
+  const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
   return `M ${fromX} ${fromY} L ${fromX + CLEARANCE * flip} ${fromY} L ${toX - CLEARANCE * flip} ${toY} L ${toX} ${toY}`
 }
 </script>

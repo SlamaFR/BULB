@@ -5,12 +5,13 @@ const {
   meta: Loop
 }>()
 const CLEARANCE = 16
+const SIZE = 16
 
 const lineContext = inject<LineContext>(LineContextKey)
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => lineContext?.lineWidth.value ?? 1)
 
-const height = computed(() => Math.abs(meta.$loop.linksOffsets[0] - meta.$loop.linksOffsets[1]) * 2.75 * 16 + (16 * lineWidth.value))
+const height = computed(() => Math.abs(meta.$loop.linksOffsets[0] - meta.$loop.linksOffsets[1]) * 2.75 * SIZE + (SIZE * lineWidth.value))
 const width = computed(() => height.value / 2 + lineWidth.value + CLEARANCE)
 
 const orientation = computed(() => {
@@ -36,7 +37,7 @@ const path = computed(() => {
 })
 
 function offsetToY(offset: number) {
-  return height.value / 2 - (offset - globalOffset.value) * (2.75 * 16)
+  return height.value / 2 - (offset - globalOffset.value) * (2.75 * SIZE)
 }
 </script>
 

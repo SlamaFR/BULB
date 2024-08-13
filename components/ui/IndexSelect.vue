@@ -29,13 +29,22 @@ const availableLines = computed(() => [
 
 watch(index, val => emit('updateColor', indexToChoice(val)?.color ?? null))
 
+function isBuiltin(index: LineIndex | null): index is BuiltinLineIndex {
+  if (index === null) return false
+  return '$builtinLineIndex' in index
+}
+function isCustom(index: LineIndex | null): index is CustomLineIndex {
+  if (index === null) return false
+  return '$customLineIndex' in index
+}
+
 function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   if (index === null) return null
-  if (isDefaultIndex(index)) {
+  if (isBuiltin(index)) {
     return findLineByValue(index)
   }
-  if (isCustomIndex(index)) {
-    const customIndex = findIndexById(index.id)
+  if (isCustom(index)) {
+    const customIndex = findIndexById(index.$customLineIndex.id)
     if (customIndex === null) return null
     return {
       value: index,

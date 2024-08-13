@@ -8,7 +8,7 @@ const {
 
 <template>
   <div
-    class="relative flex flex-col"
+    class="my-6em relative flex flex-col"
     :class="{
       left: meta.$parallelBranches.alignement === 'LEFT',
       right: meta.$parallelBranches.alignement === 'RIGHT',

@@ -6,11 +6,6 @@ const {
   element: LineElement
   fluid?: boolean
 }>()
-
-const isBranch = (element: LineElement): element is Branch => '$branch' in element
-const isFork = (element: LineElement): element is Fork => '$fork' in element
-const isLoop = (element: LineElement): element is Loop => '$loop' in element
-const isParallelBranches = (element: LineElement): element is ParallelBranches => '$parallelBranches' in element
 </script>
 
 <template>

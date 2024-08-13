@@ -131,12 +131,12 @@ export function findModeByValue(value: Mode | null): ModeChoice | null {
 }
 
 export function findLineByValue(index: BuiltinLineIndex): IndexChoice<BuiltinLineIndex> | null {
-  return getLinesByMode(index.mode)
-    .find(it => it.value.index === index.index) ?? null
+  return getLinesByMode(index.$builtinLineIndex.mode)
+    .find(it => it.value.$builtinLineIndex.index === index.$builtinLineIndex.index) ?? null
 }
 
 export function getLinesByMode(mode: Mode | null): IndexChoice<BuiltinLineIndex>[] {
-  return BUILTIN_LINES.filter(it => it.value.mode === mode)
+  return BUILTIN_LINES.filter(it => it.value?.$builtinLineIndex?.mode === mode)
 }
 
 export function findColorByValue(value: string | null): ColorChoice | null {

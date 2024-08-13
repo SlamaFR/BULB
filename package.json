@@ -10,11 +10,13 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint .",
     "nuxi": "nuxi",
-    "taze": "taze major -I"
+    "taze": "taze major -I",
+    "icons": "node ./scripts/export-icons.cjs"
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.0",
     "@iconify-json/tabler": "^1.1.118",
+    "@iconify/tools": "^4.0.5",
     "@nuxt/fonts": "^0.7.1",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/critters": "^0.7.1",

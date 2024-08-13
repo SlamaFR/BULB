@@ -6,9 +6,6 @@ const {
   ornament?: Ornament | null
   walk?: boolean
 }>()
-
-const isAirport = (ornament: Ornament): ornament is AirportOrnament => '$airportOrnament' in ornament
-const isText = (ornament: Ornament): ornament is TextOrnament => '$textOrnament' in ornament
 </script>
 
 <template>
