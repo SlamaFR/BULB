@@ -1,0 +1,314 @@
+{
+  "mode": "METRO",
+  "index": "14",
+  "color": "#662c91",
+  "stops": [
+    {
+      "name": "Saint-Lazare",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "3",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "9",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "12",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "13",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "RER",
+          "lines": [
+            {
+              "lineIndex": "E",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "A",
+              "walk": true,
+              "ornament": {
+                "text": "Auber",
+                "position": "RIGHT"
+              }
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "TRAIN",
+          "lines": [
+            {
+              "lineIndex": "J",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "L",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "services": [
+            {
+              "service": "MAIN_STATION",
+              "ornament": null
+            }
+          ],
+          "walk": false
+        }
+      ]
+    },
+    {
+      "name": "Madeleine",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "8",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "12",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        }
+      ]
+    },
+    {
+      "name": "Pyramides",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "7",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        }
+      ]
+    },
+    {
+      "name": "Châtelet – Les Halles",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "1",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "4",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "7",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "11",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "RER",
+          "lines": [
+            {
+              "lineIndex": "A",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "B",
+              "walk": false,
+              "ornament": {
+                "airport": "BOTH",
+                "position": "BOTTOM"
+              }
+            },
+            {
+              "lineIndex": "D",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        }
+      ]
+    },
+    {
+      "name": "Gare de Lyon",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "1",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "RER",
+          "lines": [
+            {
+              "lineIndex": "A",
+              "walk": false,
+              "ornament": null
+            },
+            {
+              "lineIndex": "D",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "TRAIN",
+          "lines": [
+            {
+              "lineIndex": "R",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "services": [
+            {
+              "service": "MAIN_STATION",
+              "ornament": null
+            }
+          ],
+          "walk": false
+        }
+      ]
+    },
+    {
+      "name": "Bercy",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "METRO",
+          "lines": [
+            {
+              "lineIndex": "6",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "services": [
+            {
+              "service": "MAIN_STATION",
+              "ornament": null
+            }
+          ],
+          "walk": true
+        }
+      ]
+    },
+    {
+      "name": "Cour Saint-Émilion",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": []
+    },
+    {
+      "name": "Bibliothèque \nFrançois Mitterrand",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": [
+        {
+          "mode": "RER",
+          "lines": [
+            {
+              "lineIndex": "C",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": false
+        },
+        {
+          "mode": "TRAM",
+          "lines": [
+            {
+              "lineIndex": "3a",
+              "walk": false,
+              "ornament": null
+            }
+          ],
+          "walk": true
+        }
+      ]
+    },
+    {
+      "name": "Olympiades",
+      "subtitle": "",
+      "interestPoint": false,
+      "preventSubtitleOverlapping": true,
+      "connections": []
+    }
+  ],
+  "stopSpacing": 5
+}

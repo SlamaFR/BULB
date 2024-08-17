@@ -1,27 +1,26 @@
 <script setup lang="ts">
 const line: Line = {
+  mode: 'METRO',
   index: {
     $builtinLineIndex: {
       mode: 'METRO',
       index: '7bis',
     },
   },
-  mode: 'METRO',
   color: '#77c696',
   lineWidth: 0.375,
   topology: [
     {
-      id: '1',
+      id: '',
       $lineSection: {
         elements: [
-          /*
           {
-            id: '2',
+            id: '',
             $branch: {
               stopSpacing: 8,
               stops: [
                 {
-                  id: '3',
+                  id: '',
                   name: 'Louis Blanc',
                   interestPoint: false,
                   preventSubtitleOverlapping: true,
@@ -118,7 +117,7 @@ const line: Line = {
             },
           },
           {
-            id: '5',
+            id: '',
             $fork: {
               toward: 'RIGHT',
               linksOffset: [1.0, -1],
@@ -126,7 +125,7 @@ const line: Line = {
             },
           },
           {
-            id: '6',
+            id: '',
             $parallelBranches: {
               alignement: 'FLUID',
               sections: [
@@ -205,14 +204,12 @@ const line: Line = {
             },
           },
           {
-            id: '7',
+            id: '',
             $loop: {
               toward: 'LEFT',
               linksOffsets: [1, -1],
             },
           },
-
-           */
         ],
       },
     },
@@ -221,63 +218,75 @@ const line: Line = {
 </script>
 
 <template>
-  <div class="flex-grow flex flex-col gap-5 h-full">
-    <Topbar />
-
-    <div class="editor">
-      <div class="flex flex-col gap-4">
-        <Panel header="Menu">
-          <MainMenu />
-        </Panel>
-        <Panel header="Propriétés">
-          <GeneralMapSettings />
-        </Panel>
+  <div class="flex flex-col gap-15 bg-white text-black p-10">
+    <div class="flex flex-row items-center">
+      <div class="h-1.5em w-10em bg-red">
+        Branch
       </div>
-
-      <div class="flex flex-col gap-4">
-        <!--
-        <Panel header="Prévisualisation">
-          <div class="border-1 border-[var(--blue-ratp-paper)] overflow-x-auto bg-white">
-            <LineMap :line="line" />
-          </div>
-        </Panel>
-        -->
-
-        <Panel
-          header="Éditeur de plan"
-          pt:root:class="flex flex-col flex-grow"
-          pt:content-container:class="flex-grow"
-          pt:content:class="h-full"
-        >
-          <LineCanvas v-model="line" />
-        </Panel>
+      <div class="h-4em w-5em bg-blue">
+        Fork
+      </div>
+      <div class="relative flex flex-col gap-4 outline-amber outline-2 outline-solid outline-offset-.5em">
+        <span class="absolute top--2em left-0 text-amber text-nowrap">ParallelBranches [fluid]</span>
+        <div class="h-1.5em w-10em bg-red">
+          Branch
+        </div>
+        <div class="h-1.5em w-10em bg-red">
+          Branch
+        </div>
+      </div>
+      <div class="h-4em w-3em bg-green border-rd-tr-2em border-rd-br-2em">
+        Loop
       </div>
     </div>
+
+    <div class="flex flex-row items-center">
+      <div class="relative flex flex-col gap-4 items-end outline-amber outline-2 outline-solid outline-offset-.5em">
+        <span class="absolute top--2em left-0 text-amber text-nowrap">ParallelBranches [right]</span>
+        <div class="flex flex-row">
+          <div class="relative flex flex-col gap-4 items-end outline-orange outline-2 outline-solid outline-offset-.25em">
+            <span class="absolute bottom--1.75em left-0 text-orange text-nowrap text-sm">ParallelBranches [right]</span>
+            <div class="h-1.5em w-10em bg-red">
+              Branch
+            </div>
+            <div class="h-1.5em w-5em bg-red">
+              Branch
+            </div>
+          </div>
+          <div class="h-4em w-5em bg-blue flex-shrink-0">
+            Fork
+          </div>
+          <div class="h-1.5em w-7em bg-red">
+            Branch
+          </div>
+        </div>
+        <div class="h-1.5em w-13em bg-red">
+          Branch
+        </div>
+      </div>
+      <div class="h-6.5em w-5em bg-blue flex-shrink-0">
+        Fork
+      </div>
+      <div class="h-1.5em w-13em bg-red">
+        Branch
+      </div>
+      <div class="h-6.5em w-5em bg-blue flex-shrink-0">
+        Fork
+      </div>
+      <div class="relative flex flex-col gap-14 items-start outline-amber outline-2 outline-solid outline-offset-.5em">
+        <span class="absolute top--2em left-0 text-amber text-nowrap">ParallelBranches [left]</span>
+        <div class="h-1.5em w-13em bg-red">
+          Branch
+        </div>
+        <div class="h-1.5em w-10em bg-red">
+          Branch
+        </div>
+      </div>
+    </div>
+
+    <Line :line="line" />
   </div>
 </template>
 
-<style scoped lang="scss">
-.editor {
-  display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  max-width: 100%;
-  flex-grow: 1;
-  gap: 1rem;
-}
-
-@media (max-width: 640px) {
-  .bottom-container {
-    grid-template-columns: auto;
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 641px) {
-  .bottom-container {
-    grid-template-columns: auto auto;
-
-    .wide {
-      grid-column: span 2;
-    }
-  }
-}
+<style>
 </style>

@@ -1,0 +1,1201 @@
+{
+  "mode": "RER",
+  "index": {
+    "$builtinLineIndex": {
+      "mode": "RER",
+      "index": "A"
+    }
+  },
+  "color": "#ed1c2a",
+  "lineWidth": 1.5,
+  "lineTopology": [
+    {
+      "id": "",
+      "$lineSection": {
+        "elements": [
+          {
+            "id": "",
+            "$parallelBranches": {
+              "alignement": "RIGHT",
+              "sections": [
+                {
+                  "id": "",
+                  "$lineSection": {
+                    "levelOffset": 1.75,
+                    "elements": [
+                      {
+                        "id": "",
+                        "$parallelBranches": {
+                          "alignement": "RIGHT",
+                          "sections": [
+                            {
+                              "id": "",
+                              "$lineSection": {
+                                "elements": [
+                                  {
+                                    "id": "",
+                                    "$branch": {
+                                      "stopSpacing": 1,
+                                      "levelOffset": 0,
+                                      "rightMargin": -1.5,
+                                      "stops": [
+                                        {
+                                          "id": "",
+                                          "name": "Cergy – Le Haut",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Cergy – Saint-Christophe",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Cergy – Préfecture",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Neuville – Université",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Conflans – Fin d’Oise",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "J"
+                                                        }
+                                                      }
+                                                    }
+                                                  },
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Achères – Ville",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "L"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "id": "",
+                              "$lineSection": {
+                                "levelOffset": -2.25,
+                                "elements": [
+                                  {
+                                    "id": "",
+                                    "$branch": {
+                                      "stopSpacing": 1,
+                                      "levelOffset": 0,
+                                      "stops": [
+                                        {
+                                          "id": "",
+                                          "name": "Poissy",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": [
+                                            {
+                                              "id": "",
+                                              "$modeConnection": {
+                                                "mode": "TRAIN",
+                                                "walk": false,
+                                                "elements": [
+                                                  {
+                                                    "id": "",
+                                                    "$modeConnectionElement": {
+                                                      "walk": false,
+                                                      "ornament": null,
+                                                      "lineIndex": {
+                                                        "$builtinLineIndex": {
+                                                          "mode": "TRAIN",
+                                                          "index": "J"
+                                                        }
+                                                      }
+                                                    }
+                                                  }
+                                                ]
+                                              }
+                                            }
+                                          ]
+                                        },
+                                        {
+                                          "id": "",
+                                          "name": "Achères\\nGrand-Cormier",
+                                          "interestPoint": false,
+                                          "preventSubtitleOverlapping": true,
+                                          "connections": []
+                                        }
+                                      ]
+                                    }
+                                  }
+                                ]
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "id": "",
+                        "$fork": {
+                          "toward": "LEFT",
+                          "originOffset": 0,
+                          "linksOffset": [
+                            -1,
+                            0
+                          ],
+                          "offsetMultiplier": 2.25
+                        }
+                      },
+                      {
+                        "id": "",
+                        "$branch": {
+                          "stopSpacing": 1,
+                          "levelOffset": 0,
+                          "rightMargin": 5,
+                          "stops": [
+                            {
+                              "id": "",
+                              "name": "Maisons-Laffitte",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": [
+                                {
+                                  "id": "",
+                                  "$modeConnection": {
+                                    "mode": "TRAIN",
+                                    "walk": false,
+                                    "elements": [
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAIN",
+                                              "index": "L"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "id": "",
+                              "name": "Sartrouville",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": [
+                                {
+                                  "id": "",
+                                  "$modeConnection": {
+                                    "mode": "TRAIN",
+                                    "walk": false,
+                                    "elements": [
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAIN",
+                                              "index": "L"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "id": "",
+                              "name": "Houilles\\nCarrières-sur-Seine",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": [
+                                {
+                                  "id": "",
+                                  "$modeConnection": {
+                                    "mode": "TRAIN",
+                                    "walk": false,
+                                    "elements": [
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAIN",
+                                              "index": "J"
+                                            }
+                                          }
+                                        }
+                                      },
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAIN",
+                                              "index": "L"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "",
+                  "$lineSection": {
+                    "levelOffset": -1.75,
+                    "elements": [
+                      {
+                        "id": "",
+                        "$branch": {
+                          "stopSpacing": 1,
+                          "levelOffset": 0,
+                          "stops": [
+                            {
+                              "id": "",
+                              "name": "Saint-Germain-en-Laye",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": [
+                                {
+                                  "id": "",
+                                  "$modeConnection": {
+                                    "mode": "TRAM",
+                                    "walk": false,
+                                    "elements": [
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAM",
+                                              "index": "13"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            },
+                            {
+                              "id": "",
+                              "name": "Le Vésinet–Le Pecq",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Le Vésinet–Centre",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Chatou–Croissy",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Rueil-Malmaison",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Nanterre–Ville",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Nanterre\\nUniversité",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": [
+                                {
+                                  "id": "",
+                                  "$modeConnection": {
+                                    "mode": "TRAIN",
+                                    "walk": false,
+                                    "elements": [
+                                      {
+                                        "id": "",
+                                        "$modeConnectionElement": {
+                                          "walk": false,
+                                          "ornament": null,
+                                          "lineIndex": {
+                                            "$builtinLineIndex": {
+                                              "mode": "TRAIN",
+                                              "index": "L"
+                                            }
+                                          }
+                                        }
+                                      }
+                                    ]
+                                  }
+                                }
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "id": "",
+            "$fork": {
+              "toward": "LEFT",
+              "originOffset": 0,
+              "linksOffset": [
+                1,
+                -1
+              ],
+              "offsetMultiplier": 1.75
+            }
+          },
+          {
+            "id": "",
+            "$branch": {
+              "stopSpacing": 1,
+              "levelOffset": 0,
+              "stops": [
+                {
+                  "id": "",
+                  "name": "Nanterre – Préfecture",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": [
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "RER",
+                        "walk": true,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "RER",
+                                  "index": "E"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "",
+                  "name": "La Défense",
+                  "subtitle": "Grande Arche",
+                  "interestPoint": true,
+                  "preventSubtitleOverlapping": true,
+                  "connections": [
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "RER",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "RER",
+                                  "index": "E"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "TRAIN",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "TRAIN",
+                                  "index": "L"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "TRAIN",
+                                  "index": "U"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "METRO",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "1"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "TRAM",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "TRAM",
+                                  "index": "2"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "",
+                  "name": "Charles de Gaulle – Étoile",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": [
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "METRO",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "2"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "6"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "",
+                  "name": "Auber",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": [
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "RER",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "RER",
+                                  "index": "E"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "METRO",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "3"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "7"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "8"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "9"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "",
+                  "name": "Châtelet – Les Halles",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": [
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "RER",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": {
+                                "id": "",
+                                "$airportOrnament": {
+                                  "position": "RIGHT",
+                                  "airport": "BOTH"
+                                }
+                              },
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "RER",
+                                  "index": "B"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "RER",
+                                  "index": "D"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "id": "",
+                      "$modeConnection": {
+                        "mode": "METRO",
+                        "walk": false,
+                        "elements": [
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "1"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "4"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "7"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": null,
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "11"
+                                }
+                              }
+                            }
+                          },
+                          {
+                            "id": "",
+                            "$modeConnectionElement": {
+                              "walk": false,
+                              "ornament": {
+                                "id": "",
+                                "$airportOrnament": {
+                                  "position": "RIGHT",
+                                  "airport": "ORY"
+                                }
+                              },
+                              "lineIndex": {
+                                "$builtinLineIndex": {
+                                  "mode": "METRO",
+                                  "index": "14"
+                                }
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "",
+                  "name": "Gare de Lyon",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": []
+                },
+                {
+                  "id": "",
+                  "name": "Nation",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": []
+                },
+                {
+                  "id": "",
+                  "name": "Vincennes",
+                  "interestPoint": false,
+                  "preventSubtitleOverlapping": true,
+                  "connections": []
+                }
+              ]
+            }
+          },
+          {
+            "id": "",
+            "$fork": {
+              "toward": "RIGHT",
+              "originOffset": 0,
+              "linksOffset": [
+                1,
+                -1
+              ],
+              "offsetMultiplier": 1.5
+            }
+          },
+          {
+            "id": "",
+            "$parallelBranches": {
+              "alignement": "LEFT",
+              "sections": [
+                {
+                  "id": "",
+                  "$lineSection": {
+                    "levelOffset": 1.5,
+                    "elements": [
+                      {
+                        "id": "",
+                        "$branch": {
+                          "levelOffset": 0,
+                          "stopSpacing": 1,
+                          "stops": [
+                            {
+                              "id": "",
+                              "name": "Val de Fontenay",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Neuilly-Plaisance",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Bry-sur-Marne",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Noisy-le-Grand\\nMont d’Est",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Noisy-Champs",
+                              "subtitle": "Champy – Nesles",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Noisiel",
+                              "subtitle": "Le Luzard",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Lognes",
+                              "subtitle": "Le Mandinet",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Torcy",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Bussy-Saint-Georges",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Val d’Europe",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Marne-la-Vallée\\nChessy",
+                              "subtitle": "Parcs Disneyland",
+                              "interestPoint": true,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "id": "",
+                  "$lineSection": {
+                    "levelOffset": -1.5,
+                    "elements": [
+                      {
+                        "id": "",
+                        "$branch": {
+                          "levelOffset": 0,
+                          "stopSpacing": 1,
+                          "stops": [
+                            {
+                              "id": "",
+                              "name": "Fontenay-sous-Bois",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Nogent-sur-Marne",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Joinville-le-Pont",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Saint-Maur – Créteil",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Champigny",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Le Parc de Saint-Maur",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "La Varenne\\nChennevières",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Sucy–Bonneuil",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            },
+                            {
+                              "id": "",
+                              "name": "Boissy-Saint-Léger",
+                              "interestPoint": false,
+                              "preventSubtitleOverlapping": true,
+                              "connections": []
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

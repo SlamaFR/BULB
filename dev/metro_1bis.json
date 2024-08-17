@@ -1,0 +1,87 @@
+{
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "id": "f8d927a8-9cdd-4247-bf55-fa3f48f98dbe",
+      "mode": "METRO"
+    },
+    "color": "#ed1c2a",
+    "lineTopology": [
+      {
+        "$branch": {
+          "stopSpacing": 1,
+          "levelOffset": 0,
+          "stops": [
+            {
+              "name": "Pyramides",
+              "subtitle": "",
+              "interestPoint": false,
+              "preventSubtitleOverlapping": true,
+              "connections": []
+            }
+          ]
+        }
+      },
+      {
+        "$splitFork": {
+          "to": [0, -1]
+        }
+      },
+      {
+        "$parallelBranches": {
+          "fluid": false,
+          "branches": [
+            {
+              "$branch": {
+                "stopSpacing": 1,
+                "levelOffset": 0,
+                "stops": [
+                  {
+                    "name": "Pyramides",
+                    "subtitle": "",
+                    "interestPoint": false,
+                    "preventSubtitleOverlapping": true,
+                    "connections": []
+                  }
+                ]
+              }
+            },
+            {
+              "$branch": {
+                "stopSpacing": 1,
+                "levelOffset": -1,
+                "stops": [
+                  {
+                    "name": "Pyramides",
+                    "subtitle": "",
+                    "interestPoint": false,
+                    "preventSubtitleOverlapping": true,
+                    "connections": []
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      },
+      {
+        "$loop": {
+          "towards": "LEFT",
+          "linksOffsets": [0, -1],
+          "stop": null
+        }
+      }
+    ]
+  },
+  "customIndices": [
+    {
+      "id": "f8d927a8-9cdd-4247-bf55-fa3f48f98dbe",
+      "shape": "CIRCLE",
+      "mode": "METRO",
+      "prefix": "",
+      "index": "1",
+      "suffix": "bis",
+      "color": "#ed1c2a"
+    }
+  ]
+}

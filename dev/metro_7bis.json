@@ -1,0 +1,66 @@
+{
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "index": "7bis",
+      "mode": "METRO"
+    },
+    "color": "#77c696",
+    "lineTopology": [
+      {
+        "$lineSection": {
+          "elements": [
+            {
+              "$branch": {
+                "stops": [
+                  "Louis Blanc",
+                  "Jaurès",
+                  "Bolivard",
+                  "Buttes Chaumont",
+                  "Botzaris"
+                ]
+              }
+            },
+            {
+              "$splitFork": {
+                "to": [1, -1]
+              }
+            },
+            {
+              "$parallelBranches": {
+                "fluid": true,
+                "branches": [
+                  {
+                    "$branch": {
+                      "stops": [
+                        "Danube"
+                      ]
+                    }
+                  },
+                  {
+                    "$branch": {
+                      "stops": [
+                        "Place des Fêtes"
+                      ]
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "$loop": {
+                "toward": "LEFT",
+                "linksOffsets": [1, -1],
+                "stop": {
+                  "name": "Pré-Saint-Gervais"
+                }
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "stopSpacing": 1
+  },
+  "customIndices": []
+}
