@@ -11,7 +11,7 @@ const {
 </script>
 
 <template>
-  <div class="w-1em h-1em flex items-center justify-center relative left--.5em">
+  <div class="w-1em h-1em flex items-center justify-center relative">
     <div class="absolute dot" :class="{ terminus, connection }" />
   </div>
 </template>

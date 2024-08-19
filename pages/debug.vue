@@ -2,6 +2,11 @@
 </script>
 
 <template>
+  <div class="flex flex-col gap-3 bg-white text-black pt-30 p-10">
+    <Stop
+      name="Lorem ipsum"
+    />
+  </div>
   <div class="flex flex-col gap-3 bg-white p-10">
     <div class="flex gap-3 text-3em">
       <Mode mode="METRO" />

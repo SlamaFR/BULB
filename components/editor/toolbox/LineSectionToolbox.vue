@@ -37,7 +37,7 @@ function clone(element: Element): LineElement {
       return {
         id: uuidv4(),
         $branch: {
-          stopSpacing: 1,
+          stopSpacing: 0,
           stops: [],
         },
       }
@@ -137,7 +137,7 @@ function clone(element: Element): LineElement {
 
   .toolbox-item {
     cursor: grab;
-    background-color: var(--p-slate-50);
+    background-color: white;
     border: 1px solid var(--p-slate-200);
     border-radius: .375rem;
     min-width: 5rem;

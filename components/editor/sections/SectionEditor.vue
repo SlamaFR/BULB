@@ -42,14 +42,12 @@ watchArray(elements, (val) => {
   padding: .5em;
   border-left: 1px dashed var(--p-slate-300);
   border-right: 1px dashed var(--p-slate-300);
-  //border-radius: .75em;
 }
 
 .elements {
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  padding: 3em 0;
   min-height: 15em;
 
   & > :not(.placeholder):first-child {

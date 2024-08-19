@@ -28,7 +28,7 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 <template>
   <div
-    class="wrapper relative"
+    class="stop-wrapper relative"
     :class="{
       'multiline': multiline,
       'with-place': subtitle,
@@ -55,29 +55,24 @@ const lineContext = inject<LineContext>(LineContextKey)
       </div>
     </div>
     <StopDot
-      :terminus="terminus" :connection="connections.length > 0"
+      class="stop-handle"
+      :terminus="terminus"
+      :connection="connections.length > 0"
       :color="color ?? lineContext?.color.value ?? '#000000'"
     />
-    <div class="h-0 translate-x--.5em mt-.125em">
+    <div class="h-0 w-0 mt-.125em">
       <Connections :connections="connections" />
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.wrapper {
-  min-width: 2.5em;
+.stop-wrapper {
+  outline: 1px solid magenta;
+  padding: 0 1.5em;
+  min-width: 1em;
   z-index: 2;
-
-  &:first-child {
-    margin-left: 0 !important;
-  }
-
-  &:last-child {
-    min-width: 0;
-    max-width: 0;
-    margin-right: 0 !important;
-  }
+  left: -.5em;
 
   &.with-place {
     margin-right: calc(1.2031em + .25em);

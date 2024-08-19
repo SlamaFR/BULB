@@ -5,54 +5,23 @@ import { VueDraggable } from 'vue-draggable-plus'
 interface Element {
   label: string
   icon: string
-  type: 'STOP' | 'STOP_WITH_CONNECTION'
+  type: 'STOP'
 }
 
 const elements = ref<Element[]>([
   {
-    label: 'Arrêt',
-    icon: 'i-bulb-stop',
-    type: 'STOP',
-  },
-  {
-    label: '[DEBUG] Arrêt avec connexion',
-    icon: 'i-bulb-stop',
-    type: 'STOP_WITH_CONNECTION',
+    label: 'Section',
+    icon: 'i-bulb-section',
+    type: 'SECTION',
   },
 ])
 
-function clone(element: Element): Stop {
+function clone(): LineSection {
   return {
     id: uuidv4(),
-    name: uuidv4(),
-    interestPoint: false,
-    preventSubtitleOverlapping: true,
-    connections: element.type === 'STOP_WITH_CONNECTION'
-      ? [
-          {
-            id: uuidv4(),
-            $modeConnection: {
-              mode: 'RER',
-              walk: false,
-              elements: [
-                {
-                  id: uuidv4(),
-                  $modeConnectionElement: {
-                    walk: false,
-                    ornament: null,
-                    lineIndex: {
-                      $builtinLineIndex: {
-                        mode: 'RER',
-                        index: 'A',
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        ]
-      : [],
+    $lineSection: {
+      elements: [],
+    },
   }
 }
 </script>
@@ -72,7 +41,9 @@ function clone(element: Element): Stop {
           <span>{{ element.label }}</span>
         </div>
       </div>
-      <Stop class="preview" name="Nouvel arrêt" />
+      <div class="preview h-full flex items-center min-w-2.5em h-1em">
+        <Stop name="Nouvel arrêt" />
+      </div>
     </div>
   </VueDraggable>
 </template>

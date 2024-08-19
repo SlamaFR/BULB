@@ -4,8 +4,12 @@ const {
 } = defineProps<{
   meta: Fork
 }>()
+
+const el = ref()
+const sizeFactor = useCssVar('--base-size', el)
+
 const CLEARANCE = 32
-const SIZE = 16
+const SIZE = 16 * Number.parseFloat(sizeFactor.value)
 const SLOPE_WIDTH = SIZE * 4.75
 
 const lineContext = inject<LineContext>(LineContextKey)
@@ -43,6 +47,7 @@ function getPath(fromOffset: number, toOffset: number) {
 
 <template>
   <div
+    ref="el"
     class="fork flex-shrink-0" :style="{
       width: `${normalWidth}px`,
     }"

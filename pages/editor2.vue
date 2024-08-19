@@ -216,6 +216,12 @@ const line: Line = {
         ],
       },
     },
+    {
+      id: '2',
+      $lineSection: {
+        elements: [],
+      },
+    },
   ],
 }
 </script>
@@ -225,7 +231,7 @@ const line: Line = {
     <Topbar />
 
     <div class="editor">
-      <div class="flex flex-col gap-4">
+      <div class="controls flex flex-col gap-4">
         <Panel header="Menu">
           <MainMenu />
         </Panel>
@@ -234,15 +240,7 @@ const line: Line = {
         </Panel>
       </div>
 
-      <div class="flex flex-col gap-4">
-        <!--
-        <Panel header="Prévisualisation">
-          <div class="border-1 border-[var(--blue-ratp-paper)] overflow-x-auto bg-white">
-            <LineMap :line="line" />
-          </div>
-        </Panel>
-        -->
-
+      <div class="canvas flex flex-col gap-4">
         <Panel
           header="Éditeur de plan"
           pt:root:class="flex flex-col flex-grow"
@@ -266,17 +264,34 @@ const line: Line = {
 }
 
 @media (max-width: 640px) {
-  .bottom-container {
+  .editor {
     grid-template-columns: auto;
+
+    .controls {
+      order: 1;
+    }
+
+    .canvas {
+      order: -1;
+    }
   }
 }
 
 @media (max-width: 1024px) and (min-width: 641px) {
-  .bottom-container {
-    grid-template-columns: auto auto;
+  .editor {
+    grid-template-columns: auto;
 
-    .wide {
-      grid-column: span 2;
+    .controls {
+      order: 1;
+      flex-direction: row;
+
+      > * {
+        flex-grow: 1;
+      }
+    }
+
+    .canvas {
+      order: -1;
     }
   }
 }

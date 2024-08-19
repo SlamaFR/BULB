@@ -1,17 +1,15 @@
 <script setup lang="ts">
-const {
-  meta,
-  fluid = false,
-} = defineProps<{
-  meta: Branch
-  fluid?: boolean
-}>()
+import { VueDraggable } from 'vue-draggable-plus'
+
+const branch = defineModel<Branch>({ required: true })
+const stops = ref(branch.value.$branch.stops)
+watchArray(stops, val => branch.value.$branch.stops = val, { deep: true })
 
 const lineContext = inject<LineContext>(LineContextKey)
 
-const stopSpacing = computed(() => `${meta.$branch.stopSpacing}em`)
-const leftMargin = computed(() => `${meta.$branch.leftMargin ?? 0}em`)
-const rightMargin = computed(() => `${meta.$branch.rightMargin ?? 0}em`)
+const stopSpacing = computed(() => `${branch.value.$branch.stopSpacing}em`)
+const leftMargin = computed(() => `${branch.value.$branch.leftMargin ?? 0}em`)
+const rightMargin = computed(() => `${branch.value.$branch.rightMargin ?? 0}em`)
 
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
@@ -20,16 +18,26 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 <template>
   <div
     class="branch-wrapper" :class="{
-      fluid,
-      negativeLeftMargin: (meta.$branch.leftMargin ?? 0) < 0,
-      negativeRightMargin: (meta.$branch.rightMargin ?? 0) < 0,
-      positiveLeftMargin: (meta.$branch.leftMargin ?? 0) > 0,
-      positiveRightMargin: (meta.$branch.rightMargin ?? 0) > 0,
+      empty: stops.length === 0,
+      fluid: false,
+      negativeLeftMargin: (branch.$branch.leftMargin ?? 0) < 0,
+      negativeRightMargin: (branch.$branch.rightMargin ?? 0) < 0,
+      positiveLeftMargin: (branch.$branch.leftMargin ?? 0) > 0,
+      positiveRightMargin: (branch.$branch.rightMargin ?? 0) > 0,
     }"
   >
-    <div class="branch">
+    <VueDraggable
+      v-model="stops"
+      :animation="150"
+      class="stops z-1"
+      group="branchElements"
+      :empty-insert-threshold="10"
+      :swap-threshold="10"
+      ghost-class="stop-ghost"
+      handle=".stop-handle"
+    >
       <Stop
-        v-for="stop in meta.$branch.stops"
+        v-for="stop in stops"
         :key="stop.id"
         :name="stop.name"
         :subtitle="stop.subtitle"
@@ -37,18 +45,32 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
         :prevent-subtitle-overlap="stop.preventSubtitleOverlapping"
         :connections="stop.connections"
       />
-    </div>
+    </VueDraggable>
     <div class="line" />
   </div>
 </template>
 
+<style>
+.stop-ghost {
+  opacity: .5;
+}
+</style>
+
 <style scoped lang="scss">
 .branch-wrapper {
+  outline: 1px solid green;
   position: relative;
   z-index: 2;
 
   &.fluid {
     flex-grow: 1;
+  }
+
+  &.empty {
+    min-width: 3em;
+  }
+  &:not(.empty) {
+    margin-right: -.5em;
   }
 
   &.negativeLeftMargin {
@@ -68,13 +90,25 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   }
 }
 
-.branch {
+.stops {
   display: flex;
   flex-grow: 1;
   flex-direction: row;
-  justify-content: space-evenly;
-  gap: v-bind(stopSpacing);
   height: 1em;
+  //justify-content: space-evenly;
+  gap: calc(v-bind(stopSpacing));
+
+  & > :first-child > *,
+  & > :first-child {
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+  }
+
+  & > :last-child > *,
+  & > :last-child {
+    padding-right: 0 !important;
+    margin-right: 0 !important;
+  }
 }
 
 .line {
@@ -83,11 +117,14 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   left: 0;
   transform: translateY(-50%);
   height: v-bind(lineWidth);
-  z-index: 0;
+  z-index: -1;
   background-color: v-bind(color);
-
   border-radius: v-bind(lineWidth);
   margin: 0 calc(v-bind(lineWidth) / -2);
-  width: calc(100% + v-bind(lineWidth));
+  width: calc(100% + v-bind(lineWidth) - 1em);
+
+  .empty & {
+    width: calc(100% + v-bind(lineWidth));
+  }
 }
 </style>

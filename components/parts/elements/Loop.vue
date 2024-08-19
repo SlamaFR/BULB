@@ -4,8 +4,12 @@ const {
 } = defineProps<{
   meta: Loop
 }>()
+
+const el = ref()
+const sizeFactor = useCssVar('--base-size', el)
+
 const CLEARANCE = 16
-const SIZE = 16
+const SIZE = 16 * Number.parseFloat(sizeFactor.value)
 
 const lineContext = inject<LineContext>(LineContextKey)
 const color = computed(() => lineContext?.color.value ?? '#000000')
@@ -42,7 +46,7 @@ function offsetToY(offset: number) {
 </script>
 
 <template>
-  <div class="loop flex-shrink-0">
+  <div ref="el" class="loop flex-shrink-0">
     <svg :width="`${width}px`" :height="`${height}px`">
       <path :d="path" :stroke="color" :stroke-width="`${lineWidth}em`" fill="transparent" stroke-linejoin="round" />
     </svg>

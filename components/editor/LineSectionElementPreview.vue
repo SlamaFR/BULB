@@ -11,12 +11,10 @@ const {
 <template>
   <Branch
     v-if="type === 'BRANCH'"
-    :meta="{
+    :model-value="{
       id: uuidv4(),
       $branch: {
         stopSpacing: 1,
-        leftMargin: 3,
-        rightMargin: 3,
         stops: [],
       },
     }"

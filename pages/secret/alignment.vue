@@ -8,27 +8,42 @@ const innerCombination = name.flatMap(name => placeName.map(placeName => ({ name
 </script>
 
 <template>
-  <div v-for="combination1 in combinations" class="px-15 pt-30 flex flex-col gap-30">
+  <div v-for="combination1 in combinations" class="px-15 pt-30 flex flex-col gap-30 bg-white">
     <div v-for="combination2 in innerCombination" class="flex flex-row gap-40">
-      <Line v-for="combination3 in combinations" color="#82C8E6" stop-spacing="1">
-        <Stop
-          :name="combination1.name"
-          :subtitle="combination1.placeName"
-          subtitle-interest-point
-          :terminus="combination1.terminus"
-        />
-        <Stop
-          :name="combination2.name"
-          :subtitle="combination2.placeName"
-          subtitle-interest-point
-        />
-        <Stop
-          :name="combination3.name"
-          :subtitle="combination3.placeName"
-          subtitle-interest-point
-          :terminus="combination3.terminus"
-        />
-      </Line>
+      <Branch
+        v-for="combination3 in combinations" :model-value="{
+          id: '1',
+          $branch: {
+            stopSpacing: 0,
+            stops: [
+              {
+                id: '',
+                name: combination1.name,
+                subtitle: combination1.placeName,
+                interestPoint: true,
+                preventSubtitleOverlapping: true,
+                connections: [],
+              },
+              {
+                id: '',
+                name: combination2.name,
+                subtitle: combination2.placeName,
+                interestPoint: true,
+                preventSubtitleOverlapping: true,
+                connections: [],
+              },
+              {
+                id: '',
+                name: combination3.name,
+                subtitle: combination3.placeName,
+                interestPoint: true,
+                preventSubtitleOverlapping: true,
+                connections: [],
+              },
+            ],
+          },
+        }"
+      />
     </div>
   </div>
 </template>

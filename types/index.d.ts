@@ -112,7 +112,7 @@ declare global {
   interface Stop {
     id: string
     name: string
-    subtitle?: string
+    subtitle: string | null
     preventSubtitleOverlapping: boolean
     interestPoint: boolean
     connections: Connection[]

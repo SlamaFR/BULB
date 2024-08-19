@@ -9,7 +9,7 @@ const element = defineModel<LineElement>({ required: true })
     <div class="flex-grow flex flex-col items-center h-full">
       <!-- <span class="title">{{ elementToName(element) }}</span> -->
       <div class="content flex-grow flex items-center">
-        <BranchEditor v-if="isBranch(element)" v-model="element" />
+        <Branch v-if="isBranch(element)" v-model="element" />
         <Fork v-else-if="isFork(element)" :meta="element" />
         <Loop v-else-if="isLoop(element)" :meta="element" />
         <ParallelBranches v-else-if="isParallelBranches(element)" :meta="element" />
@@ -23,9 +23,9 @@ const element = defineModel<LineElement>({ required: true })
   cursor: grab;
   user-select: none;
   transition: background-color .2s ease;
+  border-radius: .25em;
 
   &:hover {
-    border-radius: .25em;
     background-color: var(--p-slate-100);
   }
 
