@@ -68,7 +68,7 @@ const lineContext = inject<LineContext>(LineContextKey)
 
 <style scoped lang="scss">
 .stop-wrapper {
-  outline: 1px solid magenta;
+  //outline: 1px solid magenta;
   padding: 0 1.5em;
   min-width: 1em;
   z-index: 2;

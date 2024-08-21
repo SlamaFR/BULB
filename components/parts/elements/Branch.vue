@@ -58,7 +58,7 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 
 <style scoped lang="scss">
 .branch-wrapper {
-  outline: 1px solid green;
+  //outline: 1px solid red;
   position: relative;
   z-index: 2;
 

@@ -20,12 +20,14 @@ const element = defineModel<LineElement>({ required: true })
 
 <style scoped>
 .element {
+  //outline: 1px solid lime;
+
   cursor: grab;
   user-select: none;
   transition: background-color .2s ease;
   border-radius: .25em;
 
-  &:hover {
+  &:hover:has(*:hover) {
     background-color: var(--p-slate-100);
   }
 

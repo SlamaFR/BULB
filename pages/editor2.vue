@@ -216,12 +216,12 @@ const line: Line = {
         ],
       },
     },
-    {
-      id: '2',
-      $lineSection: {
-        elements: [],
-      },
-    },
+    // {
+    //  id: '2',
+    //  $lineSection: {
+    //    elements: [],
+    //  },
+    // },
   ],
 }
 </script>

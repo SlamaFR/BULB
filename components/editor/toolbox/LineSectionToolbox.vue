@@ -55,7 +55,7 @@ function clone(element: Element): LineElement {
       return {
         id: uuidv4(),
         $parallelBranches: {
-          alignement: 'LEFT',
+          alignement: 'FLUID',
           sections: [
             {
               id: uuidv4(),
@@ -65,10 +65,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 1,
+                      stopSpacing: 0,
                       stops: [],
-                      leftMargin: 3,
-                      rightMargin: 3,
                     },
                   },
                 ],
@@ -82,10 +80,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 1,
+                      stopSpacing: 0,
                       stops: [],
-                      leftMargin: 3,
-                      rightMargin: 3,
                     },
                   },
                 ],
