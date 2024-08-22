@@ -33,7 +33,7 @@ const {
   />
   <ParallelBranches
     v-else-if="type === 'PARALLEL_BRANCHES'"
-    :meta="{
+    :model-value="{
       id: uuidv4(),
       $parallelBranches: {
         alignement: 'LEFT',

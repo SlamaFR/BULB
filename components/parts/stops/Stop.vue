@@ -72,7 +72,7 @@ const lineContext = inject<LineContext>(LineContextKey)
   padding: 0 1.5em;
   min-width: 1em;
   z-index: 2;
-  left: -.5em;
+  //left: -.5em;
 
   &.with-place {
     margin-right: calc(1.2031em + .25em);
@@ -102,6 +102,14 @@ const lineContext = inject<LineContext>(LineContextKey)
 }
 
 .names {
+  &, * {
+    pointer-events: none;
+  }
+
+  > * {
+    margin-left: .5em;
+  }
+
   .multiline:not(.terminus) & {
     transform: translateX(-1em);
   }

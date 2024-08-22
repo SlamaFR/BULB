@@ -12,7 +12,9 @@ const offset = computed(() => `calc(${section.$lineSection.levelOffset} * -2.75e
 
 <template>
   <div class="section flex flex-row items-center w-full">
+    <!--
     <LineElement v-for="element in section.$lineSection.elements" :key="element.id" :element="element" :fluid="fluid" />
+  -->
   </div>
 </template>
 

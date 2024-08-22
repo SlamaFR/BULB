@@ -1,9 +1,11 @@
 <script setup lang="ts">
-const {
-  meta,
-} = defineProps<{
-  meta: ParallelBranches
-}>()
+// const {
+//  meta,
+// } = defineProps<{
+//  meta: ParallelBranches
+// }>()
+
+const meta = defineModel<ParallelBranches>({ required: true })
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const {
   >
     <div v-for="(section, i) in meta.$parallelBranches.sections" :key="section.id" class="child-branch">
       <!-- <LineSection :section="section" :fluid="meta.$parallelBranches.alignement === 'FLUID'" /> -->
-      <SectionEditor v-model="meta.$parallelBranches.sections[i]" inner />
+      <SectionEditor v-model="meta.$parallelBranches.sections[i]" :fluid="meta.$parallelBranches.alignement === 'FLUID'" inner />
     </div>
   </div>
 </template>

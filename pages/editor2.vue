@@ -7,7 +7,7 @@ const line: Line = {
     },
   },
   mode: 'METRO',
-  color: '#77c696',
+  color: '#ed1c2a',
   lineWidth: 0.375,
   topology: [
     {

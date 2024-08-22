@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, color, stopSpacing } = storeToRefs(useLine())
+const { mode, index, color } = storeToRefs(useLine())
 
 const showPresetSelector = ref(false)
 
@@ -24,26 +24,6 @@ function updateColor(newColor: string | null) {
       <div class="flex flex-col gap-1 flex-auto">
         <span class="text-nowrap">Couleur du plan</span>
         <ColorSelect v-model="color" />
-      </div>
-
-      <div class="flex flex-col gap-1 flex-auto">
-        <span>Espacement minimum des arrêts</span>
-        <InputNumber
-          v-model="stopSpacing"
-          class="flex-auto"
-          :min="1"
-          :allow-empty="false"
-          suffix=" unité(s)"
-          show-buttons
-          button-layout="horizontal"
-        >
-          <template #incrementbuttonicon>
-            <span class="i-tabler-plus" />
-          </template>
-          <template #decrementbuttonicon>
-            <span class="i-tabler-minus" />
-          </template>
-        </InputNumber>
       </div>
     </div>
 

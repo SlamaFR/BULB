@@ -1,8 +1,12 @@
 <script setup lang="ts">
 import { VueDraggable } from 'vue-draggable-plus'
 
-const { inner = false } = defineProps<{
+const {
+  inner = false,
+  fluid = false,
+} = defineProps<{
   inner?: boolean
+  fluid?: boolean
 }>()
 const section = defineModel<LineSection>({ required: true })
 const elements = ref(section.value.$lineSection.elements)
@@ -14,7 +18,13 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
 </script>
 
 <template>
-  <div class="section" :class="{ inner }">
+  <div
+    class="section" :class="{
+      inner,
+      fluid,
+      empty: elements.length === 0,
+    }"
+  >
     <!--
     <div class="flex flex-row items-center gap-2">
       <Button rounded text icon="i-tabler-x" size="small" severity="danger" />
@@ -26,34 +36,66 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       :animation="150"
       class="elements"
       group="sectionElements"
+      ghost-class="section-ghost"
       :empty-insert-threshold="32"
-      :swap-threshold="inner ? 1 : .25"
+      :swap-threshold="inner ? .5 : .25"
       :inverted-swap-threshold="5"
     >
       <SectionElement
         v-for="(element, i) in elements"
         :key="element.id"
         v-model="elements[i]"
+        :fluid="fluid"
       />
     </VueDraggable>
   </div>
 </template>
 
+<style>
+.section-ghost {
+  opacity: .5;
+}
+</style>
+
 <style scoped lang="scss">
 .section {
+  position: relative;
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
   gap: .5em;
   transform: translateY(v-bind(offset));
   //min-height: 4em;
+  min-width: 1em;
 
-  &:not(.inner) {
-    padding: 0 .5em;
+  //&:not(.inner) {
+  //  padding: 0 .5em;
+  //}
+
+  &.fluid {
+    width: 100%;
   }
 
-  border-left: 1px dashed var(--p-slate-300);
-  border-right: 1px dashed var(--p-slate-300);
+  outline: 1px dashed transparent;
+  border-radius: .25em;
+  transition: outline .3s ease;
+
+  .section:hover > &, &:hover, &.empty {
+    outline-color: var(--p-slate-300);
+  }
+
+  .section-handle {
+    position: absolute;
+    top: .125em;
+    left: .125em;
+    cursor: grab;
+
+    i {
+      display: block;
+      color: var(--p-slate-400);
+      font-size: .375em;
+    }
+  }
 }
 
 .elements {

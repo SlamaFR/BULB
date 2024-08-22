@@ -14,45 +14,16 @@ const elements = ref<Element[]>([
     icon: 'i-bulb-stop',
     type: 'STOP',
   },
-  {
-    label: '[DEBUG] Arrêt avec connexion',
-    icon: 'i-bulb-stop',
-    type: 'STOP_WITH_CONNECTION',
-  },
 ])
 
-function clone(element: Element): Stop {
+function clone(): Stop {
   return {
     id: uuidv4(),
-    name: uuidv4(),
+    name: 'Nouvel arrêt',
+    subtitle: '',
     interestPoint: false,
     preventSubtitleOverlapping: true,
-    connections: element.type === 'STOP_WITH_CONNECTION'
-      ? [
-          {
-            id: uuidv4(),
-            $modeConnection: {
-              mode: 'RER',
-              walk: false,
-              elements: [
-                {
-                  id: uuidv4(),
-                  $modeConnectionElement: {
-                    walk: false,
-                    ornament: null,
-                    lineIndex: {
-                      $builtinLineIndex: {
-                        mode: 'RER',
-                        index: 'A',
-                      },
-                    },
-                  },
-                },
-              ],
-            },
-          },
-        ]
-      : [],
+    connections: [],
   }
 }
 </script>

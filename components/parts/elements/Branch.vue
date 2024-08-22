@@ -1,6 +1,12 @@
 <script setup lang="ts">
 import { VueDraggable } from 'vue-draggable-plus'
 
+const {
+  fluid = false,
+} = defineProps<{
+  fluid?: boolean
+}>()
+
 const branch = defineModel<Branch>({ required: true })
 const stops = ref(branch.value.$branch.stops)
 watchArray(stops, val => branch.value.$branch.stops = val, { deep: true })
@@ -19,7 +25,7 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   <div
     class="branch-wrapper" :class="{
       empty: stops.length === 0,
-      fluid: false,
+      fluid,
       negativeLeftMargin: (branch.$branch.leftMargin ?? 0) < 0,
       negativeRightMargin: (branch.$branch.rightMargin ?? 0) < 0,
       positiveLeftMargin: (branch.$branch.leftMargin ?? 0) > 0,
@@ -59,6 +65,8 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 <style scoped lang="scss">
 .branch-wrapper {
   //outline: 1px solid red;
+  //outline-offset: .125em;
+
   position: relative;
   z-index: 2;
 
@@ -70,7 +78,8 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
     min-width: 3em;
   }
   &:not(.empty) {
-    margin-right: -.5em;
+    //margin-right: -.5em;
+    //transform: translateX(.5em);
   }
 
   &.negativeLeftMargin {
@@ -123,8 +132,15 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   margin: 0 calc(v-bind(lineWidth) / -2);
   width: calc(100% + v-bind(lineWidth) - 1em);
 
-  .empty & {
+  .fluid & {
+    width: calc(100% + v-bind(lineWidth) - .5em);
+  }
+
+  .branch-wrapper.empty & {
     width: calc(100% + v-bind(lineWidth));
+  }
+  .branch-wrapper:not(.empty) & {
+    left: .5em;
   }
 }
 </style>

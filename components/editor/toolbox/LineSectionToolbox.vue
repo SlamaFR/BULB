@@ -55,7 +55,7 @@ function clone(element: Element): LineElement {
       return {
         id: uuidv4(),
         $parallelBranches: {
-          alignement: 'FLUID',
+          alignement: 'LEFT',
           sections: [
             {
               id: uuidv4(),
@@ -118,7 +118,7 @@ function clone(element: Element): LineElement {
         </div>
       </div>
       <div class="preview h-full flex items-center">
-        <LineSectionElementPreview :type="element.type" />
+        <SectionElement dummy :model-value="clone(element)" />
       </div>
     </div>
   </VueDraggable>

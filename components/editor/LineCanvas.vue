@@ -15,8 +15,12 @@ provide<LineContext>(LineContextKey, {
     />
     <div class="toolbox">
       <LineToolbox />
+      <ToolboxSep />
       <LineSectionToolbox />
+      <ToolboxSep />
       <BranchToolbox />
+      <div class="flex-grow" />
+      <Trash />
     </div>
   </div>
 </template>
