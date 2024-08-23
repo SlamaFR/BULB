@@ -1,18 +1,49 @@
 <script setup lang="ts">
 const line = defineModel<Line>({ required: true })
 
+const { mode, index, topology, color, lineWidth } = storeToRefs(useLine())
+
 provide<LineContext>(LineContextKey, {
-  color: computed(() => line.value.color ?? 'black'),
-  lineWidth: computed(() => line.value.lineWidth),
+  color: computed(() => color.value ?? '#000000'),
+  lineWidth,
 })
+
+const exportMap = useExportMap()
+const el = ref()
+
+const exportSignal = useEventBus(ExportSignal)
+function doExport() {
+  exportMap(el.value)
+}
+
+onMounted(() => exportSignal.on(doExport))
+onBeforeUnmount(() => exportSignal.off(doExport))
+
+/*
+http://localhost:3000/editor2
+
+ */
 </script>
 
 <template>
   <div class="canvas">
-    <SectionsGroup
-      v-model="line.topology"
-      class="content flex-grow overflow-x-auto p-1em"
-    />
+    <div class="flex-grow flex items-center overflow-y-auto">
+      <div ref="el" class="bg-white pr-10em flex flex-row">
+        <div class="flex flex-col min-w-fit">
+          <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
+          <div class="p-3">
+            <div class="w-full flex flex-row gap-2 justify-center items-center text-3em">
+              <Mode :mode="mode" />
+              <LineIndex :mode="mode" :index="index" />
+            </div>
+          </div>
+        </div>
+        <SectionsGroup
+          v-model="topology"
+          class="content w-max-content p-1em py-20"
+        />
+      </div>
+    </div>
     <div class="toolbox">
       <LineToolbox />
       <ToolboxSep />
@@ -27,7 +58,7 @@ provide<LineContext>(LineContextKey, {
 
 <style>
 :root {
-  --base-size: 2;
+  --base-size: 1;
   --font-size: calc(var(--base-size) * 16px);
 }
 </style>

@@ -10,7 +10,7 @@ const alignements = [
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" header="Propriétés de branches parallèles">
+  <Dialog v-model:visible="visible" append-to="self" header="Propriétés de branches parallèles">
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
         <label>Alignement</label>

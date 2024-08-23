@@ -8,7 +8,7 @@ const {
 const el = ref()
 const sizeFactor = useCssVar('--base-size', el)
 
-const CLEARANCE = 32
+const CLEARANCE = 36
 const SIZE = 16 * Number.parseFloat(sizeFactor.value)
 const SLOPE_WIDTH = SIZE * 4.75
 
@@ -20,14 +20,14 @@ const maxHeight = computed(() => {
   return (meta.$fork.offsetMultiplier ?? 1) * Math.abs(meta.$fork.linksOffset[0] - meta.$fork.linksOffset[1]) * 2.75 * SIZE + (SIZE * lineWidth.value)
 })
 
-const normalWidth = SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + CLEARANCE * 2
+const normalWidth = computed(() => SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + CLEARANCE * 2)
 
 const orientation = computed(() => {
   switch (meta.$fork.toward) {
     case 'LEFT':
-      return [normalWidth, 0, -1]
+      return [normalWidth.value, 0, -1]
     case 'RIGHT':
-      return [0, normalWidth, 1]
+      return [0, normalWidth.value, 1]
   }
   return [0, 0, 0]
 })
@@ -56,12 +56,14 @@ function getPath(fromOffset: number, toOffset: number) {
       <path
         :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[0])" :stroke="color"
         :stroke-width="`${lineWidth}em`"
-        fill="transparent" stroke-linejoin="round"
+        fill="transparent"
+        stroke-linejoin="round"
       />
       <path
         :d="getPath(meta.$fork.originOffset, meta.$fork.linksOffset[1])" :stroke="color"
         :stroke-width="`${lineWidth}em`"
-        fill="transparent" stroke-linejoin="round"
+        fill="transparent"
+        stroke-linejoin="round"
       />
     </svg>
   </div>

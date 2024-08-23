@@ -9,7 +9,7 @@ const orientations = [
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" header="Propriétés de boucle">
+  <Dialog v-model:visible="visible" append-to="self" header="Propriétés de boucle">
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
         <label>Orientation</label>

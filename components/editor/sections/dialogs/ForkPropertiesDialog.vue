@@ -14,7 +14,7 @@ const shapes = [
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" header="Propriétés de fourche">
+  <Dialog v-model:visible="visible" append-to="self" header="Propriétés de fourche">
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
         <label>Orientation</label>

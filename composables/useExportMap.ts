@@ -28,7 +28,8 @@ export default function useExportMap() {
         severity: 'success',
         life: 5000,
       })
-    }).catch(() => {
+    }).catch((err) => {
+      console.error(err)
       toast.add({
         summary: 'Exportation échouée',
         detail: 'Le projet n’a pas pu être exporté',

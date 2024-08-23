@@ -25,12 +25,6 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       empty: elements.length === 0,
     }"
   >
-    <!--
-    <div class="flex flex-row items-center gap-2">
-      <Button rounded text icon="i-tabler-x" size="small" severity="danger" />
-      <span class="font-bold text-1rem">Section</span>
-    </div>
-    -->
     <VueDraggable
       v-model="elements"
       :animation="150"
@@ -65,12 +59,7 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
   flex-shrink: 0;
   gap: .5em;
   transform: translateY(v-bind(offset));
-  //min-height: 4em;
   min-width: 1em;
-
-  //&:not(.inner) {
-  //  padding: 0 .5em;
-  //}
 
   &.fluid {
     width: 100%;
@@ -99,27 +88,24 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
 }
 
 .elements {
-  //outline: 1px solid blue;
-  outline-offset: .25em;
-
   display: flex;
   flex-direction: row;
   align-items: stretch;
-  //min-height: 15em;
 
   .inner > & {
-    min-height: 3em;
+    min-height: 2em;
   }
   :not(.inner) > & {
     min-height: 5em;
   }
 
-  :not(.inner) > & > :not(.placeholder):first-child {
-    padding-left: 1em;
-  }
-
-  :not(.inner) > & > :not(.placeholder):last-child {
-    padding-right: 1em;
+  :not(.inner) > & > :not(.placeholder) {
+    &:first-child {
+      padding-left: 1em;
+    }
+    &:last-child {
+      padding-right: 1em;
+    }
   }
 
   .placeholder {

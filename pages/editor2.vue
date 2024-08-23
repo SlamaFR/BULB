@@ -231,7 +231,7 @@ const line: Line = {
     <Topbar />
 
     <div class="editor">
-      <div class="controls flex flex-col gap-4">
+      <div class="controls flex flex-col gap-4 min-w-20em">
         <Panel header="Menu">
           <MainMenu />
         </Panel>

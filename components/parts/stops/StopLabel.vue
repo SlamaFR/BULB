@@ -9,19 +9,15 @@ const {
 </script>
 
 <template>
-  <div class="stop-label">
-    <div class="label" :class="{ terminus }">
-      <div>{{ stopName }}</div>
-    </div>
+  <div class="label" :class="{ terminus }" @click="console.log('EEEEEEEE')">
+    <div>{{ stopName }}</div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.stop-label {
-  font-weight: bold;
-}
-
 .label {
+  cursor: text;
+  font-weight: bold;
   height: 1em;
   line-height: 1.125;
   white-space-collapse: preserve-breaks;

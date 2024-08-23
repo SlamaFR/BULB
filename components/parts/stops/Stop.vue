@@ -102,10 +102,6 @@ const lineContext = inject<LineContext>(LineContextKey)
 }
 
 .names {
-  &, * {
-    pointer-events: none;
-  }
-
   > * {
     margin-left: .5em;
   }
