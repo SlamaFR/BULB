@@ -9,14 +9,15 @@ const {
 </script>
 
 <template>
-  <div class="label" :class="{ terminus }" @click="console.log('EEEEEEEE')">
+  <div class="label" :class="{ terminus }">
     <div>{{ stopName }}</div>
   </div>
 </template>
 
 <style scoped lang="scss">
 .label {
-  cursor: text;
+  cursor: pointer;
+  pointer-events: all;
   font-weight: bold;
   height: 1em;
   line-height: 1.125;
@@ -26,6 +27,7 @@ const {
   rotate: -30deg;
   transform-origin: bottom left;
   color: var(--blue-ratp-paper);
+  z-index: 100;
 
   &.terminus {
     height: fit-content;

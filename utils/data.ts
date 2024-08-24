@@ -35,68 +35,68 @@ export const MODES: ModeChoice[] = [
 ]
 
 export const CABLE_LINES: IndexChoice<BuiltinLineIndex>[] = [
-  { value: { index: '1', mode: 'CABLE' }, label: 'Câble C1', color: '#4c90cd' },
+  { value: { mode: 'CABLE', $builtinLineIndex: { index: '1' } }, label: 'Câble C1', color: '#4c90cd' },
 ]
 
 export const METRO_LINES: IndexChoice<BuiltinLineIndex>[] = [
-  { value: { index: '1', mode: 'METRO' }, label: 'Ligne 1', color: '#ffcd02' },
-  { value: { index: '2', mode: 'METRO' }, label: 'Ligne 2', color: '#006db8' },
-  { value: { index: '3', mode: 'METRO' }, label: 'Ligne 3', color: '#9b993b' },
-  { value: { index: '3bis', mode: 'METRO' }, label: 'Ligne 3 bis', color: '#87d3df' },
-  { value: { index: '4', mode: 'METRO' }, label: 'Ligne 4', color: '#bb4a9b' },
-  { value: { index: '5', mode: 'METRO' }, label: 'Ligne 5', color: '#f78f4b' },
-  { value: { index: '6', mode: 'METRO' }, label: 'Ligne 6', color: '#77c696' },
-  { value: { index: '7', mode: 'METRO' }, label: 'Ligne 7', color: '#f59fb3' },
-  { value: { index: '7bis', mode: 'METRO' }, label: 'Ligne 7 bis', color: '#77c696' },
-  { value: { index: '8', mode: 'METRO' }, label: 'Ligne 8', color: '#c5a3cd' },
-  { value: { index: '9', mode: 'METRO' }, label: 'Ligne 9', color: '#cec92a' },
-  { value: { index: '10', mode: 'METRO' }, label: 'Ligne 10', color: '#e0b03b' },
-  { value: { index: '11', mode: 'METRO' }, label: 'Ligne 11', color: '#8d6539' },
-  { value: { index: '12', mode: 'METRO' }, label: 'Ligne 12', color: '#008c5a' },
-  { value: { index: '13', mode: 'METRO' }, label: 'Ligne 13', color: '#87d3df' },
-  { value: { index: '14', mode: 'METRO' }, label: 'Ligne 14', color: '#662c91' },
-  { value: { index: '15', mode: 'METRO' }, label: 'Ligne 15', color: '#b80b4b' },
-  { value: { index: '16', mode: 'METRO' }, label: 'Ligne 16', color: '#f59fb3' },
-  { value: { index: '17', mode: 'METRO' }, label: 'Ligne 17', color: '#cec92a' },
-  { value: { index: '18', mode: 'METRO' }, label: 'Ligne 18', color: '#00b397' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '1' } }, label: 'Ligne 1', color: '#ffcd02' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '2' } }, label: 'Ligne 2', color: '#006db8' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '3' } }, label: 'Ligne 3', color: '#9b993b' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '3bis' } }, label: 'Ligne 3 bis', color: '#87d3df' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '4' } }, label: 'Ligne 4', color: '#bb4a9b' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '5' } }, label: 'Ligne 5', color: '#f78f4b' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '6' } }, label: 'Ligne 6', color: '#77c696' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '7' } }, label: 'Ligne 7', color: '#f59fb3' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '7bis' } }, label: 'Ligne 7 bis', color: '#77c696' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '8' } }, label: 'Ligne 8', color: '#c5a3cd' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '9' } }, label: 'Ligne 9', color: '#cec92a' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '10' } }, label: 'Ligne 10', color: '#e0b03b' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '11' } }, label: 'Ligne 11', color: '#8d6539' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '12' } }, label: 'Ligne 12', color: '#008c5a' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '13' } }, label: 'Ligne 13', color: '#87d3df' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '14' } }, label: 'Ligne 14', color: '#662c91' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '15' } }, label: 'Ligne 15', color: '#b80b4b' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '16' } }, label: 'Ligne 16', color: '#f59fb3' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '17' } }, label: 'Ligne 17', color: '#cec92a' },
+  { value: { mode: 'METRO', $builtinLineIndex: { index: '18' } }, label: 'Ligne 18', color: '#00b397' },
 ]
 
 export const RER_LINES: IndexChoice<BuiltinLineIndex>[] = [
-  { value: { index: 'A', mode: 'RER' }, label: 'RER A', color: '#ed1c2a' },
-  { value: { index: 'B', mode: 'RER' }, label: 'RER B', color: '#4c90cd' },
-  { value: { index: 'C', mode: 'RER' }, label: 'RER C', color: '#ffcd02' },
-  { value: { index: 'D', mode: 'RER' }, label: 'RER D', color: '#008c5a' },
-  { value: { index: 'E', mode: 'RER' }, label: 'RER E', color: '#bb4a9b' },
+  { value: { mode: 'RER', $builtinLineIndex: { index: 'A' } }, label: 'RER A', color: '#ed1c2a' },
+  { value: { mode: 'RER', $builtinLineIndex: { index: 'B' } }, label: 'RER B', color: '#4c90cd' },
+  { value: { mode: 'RER', $builtinLineIndex: { index: 'C' } }, label: 'RER C', color: '#ffcd02' },
+  { value: { mode: 'RER', $builtinLineIndex: { index: 'D' } }, label: 'RER D', color: '#008c5a' },
+  { value: { mode: 'RER', $builtinLineIndex: { index: 'E' } }, label: 'RER E', color: '#bb4a9b' },
 ]
 
 export const TRAIN_LINES: IndexChoice<BuiltinLineIndex>[] = [
-  { value: { index: 'H', mode: 'TRAIN' }, label: 'Transilien H', color: '#8d6539' },
-  { value: { index: 'J', mode: 'TRAIN' }, label: 'Transilien J', color: '#cec92a' },
-  { value: { index: 'K', mode: 'TRAIN' }, label: 'Transilien K', color: '#9b993b' },
-  { value: { index: 'L', mode: 'TRAIN' }, label: 'Transilien L', color: '#c5a3cd' },
-  { value: { index: 'N', mode: 'TRAIN' }, label: 'Transilien N', color: '#00b397' },
-  { value: { index: 'P', mode: 'TRAIN' }, label: 'Transilien P', color: '#f78f4b' },
-  { value: { index: 'R', mode: 'TRAIN' }, label: 'Transilien R', color: '#f59fb3' },
-  { value: { index: 'U', mode: 'TRAIN' }, label: 'Transilien U', color: '#b80b4b' },
-  { value: { index: 'V', mode: 'TRAIN' }, label: 'Transilien V', color: '#9b993b' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'H' } }, label: 'Transilien H', color: '#8d6539' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'J' } }, label: 'Transilien J', color: '#cec92a' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'K' } }, label: 'Transilien K', color: '#9b993b' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'L' } }, label: 'Transilien L', color: '#c5a3cd' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'N' } }, label: 'Transilien N', color: '#00b397' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'P' } }, label: 'Transilien P', color: '#f78f4b' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'R' } }, label: 'Transilien R', color: '#f59fb3' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'U' } }, label: 'Transilien U', color: '#b80b4b' },
+  { value: { mode: 'TRAIN', $builtinLineIndex: { index: 'V' } }, label: 'Transilien V', color: '#9b993b' },
 ]
 
 export const TRAM_LINES: IndexChoice<BuiltinLineIndex>[] = [
-  { value: { index: '1', mode: 'TRAM' }, label: 'Tramway T1', color: '#006db8' },
-  { value: { index: '2', mode: 'TRAM' }, label: 'Tramway T2', color: '#bb4a9b' },
-  { value: { index: '3a', mode: 'TRAM' }, label: 'Tramway T3a', color: '#f78f4b' },
-  { value: { index: '3b', mode: 'TRAM' }, label: 'Tramway T3b', color: '#008c5a' },
-  { value: { index: '4', mode: 'TRAM' }, label: 'Tramway T4', color: '#e0b03b' },
-  { value: { index: '5', mode: 'TRAM' }, label: 'Tramway T5', color: '#662c91' },
-  { value: { index: '6', mode: 'TRAM' }, label: 'Tramway T6', color: '#ed1c2a' },
-  { value: { index: '7', mode: 'TRAM' }, label: 'Tramway T7', color: '#8d6539' },
-  { value: { index: '8', mode: 'TRAM' }, label: 'Tramway T8', color: '#9b993b' },
-  { value: { index: '9', mode: 'TRAM' }, label: 'Tramway T9', color: '#4c90cd' },
-  { value: { index: '10', mode: 'TRAM' }, label: 'Tramway T10', color: '#9b993b' },
-  { value: { index: '11', mode: 'TRAM' }, label: 'Tramway T11', color: '#f78f4b' },
-  { value: { index: '12', mode: 'TRAM' }, label: 'Tramway T12', color: '#b80b4b' },
-  { value: { index: '13', mode: 'TRAM' }, label: 'Tramway T13', color: '#8d6539' },
-  { value: { index: '14', mode: 'TRAM' }, label: 'Tramway T14', color: '#00b397' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '1' } }, label: 'Tramway T1', color: '#006db8' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '2' } }, label: 'Tramway T2', color: '#bb4a9b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '3a' } }, label: 'Tramway T3a', color: '#f78f4b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '3b' } }, label: 'Tramway T3b', color: '#008c5a' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '4' } }, label: 'Tramway T4', color: '#e0b03b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '5' } }, label: 'Tramway T5', color: '#662c91' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '6' } }, label: 'Tramway T6', color: '#ed1c2a' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '7' } }, label: 'Tramway T7', color: '#8d6539' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '8' } }, label: 'Tramway T8', color: '#9b993b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '9' } }, label: 'Tramway T9', color: '#4c90cd' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '10' } }, label: 'Tramway T10', color: '#9b993b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '11' } }, label: 'Tramway T11', color: '#f78f4b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '12' } }, label: 'Tramway T12', color: '#b80b4b' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '13' } }, label: 'Tramway T13', color: '#8d6539' },
+  { value: { mode: 'TRAM', $builtinLineIndex: { index: '14' } }, label: 'Tramway T14', color: '#00b397' },
 ]
 
 export const SERVICES: ServiceChoice[] = [
@@ -131,12 +131,12 @@ export function findModeByValue(value: Mode | null): ModeChoice | null {
 }
 
 export function findLineByValue(index: BuiltinLineIndex): IndexChoice<BuiltinLineIndex> | null {
-  return getLinesByMode(index.$builtinLineIndex.mode)
+  return getLinesByMode(index.mode)
     .find(it => it.value.$builtinLineIndex.index === index.$builtinLineIndex.index) ?? null
 }
 
 export function getLinesByMode(mode: Mode | null): IndexChoice<BuiltinLineIndex>[] {
-  return BUILTIN_LINES.filter(it => it.value?.$builtinLineIndex?.mode === mode)
+  return BUILTIN_LINES.filter(it => it.value?.mode === mode)
 }
 
 export function findColorByValue(value: string | null): ColorChoice | null {

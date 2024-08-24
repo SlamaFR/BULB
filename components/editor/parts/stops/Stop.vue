@@ -1,29 +1,15 @@
 <script setup lang="ts">
 import { goesBelowLine } from '~/utils/text'
 
-const {
-  name,
-  subtitle = null,
-  subtitleInterestPoint = false,
-  preventSubtitleOverlap = true,
-  color = null,
-  terminus = false,
-  connections = [],
-} = defineProps<{
-  name: string
-  subtitle?: string | null
-  subtitleInterestPoint?: boolean
-  preventSubtitleOverlap?: boolean
-  color?: string
-  terminus?: boolean
-  connections?: Connection[]
-}>()
+const stop = defineModel<Stop>({ required: true })
+const terminus = false
 
-const nameParts = computed(() => name.split('\n'))
+const nameParts = computed(() => stop.value.name.split('\n'))
 const multiline = computed(() => nameParts.value.length === 2)
-const hasPedestrianConnection = computed(() => connections.some(connection => connection.walk))
+const hasPedestrianConnection = computed(() => false)// connections.some(connection => connectio.walk))
 
 const lineContext = inject<LineContext>(LineContextKey)
+const showPropertiesDialog = ref(false)
 </script>
 
 <template>
@@ -31,39 +17,53 @@ const lineContext = inject<LineContext>(LineContextKey)
     class="stop-wrapper relative"
     :class="{
       'multiline': multiline,
-      'with-place': subtitle,
-      'lower-baseline': multiline ? goesBelowLine(nameParts[1]) : goesBelowLine(name),
-      'prevent-subtitle-overlap': preventSubtitleOverlap,
+      'with-place': stop.subtitle,
+      'lower-baseline': multiline ? goesBelowLine(nameParts[1]) : goesBelowLine(stop.name),
+      'prevent-subtitle-overlap': stop.preventSubtitleOverlapping,
       'with-pedestrian-connection': hasPedestrianConnection,
       terminus,
     }"
   >
     <div class="names">
       <div v-if="terminus || nameParts.length === 1" class="stop-label-wrapper">
-        <StopLabel :stop-name="name" :terminus="terminus" />
+        <StopLabel
+          :stop-name="stop.name"
+          :terminus="terminus"
+          @click="showPropertiesDialog = true"
+        />
       </div>
       <div v-else class="stop-multi-label-wrapper">
         <StopLabel
-          v-for="namePart in name.split('\n')"
+          v-for="namePart in stop.name.split('\n')"
           :key="namePart"
           :stop-name="namePart"
           :terminus="terminus"
+          @click="showPropertiesDialog = true"
         />
       </div>
-      <div v-if="subtitle" class="subtitle-label-wrapper">
-        <SubtitleLabel :value="subtitle" :interest-point="subtitleInterestPoint" />
+      <div v-if="stop.subtitle" class="subtitle-label-wrapper">
+        <SubtitleLabel
+          :value="stop.subtitle"
+          :interest-point="stop.interestPoint"
+          @click="showPropertiesDialog = true"
+        />
       </div>
     </div>
     <StopDot
       class="stop-handle"
       :terminus="terminus"
-      :connection="connections.length > 0"
-      :color="color ?? lineContext?.color.value ?? '#000000'"
+      :connection="stop.connections.length > 0"
+      :color="lineContext?.color.value ?? '#000000'"
     />
     <div class="h-0 w-0 mt-.125em">
-      <Connections :connections="connections" />
+      <Connections :connections="stop.connections" />
     </div>
   </div>
+
+  <StopPropertiesDialog
+    v-model:visible="showPropertiesDialog"
+    v-model="stop"
+  />
 </template>
 
 <style scoped lang="scss">
@@ -71,7 +71,7 @@ const lineContext = inject<LineContext>(LineContextKey)
   //outline: 1px solid magenta;
   padding: 0 1.5em;
   min-width: 1em;
-  z-index: 2;
+  z-index: 20;
   //left: -.5em;
 
   &.with-place {
@@ -102,12 +102,18 @@ const lineContext = inject<LineContext>(LineContextKey)
 }
 
 .names {
-  > * {
-    margin-left: .5em;
-  }
+  position: relative;
+  left: .5em;
 
   .multiline:not(.terminus) & {
     transform: translateX(-1em);
+  }
+
+  .label {
+    transition: color .2s ease;
+  }
+  &:hover .label {
+    color: var(--p-primary-500);
   }
 }
 
@@ -115,12 +121,14 @@ const lineContext = inject<LineContext>(LineContextKey)
   position: absolute;
   top: -.25em;
   transform: translateY(-100%);
+  width: 0;
 }
 
 .stop-multi-label-wrapper {
   position: absolute;
   top: -.25em;
   transform: translate(0, -100%);
+  width: 0;
 
   display: flex;
   flex-direction: row;
@@ -136,9 +144,10 @@ const lineContext = inject<LineContext>(LineContextKey)
   left: 1.25em;
   top: calc(-.125em + var(--font-shift-correction));
   transform: translateY(-100%);
+  width: 0;
 
   .multiline:not(.terminus) & {
-    margin-left: 2.25em;
+    margin-left: 2em;
   }
 
   .prevent-subtitle-overlap.lower-baseline:not(.terminus) & {
@@ -146,7 +155,7 @@ const lineContext = inject<LineContext>(LineContextKey)
   }
 
   .prevent-subtitle-overlap.multiline.lower-baseline:not(.terminus) & {
-    margin-left: calc(2.25em + .375em);
+    margin-left: calc(2em + .375em);
   }
 }
 </style>

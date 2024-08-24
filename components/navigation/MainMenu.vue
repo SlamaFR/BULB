@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, color, stopSpacing, stops } = storeToRefs(useLine())
+const { mode, index, color, topology, lineWidth } = storeToRefs(useLine())
 
 const showLineIndexDirectory = ref(false)
 const showSaveDialog = ref(false)
@@ -25,8 +25,13 @@ function newProject() {
       mode.value = null
       index.value = null
       color.value = null
-      stopSpacing.value = 1
-      stops.value = []
+      lineWidth.value = 0.375
+      topology.value = [{
+        id: '1',
+        $lineSection: {
+          elements: [],
+        },
+      }]
     },
   })
 }

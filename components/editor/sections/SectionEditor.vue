@@ -31,7 +31,6 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       class="elements"
       group="sectionElements"
       ghost-class="section-ghost"
-      :empty-insert-threshold="32"
       :swap-threshold="inner ? .5 : .25"
       :inverted-swap-threshold="5"
     >
@@ -67,10 +66,13 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
 
   outline: 1px dashed transparent;
   border-radius: .25em;
-  transition: outline .3s ease;
+  transition: outline-color .3s ease;
 
   .section:hover > &, &:hover, &.empty {
     outline-color: var(--p-slate-300);
+  }
+  &.inner.empty {
+    outline-color: var(--p-orange-300);
   }
 
   .section-handle {

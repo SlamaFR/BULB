@@ -9,20 +9,15 @@ const {
 </script>
 
 <template>
-  <div class="place-label">
-    <div class="label" :class="{ 'interest-point': interestPoint }">
-      <div>{{ value }}</div>
-    </div>
+  <div class="label" :class="{ 'interest-point': interestPoint }">
+    <div>{{ value }}</div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.stop-label {
-  font-weight: 600;
-  height: 1em;
-}
-
 .label {
+  cursor: pointer;
+  pointer-events: all;
   height: calc(1em + .25em + .25em); // 1.375em
   line-height: 1;
   white-space-collapse: preserve-breaks;

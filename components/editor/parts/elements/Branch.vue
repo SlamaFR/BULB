@@ -9,7 +9,7 @@ const {
 
 const branch = defineModel<Branch>({ required: true })
 const stops = ref(branch.value.$branch.stops)
-watchArray(stops, val => branch.value.$branch.stops = val, { deep: true })
+watchArray(stops, val => branch.value.$branch.stops = val)
 
 const lineContext = inject<LineContext>(LineContextKey)
 
@@ -35,21 +35,15 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
     <VueDraggable
       v-model="stops"
       :animation="150"
-      class="stops z-1"
+      class="stops z-100"
       group="branchElements"
-      :empty-insert-threshold="10"
-      :swap-threshold="10"
       ghost-class="stop-ghost"
       handle=".stop-handle"
     >
       <Stop
-        v-for="stop in stops"
+        v-for="(stop, i) in stops"
         :key="stop.id"
-        :name="stop.name"
-        :subtitle="stop.subtitle"
-        :subtitle-interest-point="stop.interestPoint"
-        :prevent-subtitle-overlap="stop.preventSubtitleOverlapping"
-        :connections="stop.connections"
+        v-model="stops[i]"
       />
     </VueDraggable>
     <div class="line" />
@@ -77,6 +71,7 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   &.empty {
     min-width: 3em;
   }
+
   &:not(.empty) {
     //margin-right: -.5em;
     //transform: translateX(.5em);
@@ -104,7 +99,7 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
   flex-grow: 1;
   flex-direction: row;
   height: 1em;
-  //justify-content: space-evenly;
+  justify-content: space-evenly;
   gap: calc(v-bind(stopSpacing));
 
   & > :first-child > *,
@@ -123,24 +118,25 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 .line {
   position: absolute;
   top: 50%;
-  left: 0;
   transform: translateY(-50%);
   height: v-bind(lineWidth);
   z-index: -1;
   background-color: v-bind(color);
-  border-radius: v-bind(lineWidth);
-  margin: 0 calc(v-bind(lineWidth) / -2);
-  width: calc(100% + v-bind(lineWidth) - 1em);
+  width: calc(100%);
 
-  .fluid & {
-    width: calc(100% + v-bind(lineWidth) - .5em);
-  }
+  //border-radius: v-bind(lineWidth);
+  //margin: 0 calc(v-bind(lineWidth) / -2);
 
-  .branch-wrapper.empty & {
-    width: calc(100% + v-bind(lineWidth));
-  }
-  .branch-wrapper:not(.empty) & {
-    left: .5em;
-  }
+  //.fluid & {
+  //  //width: calc(100% + v-bind(lineWidth) - .5em);
+  //}
+  //
+  //.branch-wrapper.empty & {
+  //  //width: calc(100% + v-bind(lineWidth));
+  //}
+  //.branch-wrapper:not(.empty) & {
+  //  //width: calc(100% + v-bind(lineWidth) - .5em);
+  //  //left: .25em;
+  //}
 }
 </style>

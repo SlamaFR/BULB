@@ -8,3 +8,13 @@ export const isService = (connection: Connection): connection is ServiceConnecti
 
 export const isAirport = (ornament: Ornament): ornament is AirportOrnament => '$airportOrnament' in ornament
 export const isText = (ornament: Ornament): ornament is TextOrnament => '$textOrnament' in ornament
+
+export function isBuiltin(index: LineIndex | null): index is BuiltinLineIndex {
+  if (index === null) return false
+  return '$builtinLineIndex' in index
+}
+
+export function isCustom(index: LineIndex | null): index is CustomLineIndex {
+  if (index === null) return false
+  return '$customLineIndex' in index
+}

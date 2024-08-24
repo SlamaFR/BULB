@@ -43,7 +43,16 @@ function clone(): Stop {
           <span>{{ element.label }}</span>
         </div>
       </div>
-      <Stop class="preview" name="Nouvel arrêt" />
+      <Stop
+        :model-value="{
+          id: '',
+          name: 'Nouvel arrêt',
+          subtitle: null,
+          preventSubtitleOverlapping: true,
+          interestPoint: false,
+          connections: [],
+        }"
+      />
     </div>
   </VueDraggable>
 </template>
@@ -75,11 +84,10 @@ function clone(): Stop {
       cursor: grabbing;
     }
 
-    & .item {
+    & > .item {
       display: block;
     }
-
-    & .preview {
+    & > :not(.item) {
       display: none;
     }
   }

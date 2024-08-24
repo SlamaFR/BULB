@@ -11,8 +11,8 @@ const { getModeIndices, findIndexById } = useCustomLineIndices()
 const availableDefaultLines = computed(() => getLinesByMode(mode))
 const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
   value: {
-    id: it.id,
     mode: it.mode,
+    $customLineIndex: { id: it.id },
   },
   label: `Ligne ${it.prefix}${it.index}${it.suffix}`,
 })))

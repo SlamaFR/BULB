@@ -6,7 +6,28 @@ declare global {
   type Service = 'FUNICULAR' | 'MAIN_STATION' | 'AIRPORT'
 
   type CableLine = '1' | string
-  type MetroLine = '1' | '2' | '3' | '3bis' | '4' | '5' | '6' | '7' | '7bis' | '8' | '9' | '10' | '11' | '12' | '13' | '14' | '15' | '16' | '17' | '18' | string
+  type MetroLine =
+    '1'
+    | '2'
+    | '3'
+    | '3bis'
+    | '4'
+    | '5'
+    | '6'
+    | '7'
+    | '7bis'
+    | '8'
+    | '9'
+    | '10'
+    | '11'
+    | '12'
+    | '13'
+    | '14'
+    | '15'
+    | '16'
+    | '17'
+    | '18'
+    | string
   type RerLine = 'A' | 'B' | 'C' | 'D' | 'E' | string
   type TrainLine = 'H' | 'J' | 'K' | 'L' | 'N' | 'P' | 'R' | 'U' | 'V' | string
   type TramLine = '1' | '2' | '3a' | '3b' | '4' | '5' | '6' | '7' | '8' | '11' | '12' | '13' | '14' | string
@@ -17,24 +38,29 @@ declare global {
     value: string
     label: string
   }
+
   interface ModeChoice {
     value: Mode
     label: string
   }
+
   interface IndexChoice<I extends LineIndex> {
     value: I
     label: string
     color?: string
   }
+
   interface ServiceChoice {
     value: Service
     label: string
     background: boolean
   }
+
   interface AirportChoice {
     value: Airport
     label: string
   }
+
   interface ShapeChoice {
     value: IndexShape
     label: string
@@ -67,6 +93,7 @@ declare global {
       airport: Airport
     }
   }
+
   interface TextOrnament {
     id: string
     $textOrnament: {
@@ -74,6 +101,7 @@ declare global {
       text: string
     }
   }
+
   type Ornament = AirportOrnament | TextOrnament
 
   interface ModeConnectionElement {
@@ -84,6 +112,7 @@ declare global {
       ornament: Ornament | null
     }
   }
+
   interface ServiceConnectionElement {
     id: string
     $serviceConnectionElement: {
@@ -100,6 +129,7 @@ declare global {
       walk: boolean
     }
   }
+
   interface ServiceConnection {
     id: string
     $serviceConnection: {
@@ -107,6 +137,7 @@ declare global {
       walk: boolean
     }
   }
+
   type Connection = ModeConnection | ServiceConnection
 
   interface Stop {
@@ -127,6 +158,7 @@ declare global {
       stops: Stop[]
     }
   }
+
   interface Fork {
     id: string
     $fork: {
@@ -136,6 +168,7 @@ declare global {
       offsetMultiplier?: number
     }
   }
+
   interface ParallelBranches {
     id: string
     $parallelBranches: {
@@ -143,6 +176,7 @@ declare global {
       sections: [LineSection, LineSection]
     }
   }
+
   interface Loop {
     id: string
     $loop: {
@@ -151,6 +185,7 @@ declare global {
       stop?: Stop
     }
   }
+
   type LineElement = Branch | Fork | ParallelBranches | Loop
 
   interface LineSection {
@@ -164,17 +199,19 @@ declare global {
   }
 
   interface BuiltinLineIndex {
+    mode: Mode
     $builtinLineIndex: {
-      mode: Mode
       index: string
     }
   }
+
   interface CustomLineIndex {
+    mode: Mode
     $customLineIndex: {
-      mode: Mode
       id: string
     }
   }
+
   type LineIndex = BuiltinLineIndex | CustomLineIndex
 
   interface Line {

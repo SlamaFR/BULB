@@ -12,6 +12,7 @@ const exportMap = useExportMap()
 const el = ref()
 
 const exportSignal = useEventBus(ExportSignal)
+
 function doExport() {
   exportMap(el.value)
 }
@@ -28,7 +29,7 @@ http://localhost:3000/editor2
 <template>
   <div class="canvas">
     <div class="flex-grow flex items-center overflow-y-auto">
-      <div ref="el" class="bg-white pr-10em flex flex-row">
+      <div ref="el" class="content bg-white pr-10em flex flex-row">
         <div class="flex flex-col min-w-fit">
           <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
           <div class="p-3">
@@ -40,17 +41,23 @@ http://localhost:3000/editor2
         </div>
         <SectionsGroup
           v-model="topology"
-          class="content w-max-content p-1em py-20"
+          class="w-max-content p-1em pt-20"
         />
       </div>
     </div>
     <div class="toolbox">
+      <!--
       <LineToolbox />
       <ToolboxSep />
+      -->
+
       <LineSectionToolbox />
       <ToolboxSep />
       <BranchToolbox />
       <div class="flex-grow" />
+      <p class="text-[var(--p-slate-500)] text-right">
+        Glisser-déposer un élément<br>ici pour le supprimer
+      </p>
       <Trash />
     </div>
   </div>
@@ -83,6 +90,7 @@ http://localhost:3000/editor2
   padding: 1rem;
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 1em;
   border-top: 1px solid var(--p-slate-200);
   overflow-x: auto;

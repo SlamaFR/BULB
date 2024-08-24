@@ -33,8 +33,8 @@ export default function useLoadProject() {
     lineStore.index.value = project.line.index
     lineStore.mode.value = project.line.mode
     lineStore.color.value = project.line.color
-    lineStore.stops.value = project.line.stops
-    lineStore.stopSpacing.value = project.line.stopSpacing
+    lineStore.lineWidth.value = project.line.lineWidth
+    lineStore.topology.value = project.line.topology
 
     if (loadCustomIndices) {
       const existingIndicesIds = indicesStore.indices.value.map(it => it.id)

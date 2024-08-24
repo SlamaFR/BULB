@@ -9,10 +9,10 @@ const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
 const bundleCustomIndices = ref(false)
 const lineIndex = computed(() => {
   if (line.value.index === null) return ''
-  if (isDefaultIndex(line.value.index)) {
-    return line.value.index.index
+  if (isBuiltin(line.value.index)) {
+    return line.value.index.$builtinLineIndex.index
   } else {
-    const index = findIndexById(line.value.index.id)
+    const index = findIndexById(line.value.index.$customLineIndex.id)
     if (index === null) return ''
     return (`${index.prefix}${index.index}${index.suffix}`).toLowerCase()
   }

@@ -23,6 +23,11 @@ const {
   border-radius: 50%;
   background-color: v-bind(color);
 
+  transition: filter .2s ease;
+  &:hover {
+    filter: brightness(.5);
+  }
+
   &.connection {
     background-color: white;
     border: .15em solid black;
