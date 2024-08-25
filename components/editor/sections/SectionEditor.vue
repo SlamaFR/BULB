@@ -32,10 +32,9 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       group="sectionElements"
       ghost-class="section-ghost"
       :swap-threshold="inner ? .5 : .25"
-      :inverted-swap-threshold="5"
     >
       <SectionElement
-        v-for="(element, i) in elements"
+        v-for="(element, i) in section.$lineSection.elements"
         :key="element.id"
         v-model="elements[i]"
         :fluid="fluid"
@@ -59,14 +58,13 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
   gap: .5em;
   transform: translateY(v-bind(offset));
   min-width: 1em;
+  outline: 1px dashed transparent;
+  border-radius: .25em;
+  transition: outline-color .3s ease;
 
   &.fluid {
     width: 100%;
   }
-
-  outline: 1px dashed transparent;
-  border-radius: .25em;
-  transition: outline-color .3s ease;
 
   .section:hover > &, &:hover, &.empty {
     outline-color: var(--p-slate-300);

@@ -247,7 +247,7 @@ const line: Line = {
           pt:content-container:class="flex-grow"
           pt:content:class="h-full"
         >
-          <LineCanvas v-model="line" />
+          <LineCanvas />
         </Panel>
       </div>
     </div>

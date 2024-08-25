@@ -14,6 +14,7 @@ const showPropertiesDialog = ref(false)
 
 <template>
   <div
+    v-bind="$attrs"
     class="stop-wrapper relative"
     :class="{
       'multiline': multiline,
@@ -111,9 +112,17 @@ const showPropertiesDialog = ref(false)
 
   .label {
     transition: color .2s ease;
+    &.interest-point {
+      transition: background-color .2s ease;
+    }
   }
   &:hover .label {
     color: var(--p-primary-500);
+
+    &.interest-point {
+      background-color: var(--p-primary-500);
+      color: white;
+    }
   }
 }
 

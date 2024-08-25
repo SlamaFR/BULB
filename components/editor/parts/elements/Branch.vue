@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VueDraggable } from 'vue-draggable-plus'
+import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
 
 const {
   fluid = false,
@@ -19,6 +19,17 @@ const rightMargin = computed(() => `${branch.value.$branch.rightMargin ?? 0}em`)
 
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
+
+/* Simply because the lib is muffin broken */
+function moveOut(event: DraggableEvent) {
+  const el = event.from
+  for (let i = 0; i < el.children.length; i++) {
+    const child = el.children.item(i)!
+    if (child.hasAttribute('draggable') && child.getAttribute('draggable') == 'false') {
+      el.removeChild(child)
+    }
+  }
+}
 </script>
 
 <template>
@@ -39,6 +50,7 @@ const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
       group="branchElements"
       ghost-class="stop-ghost"
       handle=".stop-handle"
+      @remove="moveOut"
     >
       <Stop
         v-for="(stop, i) in stops"

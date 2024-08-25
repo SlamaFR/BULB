@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const line = defineModel<Line>({ required: true })
-
 const { mode, index, topology, color, lineWidth } = storeToRefs(useLine())
 
 provide<LineContext>(LineContextKey, {
@@ -19,11 +17,6 @@ function doExport() {
 
 onMounted(() => exportSignal.on(doExport))
 onBeforeUnmount(() => exportSignal.off(doExport))
-
-/*
-http://localhost:3000/editor2
-
- */
 </script>
 
 <template>
