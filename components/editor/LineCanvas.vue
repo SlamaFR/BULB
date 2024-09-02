@@ -34,7 +34,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
         </div>
         <SectionsGroup
           v-model="topology"
-          class="w-max-content p-1em pt-20"
+          class="w-max-content min-h-15em p-1em pt-20"
         />
       </div>
     </div>
@@ -58,7 +58,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 
 <style>
 :root {
-  --base-size: 1;
+  --base-size: 2;
   --font-size: calc(var(--base-size) * 16px);
 }
 </style>
@@ -77,6 +77,8 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 .content {
   font-size: var(--font-size);
   font-family: 'Parisine Std', sans-serif;
+  border: 1px dashed var(--p-gray-200);
+  box-sizing: content-box;
 }
 
 .toolbox {

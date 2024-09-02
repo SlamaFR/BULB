@@ -21,8 +21,10 @@ function clone(): Stop {
     id: uuidv4(),
     name: 'Nouvel arrêt',
     subtitle: '',
+    placeName: '',
     interestPoint: false,
     preventSubtitleOverlapping: true,
+    terminus: false,
     connections: [],
   }
 }
@@ -47,9 +49,11 @@ function clone(): Stop {
         :model-value="{
           id: '',
           name: 'Nouvel arrêt',
+          placeName: null,
           subtitle: null,
           preventSubtitleOverlapping: true,
           interestPoint: false,
+          terminus: false,
           connections: [],
         }"
       />

@@ -144,8 +144,10 @@ declare global {
     id: string
     name: string
     subtitle: string | null
+    placeName: string | null
     preventSubtitleOverlapping: boolean
     interestPoint: boolean
+    terminus: boolean
     connections: Connection[]
   }
 

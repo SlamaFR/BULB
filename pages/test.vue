@@ -1,79 +1,76 @@
 <script setup>
-import { ref } from 'vue'
-import { VueDraggable } from 'vue-draggable-plus'
-
-const list1 = ref([
-  {
-    name: 'Joao',
-    id: '1',
-  },
-  {
-    name: 'Jean',
-    id: '2',
-  },
-  {
-    name: 'Johanna',
-    id: '3',
-  },
-  {
-    name: 'Juan',
-    id: '4',
-  },
-])
-const list2 = ref(
-  list1.value.map(item => ({
-    name: `${item.name}-2`,
-    id: `${item.id}-2`,
-  })),
-)
-function onUpdate() {
-  console.log('update')
-}
-function onAdd() {
-  console.log('add')
-}
-function remove() {
-  console.log('remove')
-}
 </script>
 
 <template>
-  <div class="flex">
-    <VueDraggable
-      v-model="list1"
-      class="flex flex-col gap-2 p-4 w-300px h-300px m-auto bg-gray-500/5 rounded overflow-auto"
-      animation="150"
-      ghost-class="ghost"
-      group="people"
-      @update="onUpdate"
-      @add="onAdd"
-      @remove="remove"
-    >
-      <div
-        v-for="item in list1"
-        :key="item.id"
-        class="cursor-move h-30 bg-gray-500/5 rounded p-3"
-      >
-        {{ item.name }}
-      </div>
-    </VueDraggable>
-    <VueDraggable
-      v-model="list2"
-      class="flex flex-col gap-2 p-4 w-300px h-300px m-auto bg-gray-500/5 rounded overflow-auto"
-      animation="150"
-      group="people"
-      ghost-class="ghost"
-      @update="onUpdate"
-      @add="onAdd"
-      @remove="remove"
-    >
-      <div
-        v-for="item in list2"
-        :key="item.id"
-        class="cursor-move h-30 bg-gray-500/5 rounded p-3"
-      >
-        {{ item.name }}
-      </div>
-    </VueDraggable>
+  <div class="bg-white px-10 pt-30 flex flex-row gap-30">
+    <StopLabel
+      place-name="Nom de la ville"
+      value="Value"
+      subtitle="Subtitle"
+    />
+    <StopLabel
+      place-name="Nom de la ville"
+      value="Nom de l’arrêt"
+      subtitle="Sous-titre"
+      terminus
+    />
+    <StopLabel
+      place-name="Nom de la ville"
+      value="Nom de l’arrêt"
+      subtitle="Sous-titre"
+      interest-point
+    />
+    <StopLabel
+      place-name="Nom de la ville"
+      value="Nom de l’arrêt"
+      subtitle="Sous-titre"
+      interest-point
+      terminus
+    />
+    <StopLabel
+      value="Créteil – L’Échat"
+      subtitle="Hôpital Henri Mondor"
+    />
+    <StopLabel
+      value="Les Agnettes"
+      place-name="Asnières – Gennevilliers"
+    />
+    <StopLabel
+      value="Les Courtilles"
+      place-name="Asnières – Gennevilliers"
+      terminus
+    />
+  </div>
+
+  <div class="bg-white px-10 py-30 flex flex-row gap-50 font-[Parisine_Std] font-bold">
+    <StopLabel
+      value="La Défense"
+      subtitle="Grande Arche"
+      interest-point
+    />
+    <StopLabel
+      value="La Défense"
+      subtitle="Grande Arche"
+      interest-point
+      terminus
+    />
+    <StopLabel
+      :value="'Charles de Gaule\nÉtoile'"
+      terminus
+    />
+    <StopLabel
+      :value="'Marne-la-Vallée\nChessy'"
+      subtitle="Parcs Disneyland"
+      interest-point
+      terminus
+    />
+    <StopLabel
+      :value="'École Vétérinaire\nde Maisons-Alfort'"
+    />
+    <StopLabel
+      value="Pointe du Lac"
+      place-name="Créteil"
+      terminus
+    />
   </div>
 </template>

@@ -1,49 +1,58 @@
 <script setup lang="ts">
 const {
-  value,
+  subtitle,
   interestPoint = false,
 } = defineProps<{
-  value: string
+  subtitle: string
   interestPoint?: boolean
 }>()
 </script>
 
 <template>
-  <div class="label" :class="{ 'interest-point': interestPoint }">
-    <div>{{ value }}</div>
+  <div class="translate-x-.75em wrapper">
+    <div class="subtitle" :class="{ 'interest-point': interestPoint }">
+      <span>{{ subtitle }}</span>
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.label {
-  cursor: pointer;
-  pointer-events: all;
-  height: calc(1em + .25em + .25em); // 1.375em
-  line-height: 1;
-  white-space-collapse: preserve-breaks;
-  text-wrap: nowrap;
-  width: fit-content;
+.wrapper {
+  position: relative;
+  height: 0;
+  width: 0;
+
+  > * {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.subtitle {
+  transform: translateX(.25em);
   rotate: -30deg;
   transform-origin: bottom left;
   color: var(--blue-ratp-paper);
-
-  font-size: .4375em;
+  font-size: .5em;
   font-weight: bold;
   font-style: italic;
 
   &.interest-point {
-    padding: .25em .375em;
+    padding: 0 .375em .0625em .375em;
     background-color: var(--place-brown);
     color: white;
     font-weight: normal;
-
-    & > div {
-      transform: translateY(var(--font-shift-correction));
-    }
+    font-size: .375em;
   }
+}
 
-  & > div {
-    transform: translate(-.5em, var(--font-shift-correction));
-  }
+span {
+  line-height: 1em;
+  transform: translateY(var(--font-shift-correction));
+  text-wrap: nowrap;
+  rotate: -30deg;
+  transform-origin: bottom left;
+  height: fit-content;
 }
 </style>

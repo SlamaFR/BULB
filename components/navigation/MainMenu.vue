@@ -52,6 +52,7 @@ function resetStores() {
     accept: () => {
       localStorage.removeItem('line')
       localStorage.removeItem('customLineIndices')
+      document.location.reload()
     },
   })
 }

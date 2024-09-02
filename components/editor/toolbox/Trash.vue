@@ -1,7 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const el = ref()
+const e = useDropZone(el)
+</script>
 
 <template>
-  <div class="toolbox-item">
+  <div ref="el" class="toolbox-item">
     <div class="flex flex-col items-center">
       <i class="i-tabler-trash" />
       <span>Supprimer</span>

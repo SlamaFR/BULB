@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
+import { type DraggableEvent, type SortableEvent, VueDraggable } from 'vue-draggable-plus'
 
 const {
   fluid = false,
@@ -21,11 +21,11 @@ const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 
 /* Simply because the lib is muffin broken */
-function moveOut(event: DraggableEvent) {
+function moveOut(event: DraggableEvent<Stop>) {
   const el = event.from
   for (let i = 0; i < el.children.length; i++) {
     const child = el.children.item(i)!
-    if (child.hasAttribute('draggable') && child.getAttribute('draggable') == 'false') {
+    if (child.hasAttribute('data-id') && child.getAttribute('data-id') == event.data.id) {
       el.removeChild(child)
     }
   }
@@ -50,12 +50,13 @@ function moveOut(event: DraggableEvent) {
       group="branchElements"
       ghost-class="stop-ghost"
       handle=".stop-handle"
-      @remove="moveOut"
+      @remove="(e: SortableEvent) => moveOut(e as DraggableEvent<Stop>)"
     >
       <Stop
         v-for="(stop, i) in stops"
         :key="stop.id"
         v-model="stops[i]"
+        :data-id="stop.id"
       />
     </VueDraggable>
     <div class="line" />
