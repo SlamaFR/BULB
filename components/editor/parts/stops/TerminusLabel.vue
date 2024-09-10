@@ -45,7 +45,7 @@ const placeNameParts = computed(() => placeName?.split('\n'))
   //width: 0;
 
   width: fit-content;
-  background: red;
+  //background: red;
   height: 1px;
 
   & .wrapper {

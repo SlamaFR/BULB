@@ -36,7 +36,7 @@ const valueParts = computed(() => value.split('\n'))
   width: fit-content;
   //transform: translateX(-50%);
 
-  background: red;
+  //background: red;
   height: 1px;
 }
 
@@ -65,7 +65,7 @@ const valueParts = computed(() => value.split('\n'))
 }
 
 .name {
-  outline: 1px solid cyan;
+  //outline: 1px solid cyan;
   //height: 1em;
 }
 

@@ -1,6 +1,16 @@
 <script setup lang="ts">
 const visible = defineModel<boolean>('visible', { required: true })
 const stop = defineModel<Stop>({ required: true })
+
+watch(() => stop.value.name, val => stop.value.name = mapName(val))
+watch(() => stop.value.placeName, val => stop.value.placeName = mapName(val))
+watch(() => stop.value.subtitle, val => stop.value.subtitle = mapName(val))
+
+function mapName(name: string) {
+  return name
+    .replace(/ – | - | — /g, ' – ')
+    .replace(/'/g, '’')
+}
 </script>
 
 <template>

@@ -1,28 +1,20 @@
 <script setup lang="ts">
 const stop = defineModel<Stop>({ required: true })
 
-const nameParts = computed(() => stop.value.name.split('\n'))
-const multiline = computed(() => nameParts.value.length === 2)
-const hasPedestrianConnection = computed(() => false)// connections.some(connection => connectio.walk))
-
 const lineContext = inject<LineContext>(LineContextKey)
 const showPropertiesDialog = ref(false)
+
+const el = ref()
+const hovering = useElementHover(el)
 </script>
 
 <template>
   <div
+    ref="el"
     v-bind="$attrs"
-    class="stop-wrapper relative"
-    :class="{
-      //'multiline': multiline,
-      //'with-place': stop.subtitle,
-      //'lower-baseline': multiline ? goesBelowLine(nameParts[1]) : goesBelowLine(stop.name),
-      //'prevent-subtitle-overlap': stop.preventSubtitleOverlapping,
-      //'with-pedestrian-connection': hasPedestrianConnection,
-      //'terminus': stop.terminus,
-    }"
+    class="stop-wrapper relative h-4em z-100"
   >
-    <div class="names bg-red">
+    <div class="names dynamic-part">
       <StopLabel
         :value="stop.name"
         :subtitle="stop.subtitle"
@@ -40,7 +32,12 @@ const showPropertiesDialog = ref(false)
         :color="lineContext?.color.value ?? '#000000'"
       />
     </div>
-    <div class="h-0 w-0 mt-.125em">
+    <div class="connections">
+      <Transition name="fade">
+        <div v-show="hovering" class="w-1em absolute flex flex-col items-center">
+          <Button icon="i-tabler-list" severity="secondary" rounded />
+        </div>
+      </Transition>
       <Connections :connections="stop.connections" />
     </div>
   </div>
@@ -53,12 +50,14 @@ const showPropertiesDialog = ref(false)
 
 <style scoped lang="scss">
 .stop-wrapper {
-  outline: 1px solid magenta;
-  //outline-offset: .25em;
-
   padding: 0 1.5em;
   min-width: 1em;
   z-index: 20;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
 
   &.with-place {
     margin-right: calc(1.2031em + .25em);
@@ -89,7 +88,29 @@ const showPropertiesDialog = ref(false)
 
 .names {
   position: relative;
-  //left: 50%;
-  //top: -.25em;
+  top: -.25em;
+  height: 0;
+  cursor: pointer;
+
+  transition: filter .2s ease;
+
+  &:hover {
+    filter: brightness(.5);
+  }
+}
+
+.connections {
+  //width: 0;
+  position: relative;
+  top: .125em;
+  height: 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .2s;
+}
+
+.fade-enter-from, .fade-leave-to {
+  opacity: 0;
 }
 </style>

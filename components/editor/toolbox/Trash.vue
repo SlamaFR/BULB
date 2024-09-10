@@ -1,15 +1,25 @@
 <script setup lang="ts">
+import { VueDraggable } from 'vue-draggable-plus'
+
 const el = ref()
 const e = useDropZone(el)
+
+const list = []
 </script>
 
 <template>
-  <div ref="el" class="toolbox-item">
-    <div class="flex flex-col items-center">
-      <i class="i-tabler-trash" />
-      <span>Supprimer</span>
+  <VueDraggable
+    v-model="list"
+    :sort="false"
+  >
+    <div class="toolbox-item">
+      <div class="flex flex-col items-center">
+        <i class="i-tabler-trash" />
+        <span>Supprimer</span>
+      </div>
     </div>
-  </div>
+    {{ list }}
+  </VueDraggable>
 </template>
 
 <style scoped>

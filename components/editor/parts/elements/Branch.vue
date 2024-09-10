@@ -113,6 +113,7 @@ function moveOut(event: DraggableEvent<Stop>) {
   flex-direction: row;
   height: 1em;
   justify-content: space-evenly;
+  align-items: center;
   gap: calc(v-bind(stopSpacing));
 
   & > :first-child > *,

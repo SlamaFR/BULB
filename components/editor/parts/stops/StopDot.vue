@@ -12,7 +12,7 @@ const {
 
 <template>
   <div class="w-1em h-1em flex items-center justify-center relative">
-    <div class="absolute dot" :class="{ terminus, connection }" />
+    <div class="absolute dot dynamic-part" :class="{ terminus, connection }" />
   </div>
 </template>
 

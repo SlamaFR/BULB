@@ -47,11 +47,13 @@ onBeforeUnmount(() => exportSignal.off(doExport))
       <LineSectionToolbox />
       <ToolboxSep />
       <BranchToolbox />
+      <!--
       <div class="flex-grow" />
       <p class="text-[var(--p-slate-500)] text-right">
         Glisser-déposer un élément<br>ici pour le supprimer
       </p>
       <Trash />
+      -->
     </div>
   </div>
 </template>
@@ -77,7 +79,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 .content {
   font-size: var(--font-size);
   font-family: 'Parisine Std', sans-serif;
-  border: 1px dashed var(--p-gray-200);
+  outline: 1px dashed var(--p-gray-200);
   box-sizing: content-box;
 }
 

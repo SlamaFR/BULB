@@ -18,7 +18,7 @@ const hoverDialog = useElementHover(el)
 
 <template>
   <div
-    class="element"
+    class="element dynamic-part"
     :class="{ fluid }"
     @click="showPropertiesDialog = true"
     @click.stop
@@ -67,7 +67,7 @@ const hoverDialog = useElementHover(el)
     cursor: grabbing;
   }
 
-  &:hover:not(&:has(.element:hover)) {
+  &:hover:not(&:has(.dynamic-part:hover)) {
     background-color: var(--p-slate-100);
   }
 
