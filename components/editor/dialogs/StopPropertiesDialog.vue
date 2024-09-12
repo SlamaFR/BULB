@@ -14,7 +14,7 @@ function mapName(name: string) {
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" header="Propriétés d’arrêt">
+  <Dialog v-model:visible="visible" header="Propriétés d’arrêt" modal>
     <div class="flex flex-col gap-4 min-w-20em">
       <div class="flex flex-col gap-1">
         <label :for="`${stop.id}_title`">Nom de l’arrêt</label>

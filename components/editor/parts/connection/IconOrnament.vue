@@ -82,6 +82,7 @@ const {
   font-size: .375em;
   white-space-collapse: preserve-breaks;
   text-wrap: nowrap;
+  color: var(--blue-ratp-paper);
 }
 
 .bottom .joint {

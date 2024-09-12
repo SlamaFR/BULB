@@ -8,7 +8,7 @@ const {
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.$modeConnection.walk }">
+    <div class="mode-wrapper flex flex-row gap-.125em items-start" :class="{ pedestrian: connection.$modeConnection.walk }">
       <Pedestrian v-if="connection.$modeConnection.walk" />
       <Mode :mode="connection.$modeConnection.mode" />
     </div>
@@ -30,8 +30,12 @@ const {
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);
-  gap: .125em;
+  gap: 0;
   width: min-content;
+
+  > :not(:first-child) {
+    margin-left: .125em;
+  }
 
   > * {
     min-width: 1em;

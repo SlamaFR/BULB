@@ -88,16 +88,16 @@ declare global {
 
   interface AirportOrnament {
     id: string
+    position: OrnamentPosition
     $airportOrnament: {
-      position: OrnamentPosition
       airport: Airport
     }
   }
 
   interface TextOrnament {
     id: string
+    position: OrnamentPosition
     $textOrnament: {
-      position: OrnamentPosition
       text: string
     }
   }

@@ -9,7 +9,7 @@ const {
 </script>
 
 <template>
-  <div class="translate-x-.75em wrapper">
+  <div class="wrapper">
     <div class="subtitle" :class="{ 'interest-point': interestPoint }">
       <span>{{ subtitle }}</span>
     </div>
@@ -18,9 +18,12 @@ const {
 
 <style scoped lang="scss">
 .wrapper {
+  //outline: 1px solid lime;
+  //outline-offset: .125em;
+
   position: relative;
   height: 0;
-  width: 0;
+  width: .25em !important;
 
   > * {
     position: absolute;

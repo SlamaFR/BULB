@@ -17,17 +17,19 @@ const placeNameParts = computed(() => placeName?.split('\n'))
 
 <template>
   <div class="terminus-label">
-    <div class="wrapper">
-      <div class="frame">
-        <span v-for="part in placeNameParts" v-if="placeName" class="place-name">
-          {{ part }}
-        </span>
-        <span v-for="part in valueParts">
-          {{ part }}
-        </span>
+    <div class="flex">
+      <div class="wrapper translate-x-50%">
+        <div class="frame">
+          <span v-for="part in placeNameParts" v-if="placeName" class="place-name">
+            {{ part }}
+          </span>
+          <span v-for="part in valueParts">
+            {{ part }}
+          </span>
+        </div>
       </div>
     </div>
-    <div v-if="subtitle" class="translate-x-1.375em">
+    <div v-if="subtitle" class="translate-x-.125em">
       <SubtitleLabel :subtitle="subtitle" :interest-point="interestPoint" />
     </div>
   </div>
@@ -37,26 +39,21 @@ const placeNameParts = computed(() => placeName?.split('\n'))
 .terminus-label {
   font-family: 'Parisine Std', sans-serif;
   font-weight: bold;
+  color: var(--blue-ratp-paper);
   display: flex;
   flex-direction: row;
   align-items: end;
-  gap: 0;
-  //height: 0;
-  //width: 0;
+  gap: .75em;
+  transform: translateY(-.125em);
 
   width: fit-content;
-  //background: red;
   height: 1px;
-
-  & .wrapper {
-    transform: translateX(.5em);
-  }
 }
 
 .wrapper {
   position: relative;
   height: 0;
-  width: 0;
+  width: 1em;
 
   > * {
     position: absolute;

@@ -20,7 +20,9 @@ const valueParts = computed(() => value.split('\n'))
         <span class="name">{{ part }}</span>
       </div>
     </div>
-    <SubtitleLabel v-if="subtitle" :subtitle="subtitle" :interest-point="interestPoint" />
+    <div class="w-0 translate-x-.75em">
+      <SubtitleLabel v-if="subtitle" :subtitle="subtitle" :interest-point="interestPoint" />
+    </div>
   </div>
 </template>
 
@@ -32,11 +34,8 @@ const valueParts = computed(() => value.split('\n'))
   display: flex;
   flex-direction: row;
   align-items: end;
-  //height: 0;
-  width: fit-content;
-  //transform: translateX(-50%);
 
-  //background: red;
+  width: fit-content;
   height: 1px;
 }
 
@@ -58,38 +57,13 @@ const valueParts = computed(() => value.split('\n'))
   }
 }
 
+/*
 .place-name {
   font-size: .5em;
   font-weight: bold;
   font-style: italic;
 }
-
-.name {
-  //outline: 1px solid cyan;
-  //height: 1em;
-}
-
-.subtitle {
-  transform: translateX(.25em);
-  rotate: -30deg;
-  transform-origin: bottom left;
-  color: var(--blue-ratp-paper);
-  font-size: .5em;
-  font-weight: bold;
-  font-style: italic;
-
-  &.interest-point {
-    padding: 0 .375em .0625em .375em;
-    background-color: var(--place-brown);
-    color: white;
-    font-weight: normal;
-    font-size: .375em;
-
-    .wrapper:has(&) {
-      //margin-left: .25em;
-    }
-  }
-}
+ */
 
 span {
   line-height: 1em;

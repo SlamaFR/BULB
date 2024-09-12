@@ -8,7 +8,7 @@ const {
 
 <template>
   <div class="connection-group-mode">
-    <div class="mode-wrapper flex flex-row gap-.5 items-start" :class="{ pedestrian: connection.$serviceConnection.walk }">
+    <div class="mode-wrapper flex flex-row gap-.125em items-start" :class="{ pedestrian: connection.$serviceConnection.walk }">
       <Pedestrian v-if="connection.$serviceConnection.walk" />
       <IconOrnament v-for="service in connection.$serviceConnection.elements" :key="service.id" :ornament="service.$serviceConnectionElement.ornament">
         <Service :service="service.$serviceConnectionElement.service" />

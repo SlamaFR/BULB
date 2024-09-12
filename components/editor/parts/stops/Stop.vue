@@ -3,9 +3,13 @@ const stop = defineModel<Stop>({ required: true })
 
 const lineContext = inject<LineContext>(LineContextKey)
 const showPropertiesDialog = ref(false)
+const showConnectionsEditor = ref(false)
 
 const el = ref()
 const hovering = useElementHover(el)
+
+const names = ref()
+const { width: namesWidth } = useElementSize(names)
 </script>
 
 <template>
@@ -14,31 +18,37 @@ const hovering = useElementHover(el)
     v-bind="$attrs"
     class="stop-wrapper relative h-4em z-100"
   >
-    <div class="names dynamic-part">
-      <StopLabel
-        :value="stop.name"
-        :subtitle="stop.subtitle"
-        :place-name="stop.placeName"
-        :interest-point="stop.interestPoint"
-        :terminus="stop.terminus"
-        @click="showPropertiesDialog = true"
-      />
-    </div>
-    <div class="flex flex-col items-center">
-      <StopDot
-        class="stop-handle"
-        :terminus="stop.terminus"
-        :connection="stop.connections.length > 0"
-        :color="lineContext?.color.value ?? '#000000'"
-      />
-    </div>
-    <div class="connections">
-      <Transition name="fade">
-        <div v-show="hovering" class="w-1em absolute flex flex-col items-center">
-          <Button icon="i-tabler-list" severity="secondary" rounded />
+    <div class="flex flex-col items-start">
+      <div ref="names" class="names dynamic-part">
+        <StopLabel
+          :value="stop.name"
+          :subtitle="stop.subtitle"
+          :place-name="stop.placeName"
+          :interest-point="stop.interestPoint"
+          :terminus="stop.terminus"
+          @click="showPropertiesDialog = true"
+        />
+      </div>
+      <div class="dot-connections" :style="{ marginLeft: `calc((${namesWidth}px - 1em) / 2)` }">
+        <div class="dot">
+          <StopDot
+            class="stop-handle z-1"
+            :terminus="stop.terminus"
+            :connection="stop.connections.length > 0"
+            :color="lineContext?.color.value ?? '#000000'"
+          />
         </div>
-      </Transition>
-      <Connections :connections="stop.connections" />
+        <div class="connections">
+          <div @click="showConnectionsEditor = true">
+            <Connections :connections="stop.connections" />
+            <Transition v-if="stop.connections.length === 0" name="fade">
+              <div v-show="hovering" class="button-holder">
+                <Button icon="i-tabler-playlist-add" rounded @click="showConnectionsEditor = true" />
+              </div>
+            </Transition>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -46,11 +56,19 @@ const hovering = useElementHover(el)
     v-model:visible="showPropertiesDialog"
     v-model="stop"
   />
+  <ConnectionsEditor
+    v-model:visible="showConnectionsEditor"
+    v-model:stop="stop"
+  />
 </template>
 
 <style scoped lang="scss">
 .stop-wrapper {
-  padding: 0 1.5em;
+  .debug & {
+    outline: 1px solid rgba(0, 255, 255, 0.5);
+  }
+
+  padding: 0 1.25em;
   min-width: 1em;
   z-index: 20;
 
@@ -87,8 +105,13 @@ const hovering = useElementHover(el)
 }
 
 .names {
+  .debug & {
+    outline: 1px solid magenta;
+    outline-offset: .125em;
+  }
+
   position: relative;
-  top: -.25em;
+  top: -.125em;
   height: 0;
   cursor: pointer;
 
@@ -99,11 +122,67 @@ const hovering = useElementHover(el)
   }
 }
 
+.dot-connections {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+
+  .stop-wrapper:first-child & {
+    margin-left: 0 !important;
+  }
+}
+
+.dot {
+  .debug & {
+    outline: 1px solid orange;
+    outline-offset: .125em;
+  }
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
 .connections {
-  //width: 0;
+  .debug & {
+    outline: 1px solid red;
+    outline-offset: .125em;
+  }
+
+  min-width: 1em;
   position: relative;
   top: .125em;
   height: 0;
+
+  .stop-wrapper:last-child & {
+    width: 1em;
+  }
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    cursor: pointer;
+
+    .button-holder {
+      left: 50%;
+      transform: translateX(-50%);
+      top: -.125em;
+      padding-top: .375em;
+      width: .125em;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: var(--p-button-primary-background);
+    }
+
+    transition: filter .2s ease;
+
+    &:hover {
+      filter: brightness(.5);
+    }
+  }
 }
 
 .fade-enter-active, .fade-leave-active {
