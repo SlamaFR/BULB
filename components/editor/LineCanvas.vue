@@ -47,13 +47,13 @@ onBeforeUnmount(() => exportSignal.off(doExport))
       <LineSectionToolbox />
       <ToolboxSep />
       <BranchToolbox />
-      <!--
       <div class="flex-grow" />
+      <!--
       <p class="text-[var(--p-slate-500)] text-right">
         Glisser-déposer un élément<br>ici pour le supprimer
       </p>
-      <Trash />
       -->
+      <Trash />
     </div>
   </div>
 </template>

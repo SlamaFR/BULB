@@ -45,7 +45,7 @@ function deleteConnection(index: number) {
           <i class="i-tabler-traffic-cone" />
           WIP
         </Tag>
-        <span class="p-dialog-title" data-pc-section="title">Correspondances de 'Le Bourget'</span>
+        <span class="p-dialog-title" data-pc-section="title">Correspondances de '{{ stop.name }}'</span>
       </div>
     </template>
     <div class="connections">
