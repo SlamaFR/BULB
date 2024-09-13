@@ -17,7 +17,7 @@ const version = useVersion()
 
     <template #end>
       <div class="flex flex-row gap-4 items-center">
-        <span class="hidden lg:block">Pas mal non ? C'est français 🇫🇷</span>
+        <span class="hidden lg:block">Pas mal non ? C’est français 🇫🇷</span>
         <span class="hidden lg:hidden md:block">C’est 🇫🇷</span>
         <div class="flex flex-row gap-1 items-center">
           <Button text rounded :icon="isDark ? 'i-tabler-moon' : 'i-tabler-sun'" @click="toggle()" />

@@ -5,8 +5,6 @@ definePageMeta({
 </script>
 
 <template>
-  <!-- This is the FAQ page -->
-  <!-- Create a basic FAQ page using PrimeVue Accordion component -->
   <Topbar />
   <div class="pt-10 container max-w-60em mx-auto flex flex-col gap-10">
     <Message severity="success" pt:text:class="flex-grow">
@@ -37,18 +35,22 @@ definePageMeta({
           <AccordionHeader>Quand sera-t-il disponible ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Pour l’instant il est difficile de donner une date précise. Certaines personnes possèdent dors et déjà un
-              accès à l’alpha fermée.
-              Le projet devrait ouvrir au public courant août 2024.
+              Le projet est désormais ouvert en alpha publique ! Vous pouvez y accéder en cliquant sur le bouton en haut
+              de cette page.
             </p>
           </AccordionContent>
         </AccordionPanel>
         <AccordionPanel value="2">
-          <AccordionHeader>Pourra-t-on créer des lignes avec un indices personnalisé ?</AccordionHeader>
+          <AccordionHeader>Peut-on créer des lignes avec un indices personnalisé ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Oui, il sera possible de créer n’importe quel indice de ligne et de l’utiliser dans les correspondances
+              Oui, il est possible de créer n’importe quel indice de ligne et de l’utiliser dans les correspondances
               également. (Exemple le RER F, le métro 25 ou le tramway T26)
+            </p>
+            <br>
+            <p>
+              À noter que ces indices personnalisés sont en cours de développement, et répondent actuellement à la charte graphique
+              de la RATP.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -56,7 +58,8 @@ definePageMeta({
           <AccordionHeader>Pourra-t-on utiliser ses propres pictogrammes ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Oui. Cette fonctionnalité n’est pas prévue pour la première version, mais elle sera ajoutée dans une mise à
+              Oui. Cette fonctionnalité n’est pas prévue pour la première version, mais elle sera ajoutée dans une mise
+              à
               jour future.
             </p>
           </AccordionContent>
@@ -71,7 +74,7 @@ definePageMeta({
           </AccordionContent>
         </AccordionPanel>
         <AccordionPanel value="5">
-          <AccordionHeader>Quels modes de transport seront disponibles ?</AccordionHeader>
+          <AccordionHeader>Quels modes de transport sont disponibles ?</AccordionHeader>
           <AccordionContent>
             <p>
               Tous. Plus précisément les navettes fluviales, les bus, les téléphériques, les métros, les RER, les
@@ -84,7 +87,8 @@ definePageMeta({
             </p>
             <br>
             <p>
-              Chaque mode de transport pourra avoir un thermomètre de ligne visuellement différent.
+              Chaque mode de transport pourra avoir un thermomètre de ligne visuellement différent, mais cette
+              fonctionnalité n’est pas encore disponible.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -93,7 +97,8 @@ definePageMeta({
           <AccordionContent>
             <p>
               Oui, le site propose un système de sauvegarde et de chargement des projets. Vous pouvez commencer à
-              travailler sur une ligne, la sauvegarder et recommencer à zéro pour une nouvelle ligne. Une fois la deuxième
+              travailler sur une ligne, la sauvegarder et recommencer à zéro pour une nouvelle ligne. Une fois la
+              deuxième
               ligne sauvegardée, vous pouvez charger la première pour la modifier à nouveau.
             </p>
           </AccordionContent>
@@ -102,7 +107,8 @@ definePageMeta({
           <AccordionHeader>Est-il possible d’ajouter des branches et des boucles aux plans ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Actuellement ce n’est pas encore possible, mais cette fonctionnalité est déjà prévue et est prioritaire.
+              Oui, les plans peuvent contenir des fourches et des boucles. Ces nouveaux éléments sont en phase de tests
+              et peuvent comporter des bugs.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -110,7 +116,8 @@ definePageMeta({
           <AccordionHeader>Dans quels formats peut-on exporter les plans ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Actuellement, les plans sont générés au format PNG avec une forte résolution. Je travail actuellement sur un
+              Actuellement, les plans sont générés au format PNG avec une forte résolution. Je travail actuellement sur
+              un
               rendu SVG, et idéalement PDF.
             </p>
           </AccordionContent>
@@ -119,7 +126,7 @@ definePageMeta({
           <AccordionHeader>Est-ce que le code sera rendu open-source ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Oui, une fois la première version terminée, le code source sera rendu public.
+              Oui, le dépôt GitHub sera ouvert une fois que le projet sera plus stable.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -136,15 +143,20 @@ definePageMeta({
           <AccordionHeader>C’est payant ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Non, ce project est 100% gratuit et le restera pour toujours.
+              Non, ce projet est 100% gratuit et le restera pour toujours.
             </p>
           </AccordionContent>
         </AccordionPanel>
         <AccordionPanel value="12">
-          <AccordionHeader>J’ai trouvé un bug ou une faute, comment la reporter ?</AccordionHeader>
+          <AccordionHeader>J’ai trouvé un bug ou une faute, comment la signaler ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Soit en me contactant via <Button link as="a" href="https://x.com/SlamaFR" label="X (anciennement Twitter)" pt:root:class="important-p-0" />, soit en ouvrant un ticket sur le dépôt GitHub quand celui-ci sera ouvert.
+              Soit en me contactant via
+              <Button
+                link as="a" href="https://x.com/SlamaFR" label="X (anciennement Twitter)"
+                pt:root:class="important-p-0"
+              />
+              , soit en ouvrant un ticket sur le dépôt GitHub quand celui-ci sera ouvert.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -153,6 +165,43 @@ definePageMeta({
           <AccordionContent>
             <p>
               Ce projet est fait avec Nuxt.js 3 et PrimeVue 4.
+            </p>
+          </AccordionContent>
+        </AccordionPanel>
+        <AccordionPanel value="14">
+          <AccordionHeader>Le site ne fonctionne pas bien chez moi, que faire ?</AccordionHeader>
+          <AccordionContent>
+            <p>
+              Il est fortement conseillé d’utiliser un navigateur basé sur Chromium (Google Chrome, Microsoft Edge,
+              Brave, Vivaldi, Opera, etc.) pour une meilleure expérience. Les autres navigateurs (Firefox et Safari) ne sont pas
+              officiellement supportés.
+            </p>
+            <br>
+            <p>
+              Il est également conseillé d’utiliser une version récente de votre navigateur pour éviter les problèmes de
+              compatibilité.
+            </p>
+          </AccordionContent>
+        </AccordionPanel>
+        <AccordionPanel value="15">
+          <AccordionHeader>Le rendu final est anormal, que faire ?</AccordionHeader>
+          <AccordionContent>
+            <p>
+              Si lors de l’exportation, le rendu du plan est anormal, il est possible que le navigateur ne supporte pas
+              la génération d’image. Dans ce cas, il est conseillé de changer de navigateur pour régler le problème.
+            </p>
+            <br>
+            <p>
+              Si vous observez d’autres problèmes tels qu’une image rognée ou une police incorrecte, il s’agit de bugs
+              qui peuvent survenir et qui n’ont pas encore été traités.
+            </p>
+          </AccordionContent>
+        </AccordionPanel>
+        <AccordionPanel value="16">
+          <AccordionHeader>Le site est-il responsive ?</AccordionHeader>
+          <AccordionContent>
+            <p>
+              Partiellement. Il est recommandé d’utiliser un ordinateur pour une expérience optimale.
             </p>
           </AccordionContent>
         </AccordionPanel>
