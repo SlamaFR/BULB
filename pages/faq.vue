@@ -12,7 +12,7 @@ definePageMeta({
     <Message severity="success" pt:text:class="flex-grow">
       <div class="flex flex-row items-center justify-between w-full">
         <p class="text-xl font-bold">
-          Vous possédez un accès à l’alpha fermée ?
+          L’alpha publique est désormais ouverte !
         </p>
         <Button severity="success" size="small" as="a" href="/editor" label="Accéder à l’éditeur" />
       </div>

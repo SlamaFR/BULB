@@ -10,8 +10,11 @@ const {
 }>()
 const section = defineModel<LineSection>({ required: true })
 const elements = ref(section.value.$lineSection.elements)
-watchArray(elements, (val) => {
-  section.value.$lineSection.elements = val
+watchArray(elements, val => section.value.$lineSection.elements = val)
+watch(section, (val) => {
+  if (val.$lineSection.elements.length === 0) {
+    elements.value = val.$lineSection.elements
+  }
 }, { deep: true })
 
 const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * -2.75em)`)

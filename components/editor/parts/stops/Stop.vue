@@ -38,7 +38,7 @@ const { width: namesWidth } = useElementSize(names)
             :color="lineContext?.color.value ?? '#000000'"
           />
         </div>
-        <div class="connections">
+        <div class="connections dynamic-part">
           <div @click="showConnectionsEditor = true">
             <Connections :connections="stop.connections" />
             <Transition v-if="stop.connections.length === 0" name="fade">

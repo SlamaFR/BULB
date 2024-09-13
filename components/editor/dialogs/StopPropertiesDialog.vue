@@ -21,7 +21,7 @@ function mapName(name: string) {
         <Textarea
           :id="`${stop.id}_title`"
           v-model="stop.name"
-          :style="{ minHeight: '2hl' }"
+          :style="{ minHeight: '2hl !important' }"
           auto-resize
           autofocus
         />

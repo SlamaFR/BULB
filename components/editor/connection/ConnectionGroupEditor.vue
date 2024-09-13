@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { isMode, isService } from '~/utils/types'
+
 const {
   index,
 } = defineProps<{

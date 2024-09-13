@@ -16,7 +16,7 @@ const valueParts = computed(() => value.split('\n'))
 <template>
   <div class="regular-label">
     <div class="flex gap-1.0625em">
-      <div v-for="part in valueParts" class="wrapper translate-x-50%">
+      <div v-for="(part, index) in valueParts" :key="`${part}-${index}`" class="wrapper translate-x-50%">
         <span class="name">{{ part }}</span>
       </div>
     </div>

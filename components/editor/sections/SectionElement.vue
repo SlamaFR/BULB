@@ -24,7 +24,7 @@ const hoverDialog = useElementHover(el)
     @click.stop
   >
     <div class="flex-grow flex flex-col justify-center items-center h-full w-full">
-      <div class="content flex items-center w-full" :class="{ emphasis: hoverDialog && showPropertiesDialog }">
+      <div class="content flex items-center w-full" :class="{ emphasis: hoverDialog && showPropertiesDialog && false }">
         <Branch v-if="isBranch(element)" v-model="element" :fluid="fluid" />
         <Fork v-else-if="isFork(element)" :meta="element" />
         <Loop v-else-if="isLoop(element)" :meta="element" />

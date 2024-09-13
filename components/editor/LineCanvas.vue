@@ -48,11 +48,10 @@ onBeforeUnmount(() => exportSignal.off(doExport))
       <ToolboxSep />
       <BranchToolbox />
       <div class="flex-grow" />
-      <!--
+
       <p class="text-[var(--p-slate-500)] text-right">
         Glisser-déposer un élément<br>ici pour le supprimer
       </p>
-      -->
       <Trash />
     </div>
   </div>
@@ -93,7 +92,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
   overflow-x: auto;
   position: sticky;
   bottom: 0;
-  z-index: 2;
+  z-index: 100;
   background: var(--p-slate-50);
 
   & > * {

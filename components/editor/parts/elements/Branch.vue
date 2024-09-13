@@ -25,7 +25,7 @@ function moveOut(event: DraggableEvent<Stop>) {
   const el = event.from
   for (let i = 0; i < el.children.length; i++) {
     const child = el.children.item(i)!
-    if (child.hasAttribute('data-id') && child.getAttribute('data-id') == event.data.id) {
+    if (child.hasAttribute('data-id') && child.getAttribute('data-id') === event.data.id) {
       el.removeChild(child)
     }
   }

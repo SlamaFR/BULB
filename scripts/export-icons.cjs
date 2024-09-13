@@ -15,8 +15,9 @@ async function exportIcons() {
   })
 
   await iconSet.forEach((name, type) => {
-    if (type !== 'icon')
+    if (type !== 'icon') {
       return
+    }
 
     const svg = iconSet.toSVG(name)
     if (!svg) {
