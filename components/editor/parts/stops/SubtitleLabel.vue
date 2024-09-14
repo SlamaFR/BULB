@@ -18,8 +18,10 @@ const {
 
 <style scoped lang="scss">
 .wrapper {
-  //outline: 1px solid lime;
-  //outline-offset: .125em;
+  .debug & {
+    outline: 1px solid lime;
+    outline-offset: .125em;
+  }
 
   position: relative;
   height: 0;

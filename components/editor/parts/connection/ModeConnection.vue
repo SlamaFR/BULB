@@ -30,15 +30,12 @@ const {
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);
-  gap: 0;
+  row-gap: .125em;
   width: min-content;
-
-  > :not(:first-child) {
-    margin-left: .125em;
-  }
 
   > * {
     min-width: 1em;
+    margin-right: .125em;
   }
 }
 
