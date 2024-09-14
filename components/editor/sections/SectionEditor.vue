@@ -39,7 +39,7 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       <SectionElement
         v-for="(element, i) in section.$lineSection.elements"
         :key="element.id"
-        v-model="elements[i]"
+        v-model="section.$lineSection.elements[i]"
         :fluid="fluid"
       />
     </VueDraggable>
