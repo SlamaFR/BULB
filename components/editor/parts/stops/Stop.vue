@@ -68,7 +68,7 @@ const { width: namesWidth } = useElementSize(names)
     outline: 1px solid rgba(0, 255, 255, 0.5);
   }
 
-  padding: 0 1.25em;
+  padding: 0 0 0 1.25em;
   min-width: 1em;
   z-index: 20;
 
@@ -127,12 +127,13 @@ const { width: namesWidth } = useElementSize(names)
     outline-offset: .125em;
   }
 
-  min-width: 1em;
+  min-width: 2.25em;
   position: relative;
   top: .125em;
   height: 0;
 
   .stop-wrapper:last-child & {
+    min-width: 1em;
     width: 1em;
   }
 
