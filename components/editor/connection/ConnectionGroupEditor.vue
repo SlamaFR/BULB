@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { isMode, isService } from '~/utils/types'
+
 const {
   index,
 } = defineProps<{
@@ -8,7 +10,7 @@ const {
 const emit = defineEmits<{
   delete: [number]
 }>()
-const connection = defineModel<ModeConnection | ServiceConnection>('connection', { required: true })
+const connection = defineModel<Connection>('connection', { required: true })
 </script>
 
 <template>
@@ -22,24 +24,22 @@ const connection = defineModel<ModeConnection | ServiceConnection>('connection',
     }"
   >
     <template #icons>
-      <Tag v-if="isModeConnection(connection)" severity="warn">
+      <Tag v-if="isMode(connection)" severity="warn">
         Mode de transport
       </Tag>
-      <Tag v-if="isServiceConnection(connection)" severity="info">
+      <Tag v-if="isService(connection)" severity="info">
         Services de transport
       </Tag>
     </template>
 
     <div class="h-full flex flex-col gap-2 justify-between">
       <ModeConnectionGroupEditor
-        v-if="isModeConnection(connection)"
+        v-if="isMode(connection)"
         v-model:connection="connection"
-        :index="index"
       />
       <ServiceConnectionGroupEditor
-        v-else-if="isServiceConnection(connection)"
+        v-else-if="isService(connection)"
         v-model:connection="connection"
-        :index="index"
       />
       <div v-else />
 

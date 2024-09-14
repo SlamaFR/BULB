@@ -27,4 +27,8 @@ config.locale = fr
 html, body {
   font-size: 16px;
 }
+
+html, body, #__nuxt {
+  height: 100%;
+}
 </style>

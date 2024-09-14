@@ -5,6 +5,9 @@ const Passthrough: PrimeVuePTOptions = {
     root: {
       class: 'important-m-4',
     },
+    header: {
+      class: 'gap-6',
+    },
   },
 }
 

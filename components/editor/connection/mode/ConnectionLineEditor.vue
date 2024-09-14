@@ -1,18 +1,14 @@
 <script setup lang="ts">
 const {
-  index,
-  groupIndex,
   mode,
 } = defineProps<{
-  index: number
-  groupIndex: number
   mode: Mode | null
 }>()
 
 const emit = defineEmits<{
   delete: [number]
 }>()
-const line = defineModel<ConnectionLine>('line', { required: true })
+const line = defineModel<ModeConnectionElement>('line', { required: true })
 
 const showOrnamentEditor = ref(false)
 </script>
@@ -21,11 +17,11 @@ const showOrnamentEditor = ref(false)
   <div class="p-3 p-panel flex flex-col gap-2 flex-shrink-0">
     <div class="flex flex-col gap-3">
       <div class="flex flex-row items-center gap-3">
-        <IndexSelect v-model="line.lineIndex" :mode="mode" />
+        <IndexSelect v-model="line.$modeConnectionElement.lineIndex" :mode="mode" />
       </div>
       <div class="flex flex-row items-center gap-3">
-        <Checkbox v-model="line.walk" :input-id="`walk_connection_${groupIndex}_line_${index}`" binary />
-        <label :for="`walk_connection_${groupIndex}_line_${index}`" class="text-nowrap">Correspondance piétonne</label>
+        <Checkbox v-model="line.$modeConnectionElement.walk" :input-id="line.id" binary />
+        <label :for="line.id" class="text-nowrap">Correspondance piétonne</label>
       </div>
 
       <div class="flex flex-row gap-2 items-center">
@@ -33,7 +29,7 @@ const showOrnamentEditor = ref(false)
           class="flex-grow"
           size="small"
           label="Décoration"
-          :severity="line.ornament ? 'primary' : 'secondary'"
+          :severity="line.$modeConnectionElement.ornament ? 'primary' : 'secondary'"
           @click="showOrnamentEditor = true"
         />
         <Button
@@ -46,5 +42,5 @@ const showOrnamentEditor = ref(false)
     </div>
   </div>
 
-  <OrnamentEditor v-model="line.ornament" v-model:visible="showOrnamentEditor" />
+  <OrnamentEditor v-model="line.$modeConnectionElement.ornament" v-model:visible="showOrnamentEditor" />
 </template>

@@ -15,6 +15,15 @@ export default defineConfig({
     presetIcons({
       scale: 1.5,
       warn: true,
+      extraProperties: {
+        'background-color': 'currentColor',
+        'color': 'inherit',
+        'flex-shrink': '0',
+      },
+      collections: {
+        tabler: () => import('@iconify-json/tabler/icons.json').then(i => i.default),
+        bulb: () => import('./public/assets/icons/bulb.json').then(i => i.default),
+      },
     }),
     presetTypography(),
   ],

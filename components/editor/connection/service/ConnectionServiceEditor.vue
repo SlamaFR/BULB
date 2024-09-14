@@ -8,7 +8,7 @@ const {
 const emit = defineEmits<{
   delete: [number]
 }>()
-const service = defineModel<ConnectionService>('service', { required: true })
+const service = defineModel<ServiceConnectionElement>('service', { required: true })
 
 const showOrnamentEditor = ref(false)
 </script>
@@ -17,7 +17,7 @@ const showOrnamentEditor = ref(false)
   <div class="p-3 p-panel flex flex-col gap-2 flex-shrink-0">
     <div class="flex flex-col gap-3">
       <div class="flex flex-row items-center gap-3">
-        <ServiceSelect v-model="service.service" />
+        <ServiceSelect v-model="service.$serviceConnectionElement.service" />
       </div>
 
       <div class="flex flex-row gap-2 items-center">
@@ -25,7 +25,7 @@ const showOrnamentEditor = ref(false)
           class="flex-grow"
           size="small"
           label="Décoration"
-          :severity="service.ornament ? 'primary' : 'secondary'"
+          :severity="service.$serviceConnectionElement.ornament ? 'primary' : 'secondary'"
           @click="showOrnamentEditor = true"
         />
         <Button size="small" severity="danger" icon="i-tabler-trash" @click="emit('delete', index)" />
@@ -33,5 +33,5 @@ const showOrnamentEditor = ref(false)
     </div>
   </div>
 
-  <OrnamentEditor v-model="service.ornament" v-model:visible="showOrnamentEditor" />
+  <OrnamentEditor v-model="service.$serviceConnectionElement.ornament" v-model:visible="showOrnamentEditor" />
 </template>

@@ -1,55 +1,69 @@
-<script setup lang="ts">
-const lineStore = useLine()
-const { line } = storeToRefs(lineStore)
-</script>
-
 <template>
-  <div class="flex flex-col gap-5 h-full">
+  <div class="flex-grow flex flex-col gap-5 h-full">
     <Topbar />
 
-    <Panel header="Prévisualisation du plan">
-      <div class="border-1 border-[var(--blue-ratp-paper)] overflow-x-auto bg-white">
-        <LineMap :line="line" />
+    <div class="editor">
+      <div class="controls flex flex-col gap-4 min-w-20em">
+        <Panel header="Menu">
+          <MainMenu />
+        </Panel>
+        <Panel header="Propriétés">
+          <GeneralMapSettings />
+        </Panel>
       </div>
-    </Panel>
 
-    <div class="bottom-container cols-3">
-      <Panel header="Menu principal">
-        <MainMenu />
-      </Panel>
-
-      <Panel header="Réglages du projet">
-        <GeneralMapSettings />
-      </Panel>
-
-      <Panel class="overflow-x-auto wide" header="Liste des arrêts">
-        <StopsEditor />
-      </Panel>
+      <div class="canvas flex flex-col gap-4">
+        <Panel
+          header="Éditeur de plan"
+          pt:root:class="flex flex-col flex-grow"
+          pt:content-container:class="flex-grow"
+          pt:content:class="h-full"
+        >
+          <LineCanvas />
+        </Panel>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.bottom-container {
+.editor {
   display: grid;
-  grid-template-columns: auto auto 1fr;
-  width: 100%;
+  grid-template-columns: auto minmax(0, 1fr);
+  max-width: 100%;
+  flex-grow: 1;
   gap: 1rem;
-  align-items: stretch;
 }
 
 @media (max-width: 640px) {
-  .bottom-container {
+  .editor {
     grid-template-columns: auto;
+
+    .controls {
+      order: 1;
+    }
+
+    .canvas {
+      order: -1;
+    }
   }
 }
 
 @media (max-width: 1024px) and (min-width: 641px) {
-  .bottom-container {
-    grid-template-columns: auto auto;
+  .editor {
+    grid-template-columns: auto;
 
-    .wide {
-      grid-column: span 2;
+    .controls {
+      order: 1;
+      flex-direction: row;
+
+      > * {
+        flex-grow: 1;
+      }
+    }
+
+    .canvas {
+      order: -1;
     }
   }
 }

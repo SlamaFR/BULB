@@ -1,19 +1,27 @@
 <script setup lang="ts">
+import { v4 as uuidv4 } from 'uuid'
+
 const visible = defineModel<boolean>('visible')
 const stop = defineModel<Stop>('stop', { required: true })
 
 function addModeConnection() {
   stop.value.connections.push({
-    mode: null,
-    lines: [],
-    walk: false,
+    id: uuidv4(),
+    $modeConnection: {
+      mode: null,
+      elements: [],
+      walk: false,
+    },
   })
 }
 
 function addServiceConnection() {
   stop.value.connections.push({
-    services: [],
-    walk: false,
+    id: uuidv4(),
+    $serviceConnection: {
+      elements: [],
+      walk: false,
+    },
   })
 }
 
@@ -26,18 +34,25 @@ function deleteConnection(index: number) {
   <Dialog
     v-model:visible="visible"
     modal
-    :header="`Correspondances de '${stop.name}'`"
     :pt="{
       header: { class: 'gap-6' },
     }"
   >
+    <template #header>
+      <div class="flex flex-row gap-4">
+        <Tag severity="warn">
+          <i class="i-tabler-traffic-cone" />
+          WIP
+        </Tag>
+        <span class="p-dialog-title" data-pc-section="title">Correspondances de '{{ stop.name }}'</span>
+      </div>
+    </template>
     <div class="connections">
       <ConnectionGroupEditor
         v-for="(_, index) in stop.connections"
         :key="index"
         v-model:connection="stop.connections[index]"
         :index="index"
-        :total="stop.connections.length ?? 0"
         @delete="deleteConnection"
       />
       <div class="md:min-w-30em md:min-h-25em p-panel p-8 flex flex-col items-center justify-center">

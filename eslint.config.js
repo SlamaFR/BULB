@@ -14,6 +14,7 @@ const ignores = [
 
 export default antfu({
   typescript: true,
+  javascript: true,
   vue: true,
   react: false,
   ignores,

@@ -5,37 +5,38 @@ const visible = defineModel<boolean>('visible')
 const hasOrnament = ref(!!ornament.value)
 const id = useId()
 
-const type = ref<OrnamentType | null>(getOrnamentType(ornament.value))
-const tabType = ref<OrnamentType | ''>('')
-
-watch(tabType, (val) => {
-  if (val !== '') type.value = val
+const ornamentType = computed(() => {
+  if (!ornament.value) return null
+  if (isAirport(ornament.value)) return 'AIRPORT'
+  if (isText(ornament.value)) return 'TEXT'
+  throw new Error('Unknown ornament type')
 })
-watch(type, val => tabType.value = val ?? '')
+const type = ref<'AIRPORT' | 'TEXT' | null>(ornamentType.value)
 
-watch(hasOrnament, (val) => {
-  if (val) {
-    type.value = 'AIRPORT'
-    ornament.value = {
-      airport: 'GENERIC',
-      position: 'RIGHT',
+watch([hasOrnament, type], ([enabled, _type]) => {
+  if (enabled) {
+    type.value = _type || 'AIRPORT'
+    switch (type.value) {
+      case 'AIRPORT':
+        ornament.value = {
+          position: 'RIGHT',
+          $airportOrnament: {
+            airport: null,
+          },
+        }
+        break
+      case 'TEXT':
+        ornament.value = {
+          position: 'RIGHT',
+          $textOrnament: {
+            text: '',
+          },
+        }
+        break
     }
   } else {
     type.value = null
     ornament.value = null
-  }
-})
-watch(type, (val) => {
-  if (val === 'AIRPORT') {
-    ornament.value = {
-      airport: 'GENERIC',
-      position: 'RIGHT',
-    }
-  } else if (val === 'TEXT') {
-    ornament.value = {
-      text: '',
-      position: 'RIGHT',
-    }
   }
 })
 
@@ -61,7 +62,7 @@ const positions = [
         <label :for="id">Afficher une décoration</label>
       </div>
 
-      <Tabs v-model:value="tabType">
+      <Tabs v-model:value="type">
         <TabList>
           <Tab value="AIRPORT" :disabled="!hasOrnament">
             Aéroport
@@ -75,7 +76,7 @@ const positions = [
             <span class="opacity-50">Aucune décoration disponible</span>
           </TabPanel>
           <TabPanel value="AIRPORT">
-            <div v-if="ornament && isAirportOrnament(ornament)" class="form items-center gap-x-4 gap-y-2">
+            <div v-if="ornament && isAirport(ornament)" class="form items-center gap-x-4 gap-y-2">
               <span>Position</span>
               <Select
                 v-model="ornament.position"
@@ -85,11 +86,11 @@ const positions = [
                 option-label="label"
               />
               <span>Aéroport</span>
-              <AirportSelect v-model="ornament.airport" />
+              <AirportSelect v-model="ornament.$airportOrnament.airport" />
             </div>
           </TabPanel>
           <TabPanel value="TEXT">
-            <div v-if="ornament && isTextOrnament(ornament)" class="form items-center gap-x-4 gap-y-2">
+            <div v-if="ornament && isText(ornament)" class="form items-center gap-x-4 gap-y-2">
               <span>Position</span>
               <Select
                 v-model="ornament.position"
@@ -99,7 +100,7 @@ const positions = [
                 option-label="label"
               />
               <span>Texte</span>
-              <Textarea v-model="ornament.text" row="2" auto-resize />
+              <Textarea v-model="ornament.$textOrnament.text" row="2" auto-resize />
             </div>
           </TabPanel>
         </TabPanels>

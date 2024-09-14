@@ -7,13 +7,14 @@ export default function useSaveProject() {
     let customIndices: CustomLineIndexDescription[] = []
 
     if (bundleCustomIndices) {
-      const usedCustomIndicesIds = line.value.stops
-        .flatMap(stop => stop.connections)
-        .filter(isModeConnection)
-        .flatMap(connection => connection.lines)
-        .map(line => line.lineIndex)
-        .filter(isCustomIndex)
-        .map(index => index.id)
+      const usedCustomIndicesIds: string[] = []
+      // line.value.stops
+      // .flatMap(stop => stop.connections)
+      // .filter(isModeConnection)
+      // .flatMap(connection => connection.lines)
+      // .map(line => line.lineIndex)
+      // .filter(isCustomIndex)
+      // .map(index => index.id)
 
       customIndices = indices.value.filter(index => usedCustomIndicesIds.includes(index.id))
     }
