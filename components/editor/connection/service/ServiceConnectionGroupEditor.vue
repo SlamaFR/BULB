@@ -14,7 +14,7 @@ function addService() {
 }
 
 function deleteService(index: number) {
-  connection.value.services.splice(index, 1)
+  connection.value.$serviceConnection.elements.splice(index, 1)
 }
 </script>
 
