@@ -76,32 +76,6 @@ const { width: namesWidth } = useElementSize(names)
   flex-direction: column;
   align-items: start;
   justify-content: center;
-
-  &.with-place {
-    margin-right: calc(1.2031em + .25em);
-  }
-
-  &.multiline:not(.terminus) {
-    margin-left: 1em;
-    margin-right: 1em;
-  }
-
-  &.multiline.with-place:not(.terminus) {
-    margin-left: 1em;
-    margin-right: calc(1em + 1.2031em + .25em);
-  }
-
-  &.terminus {
-    margin-left: .75em;
-  }
-
-  &.terminus.multiline {
-    margin-left: 3em;
-  }
-
-  &.with-pedestrian-connection {
-    margin-left: .875em;
-  }
 }
 
 .names {
@@ -119,6 +93,10 @@ const { width: namesWidth } = useElementSize(names)
 
   &:hover {
     filter: brightness(.5);
+  }
+
+  .stop-wrapper:last-child & {
+    width: 1em;
   }
 }
 
