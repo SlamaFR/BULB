@@ -157,7 +157,7 @@ declare global {
       stopSpacing: number
       leftMargin?: number
       rightMargin?: number
-      stops: Ref<Stop[]>
+      stops: Stop[]
     }
   }
 
