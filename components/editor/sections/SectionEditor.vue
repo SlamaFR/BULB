@@ -9,13 +9,10 @@ const {
   fluid?: boolean
 }>()
 const section = defineModel<LineSection>({ required: true })
-const elements = ref(section.value.$lineSection.elements)
-watchArray(elements, val => section.value.$lineSection.elements = val)
-watch(section, (val) => {
-  if (val.$lineSection.elements.length === 0) {
-    elements.value = val.$lineSection.elements
-  }
-}, { deep: true })
+const elements = computed({
+  get: () => section.value.$lineSection.elements,
+  set: val => section.value.$lineSection.elements = val,
+})
 
 const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * -2.75em)`)
 </script>
@@ -37,9 +34,9 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       :swap-threshold="inner ? .5 : .25"
     >
       <SectionElement
-        v-for="(element, i) in section.$lineSection.elements"
+        v-for="(element, i) in elements"
         :key="element.id"
-        v-model="section.$lineSection.elements[i]"
+        v-model="elements[i]"
         :fluid="fluid"
       />
     </VueDraggable>
