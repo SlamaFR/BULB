@@ -43,6 +43,7 @@ function deleteLine(index: number) {
             v-for="(_, i) in connection.$modeConnection.elements"
             :key="i"
             v-model:line="connection.$modeConnection.elements[i]"
+            :index="i"
             :mode="connection.$modeConnection.mode"
             @delete="deleteLine"
           />

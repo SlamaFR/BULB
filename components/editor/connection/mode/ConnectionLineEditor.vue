@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const {
+  index,
   mode,
 } = defineProps<{
+  index: number
   mode: Mode | null
 }>()
 
