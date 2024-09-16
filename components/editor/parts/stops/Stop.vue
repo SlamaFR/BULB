@@ -144,7 +144,7 @@ const { width: namesWidth } = useElementSize(names)
     cursor: pointer;
 
     .button-holder {
-      left: 50%;
+      left: .5em;
       transform: translateX(-50%);
       top: -.125em;
       padding-top: .375em;
