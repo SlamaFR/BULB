@@ -8,8 +8,10 @@ const {
 }>()
 
 const branch = defineModel<Branch>({ required: true })
-const stops = ref(branch.value.$branch.stops)
-watchArray(stops, val => branch.value.$branch.stops = val)
+const stops = computed({
+  get: () => branch.value.$branch.stops,
+  set: val => branch.value.$branch.stops = val,
+})
 
 const lineContext = inject<LineContext>(LineContextKey)
 
