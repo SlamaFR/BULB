@@ -24,6 +24,8 @@
       </div>
     </div>
   </div>
+
+  <BrowserCheck />
 </template>
 
 <style scoped lang="scss">

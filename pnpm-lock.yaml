@@ -11,6 +11,9 @@ importers:
       '@antfu/eslint-config':
         specifier: ^2.23.0
         version: 2.25.1(@typescript-eslint/utils@8.1.0(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4))(@vue/compiler-sfc@3.4.37)(eslint@9.9.0(jiti@1.21.6))(typescript@5.5.4)
+      '@basitcodeenv/vue3-device-detect':
+        specifier: ^1.0.3
+        version: 1.0.3(typescript@5.5.4)
       '@iconify-json/tabler':
         specifier: ^1.1.118
         version: 1.1.120
@@ -324,6 +327,9 @@ packages:
   '@babel/types@7.25.2':
     resolution: {integrity: sha512-YTnYtra7W9e6/oAZEHj0bJehPRUlLH9/fbpT5LfB0NhQXyALCRkRs3zH9v07IYhkgpqX6Z78FnuccZr/l4Fs4Q==}
     engines: {node: '>=6.9.0'}
+
+  '@basitcodeenv/vue3-device-detect@1.0.3':
+    resolution: {integrity: sha512-BDHoM2KYJx/PrEyEzgYOLEVSTxQmvd1PR7UqRQSMClgnM7O1cGoagG/5K0CZy6LUHGifyU5qnrQdC3Sy9nt3zQ==}
 
   '@capsizecss/metrics@2.2.0':
     resolution: {integrity: sha512-DkFIser1KbGxWyG2hhQQeCit72TnOQDx5pr9bkA7+XlIy7qv+4lYtslH3bidVxm2qkY2guAgypSIPYuQQuk70A==}
@@ -4614,6 +4620,10 @@ packages:
     engines: {node: '>=14.17'}
     hasBin: true
 
+  ua-parser-js@1.0.39:
+    resolution: {integrity: sha512-k24RCVWlEcjkdOxYmVJgeD/0a1TiSpqLg+ZalVGV9lsnr4yqu0w7tX/x2xX6G4zpkgQnRf89lxuZ1wsbjXM8lw==}
+    hasBin: true
+
   ufo@1.5.4:
     resolution: {integrity: sha512-UsUk3byDzKd04EyoZ7U4DOlxQaD14JUKQl6/P7wiX4FNvUfm3XL246n9W5AmqwW5RSFJ27NAuM0iLscAOYUiGQ==}
 
@@ -5377,6 +5387,13 @@ snapshots:
       '@babel/helper-string-parser': 7.24.8
       '@babel/helper-validator-identifier': 7.24.7
       to-fast-properties: 2.0.0
+
+  '@basitcodeenv/vue3-device-detect@1.0.3(typescript@5.5.4)':
+    dependencies:
+      ua-parser-js: 1.0.39
+      vue: 3.4.37(typescript@5.5.4)
+    transitivePeerDependencies:
+      - typescript
 
   '@capsizecss/metrics@2.2.0': {}
 
@@ -10354,6 +10371,8 @@ snapshots:
   type-level-regexp@0.1.17: {}
 
   typescript@5.5.4: {}
+
+  ua-parser-js@1.0.39: {}
 
   ufo@1.5.4: {}
 
