@@ -15,6 +15,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^2.23.0",
+    "@basitcodeenv/vue3-device-detect": "^1.0.3",
     "@iconify-json/tabler": "^1.1.118",
     "@iconify/tools": "^4.0.5",
     "@nuxt/fonts": "^0.7.1",
