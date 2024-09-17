@@ -10,7 +10,7 @@ const {
   interestPoint?: boolean
 }>()
 
-const valueParts = computed(() => value.split('\n'))
+const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
 </script>
 
 <template>
