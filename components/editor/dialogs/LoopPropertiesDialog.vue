@@ -27,6 +27,7 @@ const orientations = [
           :options="orientations"
           option-label="label"
           option-value="value"
+          :allow-empty="false"
         />
       </div>
     </div>

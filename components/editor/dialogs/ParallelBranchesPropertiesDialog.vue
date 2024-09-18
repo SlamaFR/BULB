@@ -28,6 +28,7 @@ const alignements = [
           :options="alignements"
           option-label="label"
           option-value="value"
+          :allow-empty="false"
         />
       </div>
 
