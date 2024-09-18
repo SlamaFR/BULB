@@ -32,6 +32,7 @@ const shapes = [
           :options="orientations"
           option-label="label"
           option-value="value"
+          :allow-empty="false"
         />
       </div>
       <div class="flex flex-col gap-1">
@@ -41,6 +42,7 @@ const shapes = [
           :options="shapes"
           option-label="label"
           option-value="value"
+          :allow-empty="false"
         />
       </div>
       <div class="flex flex-col gap-1">
