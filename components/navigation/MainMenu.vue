@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, color, topology, lineWidth } = storeToRefs(useLine())
+const { reset } = useLine()
 
 const showLineIndexDirectory = ref(false)
 const showSaveDialog = ref(false)
@@ -21,18 +21,7 @@ function newProject() {
       severity: 'secondary',
       text: true,
     },
-    accept: () => {
-      mode.value = null
-      index.value = null
-      color.value = null
-      lineWidth.value = 0.375
-      topology.value = [{
-        id: '1',
-        $lineSection: {
-          elements: [],
-        },
-      }]
-    },
+    accept: reset,
   })
 }
 

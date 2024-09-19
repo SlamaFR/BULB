@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, color } = storeToRefs(useLine())
+const { mode, index, color, mapSize } = storeToRefs(useLine())
 
 const showPresetSelector = ref(false)
 
@@ -24,6 +24,16 @@ function updateColor(newColor: string | null) {
       <div class="flex flex-col gap-1 flex-auto">
         <span class="text-nowrap">Couleur du plan</span>
         <ColorSelect v-model="color" />
+      </div>
+
+      <div class="flex flex-col gap-1 flex-auto">
+        <div class="flex flex-row items-center gap-2">
+          <span class="text-nowrap">Taille du cadre</span>
+          <Tag class="text-xs" severity="warn">
+            Temporaire
+          </Tag>
+        </div>
+        <MapSizeSelect v-model="mapSize" />
       </div>
     </div>
 

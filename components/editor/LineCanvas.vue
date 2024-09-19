@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, topology, color, lineWidth } = storeToRefs(useLine())
+const { mode, index, topology, color, lineWidth, mapSize } = storeToRefs(useLine())
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => color.value ?? '#000000'),
@@ -22,7 +22,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 <template>
   <div class="canvas">
     <div class="flex-grow flex items-center overflow-y-auto">
-      <div ref="el" class="content bg-white pr-10em flex flex-row">
+      <div ref="el" class="content bg-white pr-10em flex flex-row" :style="{ minHeight: `${mapSize}em` }">
         <div class="flex flex-col min-w-fit">
           <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
           <div class="p-3">
