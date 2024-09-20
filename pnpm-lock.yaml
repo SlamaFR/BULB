@@ -89,6 +89,9 @@ importers:
       sass:
         specifier: ^1.77.8
         version: 1.77.8
+      svg-round-corners:
+        specifier: ^0.4.3
+        version: 0.4.3
       taze:
         specifier: ^0.16.1
         version: 0.16.5
@@ -4454,6 +4457,9 @@ packages:
   supports-preserve-symlinks-flag@1.0.0:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
+
+  svg-round-corners@0.4.3:
+    resolution: {integrity: sha512-9zxcdLa9Bh2Bddxa760wSzspWLJ1nTRMKIsVH6MjNm8QssbZGbmY0pOnjwrp/cST+mfod2l3lpbuKFe+c3wHjw==}
 
   svg-tags@1.0.0:
     resolution: {integrity: sha512-ovssysQTa+luh7A5Weu3Rta6FJlFBBbInjOh722LIt6klpU2/HtdUbszju/G4devcvk8PGt7FCLv5wftu3THUA==}
@@ -10222,6 +10228,8 @@ snapshots:
   supports-color@9.4.0: {}
 
   supports-preserve-symlinks-flag@1.0.0: {}
+
+  svg-round-corners@0.4.3: {}
 
   svg-tags@1.0.0: {}
 

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { roundCorners } from 'svg-round-corners'
+
 const {
   meta,
 } = defineProps<{
@@ -41,7 +43,8 @@ function getPath(fromOffset: number, toOffset: number) {
   const [fromX, toX, flip] = orientation.value
   const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
   const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
-  return `M ${fromX} ${fromY} L ${fromX + CLEARANCE * flip} ${fromY} L ${toX - CLEARANCE * flip} ${toY} L ${toX} ${toY}`
+  const path = `M ${fromX} ${fromY} L ${fromX + CLEARANCE * flip} ${fromY} L ${toX - CLEARANCE * flip} ${toY} L ${toX} ${toY}`
+  return roundCorners(path, 100).path
 }
 </script>
 
