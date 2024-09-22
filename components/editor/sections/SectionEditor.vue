@@ -28,7 +28,7 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
     <VueDraggable
       v-model="elements"
       :animation="150"
-      class="elements"
+      class="elements open"
       group="sectionElements"
       ghost-class="section-ghost"
       :swap-threshold="inner ? .5 : .25"
@@ -117,6 +117,25 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.open {
+  padding: 0 2em;
+  margin: 0 -2em;
+
+  .debug & {
+    outline: 1px dashed lime;
+  }
+
+  .elements .element:not(:last-child) & {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .elements .element:not(:first-child) & {
+    padding-left: 0;
+    margin-left: 0;
   }
 }
 </style>

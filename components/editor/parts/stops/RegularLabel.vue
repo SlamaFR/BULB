@@ -1,16 +1,19 @@
 <script setup lang="ts">
 const {
   value,
+  preventSubtitleOverlapping,
   subtitle = '',
   interestPoint = false,
 } = defineProps<{
   value: string
+  preventSubtitleOverlapping: boolean
   placeName: string | null
   subtitle: string | null
   interestPoint?: boolean
 }>()
 
 const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
+const containsDescenders = computed(() => goesBelowLine(valueParts.value[valueParts.value.length - 1]))
 </script>
 
 <template>
@@ -21,7 +24,7 @@ const valueParts = computed(() => value.split('\n').filter(part => part.trim() !
       </div>
     </div>
     <div class="w-0 translate-x-.75em">
-      <SubtitleLabel v-if="subtitle" :subtitle="subtitle" :interest-point="interestPoint" />
+      <SubtitleLabel v-if="subtitle" :subtitle="subtitle" :interest-point="interestPoint" :shift="containsDescenders && preventSubtitleOverlapping" />
     </div>
   </div>
 </template>

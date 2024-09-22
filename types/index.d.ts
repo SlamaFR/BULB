@@ -228,6 +228,20 @@ declare global {
     color: Ref<string>
     lineWidth: Ref<number>
   }
+
+  export interface StopContext {
+    margins: {
+      leftMargin: {
+        name: string
+        connections: string
+      }
+      rightMargin: {
+        name: string
+        connections: string
+      }
+    }
+    namesWidth: ComputedRef<string>
+  }
 }
 
 export {}

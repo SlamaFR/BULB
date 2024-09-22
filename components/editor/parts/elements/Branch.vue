@@ -48,9 +48,10 @@ function moveOut(event: DraggableEvent<Stop>) {
     <VueDraggable
       v-model="stops"
       :animation="150"
-      class="stops z-100"
+      class="stops open"
       group="branchElements"
       ghost-class="stop-ghost"
+      :swap-threshold=".75"
       handle=".stop-handle"
       @remove="(e: SortableEvent) => moveOut(e as DraggableEvent<Stop>)"
     >
@@ -61,7 +62,10 @@ function moveOut(event: DraggableEvent<Stop>) {
         :data-id="stop.id"
       />
     </VueDraggable>
-    <div class="line" />
+    <div class="line">
+      <div class="export-hide line-left-tail" />
+      <div class="export-hide line-right-tail" />
+    </div>
   </div>
 </template>
 
@@ -73,8 +77,10 @@ function moveOut(event: DraggableEvent<Stop>) {
 
 <style scoped lang="scss">
 .branch-wrapper {
-  //outline: 1px solid red;
-  //outline-offset: .125em;
+  .debug & {
+    outline: 1px solid orange;
+    outline-offset: 1px;
+  }
 
   position: relative;
   z-index: 2;
@@ -85,11 +91,6 @@ function moveOut(event: DraggableEvent<Stop>) {
 
   &.empty {
     min-width: 3em;
-  }
-
-  &:not(.empty) {
-    //margin-right: -.5em;
-    //transform: translateX(.5em);
   }
 
   &.negativeLeftMargin {
@@ -111,23 +112,32 @@ function moveOut(event: DraggableEvent<Stop>) {
 
 .stops {
   display: flex;
+  z-index: 10;
   flex-grow: 1;
   flex-direction: row;
-  height: 1em;
   justify-content: space-evenly;
   align-items: center;
   gap: calc(v-bind(stopSpacing));
+  pointer-events: fill;
+}
 
-  & > :first-child > *,
-  & > :first-child {
-    padding-left: 0 !important;
-    margin-left: 0 !important;
+.open {
+  padding: 0 2em;
+  margin: 0 -2em;
+  height: 4em;
+
+  .debug & {
+    outline: 1px dashed lime;
   }
 
-  & > :last-child > *,
-  & > :last-child {
-    padding-right: 0 !important;
-    margin-right: 0 !important;
+  .elements .element:not(:last-child) > & {
+    padding-right: 0;
+    margin-right: 0;
+  }
+
+  .elements .element:not(:first-child) > & {
+    padding-left: 0;
+    margin-left: 0;
   }
 }
 
@@ -140,19 +150,37 @@ function moveOut(event: DraggableEvent<Stop>) {
   background-color: v-bind(color);
   width: calc(100%);
 
+  & .line-left-tail {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    left: 0;
+    height: v-bind(lineWidth);
+    width: 1em;
+    transform: translateX(-100%);
+    background: linear-gradient(to left, v-bind(color), transparent);
+
+    .elements .element:not(:first-child) & {
+      display: none;
+    }
+  }
+
+  & .line-right-tail {
+    content: '';
+    position: absolute;
+    z-index: -10;
+    right: 0;
+    height: v-bind(lineWidth);
+    width: 1em;
+    transform: translateX(100%);
+    background: linear-gradient(to right, v-bind(color), transparent);
+
+    .elements .element:not(:last-child) & {
+      display: none;
+    }
+  }
+
   //border-radius: v-bind(lineWidth);
   //margin: 0 calc(v-bind(lineWidth) / -2);
-
-  //.fluid & {
-  //  //width: calc(100% + v-bind(lineWidth) - .5em);
-  //}
-  //
-  //.branch-wrapper.empty & {
-  //  //width: calc(100% + v-bind(lineWidth));
-  //}
-  //.branch-wrapper:not(.empty) & {
-  //  //width: calc(100% + v-bind(lineWidth) - .5em);
-  //  //left: .25em;
-  //}
 }
 </style>

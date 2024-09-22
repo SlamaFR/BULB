@@ -4,6 +4,13 @@ const {
 } = defineProps<{
   connection: ModeConnection
 }>()
+
+const stopContext = inject<StopContext>(StopContextKey)
+
+const isPedestrian = computed(() => connection.$modeConnection.walk)
+watch(isPedestrian, (val) => {
+  if (stopContext) stopContext.margins.leftMargin.connections = val ? '.5em' : '0em'
+}, { immediate: true })
 </script>
 
 <template>
