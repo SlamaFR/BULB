@@ -4,6 +4,13 @@ const {
 } = defineProps<{
   connection: ServiceConnection
 }>()
+
+const stopContext = inject<StopContext>(StopContextKey)
+
+const isPedestrian = computed(() => connection.$serviceConnection.walk)
+watch(isPedestrian, (val) => {
+  if (stopContext) stopContext.margins.leftMargin.connections = val ? '.5em' : '0em'
+}, { immediate: true })
 </script>
 
 <template>

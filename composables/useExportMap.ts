@@ -8,6 +8,7 @@ export default function useExportMap() {
       pixelRatio: 8,
       canvasWidth: mapContainer.clientWidth,
       canvasHeight: mapContainer.clientHeight,
+      filter: element => !element.className?.toString()?.includes('export-hide'),
     }).then((blob) => {
       if (blob === null) {
         throw new Error('Failed to export map')

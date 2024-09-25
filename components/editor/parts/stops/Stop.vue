@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { StopContextKey } from '~/utils/symbols'
+import { STOP_PADDING } from '~/utils/dimensions'
+
 const stop = defineModel<Stop>({ required: true })
 
 const lineContext = inject<LineContext>(LineContextKey)
@@ -8,8 +11,27 @@ const showConnectionsEditor = ref(false)
 const el = ref()
 const hovering = useElementHover(el)
 
+const padding = computed(() => STOP_PADDING)
+const margins = reactive({
+  leftMargin: {
+    name: '0px',
+    connections: '0px',
+  },
+  rightMargin: {
+    name: '0px',
+    connections: '0px',
+  },
+})
+
+const leftMargin = computed(() => `max(${margins.leftMargin.name}, ${margins.leftMargin.connections})`)
+const rightMargin = computed(() => `max(${margins.rightMargin.name}, ${margins.rightMargin.connections})`)
+
 const names = ref()
-const { width: namesWidth } = useElementSize(names)
+const connections = ref()
+const { width } = useElementSize(names)
+const namesWidth = computed(() => `${width.value}px`)
+
+provide<StopContext>(StopContextKey, { margins, namesWidth })
 </script>
 
 <template>
@@ -25,11 +47,12 @@ const { width: namesWidth } = useElementSize(names)
           :subtitle="stop.subtitle"
           :place-name="stop.placeName"
           :interest-point="stop.interestPoint"
+          :prevent-subtitle-overlapping="stop.preventSubtitleOverlapping"
           :terminus="stop.terminus"
           @click="showPropertiesDialog = true"
         />
       </div>
-      <div class="dot-connections" :style="{ marginLeft: `calc((${namesWidth}px - 1em) / 2)` }">
+      <div class="dot-connections">
         <div class="dot">
           <StopDot
             class="stop-handle z-1"
@@ -38,11 +61,12 @@ const { width: namesWidth } = useElementSize(names)
             :color="lineContext?.color.value ?? '#000000'"
           />
         </div>
-        <div class="connections dynamic-part">
+        <div class="w-0 connections dynamic-part">
+          {{ connections?.clientWidth }}
           <div @click="showConnectionsEditor = true">
-            <Connections :connections="stop.connections" />
+            <Connections ref="connections" :connections="stop.connections" />
             <Transition v-if="stop.connections.length === 0" name="fade">
-              <div v-show="hovering" class="button-holder">
+              <div v-show="hovering" class="button-holder export-hide">
                 <Button icon="i-tabler-playlist-add" rounded @click="showConnectionsEditor = true" />
               </div>
             </Transition>
@@ -65,10 +89,11 @@ const { width: namesWidth } = useElementSize(names)
 <style scoped lang="scss">
 .stop-wrapper {
   .debug & {
-    outline: 1px solid rgba(0, 255, 255, 0.5);
+    outline: 1px solid cyan;
   }
 
-  padding: 0 0 0 1.25em;
+  padding-left: v-bind(leftMargin);
+  padding-right: v-bind(rightMargin);
   min-width: 1em;
   z-index: 20;
 
@@ -76,27 +101,51 @@ const { width: namesWidth } = useElementSize(names)
   flex-direction: column;
   align-items: start;
   justify-content: center;
+
+  .stops > &:first-child,
+  .stops > .stop-ghost:first-child & {
+    margin-left: calc((v-bind(namesWidth) - 1em) / -2) !important;
+    padding-left: 0;
+
+    .names {
+      margin-left: 0;
+    }
+
+    .dot-connections {
+      margin-left: calc((v-bind(namesWidth) - 1em) / 2);
+    }
+  }
+
+  .stops > &:last-child,
+  .stops > .stop-ghost:last-child & {
+    margin-right: calc((v-bind(namesWidth) - 1em) / -2) !important;
+    padding-right: 0;
+
+    .names {
+      margin-right: 0;
+    }
+
+    .dot-connections {
+      width: 1em;
+    }
+  }
 }
 
 .names {
   .debug & {
-    outline: 1px solid magenta;
-    outline-offset: .125em;
+    outline: 1px solid blue;
   }
 
   position: relative;
   top: -.125em;
   height: 0;
   cursor: pointer;
+  margin: 0 v-bind(STOP_PADDING);
 
   transition: filter .2s ease;
 
   &:hover {
     filter: brightness(.5);
-  }
-
-  .stop-wrapper:last-child & {
-    width: 1em;
   }
 }
 
@@ -105,15 +154,12 @@ const { width: namesWidth } = useElementSize(names)
   flex-direction: column;
   align-items: start;
 
-  .stop-wrapper:first-child & {
-    margin-left: 0 !important;
-  }
+  margin-left: calc((v-bind(namesWidth) - 1em) / 2 + v-bind(padding));
 }
 
 .dot {
   .debug & {
-    outline: 1px solid orange;
-    outline-offset: .125em;
+    outline: 1px solid magenta;
   }
 
   display: flex;
@@ -122,20 +168,10 @@ const { width: namesWidth } = useElementSize(names)
 }
 
 .connections {
-  .debug & {
-    outline: 1px solid red;
-    outline-offset: .125em;
-  }
-
-  min-width: 2.25em;
+  min-width: 1em;
   position: relative;
   top: .125em;
   height: 0;
-
-  .stop-wrapper:last-child & {
-    min-width: 1em;
-    width: 1em;
-  }
 
   > div {
     display: flex;

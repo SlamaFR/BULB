@@ -11,16 +11,33 @@ const {
   interestPoint?: boolean
 }>()
 
-const valueParts = computed(() => value.split('\n'))
-const placeNameParts = computed(() => placeName?.split('\n'))
+const stopContext = inject<StopContext>(StopContextKey)
+
+const frame = ref<HTMLDivElement | null>(null)
+const { stop } = useResizeObserver(frame, (e) => {
+  const size = (e[0].target as HTMLDivElement)?.offsetHeight
+  if (stopContext) {
+    // some Pythagoras stuff does the trick
+    // simplified because the angle is 30deg (ratio of 1:2)
+    stopContext.margins.leftMargin.name = `calc(${size * 2}px - 1.5em)`
+  }
+})
+
+const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
+const placeNameParts = computed(() => placeName?.split('\n').filter(part => part.trim() !== '') ?? [])
+
+onUnmounted(() => {
+  stop()
+  if (stopContext !== undefined) stopContext.margins.leftMargin.name = '0px'
+})
 </script>
 
 <template>
   <div class="terminus-label">
     <div class="flex">
       <div class="wrapper translate-x-50%">
-        <div class="frame">
-          <span v-for="part in placeNameParts" v-if="placeName" class="place-name">
+        <div ref="frame" class="frame">
+          <span v-for="part in placeNameParts" class="place-name">
             {{ part }}
           </span>
           <span v-for="part in valueParts">
@@ -46,7 +63,7 @@ const placeNameParts = computed(() => placeName?.split('\n'))
   gap: .75em;
   transform: translateY(-.125em);
 
-  width: fit-content;
+  width: 1em;
   height: 1px;
 }
 

@@ -1,15 +1,34 @@
 <script setup lang="ts">
 const {
   subtitle,
+  shift = false,
   interestPoint = false,
 } = defineProps<{
   subtitle: string
+  shift?: boolean
   interestPoint?: boolean
 }>()
+
+const stopContext = inject<StopContext>(StopContextKey)
+const el = ref<HTMLDivElement | null>(null)
+
+function updateMargin(_shift: boolean, _interestPoint: boolean) {
+  let margin = 1.125
+  if (_shift) margin += 0.375
+  if (_interestPoint) margin += 0.25
+
+  if (stopContext) stopContext.margins.rightMargin.name = `${margin}em`
+}
+
+watch([() => shift, () => interestPoint], ([_shift, _interestPoint]) => updateMargin(_shift, _interestPoint))
+onMounted(() => updateMargin(shift, interestPoint))
+onUnmounted(() => {
+  if (stopContext) stopContext.margins.rightMargin.name = '0px'
+})
 </script>
 
 <template>
-  <div class="wrapper">
+  <div ref="el" class="wrapper" :class="{ 'translate-x-.375em': shift }">
     <div class="subtitle" :class="{ 'interest-point': interestPoint }">
       <span>{{ subtitle }}</span>
     </div>
@@ -19,8 +38,7 @@ const {
 <style scoped lang="scss">
 .wrapper {
   .debug & {
-    outline: 1px solid lime;
-    outline-offset: .125em;
+    outline: 1px solid deepskyblue;
   }
 
   position: relative;
