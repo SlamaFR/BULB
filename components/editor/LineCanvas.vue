@@ -6,6 +6,7 @@ provide<LineContext>(LineContextKey, {
   lineWidth,
 })
 
+const version = useVersion()
 const exportMap = useExportMap()
 const el = ref()
 
@@ -22,7 +23,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 <template>
   <div class="canvas">
     <div class="flex-grow flex items-center overflow-y-auto">
-      <div ref="el" class="content bg-white pr-10em flex flex-row" :style="{ minHeight: `${mapSize}em` }">
+      <div ref="el" class="relative content bg-white pr-10em flex flex-row" :style="{ minHeight: `${mapSize}em` }">
         <div class="flex flex-col min-w-fit">
           <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
           <div class="p-3">
@@ -36,6 +37,16 @@ onBeforeUnmount(() => exportSignal.off(doExport))
           v-model="topology"
           class="w-max-content min-h-15em p-1em pt-20"
         />
+
+        <div class="absolute bottom-.375em left-.375em text-[var(--blue-ratp-paper)]">
+          <div class="text-.2em flex flex-col line-height-1.75">
+            <span>Créé à l’aide de BULB • bulb.slama.io</span>
+            <span class="opacity-50 text-.5em">Version {{ version }}</span>
+            <hr class="my-.5">
+            <span class="text-.825em">Non affilié à la RATP, à Île-de-France Mobilités ou à toute autre société. Les pictogrammes ainsi que les polices utilisés demeurent la propriété intellectuelle exclusive des entités susmentionnées.</span>
+            <span class="italic text-.75em">Not affiliated with RATP, Île-de-France Mobilités or any other company. The pictograms and fonts used remain the exclusive intellectual property of the aforementioned entities.</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="toolbox">
