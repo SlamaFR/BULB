@@ -17,7 +17,7 @@ const {
       'with-pedestrian': walk,
     }"
   >
-    <div class="flex flex-row items-center gap-.5">
+    <div class="flex flex-row items-center gap-1">
       <Pedestrian v-if="walk" />
       <slot />
     </div>
