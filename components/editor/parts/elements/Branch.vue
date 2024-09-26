@@ -130,12 +130,12 @@ function moveOut(event: DraggableEvent<Stop>) {
     outline: 1px dashed lime;
   }
 
-  .elements .element:not(:last-child) > & {
+  .elements .element:not(:last-child) & {
     padding-right: 0;
     margin-right: 0;
   }
 
-  .elements .element:not(:first-child) > & {
+  .elements .element:not(:first-child) & {
     padding-left: 0;
     margin-left: 0;
   }
