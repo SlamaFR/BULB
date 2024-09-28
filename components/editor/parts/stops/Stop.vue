@@ -59,6 +59,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
             :terminus="stop.terminus"
             :connection="stop.connections.length > 0"
             :color="lineContext?.color.value ?? '#000000'"
+            :closed="stop.closed"
           />
         </div>
         <div class="w-0 connections dynamic-part">

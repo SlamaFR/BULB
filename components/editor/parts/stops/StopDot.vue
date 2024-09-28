@@ -3,16 +3,19 @@ const {
   color,
   terminus = false,
   connection = false,
+  closed = false,
 } = defineProps<{
   color: string
   terminus?: boolean
   connection?: boolean
+  closed?: boolean
 }>()
 </script>
 
 <template>
   <div class="w-1em h-1em flex items-center justify-center relative">
-    <div class="absolute dot dynamic-part" :class="{ terminus, connection }" />
+    <div class="absolute dot dynamic-part" :class="{ terminus, connection: connection || closed }" />
+    <img v-if="closed" class="absolute closed" src="~/assets/svg/closed.svg">
   </div>
 </template>
 
@@ -49,5 +52,14 @@ const {
       border-radius: 50%;
     }
   }
+}
+
+.closed {
+  display: flex;
+  width: 1em;
+  height: 1em;
+  scale: 1.375;
+  object-fit: cover;
+  pointer-events: none;
 }
 </style>

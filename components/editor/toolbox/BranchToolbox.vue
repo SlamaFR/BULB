@@ -25,6 +25,7 @@ function clone(): Stop {
     interestPoint: false,
     preventSubtitleOverlapping: true,
     terminus: false,
+    closed: false,
     connections: [],
   }
 }
@@ -54,6 +55,7 @@ function clone(): Stop {
           preventSubtitleOverlapping: true,
           interestPoint: false,
           terminus: false,
+          closed: false,
           connections: [],
         }"
       />
@@ -91,6 +93,7 @@ function clone(): Stop {
     & > .item {
       display: block;
     }
+
     & > :not(.item) {
       display: none;
     }

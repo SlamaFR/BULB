@@ -42,6 +42,12 @@ function mapName(name: string) {
       </div>
       <div class="flex flex-col gap-1">
         <div class="flex items-center">
+          <Checkbox v-model="stop.closed" binary :input-id="`${stop.id}_closed`" />
+          <label :for="`${stop.id}_closed`" class="ml-2">Fermé</label>
+        </div>
+      </div>
+      <div class="flex flex-col gap-1">
+        <div class="flex items-center">
           <Checkbox v-model="stop.terminus" binary :input-id="`${stop.id}_terminus`" />
           <label :for="`${stop.id}_terminus`" class="ml-2">Terminus</label>
         </div>
