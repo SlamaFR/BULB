@@ -15,6 +15,8 @@ declare global {
   type Service =
     'FUNICULAR'
     | 'MAIN_STATION'
+    | 'BULLET_TRAIN'
+    | 'REGIONAL_TRAIN'
     | 'AIRPORT'
     | 'ROISSY_BUS'
     | 'ORLY_BUS'
@@ -172,6 +174,7 @@ declare global {
     preventSubtitleOverlapping: boolean
     interestPoint: boolean
     terminus: boolean
+    closed: boolean
     connections: Connection[]
   }
 

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import funicular from 'assets/svg/services/funicular.svg'
 import mainStation from 'assets/svg/services/main_station.svg'
+import bulletTrain from 'assets/svg/services/tgv.svg'
+import regionalTrain from 'assets/svg/services/ter.svg'
 import airport from '~/assets/svg/airport/airport-generic.svg'
 import roissyBus from '~/assets/svg/services/roissybus.svg'
 import orlyBus from '~/assets/svg/services/orlybus.svg'
@@ -20,6 +22,10 @@ const icon = computed(() => {
       return funicular
     case 'MAIN_STATION':
       return mainStation
+    case 'BULLET_TRAIN':
+      return bulletTrain
+    case 'REGIONAL_TRAIN':
+      return regionalTrain
     case 'AIRPORT':
       return airport
     case 'ROISSY_BUS':

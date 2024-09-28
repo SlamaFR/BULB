@@ -15,7 +15,7 @@ config.locale = fr
 <style lang="scss">
 :root {
   --blue-ratp: #0a0082;
-  --blue-ratp-paper: #233B8B;
+  --blue-ratp-paper: #1F3C90;
   --yellow-ratp: #ffbe00;
   --place-brown: #80551A;
   --gray: #414241;

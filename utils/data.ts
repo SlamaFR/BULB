@@ -103,6 +103,8 @@ export const TRAM_LINES: IndexChoice<BuiltinLineIndex>[] = [
 export const SERVICES: ServiceChoice[] = [
   Services.AIRPORT,
   Services.MAIN_STATION,
+  Services.BULLET_TRAIN,
+  Services.REGIONAL_TRAIN,
   Services.FUNICULAR,
   Services.ROISSY_BUS,
   Services.ORLY_BUS,
