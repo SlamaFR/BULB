@@ -16,17 +16,13 @@ watch(service, val => selectedService.value = findServiceByValue(val))
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
-        <div :class="{ 'bg-white': slotProps.value.color, 'rounded-full': slotProps.value.round }">
-          <Service class="text-xl" :service="slotProps.value.value" />
-        </div>
+        <Service class="text-xl" :service="slotProps.value.value" />
         <span>{{ slotProps.value.label }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
-        <div :class="{ 'bg-white': slotProps.option.color, 'rounded-full': slotProps.option.round }">
-          <Service class="text-xl" :service="slotProps.option.value" />
-        </div>
+        <Service class="text-xl" :service="slotProps.option.value" />
         <span>{{ slotProps.option.label }}</span>
       </div>
     </template>

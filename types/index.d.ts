@@ -2,8 +2,25 @@ import type { Ref } from 'vue'
 
 declare global {
 
-  type Mode = 'BOAT' | 'BUS' | 'CABLE' | 'METRO' | 'RER' | 'TRAIN' | 'TRAIN_RER' | 'TRAM' | 'VELO'
-  type Service = 'FUNICULAR' | 'MAIN_STATION' | 'AIRPORT'
+  type Mode = 'BOAT'
+    | 'BRT'
+    | 'BUS'
+    | 'CABLE'
+    | 'METRO'
+    | 'RER'
+    | 'TRAIN'
+    | 'TRAIN_RER'
+    | 'TRAM'
+    | 'VELO'
+  type Service =
+    'FUNICULAR'
+    | 'MAIN_STATION'
+    | 'AIRPORT'
+    | 'ROISSY_BUS'
+    | 'ORLY_BUS'
+    | 'CDGVAL'
+    | 'ORLYVAL'
+    | 'ORLYVAL_LARGE'
 
   type CableLine = '1' | string
   type MetroLine =
@@ -53,7 +70,6 @@ declare global {
   interface ServiceChoice {
     value: Service
     label: string
-    background: boolean
   }
 
   interface AirportChoice {

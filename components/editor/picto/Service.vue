@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import funicular from '~/assets/svg/funicular.svg'
-import mainStation from '~/assets/svg/main_station.svg'
+import funicular from 'assets/svg/services/funicular.svg'
+import mainStation from 'assets/svg/services/main_station.svg'
 import airport from '~/assets/svg/airport/airport-generic.svg'
+import roissyBus from '~/assets/svg/services/roissybus.svg'
+import orlyBus from '~/assets/svg/services/orlybus.svg'
+import cdgval from '~/assets/svg/services/cdgval.svg'
+import orlyval from '~/assets/svg/services/orlyval.svg'
+import orlyvalLarge from '~/assets/svg/services/orlyval_lg.svg'
 
 const {
   service,
@@ -17,6 +22,16 @@ const icon = computed(() => {
       return mainStation
     case 'AIRPORT':
       return airport
+    case 'ROISSY_BUS':
+      return roissyBus
+    case 'ORLY_BUS':
+      return orlyBus
+    case 'CDGVAL':
+      return cdgval
+    case 'ORLYVAL':
+      return orlyval
+    case 'ORLYVAL_LARGE':
+      return orlyvalLarge
   }
   return null
 })
@@ -28,7 +43,7 @@ const icon = computed(() => {
 
 <style scoped lang="scss">
 .picto {
-  width: 1em;
+  //width: 1em;
   height: 1em;
 }
 </style>
