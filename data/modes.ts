@@ -1,4 +1,5 @@
 export const BOAT: ModeChoice = { value: 'BOAT', label: 'Navette fluviale' }
+export const BRT: ModeChoice = { value: 'BRT', label: 'Busilien (BHNS)' }
 export const BUS: ModeChoice = { value: 'BUS', label: 'Bus' }
 export const CABLE: ModeChoice = { value: 'CABLE', label: 'Téléphérique' }
 export const METRO: ModeChoice = { value: 'METRO', label: 'Métro' }

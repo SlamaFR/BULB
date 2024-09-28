@@ -25,6 +25,7 @@ export const COLORS: ColorChoice[] = [
 
 export const MODES: ModeChoice[] = [
   Modes.BOAT,
+  Modes.BRT,
   Modes.BUS,
   Modes.CABLE,
   Modes.METRO,
@@ -100,9 +101,14 @@ export const TRAM_LINES: IndexChoice<BuiltinLineIndex>[] = [
 ]
 
 export const SERVICES: ServiceChoice[] = [
+  Services.AIRPORT,
   Services.MAIN_STATION,
   Services.FUNICULAR,
-  Services.AIRPORT,
+  Services.ROISSY_BUS,
+  Services.ORLY_BUS,
+  Services.ORLYVAL_LARGE,
+  Services.ORLYVAL,
+  Services.CDGVAL,
 ]
 
 export const AIRPORTS: AirportChoice[] = [
@@ -168,6 +174,7 @@ export function modeToShape(mode: Mode): IndexShape {
     case 'TRAIN_RER':
       return 'SQUARE'
     case 'BOAT':
+    case 'BRT':
     case 'BUS':
     case 'CABLE':
     case 'VELO':

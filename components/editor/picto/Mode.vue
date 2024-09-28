@@ -7,7 +7,7 @@ const {
 
 const circle = computed(() => mode === 'METRO')
 const roundRectangle = computed(() => ['RER', 'TER', 'TRAIN', 'TRAIN_RER'].includes(mode ?? ''))
-const square = computed(() => ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(mode ?? ''))
+const square = computed(() => ['BOAT', 'BUS', 'BRT', 'CABLE', 'TRAM', 'VELO'].includes(mode ?? ''))
 </script>
 
 <template>
@@ -16,11 +16,11 @@ const square = computed(() => ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(
     <div
       class="absolute picto" :class="{
         boat: mode === 'BOAT',
+        brt: mode === 'BRT',
         bus: mode === 'BUS',
         cable: mode === 'CABLE',
         metro: mode === 'METRO',
         rer: mode === 'RER',
-        ter: mode === 'TER',
         train: mode === 'TRAIN',
         train_rer: mode === 'TRAIN_RER',
         tram: mode === 'TRAM',
@@ -70,6 +70,11 @@ const square = computed(() => ['BOAT', 'BUS', 'CABLE', 'TRAM', 'VELO'].includes(
 
 .boat {
   mask: url(assets/svg/modes/boat.svg) no-repeat center;
+}
+
+.brt {
+  mask: url(assets/svg/modes/brt.svg) no-repeat center;
+  mask-size: contain;
 }
 
 .bus {
