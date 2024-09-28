@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { isAirport, isAirportName, isText } from '~/utils/types'
+
 const {
   ornament = null,
   walk = false,
@@ -24,6 +26,9 @@ const {
     <div v-if="ornament && isAirport(ornament)" class="relative">
       <div class="joint" />
       <Airport :airport="ornament.$airportOrnament.airport" />
+    </div>
+    <div v-if="ornament && isAirportName(ornament)" class="relative">
+      <AirportNameOrnament :name="ornament.$airportNameOrnament.name" />
     </div>
     <div v-if="ornament && isText(ornament)" class="text-ornament">
       <span>{{ ornament.$textOrnament.text }}</span>

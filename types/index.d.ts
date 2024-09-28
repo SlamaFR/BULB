@@ -106,7 +106,15 @@ declare global {
     id: string
     position: OrnamentPosition
     $airportOrnament: {
-      airport: Airport
+      airport: Airport | null
+    }
+  }
+
+  interface AirportNameOrnament {
+    id: string
+    position: 'RIGHT'
+    $airportNameOrnament: {
+      name: string
     }
   }
 
@@ -118,7 +126,7 @@ declare global {
     }
   }
 
-  type Ornament = AirportOrnament | TextOrnament
+  type Ornament = AirportOrnament | AirportNameOrnament | TextOrnament
 
   interface ModeConnectionElement {
     id: string

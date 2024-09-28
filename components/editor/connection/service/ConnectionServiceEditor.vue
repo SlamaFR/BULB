@@ -11,6 +11,11 @@ const emit = defineEmits<{
 const service = defineModel<ServiceConnectionElement>('service', { required: true })
 
 const showOrnamentEditor = ref(false)
+
+function permittedTypes(service: Service | null) {
+  if (service === 'AIRPORT') return ['AIRPORT_NAME']
+  return undefined
+}
 </script>
 
 <template>
@@ -33,5 +38,9 @@ const showOrnamentEditor = ref(false)
     </div>
   </div>
 
-  <OrnamentEditor v-model="service.$serviceConnectionElement.ornament" v-model:visible="showOrnamentEditor" />
+  <OrnamentEditor
+    v-model="service.$serviceConnectionElement.ornament"
+    v-model:visible="showOrnamentEditor"
+    :permitted-types="permittedTypes(service.$serviceConnectionElement.service)"
+  />
 </template>

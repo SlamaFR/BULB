@@ -1,4 +1,12 @@
 <script setup lang="ts">
+import { v4 as uuidv4 } from 'uuid'
+import { isAirport, isAirportName, isText } from '~/utils/types'
+
+type OrnamentType = 'AIRPORT' | 'AIRPORT_NAME' | 'TEXT'
+
+const { permittedTypes = ['AIRPORT', 'TEXT'] } = defineProps<{
+  permittedTypes?: OrnamentType[]
+}>()
 const ornament = defineModel<Ornament | null>({ required: true })
 const visible = defineModel<boolean>('visible')
 
@@ -6,27 +14,39 @@ const hasOrnament = ref(!!ornament.value)
 const id = useId()
 
 const ornamentType = computed(() => {
-  if (!ornament.value) return null
+  if (!ornament.value) return ''
   if (isAirport(ornament.value)) return 'AIRPORT'
+  if (isAirportName(ornament.value)) return 'AIRPORT_NAME'
   if (isText(ornament.value)) return 'TEXT'
   throw new Error('Unknown ornament type')
 })
-const type = ref<'AIRPORT' | 'TEXT' | null>(ornamentType.value)
+const type = ref<OrnamentType | ''>(ornamentType.value)
 
 watch([hasOrnament, type], ([enabled, _type]) => {
   if (enabled) {
-    type.value = _type || 'AIRPORT'
+    type.value = (_type || permittedTypes[0]) ?? ''
     switch (type.value) {
       case 'AIRPORT':
         ornament.value = {
+          id: uuidv4(),
           position: 'RIGHT',
           $airportOrnament: {
             airport: null,
           },
         }
         break
+      case 'AIRPORT_NAME':
+        ornament.value = {
+          id: uuidv4(),
+          position: 'RIGHT',
+          $airportNameOrnament: {
+            name: '',
+          },
+        }
+        break
       case 'TEXT':
         ornament.value = {
+          id: uuidv4(),
           position: 'RIGHT',
           $textOrnament: {
             text: '',
@@ -35,7 +55,7 @@ watch([hasOrnament, type], ([enabled, _type]) => {
         break
     }
   } else {
-    type.value = null
+    type.value = ''
     ornament.value = null
   }
 })
@@ -64,10 +84,13 @@ const positions = [
 
       <Tabs v-model:value="type">
         <TabList>
-          <Tab value="AIRPORT" :disabled="!hasOrnament">
+          <Tab v-if="permittedTypes.includes('AIRPORT')" value="AIRPORT" :disabled="!hasOrnament">
             Aéroport
           </Tab>
-          <Tab value="TEXT" :disabled="!hasOrnament">
+          <Tab v-if="permittedTypes.includes('AIRPORT_NAME')" value="AIRPORT_NAME" :disabled="!hasOrnament">
+            Nom d’aéroport
+          </Tab>
+          <Tab v-if="permittedTypes.includes('TEXT')" value="TEXT" :disabled="!hasOrnament">
             Texte
           </Tab>
         </TabList>
@@ -75,7 +98,7 @@ const positions = [
           <TabPanel value="">
             <span class="opacity-50">Aucune décoration disponible</span>
           </TabPanel>
-          <TabPanel value="AIRPORT">
+          <TabPanel v-if="permittedTypes.includes('AIRPORT')" value="AIRPORT">
             <div v-if="ornament && isAirport(ornament)" class="form items-center gap-x-4 gap-y-2">
               <span>Position</span>
               <Select
@@ -89,7 +112,13 @@ const positions = [
               <AirportSelect v-model="ornament.$airportOrnament.airport" />
             </div>
           </TabPanel>
-          <TabPanel value="TEXT">
+          <TabPanel v-if="permittedTypes.includes('AIRPORT_NAME')" value="AIRPORT_NAME">
+            <div v-if="ornament && isAirportName(ornament)" class="form items-center gap-x-4 gap-y-2">
+              <span>Nom</span>
+              <InputText v-model="ornament.$airportNameOrnament.name" />
+            </div>
+          </TabPanel>
+          <TabPanel v-if="permittedTypes.includes('TEXT')" value="TEXT">
             <div v-if="ornament && isText(ornament)" class="form items-center gap-x-4 gap-y-2">
               <span>Position</span>
               <Select
