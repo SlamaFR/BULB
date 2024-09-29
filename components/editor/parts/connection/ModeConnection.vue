@@ -6,6 +6,7 @@ const {
 }>()
 
 const CONDENSED_MODES: Mode[] = ['BUS']
+const MAX_COLUMNS = 4
 
 const stopContext = inject<StopContext>(StopContextKey)
 
@@ -18,6 +19,12 @@ const condensed = computed(() => {
 watch(isPedestrian, (val) => {
   if (stopContext) stopContext.margins.leftMargin.connections = val ? '.5em' : '0em'
 }, { immediate: true })
+
+function position(index: number) {
+  if (!condensed.value) return null
+  if (connection.$modeConnection.elements.length <= MAX_COLUMNS * 2) return { gridRow: 1 + index % 2 }
+  return { gridColumn: 1 + index % MAX_COLUMNS }
+}
 </script>
 
 <template>
@@ -28,12 +35,15 @@ watch(isPedestrian, (val) => {
     </div>
     <VerticalLine inner />
   </div>
-  <div class="connection-group-lines" :class="{ condensed }">
+  <div
+    class="connection-group-lines" :class="{ condensed, single: connection.$modeConnection.elements.length <= 1 }"
+  >
     <IconOrnament
-      v-for="line in connection.$modeConnection.elements"
+      v-for="(line, index) in connection.$modeConnection.elements"
       :key="line.id"
       :ornament="line.$modeConnectionElement.ornament"
       :walk="line.$modeConnectionElement.walk"
+      :style="position(index)"
     >
       <LineIndex :mode="connection.$modeConnection.mode" :index="line.$modeConnectionElement.lineIndex" />
     </IconOrnament>
@@ -43,7 +53,7 @@ watch(isPedestrian, (val) => {
 <style scoped lang="scss">
 .connection-group-lines {
   display: grid;
-  grid-template-columns: repeat(4, min-content);
+  grid-template-columns: repeat(v-bind(MAX_COLUMNS), min-content);
   row-gap: .125em;
   width: min-content;
 
@@ -54,13 +64,18 @@ watch(isPedestrian, (val) => {
 }
 
 .condensed {
-  grid-template-rows: 1fr 1fr;
-  grid-auto-flow: column;
   row-gap: .1em;
 
-  > * {
+  & > * {
+    height: .9em;
     font-size: .5em;
     margin-right: .25em;
+  }
+
+  &.single > * {
+    height: 2em;
+    grid-row: 1/3 !important;
+    justify-content: center;
   }
 }
 
