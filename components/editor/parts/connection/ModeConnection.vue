@@ -5,9 +5,16 @@ const {
   connection: ModeConnection
 }>()
 
+const CONDENSED_MODES: Mode[] = ['BUS']
+
 const stopContext = inject<StopContext>(StopContextKey)
 
 const isPedestrian = computed(() => connection.$modeConnection.walk)
+const condensed = computed(() => {
+  if (connection.$modeConnection.mode === null) return false
+  return CONDENSED_MODES.includes(connection.$modeConnection.mode)
+})
+
 watch(isPedestrian, (val) => {
   if (stopContext) stopContext.margins.leftMargin.connections = val ? '.5em' : '0em'
 }, { immediate: true })
@@ -21,7 +28,7 @@ watch(isPedestrian, (val) => {
     </div>
     <VerticalLine inner />
   </div>
-  <div class="connection-group-lines">
+  <div class="connection-group-lines" :class="{ condensed }">
     <IconOrnament
       v-for="line in connection.$modeConnection.elements"
       :key="line.id"
@@ -43,6 +50,17 @@ watch(isPedestrian, (val) => {
   > * {
     min-width: 1em;
     margin-right: .125em;
+  }
+}
+
+.condensed {
+  grid-template-rows: 1fr 1fr;
+  grid-auto-flow: column;
+  row-gap: .1em;
+
+  > * {
+    font-size: .5em;
+    margin-right: .25em;
   }
 }
 

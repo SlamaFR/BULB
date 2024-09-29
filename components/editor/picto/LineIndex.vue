@@ -12,7 +12,7 @@ const { findIndexById } = useCustomLineIndices()
 const transparent = computed(() => {
   if (index) {
     switch (index?.mode) {
-      case 'BUS':
+      // case 'BUS':
       case 'BOAT':
       case 'CABLE':
       case 'TRAM':
@@ -42,7 +42,8 @@ const customIndex = computed(() => {
 </script>
 
 <template>
-  <div v-if="index !== null" class="aspect-square" :class="{ 'bg-white rounded': transparent }">
+  <div v-if="index !== null" :class="{ 'bg-white rounded': transparent }">
+    <Bus v-if="isBuiltin(index) && index.mode === 'BUS'" :line="index.$builtinLineIndex.index" />
     <Cable v-if="isBuiltin(index) && index.mode === 'CABLE'" :line="index.$builtinLineIndex.index" />
     <Metro v-else-if="isBuiltin(index) && index.mode === 'METRO'" :line="index.$builtinLineIndex.index" />
     <ExpressTrain v-else-if="isBuiltin(index) && index.mode === 'RER'" :line="index.$builtinLineIndex.index" />

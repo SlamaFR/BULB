@@ -24,6 +24,7 @@ declare global {
     | 'ORLYVAL'
     | 'ORLYVAL_LARGE'
 
+  type BusLine = 'tzen1' | 'tzen2' | 'tzen3' | 'tzen4' | 'tzen5' | 'tzen6' | 'tvm' | string
   type CableLine = '1' | string
   type MetroLine =
     '1'
