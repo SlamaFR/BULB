@@ -66,16 +66,18 @@ function position(index: number) {
 .condensed {
   row-gap: .1em;
 
-  & > * {
-    height: .9em;
+  & > div {
     font-size: .5em;
     margin-right: .25em;
   }
 
-  &.single > * {
-    height: 2em;
-    grid-row: 1/3 !important;
-    justify-content: center;
+  &.single {
+    height: 1em;
+
+    & > div {
+      grid-row: 1/3 !important;
+      justify-content: center;
+    }
   }
 }
 

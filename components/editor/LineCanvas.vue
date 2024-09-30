@@ -29,7 +29,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
           <div class="p-3">
             <div class="w-full flex flex-row gap-2 justify-center items-center text-3em">
               <Mode :mode="mode" />
-              <LineIndex :mode="mode" :index="index" />
+              <LineIndex :index="index" />
             </div>
           </div>
         </div>

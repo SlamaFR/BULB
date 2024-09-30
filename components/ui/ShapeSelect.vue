@@ -1,6 +1,10 @@
 <script setup lang="ts">
+const {
+  filter = () => true,
+} = defineProps<{
+  filter?: (shape: ShapeChoice) => boolean
+}>()
 const shape = defineModel<IndexShape | null>({ required: true })
-
 const selectedShape = ref<ShapeChoice | null>(findShapeByValue(shape.value))
 
 watch(selectedShape, val => shape.value = val?.value ?? null)
@@ -13,6 +17,7 @@ watch(shape, val => selectedShape.value = findShapeByValue(val))
     :options="SHAPES"
     placeholder="Selectionner une forme"
     class="flex-auto"
+    :option-disabled="filter"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">

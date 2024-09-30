@@ -9,27 +9,28 @@ const {
   index: string
   prefix?: string
   suffix?: string
-  shape: 'CIRCLE' | 'SQUARE' | 'LINES'
+  shape: IndexShape
   color: string
 }>()
 
 const NARROW_CHARS = ['1', 'I', 'l']
 
-const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
+const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'var(--dark-text)')
 </script>
 
 <template>
   <div
-    class="wrapper"
+    class="wrapper overflow-hidden"
     :class="{
       'circle': shape === 'CIRCLE',
-      'square': shape === 'SQUARE',
+      'rounded-square': shape === 'ROUNDED_SQUARE',
       'lines': shape === 'LINES',
+      'rectangle': shape === 'RECTANGLE',
       'bg-white rounded': shape === 'LINES',
     }"
   >
     <Shape :shape="shape" :color="color" />
-    <span class="index overflow-hidden">
+    <span class="index">
       <span v-if="prefix && shape === 'LINES'" class="prefix">{{ prefix }}</span>
       <span v-for="(c, i) in index" :key="i" :class="{ narrow: NARROW_CHARS.includes(c) }">{{ c }}</span>
       <span v-if="suffix" class="suffix">{{ suffix }}</span>
@@ -45,6 +46,9 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   width: 1em;
   min-height: 1em;
   height: 1em;
+
+  --light-text: white;
+  --dark-text: #231f20;
 }
 
 .index {
@@ -95,6 +99,23 @@ const textColor = computed(() => textContrast(color) ? 'white' : '#231f20')
   .index {
     font-size: 0.5375em;
     color: #231f20;
+  }
+}
+
+.rectangle {
+  &.wrapper {
+    min-width: 2em;
+    width: 2em;
+    min-height: .9em;
+    height: .9em;
+
+    --dark-text: #24303B;
+  }
+
+  & .index {
+    font-size: 0.5em;
+    font-weight: 600;
+    line-height: 1;
   }
 }
 </style>

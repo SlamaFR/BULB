@@ -40,6 +40,7 @@ const picto = computed(() => {
 
 <style scoped lang="scss">
 .picto {
+  min-width: 2em;
   width: 2em;
   height: .9em;
 }

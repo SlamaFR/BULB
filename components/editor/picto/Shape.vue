@@ -11,9 +11,10 @@ const {
 <template>
   <div
     class="container" :class="{
-      circle: shape === 'CIRCLE',
-      square: shape === 'SQUARE',
-      lines: shape === 'LINES',
+      'circle': shape === 'CIRCLE',
+      'rounded-square': shape === 'ROUNDED_SQUARE',
+      'lines': shape === 'LINES',
+      'rectangle': shape === 'RECTANGLE',
     }"
   />
 </template>
@@ -29,11 +30,19 @@ const {
   mask: url(assets/svg/masks/circle.svg) no-repeat;
 }
 
-.square {
-  mask: url(assets/svg/masks/square.svg) no-repeat;
+.rounded-square {
+  mask: url(assets/svg/masks/rounded_square.svg) no-repeat;
 }
 
 .lines {
   mask: url(assets/svg/masks/lines.svg) no-repeat;
+}
+
+.rectangle {
+  mask: url(assets/svg/masks/rectangle.svg) no-repeat;
+  mask-size: 100%;
+  mask-position: center;
+  width: 2em;
+  height: .9em;
 }
 </style>

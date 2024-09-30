@@ -132,8 +132,9 @@ export const AIRPORTS: AirportChoice[] = [
 
 export const SHAPES: ShapeChoice[] = [
   { value: 'CIRCLE', label: 'Cercle' },
-  { value: 'SQUARE', label: 'Carré' },
+  { value: 'ROUNDED_SQUARE', label: 'Carré arrondi' },
   { value: 'LINES', label: 'Lignes' },
+  { value: 'RECTANGLE', label: 'Rectangle' },
 ]
 
 const BUILTIN_LINES: IndexChoice<BuiltinLineIndex>[] = Array.of(
@@ -185,7 +186,7 @@ export function modeToShape(mode: Mode): IndexShape {
     case 'RER':
     case 'TRAIN':
     case 'TRAIN_RER':
-      return 'SQUARE'
+      return 'ROUNDED_SQUARE'
     case 'BOAT':
     case 'BRT':
     case 'BUS':

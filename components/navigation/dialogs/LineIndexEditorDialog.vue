@@ -4,6 +4,26 @@ const emit = defineEmits<{
 }>()
 const index = defineModel<CustomLineIndexDescription>({ required: true })
 const visible = defineModel<boolean>('visible')
+
+function filterShape(shape: ShapeChoice) {
+  if (index.value.mode === 'BUS') {
+    return shape.value !== 'RECTANGLE'
+  } else {
+    return shape.value === 'RECTANGLE'
+  }
+}
+
+watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
+  if (mode === 'BUS') {
+    if (index.value.shape !== 'RECTANGLE') {
+      index.value.shape = 'RECTANGLE'
+    }
+  } else {
+    if (index.value.shape === 'RECTANGLE') {
+      index.value.shape = 'CIRCLE'
+    }
+  }
+})
 </script>
 
 <template>
@@ -27,7 +47,7 @@ const visible = defineModel<boolean>('visible')
         </div>
         <div class="flex flex-col gap-1">
           <label>Forme</label>
-          <ShapeSelect v-model="index.shape" />
+          <ShapeSelect v-model="index.shape" :filter="filterShape" />
         </div>
         <div class="flex flex-col gap-1 col-span-2">
           <label for="index_editor_index">Indice</label>
@@ -59,7 +79,7 @@ const visible = defineModel<boolean>('visible')
         </div>
       </div>
       <Panel header="Prévisualisation">
-        <div class="text-10em bg-white p-3 rounded-lg">
+        <div class="preview" :class="{ half: index.shape === 'RECTANGLE' }">
           <CustomLineIndex
             :shape="index.shape"
             :index="index.index"
@@ -103,5 +123,22 @@ const visible = defineModel<boolean>('visible')
   max-width: 25em;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
+}
+
+.preview {
+  font-size: 10em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(1em + 1.5rem);
+  height: calc(1em + 1.5rem);
+  padding: .75rem;
+  background: white;
+  border-radius: 1rem;
+  overflow: hidden;
+
+  &.half > div {
+    font-size: .5em;
+  }
 }
 </style>
