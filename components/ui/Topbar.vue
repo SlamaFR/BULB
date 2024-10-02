@@ -19,7 +19,7 @@ const version = useVersion()
       <div class="flex flex-row gap-4 items-center">
         <span class="hidden lg:block">Pas mal non ? C’est français 🇫🇷</span>
         <div class="flex flex-row gap-1 items-center">
-          <Button text rounded label="FAQ" icon="i-tabler-help" as="a" href="/faq" />
+          <Button text rounded label="FAQ" icon="i-tabler-help" @click="navigateTo('/faq')" />
           <Button text rounded :icon="isDark ? 'i-tabler-moon' : 'i-tabler-sun'" @click="toggle()" />
           <Button text rounded icon="i-tabler-brand-x" as="a" href="https://x.com/SlamaFR" target="_blank" />
         </div>

@@ -12,7 +12,7 @@ definePageMeta({
         <p class="text-xl font-bold">
           L’alpha publique est désormais ouverte !
         </p>
-        <Button severity="success" size="small" as="a" href="/editor" label="Accéder à l’éditeur" />
+        <Button severity="success" size="small" label="Accéder à l’éditeur" @click="navigateTo('/editor')" />
       </div>
     </Message>
 
