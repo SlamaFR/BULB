@@ -49,8 +49,9 @@ definePageMeta({
             </p>
             <br>
             <p>
-              À noter que ces indices personnalisés sont en cours de développement, et répondent actuellement à la charte graphique
-              de la RATP.
+              À noter que ces indices personnalisés sont en cours de développement, et répondent actuellement à la
+              charte graphique
+              de la RATP. Certains problème graphiques peuvent survenir lors de l’utilisation d’indices personnalisés.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -59,8 +60,7 @@ definePageMeta({
           <AccordionContent>
             <p>
               Oui. Cette fonctionnalité n’est pas prévue pour la première version, mais elle sera ajoutée dans une mise
-              à
-              jour future.
+              à jour future.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -70,6 +70,11 @@ definePageMeta({
             <p>
               Oui. Pour la première version, il faudra faire avec la charte de la RATP, mais il est prévu d’ajouter à
               minima celles de la SNCF et de IDFM. D’autres chartes pourront également être ajoutées par la suite.
+            </p>
+            <br>
+            <p>
+              De par la structure actuelle du projet, cette fonctionnalité n’est pas considérée comme prioritaire pour
+              le moment.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -110,15 +115,19 @@ definePageMeta({
               Oui, les plans peuvent contenir des fourches et des boucles. Ces nouveaux éléments sont en phase de tests
               et peuvent comporter des bugs.
             </p>
+            <br>
+            <p>
+              L’utilisation de ces éléments implique actuellement une expérience utilisateur médiocre. Cette
+              fonctionnalité sera améliorée avec le temps.
+            </p>
           </AccordionContent>
         </AccordionPanel>
         <AccordionPanel value="8">
           <AccordionHeader>Dans quels formats peut-on exporter les plans ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Actuellement, les plans sont générés au format PNG avec une forte résolution. Je travail actuellement sur
-              un
-              rendu SVG, et idéalement PDF.
+              Actuellement, les plans sont générés au format PNG avec une forte résolution. Un export SVG ou PDF n’est
+              pas encore possible et peu de pistes existent actuellement.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -126,7 +135,13 @@ definePageMeta({
           <AccordionHeader>Est-ce que le code sera rendu open-source ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Oui, le dépôt GitHub sera ouvert une fois que le projet sera plus stable.
+              Oui, le code est consultable sur le
+              <Button
+                link as="a" href="https://github.com/SlamaFR/BULB" label="dépôt GitHub"
+                pt:root:class="important-p-0"
+              />
+              . Toutes les
+              ressources à l’exception de la police “Parisine” sont disponibles dessus.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -134,8 +149,8 @@ definePageMeta({
           <AccordionHeader>Puis-je contribuer au projet ?</AccordionHeader>
           <AccordionContent>
             <p>
-              Oui, lorsque le dépôt GitHub sera ouvert, vous pourrez contribuer en proposant des améliorations, des
-              corrections de bugs, ou même en ajoutant des fonctionnalités.
+              Oui, vous pouvez contribuer en proposant des améliorations, des corrections de bugs, ou même en ajoutant
+              des fonctionnalités.
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -156,7 +171,12 @@ definePageMeta({
                 link as="a" href="https://x.com/SlamaFR" label="X (anciennement Twitter)"
                 pt:root:class="important-p-0"
               />
-              , soit en ouvrant un ticket sur le dépôt GitHub quand celui-ci sera ouvert.
+              , soit en ouvrant un ticket sur le
+              <Button
+                link as="a" href="https://github.com/SlamaFR/BULB" label="dépôt GitHub"
+                pt:root:class="important-p-0"
+              />
+              .
             </p>
           </AccordionContent>
         </AccordionPanel>
@@ -173,8 +193,8 @@ definePageMeta({
           <AccordionContent>
             <p>
               Il est fortement conseillé d’utiliser un navigateur basé sur Chromium (Google Chrome, Microsoft Edge,
-              Brave, Vivaldi, Opera, etc.) pour une meilleure expérience. Les autres navigateurs (Firefox et Safari) ne sont pas
-              officiellement supportés.
+              Brave, Vivaldi, Opera, etc.) pour une meilleure expérience. Les autres navigateurs (Firefox et Safari) ne
+              sont pas officiellement supportés.
             </p>
             <br>
             <p>
