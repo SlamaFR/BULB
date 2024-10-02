@@ -23,9 +23,9 @@ const icon = computed(() => {
       return funicular
     case 'MAIN_STATION':
       return mainStation
-    case 'BULLET_TRAIN':
+    case 'TGV':
       return bulletTrain
-    case 'REGIONAL_TRAIN':
+    case 'TER':
       return regionalTrain
     case 'LONG_DISTANCE_BUS':
       return longDistanceBus
