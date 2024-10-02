@@ -16,11 +16,11 @@ const visible = ref(isFirefox || isSafari)
     <div class="flex flex-col gap-4">
       <p>
         Il semblerait que vous utilisiez <b>{{ browserName() }}</b> comme navigateur.
-        Ce dernier n'est pas officiellement supporté par BULB. Si vous poursuivez, certains comportements inattendus
+        Ce dernier n’est pas officiellement supporté par BULB. Si vous poursuivez, certains comportements inattendus
         pourraient survenir, et vous pourriez rencontrer des problèmes graphiques.
       </p>
       <p>
-        Pour une expérience optimale, il est recommandé d'utiliser un navigateur basé sur Chromium tel que Google Chrome,
+        Pour une expérience optimale, il est recommandé d’utiliser un navigateur basé sur Chromium tel que Google Chrome,
         Microsoft Edge, Opera, Brave, etc.
       </p>
 

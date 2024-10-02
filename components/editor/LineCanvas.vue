@@ -24,14 +24,12 @@ onBeforeUnmount(() => exportSignal.off(doExport))
   <div class="canvas">
     <div class="flex flex-grow overflow-x-auto">
       <div class="deadzone">
-        <div ref="el" class="relative content bg-white pr-10em flex flex-row" :style="{ minHeight: `${mapSize}em` }">
-          <div class="flex flex-col min-w-fit">
-            <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
-            <div class="p-3">
-              <div class="w-full flex flex-row gap-2 justify-center items-center text-3em">
-                <Mode :mode="mode" />
-                <LineIndex :index="index" />
-              </div>
+        <div ref="el" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${mapSize}em` }">
+          <div class="ml-3 flex flex-col min-w-fit">
+            <div class="w-full h-8 bg-[var(--blue-ratp-paper)] mb-3" />
+            <div class="w-full flex flex-row gap-3 justify-center items-center text-4em">
+              <Mode :mode="mode" />
+              <LineIndex :index="index" />
             </div>
           </div>
           <SectionsGroup
@@ -39,7 +37,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
             class="w-max-content min-h-15em p-1em pt-20"
           />
 
-          <div class="absolute bottom-.375em left-.375em text-[var(--blue-ratp-paper)]">
+          <div class="absolute bottom-3 left-3 text-[var(--blue-ratp-paper)]">
             <div class="text-.2em flex flex-col line-height-1.75">
               <span>Créé à l’aide de BULB • bulb.slama.io</span>
               <span class="opacity-50 text-.5em">Version {{ version }}</span>

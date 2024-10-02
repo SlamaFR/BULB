@@ -16,16 +16,22 @@ const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
   },
   label: `Ligne ${it.prefix}${it.index}${it.suffix}`,
 })))
-const availableLines = computed(() => [
-  {
-    label: 'Indices officiels',
-    items: availableDefaultLines.value,
-  },
-  {
-    label: 'Indices personnalisés',
-    items: availableCustomLines.value,
-  },
-])
+const availableLines = computed(() => {
+  let options: { label: string, items: any[] }[] = []
+  if (availableDefaultLines.value.length > 0) {
+    options = options.concat({
+      label: 'Indices officiels',
+      items: availableDefaultLines.value,
+    })
+  }
+  if (availableCustomLines.value.length > 0) {
+    options = options.concat({
+      label: 'Indices personnalisés',
+      items: availableCustomLines.value,
+    })
+  }
+  return options
+})
 
 watch(index, val => emit('updateColor', indexToChoice(val)?.color ?? null))
 

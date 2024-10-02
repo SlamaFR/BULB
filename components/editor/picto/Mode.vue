@@ -25,6 +25,7 @@ const square = computed(() => ['BOAT', 'BUS', 'BRT', 'CABLE', 'TRAM', 'VELO'].in
         train_rer: mode === 'TRAIN_RER',
         tram: mode === 'TRAM',
         velo: mode === 'VELO',
+        empty: mode === null,
       }"
     />
   </div>
@@ -40,6 +41,10 @@ const square = computed(() => ['BOAT', 'BUS', 'BRT', 'CABLE', 'TRAM', 'VELO'].in
   min-width: 1em;
   min-height: 1em;
   background-color: var(--blue-ratp-paper);
+
+  &.empty {
+    background: transparent;
+  }
 }
 
 .circle {

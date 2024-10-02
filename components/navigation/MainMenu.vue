@@ -93,6 +93,8 @@ function exportMap() {
       text
       @click="exportMap()"
     />
+
+    <!--
     <Divider />
     <Button
       pt:root:class="important-justify-start"
@@ -101,6 +103,7 @@ function exportMap() {
       icon="i-tabler-refresh"
       @click="resetStores()"
     />
+    -->
   </div>
 
   <CustomLineIndexDirectoryDialog v-model:visible="showLineIndexDirectory" />

@@ -17,7 +17,7 @@
     "dateBefore": "Avant le",
     "dateFormat": "dd/mm/yy",
     "dateIs": "La date est",
-    "dateIsNot": "La date n'est pas",
+    "dateIsNot": "La date n’est pas",
     "dayNames": [
       "dimanche",
       "lundi",
@@ -125,7 +125,7 @@
     "showMonthAfterYear": false,
     "startsWith": "Commence par",
     "strong": "Fort",
-    "today": "Aujourd'hui",
+    "today": "Aujourd’hui",
     "upload": "Envoyer",
     "weak": "Faible",
     "weekHeader": "Sem",
@@ -183,7 +183,7 @@
       "unselectAll": "Tous éléments désélectionnés",
       "unselectLabel": "Désélectionner",
       "unselectRow": "Ligne désélectionnée",
-      "zoomImage": "Zoomer l'image",
+      "zoomImage": "Zoomer l’image",
       "zoomIn": "Zoomer",
       "zoomOut": "Dézoomer"
     }
