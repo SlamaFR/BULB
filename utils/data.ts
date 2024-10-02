@@ -115,6 +115,7 @@ export const SERVICES: ServiceChoice[] = [
   Services.MAIN_STATION,
   Services.BULLET_TRAIN,
   Services.REGIONAL_TRAIN,
+  Services.LONG_DISTANCE_BUS,
   Services.FUNICULAR,
   Services.ROISSY_BUS,
   Services.ORLY_BUS,

@@ -17,6 +17,7 @@ declare global {
     | 'MAIN_STATION'
     | 'BULLET_TRAIN'
     | 'REGIONAL_TRAIN'
+    | 'LONG_DISTANCE_BUS'
     | 'AIRPORT'
     | 'ROISSY_BUS'
     | 'ORLY_BUS'
