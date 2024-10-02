@@ -116,6 +116,12 @@
         "supported_browsers": "Navigateurs supportés",
         "unsupported_browsers": "Navigateurs non supportés"
       },
+      "end_of_year_celebrations": {
+        "close": "Fermer",
+        "disable_and_close": "Désactiver et fermer",
+        "header": "Joyeuses fêtes de fin d’année",
+        "summary": "À l'occasion des fêtes, la neige débarque sur BULB. Vous pouvez la désactiver à tout moment depuis la barre supérieure."
+      },
       "connections_editor": {
         "group": {
           "delete": "Supprimer",

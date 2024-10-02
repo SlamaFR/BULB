@@ -8,6 +8,7 @@ useLocale()
 
 <template>
   <NuxtLayout>
+    <Snow />
     <NuxtPage />
   </NuxtLayout>
 
