@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed, inject } from 'vue'
+import { LineContextKey } from '~/utils/symbols'
+
 const {
   color,
   terminus = false,
@@ -10,6 +13,14 @@ const {
   connection?: boolean
   closed?: boolean
 }>()
+
+const lineContext = inject<LineContext>(LineContextKey)!
+const dotColor = computed(() => {
+  if (lineContext.dotsColorPolicy.value === 'WHITE') {
+    return 'white'
+  }
+  return color
+})
 </script>
 
 <template>
@@ -24,7 +35,7 @@ const {
   width: 1.125em;
   height: 1.125em;
   border-radius: 50%;
-  background-color: v-bind(color);
+  background-color: v-bind(dotColor);
 
   transition: filter .2s ease;
   &:hover {

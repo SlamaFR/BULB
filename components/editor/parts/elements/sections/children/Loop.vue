@@ -15,12 +15,12 @@ const sizeFactor = useCssVar('--base-size', el)
 const CLEARANCE = 16
 const SIZE = 16 * Number.parseFloat(sizeFactor.value ?? '1')
 
-const lineContext = inject<LineContext>(LineContextKey)
+const lineContext = inject<LineContext>(LineContextKey)!
 const color = computed(() => lineContext?.color.value ?? '#000000')
-const lineWidth = computed(() => lineContext?.lineWidth.value ?? 1)
+const lineWidth = computed(() => lineContext.lineThickness.value)
 
 const height = computed(() => Math.abs(meta.$loop.linksOffsets[0] - meta.$loop.linksOffsets[1]) * 2.75 * SIZE + (SIZE * lineWidth.value))
-const width = computed(() => height.value / 2 + lineWidth.value + CLEARANCE)
+const width = computed(() => (height.value / 2) + lineWidth.value + CLEARANCE)
 
 const orientation = computed(() => {
   switch (meta.$loop.toward) {
@@ -52,12 +52,17 @@ function offsetToY(offset: number) {
 <template>
   <div ref="el" class="loop flex-shrink-0">
     <svg :width="`${width}px`" :height="`${height}px`">
-      <path :d="path" :stroke="color" :stroke-width="`${lineWidth}em`" fill="transparent" stroke-linejoin="round" />
+      <SvgLine
+        :path="path"
+        :color="color"
+        :line-width="lineWidth"
+        :striped="lineContext.lineStyle.value === 'STRIPED'"
+      />
     </svg>
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .loop {
   transform: translateY(v-bind(wrapperOffset));
   z-index: 0;

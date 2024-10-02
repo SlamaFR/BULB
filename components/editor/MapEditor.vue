@@ -19,7 +19,9 @@ const error = ref(false)
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => line.value.color ?? '#000000'),
-  lineWidth: computed(() => line.value.lineWidth ?? 1),
+  lineThickness: computed(() => Number.parseFloat(line.value.lineThickness ?? '1') || 1),
+  lineStyle: computed(() => line.value.lineStyle ?? 'PLAIN'),
+  dotsColorPolicy: computed(() => line.value.dotsColorPolicy ?? 'INHERIT'),
 })
 
 function doExport() {

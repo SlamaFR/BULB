@@ -29,7 +29,7 @@ const zIndex = computed(() => {
 
 <template>
   <div
-    class="element dynamic-part"
+    class="section-element dynamic-part"
     :class="{ fluid }"
     :style="{ zIndex }"
     @click="showPropertiesDialog = true"
@@ -72,8 +72,7 @@ const zIndex = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.element {
-  //outline: 1px solid lime;
+.section-element {
   min-width: 1em;
   user-select: none;
   transition: background-color .2s ease;

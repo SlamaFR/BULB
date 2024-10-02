@@ -6,11 +6,17 @@
     "color_select": {
       "placeholder": "Select a color"
     },
+    "dots_color_select": {
+      "placeholder": "Select a policy"
+    },
     "line_index_select": {
       "custom_indices": "Custom indices",
       "line_name": "Line {index}",
       "official_indices": "Official indices",
       "placeholder": "Select a line index"
+    },
+    "line_style_select": {
+      "placeholder": "Select a line style"
     },
     "map_size_select": {
       "placeholder": "Select a frame size"
@@ -34,6 +40,14 @@
     },
     "colors": {
       "custom": "Custom"
+    },
+    "dots_color": {
+      "inherit": "Inherit",
+      "white": "White"
+    },
+    "line_style": {
+      "plain": "Plain",
+      "striped": "Striped"
     },
     "map_size": {
       "big": "Big (30em)",
@@ -288,7 +302,10 @@
     "nag": "<b>DISCLAIMER</b>: This application is under development. Some features are not yet available or are incomplete.",
     "properties": {
       "color": "Map color",
+      "dots_color": "Dots color",
       "index": "Line index",
+      "line_style": "Line style",
+      "line_thickness": "Line thickness",
       "mode": "Transport mode",
       "size": "Frame size",
       "title": "Properties",

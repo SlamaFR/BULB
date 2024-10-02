@@ -6,11 +6,17 @@
     "color_select": {
       "placeholder": "Sélectionner une couleur"
     },
+    "dots_color_select": {
+      "placeholder": "Sélectionner une politique"
+    },
     "line_index_select": {
       "custom_indices": "Indices personnalisés",
       "line_name": "Ligne {index}",
       "official_indices": "Indices officiels",
       "placeholder": "Sélectionner un indice"
+    },
+    "line_style_select": {
+      "placeholder": "Sélectionner un style de ligne"
     },
     "map_size_select": {
       "placeholder": "Sélectionner une taille"
@@ -34,6 +40,14 @@
     },
     "colors": {
       "custom": "Personnalisée"
+    },
+    "dots_color": {
+      "inherit": "Héritée",
+      "white": "Blanc"
+    },
+    "line_style": {
+      "plain": "Pleine",
+      "striped": "Rayée"
     },
     "map_size": {
       "big": "Très grand (30em)",
@@ -288,7 +302,10 @@
     "nag": "<b>RAPPEL</b> : Application en phase de développement. Certaines fonctionnalités ne sont pas encore disponibles ou sont incomplètes.",
     "properties": {
       "color": "Couleur du plan",
+      "dots_color": "Couleur des points",
       "index": "Indice de ligne",
+      "line_style": "Style de ligne",
+      "line_thickness": "Épaisseur de ligne",
       "mode": "Mode de transport",
       "size": "Taille du cadre",
       "title": "Propriétés",
