@@ -113,6 +113,8 @@ export const TRAM_LINES: IndexChoice<BuiltinLineIndex>[] = [
 export const SERVICES: ServiceChoice[] = [
   Services.AIRPORT,
   Services.MAIN_STATION,
+  Services.BULLET_TRAIN,
+  Services.SUBURBAN_TRAIN,
   Services.TGV,
   Services.TER,
   Services.LONG_DISTANCE_BUS,

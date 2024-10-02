@@ -15,6 +15,8 @@ declare global {
   type Service =
     'FUNICULAR'
     | 'MAIN_STATION'
+    | 'BULLET_TRAIN'
+    | 'SUBURBAN_TRAIN'
     | 'TGV'
     | 'TER'
     | 'LONG_DISTANCE_BUS'

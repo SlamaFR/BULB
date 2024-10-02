@@ -1,5 +1,7 @@
 export const AIRPORT: ServiceChoice = { value: 'AIRPORT', label: 'Aéroport' }
 export const MAIN_STATION: ServiceChoice = { value: 'MAIN_STATION', label: 'Grande gare' }
+export const BULLET_TRAIN: ServiceChoice = { value: 'BULLET_TRAIN', label: 'Train à grande vitesse' }
+export const SUBURBAN_TRAIN: ServiceChoice = { value: 'SUBURBAN_TRAIN', label: 'Train de banlieue' }
 export const TGV: ServiceChoice = { value: 'TGV', label: 'TGV' }
 export const TER: ServiceChoice = { value: 'TER', label: 'TER' }
 export const LONG_DISTANCE_BUS: ServiceChoice = { value: 'LONG_DISTANCE_BUS', label: 'Car' }
