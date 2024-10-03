@@ -11,19 +11,19 @@ watch(service, val => selectedService.value = findServiceByValue(val))
   <Select
     v-model="selectedService"
     :options="SERVICES"
-    placeholder="Selectionner un mode"
+    :placeholder="$t('components.service_select.placeholder')"
     class="flex-auto"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
         <Service class="text-xl" :service="slotProps.value.value" />
-        <span>{{ slotProps.value.label }}</span>
+        <span>{{ $t(slotProps.value.label.toLowerCase()) }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
         <Service class="text-xl" :service="slotProps.option.value" />
-        <span>{{ slotProps.option.label }}</span>
+        <span>{{ $t(slotProps.option.label.toLowerCase()) }}</span>
       </div>
     </template>
   </Select>

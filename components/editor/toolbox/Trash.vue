@@ -8,7 +8,7 @@ const active = ref(false)
   <div class="toolbox-item relative" :class="{ active }">
     <div class="flex flex-col items-center">
       <i class="i-tabler-trash" />
-      <span>Supprimer</span>
+      <span>{{ $t('ui.map_editor.toolbox.delete') }}</span>
     </div>
 
     <VueDraggable

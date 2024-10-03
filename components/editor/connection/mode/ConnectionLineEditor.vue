@@ -28,14 +28,14 @@ function permittedTypes(mode: Mode | null) {
       </div>
       <div class="flex flex-row items-center gap-3">
         <Checkbox v-model="line.$modeConnectionElement.walk" :input-id="line.id" :disabled="mode === 'BUS'" binary />
-        <label :for="line.id" class="text-nowrap">Correspondance piétonne</label>
+        <label :for="line.id" class="text-nowrap">{{ $t('ui.dialogs.connections_editor.group.pedestrian_connection') }}</label>
       </div>
 
       <div class="flex flex-row gap-2 items-center">
         <Button
           class="flex-grow"
           size="small"
-          label="Décoration"
+          :label="$t('ui.dialogs.connections_editor.group.ornament')"
           :severity="line.$modeConnectionElement.ornament ? 'primary' : 'secondary'"
           :disabled="mode === 'BUS'"
           @click="showOrnamentEditor = true"

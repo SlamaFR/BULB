@@ -1,5 +1,6 @@
 <script setup lang="ts">
-const { toggle, isDark } = useDark()
+import ThemeSwitcher from '~/components/ui/ThemeSwitcher.vue'
+
 const version = useVersion()
 </script>
 
@@ -17,10 +18,11 @@ const version = useVersion()
 
     <template #end>
       <div class="flex flex-row gap-4 items-center">
-        <span class="hidden lg:block">Pas mal non ? C’est français 🇫🇷</span>
+        <span class="hidden lg:block">{{ $t('ui.topbar.catch_phrase') }}</span>
         <div class="flex flex-row gap-1 items-center">
           <Button text rounded label="FAQ" icon="i-tabler-help" @click="navigateTo('/faq')" />
-          <Button text rounded :icon="isDark ? 'i-tabler-moon' : 'i-tabler-sun'" @click="toggle()" />
+          <ThemeSwitcher />
+          <LocaleSwitcher />
           <Button text rounded icon="i-tabler-brand-x" as="a" href="https://x.com/SlamaFR" target="_blank" />
         </div>
       </div>

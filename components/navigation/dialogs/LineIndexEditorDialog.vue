@@ -29,56 +29,56 @@ watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
 <template>
   <Dialog
     v-model:visible="visible"
-    modal
     pt:root:class="md:min-w-25em"
     pt:header:class="gap-6"
+    modal
   >
     <template #header>
       <div class="flex flex-row gap-2 items-center">
-        <span class="p-dialog-title">Éditeur d’indice de ligne</span>
-        <Tag rounded severity="info" value="Bêta" />
+        <span class="p-dialog-title">{{ $t('ui.dialogs.custom_index_editor.header') }}</span>
+        <Tag rounded severity="info" :value="$t('misc.beta')" />
       </div>
     </template>
     <div class="content">
       <div class="form">
         <div class="flex flex-col gap-1">
-          <label>Mode</label>
+          <label>{{ $t('ui.dialogs.custom_index_editor.mode') }}</label>
           <ModeSelect v-model="index.mode" />
         </div>
         <div class="flex flex-col gap-1">
-          <label>Forme</label>
+          <label>{{ $t('ui.dialogs.custom_index_editor.shape') }}</label>
           <ShapeSelect v-model="index.shape" :filter="filterShape" />
         </div>
         <div class="flex flex-col gap-1 col-span-2">
-          <label for="index_editor_index">Indice</label>
+          <label for="index_editor_index">{{ $t('ui.dialogs.custom_index_editor.index') }}</label>
           <InputGroup>
             <InputText
               id="index_editor_prefix"
               v-model="index.prefix"
               :disabled="index.shape !== 'LINES'"
-              placeholder="Préfixe"
+              :placeholder="$t('ui.dialogs.custom_index_editor.prefix')"
             />
             <InputText
               id="index_editor_index"
               v-model="index.index"
-              placeholder="Valeur"
+              :placeholder="$t('ui.dialogs.custom_index_editor.value')"
             />
             <InputText
               id="index_editor_suffix"
               v-model="index.suffix"
-              placeholder="Suffixe"
+              :placeholder="$t('ui.dialogs.custom_index_editor.suffix')"
             />
           </InputGroup>
         </div>
         <div class="flex flex-col gap-1 col-span-2">
-          <label>Couleur</label>
+          <label>{{ $t('ui.dialogs.custom_index_editor.color') }}</label>
           <div class="grid cols-2 items-center gap-4">
             <ColorSelect v-model="index.color" />
             <BColorPicker v-model="index.color" />
           </div>
         </div>
       </div>
-      <Panel header="Prévisualisation">
+      <Panel :header="$t('ui.dialogs.custom_index_editor.preview')">
         <div class="preview" :class="{ half: index.shape === 'RECTANGLE' }">
           <CustomLineIndex
             :shape="index.shape"
@@ -94,14 +94,14 @@ watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
     <template #footer>
       <div class="flex flex-row gap-2 items-center justify-between flex-grow">
         <div class="flex flex-row gap-2 items-center">
-          <Button text label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index.id)" />
+          <Button :label="$t('ui.dialogs.custom_index_editor.delete')" text icon="i-tabler-trash" severity="danger" @click="emit('delete', index.id)" />
         </div>
       </div>
     </template>
   </Dialog>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .content {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -120,7 +120,7 @@ watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
 
 .form {
   display: grid;
-  max-width: 25em;
+  //max-width: 25em;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }

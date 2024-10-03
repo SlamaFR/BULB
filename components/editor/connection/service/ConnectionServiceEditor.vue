@@ -29,7 +29,7 @@ function permittedTypes(service: Service | null) {
         <Button
           class="flex-grow"
           size="small"
-          label="Décoration"
+          :label="$t('ui.dialogs.connections_editor.group.ornament')"
           :severity="service.$serviceConnectionElement.ornament ? 'primary' : 'secondary'"
           @click="showOrnamentEditor = true"
         />

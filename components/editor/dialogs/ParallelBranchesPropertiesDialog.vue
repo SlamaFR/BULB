@@ -3,9 +3,9 @@ const visible = defineModel<boolean>('visible', { required: true })
 const parallelBranches = defineModel<ParallelBranches>({ required: true })
 
 const alignements = [
-  { label: 'Aligné à gauche', value: 'LEFT' },
-  { label: 'Fluide', value: 'FLUID' },
-  { label: 'Aligné à droite', value: 'RIGHT' },
+  { label: 'ui.dialogs.parallel_branches_properties.alignment.left', value: 'LEFT' },
+  { label: 'ui.dialogs.parallel_branches_properties.alignment.fluid', value: 'FLUID' },
+  { label: 'ui.dialogs.parallel_branches_properties.alignment.right', value: 'RIGHT' },
 ]
 </script>
 
@@ -17,28 +17,28 @@ const alignements = [
           <i class="i-tabler-traffic-cone" />
           WIP
         </Tag>
-        <span class="p-dialog-title" data-pc-section="title">Propriétés des branches parallèles</span>
+        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.parallel_branches_properties.header') }}</span>
       </div>
     </template>
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
-        <label>Alignement</label>
+        <label>{{ $t('ui.dialogs.parallel_branches_properties.alignment.title') }}</label>
         <SelectButton
           v-model="parallelBranches.$parallelBranches.alignement"
           :options="alignements"
-          option-label="label"
+          :option-label="option => $t(option.label)"
           option-value="value"
           :allow-empty="false"
         />
       </div>
 
       <div class="flex flex-col gap-1">
-        <label>Niveau section 1</label>
+        <label>{{ $t('ui.dialogs.parallel_branches_properties.section_1_level') }}</label>
         <InputNumber v-model="parallelBranches.$parallelBranches.sections[0].$lineSection.levelOffset" />
       </div>
 
       <div class="flex flex-col gap-1">
-        <label>Niveau section 2</label>
+        <label>{{ $t('ui.dialogs.parallel_branches_properties.section_2_level') }}</label>
         <InputNumber v-model="parallelBranches.$parallelBranches.sections[1].$lineSection.levelOffset" />
       </div>
     </div>

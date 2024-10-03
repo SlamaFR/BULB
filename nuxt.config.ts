@@ -45,6 +45,9 @@ export default defineNuxtConfig({
     },
   },
 
+  build: {
+    transpile: ['vue-i18n'],
+  },
   vite: {
     vue: {
       script: {
@@ -74,7 +77,6 @@ export default defineNuxtConfig({
 
   // plugin configurations
   modules: [
-    '@nuxtjs/i18n',
     '@vueuse/nuxt',
     '@unocss/nuxt',
     '@nuxtjs/critters',

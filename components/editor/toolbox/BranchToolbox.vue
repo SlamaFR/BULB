@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
 import { VueDraggable } from 'vue-draggable-plus'
+import { useI18n } from 'vue-i18n'
 
 interface Element {
   label: string
@@ -8,9 +9,11 @@ interface Element {
   type: 'STOP' | 'STOP_WITH_CONNECTION'
 }
 
+const { t } = useI18n()
+
 const elements = ref<Element[]>([
   {
-    label: 'Arrêt',
+    label: 'ui.map_editor.toolbox.stop',
     icon: 'i-bulb-stop',
     type: 'STOP',
   },
@@ -19,7 +22,7 @@ const elements = ref<Element[]>([
 function clone(): Stop {
   return {
     id: uuidv4(),
-    name: 'Nouvel arrêt',
+    name: t('ui.map_editor.toolbox.new_stop'),
     subtitle: '',
     placeName: '',
     interestPoint: false,
@@ -43,13 +46,13 @@ function clone(): Stop {
       <div class="item hidden">
         <div class="flex flex-col items-center">
           <i :class="element.icon" />
-          <span>{{ element.label }}</span>
+          <span>{{ $t(element.label) }}</span>
         </div>
       </div>
       <Stop
         :model-value="{
           id: '',
-          name: 'Nouvel arrêt',
+          name: $t('ui.map_editor.toolbox.new_stop'),
           placeName: null,
           subtitle: null,
           preventSubtitleOverlapping: true,

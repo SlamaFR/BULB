@@ -16,7 +16,7 @@ const connection = defineModel<Connection>('connection', { required: true })
 <template>
   <Panel
     class="md:min-w-35em md:max-w-40em"
-    :header="`Groupe de correspondances #${index + 1}`"
+    :header="$t('ui.dialogs.connections_editor.group.header', { index: index + 1 })"
     :pt="{
       root: { class: 'flex flex-col' },
       content: { class: 'h-full' },
@@ -25,10 +25,10 @@ const connection = defineModel<Connection>('connection', { required: true })
   >
     <template #icons>
       <Tag v-if="isMode(connection)" severity="warn">
-        Mode de transport
+        {{ $t('ui.dialogs.connections_editor.mode') }}
       </Tag>
       <Tag v-if="isService(connection)" severity="info">
-        Services de transport
+        {{ $t('ui.dialogs.connections_editor.service') }}
       </Tag>
     </template>
 
@@ -45,7 +45,7 @@ const connection = defineModel<Connection>('connection', { required: true })
 
       <div class="flex flex-row items-center justify-between gap-2">
         <div />
-        <Button size="small" label="Supprimer" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
+        <Button :label="$t('ui.dialogs.connections_editor.group.delete')" size="small" icon="i-tabler-trash" severity="danger" @click="emit('delete', index)" />
       </div>
     </div>
   </Panel>

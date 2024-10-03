@@ -1,7 +1,9 @@
 import * as htmlToImage from 'html-to-image'
+import { useI18n } from 'vue-i18n'
 
 export default function useExportMap() {
   const toast = useToast()
+  const { t } = useI18n()
 
   function exportMap(mapContainer: HTMLElement) {
     htmlToImage.toBlob(mapContainer, {
@@ -24,16 +26,16 @@ export default function useExportMap() {
       a.remove()
 
       toast.add({
-        summary: 'Exportation réussie',
-        detail: 'Le projet a été exporté avec succès',
+        summary: t('ui.toasts.export.success.title'),
+        detail: t('ui.toasts.export.success.detail'),
         severity: 'success',
         life: 5000,
       })
     }).catch((err) => {
       console.error(err)
       toast.add({
-        summary: 'Exportation échouée',
-        detail: 'Le projet n’a pas pu être exporté',
+        summary: t('ui.toasts.export.failure.title'),
+        detail: t('ui.toasts.export.failure.detail'),
         severity: 'error',
         life: 5000,
       })

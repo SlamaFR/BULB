@@ -12,8 +12,12 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" modal header="Utiliser un préréglage">
-    <Fieldset legend="Métro">
+  <Dialog
+    v-model:visible="visible"
+    :header="$t('ui.dialogs.use_preset.header')"
+    modal
+  >
+    <Fieldset :legend="$t('data.mode.metro')">
       <div class="btn-group">
         <Button
           v-for="metro in METRO_LINES"
@@ -27,7 +31,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
         </Button>
       </div>
     </Fieldset>
-    <Fieldset legend="RER">
+    <Fieldset :legend="$t('data.mode.rer')">
       <div class="btn-group">
         <Button
           v-for="rer in RER_LINES"
@@ -41,7 +45,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
         </Button>
       </div>
     </Fieldset>
-    <Fieldset legend="Transilien">
+    <Fieldset :legend="$t('data.mode.transilien')">
       <div class="btn-group">
         <Button
           v-for="train in TRAIN_LINES"
@@ -55,7 +59,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
         </Button>
       </div>
     </Fieldset>
-    <Fieldset legend="Tram">
+    <Fieldset :legend="$t('data.mode.tram')">
       <div class="btn-group">
         <Button
           v-for="tram in TRAM_LINES"

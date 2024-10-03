@@ -1,5 +1,8 @@
+import { useI18n } from 'vue-i18n'
+
 export default function useLoadProject() {
   const toast = useToast()
+  const { t } = useI18n()
   const confirm = useConfirm()
   const lineStore = storeToRefs(useLine())
   const indicesStore = storeToRefs(useCustomLineIndices())
@@ -13,10 +16,10 @@ export default function useLoadProject() {
   function preload(project: Project) {
     if (project.customIndices.length > 0) {
       confirm.require({
-        header: 'Chargement du projet',
-        message: 'Voulez-vous charger les indices personnalisés contenus dans ce projet ? Les indices que vous possédez déjà ne seront pas écrasés.',
-        acceptLabel: 'Oui',
-        rejectLabel: 'Non',
+        header: t('ui.dialogs.loading_custom_indices_prompt.header'),
+        message: t('ui.dialogs.loading_custom_indices_prompt.message'),
+        acceptLabel: t('ui.dialogs.loading_custom_indices_prompt.accept'),
+        rejectLabel: t('ui.dialogs.loading_custom_indices_prompt.reject'),
         rejectProps: {
           text: true,
           severity: 'secondary',
@@ -44,18 +47,9 @@ export default function useLoadProject() {
     }
 
     toast.add({
-      summary: 'Chargement réussi',
-      detail: 'Le projet a été chargé avec succès',
+      summary: t('ui.toasts.load.success.title'),
+      detail: t('ui.toasts.load.success.detail'),
       severity: 'success',
-      life: 5000,
-    })
-  }
-
-  function flop() {
-    toast.add({
-      summary: 'Chargement échoué',
-      detail: 'Le fichier est invalide ou corrompu',
-      severity: 'error',
       life: 5000,
     })
   }
@@ -64,27 +58,20 @@ export default function useLoadProject() {
   reader.onload = (ev) => {
     try {
       preload(JSON.parse(ev.target?.result as string) as Project)
-    } catch (error1) {
-      console.warn(error1)
-      try {
-        const oldProject = JSON.parse(ev.target?.result as string) as Line
-        toast.add({
-          summary: 'Ancien format détecté',
-          detail: 'Certaines fonctionnalités pourraient ne pas être disponibles',
-          severity: 'warn',
-          life: 10000,
-        })
-        preload({ line: oldProject, customIndices: [] })
-      } catch (error2) {
-        console.error(error2)
-        flop()
-      }
+    } catch (error) {
+      console.warn(error)
+      toast.add({
+        summary: t('ui.toasts.load.failure.title'),
+        detail: t('ui.toasts.load.failure.detail.corrupted'),
+        severity: 'error',
+        life: 5000,
+      })
     }
   }
   reader.onerror = () => {
     toast.add({
-      summary: 'Chargement échoué',
-      detail: 'Le fichier n’a pas pu être lu',
+      summary: t('ui.toasts.load.success.title'),
+      detail: t('ui.toasts.load.success.detail.unreadable'),
       severity: 'error',
       life: 5000,
     })

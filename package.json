@@ -18,10 +18,10 @@
     "@basitcodeenv/vue3-device-detect": "^1.0.3",
     "@iconify-json/tabler": "^1.1.118",
     "@iconify/tools": "^4.0.5",
+    "@intlify/unplugin-vue-i18n": "^5.2.0",
     "@nuxt/fonts": "^0.7.1",
     "@nuxtjs/color-mode": "^3.4.2",
     "@nuxtjs/critters": "^0.7.1",
-    "@nuxtjs/i18n": "^8.3.1",
     "@pinia-plugin-persistedstate/nuxt": "^1.2.1",
     "@pinia/nuxt": "^0.5.1",
     "@primevue/nuxt-module": "^4.0.0",
@@ -44,6 +44,7 @@
     "svg-round-corners": "^0.4.3",
     "taze": "^0.16.1",
     "uuid": "^10.0.0",
-    "vue-draggable-plus": "^0.5.3"
+    "vue-draggable-plus": "^0.5.3",
+    "vue-i18n": "^9.13.1"
   }
 }

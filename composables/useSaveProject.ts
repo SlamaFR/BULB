@@ -1,5 +1,8 @@
+import { useI18n } from 'vue-i18n'
+
 export default function useSaveProject() {
   const toast = useToast()
+  const { t } = useI18n()
   const { line } = storeToRefs(useLine())
   const { indices } = storeToRefs(useCustomLineIndices())
 
@@ -37,8 +40,8 @@ export default function useSaveProject() {
     a.click()
 
     toast.add({
-      summary: 'Sauvegarde réussie',
-      detail: 'Le projet a été sauvegardé avec succès',
+      summary: t('ui.toasts.save.success.title'),
+      detail: t('ui.toasts.save.success.detail'),
       severity: 'success',
       life: 5000,
     })

@@ -1,15 +1,32 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+import { en } from '~/assets/locales/en.json'
 import { fr } from '~/assets/locales/fr.json'
 
 const { config } = usePrimeVue()
 useVersionTracking()
-config.locale = fr
+useLocale()
+
+const { locale } = useI18n()
+watch(locale, (val) => {
+  switch (val) {
+    case 'en':
+      config.locale = en
+      break
+    case 'fr':
+      config.locale = fr
+      break
+  }
+}, { immediate: true })
 </script>
 
 <template>
   <NuxtLayout>
     <NuxtPage />
   </NuxtLayout>
+
+  <Toast position="bottom-right" />
+  <ConfirmDialog pt:root:class="max-w-40em m-4" />
 </template>
 
 <style lang="scss">
