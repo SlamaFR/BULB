@@ -55,7 +55,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
   height: 100%;
   flex-grow: 1;
   padding: 5em;
-  background: repeating-linear-gradient(45deg, var(--p-gray-200) 0, var(--p-gray-200) 1px, var(--p-gray-100) 1px,  var(--p-gray-100) 1em);
+  background: repeating-linear-gradient(45deg, var(--p-gray-50) 0, var(--p-gray-50) 1em, var(--p-gray-100) calc(1em + 1px), var(--p-gray-100) 2em);
   background-size: 100% 100%;
 }
 
