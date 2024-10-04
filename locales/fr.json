@@ -1,0 +1,288 @@
+{
+  "components": {
+    "airport_select": {
+      "placeholder": "Sélectionner un aéroport"
+    },
+    "color_select": {
+      "placeholder": "Sélectionner une couleur"
+    },
+    "line_index_select": {
+      "custom_indices": "Sélectionner un indice",
+      "line_name": "Ligne {index}",
+      "official_indices": "Indices officiels",
+      "placeholder": "Indices personnalisés"
+    },
+    "map_size_select": {
+      "placeholder": "Sélectionner une taille"
+    },
+    "mode_select": {
+      "placeholder": "Sélectionner un mode"
+    },
+    "service_select": {
+      "placeholder": "Sélectionner un service"
+    },
+    "shape_select": {
+      "placeholder": "Sélectionner une forme"
+    }
+  },
+  "data": {
+    "airports": {
+      "both": "CDG + ORY",
+      "cdg": "Charles de Gaulle",
+      "generic": "Générique",
+      "ory": "Orly"
+    },
+    "colors": {
+      "custom": "Personnalisée"
+    },
+    "map_size": {
+      "big": "Très grand (30em)",
+      "huge": "Énorme (50em)",
+      "large": "Grand (20em)",
+      "normal": "Normal (15em)"
+    },
+    "mode": {
+      "bike": "Vélo",
+      "boat": "Navette fluviale",
+      "brt": "Busilien (BHNS)",
+      "bus": "Bus",
+      "cable": "Téléphérique",
+      "metro": "Métro",
+      "rer": "RER",
+      "tram": "Tramway",
+      "transilien": "Transilien"
+    },
+    "services": {
+      "airport": "Aéroport",
+      "bullet_train": "Train à grande vitesse",
+      "cdgval": "CDGVAL",
+      "funicular": "Funiculaire",
+      "long_distance_bus": "Car",
+      "main_station": "Grande gare",
+      "orlyval": "OrlyVal",
+      "suburban_train": "Train de banlieue",
+      "ter": "TER",
+      "tgv": "TGV"
+    },
+    "shapes": {
+      "circle": "Cercle",
+      "lines": "Lignes",
+      "rectangle": "Rectangle",
+      "rounded_square": "Carré arrondi"
+    }
+  },
+  "locales": {
+    "en": "Anglais",
+    "fr": "Français"
+  },
+  "misc": {
+    "beta": "Bêta",
+    "temporary": "Temporaire"
+  },
+  "ui": {
+    "dialogs": {
+      "browser_check": {
+        "dismiss": "J’ai compris",
+        "header": "Navigateur non pris en charge",
+        "summary_1": "Il semblerait que vous utilisiez <b>{browserName}</b> comme navigateur. Ce dernier n’est pas officiellement supporté par BULB. Si vous poursuivez, certains comportements inattendus pourraient survenir, et vous pourriez rencontrer des problèmes graphiques.",
+        "summary_2": "Pour une expérience optimale, il est recommandé d’utiliser un navigateur basé sur Chromium tel que Google Chrome, Microsoft Edge, Opera, Brave, etc.",
+        "supported_browsers": "Navigateurs supportés",
+        "unsupported_browsers": "Navigateurs non supportés"
+      },
+      "connections_editor": {
+        "group": {
+          "delete": "Supprimer",
+          "header": "Groupe de correspondances #{index}",
+          "mode": {
+            "lines": {
+              "add": "Ajouter une ligne",
+              "header": "Lignes"
+            },
+            "mode": "Mode"
+          },
+          "ornament": "Décoration",
+          "pedestrian_connection": "Correspondance piétonne",
+          "service": {
+            "services": {
+              "add": "Ajouter un service",
+              "header": "Services"
+            }
+          }
+        },
+        "header": "Correspondances de “{stopName}”",
+        "mode": "Mode de transport",
+        "or": "Ou",
+        "service": "Service de transport"
+      },
+      "custom_index_editor": {
+        "color": "Couleur",
+        "delete": "Supprimer",
+        "header": "Éditeur d’indice personnalisé",
+        "index": "Indice",
+        "mode": "Mode",
+        "prefix": "Préfixe",
+        "preview": "Prévisualisation",
+        "shape": "Forme",
+        "suffix": "Suffixe",
+        "value": "Valeur"
+      },
+      "custom_indices": {
+        "header": "Répertoire d’indices personnalisés"
+      },
+      "fork_properties": {
+        "header": "Propriétés de fourche",
+        "orientation": {
+          "left": "Gauche",
+          "right": "Droite",
+          "title": "Orientation"
+        },
+        "shape": {
+          "downward": "Vers le bas",
+          "symmetrical": "Symétrique",
+          "title": "Forme",
+          "upward": "Vers le haut"
+        },
+        "size_multiplier": "Multiplicateur de taille"
+      },
+      "loading_custom_indices_prompt": {
+        "accept": "Oui",
+        "header": "Chargement du projet",
+        "message": "Voulez-vous charger les indices personnalisés contenus dans ce projet ? Les indices que vous possédez déjà ne seront pas perdus.",
+        "reject": "Non"
+      },
+      "loop_properties": {
+        "header": "Propriétés de demi-tour",
+        "orientation": {
+          "left": "Gauche",
+          "right": "Droite",
+          "title": "Orientation"
+        }
+      },
+      "new_project": {
+        "accept": "Nouveau projet",
+        "header": "Pas si vite !",
+        "message": "Avez-vous pensé à sauvegarder votre projet actuel ? Si vous continuez, vous perdrez toutes les modifications non sauvegardées.",
+        "reject": "Annuler"
+      },
+      "new_update_available": {
+        "header": "Nouvelle mise à jour disponible",
+        "later": "Plus tard",
+        "message": "La version {version} de BULB est maintenant disponible. Voulez-vous recharger la page pour mettre à jour ? Aucune donnée ne sera perdue.",
+        "update": "Mettre à jour"
+      },
+      "ornament_editor": {
+        "airport": "Aéroport",
+        "display_ornament": "Afficher une décoration",
+        "header": "Éditeur de décoration",
+        "name": "Nom",
+        "no_ornament_available": "Aucune décoration disponible",
+        "ornament": {
+          "airport": "Aéroport",
+          "airport_name": "Nom d’aéroport",
+          "text": "Texte"
+        },
+        "position": {
+          "below": "En dessous",
+          "right": "À droite",
+          "title": "Position"
+        },
+        "text": "Texte"
+      },
+      "parallel_branches_properties": {
+        "alignment": {
+          "fluid": "Fluide",
+          "left": "Aligné à gauche",
+          "right": "Aligné à droite",
+          "title": "Alignement"
+        },
+        "header": "Propriétés de branches parallèles",
+        "section_1_level": "Niveau de la section 1",
+        "section_2_level": "Niveau de la section 2"
+      },
+      "save_project": {
+        "bundle_custom_indices": "Incorporer les indices personnalisés",
+        "cancel": "Annuler",
+        "header": "Sauvegarder le projet",
+        "project_name": "Nom du projet",
+        "save": "Sauvegarder"
+      },
+      "stop_properties": {
+        "city_name": "Ville",
+        "closed": "Fermé",
+        "header": "Propriétés d’arrêt",
+        "interest_point": "Point d’intérêt",
+        "stop_name": "Nom",
+        "subtitle": "Sous-titre",
+        "terminus": "Terminus"
+      },
+      "use_preset": {
+        "header": "Utiliser un préréglage"
+      }
+    },
+    "map_editor": {
+      "title": "Éditeur de plan",
+      "toolbox": {
+        "branch": "Branche",
+        "delete": "Supprimer",
+        "fork": "Fourche",
+        "loop": "Demi-tour",
+        "new_stop": "Nouvel arrêt",
+        "parallel_branches": "Branches parallèles",
+        "stop": "Arrêt"
+      },
+      "watermark": "Créé à l’aide de BULB"
+    },
+    "menu": {
+      "custom_indices": "Indices personnalisés",
+      "export": "Exporter",
+      "new_project": "Nouveau projet",
+      "open": "Ouvrir",
+      "save": "Sauvegarder",
+      "title": "Menu principal"
+    },
+    "nag": "<b>RAPPEL</b> : Application en phase de développement. Certaines fonctionnalités ne sont pas encore disponibles ou sont incomplètes.",
+    "properties": {
+      "color": "Couleur du plan",
+      "index": "Indice de ligne",
+      "mode": "Mode de transport",
+      "size": "Taille du cadre",
+      "title": "Propriétés",
+      "use_preset": "Utiliser un préréglage"
+    },
+    "toasts": {
+      "export": {
+        "failure": {
+          "detail": "Le projet n’a pas pu être exporté",
+          "title": "Échec de l’export"
+        },
+        "success": {
+          "detail": "Le projet a été exporté avec succès",
+          "title": "Export réussi"
+        }
+      },
+      "load": {
+        "failure": {
+          "detail": {
+            "corrupted": "Le fichier de projet est invalide ou corrompu",
+            "unreadable": "Le fichier n’a pas pu être lu"
+          },
+          "title": "Échec du chargement"
+        },
+        "success": {
+          "detail": "Le projet a été chargé avec succès",
+          "title": "Chargement réussi"
+        }
+      },
+      "save": {
+        "success": {
+          "detail": "Le projet a été sauvegardé avec succès",
+          "title": "Sauvegarde réussie"
+        }
+      }
+    },
+    "topbar": {
+      "FAQ": "FAQ",
+      "catch_phrase": "Pas mal non ? C’est français 🇫🇷"
+    }
+  }
+}

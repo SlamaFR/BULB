@@ -10,22 +10,22 @@ interface Element {
 
 const elements = ref<Element[]>([
   {
-    label: 'Branche',
+    label: 'ui.map_editor.toolbox.branch',
     icon: 'i-bulb-branch',
     type: 'BRANCH',
   },
   {
-    label: 'Fourche',
+    label: 'ui.map_editor.toolbox.fork',
     icon: 'i-bulb-fork',
     type: 'FORK',
   },
   {
-    label: 'Branches parallèles',
+    label: 'ui.map_editor.toolbox.parallel_branches',
     icon: 'i-bulb-parallel-branches',
     type: 'PARALLEL_BRANCHES',
   },
   {
-    label: 'Demi-tour',
+    label: 'ui.map_editor.toolbox.loop',
     icon: 'i-bulb-u-turn',
     type: 'LOOP',
   },
@@ -114,7 +114,7 @@ function clone(element: Element): LineElement {
       <div class="item hidden">
         <div class="flex flex-col items-center">
           <i :class="element.icon" />
-          <span>{{ element.label }}</span>
+          <span>{{ $t(element.label) }}</span>
         </div>
       </div>
       <div class="preview h-full flex items-center">

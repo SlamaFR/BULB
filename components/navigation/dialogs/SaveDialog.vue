@@ -20,6 +20,10 @@ const lineIndex = computed(() => {
 
 watch(visible, (val) => {
   if (val) {
+    if (!line.value.mode || !line.value.index) {
+      name.value = 'untitled'
+      return
+    }
     name.value = `${line.value.mode}_${lineIndex.value ?? 'unknown'}`.toLowerCase()
   }
 })
@@ -31,10 +35,14 @@ function doExport() {
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" modal header="Sauvegarder le projet">
+  <Dialog
+    v-model:visible="visible"
+    :header="$t('ui.dialogs.save_project.header')"
+    modal
+  >
     <div class="flex flex-col gap-5">
       <div class="flex flex-row items-center gap-4">
-        <span class="text-nowrap">Nom du projet</span>
+        <span class="text-nowrap">{{ $t('ui.dialogs.save_project.project_name') }}</span>
         <InputGroup>
           <InputText v-model="name" />
           <InputGroupAddon>.json</InputGroupAddon>
@@ -42,11 +50,11 @@ function doExport() {
       </div>
       <div class="flex items-center">
         <Checkbox v-model="bundleCustomIndices" input-id="save_include_custom_indices" binary />
-        <label for="save_include_custom_indices" class="ml-2">Incorporer les indices personnalisés</label>
+        <label for="save_include_custom_indices" class="ml-2">{{ $t('ui.dialogs.save_project.bundle_custom_indices') }}</label>
       </div>
       <div class="flex flex-row items-center justify-end flex-grow gap-4">
-        <Button text severity="secondary" label="Annuler" @click="visible = false" />
-        <Button label="Sauvegarder" @click="doExport()" />
+        <Button :label="$t('ui.dialogs.save_project.cancel')" text severity="secondary" @click="visible = false" />
+        <Button :label="$t('ui.dialogs.save_project.save')" @click="doExport()" />
       </div>
     </div>
   </Dialog>

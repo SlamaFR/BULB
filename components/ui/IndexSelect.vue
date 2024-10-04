@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 const { mode } = defineProps<{
   mode: Mode | null
 }>()
@@ -7,6 +9,7 @@ const emit = defineEmits<{
 }>()
 const index = defineModel<LineIndex | null>({ required: true })
 const { getModeIndices, findIndexById } = useCustomLineIndices()
+const { t } = useI18n()
 
 const availableDefaultLines = computed(() => getLinesByMode(mode))
 const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
@@ -14,19 +17,19 @@ const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
     mode: it.mode,
     $customLineIndex: { id: it.id },
   },
-  label: `Ligne ${it.prefix}${it.index}${it.suffix}`,
+  label: t('components.line_index_select.line_name', { index: `${it.prefix}${it.index}${it.suffix}` }),
 })))
 const availableLines = computed(() => {
   let options: { label: string, items: any[] }[] = []
   if (availableDefaultLines.value.length > 0) {
     options = options.concat({
-      label: 'Indices officiels',
+      label: t('components.line_index_select.official_indices'),
       items: availableDefaultLines.value,
     })
   }
   if (availableCustomLines.value.length > 0) {
     options = options.concat({
-      label: 'Indices personnalisés',
+      label: t('components.line_index_select.custom_indices'),
       items: availableCustomLines.value,
     })
   }
@@ -66,7 +69,7 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   <Select
     v-model="index"
     :options="availableLines"
-    placeholder="Selectionner un indice"
+    :placeholder="$t('components.line_index_select.placeholder')"
     option-group-children="items"
     option-group-label="label"
     option-value="value"

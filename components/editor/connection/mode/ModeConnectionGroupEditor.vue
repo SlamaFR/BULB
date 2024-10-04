@@ -23,19 +23,19 @@ function deleteLine(index: number) {
   <div class="flex flex-col gap-1">
     <div class="flex flex-col md:flex-row gap-3">
       <div class="flex flex-grow items-center gap-4">
-        <span>Mode</span>
+        <span>{{ $t('ui.dialogs.connections_editor.group.mode.mode') }}</span>
         <ModeSelect v-model="connection.$modeConnection.mode" />
       </div>
 
       <div class="flex items-center">
         <Checkbox v-model="connection.$modeConnection.walk" :input-id="connection.id" binary />
-        <label :for="connection.id" class="ml-2">Correspondance piétonne</label>
+        <label :for="connection.id" class="ml-2">{{ $t('ui.dialogs.connections_editor.group.pedestrian_connection') }}</label>
       </div>
     </div>
 
     <div>
       <Divider align="left">
-        <b>Lignes</b>
+        <b>{{ $t('ui.dialogs.connections_editor.group.mode.lines.header') }}</b>
       </Divider>
       <HorizontalScrollContainer>
         <div class="flex flex-col md:flex-row gap-2 overflow-y-auto max-h-20em md:overflow-x-scroll">
@@ -48,7 +48,7 @@ function deleteLine(index: number) {
             @delete="deleteLine"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button text icon="i-tabler-plus" label="Ajouter une ligne" class="text-nowrap" @click="addLine()" />
+            <Button :label="$t('ui.dialogs.connections_editor.group.mode.lines.add')" text icon="i-tabler-plus" class="text-nowrap" @click="addLine()" />
           </div>
         </div>
       </HorizontalScrollContainer>

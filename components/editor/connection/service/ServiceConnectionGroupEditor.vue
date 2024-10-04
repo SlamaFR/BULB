@@ -23,13 +23,13 @@ function deleteService(index: number) {
     <div class="flex flex-col md:flex-row gap-3">
       <div class="flex items-center">
         <Checkbox v-model="connection.$serviceConnection.walk" :input-id="connection.id" binary />
-        <label :for="connection.id" class="ml-2">Correspondance piétonne</label>
+        <label :for="connection.id" class="ml-2">{{ $t('ui.dialogs.connections_editor.group.pedestrian_connection') }}</label>
       </div>
     </div>
 
     <div>
       <Divider align="left">
-        <b>Services</b>
+        <b>{{ $t('ui.dialogs.connections_editor.group.service.services.header') }}</b>
       </Divider>
       <HorizontalScrollContainer>
         <div class="flex flex-col md:flex-row gap-2 overflow-y-auto max-h-20em md:overflow-x-scroll">
@@ -41,7 +41,7 @@ function deleteService(index: number) {
             @delete="deleteService"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button text icon="i-tabler-plus" label="Ajouter un service" class="text-nowrap" @click="addService()" />
+            <Button :label="$t('ui.dialogs.connections_editor.group.service.services.add')" text icon="i-tabler-plus" class="text-nowrap" @click="addService()" />
           </div>
         </div>
       </HorizontalScrollContainer>

@@ -61,15 +61,15 @@ watch([hasOrnament, type], ([enabled, _type]) => {
 })
 
 const positions = [
-  { value: 'BOTTOM', label: 'En dessous' },
-  { value: 'RIGHT', label: 'À droite' },
+  { label: 'ui.dialogs.ornament_editor.position.below', value: 'BOTTOM' },
+  { label: 'ui.dialogs.ornament_editor.position.right', value: 'RIGHT' },
 ]
 </script>
 
 <template>
   <Dialog
     v-model:visible="visible"
-    header="Décoration du pictogramme"
+    :header="$t('ui.dialogs.ornament_editor.header')"
     modal
     :pt="{
       root: { class: 'min-w-25em' },
@@ -79,56 +79,56 @@ const positions = [
     <div class="flex flex-col gap-2">
       <div class="flex items-center gap-4">
         <Checkbox v-model="hasOrnament" :input-id="id" binary />
-        <label :for="id">Afficher une décoration</label>
+        <label :for="id">{{ $t('ui.dialogs.ornament_editor.display_ornament') }}</label>
       </div>
 
       <Tabs v-model:value="type">
         <TabList>
           <Tab v-if="permittedTypes.includes('AIRPORT')" value="AIRPORT" :disabled="!hasOrnament">
-            Aéroport
+            {{ $t('ui.dialogs.ornament_editor.ornament.airport') }}
           </Tab>
           <Tab v-if="permittedTypes.includes('AIRPORT_NAME')" value="AIRPORT_NAME" :disabled="!hasOrnament">
-            Nom d’aéroport
+            {{ $t('ui.dialogs.ornament_editor.ornament.airport_name') }}
           </Tab>
           <Tab v-if="permittedTypes.includes('TEXT')" value="TEXT" :disabled="!hasOrnament">
-            Texte
+            {{ $t('ui.dialogs.ornament_editor.ornament.text') }}
           </Tab>
         </TabList>
         <TabPanels>
           <TabPanel value="">
-            <span class="opacity-50">Aucune décoration disponible</span>
+            <span class="opacity-50">{{ $t('ui.dialogs.ornament_editor.no_ornament_available') }}</span>
           </TabPanel>
           <TabPanel v-if="permittedTypes.includes('AIRPORT')" value="AIRPORT">
             <div v-if="ornament && isAirport(ornament)" class="form items-center gap-x-4 gap-y-2">
-              <span>Position</span>
+              <span>{{ $t('ui.dialogs.ornament_editor.position.title') }}</span>
               <Select
                 v-model="ornament.position"
                 class="flex-auto"
                 :options="positions"
+                :option-label="option => $t(option.label)"
                 option-value="value"
-                option-label="label"
               />
-              <span>Aéroport</span>
+              <span>{{ $t('ui.dialogs.ornament_editor.airport') }}</span>
               <AirportSelect v-model="ornament.$airportOrnament.airport" />
             </div>
           </TabPanel>
           <TabPanel v-if="permittedTypes.includes('AIRPORT_NAME')" value="AIRPORT_NAME">
             <div v-if="ornament && isAirportName(ornament)" class="form items-center gap-x-4 gap-y-2">
-              <span>Nom</span>
+              <span>{{ $t('ui.dialogs.ornament_editor.name') }}</span>
               <InputText v-model="ornament.$airportNameOrnament.name" />
             </div>
           </TabPanel>
           <TabPanel v-if="permittedTypes.includes('TEXT')" value="TEXT">
             <div v-if="ornament && isText(ornament)" class="form items-center gap-x-4 gap-y-2">
-              <span>Position</span>
+              <span>{{ $t('ui.dialogs.ornament_editor.position.title') }}</span>
               <Select
                 v-model="ornament.position"
                 class="flex-auto"
                 :options="positions"
+                :option-label="option => $t(option.label)"
                 option-value="value"
-                option-label="label"
               />
-              <span>Texte</span>
+              <span>{{ $t('ui.dialogs.ornament_editor.text') }}</span>
               <Textarea v-model="ornament.$textOrnament.text" row="2" auto-resize />
             </div>
           </TabPanel>

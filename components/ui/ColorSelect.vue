@@ -1,17 +1,21 @@
 <script setup lang="ts">
-const color = defineModel<string | null>({ required: true })
+import { useI18n } from 'vue-i18n'
 
-const selectedColor = ref<ColorChoice | null>(findColorByValue(color.value))
+const color = defineModel<string | null>({ required: true })
+const { t } = useI18n()
+
+const fallbackColor = t('data.colors.custom')
+const selectedColor = ref<ColorChoice | null>(findColorByValue(color.value, fallbackColor))
 
 watch(selectedColor, val => color.value = val?.value ?? null)
-watch(color, val => selectedColor.value = findColorByValue(val))
+watch(color, val => selectedColor.value = findColorByValue(val, fallbackColor))
 </script>
 
 <template>
   <Select
     v-model="selectedColor"
     :options="COLORS"
-    placeholder="Selectionner une couleur"
+    :placeholder="$t('components.color_select.placeholder')"
     class="flex-auto"
   >
     <template #value="slotProps">

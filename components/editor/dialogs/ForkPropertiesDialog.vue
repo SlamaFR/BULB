@@ -3,13 +3,13 @@ const visible = defineModel<boolean>('visible', { required: true })
 const fork = defineModel<Fork>({ required: true })
 
 const orientations = [
-  { label: 'Gauche', value: 'LEFT' },
-  { label: 'Droite', value: 'RIGHT' },
+  { label: 'ui.dialogs.fork_properties.orientation.left', value: 'LEFT' },
+  { label: 'ui.dialogs.fork_properties.orientation.right', value: 'RIGHT' },
 ]
 const shapes = [
-  { label: 'Vers le haut', value: [1, 0] },
-  { label: 'Symétrique', value: [1, -1] },
-  { label: 'Vers le bas', value: [0, -1] },
+  { label: 'ui.dialogs.fork_properties.shape.upward', value: [1, 0] },
+  { label: 'ui.dialogs.fork_properties.shape.symmetrical', value: [1, -1] },
+  { label: 'ui.dialogs.fork_properties.shape.downward', value: [0, -1] },
 ]
 </script>
 
@@ -21,32 +21,32 @@ const shapes = [
           <i class="i-tabler-traffic-cone" />
           WIP
         </Tag>
-        <span class="p-dialog-title" data-pc-section="title">Propriétés de la fourche</span>
+        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.fork_properties.header') }}</span>
       </div>
     </template>
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
-        <label>Orientation</label>
+        <label>{{ $t('ui.dialogs.fork_properties.orientation.title') }}</label>
         <SelectButton
           v-model="fork.$fork.toward"
           :options="orientations"
-          option-label="label"
+          :option-label="option => $t(option.label)"
           option-value="value"
           :allow-empty="false"
         />
       </div>
       <div class="flex flex-col gap-1">
-        <label>Forme</label>
+        <label>{{ $t('ui.dialogs.fork_properties.shape.title') }}</label>
         <SelectButton
           v-model="fork.$fork.linksOffset"
           :options="shapes"
-          option-label="label"
+          :option-label="option => $t(option.label)"
           option-value="value"
           :allow-empty="false"
         />
       </div>
       <div class="flex flex-col gap-1">
-        <label>Multiplicateur de taille</label>
+        <label>{{ $t('ui.dialogs.fork_properties.size_multiplier') }}</label>
         <InputNumber v-model="fork.$fork.offsetMultiplier" />
       </div>
     </div>

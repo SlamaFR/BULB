@@ -4,17 +4,17 @@
 
     <div class="editor">
       <div class="controls flex flex-col gap-4 min-w-20em">
-        <Panel header="Menu">
+        <Panel :header="$t('ui.menu.title')">
           <MainMenu />
         </Panel>
-        <Panel header="Propriétés">
+        <Panel :header="$t('ui.properties.title')">
           <GeneralMapSettings />
         </Panel>
       </div>
 
       <div class="canvas flex flex-col gap-4">
         <Panel
-          header="Éditeur de plan"
+          :header="$t('ui.map_editor.title')"
           pt:root:class="flex flex-col flex-grow"
           pt:content-container:class="flex-grow"
           pt:content:class="h-full"

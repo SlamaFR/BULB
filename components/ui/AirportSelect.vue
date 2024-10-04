@@ -11,19 +11,19 @@ watch(airport, val => selectedAirport.value = findAirportVyValue(val))
   <Select
     v-model="selectedAirport"
     :options="AIRPORTS"
-    placeholder="Selectionner un aéroport"
+    :placeholder="$t('components.airport_select.placeholder')"
     class="flex-auto"
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
         <Airport class="text-xl" :airport="slotProps.value.value" />
-        <span>{{ slotProps.value.label }}</span>
+        <span>{{ $t(slotProps.value.label.toLowerCase()) }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
         <Airport class="text-xl" :airport="slotProps.option.value" />
-        <span>{{ slotProps.option.label }}</span>
+        <span>{{ $t(slotProps.option.label.toLowerCase()) }}</span>
       </div>
     </template>
   </Select>

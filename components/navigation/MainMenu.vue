@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
+
 const { reset } = useLine()
 
 const showLineIndexDirectory = ref(false)
@@ -7,42 +9,22 @@ const showSaveDialog = ref(false)
 const importProject = useLoadProject()
 const exportSignal = useEventBus(ExportSignal)
 const confirm = useConfirm()
+const { t } = useI18n()
 
 function newProject() {
   confirm.require({
-    header: 'Pas si vite !',
-    message: 'Avez-vous penser à sauvegarder votre projet actuel ? Si vous continuez, vous perdrez toutes les modifications non sauvegardées.',
+    header: t('ui.dialogs.new_project.header'),
+    message: t('ui.dialogs.new_project.message'),
     acceptProps: {
-      label: 'Nouveau projet',
+      label: t('ui.dialogs.new_project.accept'),
       severity: 'warn',
     },
     rejectProps: {
-      label: 'Annuler',
+      label: t('ui.dialogs.new_project.reject'),
       severity: 'secondary',
       text: true,
     },
     accept: reset,
-  })
-}
-
-function resetStores() {
-  confirm.require({
-    header: 'Oula oula !',
-    message: 'En réinitialisant les stores, vous perdrez les modifications non enregistrées, ainsi que vos indices personnalisés. Cette action est généralement nécessaire lors d’une mise à jour comportant des changements bloquants. Êtes-vous sûr(e) de vouloir continuer ?',
-    acceptProps: {
-      label: 'Procéder',
-      severity: 'danger',
-    },
-    rejectProps: {
-      label: 'Annuler',
-      severity: 'secondary',
-      text: true,
-    },
-    accept: () => {
-      localStorage.removeItem('line')
-      localStorage.removeItem('customLineIndices')
-      document.location.reload()
-    },
   })
 }
 
@@ -55,7 +37,7 @@ function exportMap() {
   <div class="flex flex-col items-stretch flex-grow">
     <Button
       pt:root:class="important-justify-start"
-      label="Indices personnalisés"
+      :label="$t('ui.menu.custom_indices')"
       severity="secondary"
       icon="i-tabler-edit-circle"
       text
@@ -64,7 +46,7 @@ function exportMap() {
     <Divider />
     <Button
       pt:root:class="important-justify-start"
-      label="Nouveau projet"
+      :label="$t('ui.menu.new_project')"
       severity="secondary"
       icon="i-tabler-file"
       text
@@ -72,7 +54,7 @@ function exportMap() {
     />
     <Button
       pt:root:class="important-justify-start"
-      label="Ouvrir"
+      :label="$t('ui.menu.open')"
       severity="secondary"
       icon="i-tabler-folder"
       text
@@ -80,7 +62,7 @@ function exportMap() {
     />
     <Button
       pt:root:class="important-justify-start"
-      label="Sauvegarder"
+      :label="$t('ui.menu.save')"
       severity="secondary"
       icon="i-tabler-device-floppy"
       text
@@ -88,22 +70,11 @@ function exportMap() {
     />
     <Button
       pt:root:class="important-justify-start"
-      label="Exporter"
+      :label="$t('ui.menu.export')"
       icon="i-tabler-map-share"
       text
       @click="exportMap()"
     />
-
-    <!--
-    <Divider />
-    <Button
-      pt:root:class="important-justify-start"
-      label="Réinitialiser les stores"
-      severity="danger"
-      icon="i-tabler-refresh"
-      @click="resetStores()"
-    />
-    -->
   </div>
 
   <CustomLineIndexDirectoryDialog v-model:visible="showLineIndexDirectory" />

@@ -24,12 +24,16 @@ function deleteIndex(id: string) {
 </script>
 
 <template>
-  <Dialog v-model:visible="visible" modal header="Répertoire d’indices personnalisés">
+  <Dialog
+    v-model:visible="visible"
+    :header="$t('ui.dialogs.custom_indices.header')"
+    modal
+  >
     <Fieldset v-for="mode in MODES" :key="mode.label" :legend="mode.label">
       <template #legend>
         <div class="flex items-center gap-2">
           <Mode class="text-xl" :mode="mode.value" />
-          <span>{{ mode.label }}</span>
+          <span>{{ $t(mode.label) }}</span>
         </div>
       </template>
       <div class="btn-group">

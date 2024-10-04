@@ -127,17 +127,17 @@ export const SERVICES: ServiceChoice[] = [
 ]
 
 export const AIRPORTS: AirportChoice[] = [
-  { value: 'GENERIC', label: 'Générique' },
-  { value: 'CDG', label: 'Charles de Gaulle' },
-  { value: 'ORY', label: 'Orly' },
-  { value: 'BOTH', label: 'CDG + ORY' },
+  { value: 'GENERIC', label: 'data.airports.generic' },
+  { value: 'CDG', label: 'data.airports.cdg' },
+  { value: 'ORY', label: 'data.airports.ory' },
+  { value: 'BOTH', label: 'data.airports.both' },
 ]
 
 export const SHAPES: ShapeChoice[] = [
-  { value: 'CIRCLE', label: 'Cercle' },
-  { value: 'ROUNDED_SQUARE', label: 'Carré arrondi' },
-  { value: 'LINES', label: 'Lignes' },
-  { value: 'RECTANGLE', label: 'Rectangle' },
+  { value: 'CIRCLE', label: 'data.shapes.circle' },
+  { value: 'ROUNDED_SQUARE', label: 'data.shapes.rounded_square' },
+  { value: 'LINES', label: 'data.shapes.lines' },
+  { value: 'RECTANGLE', label: 'data.shapes.rectangle' },
 ]
 
 const BUILTIN_LINES: IndexChoice<BuiltinLineIndex>[] = Array.of(
@@ -162,11 +162,11 @@ export function getLinesByMode(mode: Mode | null): IndexChoice<BuiltinLineIndex>
   return BUILTIN_LINES.filter(it => it.value?.mode === mode)
 }
 
-export function findColorByValue(value: string | null): ColorChoice | null {
+export function findColorByValue(value: string | null, fallback: string): ColorChoice | null {
   if (value === null) return null
   return COLORS.find(color => color.value === value) ?? {
     value,
-    label: 'Personnalisée',
+    label: fallback,
   }
 }
 

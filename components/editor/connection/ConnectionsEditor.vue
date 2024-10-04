@@ -44,7 +44,7 @@ function deleteConnection(index: number) {
           <i class="i-tabler-traffic-cone" />
           WIP
         </Tag>
-        <span class="p-dialog-title" data-pc-section="title">Correspondances de '{{ stop.name }}'</span>
+        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.connections_editor.header', { stopName: stop.name }) }}</span>
       </div>
     </template>
     <div class="connections">
@@ -56,11 +56,11 @@ function deleteConnection(index: number) {
         @delete="deleteConnection"
       />
       <div class="md:min-w-30em md:min-h-25em p-panel p-8 flex flex-col items-center justify-center">
-        <Button text severity="warn" icon="i-tabler-plus" label="Mode de transport" @click="addModeConnection()" />
+        <Button :label="$t('ui.dialogs.connections_editor.mode')" text severity="warn" icon="i-tabler-plus" @click="addModeConnection()" />
         <Divider align="center" type="dotted">
-          <b>Ou</b>
+          <b>{{ $t('ui.dialogs.connections_editor.or') }}</b>
         </Divider>
-        <Button text severity="info" icon="i-tabler-plus" label="Services de transport" @click="addServiceConnection()" />
+        <Button :label="$t('ui.dialogs.connections_editor.service')" text severity="info" icon="i-tabler-plus" @click="addServiceConnection()" />
       </div>
     </div>
   </Dialog>

@@ -1,0 +1,288 @@
+{
+  "components": {
+    "airport_select": {
+      "placeholder": "Select an airport"
+    },
+    "color_select": {
+      "placeholder": "Select a color"
+    },
+    "line_index_select": {
+      "custom_indices": "Select a line index",
+      "line_name": "Line {index}",
+      "official_indices": "Official indices",
+      "placeholder": "Custom indices"
+    },
+    "map_size_select": {
+      "placeholder": "Select a frame size"
+    },
+    "mode_select": {
+      "placeholder": "Select a mode"
+    },
+    "service_select": {
+      "placeholder": "Select a service"
+    },
+    "shape_select": {
+      "placeholder": "Select a shape"
+    }
+  },
+  "data": {
+    "airports": {
+      "both": "CDG + ORY",
+      "cdg": "Charles de Gaulle",
+      "generic": "Generic",
+      "ory": "Orly"
+    },
+    "colors": {
+      "custom": "Custom"
+    },
+    "map_size": {
+      "big": "Big (30em)",
+      "huge": "Huge (50em)",
+      "large": "Large (20em)",
+      "normal": "Normal (15em)"
+    },
+    "mode": {
+      "bike": "Bike",
+      "boat": "River shuttle",
+      "brt": "Bus Rapid Transit",
+      "bus": "Bus",
+      "cable": "Cable car",
+      "metro": "Metro",
+      "rer": "RER",
+      "tram": "Tramway",
+      "transilien": "Transilien"
+    },
+    "services": {
+      "airport": "Airport",
+      "bullet_train": "Bullet train",
+      "cdgval": "CDGVAL",
+      "funicular": "Funicular",
+      "long_distance_bus": "Long-distance bus",
+      "main_station": "Main station",
+      "orlyval": "OrlyVal",
+      "suburban_train": "Suburban train",
+      "ter": "TER",
+      "tgv": "TGV"
+    },
+    "shapes": {
+      "circle": "Circle",
+      "lines": "Lines",
+      "rectangle": "Rectangle",
+      "rounded_square": "Rounded square"
+    }
+  },
+  "locales": {
+    "en": "English",
+    "fr": "French"
+  },
+  "misc": {
+    "beta": "Beta",
+    "temporary": "Temporary"
+  },
+  "ui": {
+    "dialogs": {
+      "browser_check": {
+        "dismiss": "I understand",
+        "header": "Browser not supported",
+        "summary_1": "It seems you are using <b>{browserName}</b> as a browser. This browser is not officially supported by BULB. If you continue, some unexpected behaviors may occur, and you may encounter graphical issues.",
+        "summary_2": "For an optimal experience, it is recommended to use a Chromium-based browser such as Google Chrome, Microsoft Edge, Opera, Brave, etc.",
+        "supported_browsers": "Supported browsers",
+        "unsupported_browsers": "Unsupported browsers"
+      },
+      "connections_editor": {
+        "group": {
+          "delete": "Delete",
+          "header": "Connections group #{index}",
+          "mode": {
+            "lines": {
+              "add": "Add a line",
+              "header": "Lines"
+            },
+            "mode": "Mode"
+          },
+          "ornament": "Ornament",
+          "pedestrian_connection": "Pedestrian connection",
+          "service": {
+            "services": {
+              "add": "Add a service",
+              "header": "Services"
+            }
+          }
+        },
+        "header": "Connections of “{stopName}”",
+        "mode": "Transport mode",
+        "or": "Or",
+        "service": "Transportation service"
+      },
+      "custom_index_editor": {
+        "color": "Color",
+        "delete": "Delete",
+        "header": "Custom index editor",
+        "index": "Index",
+        "mode": "Mode",
+        "prefix": "Prefix",
+        "preview": "Preview",
+        "shape": "Shape",
+        "suffix": "Suffix",
+        "value": "Value"
+      },
+      "custom_indices": {
+        "header": "Custom indices directory"
+      },
+      "fork_properties": {
+        "header": "Fork properties",
+        "orientation": {
+          "left": "Left",
+          "right": "Right",
+          "title": "Orientation"
+        },
+        "shape": {
+          "downward": "Downward",
+          "symmetrical": "Symmetrical",
+          "title": "Shape",
+          "upward": "Upward"
+        },
+        "size_multiplier": "Size multiplier"
+      },
+      "loading_custom_indices_prompt": {
+        "accept": "Yes",
+        "header": "Project loading",
+        "message": "Do you want to load the custom indices bundled in this project? The indices you already have will not be lost.",
+        "reject": "No"
+      },
+      "loop_properties": {
+        "header": "Loop properties",
+        "orientation": {
+          "left": "Left",
+          "right": "Right",
+          "title": "Orientation"
+        }
+      },
+      "new_project": {
+        "accept": "New project",
+        "header": "Hold on!",
+        "message": "Did you remember to save your current project? If you continue, you will lose all unsaved changes.",
+        "reject": "Cancel"
+      },
+      "new_update_available": {
+        "header": "New update available",
+        "later": "Later",
+        "message": "Version {version} of BULB is now available. Do you want to reload the page to update? No data will be lost.",
+        "update": "Update"
+      },
+      "ornament_editor": {
+        "airport": "Airport",
+        "display_ornament": "Display an ornament",
+        "header": "Ornament editor",
+        "name": "Name",
+        "no_ornament_available": "No ornament available",
+        "ornament": {
+          "airport": "Airport",
+          "airport_name": "Airport name",
+          "text": "Text"
+        },
+        "position": {
+          "below": "Below",
+          "right": "Right",
+          "title": "Position"
+        },
+        "text": "Text"
+      },
+      "parallel_branches_properties": {
+        "alignment": {
+          "fluid": "Fluid",
+          "left": "Left",
+          "right": "Right",
+          "title": "Alignment"
+        },
+        "header": "Parallel branches properties",
+        "section_1_level": "Section 1 level",
+        "section_2_level": "Section 2 level"
+      },
+      "save_project": {
+        "bundle_custom_indices": "Bundle custom indices",
+        "cancel": "Cancel",
+        "header": "Save project",
+        "project_name": "Project name",
+        "save": "Save"
+      },
+      "stop_properties": {
+        "city_name": "City",
+        "closed": "Closed",
+        "header": "Stop properties",
+        "interest_point": "Interest point",
+        "stop_name": "Name",
+        "subtitle": "Subtitle",
+        "terminus": "Terminus"
+      },
+      "use_preset": {
+        "header": "Use a preset"
+      }
+    },
+    "map_editor": {
+      "title": "Map editor",
+      "toolbox": {
+        "branch": "Branch",
+        "delete": "Delete",
+        "fork": "Fork",
+        "loop": "U-turn",
+        "new_stop": "New stop",
+        "parallel_branches": "Parallel branches",
+        "stop": "Stop"
+      },
+      "watermark": "Created with BULB"
+    },
+    "menu": {
+      "custom_indices": "Custom indices",
+      "export": "Export",
+      "new_project": "New project",
+      "open": "Open",
+      "save": "Save",
+      "title": "Main menu"
+    },
+    "nag": "<b>Disclaimer</b>: This application is under development. Some features are not yet available or are incomplete.",
+    "properties": {
+      "color": "Map color",
+      "index": "Line index",
+      "mode": "Transport mode",
+      "size": "Frame size",
+      "title": "Properties",
+      "use_preset": "Use a preset"
+    },
+    "toasts": {
+      "export": {
+        "failure": {
+          "detail": "The project could not be exported",
+          "title": "Export failed"
+        },
+        "success": {
+          "detail": "The project has been successfully exported",
+          "title": "Export successful"
+        }
+      },
+      "load": {
+        "failure": {
+          "detail": {
+            "corrupted": "The project file is invalid or corrupted",
+            "unreadable": "The file could not be read"
+          },
+          "title": "Loading failed"
+        },
+        "success": {
+          "detail": "The project has been successfully loaded",
+          "title": "Loading successful"
+        }
+      },
+      "save": {
+        "success": {
+          "detail": "The project has been successfully saved",
+          "title": "Save successful"
+        }
+      }
+    },
+    "topbar": {
+      "FAQ": "FAQ",
+      "catch_phrase": "Not bad, right? It’s French 🇫🇷"
+    }
+  }
+}

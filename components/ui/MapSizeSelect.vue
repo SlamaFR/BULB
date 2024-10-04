@@ -7,10 +7,10 @@ interface SizeChoice {
 }
 
 const SIZES: SizeChoice[] = [
-  { value: 15, label: 'Normal (15em)' },
-  { value: 20, label: 'Grand (20em)' },
-  { value: 30, label: 'Très grand (30em)' },
-  { value: 50, label: 'Énorme (50em)' },
+  { label: 'data.map_size.normal', value: 15 },
+  { label: 'data.map_size.large', value: 20 },
+  { label: 'data.map_size.big', value: 30 },
+  { label: 'data.map_size.huge', value: 50 },
 ]
 </script>
 
@@ -18,9 +18,9 @@ const SIZES: SizeChoice[] = [
   <Select
     v-model="shape"
     :options="SIZES"
-    option-label="label"
+    :option-label="option => $t(option.label)"
     option-value="value"
-    placeholder="Selectionner une taille"
+    :placeholder="$t('components.map_size_select.placeholder')"
     class="flex-auto"
   />
 </template>
