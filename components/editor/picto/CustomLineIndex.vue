@@ -26,7 +26,7 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
       'rounded-square': shape === 'ROUNDED_SQUARE',
       'lines': shape === 'LINES',
       'rectangle': shape === 'RECTANGLE',
-      'bg-white rounded': shape === 'LINES',
+      'background': shape === 'LINES',
     }"
   >
     <Shape :shape="shape" :color="color" />
@@ -49,6 +49,17 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
 
   --light-text: white;
   --dark-text: #231f20;
+
+  &.background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    border-radius: .0625em;
+  }
 }
 
 .index {
