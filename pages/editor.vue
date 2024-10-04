@@ -19,7 +19,7 @@
           pt:content-container:class="flex-grow"
           pt:content:class="h-full"
         >
-          <LineCanvas />
+          <MapEditor />
         </Panel>
       </div>
     </div>

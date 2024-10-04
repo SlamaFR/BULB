@@ -7,86 +7,35 @@ provide<LineContext>(LineContextKey, {
 })
 
 const version = useVersion()
-const exportMap = useExportMap()
-const el = ref()
-
-const exportSignal = useEventBus(ExportSignal)
-
-function doExport() {
-  exportMap(el.value)
-}
-
-onMounted(() => exportSignal.on(doExport))
-onBeforeUnmount(() => exportSignal.off(doExport))
 </script>
 
 <template>
-  <div class="canvas">
-    <div class="flex flex-grow overflow-x-auto">
-      <div class="deadzone">
-        <div ref="el" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${mapSize}em` }">
-          <div class="ml-3 flex flex-col min-w-fit">
-            <div class="w-full h-8 bg-[var(--blue-ratp-paper)] mb-3" />
-            <div class="w-full flex flex-row gap-3 justify-center items-center text-4em">
-              <Mode :mode="mode" />
-              <LineIndex :index="index" />
-            </div>
-          </div>
-          <SectionsGroup
-            v-model="topology"
-            class="w-max-content min-h-15em p-1em pt-20"
-          />
-
-          <div class="absolute bottom-3 left-3 text-[var(--blue-ratp-paper)]">
-            <div class="text-.2em flex flex-col line-height-1.75">
-              <span>{{ $t('ui.map_editor.watermark') }} • bulb.slama.io</span>
-              <span class="opacity-50 text-.5em">Version {{ version }}</span>
-              <hr class="my-.5">
-              <span class="text-.825em">Non affilié à la RATP, à Île-de-France Mobilités ou à toute autre société. Les pictogrammes ainsi que les polices utilisés demeurent la propriété intellectuelle exclusive des entités susmentionnées.</span>
-              <span class="italic text-.75em">Not affiliated with RATP, Île-de-France Mobilités or any other company. The pictograms and fonts used remain the exclusive intellectual property of the aforementioned entities.</span>
-            </div>
-          </div>
-        </div>
+  <div v-bind="$attrs" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${mapSize}em` }">
+    <div class="ml-3 flex flex-col min-w-fit">
+      <div class="w-full h-8 bg-[var(--blue-ratp-paper)] mb-3" />
+      <div class="w-full flex flex-row gap-3 justify-center items-center text-4em">
+        <Mode :mode="mode" />
+        <LineIndex :index="index" />
       </div>
     </div>
-    <div class="toolbox">
-      <LineSectionToolbox />
-      <ToolboxSep />
-      <BranchToolbox />
-      <div class="flex-grow" />
-      <Trash />
+    <SectionsGroup
+      v-model="topology"
+      class="w-max-content min-h-15em p-1em pt-20"
+    />
+
+    <div class="absolute bottom-3 left-3 text-[var(--blue-ratp-paper)]">
+      <div class="text-.2em flex flex-col line-height-1.75">
+        <span>{{ $t('ui.map_editor.watermark') }} • bulb.slama.io</span>
+        <span class="opacity-50 text-.5em">Version {{ version }}</span>
+        <hr class="my-.5">
+        <span class="text-.825em">Non affilié à la RATP, à Île-de-France Mobilités ou à toute autre société. Les pictogrammes ainsi que les polices utilisés demeurent la propriété intellectuelle exclusive des entités susmentionnées.</span>
+        <span class="italic text-.75em">Not affiliated with RATP, Île-de-France Mobilités or any other company. The pictograms and fonts used remain the exclusive intellectual property of the aforementioned entities.</span>
+      </div>
     </div>
   </div>
 </template>
 
-<style>
-:root {
-  --base-size: 2;
-  --font-size: calc(var(--base-size) * 16px);
-}
-</style>
-
-<style scoped lang="scss">
-.canvas {
-  border: 1px solid var(--p-content-border-color);
-  color: var(--p-gray-700);
-  height: 100%;
-
-  display: flex;
-  flex-direction: column;
-}
-
-.deadzone {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-  flex-grow: 1;
-  padding: 5em;
-  background: repeating-linear-gradient(45deg, var(--p-gray-200) 0, var(--p-gray-200) 1px, var(--p-gray-100) 1px,  var(--p-gray-100) 1em);
-  background-size: 100% 100%;
-}
-
+<style scoped>
 .content {
   font-size: var(--font-size);
   font-family: 'Parisine Std', sans-serif;
@@ -95,23 +44,5 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 
   overflow: hidden;
   min-width: fit-content;
-}
-
-.toolbox {
-  padding: 1rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 1em;
-  border-top: 1px solid var(--p-slate-200);
-  overflow-x: auto;
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
-  background: var(--p-slate-50);
-
-  & > * {
-    flex-shrink: 0;
-  }
 }
 </style>
