@@ -240,7 +240,7 @@
       "save": "Save",
       "title": "Main menu"
     },
-    "nag": "<b>Disclaimer</b>: This application is under development. Some features are not yet available or are incomplete.",
+    "nag": "<b>DISCLAIMER</b>: This application is under development. Some features are not yet available or are incomplete.",
     "properties": {
       "color": "Map color",
       "index": "Line index",

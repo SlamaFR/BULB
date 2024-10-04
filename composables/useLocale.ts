@@ -1,6 +1,6 @@
 import { useI18n } from 'vue-i18n'
 
-export default function useLocale(fallback = 'fr') {
+export default function useLocale(fallback = 'en') {
   const preferredLanguages = usePreferredLanguages()
   const { locale: selectedLocale, availableLocales } = useI18n()
 
