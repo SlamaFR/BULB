@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
 import { VueDraggable } from 'vue-draggable-plus'
+import { LineContextKey } from '~/utils/symbols'
 
 interface Element {
   label: string
@@ -100,6 +101,11 @@ function clone(element: Element): LineElement {
       }
   }
 }
+
+provide<LineContext>(LineContextKey, {
+  color: toRef('#000000'),
+  lineWidth: toRef(1),
+})
 </script>
 
 <template>
