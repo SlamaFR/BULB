@@ -11,7 +11,7 @@ const ornament = defineModel<Ornament | null>({ required: true })
 const visible = defineModel<boolean>('visible')
 
 const hasOrnament = ref(!!ornament.value)
-const id = useId()
+const id = uuidv4()
 
 const ornamentType = computed(() => {
   if (!ornament.value) return ''
