@@ -7,10 +7,10 @@
       "placeholder": "色彩の選択"
     },
     "line_index_select": {
-      "custom_indices": "路線記号の選択",
+      "custom_indices": "特注の路線記号",
       "line_name": "{index}線",
       "official_indices": "公式の路線記号",
-      "placeholder": "特注の路線記号"
+      "placeholder": "路線記号の選択"
     },
     "map_size_select": {
       "placeholder": "サイズの選択"
@@ -70,11 +70,6 @@
       "rectangle": "長方形",
       "rounded_square": "角丸四角形"
     }
-  },
-  "locales": {
-    "en": "英語",
-    "fr": "フランス語",
-    "ja": "日本語"
   },
   "misc": {
     "beta": "ベータ版",
