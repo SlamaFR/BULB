@@ -8,7 +8,7 @@
     },
     "line_index_select": {
       "custom_indices": "路線記号の選考",
-      "line_name": "{index}号線",
+      "line_name": "{index}線",
       "official_indices": "公式の路線記号",
       "placeholder": "特注の路線記号"
     },
@@ -191,7 +191,7 @@
       },
       "parallel_branches_properties": {
         "alignment": {
-          "fluid": "フルード揃え",
+          "fluid": "両端揃え",
           "left": "左揃え",
           "right": "右揃え",
           "title": "配置"
