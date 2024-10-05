@@ -1,23 +1,6 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
-import { en } from '~/assets/locales/en.json'
-import { fr } from '~/assets/locales/fr.json'
-
-const { config } = usePrimeVue()
 useVersionTracking()
 useLocale()
-
-const { locale } = useI18n()
-watch(locale, (val) => {
-  switch (val) {
-    case 'en':
-      config.locale = en
-      break
-    case 'fr':
-      config.locale = fr
-      break
-  }
-}, { immediate: true })
 </script>
 
 <template>

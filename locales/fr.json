@@ -7,10 +7,10 @@
       "placeholder": "Sélectionner une couleur"
     },
     "line_index_select": {
-      "custom_indices": "Sélectionner un indice",
+      "custom_indices": "Indices personnalisés",
       "line_name": "Ligne {index}",
       "official_indices": "Indices officiels",
-      "placeholder": "Indices personnalisés"
+      "placeholder": "Sélectionner un indice"
     },
     "map_size_select": {
       "placeholder": "Sélectionner une taille"
@@ -70,10 +70,6 @@
       "rectangle": "Rectangle",
       "rounded_square": "Carré arrondi"
     }
-  },
-  "locales": {
-    "en": "Anglais",
-    "fr": "Français"
   },
   "misc": {
     "beta": "Bêta",

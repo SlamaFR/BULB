@@ -7,10 +7,10 @@
       "placeholder": "Select a color"
     },
     "line_index_select": {
-      "custom_indices": "Select a line index",
+      "custom_indices": "Custom indices",
       "line_name": "Line {index}",
       "official_indices": "Official indices",
-      "placeholder": "Custom indices"
+      "placeholder": "Select a line index"
     },
     "map_size_select": {
       "placeholder": "Select a frame size"
@@ -70,10 +70,6 @@
       "rectangle": "Rectangle",
       "rounded_square": "Rounded square"
     }
-  },
-  "locales": {
-    "en": "English",
-    "fr": "French"
   },
   "misc": {
     "beta": "Beta",
@@ -282,7 +278,7 @@
     },
     "topbar": {
       "FAQ": "FAQ",
-      "catch_phrase": "Not bad, right? It’s French 🇫🇷"
+      "catch_phrase": "Not bad, is it? That’s French 🇫🇷"
     }
   }
 }

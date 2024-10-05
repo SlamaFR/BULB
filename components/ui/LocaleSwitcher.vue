@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { useI18n } from 'vue-i18n'
 import type Popover from 'primevue/popover'
-import fr from '~/assets/svg/flags/fr.svg'
+import { useI18n } from 'vue-i18n'
 import en from '~/assets/svg/flags/en.svg'
+import fr from '~/assets/svg/flags/fr.svg'
+import ja from '~/assets/svg/flags/ja.svg'
 
 const LOCALES = [
   { label: 'Français', value: 'fr', flag: fr },
   { label: 'English', value: 'en', flag: en },
+  { label: '日本語', value: 'ja', flag: ja },
 ]
 
 const { locale: currentLocale } = useI18n()
