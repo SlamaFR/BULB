@@ -1,35 +1,35 @@
 {
   "components": {
     "airport_select": {
-      "placeholder": "空港の選考"
+      "placeholder": "空港の選択"
     },
     "color_select": {
-      "placeholder": "色彩の選考"
+      "placeholder": "色彩の選択"
     },
     "line_index_select": {
-      "custom_indices": "路線記号の選考",
+      "custom_indices": "路線記号の選択",
       "line_name": "{index}線",
       "official_indices": "公式の路線記号",
       "placeholder": "特注の路線記号"
     },
     "map_size_select": {
-      "placeholder": "サイズの選考"
+      "placeholder": "サイズの選択"
     },
     "mode_select": {
-      "placeholder": "交通機関の選考"
+      "placeholder": "交通機関の選択"
     },
     "service_select": {
-      "placeholder": "交通サービスの選考"
+      "placeholder": "交通サービスの選択"
     },
     "shape_select": {
-      "placeholder": "形の選考"
+      "placeholder": "形の選択"
     }
   },
   "data": {
     "airports": {
       "both": "CDG + ORY",
       "cdg": "パリ＝シャルル・ド・ゴール空港",
-      "generic": "空港",
+      "generic": "無名",
       "ory": "パリ＝オルリー空港"
     },
     "colors": {
@@ -225,7 +225,7 @@
       "toolbox": {
         "branch": "線路",
         "delete": "消す",
-        "fork": "分岐線",
+        "fork": "分岐点",
         "loop": "Uターン",
         "new_stop": "新しい駅",
         "parallel_branches": "並行の線路",
@@ -283,7 +283,7 @@
     },
     "topbar": {
       "FAQ": "FAQ",
-      "catch_phrase": "いいですか？ フランス製 🇫🇷"
+      "catch_phrase": "いいですね？ フランス製 🇫🇷"
     }
   }
 }
