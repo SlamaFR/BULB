@@ -8,6 +8,11 @@ const {
 }>()
 
 const branch = defineModel<Branch>({ required: true })
+const emphasize = ref(false)
+const { grab, release } = useElementGrabbing((event) => {
+  emphasize.value = event.type === 'STOP'
+})
+
 const stops = computed({
   get: () => branch.value.$branch.stops,
   set: val => branch.value.$branch.stops = val,
@@ -49,11 +54,14 @@ function moveOut(event: DraggableEvent<Stop>) {
       v-model="stops"
       :animation="150"
       class="stops open"
+      :class="{ emphasize }"
       group="branchElements"
       ghost-class="stop-ghost"
       :swap-threshold=".75"
       handle=".stop-handle"
       @remove="(e: SortableEvent) => moveOut(e as DraggableEvent<Stop>)"
+      @start="grab('STOP')"
+      @end="release()"
     >
       <Stop
         v-for="(stop, i) in stops"
@@ -119,6 +127,11 @@ function moveOut(event: DraggableEvent<Stop>) {
   align-items: center;
   gap: calc(v-bind(stopSpacing));
   pointer-events: fill;
+
+  background-color: transparent;
+  border: 2px dashed transparent;
+  border-radius: .25em;
+  transition: background-color .2s, border-color .2s;
 }
 
 .open {
@@ -139,6 +152,12 @@ function moveOut(event: DraggableEvent<Stop>) {
     padding-left: 0;
     margin-left: 0;
   }
+}
+
+.emphasize {
+  --border-color: var(--p-blue-400);
+  background: color-mix(in srgb, var(--border-color), transparent 85%);
+  border-color: var(--border-color);
 }
 
 .line {
@@ -182,5 +201,16 @@ function moveOut(event: DraggableEvent<Stop>) {
 
   //border-radius: v-bind(lineWidth);
   //margin: 0 calc(v-bind(lineWidth) / -2);
+}
+
+// animation that makes dashed border look like it's moving
+@keyframes border-dance {
+  0% {
+    background-position: left top, right bottom, left bottom, right top;
+  }
+
+  100% {
+    background-position: left 1em top, right 1em bottom, left bottom 1em, right top 1em;
+  }
 }
 </style>

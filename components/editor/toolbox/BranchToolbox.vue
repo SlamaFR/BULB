@@ -6,10 +6,11 @@ import { useI18n } from 'vue-i18n'
 interface Element {
   label: string
   icon: string
-  type: 'STOP' | 'STOP_WITH_CONNECTION'
+  type: 'STOP'
 }
 
 const { t } = useI18n()
+const { grab, release } = useElementGrabbing()
 
 const elements = ref<Element[]>([
   {
@@ -41,6 +42,8 @@ function clone(): Stop {
     :group="{ name: 'branchElements', pull: 'clone', put: false }"
     :clone="clone"
     :sort="false"
+    @start="grab('STOP')"
+    @end="release()"
   >
     <div v-for="element in elements" :key="element.label" class="toolbox-item">
       <div class="item hidden">
