@@ -57,7 +57,7 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
     if (customIndex === null) return null
     return {
       value: index,
-      label: `Ligne ${customIndex.prefix}${customIndex.index}${customIndex.suffix}`,
+      label: t('components.line_index_select.line_name', { index: `${customIndex.prefix}${customIndex.index}${customIndex.suffix}` }),
       color: customIndex.color,
     }
   }
