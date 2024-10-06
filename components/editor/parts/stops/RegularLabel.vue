@@ -14,13 +14,17 @@ const {
 
 const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
 const containsDescenders = computed(() => goesBelowLine(valueParts.value[valueParts.value.length - 1]))
+const untitled = computed(() => valueParts.value.length === 0)
 </script>
 
 <template>
   <div class="regular-label">
-    <div class="flex gap-1.0625em">
+    <div class="flex gap-1.0625em" :class="{ 'opacity-50': untitled }">
       <div v-for="(part, index) in valueParts" :key="`${part}-${index}`" class="wrapper translate-x-50%">
         <span class="name">{{ part }}</span>
+      </div>
+      <div v-if="untitled" class="wrapper translate-x-50%">
+        <span class="name">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>
       </div>
     </div>
     <div class="w-0 translate-x-.75em">

@@ -25,6 +25,7 @@ const { stop } = useResizeObserver(frame, (e) => {
 
 const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
 const placeNameParts = computed(() => placeName?.split('\n').filter(part => part.trim() !== '') ?? [])
+const untitled = computed(() => valueParts.value.length === 0 && placeNameParts.value.length === 0)
 
 onUnmounted(() => {
   stop()
@@ -36,13 +37,14 @@ onUnmounted(() => {
   <div class="terminus-label">
     <div class="flex">
       <div class="wrapper translate-x-50%">
-        <div ref="frame" class="frame">
+        <div ref="frame" class="frame" :class="{ 'opacity-50': untitled }">
           <span v-for="part in placeNameParts" class="place-name">
             {{ part }}
           </span>
           <span v-for="part in valueParts">
             {{ part }}
           </span>
+          <span v-if="untitled">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>
         </div>
       </div>
     </div>

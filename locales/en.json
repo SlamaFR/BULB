@@ -222,9 +222,9 @@
         "delete": "Delete",
         "fork": "Fork",
         "loop": "U-turn",
-        "new_stop": "New stop",
         "parallel_branches": "Parallel branches",
-        "stop": "Stop"
+        "stop": "Stop",
+        "untitled_stop": "Untitled stop"
       },
       "watermark": "Created with BULB"
     },
