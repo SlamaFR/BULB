@@ -26,17 +26,18 @@ function mapName(name: string) {
           :id="`${stop.id}_title`"
           v-model="stop.name"
           :style="{ minHeight: '2hl !important' }"
+          :spellcheck="false"
           auto-resize
           autofocus
         />
       </div>
       <div class="flex flex-col gap-1">
         <label :for="`${stop.id}_placeName`">{{ $t('ui.dialogs.stop_properties.city_name') }}</label>
-        <InputText :id="`${stop.id}_placeName`" v-model="stop.placeName" :disabled="!stop.terminus" />
+        <InputText :id="`${stop.id}_placeName`" v-model="stop.placeName" :spellcheck="false" :disabled="!stop.terminus" />
       </div>
       <div class="flex flex-col gap-1">
         <label :for="`${stop.id}_subtitle`">{{ $t('ui.dialogs.stop_properties.subtitle') }}</label>
-        <InputText :id="`${stop.id}_subtitle`" v-model="stop.subtitle" />
+        <InputText :id="`${stop.id}_subtitle`" v-model="stop.subtitle" :spellcheck="false" />
       </div>
       <div class="flex flex-col gap-1">
         <div class="flex items-center">
