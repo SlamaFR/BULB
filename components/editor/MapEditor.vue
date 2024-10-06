@@ -1,8 +1,14 @@
 <script setup lang="ts">
+const { color, lineWidth } = storeToRefs(useLine())
 const exportMap = useExportMap()
 const el = ref()
 
 const exportSignal = useEventBus(ExportSignal)
+
+provide<LineContext>(LineContextKey, {
+  color: computed(() => color.value ?? '#000000'),
+  lineWidth,
+})
 
 function doExport() {
   exportMap(el.value)

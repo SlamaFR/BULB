@@ -8,7 +8,7 @@ useLocale()
     <NuxtPage />
   </NuxtLayout>
 
-  <Toast position="bottom-right" />
+  <BToast />
   <ConfirmDialog pt:root:class="max-w-40em m-4" />
 </template>
 

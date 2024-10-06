@@ -26,16 +26,16 @@ export default function useExportMap() {
       a.remove()
 
       toast.add({
-        summary: t('ui.toasts.export.success.title'),
-        detail: t('ui.toasts.export.success.detail'),
+        summary: 'ui.toasts.export.success.title',
+        detail: 'ui.toasts.export.success.detail',
         severity: 'success',
         life: 5000,
       })
     }).catch((err) => {
       console.error(err)
       toast.add({
-        summary: t('ui.toasts.export.failure.title'),
-        detail: t('ui.toasts.export.failure.detail'),
+        summary: 'ui.toasts.export.failure.title',
+        detail: 'ui.toasts.export.failure.detail',
         severity: 'error',
         life: 5000,
       })

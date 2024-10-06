@@ -47,8 +47,8 @@ export default function useLoadProject() {
     }
 
     toast.add({
-      summary: t('ui.toasts.load.success.title'),
-      detail: t('ui.toasts.load.success.detail'),
+      summary: 'ui.toasts.load.success.title',
+      detail: 'ui.toasts.load.success.detail',
       severity: 'success',
       life: 5000,
     })
@@ -61,8 +61,8 @@ export default function useLoadProject() {
     } catch (error) {
       console.warn(error)
       toast.add({
-        summary: t('ui.toasts.load.failure.title'),
-        detail: t('ui.toasts.load.failure.detail.corrupted'),
+        summary: 'ui.toasts.load.failure.title',
+        detail: 'ui.toasts.load.failure.detail.corrupted',
         severity: 'error',
         life: 5000,
       })
@@ -70,8 +70,8 @@ export default function useLoadProject() {
   }
   reader.onerror = () => {
     toast.add({
-      summary: t('ui.toasts.load.success.title'),
-      detail: t('ui.toasts.load.success.detail.unreadable'),
+      summary: 'ui.toasts.load.success.title',
+      detail: 'ui.toasts.load.success.detail.unreadable',
       severity: 'error',
       life: 5000,
     })
