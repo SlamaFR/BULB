@@ -30,6 +30,16 @@ const orientations = [
           :allow-empty="false"
         />
       </div>
+
+      <div class="flex flex-col gap-1">
+        <label>{{ $t('ui.dialogs.parallel_branches_properties.section_1_level') }}</label>
+        <InputNumber v-model="loop.$loop.linksOffsets[0]" />
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <label>{{ $t('ui.dialogs.parallel_branches_properties.section_2_level') }}</label>
+        <InputNumber v-model="loop.$loop.linksOffsets[1]" />
+      </div>
     </div>
 
     <pre v-if="false">
