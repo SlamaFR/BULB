@@ -246,6 +246,14 @@
       "use_preset": "Use a preset"
     },
     "toasts": {
+      "adjacent_branches": {
+        "detail": "Branches cannot be positionned side by side",
+        "title": "Forbidden positionning"
+      },
+      "branch_merge": {
+        "detail": "Adjacent branches have been merged together",
+        "title": "Branches merged"
+      },
       "export": {
         "failure": {
           "detail": "The project could not be exported",

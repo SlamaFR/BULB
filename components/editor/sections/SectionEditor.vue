@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { VueDraggable } from 'vue-draggable-plus'
+import { type SortableEvent, VueDraggable } from 'vue-draggable-plus'
 
 const {
   inner = false,
@@ -9,12 +9,50 @@ const {
   fluid?: boolean
 }>()
 const section = defineModel<LineSection>({ required: true })
+const toast = useToast()
+
 const elements = computed({
   get: () => section.value.$lineSection.elements,
   set: val => section.value.$lineSection.elements = val,
 })
-
 const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * -2.75em)`)
+
+type Action = 'ADD' | 'REMOVE' | 'UPDATE'
+function mergeAdjacentBranches() {
+  const elements = section.value.$lineSection.elements
+  let hasMerged = false
+  for (let i = 0; i < elements.length - 1; i++) {
+    const a = elements[i]
+    const b = elements[i + 1]
+    if (isBranch(a) && isBranch(b)) {
+      hasMerged = true
+      a.$branch.stops.push(...b.$branch.stops)
+      elements.splice(i + 1, 1)
+      i--
+    }
+  }
+  return hasMerged
+}
+
+function onAction(action: Action, event: SortableEvent) {
+  if (mergeAdjacentBranches()) {
+    if (action === 'ADD' && event.pullMode === 'clone') {
+      toast.add({
+        summary: 'ui.toasts.adjacent_branches.title',
+        detail: 'ui.toasts.adjacent_branches.detail',
+        severity: 'warn',
+        life: 10000,
+      })
+    } else {
+      toast.add({
+        summary: 'ui.toasts.branch_merge.title',
+        detail: 'ui.toasts.branch_merge.detail',
+        severity: 'info',
+        life: 5000,
+      })
+    }
+  }
+}
 </script>
 
 <template>
@@ -32,6 +70,9 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
       group="sectionElements"
       ghost-class="section-ghost"
       :swap-threshold="inner ? .5 : .25"
+      @update="e => onAction('UPDATE', e)"
+      @add="e => onAction('ADD', e)"
+      @remove="e => onAction('REMOVE', e)"
     >
       <SectionElement
         v-for="(element, i) in elements"
@@ -70,7 +111,8 @@ const offset = computed(() => `calc(${section.value.$lineSection.levelOffset} * 
     outline-color: var(--p-slate-300);
   }
   &.inner.empty {
-    outline-color: var(--p-orange-300);
+    outline-color: var(--p-orange-500);
+    background-color: var(--p-orange-100);
   }
 
   .section-handle {

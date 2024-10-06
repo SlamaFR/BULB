@@ -246,6 +246,14 @@
       "use_preset": "Utiliser un préréglage"
     },
     "toasts": {
+      "adjacent_branches": {
+        "detail": "Les branches ne peuvent pas être positionnées côte à côte",
+        "title": "Placement interdit"
+      },
+      "branch_merge": {
+        "detail": "Les branches adjacentes ont été fusionnées",
+        "title": "Branches fusionnées"
+      },
       "export": {
         "failure": {
           "detail": "Le projet n’a pas pu être exporté",
