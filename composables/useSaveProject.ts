@@ -40,8 +40,8 @@ export default function useSaveProject() {
     a.click()
 
     toast.add({
-      summary: t('ui.toasts.save.success.title'),
-      detail: t('ui.toasts.save.success.detail'),
+      summary: 'ui.toasts.save.success.title',
+      detail: 'ui.toasts.save.success.detail',
       severity: 'success',
       life: 5000,
     })
