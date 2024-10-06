@@ -23,7 +23,7 @@ const elements = ref<Element[]>([
 function clone(): Stop {
   return {
     id: uuidv4(),
-    name: t('ui.map_editor.toolbox.new_stop'),
+    name: '',
     subtitle: '',
     placeName: '',
     interestPoint: false,
@@ -55,7 +55,7 @@ function clone(): Stop {
       <Stop
         :model-value="{
           id: '',
-          name: $t('ui.map_editor.toolbox.new_stop'),
+          name: '',
           placeName: null,
           subtitle: null,
           preventSubtitleOverlapping: true,

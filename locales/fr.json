@@ -222,9 +222,9 @@
         "delete": "Supprimer",
         "fork": "Fourche",
         "loop": "Demi-tour",
-        "new_stop": "Nouvel arrêt",
         "parallel_branches": "Branches parallèles",
-        "stop": "Arrêt"
+        "stop": "Arrêt",
+        "untitled_stop": "Arrêt sans nom"
       },
       "watermark": "Créé à l’aide de BULB"
     },

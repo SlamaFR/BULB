@@ -222,9 +222,9 @@
         "delete": "消す",
         "fork": "分岐点",
         "loop": "Uターン",
-        "new_stop": "新しい駅",
         "parallel_branches": "並行の線路",
-        "stop": "駅"
+        "stop": "駅",
+        "untitled_stop": "〇〇駅"
       },
       "watermark": "BULBで作成"
     },
