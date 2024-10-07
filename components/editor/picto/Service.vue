@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import funicular from 'assets/svg/services/funicular.svg'
-import mainStation from 'assets/svg/services/main_station.svg'
 import bulletTrain from 'assets/svg/services/bullet_train.svg'
-import suburbanTrain from 'assets/svg/services/suburban_train.svg'
-import tgv from 'assets/svg/services/tgv.svg'
-import ter from 'assets/svg/services/ter.svg'
+import funicular from 'assets/svg/services/funicular.svg'
 import longDistanceBus from 'assets/svg/services/long_distance_bus.svg'
+import mainStation from 'assets/svg/services/main_station.svg'
+import suburbanTrain from 'assets/svg/services/suburban_train.svg'
+import ter from 'assets/svg/services/ter.svg'
+import tgv from 'assets/svg/services/tgv.svg'
 import airport from '~/assets/svg/airport/airport-generic.svg'
-import roissyBus from '~/assets/svg/services/roissybus.svg'
-import orlyBus from '~/assets/svg/services/orlybus.svg'
 import cdgval from '~/assets/svg/services/cdgval.svg'
+import orlyBus from '~/assets/svg/services/orlybus.svg'
 import orlyval from '~/assets/svg/services/orlyval.svg'
 import orlyvalLarge from '~/assets/svg/services/orlyval_lg.svg'
+import roissyBus from '~/assets/svg/services/roissybus.svg'
 
 const {
   service,

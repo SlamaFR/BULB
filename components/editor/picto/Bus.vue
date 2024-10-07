@@ -1,11 +1,11 @@
 <script setup lang="ts">
+import TVM from '~/assets/svg/lines/bus/tvm.svg'
 import TZEN_1 from '~/assets/svg/lines/bus/tzen1.svg'
 import TZEN_2 from '~/assets/svg/lines/bus/tzen2.svg'
 import TZEN_3 from '~/assets/svg/lines/bus/tzen3.svg'
 import TZEN_4 from '~/assets/svg/lines/bus/tzen4.svg'
 import TZEN_5 from '~/assets/svg/lines/bus/tzen5.svg'
 import TZEN_6 from '~/assets/svg/lines/bus/tzen6.svg'
-import TVM from '~/assets/svg/lines/bus/tvm.svg'
 
 const {
   line,

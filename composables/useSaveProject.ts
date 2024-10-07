@@ -1,8 +1,5 @@
-import { useI18n } from 'vue-i18n'
-
 export default function useSaveProject() {
   const toast = useToast()
-  const { t } = useI18n()
   const { line } = storeToRefs(useLine())
   const { indices } = storeToRefs(useCustomLineIndices())
 

@@ -1,9 +1,7 @@
 import * as htmlToImage from 'html-to-image'
-import { useI18n } from 'vue-i18n'
 
 export default function useExportMap() {
   const toast = useToast()
-  const { t } = useI18n()
 
   function exportMap(mapContainer: HTMLElement) {
     htmlToImage.toBlob(mapContainer, {
