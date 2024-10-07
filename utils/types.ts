@@ -3,6 +3,9 @@ export const isFork = (element: LineElement): element is Fork => '$fork' in elem
 export const isLoop = (element: LineElement): element is Loop => '$loop' in element
 export const isParallelBranches = (element: LineElement): element is ParallelBranches => '$parallelBranches' in element
 
+export const isStop = (branchElement: BranchElement): branchElement is Stop => '$stop' in branchElement
+export const isSpacer = (branchElement: BranchElement): branchElement is Spacer => '$spacer' in branchElement
+
 export const isMode = (connection: Connection): connection is ModeConnection => '$modeConnection' in connection
 export const isService = (connection: Connection): connection is ServiceConnection => '$serviceConnection' in connection
 

@@ -202,6 +202,11 @@
         "project_name": "Project name",
         "save": "Save"
       },
+      "spacer_properties": {
+        "header": "Spacer properties",
+        "size": "Spacer length",
+        "spacer_export_notice": "Notice: The spacer will become invisible at render time."
+      },
       "stop_properties": {
         "city_name": "City",
         "closed": "Closed",
@@ -216,6 +221,12 @@
       }
     },
     "map_editor": {
+      "error": {
+        "detail": "Please reload the page. If the problem persists, your project might be obselete or corrupted.",
+        "new_project": "New project",
+        "reload": "Reload page",
+        "title": "An error occurred"
+      },
       "title": "Map editor",
       "toolbox": {
         "branch": "Branch",
@@ -223,6 +234,7 @@
         "fork": "Fork",
         "loop": "U-turn",
         "parallel_branches": "Parallel branches",
+        "spacer": "Spacer",
         "stop": "Stop",
         "untitled_stop": "Untitled stop"
       },

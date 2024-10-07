@@ -10,17 +10,17 @@ const {
 const branch = defineModel<Branch>({ required: true })
 const emphasize = ref(false)
 const { grab, release } = useElementGrabbing((event) => {
-  emphasize.value = event.type === 'STOP'
+  emphasize.value = ['STOP', 'SPACER'].includes(event.type ?? '')
 })
 
-const stops = computed({
-  get: () => branch.value.$branch.stops,
-  set: val => branch.value.$branch.stops = val,
+const elements = computed({
+  get: () => branch.value.$branch.elements ?? [],
+  set: val => branch.value.$branch.elements = val,
 })
 
 const lineContext = inject<LineContext>(LineContextKey)
 
-const stopSpacing = computed(() => `${branch.value.$branch.stopSpacing}em`)
+const elementSpacing = computed(() => `${branch.value.$branch.elementSpacing}em`)
 const leftMargin = computed(() => `${branch.value.$branch.leftMargin ?? 0}em`)
 const rightMargin = computed(() => `${branch.value.$branch.rightMargin ?? 0}em`)
 
@@ -28,7 +28,7 @@ const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
 
 /* Simply because the lib is muffin broken */
-function moveOut(event: DraggableEvent<Stop>) {
+function moveOut(event: DraggableEvent<BranchElement>) {
   const el = event.from
   for (let i = 0; i < el.children.length; i++) {
     const child = el.children.item(i)!
@@ -42,7 +42,7 @@ function moveOut(event: DraggableEvent<Stop>) {
 <template>
   <div
     class="branch-wrapper" :class="{
-      empty: stops.length === 0,
+      empty: elements?.length === 0,
       fluid,
       negativeLeftMargin: (branch.$branch.leftMargin ?? 0) < 0,
       negativeRightMargin: (branch.$branch.rightMargin ?? 0) < 0,
@@ -51,34 +51,33 @@ function moveOut(event: DraggableEvent<Stop>) {
     }"
   >
     <VueDraggable
-      v-model="stops"
+      v-model="elements"
       :animation="150"
-      class="stops open"
+      class="branch-elements open"
       :class="{ emphasize }"
       group="branchElements"
-      ghost-class="stop-ghost"
+      ghost-class="branch-element-ghost"
       :swap-threshold=".75"
-      handle=".stop-handle"
-      @remove="(e: SortableEvent) => moveOut(e as DraggableEvent<Stop>)"
+      handle=".branch-element-handle"
+      @remove="(e: SortableEvent) => moveOut(e as DraggableEvent<BranchElement>)"
       @start="grab('STOP')"
       @end="release()"
     >
-      <Stop
-        v-for="(stop, i) in stops"
-        :key="stop.id"
-        v-model="stops[i]"
-        :data-id="stop.id"
+      <BranchElement
+        v-for="(element, i) in elements"
+        :key="element.id"
+        v-model="elements[i]"
       />
     </VueDraggable>
     <div class="line">
-      <div class="export-hide line-left-tail" />
-      <div class="export-hide line-right-tail" />
+      <div v-if="false" class="export-hide line-left-tail" />
+      <div v-if="false" class="export-hide line-right-tail" />
     </div>
   </div>
 </template>
 
 <style>
-.stop-ghost {
+.element-ghost {
   opacity: .5;
 }
 </style>
@@ -118,46 +117,48 @@ function moveOut(event: DraggableEvent<Stop>) {
   }
 }
 
-.stops {
+.branch-elements {
+  position: relative;
+  min-height: 4em;
   display: flex;
   z-index: 10;
   flex-grow: 1;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  gap: calc(v-bind(stopSpacing));
+  gap: calc(v-bind(elementSpacing));
   pointer-events: fill;
 
-  background-color: transparent;
-  border: 2px dashed transparent;
-  border-radius: .25em;
-  transition: background-color .2s, border-color .2s;
-}
-
-.open {
-  padding: 0 2em;
-  margin: 0 -2em;
-  height: 4em;
-
-  .debug & {
-    outline: 1px dashed lime;
-  }
-
-  .elements .element:not(:last-child) & {
-    padding-right: 0;
-    margin-right: 0;
-  }
-
-  .elements .element:not(:first-child) & {
-    padding-left: 0;
-    margin-left: 0;
+  &:after {
+    position: absolute;
+    pointer-events: none;
+    content: '';
+    top: 50%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-height: 5em;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 2px dashed transparent;
+    border-radius: .25em;
+    padding: 0 2em;
+    margin: 0 -2em;
+    transition: background-color .2s ease, border-color .2s ease;
   }
 }
 
 .emphasize {
   --border-color: var(--p-blue-400);
-  background: color-mix(in srgb, var(--border-color), transparent 85%);
-  border-color: var(--border-color);
+  padding: 0 2em;
+  margin: 0 -2em;
+
+  &:after {
+    background: color-mix(in srgb, var(--border-color), transparent 85%);
+    border-color: var(--border-color);
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .line {
@@ -201,16 +202,5 @@ function moveOut(event: DraggableEvent<Stop>) {
 
   //border-radius: v-bind(lineWidth);
   //margin: 0 calc(v-bind(lineWidth) / -2);
-}
-
-// animation that makes dashed border look like it's moving
-@keyframes border-dance {
-  0% {
-    background-position: left top, right bottom, left bottom, right top;
-  }
-
-  100% {
-    background-position: left 1em top, right 1em bottom, left bottom 1em, right top 1em;
-  }
 }
 </style>

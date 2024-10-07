@@ -37,8 +37,8 @@ function clone(element: Element): LineElement {
       return {
         id: uuidv4(),
         $branch: {
-          stopSpacing: 0,
-          stops: [],
+          elementSpacing: 0,
+          elements: [],
         },
       }
     case 'FORK':
@@ -65,8 +65,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 0,
-                      stops: [],
+                      elementSpacing: 0,
+                      elements: [],
                     },
                   },
                 ],
@@ -80,8 +80,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 0,
-                      stops: [],
+                      elementSpacing: 0,
+                      elements: [],
                     },
                   },
                 ],
@@ -124,7 +124,7 @@ function clone(element: Element): LineElement {
   </VueDraggable>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .toolbox-section {
   display: flex;
   flex-direction: row;

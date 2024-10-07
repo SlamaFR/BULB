@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { StopContextKey } from '~/utils/symbols'
 import { STOP_PADDING } from '~/utils/dimensions'
+import { StopContextKey } from '~/utils/symbols'
 
 const stop = defineModel<Stop>({ required: true })
 
@@ -38,35 +38,36 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
   <div
     ref="el"
     v-bind="$attrs"
-    class="stop-wrapper relative h-4em z-100"
+    class="stop-wrapper relative z-100"
+    :data-id="stop.id"
   >
     <div class="flex flex-col items-start">
       <div ref="names" class="names dynamic-part">
         <StopLabel
-          :value="stop.name"
-          :subtitle="stop.subtitle"
-          :place-name="stop.placeName"
-          :interest-point="stop.interestPoint"
-          :prevent-subtitle-overlapping="stop.preventSubtitleOverlapping"
-          :terminus="stop.terminus"
+          :value="stop.$stop.name"
+          :subtitle="stop.$stop.subtitle"
+          :place-name="stop.$stop.placeName"
+          :interest-point="stop.$stop.interestPoint"
+          :prevent-subtitle-overlapping="stop.$stop.preventSubtitleOverlapping"
+          :terminus="stop.$stop.terminus"
           @click="showPropertiesDialog = true"
         />
       </div>
       <div class="dot-connections">
         <div class="dot">
           <StopDot
-            class="stop-handle z-1"
-            :terminus="stop.terminus"
-            :connection="stop.connections.length > 0"
+            class="branch-element-handle z-1"
+            :terminus="stop.$stop.terminus"
+            :connection="stop.$stop.connections.length > 0"
             :color="lineContext?.color.value ?? '#000000'"
-            :closed="stop.closed"
+            :closed="stop.$stop.closed"
           />
         </div>
         <div class="w-0 connections dynamic-part">
           {{ connections?.clientWidth }}
           <div @click="showConnectionsEditor = true">
-            <Connections ref="connections" :connections="stop.connections" />
-            <Transition v-if="stop.connections.length === 0" name="fade">
+            <Connections ref="connections" :connections="stop.$stop.connections" />
+            <Transition v-if="stop.$stop.connections.length === 0" name="fade">
               <div v-show="hovering" class="button-holder export-hide">
                 <Button icon="i-tabler-playlist-add" rounded @click="showConnectionsEditor = true" />
               </div>
@@ -96,6 +97,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
   padding-left: v-bind(leftMargin);
   padding-right: v-bind(rightMargin);
   min-width: 1em;
+  min-height: 5em;
   z-index: 20;
 
   display: flex;
@@ -103,8 +105,8 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
   align-items: start;
   justify-content: center;
 
-  .stops > &:first-child,
-  .stops > .stop-ghost:first-child & {
+  .branch-elements > &:first-child,
+  .branch-elements > .branch-element-ghost:first-child & {
     margin-left: calc((v-bind(namesWidth) - 1em) / -2) !important;
     padding-left: 0;
 
@@ -117,8 +119,8 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
     }
   }
 
-  .stops > &:last-child,
-  .stops > .stop-ghost:last-child & {
+  .branch-elements > &:last-child,
+  .branch-elements > .branch-element-ghost:last-child & {
     margin-right: calc((v-bind(namesWidth) - 1em) / -2) !important;
     padding-right: 0;
 

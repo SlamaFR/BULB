@@ -48,7 +48,7 @@ function clone(): LineSection {
   </VueDraggable>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .toolbox-section {
   display: flex;
   flex-direction: row;

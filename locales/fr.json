@@ -202,6 +202,11 @@
         "project_name": "Nom du projet",
         "save": "Sauvegarder"
       },
+      "spacer_properties": {
+        "header": "Propriétés d’espacement",
+        "size": "Longueur de l’espacement",
+        "spacer_export_notice": "Remarque : l’espacement deviendra invisible au moment du rendu."
+      },
       "stop_properties": {
         "city_name": "Ville",
         "closed": "Fermé",
@@ -216,6 +221,12 @@
       }
     },
     "map_editor": {
+      "error": {
+        "detail": "Veuillez recharger la page. Si le problème persiste, votre projet pourrait être obsolète ou corrompu.",
+        "new_project": "Nouveau project",
+        "reload": "Recharger la page",
+        "title": "Une erreur est survenue"
+      },
       "title": "Éditeur de plan",
       "toolbox": {
         "branch": "Branche",
@@ -223,6 +234,7 @@
         "fork": "Fourche",
         "loop": "Demi-tour",
         "parallel_branches": "Branches parallèles",
+        "spacer": "Espacement",
         "stop": "Arrêt",
         "untitled_stop": "Arrêt sans nom"
       },

@@ -47,7 +47,7 @@ const shapes = [
       </div>
       <div class="flex flex-col gap-1">
         <label>{{ $t('ui.dialogs.fork_properties.size_multiplier') }}</label>
-        <InputNumber v-model="fork.$fork.offsetMultiplier" />
+        <InputText v-model="fork.$fork.offsetMultiplier" numeric />
       </div>
     </div>
 

@@ -1,15 +1,13 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { VueDraggable } from 'vue-draggable-plus'
-import { useI18n } from 'vue-i18n'
+import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
 
 interface Element {
   label: string
   icon: string
-  type: 'STOP'
+  type: 'STOP' | 'SPACER'
 }
 
-const { t } = useI18n()
 const { grab, release } = useElementGrabbing()
 
 const elements = ref<Element[]>([
@@ -18,20 +16,41 @@ const elements = ref<Element[]>([
     icon: 'i-bulb-stop',
     type: 'STOP',
   },
+  {
+    label: 'ui.map_editor.toolbox.spacer',
+    icon: 'i-bulb-spacer',
+    type: 'SPACER',
+  },
 ])
 
-function clone(): Stop {
-  return {
-    id: uuidv4(),
-    name: '',
-    subtitle: '',
-    placeName: '',
-    interestPoint: false,
-    preventSubtitleOverlapping: true,
-    terminus: false,
-    closed: false,
-    connections: [],
+function clone(element: Element): BranchElement {
+  switch (element.type) {
+    case 'STOP':
+      return {
+        id: uuidv4(),
+        $stop: {
+          name: '',
+          subtitle: '',
+          placeName: '',
+          interestPoint: false,
+          preventSubtitleOverlapping: true,
+          terminus: false,
+          closed: false,
+          connections: [],
+        },
+      }
+    case 'SPACER':
+      return {
+        id: uuidv4(),
+        $spacer: {
+          size: 5,
+        },
+      }
   }
+}
+
+function onStart(e: DraggableEvent<Element>) {
+  grab(e.data.type)
 }
 </script>
 
@@ -42,7 +61,7 @@ function clone(): Stop {
     :group="{ name: 'branchElements', pull: 'clone', put: false }"
     :clone="clone"
     :sort="false"
-    @start="grab('STOP')"
+    @start="e => onStart(e)"
     @end="release()"
   >
     <div v-for="element in elements" :key="element.label" class="toolbox-item">
@@ -52,24 +71,14 @@ function clone(): Stop {
           <span>{{ $t(element.label) }}</span>
         </div>
       </div>
-      <Stop
-        :model-value="{
-          id: '',
-          name: '',
-          placeName: null,
-          subtitle: null,
-          preventSubtitleOverlapping: true,
-          interestPoint: false,
-          terminus: false,
-          closed: false,
-          connections: [],
-        }"
-      />
+      <div class="preview h-full flex items-center">
+        <BranchElement :model-value="clone(element)" />
+      </div>
     </div>
   </VueDraggable>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .toolbox-section {
   display: flex;
   flex-direction: row;

@@ -26,7 +26,7 @@ function mergeAdjacentBranches() {
     const b = elements[i + 1]
     if (isBranch(a) && isBranch(b)) {
       hasMerged = true
-      a.$branch.stops.push(...b.$branch.stops)
+      a.$branch.elements.push(...b.$branch.elements)
       elements.splice(i + 1, 1)
       i--
     }

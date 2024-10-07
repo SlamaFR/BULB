@@ -172,23 +172,34 @@ declare global {
 
   interface Stop {
     id: string
-    name: string
-    subtitle: string | null
-    placeName: string | null
-    preventSubtitleOverlapping: boolean
-    interestPoint: boolean
-    terminus: boolean
-    closed: boolean
-    connections: Connection[]
+    $stop: {
+      name: string
+      subtitle: string | null
+      placeName: string | null
+      preventSubtitleOverlapping: boolean
+      interestPoint: boolean
+      terminus: boolean
+      closed: boolean
+      connections: Connection[]
+    }
   }
+
+  interface Spacer {
+    id: string
+    $spacer: {
+      size: number
+    }
+  }
+
+  type BranchElement = Stop | Spacer
 
   interface Branch {
     id: string
     $branch: {
-      stopSpacing: number
+      elementSpacing: number
       leftMargin?: number
       rightMargin?: number
-      stops: Stop[]
+      elements: BranchElement[]
     }
   }
 

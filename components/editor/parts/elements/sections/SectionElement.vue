@@ -14,12 +14,22 @@ const showPropertiesDialog = ref(false)
 
 const el = ref()
 const hoverDialog = useElementHover(el)
+const zIndex = computed(() => {
+  if (isLoop(element.value) || isFork(element.value)) {
+    return 0
+  }
+  if (isBranch(element.value) || isParallelBranches(element.value)) {
+    return 1
+  }
+  return 0
+})
 </script>
 
 <template>
   <div
     class="element dynamic-part"
     :class="{ fluid }"
+    :style="{ zIndex }"
     @click="showPropertiesDialog = true"
     @click.stop
   >
