@@ -65,8 +65,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 0,
-                      stops: [],
+                      elementSpacing: 0,
+                      elements: [],
                     },
                   },
                 ],
@@ -80,8 +80,8 @@ function clone(element: Element): LineElement {
                   {
                     id: uuidv4(),
                     $branch: {
-                      stopSpacing: 0,
-                      stops: [],
+                      elementSpacing: 0,
+                      elements: [],
                     },
                   },
                 ],

@@ -10,7 +10,7 @@ const {
 const branch = defineModel<Branch>({ required: true })
 const emphasize = ref(false)
 const { grab, release } = useElementGrabbing((event) => {
-  emphasize.value = event.type === 'STOP'
+  emphasize.value = ['STOP', 'SPACER'].includes(event.type ?? '')
 })
 
 const elements = computed({
@@ -67,7 +67,6 @@ function moveOut(event: DraggableEvent<BranchElement>) {
         v-for="(element, i) in elements"
         :key="element.id"
         v-model="elements[i]"
-        :data-id="element.id"
       />
     </VueDraggable>
     <div class="line">
@@ -138,21 +137,21 @@ function moveOut(event: DraggableEvent<BranchElement>) {
     left: 0;
     right: 0;
     bottom: 0;
-    min-height: 4em;
+    min-height: 5em;
     transform: translateY(-50%);
     background-color: transparent;
     border: 2px dashed transparent;
     border-radius: .25em;
-    padding: 0 1em;
-    margin: 0 -1em;
+    padding: 0 2em;
+    margin: 0 -2em;
     transition: background-color .2s ease, border-color .2s ease;
   }
 }
 
 .emphasize {
   --border-color: var(--p-blue-400);
-  padding: 0 1em;
-  margin: 0 -1em;
+  padding: 0 2em;
+  margin: 0 -2em;
 
   &:after {
     background: color-mix(in srgb, var(--border-color), transparent 85%);

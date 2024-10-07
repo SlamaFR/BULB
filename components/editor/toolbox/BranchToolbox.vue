@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
-import { VueDraggable } from 'vue-draggable-plus'
+import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
 
 interface Element {
   label: string
@@ -48,6 +48,10 @@ function clone(element: Element): BranchElement {
       }
   }
 }
+
+function onStart(e: DraggableEvent<Element>) {
+  grab(e.data.type)
+}
 </script>
 
 <template>
@@ -57,7 +61,7 @@ function clone(element: Element): BranchElement {
     :group="{ name: 'branchElements', pull: 'clone', put: false }"
     :clone="clone"
     :sort="false"
-    @start="grab('STOP')"
+    @start="e => onStart(e)"
     @end="release()"
   >
     <div v-for="element in elements" :key="element.label" class="toolbox-item">

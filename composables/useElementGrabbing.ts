@@ -1,4 +1,4 @@
-type ElementType = 'STOP' | null
+type ElementType = 'STOP' | 'SPACER' | null
 
 interface ElementGrabbingEvent {
   type: ElementType

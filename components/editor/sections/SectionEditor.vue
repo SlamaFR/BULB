@@ -138,7 +138,7 @@ function onAction(action: Action, event: SortableEvent) {
     min-height: 2em;
   }
   :not(.inner) > & {
-    min-height: 4em;
+    min-height: 5em;
   }
 
   :not(.inner) > & > :not(.placeholder) {
