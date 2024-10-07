@@ -1,14 +1,20 @@
 <script setup lang="ts">
 const spacer = defineModel<Spacer>({ required: true })
 const length = computed(() => `calc(${spacer.value.$spacer.size} * 1em)`)
+const showPropertiesDialog = ref(false)
 </script>
 
 <template>
-  <div class="dynamic-part branch-element-handle spacer">
+  <div class="dynamic-part branch-element-handle spacer" :data-id="spacer.id" @click="showPropertiesDialog = true">
     <div class="export-hide">
       <div />
     </div>
   </div>
+
+  <SpacerPropertiesDialog
+    v-model:visible="showPropertiesDialog"
+    v-model="spacer"
+  />
 </template>
 
 <style scoped lang="scss">
@@ -17,8 +23,8 @@ const length = computed(() => `calc(${spacer.value.$spacer.size} * 1em)`)
   justify-content: center;
   align-items: center;
   min-width: 2em;
-  min-height: 4em;
-  width: v-bind(length);
+  min-height: 5em;
+  width: calc(1em + v-bind(length));
   padding: .25em;
   margin: 0 calc(-.25em - 1px);
   border-radius: .25em;

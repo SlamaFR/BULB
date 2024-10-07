@@ -33,12 +33,12 @@ const orientations = [
 
       <div class="flex flex-col gap-1">
         <label>{{ $t('ui.dialogs.parallel_branches_properties.section_1_level') }}</label>
-        <InputNumber v-model="loop.$loop.linksOffsets[0]" />
+        <InputText v-model="loop.$loop.linksOffsets[0]" numeric />
       </div>
 
       <div class="flex flex-col gap-1">
         <label>{{ $t('ui.dialogs.parallel_branches_properties.section_2_level') }}</label>
-        <InputNumber v-model="loop.$loop.linksOffsets[1]" />
+        <InputText v-model="loop.$loop.linksOffsets[1]" numeric />
       </div>
     </div>
 
