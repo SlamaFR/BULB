@@ -39,7 +39,6 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
     ref="el"
     v-bind="$attrs"
     class="stop-wrapper relative z-100"
-    :data-id="stop.id"
   >
     <div class="flex flex-col items-start">
       <div ref="names" class="names dynamic-part">

@@ -67,6 +67,7 @@ function moveOut(event: DraggableEvent<BranchElement>) {
         v-for="(element, i) in elements"
         :key="element.id"
         v-model="elements[i]"
+        :data-id="element.id"
       />
     </VueDraggable>
     <div class="line">

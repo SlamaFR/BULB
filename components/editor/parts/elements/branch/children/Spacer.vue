@@ -5,8 +5,8 @@ const showPropertiesDialog = ref(false)
 </script>
 
 <template>
-  <div class="spacer-wrapper">
-    <div class="dynamic-part branch-element-handle spacer" :data-id="spacer.id" @click="showPropertiesDialog = true">
+  <div v-bind="$attrs" class="spacer-wrapper">
+    <div class="dynamic-part branch-element-handle spacer" @click="showPropertiesDialog = true">
       <div class="export-hide">
         <div />
       </div>
