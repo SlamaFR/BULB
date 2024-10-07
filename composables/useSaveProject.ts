@@ -13,8 +13,9 @@ export default function useSaveProject() {
       const usedCustomIndicesIds: string[] = line.value.topology
         .flatMap(topology => topology.$lineSection.elements)
         .filter(isBranch)
-        .flatMap(branch => branch.$branch.stops)
-        .flatMap(stop => stop.connections)
+        .flatMap(branch => branch.$branch.elements)
+        .filter(isStop)
+        .flatMap(stop => stop.$stop.connections)
         .filter(isMode)
         .flatMap(connection => connection.$modeConnection.elements)
         .map(line => line.$modeConnectionElement.lineIndex)

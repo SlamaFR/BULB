@@ -37,8 +37,8 @@ function clone(element: Element): LineElement {
       return {
         id: uuidv4(),
         $branch: {
-          stopSpacing: 0,
-          stops: [],
+          elementSpacing: 0,
+          elements: [],
         },
       }
     case 'FORK':

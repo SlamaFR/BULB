@@ -5,7 +5,7 @@ const visible = defineModel<boolean>('visible')
 const stop = defineModel<Stop>('stop', { required: true })
 
 function addModeConnection() {
-  stop.value.connections.push({
+  stop.value.$stop.connections.push({
     id: uuidv4(),
     $modeConnection: {
       mode: null,
@@ -16,7 +16,7 @@ function addModeConnection() {
 }
 
 function addServiceConnection() {
-  stop.value.connections.push({
+  stop.value.$stop.connections.push({
     id: uuidv4(),
     $serviceConnection: {
       elements: [],
@@ -26,7 +26,7 @@ function addServiceConnection() {
 }
 
 function deleteConnection(index: number) {
-  stop.value.connections.splice(index, 1)
+  stop.value.$stop.connections.splice(index, 1)
 }
 </script>
 
@@ -44,14 +44,14 @@ function deleteConnection(index: number) {
           <i class="i-tabler-traffic-cone" />
           WIP
         </Tag>
-        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.connections_editor.header', { stopName: stop.name }) }}</span>
+        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.connections_editor.header', { stopName: stop.$stop.name }) }}</span>
       </div>
     </template>
     <div class="connections">
       <ConnectionGroupEditor
-        v-for="(_, index) in stop.connections"
+        v-for="(_, index) in stop.$stop.connections"
         :key="index"
-        v-model:connection="stop.connections[index]"
+        v-model:connection="stop.$stop.connections[index]"
         :index="index"
         @delete="deleteConnection"
       />
