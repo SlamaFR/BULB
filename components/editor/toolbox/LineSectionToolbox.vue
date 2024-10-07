@@ -124,7 +124,7 @@ function clone(element: Element): LineElement {
   </VueDraggable>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .toolbox-section {
   display: flex;
   flex-direction: row;

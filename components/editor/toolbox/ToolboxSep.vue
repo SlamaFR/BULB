@@ -1,6 +1,6 @@
 <template>
   <div class="toolbox-sep">
-    <i class="i-tabler-chevron-right" />
+    <span class="sep" />
   </div>
 </template>
 
@@ -11,11 +11,13 @@
   flex-direction: row;
   align-items: center;
   height: 100%;
+  padding: 1.25em;
 
-  i {
-    display: block;
-    color: var(--p-slate-400);
-    font-size: 1em;
+  .sep {
+    height: 100%;
+    width: 2px;
+    border-radius: 2px;
+    background: var(--p-gray-400);
   }
 }
 </style>

@@ -78,7 +78,7 @@ function onStart(e: DraggableEvent<Element>) {
   </VueDraggable>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .toolbox-section {
   display: flex;
   flex-direction: row;

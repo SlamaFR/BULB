@@ -76,7 +76,6 @@ onBeforeUnmount(() => exportSignal.off(doExport))
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1em;
   border-top: 1px solid var(--p-slate-200);
   overflow-x: auto;
   position: sticky;
