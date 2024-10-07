@@ -15,7 +15,7 @@ const {
 <template>
   <div class="w-1em h-1em flex items-center justify-center relative">
     <div class="absolute dot dynamic-part" :class="{ terminus, connection: connection || closed }" />
-    <img v-if="closed" class="absolute closed" src="../../../../../../../assets/svg/closed.svg">
+    <img v-if="closed" class="absolute closed" src="~/assets/svg/closed.svg">
   </div>
 </template>
 
