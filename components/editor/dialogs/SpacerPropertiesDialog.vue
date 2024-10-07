@@ -6,6 +6,7 @@ const spacer = defineModel<Spacer>({ required: true })
 <template>
   <Dialog
     v-model:visible="visible"
+    pt:root:class="max-w-30em"
     modal
   >
     <template #header>
@@ -21,6 +22,9 @@ const spacer = defineModel<Spacer>({ required: true })
       <div class="flex flex-col gap-1">
         <label :for="`${spacer.id}_placeName`">{{ $t('ui.dialogs.spacer_properties.size') }}</label>
         <InputText :id="`${spacer.id}_placeName`" v-model="spacer.$spacer.size" numeric />
+      </div>
+      <div class="opacity-50">
+        {{ $t('ui.dialogs.spacer_properties.spacer_export_notice') }}
       </div>
     </div>
   </Dialog>

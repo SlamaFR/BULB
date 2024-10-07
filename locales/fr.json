@@ -204,7 +204,8 @@
       },
       "spacer_properties": {
         "header": "Propriétés d’espacement",
-        "size": "Longueur de l’espacement"
+        "size": "Longueur de l’espacement",
+        "spacer_export_notice": "Remarque : l’espacement deviendra invisible au moment du rendu."
       },
       "stop_properties": {
         "city_name": "Ville",

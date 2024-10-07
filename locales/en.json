@@ -204,7 +204,8 @@
       },
       "spacer_properties": {
         "header": "Spacer properties",
-        "size": "Spacer length"
+        "size": "Spacer length",
+        "spacer_export_notice": "Notice: The spacer will become invisible at render time."
       },
       "stop_properties": {
         "city_name": "City",
