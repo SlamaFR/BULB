@@ -1,9 +1,12 @@
 <script setup lang="ts">
+import LineCanvasError from '~/components/editor/LineCanvasError.vue'
+
 const { color, lineWidth } = storeToRefs(useLine())
 const exportMap = useExportMap()
-const el = ref()
-
 const exportSignal = useEventBus(ExportSignal)
+
+const el = ref()
+const error = ref(false)
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => color.value ?? '#000000'),
@@ -23,7 +26,10 @@ onBeforeUnmount(() => exportSignal.off(doExport))
     <div class="flex flex-grow overflow-x-auto">
       <div class="deadzone">
         <div ref="el">
-          <LineCanvas />
+          <NuxtErrorBoundary v-if="!error" @error="error = true">
+            <LineCanvas />
+          </NuxtErrorBoundary>
+          <LineCanvasError v-if="error" />
         </div>
       </div>
     </div>

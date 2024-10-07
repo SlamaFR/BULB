@@ -216,6 +216,9 @@
       }
     },
     "map_editor": {
+      "error": {
+        "new_project": "新しいプロジェクト"
+      },
       "title": "路線図のワークスペース",
       "toolbox": {
         "branch": "線路",
@@ -223,6 +226,7 @@
         "fork": "分岐点",
         "loop": "Uターン",
         "parallel_branches": "並行の線路",
+        "spacer": "スペーサー",
         "stop": "駅",
         "untitled_stop": "〇〇駅"
       },

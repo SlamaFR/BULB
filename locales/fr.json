@@ -216,6 +216,12 @@
       }
     },
     "map_editor": {
+      "error": {
+        "detail": "Veuillez recharger la page. Si le problème persiste, votre projet pourrait être obsolète ou corrompu.",
+        "new_project": "Nouveau project",
+        "reload": "Recharger la page",
+        "title": "Une erreur est survenue"
+      },
       "title": "Éditeur de plan",
       "toolbox": {
         "branch": "Branche",
@@ -223,6 +229,7 @@
         "fork": "Fourche",
         "loop": "Demi-tour",
         "parallel_branches": "Branches parallèles",
+        "spacer": "Espacement",
         "stop": "Arrêt",
         "untitled_stop": "Arrêt sans nom"
       },

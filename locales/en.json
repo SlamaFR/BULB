@@ -216,6 +216,12 @@
       }
     },
     "map_editor": {
+      "error": {
+        "detail": "Please reload the page. If the problem persists, your project might be obselete or corrupted.",
+        "new_project": "New project",
+        "reload": "Reload page",
+        "title": "An error occurred"
+      },
       "title": "Map editor",
       "toolbox": {
         "branch": "Branch",
@@ -223,6 +229,7 @@
         "fork": "Fork",
         "loop": "U-turn",
         "parallel_branches": "Parallel branches",
+        "spacer": "Spacer",
         "stop": "Stop",
         "untitled_stop": "Untitled stop"
       },
