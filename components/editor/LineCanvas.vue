@@ -35,7 +35,7 @@ const version = useVersion()
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .content {
   font-size: var(--font-size);
   font-family: 'Parisine Std', sans-serif;
@@ -43,6 +43,6 @@ const version = useVersion()
   box-sizing: content-box;
 
   overflow: hidden;
-  min-width: fit-content;
+  min-width: max-content;
 }
 </style>
