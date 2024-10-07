@@ -30,6 +30,7 @@ const meta = defineModel<ParallelBranches>({ required: true })
   display: flex;
   flex-direction: row;
   align-items: center;
+  z-index: 2;
   //transform: translateY(-.5em);
 }
 
