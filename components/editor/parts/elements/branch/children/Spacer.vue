@@ -5,9 +5,11 @@ const showPropertiesDialog = ref(false)
 </script>
 
 <template>
-  <div class="dynamic-part branch-element-handle spacer" :data-id="spacer.id" @click="showPropertiesDialog = true">
-    <div class="export-hide">
-      <div />
+  <div class="spacer-wrapper">
+    <div class="dynamic-part branch-element-handle spacer" :data-id="spacer.id" @click="showPropertiesDialog = true">
+      <div class="export-hide">
+        <div />
+      </div>
     </div>
   </div>
 
@@ -18,12 +20,15 @@ const showPropertiesDialog = ref(false)
 </template>
 
 <style scoped lang="scss">
-.spacer {
+.spacer-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 2em;
   min-height: 5em;
+}
+
+.spacer {
+  min-width: 2em;
   width: calc(1em + v-bind(length));
   padding: .25em;
   margin: 0 calc(-.25em - 1px);
