@@ -16,7 +16,9 @@ watch(color, val => selectedColor.value = findColorByValue(val, fallbackColor))
     v-model="selectedColor"
     :options="COLORS"
     :placeholder="$t('components.color_select.placeholder')"
+    option-label="label"
     class="flex-auto"
+    filter
   >
     <template #value="slotProps">
       <div

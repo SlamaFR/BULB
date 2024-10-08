@@ -12,7 +12,9 @@ watch(service, val => selectedService.value = findServiceByValue(val))
     v-model="selectedService"
     :options="SERVICES"
     :placeholder="$t('components.service_select.placeholder')"
+    option-label="label"
     class="flex-auto"
+    filter
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
