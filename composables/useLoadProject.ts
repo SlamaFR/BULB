@@ -4,15 +4,18 @@ export default function useLoadProject() {
   const toast = useToast()
   const { t } = useI18n()
   const confirm = useConfirm()
-  const lineStore = useProject()
-  const { version, line } = storeToRefs(lineStore)
-  const indicesStore = storeToRefs(useCustomLineIndices())
+  const { projectMinimumVersion } = useVersion()
+  const checkVersion = useProjectVersionCheck()
   const { open, onChange } = useFileDialog({
     accept: 'application/json',
     multiple: false,
     directory: false,
     reset: true,
   })
+
+  const lineStore = useProject()
+  const { version, line } = storeToRefs(lineStore)
+  const indicesStore = storeToRefs(useCustomLineIndices())
 
   function preload(project: Project) {
     if (project.customIndices.length > 0) {
@@ -34,6 +37,8 @@ export default function useLoadProject() {
   }
 
   function load(project: Project, loadCustomIndices: boolean) {
+    checkVersion(project.version, projectMinimumVersion)
+
     version.value = project.version
     line.value.index = project.line.index
     line.value.mode = project.line.mode

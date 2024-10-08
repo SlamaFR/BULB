@@ -3,10 +3,10 @@ import { useI18n } from 'vue-i18n'
 export default function useVersionTracking() {
   const confirm = useConfirm()
   const { t } = useI18n()
-  const currentVersion = useVersion()
+  const { applicationVersion } = useVersion()
   const pollingRate = import.meta.env.VITE_APP_VERSION_POLLING_RATE
 
-  const latestVersion = ref<string>(currentVersion)
+  const latestVersion = ref<string>(applicationVersion)
   const { pause } = useIntervalFn(check, pollingRate)
 
   function check() {
@@ -14,7 +14,7 @@ export default function useVersionTracking() {
       .then(res => res.text())
       .then(text => text.trim())
       .then((version) => {
-        if (version !== currentVersion) {
+        if (version !== applicationVersion) {
           latestVersion.value = version
           promptUpdate()
         }

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import ThemeSwitcher from '~/components/ui/ThemeSwitcher.vue'
 
-const version = useVersion()
+const { applicationVersion } = useVersion()
 </script>
 
 <template>
@@ -12,7 +12,7 @@ const version = useVersion()
           <strong class="hidden md:block">Beautiful Urban Line Builder</strong>
           <strong class="md:hidden visible">BULB</strong>
         </h1>
-        <small class="text-gray"><span>v</span>{{ version }}</small>
+        <small class="text-gray"><span>v</span>{{ applicationVersion }}</small>
       </div>
     </template>
 

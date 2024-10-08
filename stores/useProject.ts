@@ -1,7 +1,7 @@
 export const useProject = defineStore('project', () => {
-  const currentVersion = useVersion()
+  const { applicationVersion } = useVersion()
 
-  const version = ref<string | null>(currentVersion)
+  const version = ref<string | null>(applicationVersion)
   const line = reactive<{
     mode: Mode | null
     index: LineIndex | null
@@ -24,7 +24,7 @@ export const useProject = defineStore('project', () => {
   })
 
   function reset() {
-    version.value = currentVersion
+    version.value = applicationVersion
     line.mode = null
     line.mode = null
     line.index = null
