@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const { applicationVersion } = useVersion()
-const { line } = storeToRefs(useProject())
+const { line, outdated } = storeToRefs(useProject())
 </script>
 
 <template>
@@ -20,7 +20,10 @@ const { line } = storeToRefs(useProject())
     <div class="absolute bottom-3 left-3 text-[var(--blue-ratp-paper)]">
       <div class="text-.2em flex flex-col line-height-1.75">
         <span>{{ $t('ui.map_editor.watermark') }} • bulb.slama.io</span>
-        <span class="opacity-50 text-.5em">Version {{ applicationVersion }}</span>
+        <span class="text-.5em">
+          <span v-if="outdated" class="bg-red-600 text-white font-bold px-.375em rounded mr-.75">OUTDATED</span>
+          <span class="opacity-50">Version {{ applicationVersion }}</span>
+        </span>
         <hr class="my-.5">
         <span class="text-.825em">Non affilié à la RATP, à Île-de-France Mobilités ou à toute autre société. Les pictogrammes ainsi que les polices utilisés demeurent la propriété intellectuelle exclusive des entités susmentionnées.</span>
         <span class="italic text-.75em">Not affiliated with RATP, Île-de-France Mobilités or any other company. The pictograms and fonts used remain the exclusive intellectual property of the aforementioned entities.</span>

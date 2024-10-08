@@ -7,7 +7,6 @@ const checkVersion = useProjectVersionCheck()
 
 const el = ref()
 const error = ref(false)
-const outdated = computed(() => compareVersions(version.value, projectMinimumVersion) < 0)
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => line.value.color ?? '#000000'),
@@ -27,9 +26,6 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 
 <template>
   <div class="map-editor">
-    <p class="bg-red">
-      {{ outdated }} • {{ version ?? 'NONE' }}
-    </p>
     <div class="flex flex-grow overflow-x-auto">
       <div class="deadzone">
         <div ref="el">

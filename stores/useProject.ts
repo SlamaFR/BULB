@@ -1,7 +1,8 @@
 export const useProject = defineStore('project', () => {
-  const { applicationVersion } = useVersion()
+  const { applicationVersion, projectMinimumVersion } = useVersion()
 
   const version = ref<string | null>(applicationVersion)
+  const outdated = computed(() => compareVersions(version.value, projectMinimumVersion) === -1)
   const line = reactive<{
     mode: Mode | null
     index: LineIndex | null
@@ -41,6 +42,7 @@ export const useProject = defineStore('project', () => {
 
   return {
     version,
+    outdated,
     line,
     reset,
   }
