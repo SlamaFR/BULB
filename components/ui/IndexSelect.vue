@@ -73,7 +73,9 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
     option-group-children="items"
     option-group-label="label"
     option-value="value"
+    option-label="label"
     class="flex-auto"
+    filter
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
