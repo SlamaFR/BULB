@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import LineCanvasError from '~/components/editor/LineCanvasError.vue'
+const MINIMUM_VERSION = '1.2.0-alpha'
 
-const { color, lineWidth } = storeToRefs(useLine())
+const { version, color, lineWidth } = storeToRefs(useProject())
 const exportMap = useExportMap()
 const exportSignal = useEventBus(ExportSignal)
+const checkVersion = useProjectVersionCheck()
 
 const el = ref()
 const error = ref(false)
+const outdated = computed(() => compareVersions(version.value, MINIMUM_VERSION) < 0)
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => color.value ?? '#000000'),
@@ -17,12 +19,19 @@ function doExport() {
   exportMap(el.value)
 }
 
-onMounted(() => exportSignal.on(doExport))
+onMounted(() => {
+  exportSignal.on(doExport)
+  console.log(version.value)
+  checkVersion(version.value, MINIMUM_VERSION)
+})
 onBeforeUnmount(() => exportSignal.off(doExport))
 </script>
 
 <template>
   <div class="map-editor">
+    <p class="bg-red">
+      {{ outdated }} • {{ version ?? 'NONE' }}
+    </p>
     <div class="flex flex-grow overflow-x-auto">
       <div class="deadzone">
         <div ref="el">

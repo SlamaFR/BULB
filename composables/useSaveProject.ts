@@ -1,6 +1,6 @@
 export default function useSaveProject() {
   const toast = useToast()
-  const { line } = storeToRefs(useLine())
+  const { line } = storeToRefs(useProject())
   const { indices } = storeToRefs(useCustomLineIndices())
 
   function stringifyLine(bundleCustomIndices: boolean) {

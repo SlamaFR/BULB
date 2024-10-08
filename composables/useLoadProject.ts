@@ -4,7 +4,7 @@ export default function useLoadProject() {
   const toast = useToast()
   const { t } = useI18n()
   const confirm = useConfirm()
-  const lineStore = storeToRefs(useLine())
+  const lineStore = storeToRefs(useProject())
   const indicesStore = storeToRefs(useCustomLineIndices())
   const { open, onChange } = useFileDialog({
     accept: 'application/json',
@@ -33,6 +33,7 @@ export default function useLoadProject() {
   }
 
   function load(project: Project, loadCustomIndices: boolean) {
+    lineStore.version.value = project.version
     lineStore.index.value = project.line.index
     lineStore.mode.value = project.line.mode
     lineStore.color.value = project.line.color

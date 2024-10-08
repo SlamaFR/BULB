@@ -1,4 +1,7 @@
-export const useLine = defineStore('line', () => {
+export const useProject = defineStore('project', () => {
+  const currentVersion = useVersion()
+
+  const version = ref<string | null>(currentVersion)
   const mode = ref<Mode | null>(null)
   const index = ref<LineIndex | null>(null)
   const color = ref<string | null>(null)
@@ -20,6 +23,7 @@ export const useLine = defineStore('line', () => {
   }))
 
   function reset() {
+    version.value = currentVersion
     mode.value = null
     index.value = null
     color.value = null
@@ -34,6 +38,7 @@ export const useLine = defineStore('line', () => {
   }
 
   return {
+    version,
     mode,
     index,
     color,
@@ -46,5 +51,18 @@ export const useLine = defineStore('line', () => {
 }, {
   persist: {
     storage: persistedState.localStorage,
+    serializer: {
+      serialize(value: Record<string, any>) {
+        return JSON.stringify(value)
+      },
+      deserialize(value: string) {
+        const object = JSON.parse(value)
+        if (object.version === undefined) {
+          object.version = null
+        }
+
+        return object as Record<string, any>
+      },
+    },
   },
 })

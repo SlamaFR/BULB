@@ -2,7 +2,7 @@
 const visible = defineModel<boolean>('visible', { required: true })
 
 const save = useSaveProject()
-const { line } = storeToRefs(useLine())
+const { line } = storeToRefs(useProject())
 const { findIndexById } = useCustomLineIndices()
 
 const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())

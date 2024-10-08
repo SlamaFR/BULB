@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, color, mapSize } = storeToRefs(useLine())
+const { mode, index, color, mapSize } = storeToRefs(useProject())
 
 const showPresetSelector = ref(false)
 

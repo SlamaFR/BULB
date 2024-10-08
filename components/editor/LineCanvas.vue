@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { mode, index, topology, color, lineWidth, mapSize } = storeToRefs(useLine())
+const { mode, index, topology, color, lineWidth, mapSize } = storeToRefs(useProject())
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => color.value ?? '#000000'),

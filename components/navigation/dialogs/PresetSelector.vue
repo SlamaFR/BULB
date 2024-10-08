@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const visible = defineModel<boolean>('visible')
 
-const { mode, index, color } = storeToRefs(useLine())
+const { mode, index, color } = storeToRefs(useProject())
 
 function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
   mode.value = _mode
