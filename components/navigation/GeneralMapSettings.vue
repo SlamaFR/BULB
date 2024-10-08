@@ -1,10 +1,10 @@
 <script setup lang="ts">
-const { mode, index, color, mapSize } = storeToRefs(useProject())
+const { line } = storeToRefs(useProject())
 
 const showPresetSelector = ref(false)
 
 function updateColor(newColor: string | null) {
-  if (newColor !== null) color.value = newColor
+  if (newColor !== null) line.value.color = newColor
 }
 </script>
 
@@ -13,17 +13,17 @@ function updateColor(newColor: string | null) {
     <div class="flex flex-col items-stretch gap-x-5 gap-y-2">
       <div class="flex flex-col gap-1 flex-auto">
         <span class="text-nowrap">{{ $t('ui.properties.mode') }}</span>
-        <ModeSelect v-model="mode" />
+        <ModeSelect v-model="line.mode" />
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
         <label class="text-nowrap">{{ $t('ui.properties.index') }}</label>
-        <IndexSelect v-model="index" :mode="mode" @update-color="updateColor" />
+        <IndexSelect v-model="line.index" :mode="line.mode" @update-color="updateColor" />
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
         <span class="text-nowrap">{{ $t('ui.properties.color') }}</span>
-        <ColorSelect v-model="color" />
+        <ColorSelect v-model="line.color" />
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
@@ -33,7 +33,7 @@ function updateColor(newColor: string | null) {
             {{ $t('misc.temporary') }}
           </Tag>
         </div>
-        <MapSizeSelect v-model="mapSize" />
+        <MapSizeSelect v-model="line.mapSize" />
       </div>
     </div>
 

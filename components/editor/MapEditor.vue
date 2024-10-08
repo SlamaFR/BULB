@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const MINIMUM_VERSION = '1.2.0-alpha'
 
-const { version, color, lineWidth } = storeToRefs(useProject())
+const { version, line } = storeToRefs(useProject())
 const exportMap = useExportMap()
 const exportSignal = useEventBus(ExportSignal)
 const checkVersion = useProjectVersionCheck()
@@ -11,8 +11,8 @@ const error = ref(false)
 const outdated = computed(() => compareVersions(version.value, MINIMUM_VERSION) < 0)
 
 provide<LineContext>(LineContextKey, {
-  color: computed(() => color.value ?? '#000000'),
-  lineWidth,
+  color: computed(() => line.value.color ?? '#000000'),
+  lineWidth: computed(() => line.value.lineWidth ?? 1),
 })
 
 function doExport() {

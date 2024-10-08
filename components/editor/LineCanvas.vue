@@ -1,25 +1,19 @@
 <script setup lang="ts">
-const { mode, index, topology, color, lineWidth, mapSize } = storeToRefs(useProject())
-
-provide<LineContext>(LineContextKey, {
-  color: computed(() => color.value ?? '#000000'),
-  lineWidth,
-})
-
 const version = useVersion()
+const { line } = storeToRefs(useProject())
 </script>
 
 <template>
-  <div v-bind="$attrs" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${mapSize}em` }">
+  <div v-bind="$attrs" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${line.mapSize}em` }">
     <div class="ml-3 flex flex-col min-w-fit">
       <div class="w-full h-8 bg-[var(--blue-ratp-paper)] mb-3" />
       <div class="w-full flex flex-row gap-3 justify-center items-center text-4em">
-        <Mode :mode="mode" />
-        <LineIndex :index="index" />
+        <Mode :mode="line.mode" />
+        <LineIndex :index="line.index" />
       </div>
     </div>
     <SectionsGroup
-      v-model="topology"
+      v-model="line.topology"
       class="w-max-content min-h-15em p-1em pt-20"
     />
 
