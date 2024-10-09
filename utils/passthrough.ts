@@ -8,6 +8,9 @@ const Passthrough: PrimeVuePTOptions = {
     header: {
       class: 'gap-6',
     },
+    transition: {
+      enterActiveClass: 'b-dialog-enter-active',
+    },
   },
 }
 

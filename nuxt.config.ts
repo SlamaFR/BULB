@@ -67,6 +67,7 @@ export default defineNuxtConfig({
   // global CSS files
   css: [
     '@unocss/reset/tailwind-compat.css',
+    '~/assets/style/custom.css',
   ],
 
   fonts: {
