@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { METRO_LINES, RER_LINES, TRAM_LINES, TRANSILIEN_LINES } from '~/data/lines'
+
 const visible = defineModel<boolean>('visible')
 
 const { line } = storeToRefs(useProject())
@@ -48,14 +50,14 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
     <Fieldset :legend="$t('data.mode.transilien')">
       <div class="btn-group">
         <Button
-          v-for="train in TRAIN_LINES"
-          :key="train.label"
+          v-for="transilien in TRANSILIEN_LINES"
+          :key="transilien.label"
           text
           severity="secondary"
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
-          @click="loadPreset('TRAIN', train.value, train.color)"
+          @click="loadPreset('TRAIN', transilien.value, transilien.color)"
         >
-          <LineIndex mode="TRAIN" :index="train.value" />
+          <LineIndex mode="TRAIN" :index="transilien.value" />
         </Button>
       </div>
     </Fieldset>

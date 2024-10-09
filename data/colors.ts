@@ -16,3 +16,32 @@ export const MAGENTA: ColorChoice = { value: '#bb4a9b', label: 'Magenta' }
 export const LILAS: ColorChoice = { value: '#c5a3cd', label: 'Lilas' }
 export const ROSE: ColorChoice = { value: '#f59fb3', label: 'Rose' }
 export const ROUGE_FRAMBOISE: ColorChoice = { value: '#b80b4b', label: 'Rouge Framboise' }
+
+export const COLORS: ColorChoice[] = [
+  ROUGE_COQUELICOT,
+  ORANGE,
+  JAUNE_VIF,
+  JAUNE_OCRE,
+  MARON,
+  OLIVE_CLAIR,
+  OLIVE_FONCE,
+  VERT_FONCE,
+  VERT_CLAIR,
+  TURQUOISE,
+  BLEU_CLAIR,
+  BLEU_OUTREMER,
+  BLEU_FONCE,
+  VIOLET,
+  MAGENTA,
+  LILAS,
+  ROSE,
+  ROUGE_FRAMBOISE,
+]
+
+export function findColorByValue(value: string | null, fallback: string): ColorChoice | null {
+  if (value === null) return null
+  return COLORS.find(color => color.value === value) ?? {
+    value,
+    label: fallback,
+  }
+}

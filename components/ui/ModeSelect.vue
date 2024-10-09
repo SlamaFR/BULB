@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { findModeByValue, MODES } from '~/data/modes'
+
 const mode = defineModel<Mode | null>({ required: true })
 
 const selectedMode = ref<ModeChoice | null>(findModeByValue(mode.value))

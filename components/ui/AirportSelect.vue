@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { AIRPORTS, findAirportVyValue } from '~/data/airports'
+
 const airport = defineModel<Airport | null>({ required: true })
 
 const selectedAirport = ref<AirportChoice | null>(findAirportVyValue(airport.value))

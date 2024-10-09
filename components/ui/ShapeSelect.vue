@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { findShapeByValue, SHAPES } from '~/data/shapes'
+
 const {
   filter = () => true,
 } = defineProps<{

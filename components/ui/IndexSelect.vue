@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { findLineByValue, getLinesByMode } from '~/data/lines'
 
 const { mode } = defineProps<{
   mode: Mode | null

@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { findServiceByValue, SERVICES } from '~/data/services'
+
 const service = defineModel<Service | null>({ required: true })
 
 const selectedService = ref<ServiceChoice | null>(findServiceByValue(service.value))

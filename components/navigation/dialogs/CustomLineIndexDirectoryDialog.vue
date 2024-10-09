@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { MODES } from '~/data/modes'
+
 const visible = defineModel<boolean>('visible')
 const { getModeIndices, createNewIndex, deleteById } = useCustomLineIndices()
 

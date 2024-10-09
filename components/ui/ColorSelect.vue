@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { useI18n } from 'vue-i18n'
+import { COLORS, findColorByValue } from '~/data/colors'
 
 const color = defineModel<string | null>({ required: true })
 const { t } = useI18n()
