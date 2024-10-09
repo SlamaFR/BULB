@@ -5,15 +5,15 @@ const save = useSaveProject()
 const { line } = storeToRefs(useProject())
 const { findIndexById } = useCustomLineIndices()
 
-const name = ref('')// ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
+const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
 const bundleCustomIndices = ref(false)
 const lineIndex = computed(() => {
   if (line.value.index === null) return ''
-  const index = line.value.index.value
+  const index = line.value.index
   if (isBuiltin(index)) {
     return index.$builtinLineIndex.index
   } else {
-    const customIndex = findIndexById(index?.$customLineIndex?.id ?? '')
+    const customIndex = findIndexById(index.$customLineIndex.id)
     if (customIndex === null) return ''
     return (`${customIndex.prefix}${customIndex.index}${customIndex.suffix}`).toLowerCase()
   }
