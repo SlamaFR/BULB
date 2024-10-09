@@ -1,23 +1,26 @@
 <script setup lang="ts">
-import LineCanvasError from '~/components/editor/LineCanvasError.vue'
-
-const { color, lineWidth } = storeToRefs(useLine())
+const { version, line } = storeToRefs(useProject())
 const exportMap = useExportMap()
 const exportSignal = useEventBus(ExportSignal)
+const { projectMinimumVersion } = useVersion()
+const checkVersion = useProjectVersionCheck()
 
 const el = ref()
 const error = ref(false)
 
 provide<LineContext>(LineContextKey, {
-  color: computed(() => color.value ?? '#000000'),
-  lineWidth,
+  color: computed(() => line.value.color ?? '#000000'),
+  lineWidth: computed(() => line.value.lineWidth ?? 1),
 })
 
 function doExport() {
   exportMap(el.value)
 }
 
-onMounted(() => exportSignal.on(doExport))
+onMounted(() => {
+  exportSignal.on(doExport)
+  checkVersion(version.value, projectMinimumVersion)
+})
 onBeforeUnmount(() => exportSignal.off(doExport))
 </script>
 

@@ -184,6 +184,12 @@
         },
         "text": "Text"
       },
+      "outdated_project": {
+        "accept": "New project",
+        "header": "Outdated project",
+        "message": "This project is outdated and no longer supported. If you continue despite that, you might experience issues. It is recommended to create a new project or open a supported project.",
+        "reject": "Continue on this project"
+      },
       "parallel_branches_properties": {
         "alignment": {
           "fluid": "Fluid",

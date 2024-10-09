@@ -1,13 +1,15 @@
 export default function useSaveProject() {
   const toast = useToast()
-  const { line } = storeToRefs(useLine())
+  const { version, line } = storeToRefs(useProject())
   const { indices } = storeToRefs(useCustomLineIndices())
 
   function stringifyLine(bundleCustomIndices: boolean) {
     let customIndices: CustomLineIndexDescription[] = []
 
     if (bundleCustomIndices) {
-      const usedCustomIndicesIds: string[] = line.value.topology
+      const usedCustomIndicesIds: string[] = []
+      /*
+      line.value.topology
         .flatMap(topology => topology.$lineSection.elements)
         .filter(isBranch)
         .flatMap(branch => branch.$branch.elements)
@@ -18,11 +20,12 @@ export default function useSaveProject() {
         .map(line => line.$modeConnectionElement.lineIndex)
         .filter(isCustom)
         .map(index => index.$customLineIndex.id)
-
+       */
       customIndices = indices.value.filter(index => usedCustomIndicesIds.includes(index.id))
     }
 
     return JSON.stringify({
+      version: version.value,
       line: line.value,
       customIndices,
     })

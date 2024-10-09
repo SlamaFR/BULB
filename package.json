@@ -45,6 +45,7 @@
     "svg-round-corners": "^0.4.3",
     "taze": "^0.17.2",
     "uuid": "^10.0.0",
+    "vitest": "^2.1.2",
     "vue-draggable-plus": "^0.5.3",
     "vue-i18n": "^9.14.1"
   }

@@ -99,6 +99,7 @@ declare global {
   }
 
   interface Project {
+    version: string
     line: Line
     customIndices: CustomLineIndexDescription[]
   }

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const { reset } = useLine()
+const { reset } = useProject()
 
 function reload() {
   location.reload()

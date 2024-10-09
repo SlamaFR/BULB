@@ -4,14 +4,18 @@ export default function useLoadProject() {
   const toast = useToast()
   const { t } = useI18n()
   const confirm = useConfirm()
-  const lineStore = storeToRefs(useLine())
-  const indicesStore = storeToRefs(useCustomLineIndices())
+  const { projectMinimumVersion } = useVersion()
+  const checkVersion = useProjectVersionCheck()
   const { open, onChange } = useFileDialog({
     accept: 'application/json',
     multiple: false,
     directory: false,
     reset: true,
   })
+
+  const lineStore = useProject()
+  const { version, line } = storeToRefs(lineStore)
+  const indicesStore = storeToRefs(useCustomLineIndices())
 
   function preload(project: Project) {
     if (project.customIndices.length > 0) {
@@ -33,11 +37,14 @@ export default function useLoadProject() {
   }
 
   function load(project: Project, loadCustomIndices: boolean) {
-    lineStore.index.value = project.line.index
-    lineStore.mode.value = project.line.mode
-    lineStore.color.value = project.line.color
-    lineStore.lineWidth.value = project.line.lineWidth
-    lineStore.topology.value = project.line.topology
+    checkVersion(project.version, projectMinimumVersion)
+
+    version.value = project.version
+    line.value.index = project.line.index
+    line.value.mode = project.line.mode
+    line.value.color = project.line.color
+    line.value.lineWidth = project.line.lineWidth
+    line.value.topology = project.line.topology
 
     if (loadCustomIndices) {
       const existingIndicesIds = indicesStore.indices.value.map(it => it.id)
@@ -60,6 +67,7 @@ export default function useLoadProject() {
       preload(JSON.parse(ev.target?.result as string) as Project)
     } catch (error) {
       console.warn(error)
+      lineStore.reset()
       toast.add({
         summary: 'ui.toasts.load.failure.title',
         detail: 'ui.toasts.load.failure.detail.corrupted',
