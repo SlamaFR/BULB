@@ -49,7 +49,10 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
           :interest-point="stop.$stop.interestPoint"
           :prevent-subtitle-overlapping="stop.$stop.preventSubtitleOverlapping"
           :terminus="stop.$stop.terminus"
-          @click="showPropertiesDialog = true"
+          @click="(e: Event) => {
+            e.stopPropagation()
+            showPropertiesDialog = true
+          }"
         />
       </div>
       <div class="dot-connections">
@@ -60,11 +63,17 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
             :connection="stop.$stop.connections.length > 0"
             :color="lineContext?.color.value ?? '#000000'"
             :closed="stop.$stop.closed"
+            @click="(e: Event) => e.stopPropagation()"
           />
         </div>
         <div class="w-0 connections dynamic-part">
           {{ connections?.clientWidth }}
-          <div @click="showConnectionsEditor = true">
+          <div
+            @click="(e: Event) => {
+              e.stopPropagation()
+              showConnectionsEditor = true
+            }"
+          >
             <Connections ref="connections" :connections="stop.$stop.connections" />
             <Transition v-if="stop.$stop.connections.length === 0" name="fade">
               <div v-show="hovering" class="button-holder export-hide">
