@@ -1,14 +1,55 @@
 <script setup lang="ts">
+import { useI18n } from 'vue-i18n'
 import { METRO_LINES, RER_LINES, TRAM_LINES, TRANSILIEN_LINES } from '~/data/lines'
+import { getPreset } from '~/data/presets'
+
+const FULL_TEMPLATE = {
+  METRO: ['1', '2', '3', '3bis', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+}
 
 const visible = defineModel<boolean>('visible')
 
-const { line } = storeToRefs(useProject())
+const { line, version } = storeToRefs(useProject())
+const { applicationVersion } = useVersion()
+const confirm = useConfirm()
+const { t } = useI18n()
+
+function loadFullPreset(preset: Project) {
+  confirm.require({
+    header: t('ui.dialogs.use_full_preset.header'),
+    message: t('ui.dialogs.use_full_preset.message'),
+    acceptProps: {
+      label: t('ui.dialogs.use_full_preset.accept'),
+      severity: 'warn',
+    },
+    rejectProps: {
+      label: t('ui.dialogs.use_full_preset.reject'),
+      severity: 'secondary',
+      text: true,
+    },
+    accept: () => {
+      version.value = applicationVersion
+      line.value.mode = preset.line.mode
+      line.value.index = preset.line.index
+      line.value.color = preset.line.color
+      line.value.lineWidth = preset.line.lineWidth
+      line.value.mapSize = preset.line.mapSize
+      line.value.topology = preset.line.topology
+    },
+  })
+}
 
 function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
-  line.value.mode = _mode
-  line.value.index = _index
-  if (_color) line.value.color = _color
+  const preset = getPreset(_mode, _index)
+
+  if (preset !== null) {
+    loadFullPreset(preset)
+  } else {
+    line.value.mode = _mode
+    line.value.index = _index
+    if (_color) line.value.color = _color
+  }
+
   visible.value = false
 }
 </script>
@@ -19,6 +60,9 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
     :header="$t('ui.dialogs.use_preset.header')"
     modal
   >
+    <Message class="my-1 max-w-42em">
+      {{ $t('ui.dialogs.use_preset.full_presets_notice') }}
+    </Message>
     <Fieldset :legend="$t('data.mode.metro')">
       <div class="btn-group">
         <Button
@@ -29,7 +73,13 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('METRO', metro.value, metro.color)"
         >
-          <LineIndex mode="METRO" :index="metro.value" />
+          <div class="relative">
+            <LineIndex mode="METRO" :index="metro.value" />
+            <i
+              v-if="FULL_TEMPLATE.METRO.includes(metro.value.$builtinLineIndex.index)"
+              class="absolute bottom-0 right-0 badge"
+            />
+          </div>
         </Button>
       </div>
     </Fieldset>
@@ -80,7 +130,21 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
   </Dialog>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+.badge {
+  font-size: .3em;
+  width: 1em;
+  height: 1em;
+  background: var(--p-text-color);
+  outline: .35rem solid var(--p-dialog-background);
+  border-radius: 50%;
+  transition: outline-color var(--p-button-transition-duration);
+
+  .p-button:hover & {
+    outline-color: var(--p-button-text-secondary-hover-background);
+  }
+}
+
 .btn-group {
   display: grid;
   grid-template-columns: repeat(10, 1fr);

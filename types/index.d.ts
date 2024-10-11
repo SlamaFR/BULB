@@ -264,6 +264,7 @@ declare global {
     index: LineIndex | null
     color: string | null
     lineWidth: number
+    mapSize: number | null
     topology: LineSection[]
   }
 
