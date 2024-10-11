@@ -44,6 +44,7 @@ export default function useLoadProject() {
     line.value.mode = project.line.mode
     line.value.color = project.line.color
     line.value.lineWidth = project.line.lineWidth
+    line.value.mapSize = project.line.mapSize
     line.value.topology = project.line.topology
 
     if (loadCustomIndices) {

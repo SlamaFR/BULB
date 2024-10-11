@@ -222,7 +222,14 @@
         "subtitle": "Sous-titre",
         "terminus": "Terminus"
       },
+      "use_full_preset": {
+        "accept": "Charger le préréglage",
+        "header": "Charger un préréglage complet",
+        "message": "Ce préréglage contient l’intégralité du plan d’origine. Avez-vous pensé à sauvegarder votre projet actuel ? Si vous continuez, vous perdrez toutes les modifications non sauvegardées.",
+        "reject": "Annuler"
+      },
       "use_preset": {
+        "full_presets_notice": "Les préréglages marqués d’une pastille comprennent le plan de ligne existant avec la structure complète, tous les arrêts et toutes les correspondances.",
         "header": "Utiliser un préréglage"
       }
     },

@@ -3,14 +3,7 @@ export const useProject = defineStore('project', () => {
 
   const version = ref<string | null>(applicationVersion)
   const outdated = computed(() => compareVersions(version.value, projectMinimumVersion) === -1)
-  const line = reactive<{
-    mode: Mode | null
-    index: LineIndex | null
-    color: string | null
-    mapSize: number | null
-    lineWidth: number
-    topology: LineSection[]
-  }>({
+  const line = reactive<Line>({
     mode: null,
     index: null,
     color: null,

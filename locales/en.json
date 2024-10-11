@@ -222,7 +222,14 @@
         "subtitle": "Subtitle",
         "terminus": "Terminus"
       },
+      "use_full_preset": {
+        "accept": "Load the preset",
+        "header": "Load a full preset",
+        "message": "This preset contains the complete original map. Did you remember to save your current project? If you continue, you will lose all unsaved changes.",
+        "reject": "Cancel"
+      },
       "use_preset": {
+        "full_presets_notice": "Full presets are marked with a dot and include the existing line map with the complete structure, all stops, and all connections.",
         "header": "Use a preset"
       }
     },
