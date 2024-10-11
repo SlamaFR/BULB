@@ -1,6 +1,13 @@
 <script setup lang="ts">
 const visible = defineModel<boolean>('visible', { required: true })
 const branch = defineModel<Branch>({ required: true })
+
+const showWarpAddDialog = ref(false)
+
+function showWarpAdd() {
+  visible.value = false
+  showWarpAddDialog.value = true
+}
 </script>
 
 <template>
@@ -29,6 +36,14 @@ const branch = defineModel<Branch>({ required: true })
           <InputText v-model="branch.$branch.marginRight" numeric />
         </div>
       </div>
+      <div class="flex flex-row-reverse gap-4 mt-4">
+        <Button label="WarpAdd" icon="i-tabler-bolt-filled" @click="showWarpAdd()" />
+      </div>
     </div>
   </Dialog>
+
+  <WarpAddDialog
+    v-model:visible="showWarpAddDialog"
+    v-model="branch"
+  />
 </template>

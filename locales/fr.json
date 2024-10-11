@@ -245,6 +245,15 @@
       "use_preset": {
         "full_presets_notice": "Les préréglages marqués d’une pastille comprennent le plan de ligne existant avec la structure complète, tous les arrêts et toutes les correspondances.",
         "header": "Utiliser un préréglage"
+      },
+      "warp_add": {
+        "add_all_stops": "Ajouter les arrêts",
+        "header": "Assistant WarpAdd",
+        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d'appuyer sur <kbd>Tab</kbd> pour passer à l’arrêt suivant.",
+        "reset": "Réinitialiser",
+        "stop_name": "Nom de l’arrêt",
+        "stops_list": "Liste des arrêts",
+        "stops_list_empty": "Aucun arrêt"
       }
     },
     "map_editor": {
