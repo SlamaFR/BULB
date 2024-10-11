@@ -77,6 +77,12 @@
   },
   "ui": {
     "dialogs": {
+      "branch_properties": {
+        "element_spacing": "Espacement des éléments",
+        "header": "Propriétés de branche",
+        "margin_left": "Marge gauche",
+        "margin_right": "Marge droite"
+      },
       "browser_check": {
         "dismiss": "J’ai compris",
         "header": "Navigateur non pris en charge",

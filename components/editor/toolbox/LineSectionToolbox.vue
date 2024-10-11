@@ -38,6 +38,8 @@ function clone(element: Element): LineElement {
         id: uuidv4(),
         $branch: {
           elementSpacing: 0,
+          marginLeft: 0,
+          marginRight: 0,
           elements: [],
         },
       }

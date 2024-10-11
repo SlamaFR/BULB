@@ -21,8 +21,8 @@ const elements = computed({
 const lineContext = inject<LineContext>(LineContextKey)
 
 const elementSpacing = computed(() => `${branch.value.$branch.elementSpacing}em`)
-const leftMargin = computed(() => `${branch.value.$branch.leftMargin ?? 0}em`)
-const rightMargin = computed(() => `${branch.value.$branch.rightMargin ?? 0}em`)
+const leftMargin = computed(() => `${branch.value.$branch.marginLeft || 0}em`)
+const rightMargin = computed(() => `${branch.value.$branch.marginRight || 0}em`)
 
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
@@ -44,10 +44,10 @@ function moveOut(event: DraggableEvent<BranchElement>) {
     class="branch-wrapper" :class="{
       empty: elements?.length === 0,
       fluid,
-      negativeLeftMargin: (branch.$branch.leftMargin ?? 0) < 0,
-      negativeRightMargin: (branch.$branch.rightMargin ?? 0) < 0,
-      positiveLeftMargin: (branch.$branch.leftMargin ?? 0) > 0,
-      positiveRightMargin: (branch.$branch.rightMargin ?? 0) > 0,
+      negativeLeftMargin: (branch.$branch.marginLeft ?? 0) < 0,
+      negativeRightMargin: (branch.$branch.marginRight ?? 0) < 0,
+      positiveLeftMargin: (branch.$branch.marginLeft ?? 0) > 0,
+      positiveRightMargin: (branch.$branch.marginRight ?? 0) > 0,
     }"
   >
     <VueDraggable
@@ -165,7 +165,7 @@ function moveOut(event: DraggableEvent<BranchElement>) {
 .line {
   position: absolute;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translate(calc(v-bind(leftMargin) * -1), -50%);
   height: v-bind(lineWidth);
   z-index: -1;
   background-color: v-bind(color);
