@@ -198,8 +198,8 @@ declare global {
     id: string
     $branch: {
       elementSpacing: number
-      leftMargin?: number
-      rightMargin?: number
+      marginLeft?: number
+      marginRight?: number
       elements: BranchElement[]
     }
   }

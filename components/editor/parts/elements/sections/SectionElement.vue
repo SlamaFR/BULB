@@ -44,6 +44,11 @@ const zIndex = computed(() => {
 
     <Teleport to="body">
       <div v-if="!dummy" ref="el">
+        <BranchPropertiesDialog
+          v-if="isBranch(element)"
+          v-model="element"
+          v-model:visible="showPropertiesDialog"
+        />
         <ForkPropertiesDialog
           v-if="isFork(element)"
           v-model="element"

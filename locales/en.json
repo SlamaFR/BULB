@@ -77,6 +77,12 @@
   },
   "ui": {
     "dialogs": {
+      "branch_properties": {
+        "element_spacing": "Element spacing",
+        "header": "Branch properties",
+        "margin_left": "Left margin",
+        "margin_right": "Right margin"
+      },
       "browser_check": {
         "dismiss": "I understand",
         "header": "Browser not supported",
