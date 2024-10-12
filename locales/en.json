@@ -245,6 +245,15 @@
       "use_preset": {
         "full_presets_notice": "Full presets are marked with a dot and include the existing line map with the complete structure, all stops, and all connections.",
         "header": "Use a preset"
+      },
+      "warp_add": {
+        "add_all_stops": "Add stops",
+        "header": "WarpAdd Assistant",
+        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type the name of a stop, then press <kbd>Tab</kbd> to move to the next stop.",
+        "reset": "Reset",
+        "stop_name": "Stop name",
+        "stops_list": "Stops list",
+        "stops_list_empty": "No stop"
       }
     },
     "map_editor": {
