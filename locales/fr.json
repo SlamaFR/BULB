@@ -228,6 +228,14 @@
         "subtitle": "Sous-titre",
         "terminus": "Terminus"
       },
+      "troubleshooting": {
+        "github": "ouvrir un ticket sur GitHub",
+        "header": "Dépannage",
+        "notice": "Les information présentées ci-dessous seront utiles pour vous aider en cas de dysfonctionnement de BULB. En cas de bug, vous pouvez {github} ou {twitter}, en précisant les informations ci-dessous.",
+        "project": "Projet",
+        "technical_details": "Détails techniques",
+        "twitter": "me contacter sur Twitter (X)"
+      },
       "use_full_preset": {
         "accept": "Charger le préréglage",
         "header": "Charger un préréglage complet",
@@ -265,7 +273,8 @@
       "new_project": "Nouveau projet",
       "open": "Ouvrir",
       "save": "Sauvegarder",
-      "title": "Menu principal"
+      "title": "Menu principal",
+      "troubleshooting": "Dépannage"
     },
     "nag": "<b>RAPPEL</b> : Application en phase de développement. Certaines fonctionnalités ne sont pas encore disponibles ou sont incomplètes.",
     "properties": {

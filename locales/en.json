@@ -228,6 +228,14 @@
         "subtitle": "Subtitle",
         "terminus": "Terminus"
       },
+      "troubleshooting": {
+        "github": "open a GitHub issue",
+        "header": "Troubleshooting",
+        "notice": "The information below will be useful to help you in case of BULB malfunction. In case of a bug, you can {github} or {twitter}, specifying the information below.",
+        "project": "Project",
+        "technical_details": "Technical details",
+        "twitter": "contact me on Twitter (X)"
+      },
       "use_full_preset": {
         "accept": "Load the preset",
         "header": "Load a full preset",
@@ -265,7 +273,8 @@
       "new_project": "New project",
       "open": "Open",
       "save": "Save",
-      "title": "Main menu"
+      "title": "Main menu",
+      "troubleshooting": "Troubleshooting"
     },
     "nag": "<b>DISCLAIMER</b>: This application is under development. Some features are not yet available or are incomplete.",
     "properties": {

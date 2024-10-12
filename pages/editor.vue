@@ -33,19 +33,23 @@
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   max-width: 100%;
+  min-width: 0;
   flex-grow: 1;
   gap: 1rem;
 }
 
 @media (max-width: 640px) {
   .editor {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
 
     .controls {
+      min-width: 0;
       order: 1;
     }
 
     .canvas {
+      min-width: 0;
       order: -1;
     }
   }
@@ -53,9 +57,11 @@
 
 @media (max-width: 1024px) and (min-width: 641px) {
   .editor {
-    grid-template-columns: auto;
+    display: flex;
+    flex-direction: column;
 
     .controls {
+      min-width: 0;
       order: 1;
       flex-direction: row;
 
@@ -65,6 +71,7 @@
     }
 
     .canvas {
+      min-width: 0;
       order: -1;
     }
   }
