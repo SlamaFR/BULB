@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
 import { AIRPORTS, findAirportVyValue } from '~/data/airports'
 
 const airport = defineModel<Airport | null>({ required: true })

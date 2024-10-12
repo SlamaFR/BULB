@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import useVersion from '~/composables/useVersion'
+import { useProject } from '~/stores/useProject'
+
 const { applicationVersion } = useVersion()
 const { line, outdated } = storeToRefs(useProject())
 </script>

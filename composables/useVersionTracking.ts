@@ -1,4 +1,9 @@
+import { useIntervalFn } from '@vueuse/core'
+import { useConfirm } from 'primevue/useconfirm'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import useVersion from '~/composables/useVersion'
+import { compareVersions } from '~/utils/versions'
 
 export default function useVersionTracking() {
   const confirm = useConfirm()
@@ -14,7 +19,7 @@ export default function useVersionTracking() {
       .then(res => res.text())
       .then(text => text.trim())
       .then((version) => {
-        if (version !== applicationVersion) {
+        if (compareVersions(version, latestVersion.value) > 0) {
           latestVersion.value = version
           promptUpdate()
         }

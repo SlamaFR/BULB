@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useCssVar } from '@vueuse/core'
+import { computed, inject, ref } from 'vue'
+import { LineContextKey } from '~/utils/symbols'
+
 const {
   meta,
 } = defineProps<{
@@ -9,7 +13,7 @@ const el = ref()
 const sizeFactor = useCssVar('--base-size', el)
 
 const CLEARANCE = 16
-const SIZE = 16 * Number.parseFloat(sizeFactor.value)
+const SIZE = 16 * Number.parseFloat(sizeFactor.value ?? '1')
 
 const lineContext = inject<LineContext>(LineContextKey)
 const color = computed(() => lineContext?.color.value ?? '#000000')

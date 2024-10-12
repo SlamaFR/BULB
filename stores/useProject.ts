@@ -1,3 +1,9 @@
+import { persistedState } from '#build/imports'
+import { defineStore } from 'pinia'
+import { computed, reactive, ref } from 'vue'
+import useVersion from '~/composables/useVersion'
+import { compareVersions } from '~/utils/versions'
+
 export const useProject = defineStore('project', () => {
   const { applicationVersion, projectMinimumVersion } = useVersion()
 

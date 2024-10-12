@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { browserName, isFirefox, isSafari } from '@basitcodeenv/vue3-device-detect'
+import { ref } from 'vue'
 
 const visible = ref(isFirefox || isSafari)
 </script>

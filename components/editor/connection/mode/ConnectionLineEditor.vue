@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const {
   index,
   mode,
@@ -14,7 +16,7 @@ const line = defineModel<ModeConnectionElement>('line', { required: true })
 
 const showOrnamentEditor = ref(false)
 
-function permittedTypes(mode: Mode | null) {
+function permittedTypes(mode: Mode | null): OrnamentType[] | undefined {
   if (mode === 'BUS') return []
   return undefined
 }

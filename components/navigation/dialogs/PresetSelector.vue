@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { useConfirm } from 'primevue/useconfirm'
 import { useI18n } from 'vue-i18n'
+import useVersion from '~/composables/useVersion'
 import { METRO_LINES, RER_LINES, TRAM_LINES, TRANSILIEN_LINES } from '~/data/lines'
 import { getPreset } from '~/data/presets'
+import { useProject } from '~/stores/useProject'
 
 const FULL_TEMPLATE = {
   METRO: ['1', '2', '3', '3bis', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
@@ -35,6 +39,7 @@ function loadFullPreset(preset: Project) {
       line.value.lineWidth = preset.line.lineWidth
       line.value.mapSize = preset.line.mapSize
       line.value.topology = preset.line.topology
+      visible.value = false
     },
   })
 }
@@ -48,9 +53,8 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
     line.value.mode = _mode
     line.value.index = _index
     if (_color) line.value.color = _color
+    visible.value = false
   }
-
-  visible.value = false
 }
 </script>
 

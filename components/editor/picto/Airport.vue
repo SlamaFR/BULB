@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import BOTH from '~/assets/svg/airport/airport-both.svg'
 import CDG from '~/assets/svg/airport/airport-cdg.svg'
 import GENERIC from '~/assets/svg/airport/airport-generic.svg'
@@ -7,7 +8,7 @@ import ORY from '~/assets/svg/airport/airport-ory.svg'
 const {
   airport,
 } = defineProps<{
-  airport: Airport
+  airport: Airport | null
 }>()
 
 const icon = computed(() => {

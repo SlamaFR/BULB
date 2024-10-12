@@ -1,3 +1,7 @@
+import { useEventBus } from '@vueuse/core'
+import { onMounted, onUnmounted } from 'vue'
+import { ElementGrabbingSignal } from '~/utils/symbols'
+
 type ElementType = 'STOP' | 'SPACER' | null
 
 interface ElementGrabbingEvent {

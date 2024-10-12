@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { inject, onMounted, onUnmounted, ref, watch } from 'vue'
+import { StopContextKey } from '~/utils/symbols'
+
 const {
   subtitle,
   shift = false,

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
+import { ref } from 'vue'
 import { VueDraggable } from 'vue-draggable-plus'
 
 interface Element {

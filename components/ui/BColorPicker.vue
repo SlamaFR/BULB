@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
+
 const color = defineModel<string | null>({ required: true })
 const pickedColor = ref<string | null>(color.value ?? 'transparent')
 

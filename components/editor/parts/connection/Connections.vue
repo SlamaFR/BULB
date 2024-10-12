@@ -1,4 +1,10 @@
 <script setup lang="ts">
+import { useElementSize } from '@vueuse/core'
+import { computed, inject, ref, watch } from 'vue'
+import { STOP_PADDING } from '~/utils/dimensions'
+import { StopContextKey } from '~/utils/symbols'
+import { isMode, isService } from '~/utils/types'
+
 const {
   connections,
 } = defineProps<{

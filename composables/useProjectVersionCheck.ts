@@ -1,4 +1,7 @@
+import { useConfirm } from 'primevue/useconfirm'
 import { useI18n } from 'vue-i18n'
+import { useProject } from '~/stores/useProject'
+import { compareVersions } from '~/utils/versions'
 
 export function useProjectVersionCheck() {
   const confirm = useConfirm()

@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { navigateTo } from '#app'
+import { definePageMeta } from '#imports'
+
 definePageMeta({
   layout: 'blank',
 })

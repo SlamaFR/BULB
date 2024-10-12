@@ -1,3 +1,8 @@
+import { storeToRefs } from 'pinia'
+import { useToast } from 'primevue/usetoast'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+import { useProject } from '~/stores/useProject'
+
 export default function useSaveProject() {
   const toast = useToast()
   const { version, line } = storeToRefs(useProject())

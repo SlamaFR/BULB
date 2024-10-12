@@ -106,6 +106,7 @@ declare global {
 
   /* ///////////// LINE ///////////// */
 
+  type OrnamentType = 'AIRPORT' | 'AIRPORT_NAME' | 'TEXT'
   type OrnamentPosition = 'RIGHT' | 'BOTTOM'
   type Airport = 'CDG' | 'ORY' | 'BOTH' | 'GENERIC'
 

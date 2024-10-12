@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type Popover from 'primevue/popover'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import en from '~/assets/svg/flags/en.svg'
 import fr from '~/assets/svg/flags/fr.svg'

@@ -94,7 +94,7 @@ function getIcon(severity: string, detail?: { icon: string }) {
 }
 </style>
 
-<style>
+<style lang="scss">
 .toast-enter-active,
 .toast-leave-active{
   transition: opacity 0.3s ease, transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);

@@ -28,12 +28,7 @@ export default defineNuxtConfig({
     },
   },
 
-  imports: { // add folders here to auto-import them in your application
-    dirs: [
-      'stores',
-      'composables/**',
-    ],
-  },
+  imports: { autoImport: false },
 
   components: [{ path: '~/components', pathPrefix: false }],
 

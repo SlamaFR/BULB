@@ -1,3 +1,6 @@
+import { useColorMode } from '#build/imports'
+import { computed } from 'vue'
+
 export default function useDark() {
   const colorMode = useColorMode()
 

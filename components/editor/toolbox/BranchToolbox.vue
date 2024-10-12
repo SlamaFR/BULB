@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
+import { ref } from 'vue'
 import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
+import useElementGrabbing from '~/composables/useElementGrabbing'
 
 interface Element {
   label: string
@@ -61,7 +63,7 @@ function onStart(e: DraggableEvent<Element>) {
     :group="{ name: 'branchElements', pull: 'clone', put: false }"
     :clone="clone"
     :sort="false"
-    @start="e => onStart(e)"
+    @start="e => onStart(e as DraggableEvent<Element>)"
     @end="release()"
   >
     <div v-for="element in elements" :key="element.label" class="toolbox-item">

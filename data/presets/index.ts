@@ -1,4 +1,5 @@
 import * as Metros from '~/data/presets/metro'
+import { isCustom } from '~/utils/types'
 
 export function getPreset(mode: Mode, index: LineIndex): Project | null {
   if (isCustom(index)) return null

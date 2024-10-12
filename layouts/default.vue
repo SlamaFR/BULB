@@ -1,6 +1,3 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <Message severity="warn" pt:root:class="sticky top-0 z-10 important-rounded-none backdrop-blur-[var(--p-message-blur)]">
     <span v-html="$t('ui.nag')" />

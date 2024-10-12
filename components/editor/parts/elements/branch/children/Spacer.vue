@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed, ref } from 'vue'
+
 const spacer = defineModel<Spacer>({ required: true })
 const length = computed(() => `calc(${spacer.value.$spacer.size} * 1em)`)
 const showPropertiesDialog = ref(false)

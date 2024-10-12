@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import LINE_1 from '~/assets/svg/lines/metro/metro_1.svg'
 import LINE_2 from '~/assets/svg/lines/metro/metro_2.svg'
 import LINE_3 from '~/assets/svg/lines/metro/metro_3.svg'

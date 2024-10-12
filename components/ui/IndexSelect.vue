@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { computed, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { findLineByValue, getLinesByMode } from '~/data/lines'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 
 const { mode } = defineProps<{
   mode: Mode | null
@@ -13,7 +15,7 @@ const { getModeIndices, findIndexById } = useCustomLineIndices()
 const { t } = useI18n()
 
 const availableDefaultLines = computed(() => getLinesByMode(mode))
-const availableCustomLines = computed(() => getModeIndices(mode).map(it => ({
+const availableCustomLines = computed(() => getModeIndices(mode).map((it: CustomLineIndexDescription) => ({
   value: {
     mode: it.mode,
     $customLineIndex: { id: it.id },

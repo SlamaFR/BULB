@@ -1,4 +1,12 @@
+import { useFileDialog } from '@vueuse/core'
+import { storeToRefs } from 'pinia'
+import { useConfirm } from 'primevue/useconfirm'
+import { useToast } from 'primevue/usetoast'
 import { useI18n } from 'vue-i18n'
+import { useProjectVersionCheck } from '~/composables/useProjectVersionCheck'
+import useVersion from '~/composables/useVersion'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+import { useProject } from '~/stores/useProject'
 
 export default function useLoadProject() {
   const toast = useToast()

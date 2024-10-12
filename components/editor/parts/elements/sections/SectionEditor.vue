@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useToast } from 'primevue/usetoast'
+import { computed } from 'vue'
 import { type SortableEvent, VueDraggable } from 'vue-draggable-plus'
+import { isBranch } from '~/utils/types'
 
 const {
   inner = false,
@@ -84,7 +87,7 @@ function onAction(action: Action, event: SortableEvent) {
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .section-ghost {
   opacity: .5;
 }

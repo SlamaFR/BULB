@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { useResizeObserver } from '@vueuse/core'
+import { computed, inject, onUnmounted, ref } from 'vue'
+import { StopContextKey } from '~/utils/symbols'
+
 const {
   value,
   placeName = '',
@@ -38,10 +42,10 @@ onUnmounted(() => {
     <div class="flex">
       <div class="wrapper translate-x-50%">
         <div ref="frame" class="frame" :class="{ 'opacity-50': untitled }">
-          <span v-for="part in placeNameParts" class="place-name">
+          <span v-for="part in placeNameParts" :key="part" class="place-name">
             {{ part }}
           </span>
-          <span v-for="part in valueParts">
+          <span v-for="part in valueParts" :key="part">
             {{ part }}
           </span>
           <span v-if="untitled">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>

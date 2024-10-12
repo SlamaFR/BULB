@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref, watch } from 'vue'
 import { findModeByValue, MODES } from '~/data/modes'
 
 const mode = defineModel<Mode | null>({ required: true })

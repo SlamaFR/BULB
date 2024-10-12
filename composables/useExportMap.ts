@@ -1,4 +1,5 @@
 import * as htmlToImage from 'html-to-image'
+import { useToast } from 'primevue/usetoast'
 
 export default function useExportMap() {
   const toast = useToast()

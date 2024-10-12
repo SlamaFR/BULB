@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import RER_A from '~/assets/svg/lines/rer/RER_A.svg'
 import RER_B from '~/assets/svg/lines/rer/RER_B.svg'
 import RER_C from '~/assets/svg/lines/rer/RER_C.svg'

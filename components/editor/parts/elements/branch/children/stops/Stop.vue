@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { useElementHover, useElementSize } from '@vueuse/core'
+import { computed, inject, provide, reactive, ref } from 'vue'
 import { STOP_PADDING } from '~/utils/dimensions'
-import { StopContextKey } from '~/utils/symbols'
+import { LineContextKey, StopContextKey } from '~/utils/symbols'
 
 const stop = defineModel<Stop>({ required: true })
 

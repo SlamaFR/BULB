@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useProject } from '~/stores/useProject'
+
 const { reset } = useProject()
 
 function reload() {
@@ -26,7 +28,7 @@ function newProject() {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .content {
   font-size: var(--font-size);
   background: white;
