@@ -5,6 +5,7 @@ const { reset } = useProject()
 
 const showLineIndexDirectory = ref(false)
 const showSaveDialog = ref(false)
+const showTroubleshootingDialog = ref(false)
 
 const importProject = useLoadProject()
 const exportSignal = useEventBus(ExportSignal)
@@ -75,8 +76,18 @@ function exportMap() {
       text
       @click="exportMap()"
     />
+    <Divider />
+    <Button
+      pt:root:class="important-justify-start"
+      :label="$t('ui.menu.troubleshooting')"
+      severity="secondary"
+      icon="i-tabler-tool"
+      text
+      @click="showTroubleshootingDialog = true"
+    />
   </div>
 
   <CustomLineIndexDirectoryDialog v-model:visible="showLineIndexDirectory" />
+  <TroubleshootingDialog v-model:visible="showTroubleshootingDialog" />
   <SaveDialog v-model:visible="showSaveDialog" />
 </template>

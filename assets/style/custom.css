@@ -1,3 +1,7 @@
 .b-dialog-enter-active {
   transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
+
+.p-inputicon {
+  margin-top: -.25em !important;
+}
