@@ -249,7 +249,7 @@
       "warp_add": {
         "add_all_stops": "Ajouter les arrêts",
         "header": "Assistant WarpAdd",
-        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d'appuyer sur <kbd>Tab</kbd> pour passer à l’arrêt suivant.",
+        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d’appuyer sur <kbd>Tab</kbd> pour passer à l’arrêt suivant.",
         "reset": "Réinitialiser",
         "stop_name": "Nom de l’arrêt",
         "stops_list": "Liste des arrêts",

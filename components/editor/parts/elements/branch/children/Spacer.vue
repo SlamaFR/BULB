@@ -8,7 +8,13 @@ const showPropertiesDialog = ref(false)
 
 <template>
   <div v-bind="$attrs" class="spacer-wrapper">
-    <div class="dynamic-part branch-element-handle spacer" @click="showPropertiesDialog = true">
+    <div
+      class="dynamic-part branch-element-handle spacer"
+      @click="(e: Event) => {
+        e.stopPropagation()
+        showPropertiesDialog = true
+      }"
+    >
       <div class="export-hide">
         <div />
       </div>
@@ -39,6 +45,7 @@ const showPropertiesDialog = ref(false)
   z-index: 2;
 
   transition: background-color .2s ease;
+
   &:hover {
     background-color: color-mix(in srgb, var(--p-slate-300), transparent 50%);
   }
