@@ -77,6 +77,12 @@
   },
   "ui": {
     "dialogs": {
+      "branch_properties": {
+        "element_spacing": "要素スペーシング",
+        "header": "線路のプロパティ",
+        "margin_left": "左余白",
+        "margin_right": "右余白"
+      },
       "browser_check": {
         "dismiss": "分かりました",
         "header": "ブラウザはサポートされていません",
@@ -184,6 +190,12 @@
         },
         "text": "テキスト"
       },
+      "outdated_project": {
+        "accept": "新しいプロジェクト",
+        "header": "廃止されたプロジェクト",
+        "message": "このプロジェクトは廃止され、サポートされていません。このまま続行すると問題が発生する可能性があります。新しいプロジェクトを作成するか、サポートされているプロジェクトを開くことをお勧めします。",
+        "reject": "このプロジェクトを続行する"
+      },
       "parallel_branches_properties": {
         "alignment": {
           "fluid": "両端揃え",
@@ -202,6 +214,11 @@
         "project_name": "プロジェクトの名前",
         "save": "保存"
       },
+      "spacer_properties": {
+        "header": "スペーサーのプロパティ",
+        "size": "スペーサーのサイズ",
+        "spacer_export_notice": "お知らせ：スペーサーはレンダリング時に見えなくなります。"
+      },
       "stop_properties": {
         "city_name": "市の名前",
         "closed": "運休",
@@ -211,13 +228,40 @@
         "subtitle": "副題",
         "terminus": "終着駅"
       },
+      "troubleshooting": {
+        "github": "GitHubの課題を開く",
+        "header": "トラブルシューティング",
+        "notice": "BULBが故障した場合、以下の情報がお役に立ちます。 バグの場合は、 以下の情報を指定して{github}か{twitter}。",
+        "project": "プロジェクト",
+        "technical_details": "技術的詳細",
+        "twitter": "ツイッター(X)で連絡してください"
+      },
+      "use_full_preset": {
+        "accept": "プリセットの線路図を読み込み",
+        "header": "プリセットの線路図の読み込み",
+        "message": "このプリセット値には完全なオリジナル線路図が含まれています。現在のプロジェクトを保存したのを覚えていますか？続行すると、保存されていない変更はすべて失われます。",
+        "reject": "キャンセル"
+      },
       "use_preset": {
+        "full_presets_notice": "○マークがついているプリセット値はプリセットの線路図です。つまり、完全な構造、すべての停車駅、およびすべての乗り換えを含む路線図です。",
         "header": "プリセット値の使用"
+      },
+      "warp_add": {
+        "add_all_stops": "全駅を追加する",
+        "header": "WarpAddアシスタント",
+        "notice": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、<kbd>Tab</kbd>キーを押して次の駅に移動します。",
+        "reset": "リセット",
+        "stop_name": "駅の名前",
+        "stops_list": "駅一覧",
+        "stops_list_empty": "駅がありません"
       }
     },
     "map_editor": {
       "error": {
-        "new_project": "新しいプロジェクト"
+        "detail": "ページを再読み込みしてください。問題が解決しない場合、プロジェクトが廃止されているか、破損している可能性があります。",
+        "new_project": "新しいプロジェクト",
+        "reload": "ページを再読み込み",
+        "title": "エラーが発生しました"
       },
       "title": "路線図のワークスペース",
       "toolbox": {
@@ -238,11 +282,12 @@
       "new_project": "新しいプロジェクト",
       "open": "開く",
       "save": "保存",
-      "title": "メインメニュー"
+      "title": "メインメニュー",
+      "troubleshooting": "トラブルシューティング"
     },
     "nag": "<b>注意</b> : このアプリケーションは現在開発中です。一部の機能はまだ利用できないか、不完全です。",
     "properties": {
-      "color": "路線図の色",
+      "color": "路線の色",
       "index": "路線記号",
       "mode": "交通機関",
       "size": "路線図の額のサイズ",
@@ -250,6 +295,14 @@
       "use_preset": "プリセット値の使用"
     },
     "toasts": {
+      "adjacent_branches": {
+        "detail": "線路を隣接して配置することはできません。",
+        "title": "配置禁止"
+      },
+      "branch_merge": {
+        "detail": "隣接する線路が統合されました。",
+        "title": "線路の統合"
+      },
       "export": {
         "failure": {
           "detail": "プロジェクトをエクスポートできませんでした",
