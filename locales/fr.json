@@ -193,7 +193,7 @@
       "outdated_project": {
         "accept": "Nouveau projet",
         "header": "Projet obsolète",
-        "message": "Ce projet est osbsolète et n’est plus supporté. Si vous continuez malgré tout, vous pourriez rencontrer des problèmes. Il est conseillé de créer un nouveau projet ou d’ouvrir un projet supporté.",
+        "message": "Ce projet est obsolète et n’est plus supporté. Si vous continuez malgré tout, vous pourriez rencontrer des problèmes. Il est conseillé de créer un nouveau projet ou d’ouvrir un projet supporté.",
         "reject": "Continuer sur ce projet"
       },
       "parallel_branches_properties": {
