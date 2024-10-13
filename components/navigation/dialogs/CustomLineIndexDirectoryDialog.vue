@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { MODES } from '~/data/modes'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 
 const visible = defineModel<boolean>('visible')
 const { getModeIndices, createNewIndex, deleteById } = useCustomLineIndices()

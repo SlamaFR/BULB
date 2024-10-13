@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import TRAIN_H from '~/assets/svg/lines/train/train_H.svg'
 import TRAIN_J from '~/assets/svg/lines/train/train_J.svg'
 import TRAIN_K from '~/assets/svg/lines/train/train_K.svg'

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import TVM from '~/assets/svg/lines/bus/tvm.svg'
 import TZEN_1 from '~/assets/svg/lines/bus/tzen1.svg'
 import TZEN_2 from '~/assets/svg/lines/bus/tzen2.svg'

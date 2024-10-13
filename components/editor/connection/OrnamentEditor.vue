@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
+import { computed, ref, watch } from 'vue'
 import { isAirport, isAirportName, isText } from '~/utils/types'
-
-type OrnamentType = 'AIRPORT' | 'AIRPORT_NAME' | 'TEXT'
 
 const { permittedTypes = ['AIRPORT', 'TEXT'] } = defineProps<{
   permittedTypes?: OrnamentType[]

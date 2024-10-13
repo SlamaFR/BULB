@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+
 const {
   index,
 } = defineProps<{
@@ -12,7 +14,7 @@ const service = defineModel<ServiceConnectionElement>('service', { required: tru
 
 const showOrnamentEditor = ref(false)
 
-function permittedTypes(service: Service | null) {
+function permittedTypes(service: Service | null): OrnamentType[] | undefined {
   if (service === 'AIRPORT') return ['AIRPORT_NAME']
   return undefined
 }

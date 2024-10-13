@@ -1,5 +1,11 @@
 <script setup lang="ts">
+import { useEventBus } from '@vueuse/core'
+import { useConfirm } from 'primevue/useconfirm'
+import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import useLoadProject from '~/composables/useLoadProject'
+import { useProject } from '~/stores/useProject'
+import { ExportSignal } from '~/utils/symbols'
 
 const { reset } = useProject()
 

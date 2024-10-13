@@ -1,4 +1,13 @@
 <script setup lang="ts">
+import { useEventBus } from '@vueuse/core'
+import { storeToRefs } from 'pinia'
+import { computed, onBeforeUnmount, onMounted, provide, ref } from 'vue'
+import useExportMap from '~/composables/useExportMap'
+import { useProjectVersionCheck } from '~/composables/useProjectVersionCheck'
+import useVersion from '~/composables/useVersion'
+import { useProject } from '~/stores/useProject'
+import { ExportSignal, LineContextKey } from '~/utils/symbols'
+
 const { version, line } = storeToRefs(useProject())
 const exportMap = useExportMap()
 const exportSignal = useEventBus(ExportSignal)

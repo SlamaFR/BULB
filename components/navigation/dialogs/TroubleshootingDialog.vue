@@ -13,6 +13,9 @@ import {
   osName,
   osVersion,
 } from '@basitcodeenv/vue3-device-detect'
+import { computed, ref } from 'vue'
+import useVersion from '~/composables/useVersion'
+import { useProject } from '~/stores/useProject'
 
 const GITHUB_LINK = 'https://github.com/SlamaFR/BULB/issues/new?assignees=&labels=&projects=&template=bug_report.md&title='
 const TWITTER_LINK = 'https://x.com/messages/compose?recipient_id=1030888182&ref_src=twsrc%5Etfw'
@@ -80,7 +83,7 @@ const deviceName = computed(() => {
             </IftaLabel>
             <IftaLabel class="grid-col-span-2">
               <InputText class="w-full" :model-value="getUA()" variant="filled" readonly />
-              <label>User-agent</label>
+              <label>User Agent</label>
             </IftaLabel>
           </div>
         </Fieldset>
@@ -92,11 +95,11 @@ const deviceName = computed(() => {
                 <InputIcon v-if="project.outdated" class="i-tabler-alert-circle bg-red-500" />
                 <InputIcon v-else class="i-tabler-circle-check bg-green-500" />
               </IconField>
-              <label>Project version</label>
+              <label>Project Version</label>
             </IftaLabel>
             <IftaLabel>
               <InputText class="w-full" :model-value="`${projectMinimumVersion}`" variant="filled" readonly />
-              <label>Minimum project version</label>
+              <label>Minimum Project Version</label>
             </IftaLabel>
             <IftaLabel>
               <InputText class="w-full" :model-value="`${applicationVersion}`" variant="filled" readonly />

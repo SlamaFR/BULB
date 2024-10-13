@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { VueDraggable } from 'vue-draggable-plus'
 
 const active = ref(false)

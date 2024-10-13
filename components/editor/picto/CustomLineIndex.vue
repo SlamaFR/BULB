@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { textContrast } from '~/utils/colors'
+
 const {
   index,
   prefix = '',

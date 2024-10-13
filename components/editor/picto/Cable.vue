@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue'
 import LINE_1 from '~/assets/svg/lines/cable/cable_1.svg'
 
 const {

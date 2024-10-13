@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import useLocale from '~/composables/useLocale'
+import useVersionTracking from '~/composables/useVersionTracking'
+
 useVersionTracking()
 useLocale()
 </script>

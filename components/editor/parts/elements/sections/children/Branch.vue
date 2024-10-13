@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { computed, inject, ref } from 'vue'
 import { type DraggableEvent, type SortableEvent, VueDraggable } from 'vue-draggable-plus'
+import useElementGrabbing from '~/composables/useElementGrabbing'
+import { LineContextKey } from '~/utils/symbols'
 
 const {
   fluid = false,
@@ -77,7 +80,7 @@ function moveOut(event: DraggableEvent<BranchElement>) {
   </div>
 </template>
 
-<style>
+<style lang="scss">
 .element-ghost {
   opacity: .5;
 }

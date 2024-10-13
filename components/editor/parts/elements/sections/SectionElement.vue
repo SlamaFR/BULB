@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useElementHover } from '@vueuse/core'
+import { computed, ref } from 'vue'
 import { isBranch, isFork, isLoop, isParallelBranches } from '~/utils/types'
 
 const {

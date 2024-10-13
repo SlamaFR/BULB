@@ -1,5 +1,6 @@
 <script setup lang="ts">
-import ThemeSwitcher from '~/components/ui/ThemeSwitcher.vue'
+import { navigateTo } from '#app'
+import useVersion from '~/composables/useVersion'
 
 const { applicationVersion } = useVersion()
 </script>

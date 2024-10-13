@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useCssVar } from '@vueuse/core'
 import { roundCorners } from 'svg-round-corners'
+import { computed, inject, ref } from 'vue'
+import { LineContextKey } from '~/utils/symbols'
 
 const {
   meta,
@@ -11,7 +14,7 @@ const el = ref()
 const sizeFactor = useCssVar('--base-size', el)
 
 const CLEARANCE = 36
-const SIZE = 16 * Number.parseFloat(sizeFactor.value)
+const SIZE = 16 * Number.parseFloat(sizeFactor.value ?? '1')
 const SLOPE_WIDTH = SIZE * 4.75
 
 const lineContext = inject<LineContext>(LineContextKey)

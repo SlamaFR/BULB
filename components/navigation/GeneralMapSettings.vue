@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { ref } from 'vue'
+import { useProject } from '~/stores/useProject'
+
 const { line } = storeToRefs(useProject())
 
 const showPresetSelector = ref(false)

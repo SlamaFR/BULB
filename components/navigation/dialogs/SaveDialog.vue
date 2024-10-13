@@ -1,4 +1,11 @@
 <script setup lang="ts">
+import { storeToRefs } from 'pinia'
+import { computed, ref, watch } from 'vue'
+import useSaveProject from '~/composables/useSaveProject'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
+import { useProject } from '~/stores/useProject'
+import { isBuiltin } from '~/utils/types'
+
 const visible = defineModel<boolean>('visible', { required: true })
 
 const save = useSaveProject()

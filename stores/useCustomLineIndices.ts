@@ -1,4 +1,8 @@
+import { persistedState } from '#build/imports'
+import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
+import { ref } from 'vue'
+import { modeToShape } from '~/data/modes'
 
 export const useCustomLineIndices = defineStore('customLineIndices', () => {
   const indices = ref<CustomLineIndexDescription[]>([])

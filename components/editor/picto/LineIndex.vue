@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { computed } from 'vue'
+import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 import { isBuiltin, isCustom } from '~/utils/types'
 
 const {
@@ -26,7 +28,7 @@ const transparent = computed(() => {
 const unknownCustomIndex: CustomLineIndexDescription = {
   id: '',
   mode: 'METRO',
-  shape: 'SQUARE',
+  shape: 'ROUNDED_SQUARE',
   prefix: '',
   index: '?',
   suffix: '',

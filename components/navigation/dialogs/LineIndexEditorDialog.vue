@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { watch } from 'vue'
+
 const emit = defineEmits<{
   delete: [id: string]
 }>()
@@ -94,7 +96,10 @@ watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
     <template #footer>
       <div class="flex flex-row gap-2 items-center justify-between flex-grow">
         <div class="flex flex-row gap-2 items-center">
-          <Button :label="$t('ui.dialogs.custom_index_editor.delete')" text icon="i-tabler-trash" severity="danger" @click="emit('delete', index.id)" />
+          <Button
+            :label="$t('ui.dialogs.custom_index_editor.delete')" text icon="i-tabler-trash" severity="danger"
+            @click="emit('delete', index.id)"
+          />
         </div>
       </div>
     </template>
