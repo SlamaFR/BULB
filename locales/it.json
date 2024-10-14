@@ -1,0 +1,341 @@
+{
+  "components": {
+    "airport_select": {
+      "placeholder": "Selezionare un aeroporto"
+    },
+    "color_select": {
+      "placeholder": "Selezionare un colore"
+    },
+    "line_index_select": {
+      "custom_indices": "Indici personalizzati",
+      "line_name": "Linea {index}",
+      "official_indices": "Indici ufficiali",
+      "placeholder": "Selezionare un indice"
+    },
+    "map_size_select": {
+      "placeholder": "Selezionare dimensione mappa"
+    },
+    "mode_select": {
+      "placeholder": "Selezionare un mezzo"
+    },
+    "service_select": {
+      "placeholder": "Selezionare un servizio"
+    },
+    "shape_select": {
+      "placeholder": "Selezionare una forma"
+    }
+  },
+  "data": {
+    "airports": {
+      "both": "CDG + ORY",
+      "cdg": "Charles de Gaulle",
+      "generic": "Generico",
+      "ory": "Orly"
+    },
+    "colors": {
+      "custom": "Personnalisée"
+    },
+    "map_size": {
+      "big": "Molto grande (30em)",
+      "huge": "Gigante (50em)",
+      "large": "Grande (20em)",
+      "normal": "Normale (15em)"
+    },
+    "mode": {
+      "bike": "Bici",
+      "boat": "Battello",
+      "brt": "Busilien (Autobus in sede propria)",
+      "bus": "Autobus",
+      "cable": "Funivia",
+      "metro": "Metrpolitana",
+      "rer": "RER",
+      "tram": "Tram",
+      "transilien": "Transilien"
+    },
+    "services": {
+      "airport": "Aeroporto",
+      "bullet_train": "Treno ad alta velocità",
+      "cdgval": "CDGVAL",
+      "funicular": "Funicolare",
+      "long_distance_bus": "Pullman",
+      "main_station": "Stazione importante",
+      "orlyval": "OrlyVal",
+      "suburban_train": "Treno suburbano",
+      "ter": "TER",
+      "tgv": "TGV"
+    },
+    "shapes": {
+      "circle": "Cerchio",
+      "lines": "Linee",
+      "rectangle": "Rettangolo",
+      "rounded_square": "Quadrato arrotondato"
+    }
+  },
+  "misc": {
+    "beta": "Beta",
+    "temporary": "Temporaneo"
+  },
+  "ui": {
+    "dialogs": {
+      "branch_properties": {
+        "element_spacing": "Intervallo tra gli elementi",
+        "header": "Proprietà della diramazione",
+        "margin_left": "Margine sinistro",
+        "margin_right": "Margine destro"
+      },
+      "browser_check": {
+        "dismiss": "Ho capito",
+        "header": "Questo browser non è supportato",
+        "summary_1": "Sembra che si stia usando <b>{browserName}</b>. Questo browser non è ufficialmente supportato da BULB. È possibile continuare, ma si rischia di incorrere in problemi grafici o comportamenti anomali.",
+        "summary_2": "Per la migliore esperienza si raccomanda di utilizzare un browser basato su Chromium, come ad esempio Google Chrome, Microsoft Edge, Opera, Brave, etc.",
+        "supported_browsers": "Browser supportati",
+        "unsupported_browsers": "Browser non supportati"
+      },
+      "connections_editor": {
+        "group": {
+          "delete": "Elimina",
+          "header": "Gruppo di coincidenze #{index}",
+          "mode": {
+            "lines": {
+              "add": "Aggiungere una linea",
+              "header": "Linee"
+            },
+            "mode": "Mezzo"
+          },
+          "ornament": "Decorazione",
+          "pedestrian_connection": "Coincidenza pedonale",
+          "service": {
+            "services": {
+              "add": "Aggiungere un servizio",
+              "header": "Servizi"
+            }
+          }
+        },
+        "header": "Coincidenze a “{stopName}”",
+        "mode": "Mezzi di trasporti",
+        "or": "o",
+        "service": "servizi di trasporti"
+      },
+      "custom_index_editor": {
+        "color": "Colore",
+        "delete": "Elimina",
+        "header": "Editor indici personalizzati",
+        "index": "Indice",
+        "mode": "Mezzo",
+        "prefix": "Prefisso",
+        "preview": "Anteprima",
+        "shape": "Forma",
+        "suffix": "Suffisso",
+        "value": "Valore"
+      },
+      "custom_indices": {
+        "header": "Elenco indici personalizzati"
+      },
+      "fork_properties": {
+        "header": "Proprietà del bivio",
+        "orientation": {
+          "left": "Verso destra",
+          "right": "Verso sinistra",
+          "title": "Orientamento"
+        },
+        "shape": {
+          "downward": "Deviato in basso",
+          "symmetrical": "Simmetrico",
+          "title": "Forma",
+          "upward": "Deviato in alto"
+        },
+        "size_multiplier": "Moltiplicatore di dimensione"
+      },
+      "loading_custom_indices_prompt": {
+        "accept": "Sì",
+        "header": "Caricamento progetto",
+        "message": "Caricare anche gli indici personalizzati presenti in questo progetto? Gli indici già presenti in memoria non verranno sovrascritti.",
+        "reject": "No"
+      },
+      "loop_properties": {
+        "header": "Proprietà del cappio di ritorno",
+        "orientation": {
+          "left": "Verso destra",
+          "right": "Verso sinistra",
+          "title": "Orientamento"
+        }
+      },
+      "new_project": {
+        "accept": "Nuovo progetto",
+        "header": "Attenzione!",
+        "message": "Si ha già salvato il progetto attuale? Tutte le modifiche non salvate verranno perse!",
+        "reject": "Annulla"
+      },
+      "new_update_available": {
+        "header": "È disponibile un aggiornamento",
+        "later": "Aggiornare in seguito",
+        "message": "La versione {version} di BULB è ora disponibile. Si desidera aggiornare la pagina per caricare l'aggiornamento? Il progetto aperto attualmente non verrà cancellato.",
+        "update": "Aggiornare ora"
+      },
+      "ornament_editor": {
+        "airport": "Aeroporto",
+        "display_ornament": "Visualizzare una decorazione",
+        "header": "Editor decorazioni",
+        "name": "Nome",
+        "no_ornament_available": "Nessuna decorazione disponibile",
+        "ornament": {
+          "airport": "Aeroporto",
+          "airport_name": "Nome dell'aeroporto",
+          "text": "Testo"
+        },
+        "position": {
+          "below": "Sotto",
+          "right": "A destra",
+          "title": "Posizione"
+        },
+        "text": "Testo"
+      },
+      "outdated_project": {
+        "accept": "Creare nuovo progetto",
+        "header": "Progetto obsoleto",
+        "message": "Questo progetto è obsoleto. È possibile continuare, ma si potrebbero riscontrare dei problemi. È consigliato creare un nuovo progetto oppure aprirne uno più recente",
+        "reject": "Continuare con questo progetto obsoleto"
+      },
+      "parallel_branches_properties": {
+        "alignment": {
+          "fluid": "Flessibile",
+          "left": "Allineato a sinistra",
+          "right": "Allineato a destra",
+          "title": "Allineamento"
+        },
+        "header": "Proprietà diramazioni parallele",
+        "section_1_level": "Livello sezione 1",
+        "section_2_level": "Livello sezione 2"
+      },
+      "save_project": {
+        "bundle_custom_indices": "Includere gli indici personalizzati nel progetto",
+        "cancel": "Annulla",
+        "header": "Salvataggio del progetto",
+        "project_name": "Nome del progetto",
+        "save": "Salva"
+      },
+      "spacer_properties": {
+        "header": "Proprietà distanziale",
+        "size": "Lunghezza del distanziale",
+        "spacer_export_notice": "Nota: il distanziale non viene visualizzato nel rendering finale."
+      },
+      "stop_properties": {
+        "city_name": "Città",
+        "closed": "Fermata chiusa",
+        "header": "Proprietà fermata",
+        "interest_point": "Punto d'interesse",
+        "stop_name": "Nome",
+        "subtitle": "Sottotitolo",
+        "terminus": "Capolinea"
+      },
+      "troubleshooting": {
+        "github": "Aprire un ticket su GitHub",
+        "header": "Assistenza",
+        "notice": "Le informazioni in questa finestra sono utili per aiutarvi in caso di problemi con BULB. Se si trova un bug, è possibile {github} oppure {twitter} (in inglese o francese) allegando queste informazioni.",
+        "project": "Progetto",
+        "technical_details": "Dettagli tecnici",
+        "twitter": "contattarmi su Twitter (X)"
+      },
+      "use_full_preset": {
+        "accept": "Caricare un modello",
+        "header": "Caricare un modello completo",
+        "message": "Questo modello contiene interamente la mappa originale della linea scelta. Il progetto attuale verrà sovrascritto se non è stato salvato in anticipo.",
+        "reject": "Annulla"
+      },
+      "use_preset": {
+        "full_presets_notice": "I modelli presentanti un pallino contengono la mappa originale della linea interamente completata, incluso struttura, fermate e coincidenze riportate fedelmente. ",
+        "header": "Caricare un modello"
+      },
+      "warp_add": {
+        "add_all_stops": "Aggiungere tutte le fermate",
+        "header": "Assistente WarpAdd",
+        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere <kbd>Tab</kbd> per passare a quella successiva.",
+        "reset": "Ripristinare tutto",
+        "stop_name": "Nome fermata",
+        "stops_list": "Lista fermate",
+        "stops_list_empty": "Non sono presenti fermate"
+      }
+    },
+    "map_editor": {
+      "error": {
+        "detail": "È necessario aggiornare la pagina. Se il problema persiste, potrebbe essere causato da un progetto obsoleto o corrotto",
+        "new_project": "Nuovo progetto",
+        "reload": "Aggiornare la pagina",
+        "title": "Errore grave"
+      },
+      "title": "Editor mappa",
+      "toolbox": {
+        "branch": "Diramazione",
+        "delete": "Elimina",
+        "fork": "Bivio",
+        "loop": "Cappio di ritorno",
+        "parallel_branches": "Diramazioni parallele",
+        "spacer": "Distanziale",
+        "stop": "Fermata",
+        "untitled_stop": "Fermata senza nome"
+      },
+      "watermark": "Realizzato tramite BULB"
+    },
+    "menu": {
+      "custom_indices": "Indici personalizzati",
+      "export": "Esporta",
+      "new_project": "Nuovo progetto",
+      "open": "Apri",
+      "save": "Salva",
+      "title": "Menù principale",
+      "troubleshooting": "Assistenza"
+    },
+    "nag": "<b>ATTENZIONE</b>: Applicazione è in fase di sviluppo. Alcune funzioni non sono ancora disponibili, o sono incomplete.",
+    "properties": {
+      "color": "Colore mappa",
+      "index": "Indice linea",
+      "mode": "Mezzo di trasporto",
+      "size": "Dimensione riquadro mappa",
+      "title": "Proprietà",
+      "use_preset": "Caricare un modello"
+    },
+    "toasts": {
+      "adjacent_branches": {
+        "detail": "Le diramazioni non possono essere piazzate fianco a fianco",
+        "title": "Posizione non consentita"
+      },
+      "branch_merge": {
+        "detail": "Le diramazioni adiacenti sono state combinate",
+        "title": "Diramazioni combinate"
+      },
+      "export": {
+        "failure": {
+          "detail": "Il progetto non è stato esportato",
+          "title": "Errore durante l'esportazione"
+        },
+        "success": {
+          "detail": "Il progetto è stato esportato correttamente",
+          "title": "Esportazione avvenuta"
+        }
+      },
+      "load": {
+        "failure": {
+          "detail": {
+            "corrupted": "Il file di progetto è corrotto o non è valido",
+            "unreadable": "Impossibile leggere il file di progetto"
+          },
+          "title": "Errore durante il caricamento"
+        },
+        "success": {
+          "detail": "Il progetto è stato caricato correttamente",
+          "title": "Caricamento avvenuto"
+        }
+      },
+      "save": {
+        "success": {
+          "detail": "Il progetto è stato salvato correttamente",
+          "title": "Salvataggio avvenuto"
+        }
+      }
+    },
+    "topbar": {
+      "FAQ": "FAQ",
+      "catch_phrase": "Bello eh? È made in France 🇫🇷"
+    }
+  }
+}
