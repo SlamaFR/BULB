@@ -5,10 +5,12 @@ import { useI18n } from 'vue-i18n'
 import en from '~/assets/svg/flags/en.svg'
 import fr from '~/assets/svg/flags/fr.svg'
 import ja from '~/assets/svg/flags/ja.svg'
+import es from '~/assets/svg/flags/es.svg'
 
 const LOCALES = [
   { label: 'Français', value: 'fr', flag: fr },
   { label: 'English', value: 'en', flag: en },
+  { label: 'Español', value: 'es', flag: es },
   { label: '日本語', value: 'ja', flag: ja },
 ]
 
