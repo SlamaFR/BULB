@@ -26,6 +26,11 @@ function doExport() {
   exportMap(el.value)
 }
 
+function onError(e: Error) {
+  console.log(e)
+  error.value = true
+}
+
 onMounted(() => {
   exportSignal.on(doExport)
   checkVersion(version.value, projectMinimumVersion)
@@ -38,7 +43,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
     <div class="flex flex-grow overflow-x-auto">
       <div class="deadzone">
         <div ref="el">
-          <NuxtErrorBoundary v-if="!error" @error="error = true">
+          <NuxtErrorBoundary v-if="!error" @error="onError">
             <LineCanvas />
           </NuxtErrorBoundary>
           <LineCanvasError v-if="error" />
