@@ -16,7 +16,10 @@ const {
 }>()
 
 const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
-const containsDescenders = computed(() => goesBelowLine(valueParts.value[valueParts.value.length - 1]))
+const containsDescenders = computed(() => {
+  if (valueParts.value.length === 0) return false
+  return goesBelowLine(valueParts.value[valueParts.value.length - 1])
+})
 const untitled = computed(() => valueParts.value.length === 0)
 </script>
 

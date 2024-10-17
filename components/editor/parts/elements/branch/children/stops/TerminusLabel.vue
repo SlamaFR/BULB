@@ -29,7 +29,7 @@ const { stop } = useResizeObserver(frame, (e) => {
 
 const valueParts = computed(() => value.split('\n').filter(part => part.trim() !== ''))
 const placeNameParts = computed(() => placeName?.split('\n').filter(part => part.trim() !== '') ?? [])
-const untitled = computed(() => valueParts.value.length === 0 && placeNameParts.value.length === 0)
+const untitled = computed(() => valueParts.value.length === 0)
 
 onUnmounted(() => {
   stop()
