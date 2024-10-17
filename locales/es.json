@@ -1,0 +1,341 @@
+{
+  "components": {
+    "airport_select": {
+      "placeholder": "Seleccionar un aeropuerto"
+    },
+    "color_select": {
+      "placeholder": "Seleccionar un color"
+    },
+    "line_index_select": {
+      "custom_indices": "Índices personalizados",
+      "line_name": "Línea {index}",
+      "official_indices": "Índices oficiales",
+      "placeholder": "Seleccionar un índice"
+    },
+    "map_size_select": {
+      "placeholder": "Seleccionar un tamaño"
+    },
+    "mode_select": {
+      "placeholder": "Seleccionar un modo"
+    },
+    "service_select": {
+      "placeholder": "Seleccionar un servicio"
+    },
+    "shape_select": {
+      "placeholder": "Seleccionar una forma"
+    }
+  },
+  "data": {
+    "airports": {
+      "both": "CDG + ORY",
+      "cdg": "Charles de Gaulle",
+      "generic": "Genérico",
+      "ory": "Orly"
+    },
+    "colors": {
+      "custom": "Personalizado"
+    },
+    "map_size": {
+      "big": "Muy grande (30em)",
+      "huge": "Enorme (50em)",
+      "large": "Grande (20em)",
+      "normal": "Normal (15em)"
+    },
+    "mode": {
+      "bike": "Bicicleta",
+      "boat": "Lanzadera fluvial",
+      "brt": "BRT (Autobús de tránsito rápido)",
+      "bus": "Autobús",
+      "cable": "Teleférico",
+      "metro": "Metro",
+      "rer": "RER",
+      "tram": "Tranvía",
+      "transilien": "Transilien"
+    },
+    "services": {
+      "airport": "Aeropuerto",
+      "bullet_train": "Tren de alta velocidad",
+      "cdgval": "CDGVAL",
+      "funicular": "Funicular",
+      "long_distance_bus": "Autocar",
+      "main_station": "Estación principal",
+      "orlyval": "OrlyVal",
+      "suburban_train": "Tren suburbano",
+      "ter": "TER",
+      "tgv": "TGV"
+    },
+    "shapes": {
+      "circle": "Círculo",
+      "lines": "Líneas",
+      "rectangle": "Rectángulo",
+      "rounded_square": "Cuadrado redondeado"
+    }
+  },
+  "misc": {
+    "beta": "Beta",
+    "temporary": "Temporal"
+  },
+  "ui": {
+    "dialogs": {
+      "branch_properties": {
+        "element_spacing": "Espaciado de elementos",
+        "header": "Propiedades de la rama",
+        "margin_left": "Margen izquierdo",
+        "margin_right": "Margen derecho"
+      },
+      "browser_check": {
+        "dismiss": "Lo entendí",
+        "header": "Navegador no soportado",
+        "summary_1": "Parece que estás usando <b>{browserName}</b> como navegador. Este no está oficialmente soportado por BULB. Si continúas, podrías experimentar comportamientos inesperados y problemas gráficos.",
+        "summary_2": "Para una mejor experiencia, se recomienda usar un navegador basado en Chromium como Google Chrome, Microsoft Edge, Opera, Brave, etc.",
+        "supported_browsers": "Navegadores soportados",
+        "unsupported_browsers": "Navegadores no soportados"
+      },
+      "connections_editor": {
+        "group": {
+          "delete": "Eliminar",
+          "header": "Grupo de correspondencias #{index}",
+          "mode": {
+            "lines": {
+              "add": "Añadir una línea",
+              "header": "Líneas"
+            },
+            "mode": "Modo"
+          },
+          "ornament": "Adorno",
+          "pedestrian_connection": "Correspondencia peatonal",
+          "service": {
+            "services": {
+              "add": "Añadir un servicio",
+              "header": "Servicios"
+            }
+          }
+        },
+        "header": "Correspondencias de “{stopName}”",
+        "mode": "Modo de transporte",
+        "or": "O",
+        "service": "Servicio de transporte"
+      },
+      "custom_index_editor": {
+        "color": "Color",
+        "delete": "Eliminar",
+        "header": "Editor de índice personalizado",
+        "index": "Índice",
+        "mode": "Modo",
+        "prefix": "Prefijo",
+        "preview": "Vista previa",
+        "shape": "Forma",
+        "suffix": "Sufijo",
+        "value": "Valor"
+      },
+      "custom_indices": {
+        "header": "Directorio de índices personalizados"
+      },
+      "fork_properties": {
+        "header": "Propiedades de bifurcación",
+        "orientation": {
+          "left": "Izquierda",
+          "right": "Derecha",
+          "title": "Orientación"
+        },
+        "shape": {
+          "downward": "Hacia abajo",
+          "symmetrical": "Simétrico",
+          "title": "Forma",
+          "upward": "Hacia arriba"
+        },
+        "size_multiplier": "Multiplicador de tamaño"
+      },
+      "loading_custom_indices_prompt": {
+        "accept": "Sí",
+        "header": "Cargando proyecto",
+        "message": "¿Quieres cargar los índices personalizados contenidos en este proyecto? Los índices que ya tienes no se perderán.",
+        "reject": "No"
+      },
+      "loop_properties": {
+        "header": "Propiedades de la vuelta en U",
+        "orientation": {
+          "left": "Izquierda",
+          "right": "Derecha",
+          "title": "Orientación"
+        }
+      },
+      "new_project": {
+        "accept": "Nuevo proyecto",
+        "header": "¡No tan rápido!",
+        "message": "¿Has guardado tu proyecto actual? Si continúas, perderás todos los cambios que no has guardado.",
+        "reject": "Cancelar"
+      },
+      "new_update_available": {
+        "header": "Nueva actualización disponible",
+        "later": "Más tarde",
+        "message": "La versión {version} de BULB está disponible. ¿Quieres recargar la página para actualizar? No se perderán datos.",
+        "update": "Actualizar"
+      },
+      "ornament_editor": {
+        "airport": "Aeropuerto",
+        "display_ornament": "Mostrar un adorno",
+        "header": "Editor de adorno",
+        "name": "Nombre",
+        "no_ornament_available": "No hay adornos disponibles",
+        "ornament": {
+          "airport": "Aeropuerto",
+          "airport_name": "Nombre del aeropuerto",
+          "text": "Texto"
+        },
+        "position": {
+          "below": "Debajo",
+          "right": "A la derecha",
+          "title": "Posición"
+        },
+        "text": "Texto"
+      },
+      "outdated_project": {
+        "accept": "Nuevo proyecto",
+        "header": "Proyecto obsoleto",
+        "message": "Este proyecto está obsoleto y ya no es soportado. Si continúas, podrías enfrentar problemas. Se recomienda crear un nuevo proyecto o abrir uno compatible.",
+        "reject": "Continuar con este proyecto"
+      },
+      "parallel_branches_properties": {
+        "alignment": {
+          "fluid": "Fluido",
+          "left": "Alineado a la izquierda",
+          "right": "Alineado a la derecha",
+          "title": "Alineación"
+        },
+        "header": "Propiedades de ramas paralelas",
+        "section_1_level": "Nivel de la sección 1",
+        "section_2_level": "Nivel de la sección 2"
+      },
+      "save_project": {
+        "bundle_custom_indices": "Incorporar los índices personalizados",
+        "cancel": "Cancelar",
+        "header": "Guardar proyecto",
+        "project_name": "Nombre del proyecto",
+        "save": "Guardar"
+      },
+      "spacer_properties": {
+        "header": "Propiedades de espaciado",
+        "size": "Longitud del espaciado",
+        "spacer_export_notice": "Nota: el espaciado se volverá invisible al exportar."
+      },
+      "stop_properties": {
+        "city_name": "Ciudad",
+        "closed": "Cerrado",
+        "header": "Propiedades de la parada",
+        "interest_point": "Punto de interés",
+        "stop_name": "Nombre",
+        "subtitle": "Subtítulo",
+        "terminus": "Final de línea"
+      },
+      "troubleshooting": {
+        "github": "abrir un ticket en GitHub",
+        "header": "Resolución de problemas",
+        "notice": "La información presentada a continuación será útil en caso de mal funcionamiento de BULB. En caso de error, puedes {github} o {twitter}, proporcionando esta información.",
+        "project": "Proyecto",
+        "technical_details": "Detalles técnicos",
+        "twitter": "contactarme en Twitter (X)"
+      },
+      "use_full_preset": {
+        "accept": "Cargar el modelo predefinido",
+        "header": "Cargar un modelo predefinido completo",
+        "message": "Este modelo predefinido contiene el plano original completo. ¿Has guardado tu proyecto actual? Si continúas, perderás todas las modificaciones no guardadas.",
+        "reject": "Cancelar"
+      },
+      "use_preset": {
+        "full_presets_notice": "Los modelos predefinidos marcados con un punto incluyen el plano de línea existente con la estructura completa, todas las paradas y todas las correspondencias.",
+        "header": "Usar un modelo predefinido"
+      },
+      "warp_add": {
+        "add_all_stops": "Añadir las paradas",
+        "header": "Asistente WarpAdd",
+        "notice": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escribe el nombre de una parada y luego presiona <kbd>Tab</kbd> para pasar a la siguiente parada.",
+        "reset": "Reiniciar",
+        "stop_name": "Nombre de la parada",
+        "stops_list": "Lista de paradas",
+        "stops_list_empty": "Ninguna parada"
+      }
+    },
+    "map_editor": {
+      "error": {
+        "detail": "Por favor, recarga la página. Si el problema persiste, tu proyecto podría estar obsoleto o corrupto.",
+        "new_project": "Nuevo proyecto",
+        "reload": "Recargar la página",
+        "title": "Ha ocurrido un error"
+      },
+      "title": "Editor de plano",
+      "toolbox": {
+        "branch": "Rama",
+        "delete": "Suprimir",
+        "fork": "Bifurcación",
+        "loop": "Vuelta en U",
+        "parallel_branches": "Ramas paralelas",
+        "spacer": "Espaciamiento",
+        "stop": "Parada",
+        "untitled_stop": "Parada sin nombre"
+      },
+      "watermark": "Creado con BULB"
+    },
+    "menu": {
+      "custom_indices": "Índices personalizados",
+      "export": "Exportar",
+      "new_project": "Nuevo proyecto",
+      "open": "Abrir",
+      "save": "Guardar",
+      "title": "Menú principal",
+      "troubleshooting": "Solución de problemas"
+    },
+    "nag": "<b>ATENCIÓN</b>: Aplicación en fase de desarrollo. Algunas funcionalidades no están disponibles o están incompletas.",
+    "properties": {
+      "color": "Color del plano",
+      "index": "Índice de línea",
+      "mode": "Modo de transporte",
+      "size": "Tamaño del marco",
+      "title": "Propiedades",
+      "use_preset": "Usar un modelo predefinido"
+    },
+    "toasts": {
+      "adjacent_branches": {
+        "detail": "Las ramas no pueden colocarse una al lado de la otra",
+        "title": "Colocación prohibida"
+      },
+      "branch_merge": {
+        "detail": "Las ramas adyacentes han sido fusionadas",
+        "title": "Ramas fusionadas"
+      },
+      "export": {
+        "failure": {
+          "detail": "No se pudo exportar el proyecto",
+          "title": "Error en la exportación"
+        },
+        "success": {
+          "detail": "El proyecto se ha exportado correctamente",
+          "title": "Exportación correcta"
+        }
+      },
+      "load": {
+        "failure": {
+          "detail": {
+            "corrupted": "El archivo del proyecto es inválido o está corrupto",
+            "unreadable": "El archivo no se pudo leer"
+          },
+          "title": "Error en la carga"
+        },
+        "success": {
+          "detail": "El proyecto se ha cargado con éxito",
+          "title": "Carga correcta"
+        }
+      },
+      "save": {
+        "success": {
+          "detail": "El proyecto se ha guardado correctamente",
+          "title": "Guardado correcto"
+        }
+      }
+    },
+    "topbar": {
+      "FAQ": "FAQ",
+      "catch_phrase": "No está mal, ¿verdad? ¡Es francés 🇫🇷!"
+    }
+  }
+}
