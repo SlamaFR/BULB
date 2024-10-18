@@ -84,9 +84,9 @@
         "margin_right": "Margen derecho"
       },
       "browser_check": {
-        "dismiss": "Lo entendí",
+        "dismiss": "De acuerdo",
         "header": "Navegador no soportado",
-        "summary_1": "Parece que estás usando <b>{browserName}</b> como navegador. Este no está oficialmente soportado por BULB. Si continúas, podrías experimentar comportamientos inesperados y problemas gráficos.",
+        "summary_1": "Parece que está usando <b>{browserName}</b> como navegador. Ese navegador no está oficialmente soportado por BULB. Si continúa, podría experimentar comportamientos inesperados y problemas gráficos.",
         "summary_2": "Para una mejor experiencia, se recomienda usar un navegador basado en Chromium como Google Chrome, Microsoft Edge, Opera, Brave, etc.",
         "supported_browsers": "Navegadores soportados",
         "unsupported_browsers": "Navegadores no soportados"
@@ -149,7 +149,7 @@
       "loading_custom_indices_prompt": {
         "accept": "Sí",
         "header": "Cargando proyecto",
-        "message": "¿Quieres cargar los índices personalizados contenidos en este proyecto? Los índices que ya tienes no se perderán.",
+        "message": "¿Quiere cargar los índices personalizados contenidos en este proyecto? Los índices que ya tiene no se perderán.",
         "reject": "No"
       },
       "loop_properties": {
@@ -163,13 +163,13 @@
       "new_project": {
         "accept": "Nuevo proyecto",
         "header": "¡No tan rápido!",
-        "message": "¿Has guardado tu proyecto actual? Si continúas, perderás todos los cambios que no has guardado.",
+        "message": "¿Ha guardado su proyecto actual? Si continúa, perderá todos los cambios que no ha guardado.",
         "reject": "Cancelar"
       },
       "new_update_available": {
         "header": "Nueva actualización disponible",
         "later": "Más tarde",
-        "message": "La versión {version} de BULB está disponible. ¿Quieres recargar la página para actualizar? No se perderán datos.",
+        "message": "La versión {version} de BULB está disponible. ¿Quiere recargar la página para actualizar? No se perderán datos.",
         "update": "Actualizar"
       },
       "ornament_editor": {
@@ -193,7 +193,7 @@
       "outdated_project": {
         "accept": "Nuevo proyecto",
         "header": "Proyecto obsoleto",
-        "message": "Este proyecto está obsoleto y ya no es soportado. Si continúas, podrías enfrentar problemas. Se recomienda crear un nuevo proyecto o abrir uno compatible.",
+        "message": "Este proyecto está obsoleto y ya no es soportado. Si continúa, podría enfrentar problemas. Se recomienda crear un nuevo proyecto o abrir uno compatible.",
         "reject": "Continuar con este proyecto"
       },
       "parallel_branches_properties": {
@@ -231,7 +231,7 @@
       "troubleshooting": {
         "github": "abrir un ticket en GitHub",
         "header": "Resolución de problemas",
-        "notice": "La información presentada a continuación será útil en caso de mal funcionamiento de BULB. En caso de error, puedes {github} o {twitter}, proporcionando esta información.",
+        "notice": "La información presentada a continuación será útil en caso de mal funcionamiento de BULB. En caso de error, puede {github} o {twitter}, proporcionando esta información.",
         "project": "Proyecto",
         "technical_details": "Detalles técnicos",
         "twitter": "contactarme en Twitter (X)"
@@ -239,7 +239,7 @@
       "use_full_preset": {
         "accept": "Cargar el modelo predefinido",
         "header": "Cargar un modelo predefinido completo",
-        "message": "Este modelo predefinido contiene el plano original completo. ¿Has guardado tu proyecto actual? Si continúas, perderás todas las modificaciones no guardadas.",
+        "message": "Este modelo predefinido contiene el plano original completo. ¿Ha guardado su proyecto actual? Si continúa, perderá todas las modificaciones que no ha guardado.",
         "reject": "Cancelar"
       },
       "use_preset": {
@@ -249,7 +249,7 @@
       "warp_add": {
         "add_all_stops": "Añadir las paradas",
         "header": "Asistente WarpAdd",
-        "notice": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escribe el nombre de una parada y luego presiona <kbd>Tab</kbd> para pasar a la siguiente parada.",
+        "notice": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escriba el nombre de una parada y luego presione <kbd>Tab</kbd> para pasar a la parada siguiente.",
         "reset": "Reiniciar",
         "stop_name": "Nombre de la parada",
         "stops_list": "Lista de paradas",
@@ -258,7 +258,7 @@
     },
     "map_editor": {
       "error": {
-        "detail": "Por favor, recarga la página. Si el problema persiste, tu proyecto podría estar obsoleto o corrupto.",
+        "detail": "Por favor, recargue la página. Si el problema persiste, su proyecto podría estar obsoleto o corrupto.",
         "new_project": "Nuevo proyecto",
         "reload": "Recargar la página",
         "title": "Ha ocurrido un error"
