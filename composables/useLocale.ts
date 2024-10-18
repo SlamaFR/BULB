@@ -5,6 +5,7 @@ import { useI18n } from 'vue-i18n'
 import { en } from '~/assets/locales/en.json'
 import { fr } from '~/assets/locales/fr.json'
 import { ja } from '~/assets/locales/ja.json'
+import { es } from '~/assets/locales/es.json'
 
 export default function useLocale(fallback = 'en') {
   const preferredLanguages = usePreferredLanguages()
@@ -22,6 +23,9 @@ export default function useLocale(fallback = 'en') {
         break
       case 'ja':
         config.locale = ja
+        break
+      case 'es':
+        config.locale = es
         break
       case 'en':
       default:
