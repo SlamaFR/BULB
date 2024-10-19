@@ -2,6 +2,7 @@ import { usePrimeVue } from '#build/imports'
 import { syncRef, useLocalStorage, usePreferredLanguages } from '@vueuse/core'
 import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
+import { de } from '~/assets/locales/de.json'
 import { en } from '~/assets/locales/en.json'
 import { fr } from '~/assets/locales/fr.json'
 import { ja } from '~/assets/locales/ja.json'
@@ -17,6 +18,9 @@ export default function useLocale(fallback = 'en') {
 
   watch(selectedLocale, (val) => {
     switch (val) {
+      case 'de':
+        config.locale = de
+        break
       case 'fr':
         config.locale = fr
         break
