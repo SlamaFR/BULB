@@ -6,6 +6,7 @@ import { de } from '~/assets/locales/de.json'
 import { en } from '~/assets/locales/en.json'
 import { es } from '~/assets/locales/es.json'
 import { fr } from '~/assets/locales/fr.json'
+import { it } from '~/assets/locales/it.json'
 import { ja } from '~/assets/locales/ja.json'
 
 export default function useLocale(fallback = 'en') {
@@ -30,6 +31,9 @@ export default function useLocale(fallback = 'en') {
         break
       case 'es':
         config.locale = es
+        break
+      case 'it':
+        config.locale = it
         break
       case 'en':
       default:
