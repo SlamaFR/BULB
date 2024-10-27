@@ -229,7 +229,7 @@
         "terminus": "Capolinea"
       },
       "troubleshooting": {
-        "github": "Aprire un ticket su GitHub",
+        "github": "aprire un ticket su GitHub",
         "header": "Assistenza",
         "notice": "Le informazioni in questa finestra sono utili per aiutarvi in caso di problemi con BULB. Se si trova un bug, è possibile {github} oppure {twitter} (in inglese o francese) allegando queste informazioni.",
         "project": "Progetto",

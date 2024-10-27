@@ -3,6 +3,7 @@ import { defineNuxtPlugin } from '#app'
 import { createI18n } from 'vue-i18n'
 import en from '~/locales/en.json'
 import fr from '~/locales/fr.json'
+import it from '~/locales/it.json'
 import ja from '~/locales/ja.json'
 
 export default defineNuxtPlugin(({ vueApp }) => {
@@ -13,6 +14,7 @@ export default defineNuxtPlugin(({ vueApp }) => {
     messages: {
       fr,
       en,
+      it,
       ja,
     },
   })
