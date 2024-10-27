@@ -10,11 +10,11 @@ import it from '~/assets/svg/flags/it.svg'
 import ja from '~/assets/svg/flags/ja.svg'
 
 const LOCALES = [
-  { label: 'Français', value: 'fr', flag: fr },
   { label: 'Deutsch', value: 'de', flag: de },
   { label: 'English', value: 'en', flag: en },
-  { label: 'Italiano', value: 'it', flag: it },
   { label: 'Español', value: 'es', flag: es },
+  { label: 'Français', value: 'fr', flag: fr },
+  { label: 'Italiano', value: 'it', flag: it },
   { label: '日本語', value: 'ja', flag: ja },
 ]
 
@@ -46,7 +46,7 @@ function selectMember(locale: string) {
         @click="selectMember(locale.value)"
       >
         <template #icon>
-          <img :src="locale.flag" alt="Flag" class="w-6 h-6 mr-2 ">
+          <img :src="locale.flag" alt="Flag" class="w-6 h-6 mr-2">
         </template>
       </Button>
     </div>
