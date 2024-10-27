@@ -4,6 +4,7 @@ import { watch } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { de } from '~/assets/locales/de.json'
 import { en } from '~/assets/locales/en.json'
+import { es } from '~/assets/locales/es.json'
 import { fr } from '~/assets/locales/fr.json'
 import { ja } from '~/assets/locales/ja.json'
 
@@ -26,6 +27,9 @@ export default function useLocale(fallback = 'en') {
         break
       case 'ja':
         config.locale = ja
+        break
+      case 'es':
+        config.locale = es
         break
       case 'en':
       default:
