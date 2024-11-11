@@ -51,7 +51,9 @@ export default function useLoadProject() {
     line.value.index = project.line.index
     line.value.mode = project.line.mode
     line.value.color = project.line.color
-    line.value.lineWidth = project.line.lineWidth
+    line.value.lineThickness = project.line.lineThickness
+    line.value.lineStyle = project.line.lineStyle
+    line.value.dotsColorPolicy = project.line.dotsColorPolicy
     line.value.mapSize = project.line.mapSize
     line.value.topology = project.line.topology
 
