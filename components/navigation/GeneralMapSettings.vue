@@ -31,6 +31,21 @@ function updateColor(newColor: string | null) {
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
+        <span class="text-nowrap">{{ $t('ui.properties.line_thickness') }}</span>
+        <InputText v-model="line.lineThickness" />
+      </div>
+
+      <div class="flex flex-col gap-1 flex-auto">
+        <span class="text-nowrap">{{ $t('ui.properties.line_style') }}</span>
+        <LineStyleSelect v-model="line.lineStyle" />
+      </div>
+
+      <div class="flex flex-col gap-1 flex-auto">
+        <span class="text-nowrap">{{ $t('ui.properties.dots_color') }}</span>
+        <DotsColorSelect v-model="line.dotsColorPolicy" />
+      </div>
+
+      <div class="flex flex-col gap-1 flex-auto">
         <div class="flex flex-row items-center gap-2">
           <span class="text-nowrap">{{ $t('ui.properties.size') }}</span>
           <Tag class="text-xs" severity="warn">

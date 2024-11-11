@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useCssVar, useElementSize } from '@vueuse/core'
 import { computed, inject, ref } from 'vue'
 import { type DraggableEvent, type SortableEvent, VueDraggable } from 'vue-draggable-plus'
 import useElementGrabbing from '~/composables/useElementGrabbing'
@@ -9,6 +10,11 @@ const {
 } = defineProps<{
   fluid?: boolean
 }>()
+
+const el = ref()
+const line = ref()
+const sizeFactor = computed(() => Number.parseInt(useCssVar('--base-size', el).value ?? '1'))
+const { width: branchLength } = useElementSize(line)
 
 const branch = defineModel<Branch>({ required: true })
 const emphasize = ref(false)
@@ -21,14 +27,15 @@ const elements = computed({
   set: val => branch.value.$branch.elements = val,
 })
 
-const lineContext = inject<LineContext>(LineContextKey)
+const lineContext = inject<LineContext>(LineContextKey)!
 
 const elementSpacing = computed(() => `${branch.value.$branch.elementSpacing}em`)
 const leftMargin = computed(() => `${branch.value.$branch.marginLeft || 0}em`)
 const rightMargin = computed(() => `${branch.value.$branch.marginRight || 0}em`)
 
 const color = computed(() => lineContext?.color.value ?? '#000000')
-const lineWidth = computed(() => `${lineContext?.lineWidth.value ?? 1}em`)
+const lineWidth = computed(() => lineContext.lineThickness.value)
+const lineOffset = computed(() => sizeFactor.value * lineWidth.value * 16 / 2)
 
 /* Simply because the lib is muffin broken */
 function moveOut(event: DraggableEvent<BranchElement>) {
@@ -44,6 +51,7 @@ function moveOut(event: DraggableEvent<BranchElement>) {
 
 <template>
   <div
+    ref="el"
     class="branch-wrapper" :class="{
       empty: elements?.length === 0,
       fluid,
@@ -73,9 +81,17 @@ function moveOut(event: DraggableEvent<BranchElement>) {
         :data-id="element.id"
       />
     </VueDraggable>
-    <div class="line">
-      <div v-if="false" class="export-hide line-left-tail" />
-      <div v-if="false" class="export-hide line-right-tail" />
+    <div ref="line" class="line">
+      <svg width="100%" :height="`${lineWidth}em`" overflow="visible">
+        <g :transform="`translate(0 ${lineOffset})`">
+          <SvgLine
+            :path="`M 0 0 L ${branchLength} 0`"
+            :color="color"
+            :line-width="lineWidth"
+            :striped="lineContext.lineStyle.value === 'STRIPED'"
+          />
+        </g>
+      </svg>
     </div>
   </div>
 </template>
@@ -118,6 +134,29 @@ function moveOut(event: DraggableEvent<BranchElement>) {
 
   &.positiveRightMargin {
     padding-right: v-bind(rightMargin);
+  }.section-element + .section-element & {
+     .line {
+       padding-left: 0;
+       clip: rect(auto, calc(v-bind(branchLength) * 1px + 1em), auto, 0);
+     }
+   }
+
+  .section-element:not(:last-child) & {
+    .line {
+      padding-right: 0;
+      clip: rect(auto, calc(v-bind(branchLength) * 1px + .5em), auto, calc(v-bind(lineWidth) * -.25em));
+    }
+  }
+
+  // both
+  .section-element:not(:last-child):has(+ .section-element) .section-element:not(:first-child) &,
+  .section-element + .section-element .section-element:not(:last-child) &,
+  .section-element + .section-element:not(:last-child) &
+  {
+    .line {
+      padding: 0;
+      clip: rect(auto, calc(v-bind(branchLength) * 1px), auto, 0);
+    }
   }
 }
 
@@ -167,44 +206,11 @@ function moveOut(event: DraggableEvent<BranchElement>) {
 
 .line {
   position: absolute;
+  left: 0;
   top: 50%;
-  transform: translate(calc(v-bind(leftMargin) * -1), -50%);
-  height: v-bind(lineWidth);
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 0 calc(v-bind(lineWidth) * .5em / v-bind(lineWidth));
   z-index: -1;
-  background-color: v-bind(color);
-  width: calc(100%);
-
-  & .line-left-tail {
-    content: '';
-    position: absolute;
-    z-index: -10;
-    left: 0;
-    height: v-bind(lineWidth);
-    width: 1em;
-    transform: translateX(-100%);
-    background: linear-gradient(to left, v-bind(color), transparent);
-
-    .elements .element:not(:first-child) & {
-      display: none;
-    }
-  }
-
-  & .line-right-tail {
-    content: '';
-    position: absolute;
-    z-index: -10;
-    right: 0;
-    height: v-bind(lineWidth);
-    width: 1em;
-    transform: translateX(100%);
-    background: linear-gradient(to right, v-bind(color), transparent);
-
-    .elements .element:not(:last-child) & {
-      display: none;
-    }
-  }
-
-  //border-radius: v-bind(lineWidth);
-  //margin: 0 calc(v-bind(lineWidth) / -2);
 }
 </style>

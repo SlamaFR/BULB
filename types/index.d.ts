@@ -1,4 +1,4 @@
-import type { Ref } from 'vue'
+import type { ComputedRef, Ref } from 'vue'
 
 declare global {
 
@@ -260,18 +260,25 @@ declare global {
 
   type LineIndex = BuiltinLineIndex | CustomLineIndex
 
+  type LineStyle = 'PLAIN' | 'STRIPED'
+  type DotsColorPolicy = 'INHERIT' | 'WHITE'
+
   interface Line {
     mode: Mode | null
     index: LineIndex | null
     color: string | null
-    lineWidth: number
+    lineThickness: string | null
+    lineStyle: LineStyle | null
+    dotsColorPolicy: DotsColorPolicy | null
     mapSize: number | null
     topology: LineSection[]
   }
 
   export interface LineContext {
     color: Ref<string>
-    lineWidth: Ref<number>
+    lineThickness: Ref<number>
+    lineStyle: Ref<LineStyle>
+    dotsColorPolicy: Ref<DotsColorPolicy>
   }
 
   export interface StopContext {

@@ -6,7 +6,7 @@ import { LineContextKey, StopContextKey } from '~/utils/symbols'
 
 const stop = defineModel<Stop>({ required: true })
 
-const lineContext = inject<LineContext>(LineContextKey)
+const lineContext = inject<LineContext>(LineContextKey)!
 const showPropertiesDialog = ref(false)
 const showConnectionsEditor = ref(false)
 
@@ -27,6 +27,7 @@ const margins = reactive({
 
 const leftMargin = computed(() => `max(${margins.leftMargin.name}, ${margins.leftMargin.connections})`)
 const rightMargin = computed(() => `max(${margins.rightMargin.name}, ${margins.rightMargin.connections})`)
+const lineMargin = computed(() => `max(.125em, ${Math.max(0, lineContext.lineThickness.value - 0.75) / 2}em)`)
 
 const names = ref()
 const connections = ref()
@@ -63,7 +64,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
             class="branch-element-handle z-1"
             :terminus="stop.$stop.terminus"
             :connection="stop.$stop.connections.length > 0"
-            :color="lineContext?.color.value ?? '#000000'"
+            :color="lineContext.color.value"
             :closed="stop.$stop.closed"
             @click="(e: Event) => e.stopPropagation()"
           />
@@ -150,7 +151,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
   }
 
   position: relative;
-  top: -.125em;
+  top: calc(-1 * v-bind(lineMargin));
   height: 0;
   cursor: pointer;
   margin: 0 v-bind(STOP_PADDING);
@@ -183,7 +184,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
 .connections {
   min-width: 1em;
   position: relative;
-  top: .125em;
+  top: v-bind(lineMargin);
   height: 0;
 
   > div {
