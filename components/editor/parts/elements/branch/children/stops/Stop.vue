@@ -27,7 +27,8 @@ const margins = reactive({
 
 const leftMargin = computed(() => `max(${margins.leftMargin.name}, ${margins.leftMargin.connections})`)
 const rightMargin = computed(() => `max(${margins.rightMargin.name}, ${margins.rightMargin.connections})`)
-const lineMargin = computed(() => `max(.125em, ${Math.max(0, lineContext.lineThickness.value - 0.75) / 2}em)`)
+const namesMargin = computed(() => `min(-.125em, -${Math.max(0, lineContext.lineThickness.value - 0.375) / 2}em)`)
+const connectionsMargin = computed(() => `max(.125em, ${Math.max(0, lineContext.lineThickness.value - 1) / 2}em)`)
 
 const names = ref()
 const connections = ref()
@@ -151,7 +152,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
   }
 
   position: relative;
-  top: calc(-1 * v-bind(lineMargin));
+  top: v-bind(namesMargin);
   height: 0;
   cursor: pointer;
   margin: 0 v-bind(STOP_PADDING);
@@ -184,7 +185,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
 .connections {
   min-width: 1em;
   position: relative;
-  top: v-bind(lineMargin);
+  top: v-bind(connectionsMargin);
   height: 0;
 
   > div {
