@@ -11,15 +11,15 @@ const STYLES: LineStyleChoice[] = [
   { label: 'data.line_style.striped', value: 'STRIPED' },
 ]
 
-function findShapeByValue(value: LineStyle | null) {
+function findStyleByValue(value: LineStyle | null) {
   return STYLES.find(shape => shape.value === value) ?? null
 }
 
 const style = defineModel<LineStyle | null>({ required: true })
-const selectedStyle = ref<LineStyleChoice | null>(findShapeByValue(style.value))
+const selectedStyle = ref<LineStyleChoice | null>(findStyleByValue(style.value))
 
 watch(selectedStyle, val => style.value = val?.value ?? null)
-watch(style, val => selectedStyle.value = findShapeByValue(val))
+watch(style, val => selectedStyle.value = findStyleByValue(val))
 </script>
 
 <template>

@@ -16,7 +16,10 @@
       "placeholder": "Sélectionner un indice"
     },
     "line_style_select": {
-      "placeholder": "Sélectionner un style de ligne"
+      "placeholder": "Sélectionner un style"
+    },
+    "line_thickness_select": {
+      "placeholder": "Sélectionner une épaisseur"
     },
     "map_size_select": {
       "placeholder": "Sélectionner une taille"
@@ -48,6 +51,12 @@
     "line_style": {
       "plain": "Pleine",
       "striped": "Rayée"
+    },
+    "line_thickness": {
+      "custom": "Personnalisée",
+      "medium": "Moyenne",
+      "normal": "Normale",
+      "thick": "Épaisse"
     },
     "map_size": {
       "big": "Très grand (30em)",
@@ -144,6 +153,10 @@
       },
       "custom_indices": {
         "header": "Répertoire d’indices personnalisés"
+      },
+      "custom_line_thickness": {
+        "accept": "Terminé",
+        "header": "Épaisseur de ligne personnalisée"
       },
       "fork_properties": {
         "header": "Propriétés de fourche",

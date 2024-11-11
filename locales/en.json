@@ -16,10 +16,13 @@
       "placeholder": "Select a line index"
     },
     "line_style_select": {
-      "placeholder": "Select a line style"
+      "placeholder": "Select a style"
+    },
+    "line_thickness_select": {
+      "placeholder": "Select a thickness"
     },
     "map_size_select": {
-      "placeholder": "Select a frame size"
+      "placeholder": "Select a size"
     },
     "mode_select": {
       "placeholder": "Select a mode"
@@ -48,6 +51,12 @@
     "line_style": {
       "plain": "Plain",
       "striped": "Striped"
+    },
+    "line_thickness": {
+      "custom": "Custom",
+      "medium": "Medium",
+      "normal": "Normal",
+      "thick": "Thick"
     },
     "map_size": {
       "big": "Big (30em)",
@@ -144,6 +153,10 @@
       },
       "custom_indices": {
         "header": "Custom indices directory"
+      },
+      "custom_line_thickness": {
+        "accept": "Done",
+        "header": "Custom line thickness"
       },
       "fork_properties": {
         "header": "Fork properties",

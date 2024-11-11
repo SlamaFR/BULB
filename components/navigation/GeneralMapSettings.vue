@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
+import LineThicknessSelect from '~/components/ui/LineThicknessSelect.vue'
 import { useProject } from '~/stores/useProject'
 
 const { line } = storeToRefs(useProject())
@@ -32,7 +33,7 @@ function updateColor(newColor: string | null) {
 
       <div class="flex flex-col gap-1 flex-auto">
         <span class="text-nowrap">{{ $t('ui.properties.line_thickness') }}</span>
-        <InputText v-model="line.lineThickness" />
+        <LineThicknessSelect v-model="line.lineThickness" />
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">
