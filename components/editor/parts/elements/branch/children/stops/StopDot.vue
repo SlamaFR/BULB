@@ -50,6 +50,8 @@ const dotColor = computed(() => {
   &.terminus {
     background-color: white;
     border: .15em solid black;
+    outline: .25em solid v-bind(color);
+    outline-offset: calc(-1em);
 
     &:after {
       content: '';
@@ -57,8 +59,8 @@ const dotColor = computed(() => {
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: .5em;
-      height: .5em;
+      width: .375em;
+      height: .375em;
       background-color: v-bind(color);
       border-radius: 50%;
     }
