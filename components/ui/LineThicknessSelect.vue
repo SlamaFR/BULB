@@ -9,7 +9,7 @@ interface LineThicknessChoice {
 
 const THICKNESSES: LineThicknessChoice[] = [
   { label: 'data.line_thickness.normal', value: '0.375' },
-  { label: 'data.line_thickness.medium', value: '0.5' },
+  { label: 'data.line_thickness.medium', value: '0.625' },
   { label: 'data.line_thickness.thick', value: '1.375' },
   { label: 'data.line_thickness.custom', value: '' },
 ]
