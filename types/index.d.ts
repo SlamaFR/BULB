@@ -271,6 +271,7 @@ declare global {
     lineStyle: LineStyle | null
     dotsColorPolicy: DotsColorPolicy | null
     mapSize: number | null
+    fullyAccessible: boolean
     topology: LineSection[]
   }
 

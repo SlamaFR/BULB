@@ -19,6 +19,7 @@ useLocale()
 :root {
   --blue-ratp: #0a0082;
   --blue-ratp-paper: #1F3C90;
+  --blue-ratp-paper-secondary: rgba(31, 59, 143, 0.125);
   --yellow-ratp: #ffbe00;
   --place-brown: #80551A;
   --gray: #414241;

@@ -54,6 +54,7 @@ export default function useLoadProject() {
     line.value.lineThickness = project.line.lineThickness
     line.value.lineStyle = project.line.lineStyle
     line.value.dotsColorPolicy = project.line.dotsColorPolicy
+    line.value.fullyAccessible = project.line.fullyAccessible
     line.value.mapSize = project.line.mapSize
     line.value.topology = project.line.topology
 

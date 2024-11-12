@@ -316,6 +316,7 @@
     "properties": {
       "color": "Map color",
       "dots_color": "Dots color",
+      "fully_accessible": "Line fully accessible",
       "index": "Line index",
       "line_style": "Line style",
       "line_thickness": "Line thickness",

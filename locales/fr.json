@@ -316,6 +316,7 @@
     "properties": {
       "color": "Couleur du plan",
       "dots_color": "Couleur des points",
+      "fully_accessible": "Ligne intégralement accessible",
       "index": "Indice de ligne",
       "line_style": "Style de ligne",
       "line_thickness": "Épaisseur de ligne",
