@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from 'vue'
 import wheelchair from '~/assets/svg/wheelchair.svg'
 import wheelchairOff from '~/assets/svg/wheelchair-off.svg'
 
@@ -8,15 +7,10 @@ const {
 } = defineProps<{
   off?: boolean
 }>()
-
-const picto = computed(() => {
-  if (off) return wheelchairOff
-  return wheelchair
-})
 </script>
 
 <template>
-  <img v-if="picto" :src="picto" alt="metro" class="picto">
+  <img :src="off ? wheelchairOff : wheelchair" alt="wheelchair user" class="picto">
 </template>
 
 <style scoped lang="scss">

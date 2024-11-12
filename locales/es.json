@@ -220,6 +220,9 @@
         "spacer_export_notice": "Nota: el espaciado se volverá invisible al exportar."
       },
       "stop_properties": {
+        "accessible_no": "",
+        "accessible_undefined": "",
+        "accessible_yes": "",
         "city_name": "Ciudad",
         "closed": "Cerrado",
         "header": "Propiedades de la parada",

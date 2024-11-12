@@ -247,6 +247,10 @@
         "spacer_export_notice": "Remarque : l’espacement deviendra invisible au moment du rendu."
       },
       "stop_properties": {
+        "accessible": "Accessibilité UFR",
+        "accessible_no": "Non",
+        "accessible_undefined": "Indéfinie",
+        "accessible_yes": "Oui",
         "city_name": "Ville",
         "closed": "Fermé",
         "header": "Propriétés d’arrêt",
@@ -316,7 +320,7 @@
     "properties": {
       "color": "Couleur du plan",
       "dots_color": "Couleur des points",
-      "fully_accessible": "Ligne intégralement accessible",
+      "fully_accessible": "Ligne intégralement accessible UFR",
       "index": "Indice de ligne",
       "line_style": "Style de ligne",
       "line_thickness": "Épaisseur de ligne",

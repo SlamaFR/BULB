@@ -178,6 +178,7 @@ declare global {
       name: string
       subtitle: string | null
       placeName: string | null
+      accessible: boolean | 'undefined'
       preventSubtitleOverlapping: boolean
       interestPoint: boolean
       terminus: boolean

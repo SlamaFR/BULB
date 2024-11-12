@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import Wheelchair from '~/components/editor/picto/Wheelchair.vue'
 import useVersion from '~/composables/useVersion'
 import { useProject } from '~/stores/useProject'
 

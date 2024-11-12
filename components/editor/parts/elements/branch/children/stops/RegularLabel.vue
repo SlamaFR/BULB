@@ -7,11 +7,13 @@ const {
   preventSubtitleOverlapping,
   subtitle = '',
   interestPoint = false,
+  accessible = 'undefined',
 } = defineProps<{
   value: string
   preventSubtitleOverlapping: boolean
   placeName: string | null
   subtitle: string | null
+  accessible: boolean | 'undefined'
   interestPoint?: boolean
 }>()
 
@@ -27,7 +29,10 @@ const untitled = computed(() => valueParts.value.length === 0)
   <div class="regular-label">
     <div class="flex gap-1.0625em" :class="{ 'opacity-50': untitled }">
       <div v-for="(part, index) in valueParts" :key="`${part}-${index}`" class="wrapper translate-x-50%">
-        <span class="name">{{ part }}</span>
+        <div class="name flex flex-row gap-2 items-end">
+          <span>{{ part }}</span>
+          <Wheelchair v-if="index === valueParts.length - 1 && accessible !== 'undefined'" :off="!accessible" />
+        </div>
       </div>
       <div v-if="untitled" class="wrapper translate-x-50%">
         <span class="name">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>
@@ -78,7 +83,7 @@ const untitled = computed(() => valueParts.value.length === 0)
 }
  */
 
-span {
+.name {
   line-height: 1em;
   transform: translateY(var(--font-shift-correction));
   text-wrap: nowrap;

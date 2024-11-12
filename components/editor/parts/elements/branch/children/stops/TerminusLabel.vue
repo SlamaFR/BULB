@@ -8,11 +8,13 @@ const {
   placeName = '',
   subtitle = '',
   interestPoint = false,
+  accessible = 'undefined',
 } = defineProps<{
   value: string
   placeName: string | null
   subtitle: string | null
   interestPoint?: boolean
+  accessible: boolean | 'undefined'
 }>()
 
 const stopContext = inject<StopContext>(StopContextKey)
@@ -41,14 +43,17 @@ onUnmounted(() => {
   <div class="terminus-label">
     <div class="flex">
       <div class="wrapper translate-x-50%">
-        <div ref="frame" class="frame" :class="{ 'opacity-50': untitled }">
-          <span v-for="part in placeNameParts" :key="part" class="place-name">
-            {{ part }}
-          </span>
-          <span v-for="part in valueParts" :key="part">
-            {{ part }}
-          </span>
-          <span v-if="untitled">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>
+        <div class="name-container flex flex-row gap-2 items-center">
+          <div ref="frame" class="frame" :class="{ 'opacity-50': untitled }">
+            <span v-for="part in placeNameParts" :key="part" class="place-name">
+              {{ part }}
+            </span>
+            <span v-for="part in valueParts" :key="part">
+              {{ part }}
+            </span>
+            <span v-if="untitled">{{ $t('ui.map_editor.toolbox.untitled_stop') }}</span>
+          </div>
+          <Wheelchair v-if="accessible !== 'undefined'" :off="!accessible" />
         </div>
       </div>
     </div>
@@ -85,6 +90,11 @@ onUnmounted(() => {
   }
 }
 
+.name-container {
+  rotate: -30deg;
+  transform-origin: bottom left;
+}
+
 .frame {
   display: flex;
   flex-direction: column;
@@ -92,8 +102,6 @@ onUnmounted(() => {
   gap: .125em;
   background-color: var(--blue-ratp-paper);
   color: white;
-  rotate: -30deg;
-  transform-origin: bottom left;
 
   .place-name {
     padding: 0 .5em;
