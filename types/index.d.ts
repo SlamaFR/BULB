@@ -178,6 +178,7 @@ declare global {
       name: string
       subtitle: string | null
       placeName: string | null
+      accessible: boolean | 'undefined'
       preventSubtitleOverlapping: boolean
       interestPoint: boolean
       terminus: boolean
@@ -271,6 +272,7 @@ declare global {
     lineStyle: LineStyle | null
     dotsColorPolicy: DotsColorPolicy | null
     mapSize: number | null
+    fullyAccessible: boolean
     topology: LineSection[]
   }
 

@@ -13,10 +13,11 @@ export const useProject = defineStore('project', () => {
     mode: null,
     index: null,
     color: null,
-    mapSize: 15,
     lineThickness: '0.375',
     lineStyle: 'PLAIN',
     dotsColorPolicy: 'INHERIT',
+    fullyAccessible: false,
+    mapSize: 15,
     topology: [{
       id: '1',
       $lineSection: {
@@ -34,6 +35,7 @@ export const useProject = defineStore('project', () => {
     line.lineThickness = '0.375'
     line.lineStyle = 'PLAIN'
     line.dotsColorPolicy = 'INHERIT'
+    line.fullyAccessible = false
     line.mapSize = 15
     line.topology = [{
       id: '1',

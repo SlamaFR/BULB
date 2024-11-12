@@ -53,6 +53,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth })
           :interest-point="stop.$stop.interestPoint"
           :prevent-subtitle-overlapping="stop.$stop.preventSubtitleOverlapping"
           :terminus="stop.$stop.terminus"
+          :accessible="stop.$stop.accessible"
           @click="(e: Event) => {
             e.stopPropagation()
             showPropertiesDialog = true

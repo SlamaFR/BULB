@@ -40,6 +40,7 @@ function loadFullPreset(preset: Project) {
       line.value.lineThickness = preset.line.lineThickness
       line.value.lineStyle = preset.line.lineStyle
       line.value.dotsColorPolicy = preset.line.dotsColorPolicy
+      line.value.fullyAccessible = preset.line.fullyAccessible
       line.value.mapSize = preset.line.mapSize
       line.value.topology = preset.line.topology
       visible.value = false

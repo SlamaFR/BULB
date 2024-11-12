@@ -220,6 +220,9 @@
         "spacer_export_notice": "Nota: il distanziale non viene visualizzato nel rendering finale."
       },
       "stop_properties": {
+        "accessible_no": "",
+        "accessible_undefined": "",
+        "accessible_yes": "",
         "city_name": "Città",
         "closed": "Fermata chiusa",
         "header": "Proprietà fermata",

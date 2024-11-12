@@ -27,7 +27,7 @@ function mapName(name: string | null) {
         <Textarea
           :id="`${stop.id}_title`"
           v-model="stop.$stop.name"
-          :style="{ minHeight: '2hl !important' }"
+          pt:root:class="important-h-auto"
           :spellcheck="false"
           auto-resize
           autofocus
@@ -41,6 +41,26 @@ function mapName(name: string | null) {
         <label :for="`${stop.id}_subtitle`">{{ $t('ui.dialogs.stop_properties.subtitle') }}</label>
         <InputText :id="`${stop.id}_subtitle`" v-model="stop.$stop.subtitle" :spellcheck="false" />
       </div>
+      <div class="flex flex-col gap-1">
+        <label class="mb-1">{{ $t('ui.dialogs.stop_properties.accessible') }}</label>
+        <div class="flex flex-wrap gap-4">
+          <div class="flex items-center gap-2">
+            <RadioButton v-model="stop.$stop.accessible" :input-id="`${stop.id}_accessible_na`" name="pizza" value="undefined" />
+            <label :for="`${stop.id}_accessible_na`">{{ $t('ui.dialogs.stop_properties.accessible_undefined') }}</label>
+          </div>
+          <div class="flex items-center gap-2">
+            <RadioButton v-model="stop.$stop.accessible" :input-id="`${stop.id}_accessible_on`" name="pizza" :value="true" />
+            <label :for="`${stop.id}_accessible_on`">{{ $t('ui.dialogs.stop_properties.accessible_yes') }}</label>
+          </div>
+          <div class="flex items-center gap-2">
+            <RadioButton v-model="stop.$stop.accessible" :input-id="`${stop.id}_accessible_of`" name="pizza" :value="false" />
+            <label :for="`${stop.id}_accessible_off`">{{ $t('ui.dialogs.stop_properties.accessible_no') }}</label>
+          </div>
+        </div>
+      </div>
+
+      <Divider />
+
       <div class="flex flex-col gap-1">
         <div class="flex items-center">
           <Checkbox v-model="stop.$stop.interestPoint" binary :input-id="`${stop.id}_interestPoint`" />

@@ -6,6 +6,7 @@ const props = defineProps<{
   preventSubtitleOverlapping: boolean
   interestPoint?: boolean
   terminus?: boolean
+  accessible: boolean | 'undefined'
 }>()
 </script>
 

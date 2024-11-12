@@ -9,11 +9,14 @@ const { line, outdated } = storeToRefs(useProject())
 
 <template>
   <div v-bind="$attrs" class="relative content bg-white pr-10em flex gap-10 flex-row" :style="{ minHeight: `${line.mapSize}em` }">
-    <div class="ml-3 flex flex-col min-w-fit">
-      <div class="w-full h-8 bg-[var(--blue-ratp-paper)] mb-3" />
+    <div class="ml-3 flex flex-col min-w-fit gap-3">
+      <div class="w-full h-8 bg-[var(--blue-ratp-paper)]" />
       <div class="w-full flex flex-row gap-3 justify-center items-center text-4em">
         <Mode :mode="line.mode" />
         <LineIndex :index="line.index" />
+      </div>
+      <div v-if="line.fullyAccessible" class="w-full flex flex-row gap-3 justify-center items-center bg-[var(--blue-ratp-paper-secondary)]/50 mt-.5em py-3 text-1.75em">
+        <Wheelchair />
       </div>
     </div>
     <SectionsGroup

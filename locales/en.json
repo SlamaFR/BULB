@@ -247,6 +247,10 @@
         "spacer_export_notice": "Notice: The spacer will become invisible at render time."
       },
       "stop_properties": {
+        "accessible": "Wheelchair accessibility",
+        "accessible_no": "No",
+        "accessible_undefined": "Undefined",
+        "accessible_yes": "Yes",
         "city_name": "City",
         "closed": "Closed",
         "header": "Stop properties",
@@ -316,6 +320,7 @@
     "properties": {
       "color": "Map color",
       "dots_color": "Dots color",
+      "fully_accessible": "Line fully wheelchair accessible",
       "index": "Line index",
       "line_style": "Line style",
       "line_thickness": "Line thickness",
