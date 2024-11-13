@@ -11,6 +11,11 @@ const shapes = [
   { label: 'ui.dialogs.fork_properties.shape.symmetrical', value: [1, -1] },
   { label: 'ui.dialogs.fork_properties.shape.downward', value: [0, -1] },
 ]
+const arrows = [
+  { label: 'ui.dialogs.fork_properties.directional_arrows.none', value: undefined },
+  { label: 'ui.dialogs.fork_properties.directional_arrows.clockwise', value: 'CW' },
+  { label: 'ui.dialogs.fork_properties.directional_arrows.counterclockwise', value: 'CCW' },
+]
 </script>
 
 <template>
@@ -40,6 +45,16 @@ const shapes = [
         <SelectButton
           v-model="fork.$fork.linksOffset"
           :options="shapes"
+          :option-label="option => $t(option.label)"
+          option-value="value"
+          :allow-empty="false"
+        />
+      </div>
+      <div class="flex flex-col gap-1">
+        <label>{{ $t('ui.dialogs.fork_properties.directional_arrows.title') }}</label>
+        <SelectButton
+          v-model="fork.$fork.directionalArrows"
+          :options="arrows"
           :option-label="option => $t(option.label)"
           option-value="value"
           :allow-empty="false"

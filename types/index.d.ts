@@ -213,6 +213,7 @@ declare global {
       originOffset: number
       linksOffset: [number, number]
       offsetMultiplier?: number
+      directionalArrows?: 'CW' | 'CCW'
     }
   }
 
