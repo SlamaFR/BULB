@@ -24,6 +24,7 @@ const orientations = [
         <label>{{ $t('ui.dialogs.loop_properties.orientation.title') }}</label>
         <SelectButton
           v-model="loop.$loop.toward"
+          pt:pc-toggle-button:root:class="flex-grow"
           :options="orientations"
           :option-label="option => $t(option.label)"
           option-value="value"

@@ -34,6 +34,7 @@ const arrows = [
         <label>{{ $t('ui.dialogs.fork_properties.orientation.title') }}</label>
         <SelectButton
           v-model="fork.$fork.toward"
+          pt:pc-toggle-button:root:class="flex-grow"
           :options="orientations"
           :option-label="option => $t(option.label)"
           option-value="value"
@@ -44,6 +45,7 @@ const arrows = [
         <label>{{ $t('ui.dialogs.fork_properties.shape.title') }}</label>
         <SelectButton
           v-model="fork.$fork.linksOffset"
+          pt:pc-toggle-button:root:class="flex-grow"
           :options="shapes"
           :option-label="option => $t(option.label)"
           option-value="value"
@@ -54,6 +56,7 @@ const arrows = [
         <label>{{ $t('ui.dialogs.fork_properties.directional_arrows.title') }}</label>
         <SelectButton
           v-model="fork.$fork.directionalArrows"
+          pt:pc-toggle-button:root:class="flex-grow"
           :options="arrows"
           :option-label="option => $t(option.label)"
           option-value="value"

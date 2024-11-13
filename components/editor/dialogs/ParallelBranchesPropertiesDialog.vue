@@ -25,6 +25,7 @@ const alignements = [
         <label>{{ $t('ui.dialogs.parallel_branches_properties.alignment.title') }}</label>
         <SelectButton
           v-model="parallelBranches.$parallelBranches.alignement"
+          pt:pc-toggle-button:root:class="flex-grow"
           :options="alignements"
           :option-label="option => $t(option.label)"
           option-value="value"
