@@ -159,6 +159,12 @@
         "header": "Épaisseur de ligne personnalisée"
       },
       "fork_properties": {
+        "directional_arrows": {
+          "clockwise": "Sens horaire",
+          "counterclockwise": "Sens anti-horaire",
+          "none": "Aucune",
+          "title": "Flèches directionnelles"
+        },
         "header": "Propriétés de fourche",
         "orientation": {
           "left": "Gauche",

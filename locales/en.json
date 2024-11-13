@@ -159,6 +159,12 @@
         "header": "Custom line thickness"
       },
       "fork_properties": {
+        "directional_arrows": {
+          "clockwise": "Clockwise",
+          "counterclockwise": "Counterclockwise",
+          "none": "None",
+          "title": "Directional arrows"
+        },
         "header": "Fork properties",
         "orientation": {
           "left": "Left",
