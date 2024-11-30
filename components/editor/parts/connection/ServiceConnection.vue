@@ -24,11 +24,21 @@ watch(isPedestrian, (val) => {
         <Service :service="service.$serviceConnectionElement.service" />
       </IconOrnament>
     </div>
-    <VerticalLine inner />
+    <div class="flex flex-col items-center w-1em">
+      <VerticalLine inner />
+    </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+.connection-group-mode {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: .0625em;
+  justify-items: start;
+  height: 100%;
+}
+
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(4, min-content);

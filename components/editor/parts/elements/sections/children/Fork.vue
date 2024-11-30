@@ -21,12 +21,13 @@ const SLOPE_WIDTH = SIZE * 4.75
 const lineContext = inject<LineContext>(LineContextKey)!
 const color = computed(() => lineContext?.color.value ?? '#000000')
 const lineWidth = computed(() => lineContext.lineThickness.value)
+const effectiveClearance = computed(() => (CLEARANCE + SIZE) * lineWidth.value)
 
 const maxHeight = computed(() => {
   return (meta.$fork.offsetMultiplier ?? 1) * Math.max(Math.abs(meta.$fork.linksOffset[0]), Math.abs(meta.$fork.linksOffset[1])) * 2 * 2.75 * SIZE + (SIZE * lineWidth.value)
 })
 
-const normalWidth = computed(() => SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + CLEARANCE * 2)
+const normalWidth = computed(() => SLOPE_WIDTH * (meta.$fork.offsetMultiplier ?? 1) + effectiveClearance.value * 2)
 
 const orientation = computed(() => {
   switch (meta.$fork.toward) {
@@ -56,21 +57,21 @@ function getPath(fromOffset: number, toOffset: number) {
   const [fromX, toX, flip] = orientation.value
   const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
   const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
-  return `M ${fromX} ${fromY} L ${fromX + CLEARANCE * flip} ${fromY} L ${toX - CLEARANCE * flip} ${toY} L ${toX} ${toY}`
+  return `M ${fromX} ${fromY} L ${fromX + effectiveClearance.value * flip} ${fromY} L ${toX - effectiveClearance.value * flip} ${toY} L ${toX} ${toY}`
 }
 
 function getMiddlePoint(fromOffset: number, toOffset: number): [number, number] {
   const [fromX, toX, flip] = orientation.value
   const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
   const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
-  return [((fromX + CLEARANCE * flip) + (toX - CLEARANCE * flip)) / 2, (fromY + toY) / 2]
+  return [((fromX + effectiveClearance.value * flip) + (toX - effectiveClearance.value * flip)) / 2, (fromY + toY) / 2]
 }
 
 function getAngle(fromOffset: number, toOffset: number): number {
   const [fromX, toX, flip] = orientation.value
   const fromY = maxHeight.value / 2 - (fromOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
   const toY = maxHeight.value / 2 - (toOffset - offset.value) * (2.75 * SIZE) * (meta.$fork.offsetMultiplier ?? 1)
-  return Math.round(Math.atan2(toY - fromY, (toX - CLEARANCE * flip) - (fromX + CLEARANCE * flip)) * 180 / Math.PI)
+  return Math.round(Math.atan2(toY - fromY, (toX - effectiveClearance.value * flip) - (fromX + effectiveClearance.value * flip)) * 180 / Math.PI)
 }
 
 const linkOffsetsArrowPositions = computed(() => {
@@ -90,8 +91,9 @@ const linkOffsetsArrowRotations = computed(() => {
 <template>
   <div
     ref="el"
-    class="fork flex-shrink-0" :style="{
+    class="fork flex-shrink-0 overflow-clip" :style="{
       width: `${normalWidth}px`,
+      margin: `0 -${effectiveClearance - CLEARANCE}px`,
     }"
   >
     <svg width="100%" :height="`${maxHeight}px`">

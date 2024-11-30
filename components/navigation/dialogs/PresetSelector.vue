@@ -6,7 +6,12 @@ import useVersion from '~/composables/useVersion'
 import { METRO_LINES, RER_LINES, TRAM_LINES, TRANSILIEN_LINES } from '~/data/lines'
 import { getPreset } from '~/data/presets'
 import { useProject } from '~/stores/useProject'
-import { modeToDotsColorPolicy, modeToLineStyle, modeToLineThickness } from '~/utils/properties'
+import {
+  modeToDotsColorPolicy,
+  modeToLineStyle,
+  modeToLineThickness,
+  modeToTerminusFramePolicy,
+} from '~/utils/properties'
 
 const FULL_TEMPLATE = {
   METRO: ['1', '2', '3', '3bis', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
@@ -60,6 +65,7 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
     line.value.lineThickness = modeToLineThickness(_mode)
     line.value.lineStyle = modeToLineStyle(_mode)
     line.value.dotsColorPolicy = modeToDotsColorPolicy(_mode)
+    line.value.frameTerminusNames = modeToTerminusFramePolicy(_mode)
     visible.value = false
   }
 }

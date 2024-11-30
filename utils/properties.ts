@@ -13,6 +13,8 @@ export function modeToLineThickness(mode: Mode): string {
     case 'TRAIN':
     case 'TRAIN_RER':
       return '1.375'
+    default:
+      return '0.375'
   }
 }
 
@@ -34,5 +36,15 @@ export function modeToDotsColorPolicy(mode: Mode): DotsColorPolicy {
       return 'WHITE'
     default:
       return 'INHERIT'
+  }
+}
+
+export function modeToTerminusFramePolicy(mode: Mode): boolean {
+  switch (mode) {
+    case 'RER':
+    case 'TRAIN':
+      return false
+    default:
+      return true
   }
 }

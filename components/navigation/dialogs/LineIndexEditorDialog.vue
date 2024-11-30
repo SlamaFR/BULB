@@ -33,7 +33,7 @@ watch(() => index.value.mode, (mode) => {
     <template #header>
       <div class="flex flex-row gap-2 items-center">
         <span class="p-dialog-title">{{ $t('ui.dialogs.custom_index_editor.header') }}</span>
-        <Tag rounded severity="info" :value="$t('misc.beta')" />
+        <Beta />
       </div>
     </template>
     <div class="content">

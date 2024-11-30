@@ -63,6 +63,13 @@ function mapName(name: string | null) {
 
       <div class="flex flex-col gap-1">
         <div class="flex items-center">
+          <Checkbox v-model="stop.$stop.preventSubtitleOverlapping" binary :input-id="`${stop.id}_preventOverlapping`" />
+          <label :for="`${stop.id}_preventOverlapping`" class="ml-2">{{ $t('ui.dialogs.stop_properties.preventOverlapping') }}</label>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-1">
+        <div class="flex items-center">
           <Checkbox v-model="stop.$stop.interestPoint" binary :input-id="`${stop.id}_interestPoint`" />
           <label :for="`${stop.id}_interestPoint`" class="ml-2">{{ $t('ui.dialogs.stop_properties.interest_point') }}</label>
         </div>

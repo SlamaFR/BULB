@@ -14,7 +14,13 @@ const {
   striped?: boolean
 }>()
 
-const roundedPath = computed(() => roundCorners(path, 150).path)
+const roundedPath = computed(() => {
+  try {
+    return roundCorners(path, 175).path
+  } catch (e: any) {
+    return path
+  }
+})
 </script>
 
 <template>

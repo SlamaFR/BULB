@@ -35,6 +35,8 @@ function addAllStops() {
       name: stop.name,
       placeName: '',
       subtitle: '',
+      accessible: 'undefined',
+      reverse: false,
       interestPoint: false,
       preventSubtitleOverlapping: true,
       closed: false,
@@ -58,7 +60,7 @@ function addAllStops() {
     <template #header>
       <div class="flex flex-row gap-2 items-center">
         <span class="p-dialog-title">{{ $t('ui.dialogs.warp_add.header') }}</span>
-        <Tag rounded severity="info" :value="$t('misc.beta')" />
+        <Beta />
       </div>
     </template>
     <div class="flex flex-col gap-4">

@@ -270,6 +270,8 @@
         "closed": "Fermé",
         "header": "Propriétés d’arrêt",
         "interest_point": "Point d’intérêt",
+        "inverted_elements": "Élements inversés",
+        "preventOverlapping": "Empêcher la colision du nom et du sous-titre",
         "stop_name": "Nom",
         "subtitle": "Sous-titre",
         "terminus": "Terminus"
@@ -335,6 +337,7 @@
     "properties": {
       "color": "Couleur du plan",
       "dots_color": "Couleur des points",
+      "frame_terminus_names": "Noms des terminus dans un cadre",
       "fully_accessible": "Ligne intégralement accessible UFR",
       "index": "Indice de ligne",
       "line_style": "Style de ligne",

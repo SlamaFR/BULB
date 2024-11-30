@@ -38,6 +38,13 @@ function showWarpAdd() {
           <InputText v-model="branch.$branch.marginRight" numeric />
         </div>
       </div>
+      <div class="flex flex-col gap-1">
+        <div class="flex items-center">
+          <Checkbox v-model="branch.$branch.invertedElements" binary :input-id="`${branch.id}_invertedElements`" />
+          <label :for="`${branch.id}_invertedElements`" class="ml-2">{{ $t('ui.dialogs.stop_properties.inverted_elements') }}</label>
+          <Beta />
+        </div>
+      </div>
       <div class="flex flex-row-reverse gap-4 mt-4">
         <Button label="WarpAdd" icon="i-tabler-bolt-filled" @click="showWarpAdd()" />
       </div>

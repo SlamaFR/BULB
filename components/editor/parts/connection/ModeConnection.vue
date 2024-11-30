@@ -54,15 +54,27 @@ function position(index: number) {
 </template>
 
 <style scoped lang="scss">
+.connection-group-mode {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: .0625em;
+  justify-items: center;
+  height: 100%;
+}
+
 .connection-group-lines {
   display: grid;
   grid-template-columns: repeat(v-bind(MAX_COLUMNS), min-content);
   row-gap: .125em;
-  width: min-content;
+  margin-bottom: 0.3125em;
 
   > * {
     min-width: 1em;
     margin-right: .125em;
+  }
+
+  .reverse > .connection-groups .connection-group:last-child & {
+    margin-bottom: .4375em;
   }
 }
 

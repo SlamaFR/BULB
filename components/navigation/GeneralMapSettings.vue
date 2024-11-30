@@ -46,9 +46,16 @@ function updateColor(newColor: string | null) {
         <DotsColorSelect v-model="line.dotsColorPolicy" />
       </div>
 
-      <div class="flex items-center gap-2 py-4">
-        <Checkbox v-model="line.fullyAccessible" input-id="property-fully-accessible" binary />
-        <label for="property-fully-accessible">{{ $t('ui.properties.fully_accessible') }}</label>
+      <div class="flex flex-col items-start gap-4 py-4">
+        <div class="flex items-center gap-2">
+          <Checkbox v-model="line.fullyAccessible" input-id="property-fully-accessible" binary />
+          <label for="property-fully-accessible">{{ $t('ui.properties.fully_accessible') }}</label>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <Checkbox v-model="line.frameTerminusNames" input-id="property-frame-terminus-names" binary />
+          <label for="property-frame-terminus-names">{{ $t('ui.properties.frame_terminus_names') }}</label>
+        </div>
       </div>
 
       <div class="flex flex-col gap-1 flex-auto">

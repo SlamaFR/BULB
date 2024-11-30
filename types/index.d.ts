@@ -185,6 +185,7 @@ declare global {
       interestPoint: boolean
       terminus: boolean
       closed: boolean
+      reverse: boolean
       connections: Connection[]
     }
   }
@@ -204,6 +205,7 @@ declare global {
       elementSpacing: number
       marginLeft?: number
       marginRight?: number
+      invertedElements: boolean
       elements: BranchElement[]
     }
   }
@@ -276,6 +278,7 @@ declare global {
     dotsColorPolicy: DotsColorPolicy | null
     mapSize: number | null
     fullyAccessible: boolean
+    frameTerminusNames: boolean
     topology: LineSection[]
   }
 
@@ -284,6 +287,7 @@ declare global {
     lineThickness: Ref<number>
     lineStyle: Ref<LineStyle>
     dotsColorPolicy: Ref<DotsColorPolicy>
+    frameTerminusNames: Ref<boolean>
   }
 
   export interface StopContext {
@@ -294,10 +298,12 @@ declare global {
       }
       rightMargin: {
         name: string
+        subtitle: string
         connections: string
       }
     }
     namesWidth: ComputedRef<string>
+    inverted: ComputedRef<boolean>
   }
 }
 

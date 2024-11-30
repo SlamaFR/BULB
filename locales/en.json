@@ -270,6 +270,8 @@
         "closed": "Closed",
         "header": "Stop properties",
         "interest_point": "Interest point",
+        "inverted_elements": "Inverted elements",
+        "preventOverlapping": "Prevent name and subtitle from coliding",
         "stop_name": "Name",
         "subtitle": "Subtitle",
         "terminus": "Terminus"
@@ -335,6 +337,7 @@
     "properties": {
       "color": "Map color",
       "dots_color": "Dots color",
+      "frame_terminus_names": "Frame terminus names",
       "fully_accessible": "Line fully wheelchair accessible",
       "index": "Line index",
       "line_style": "Line style",

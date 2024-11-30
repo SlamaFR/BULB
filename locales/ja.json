@@ -220,9 +220,6 @@
         "spacer_export_notice": "お知らせ：スペーサーはレンダリング時に見えなくなります。"
       },
       "stop_properties": {
-        "accessible_no": "",
-        "accessible_undefined": "",
-        "accessible_yes": "",
         "city_name": "市の名前",
         "closed": "運休",
         "header": "駅のプロパティ",
