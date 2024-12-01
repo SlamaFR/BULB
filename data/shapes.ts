@@ -9,3 +9,14 @@ export const SHAPES: ShapeChoice[] = [
 export function findShapeByValue(value: IndexShape | null): ShapeChoice | null {
   return SHAPES.find(shape => shape.value === value) ?? null
 }
+
+export function allowedShapes(mode: Mode): IndexShape[] {
+  switch (mode) {
+    case 'BUS':
+      return ['RECTANGLE']
+    case 'NOCTILIEN':
+      return ['CUT_RECTANGLE']
+    default:
+      return ['CIRCLE', 'LINES', 'ROUNDED_SQUARE']
+  }
+}

@@ -116,12 +116,6 @@
         "supported_browsers": "Supported browsers",
         "unsupported_browsers": "Unsupported browsers"
       },
-      "end_of_year_celebrations": {
-        "close": "Close",
-        "disable_and_close": "Disable and close",
-        "header": "Merry Christmas",
-        "summary": "For the holidays, snow is coming to BULB. You can disable it at any time from the top bar."
-      },
       "connections_editor": {
         "group": {
           "delete": "Delete",
@@ -165,6 +159,12 @@
       "custom_line_thickness": {
         "accept": "Done",
         "header": "Custom line thickness"
+      },
+      "end_of_year_celebrations": {
+        "close": "Close",
+        "disable_and_close": "Disable and close",
+        "header": "Merry Christmas",
+        "summary": "For the holidays, snow is coming to BULB. You can disable it at any time from the top bar."
       },
       "fork_properties": {
         "directional_arrows": {
@@ -384,7 +384,20 @@
     },
     "topbar": {
       "FAQ": "FAQ",
-      "catch_phrase": "Not bad, is it? That’s French 🇫🇷"
+      "catch_phrase": "Not bad, is it? That’s French 🇫🇷",
+      "inspection_center": {
+        "header": "Inspection center",
+        "illegal_pedestrian_connections": "{n} invalid pedestrian connection | {n} invalid pedestrian connections",
+        "invalid_custom_indices": "{n} invalid custom line index | {n} invalid custom line indices",
+        "last_update": "Last check",
+        "no_color_selected": "No color selected",
+        "no_issues_message": "Everything seems correct in your project",
+        "no_issues_title": "No issue",
+        "no_line_index_selected": "No line index selected",
+        "no_mode_selected": "No mode selected",
+        "project_properties": "Project properties",
+        "untitled_stops": "{n} untitled stop | {n} untitled stops"
+      }
     }
   }
 }

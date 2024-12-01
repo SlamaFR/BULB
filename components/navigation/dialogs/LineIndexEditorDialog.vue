@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { watch } from 'vue'
 import { modeToShape } from '~/data/modes'
+import { allowedShapes } from '~/data/shapes'
 
 const emit = defineEmits<{
   delete: [id: string]
@@ -9,13 +10,8 @@ const index = defineModel<CustomLineIndexDescription>({ required: true })
 const visible = defineModel<boolean>('visible')
 
 function filterShape(shape: ShapeChoice) {
-  if (index.value.mode === 'BUS') {
-    return shape.value !== 'RECTANGLE'
-  } else if (index.value.mode === 'NOCTILIEN') {
-    return shape.value !== 'CUT_RECTANGLE'
-  } else {
-    return shape.value === 'RECTANGLE' || shape.value === 'CUT_RECTANGLE'
-  }
+  const shapes = allowedShapes(index.value.mode)
+  return !shapes.includes(shape.value)
 }
 
 watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {

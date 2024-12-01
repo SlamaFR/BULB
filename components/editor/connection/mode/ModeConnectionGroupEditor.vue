@@ -33,7 +33,7 @@ function deleteLine(index: number) {
         <Checkbox
           v-model="connection.$modeConnection.walk"
           :input-id="connection.id"
-          :disabled="pedestrianChild"
+          :disabled="pedestrianChild && !connection.$modeConnection.walk"
           binary
         />
         <label :for="connection.id" class="ml-2">{{

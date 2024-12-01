@@ -49,7 +49,7 @@ function permittedTypes(mode: Mode | null): OrnamentType[] | undefined {
           size="small"
           :label="$t('ui.dialogs.connections_editor.group.ornament')"
           :severity="line.$modeConnectionElement.ornament ? 'primary' : 'secondary'"
-          :disabled="mode === 'BUS'"
+          :disabled="mode === 'BUS' || mode === 'NOCTILIEN'"
           @click="showOrnamentEditor = true"
         />
         <Button

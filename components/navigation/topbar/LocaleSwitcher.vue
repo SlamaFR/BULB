@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import type Popover from 'primevue/popover'
+import de from 'assets/svg/flags/de.svg'
+import en from 'assets/svg/flags/en.svg'
+import es from 'assets/svg/flags/es.svg'
+import fr from 'assets/svg/flags/fr.svg'
+import it from 'assets/svg/flags/it.svg'
+import ja from 'assets/svg/flags/ja.svg'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import de from '~/assets/svg/flags/de.svg'
-import en from '~/assets/svg/flags/en.svg'
-import es from '~/assets/svg/flags/es.svg'
-import fr from '~/assets/svg/flags/fr.svg'
-import it from '~/assets/svg/flags/it.svg'
-import ja from '~/assets/svg/flags/ja.svg'
 
 const LOCALES = [
   { label: 'Deutsch', value: 'de', flag: de },

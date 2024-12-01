@@ -116,12 +116,6 @@
         "supported_browsers": "Navigateurs supportés",
         "unsupported_browsers": "Navigateurs non supportés"
       },
-      "end_of_year_celebrations": {
-        "close": "Fermer",
-        "disable_and_close": "Désactiver et fermer",
-        "header": "Joyeuses fêtes de fin d’année",
-        "summary": "À l'occasion des fêtes, la neige débarque sur BULB. Vous pouvez la désactiver à tout moment depuis la barre supérieure."
-      },
       "connections_editor": {
         "group": {
           "delete": "Supprimer",
@@ -165,6 +159,12 @@
       "custom_line_thickness": {
         "accept": "Terminé",
         "header": "Épaisseur de ligne personnalisée"
+      },
+      "end_of_year_celebrations": {
+        "close": "Fermer",
+        "disable_and_close": "Désactiver et fermer",
+        "header": "Joyeuses fêtes de fin d’année",
+        "summary": "À l'occasion des fêtes, la neige débarque sur BULB. Vous pouvez la désactiver à tout moment depuis la barre supérieure."
       },
       "fork_properties": {
         "directional_arrows": {
@@ -384,7 +384,20 @@
     },
     "topbar": {
       "FAQ": "FAQ",
-      "catch_phrase": "Pas mal non ? C’est français 🇫🇷"
+      "catch_phrase": "Pas mal non ? C’est français 🇫🇷",
+      "inspection_center": {
+        "header": "Centre d’inspection",
+        "illegal_pedestrian_connections": "{n} correspondance piétonne invalide | {n} arrêts avec correspondance piétonne invalide",
+        "invalid_custom_indices": "{n} indice personnalisé invalide | {n} indices personnalisés invalides",
+        "last_update": "Dernière vérification",
+        "no_color_selected": "Aucune couleur sélectionnée",
+        "no_issues_message": "Tout semble en ordre dans votre projet",
+        "no_issues_title": "Aucun problème détecté",
+        "no_line_index_selected": "Aucun indice de ligne sélectionné",
+        "no_mode_selected": "Aucun mode sélectionné",
+        "project_properties": "Propriétés du projet",
+        "untitled_stops": "{n} arrêt sans nom | {n} arrêts sans nom"
+      }
     }
   }
 }

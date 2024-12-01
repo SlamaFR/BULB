@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { navigateTo } from '#app'
 import { storeToRefs } from 'pinia'
+import InspectionCenter from '~/components/navigation/topbar/InspectionCenter.vue'
 import useVersion from '~/composables/useVersion'
 import { useSnow } from '~/stores/useSnow'
 
@@ -37,6 +38,8 @@ function toggleSnow() {
             v-if="isWinter" text rounded :icon="snowEnabled ? 'i-tabler-snowflake' : 'i-tabler-snowflake-off'"
             @click="toggleSnow()"
           />
+          <Divider layout="vertical" />
+          <InspectionCenter />
         </div>
       </div>
     </template>
