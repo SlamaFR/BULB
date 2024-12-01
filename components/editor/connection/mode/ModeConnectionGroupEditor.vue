@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
+import { computed } from 'vue'
 
 const connection = defineModel<ModeConnection>('connection', { required: true })
+const pedestrianChild = computed(() => connection.value.$modeConnection.elements.some(it => it.$modeConnectionElement.walk))
 
 function addLine() {
   connection.value.$modeConnection.elements.push({
@@ -28,8 +30,15 @@ function deleteLine(index: number) {
       </div>
 
       <div class="flex items-center">
-        <Checkbox v-model="connection.$modeConnection.walk" :input-id="connection.id" binary />
-        <label :for="connection.id" class="ml-2">{{ $t('ui.dialogs.connections_editor.group.pedestrian_connection') }}</label>
+        <Checkbox
+          v-model="connection.$modeConnection.walk"
+          :input-id="connection.id"
+          :disabled="pedestrianChild"
+          binary
+        />
+        <label :for="connection.id" class="ml-2">{{
+          $t('ui.dialogs.connections_editor.group.pedestrian_connection')
+        }}</label>
       </div>
     </div>
 
@@ -45,10 +54,14 @@ function deleteLine(index: number) {
             v-model:line="connection.$modeConnection.elements[i]"
             :index="i"
             :mode="connection.$modeConnection.mode"
+            :allow-pedestrian="!pedestrianChild && !connection.$modeConnection.walk && i > 0"
             @delete="deleteLine"
           />
           <div class="p-panel p-8 flex items-center justify-center">
-            <Button :label="$t('ui.dialogs.connections_editor.group.mode.lines.add')" text icon="i-tabler-plus" class="text-nowrap" @click="addLine()" />
+            <Button
+              :label="$t('ui.dialogs.connections_editor.group.mode.lines.add')" text icon="i-tabler-plus"
+              class="text-nowrap" @click="addLine()"
+            />
           </div>
         </div>
       </HorizontalScrollContainer>
