@@ -30,6 +30,6 @@ const {
   />
   <Circle
     v-else
-    :background-color="color"
+    :color="color"
   />
 </template>
