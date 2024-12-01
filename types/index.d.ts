@@ -2,11 +2,13 @@ import type { ComputedRef, Ref } from 'vue'
 
 declare global {
 
-  type Mode = 'BOAT'
+  type Mode =
+    'BOAT'
     | 'BRT'
     | 'BUS'
     | 'CABLE'
     | 'METRO'
+    | 'NOCTILIEN'
     | 'RER'
     | 'TRAIN'
     | 'TRAIN_RER'
@@ -55,7 +57,7 @@ declare global {
   type TrainLine = 'H' | 'J' | 'K' | 'L' | 'N' | 'P' | 'R' | 'U' | 'V' | string
   type TramLine = '1' | '2' | '3a' | '3b' | '4' | '5' | '6' | '7' | '8' | '11' | '12' | '13' | '14' | string
 
-  type IndexShape = 'CIRCLE' | 'ROUNDED_SQUARE' | 'LINES' | 'RECTANGLE'
+  type IndexShape = 'CIRCLE' | 'ROUNDED_SQUARE' | 'LINES' | 'RECTANGLE' | 'CUT_RECTANGLE'
 
   interface ColorChoice {
     value: string

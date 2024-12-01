@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { watch } from 'vue'
+import { modeToShape } from '~/data/modes'
 
 const emit = defineEmits<{
   delete: [id: string]
@@ -10,21 +11,15 @@ const visible = defineModel<boolean>('visible')
 function filterShape(shape: ShapeChoice) {
   if (index.value.mode === 'BUS') {
     return shape.value !== 'RECTANGLE'
+  } else if (index.value.mode === 'NOCTILIEN') {
+    return shape.value !== 'CUT_RECTANGLE'
   } else {
-    return shape.value === 'RECTANGLE'
+    return shape.value === 'RECTANGLE' || shape.value === 'CUT_RECTANGLE'
   }
 }
 
 watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
-  if (mode === 'BUS') {
-    if (index.value.shape !== 'RECTANGLE') {
-      index.value.shape = 'RECTANGLE'
-    }
-  } else {
-    if (index.value.shape === 'RECTANGLE') {
-      index.value.shape = 'CIRCLE'
-    }
-  }
+  index.value.shape = modeToShape(mode)
 })
 </script>
 
@@ -81,7 +76,7 @@ watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
         </div>
       </div>
       <Panel :header="$t('ui.dialogs.custom_index_editor.preview')">
-        <div class="preview" :class="{ half: index.shape === 'RECTANGLE' }">
+        <div class="preview" :class="{ half: index.shape === 'RECTANGLE' || index.shape === 'CUT_RECTANGLE' }">
           <CustomLineIndex
             :shape="index.shape"
             :index="index.index"

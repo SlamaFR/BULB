@@ -50,7 +50,7 @@ function deleteIndex(id: string) {
           @click="edit(index)"
         >
           <CustomLineIndex
-            :class="{ 'text-.5em': index.shape === 'RECTANGLE' }"
+            :class="{ 'text-.5em': index.shape === 'RECTANGLE' || index.shape === 'CUT_RECTANGLE' }"
             :shape="index.shape"
             :prefix="index.prefix"
             :index="index.index"
