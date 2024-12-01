@@ -41,6 +41,7 @@
     "nuxt": "^3.13.2",
     "pinia": "^2.2.4",
     "primevue": "^4.1.0",
+    "pure-snow.js": "^2.1.0",
     "sass": "^1.79.4",
     "svg-round-corners": "^0.4.3",
     "taze": "^0.17.2",
