@@ -71,6 +71,7 @@
       "bus": "Bus",
       "cable": "Cable car",
       "metro": "Metro",
+      "noctilien": "Noctilien",
       "rer": "RER",
       "tram": "Tramway",
       "transilien": "Transilien"
@@ -89,6 +90,7 @@
     },
     "shapes": {
       "circle": "Circle",
+      "cut_rectangle": "Cut rectangle",
       "lines": "Lines",
       "rectangle": "Rectangle",
       "rounded_square": "Rounded square"

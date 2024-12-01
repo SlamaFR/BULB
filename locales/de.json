@@ -48,6 +48,7 @@
       "bus": "Bus",
       "cable": "Seilbahn",
       "metro": "U-Bahn",
+      "noctilien": "Noctilien",
       "rer": "RER",
       "tram": "Straßenbahn",
       "transilien": "Transilien"

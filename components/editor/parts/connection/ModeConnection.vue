@@ -8,7 +8,7 @@ const {
   connection: ModeConnection
 }>()
 
-const CONDENSED_MODES: Mode[] = ['BUS']
+const CONDENSED_MODES: Mode[] = ['BUS', 'NOCTILIEN']
 const MAX_COLUMNS = 4
 
 const stopContext = inject<StopContext>(StopContextKey)

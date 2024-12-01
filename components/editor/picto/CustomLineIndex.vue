@@ -29,6 +29,7 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
       'rounded-square': shape === 'ROUNDED_SQUARE',
       'lines': shape === 'LINES',
       'rectangle': shape === 'RECTANGLE',
+      'cut-rectangle': shape === 'CUT_RECTANGLE',
       'background': shape === 'LINES',
     }"
   >
@@ -116,6 +117,7 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
   }
 }
 
+.cut-rectangle,
 .rectangle {
   &.wrapper {
     min-width: 2em;
@@ -131,5 +133,9 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
     font-weight: 600;
     line-height: 1;
   }
+}
+
+.cut-rectangle .index {
+  color: var(--light-text);
 }
 </style>
