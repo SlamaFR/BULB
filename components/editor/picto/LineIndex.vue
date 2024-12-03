@@ -1,50 +1,39 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import { modeToShape } from '~/data/modes'
 import { useCustomLineIndices } from '~/stores/useCustomLineIndices'
 import { isBuiltin, isCustom } from '~/utils/types'
 
 const {
   index,
+  mode = undefined,
 } = defineProps<{
   index: LineIndex | null
+  mode?: Mode | null
 }>()
 
 const { findIndexById } = useCustomLineIndices()
 
-const transparent = computed(() => {
-  if (index) {
-    switch (index?.mode) {
-      // case 'BUS':
-      case 'BOAT':
-      case 'CABLE':
-      case 'TRAM':
-      case 'VELO':
-        return true
-    }
-  }
-  return false
-})
-
-const unknownCustomIndex: CustomLineIndexDescription = {
+const unknownCustomIndex = computed(() => ({
   id: '',
   mode: 'METRO',
-  shape: 'ROUNDED_SQUARE',
+  shape: mode ? modeToShape(mode) : 'ROUNDED_SQUARE',
   prefix: '',
   index: '?',
   suffix: '',
   color: '#000000',
-}
+}))
 
 const customIndex = computed(() => {
   if (isCustom(index)) {
-    return findIndexById(index.$customLineIndex.id) ?? unknownCustomIndex
+    return findIndexById(index.$customLineIndex.id) ?? unknownCustomIndex.value
   }
-  return unknownCustomIndex
+  return unknownCustomIndex.value
 })
 </script>
 
 <template>
-  <div v-if="index !== null" :class="{ 'bg-white rounded': transparent }">
+  <div v-if="index !== null">
     <Bus v-if="isBuiltin(index) && index.mode === 'BUS'" :line="index.$builtinLineIndex.index" />
     <Cable v-if="isBuiltin(index) && index.mode === 'CABLE'" :line="index.$builtinLineIndex.index" />
     <Metro v-else-if="isBuiltin(index) && index.mode === 'METRO'" :line="index.$builtinLineIndex.index" />

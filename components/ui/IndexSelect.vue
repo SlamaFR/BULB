@@ -82,13 +82,13 @@ function indexToChoice(index: LineIndex | null): IndexChoice<LineIndex> | null {
   >
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-3">
-        <LineIndex class="text-1.25em" :index="slotProps.value" />
-        <span>{{ indexToChoice(slotProps.value)?.label }}</span>
+        <LineIndex class="text-1.25em" :mode="mode" :index="slotProps.value" />
+        <span>{{ indexToChoice(slotProps.value)?.label ?? $t('components.line_index_select.unknown_index') }}</span>
       </div>
     </template>
     <template #option="slotProps">
       <div class="flex items-center gap-3">
-        <LineIndex class="text-1.25em" :index="slotProps.option.value" />
+        <LineIndex class="text-1.25em" :mode="mode" :index="slotProps.option.value" />
         <span>{{ slotProps.option.label }}</span>
       </div>
     </template>

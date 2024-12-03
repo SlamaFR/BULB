@@ -13,7 +13,7 @@ const {
   preventSubtitleOverlapping: boolean
   placeName: string | null
   subtitle: string | null
-  accessible: boolean | 'undefined'
+  accessible: boolean | 'undefined' | undefined
   interestPoint?: boolean
 }>()
 
