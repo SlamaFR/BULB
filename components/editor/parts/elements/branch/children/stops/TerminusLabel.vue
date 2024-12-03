@@ -44,7 +44,7 @@ onUnmounted(() => {
     <div class="flex">
       <div class="wrapper translate-x-50%">
         <div class="name-container flex flex-row gap-2 items-center">
-          <div ref="frame" class="frame" :class="{ 'opacity-50': untitled }">
+          <div ref="frame" class="frame" :class="{ 'opacity-50 export-hide': untitled }">
             <span v-for="part in placeNameParts" :key="part" class="place-name">
               {{ part }}
             </span>

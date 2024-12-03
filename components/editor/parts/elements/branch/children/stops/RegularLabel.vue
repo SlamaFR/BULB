@@ -27,7 +27,7 @@ const untitled = computed(() => valueParts.value.length === 0)
 
 <template>
   <div class="regular-label">
-    <div class="flex gap-1.0625em" :class="{ 'opacity-50': untitled }">
+    <div class="flex gap-1.0625em" :class="{ 'opacity-50 export-hide': untitled }">
       <div v-for="(part, index) in valueParts" :key="`${part}-${index}`" class="wrapper translate-x-50%">
         <div class="name flex flex-row gap-2 items-end">
           <span>{{ part }}</span>
