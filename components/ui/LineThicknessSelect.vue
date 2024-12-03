@@ -27,6 +27,9 @@ watch(selectedThickness, (val) => {
   thickness.value = val?.value ?? null
 })
 watch(thickness, val => selectedThickness.value = findThicknessByValue(val))
+watch(showCustomDialog, (val) => {
+  if (!val) selectedThickness.value = findThicknessByValue(thickness.value)
+})
 
 function handleClick(event: SelectChangeEvent) {
   if (event.value.value === '') {
