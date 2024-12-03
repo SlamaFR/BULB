@@ -14,6 +14,19 @@ const {
 
 const { findIndexById } = useCustomLineIndices()
 
+const transparent = computed(() => {
+  switch (mode) {
+    case 'BOAT':
+    case 'BUS':
+    case 'BRT':
+    case 'CABLE':
+    case 'TRAM':
+    case 'VELO':
+      return true
+    default:
+      return false
+  }
+})
 const unknownCustomIndex = computed(() => ({
   id: '',
   mode: 'METRO',
@@ -23,7 +36,6 @@ const unknownCustomIndex = computed(() => ({
   suffix: '',
   color: '#000000',
 }))
-
 const customIndex = computed(() => {
   if (isCustom(index)) {
     return findIndexById(index.$customLineIndex.id) ?? unknownCustomIndex.value
@@ -33,7 +45,7 @@ const customIndex = computed(() => {
 </script>
 
 <template>
-  <div v-if="index !== null">
+  <div v-if="index !== null" :class="{ 'rounded bg-white': transparent }">
     <Bus v-if="isBuiltin(index) && index.mode === 'BUS'" :line="index.$builtinLineIndex.index" />
     <Cable v-if="isBuiltin(index) && index.mode === 'CABLE'" :line="index.$builtinLineIndex.index" />
     <Metro v-else-if="isBuiltin(index) && index.mode === 'METRO'" :line="index.$builtinLineIndex.index" />

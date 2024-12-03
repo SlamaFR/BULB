@@ -30,7 +30,6 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
       'lines': shape === 'LINES',
       'rectangle': shape === 'RECTANGLE',
       'cut-rectangle': shape === 'CUT_RECTANGLE',
-      'background': shape === 'LINES',
     }"
   >
     <Shape :shape="shape" :color="color" />
@@ -54,7 +53,7 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
   --light-text: white;
   --dark-text: #231f20;
 
-  &.background::before {
+  &.lines::before {
     content: '';
     position: absolute;
     top: 0;

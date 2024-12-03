@@ -18,7 +18,7 @@ function filterShape(shape: ShapeChoice) {
   }
 }
 
-watch([() => index.value.mode, () => index.value.shape], ([mode, _]) => {
+watch(() => index.value.mode, (mode) => {
   index.value.shape = modeToShape(mode)
 })
 </script>
