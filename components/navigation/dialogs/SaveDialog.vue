@@ -13,7 +13,6 @@ const { line } = storeToRefs(useProject())
 const { findIndexById } = useCustomLineIndices()
 
 const name = ref(`${line.value.mode}_${line.value.index}`.toLowerCase())
-const bundleCustomIndices = ref(false)
 const lineIndex = computed(() => {
   if (line.value.index === null) return ''
   const index = line.value.index
@@ -37,7 +36,7 @@ watch(visible, (val) => {
 })
 
 function doExport() {
-  save(name.value, bundleCustomIndices.value)
+  save(name.value)
   visible.value = false
 }
 </script>
@@ -56,10 +55,14 @@ function doExport() {
           <InputGroupAddon>.json</InputGroupAddon>
         </InputGroup>
       </div>
-      <div class="flex items-center">
-        <Checkbox v-model="bundleCustomIndices" input-id="save_include_custom_indices" binary />
-        <label for="save_include_custom_indices" class="ml-2">{{ $t('ui.dialogs.save_project.bundle_custom_indices') }}</label>
-      </div>
+
+      <Message severity="secondary">
+        <template #icon>
+          <i class="i-tabler-info-circle-filled" />
+        </template>
+        {{ $t('ui.dialogs.save_project.custom_indices_notice') }}
+      </Message>
+
       <div class="flex flex-row items-center justify-end flex-grow gap-4">
         <Button :label="$t('ui.dialogs.save_project.cancel')" text severity="secondary" @click="visible = false" />
         <Button :label="$t('ui.dialogs.save_project.save')" @click="doExport()" />

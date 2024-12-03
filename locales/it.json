@@ -209,7 +209,6 @@
         "section_2_level": "Livello sezione 2"
       },
       "save_project": {
-        "bundle_custom_indices": "Includere gli indici personalizzati nel progetto",
         "cancel": "Annulla",
         "header": "Salvataggio del progetto",
         "project_name": "Nome del progetto",

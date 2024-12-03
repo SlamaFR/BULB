@@ -14,7 +14,7 @@ const {
   placeName: string | null
   subtitle: string | null
   interestPoint?: boolean
-  accessible: boolean | 'undefined'
+  accessible: boolean | 'undefined' | undefined
 }>()
 
 const stopContext = inject<StopContext>(StopContextKey)

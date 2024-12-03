@@ -13,7 +13,8 @@
       "custom_indices": "Custom indices",
       "line_name": "Line {index}",
       "official_indices": "Official indices",
-      "placeholder": "Select a line index"
+      "placeholder": "Select a line index",
+      "unknown_index": "Unknown"
     },
     "line_style_select": {
       "placeholder": "Select a style"
@@ -116,12 +117,6 @@
         "supported_browsers": "Supported browsers",
         "unsupported_browsers": "Unsupported browsers"
       },
-      "end_of_year_celebrations": {
-        "close": "Close",
-        "disable_and_close": "Disable and close",
-        "header": "Merry Christmas",
-        "summary": "For the holidays, snow is coming to BULB. You can disable it at any time from the top bar."
-      },
       "connections_editor": {
         "group": {
           "delete": "Delete",
@@ -165,6 +160,12 @@
       "custom_line_thickness": {
         "accept": "Done",
         "header": "Custom line thickness"
+      },
+      "end_of_year_celebrations": {
+        "close": "Close",
+        "disable_and_close": "Disable and close",
+        "header": "Merry Christmas",
+        "summary": "For the holidays, snow is coming to BULB. You can disable it at any time from the top bar."
       },
       "fork_properties": {
         "directional_arrows": {
@@ -249,8 +250,8 @@
         "section_2_level": "Section 2 level"
       },
       "save_project": {
-        "bundle_custom_indices": "Bundle custom indices",
         "cancel": "Cancel",
+        "custom_indices_notice": "Custom indices will be bundled in the file",
         "header": "Save project",
         "project_name": "Project name",
         "save": "Save"

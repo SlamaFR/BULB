@@ -13,7 +13,8 @@
       "custom_indices": "Indices personnalisés",
       "line_name": "Ligne {index}",
       "official_indices": "Indices officiels",
-      "placeholder": "Sélectionner un indice"
+      "placeholder": "Sélectionner un indice",
+      "unknown_index": "Inconnu"
     },
     "line_style_select": {
       "placeholder": "Sélectionner un style"
@@ -116,12 +117,6 @@
         "supported_browsers": "Navigateurs supportés",
         "unsupported_browsers": "Navigateurs non supportés"
       },
-      "end_of_year_celebrations": {
-        "close": "Fermer",
-        "disable_and_close": "Désactiver et fermer",
-        "header": "Joyeuses fêtes de fin d’année",
-        "summary": "À l'occasion des fêtes, la neige débarque sur BULB. Vous pouvez la désactiver à tout moment depuis la barre supérieure."
-      },
       "connections_editor": {
         "group": {
           "delete": "Supprimer",
@@ -165,6 +160,12 @@
       "custom_line_thickness": {
         "accept": "Terminé",
         "header": "Épaisseur de ligne personnalisée"
+      },
+      "end_of_year_celebrations": {
+        "close": "Fermer",
+        "disable_and_close": "Désactiver et fermer",
+        "header": "Joyeuses fêtes de fin d’année",
+        "summary": "À l'occasion des fêtes, la neige débarque sur BULB. Vous pouvez la désactiver à tout moment depuis la barre supérieure."
       },
       "fork_properties": {
         "directional_arrows": {
@@ -249,8 +250,8 @@
         "section_2_level": "Niveau de la section 2"
       },
       "save_project": {
-        "bundle_custom_indices": "Incorporer les indices personnalisés",
         "cancel": "Annuler",
+        "custom_indices_notice": "Les indices personnalisés seront inclus dans le fichier",
         "header": "Sauvegarder le projet",
         "project_name": "Nom du projet",
         "save": "Sauvegarder"

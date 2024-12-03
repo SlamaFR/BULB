@@ -209,7 +209,6 @@
         "section_2_level": "Nivel de la sección 2"
       },
       "save_project": {
-        "bundle_custom_indices": "Incorporar los índices personalizados",
         "cancel": "Cancelar",
         "header": "Guardar proyecto",
         "project_name": "Nombre del proyecto",

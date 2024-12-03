@@ -209,7 +209,6 @@
         "section_2_level": "Ebene des Abschnitt 2"
       },
       "save_project": {
-        "bundle_custom_indices": "benutzerdefinierte Liniensignale mitspeichern",
         "cancel": "Abbrechen",
         "header": "Projekt speichern",
         "project_name": "Name des Projekts",

@@ -209,7 +209,6 @@
         "section_2_level": "並行の線路の2番目の部分の段階"
       },
       "save_project": {
-        "bundle_custom_indices": "特注の路線記号を組み込む",
         "cancel": "キャンセル",
         "header": "プロジェクトを保存",
         "project_name": "プロジェクトの名前",

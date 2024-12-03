@@ -15,8 +15,8 @@ const emit = defineEmits<{
   delete: [number]
 }>()
 const line = defineModel<ModeConnectionElement>('line', { required: true })
-const pedestrianDisabled = computed(() => (mode === 'BUS' || mode === 'NOCTILIEN') || (!allowPedestrian && !line.value.$modeConnectionElement.walk))
 
+const pedestrianDisabled = computed(() => (mode === 'BUS' || mode === 'NOCTILIEN') || (!allowPedestrian && !line.value.$modeConnectionElement.walk))
 const showOrnamentEditor = ref(false)
 
 function permittedTypes(mode: Mode | null): OrnamentType[] | undefined {
