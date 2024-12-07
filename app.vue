@@ -36,4 +36,24 @@ html, body {
 html, body, #__nuxt {
   height: 100%;
 }
+
+kbd {
+  background-color: var(--p-gray-100);
+  border-radius: 0.25em;
+  padding: 0.1em 0.25em;
+  box-shadow: 0 0 0 1px var(--p-gray-300);
+  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
+  font-size: 0.9em;
+  line-height: 1;
+  color: var(--p-gray-700);
+  margin: 0 0.125em;
+  border: 1px solid var(--p-gray-300);
+
+  .dark-mode & {
+    background-color: var(--p-gray-800);
+    box-shadow: 0 0 0 1px var(--p-gray-600);
+    color: var(--p-gray-100);
+    border: 1px solid var(--p-gray-600);
+  }
+}
 </style>

@@ -2,7 +2,7 @@
 import { isMacOS } from '@basitcodeenv/vue3-device-detect'
 import { useMagicKeys } from '@vueuse/core'
 import { v4 as uuidv4 } from 'uuid'
-import { computed, ref, watch } from 'vue'
+import { computed, nextTick, ref, watch } from 'vue'
 import { VueDraggable } from 'vue-draggable-plus'
 import { cleanName } from '~/utils/text'
 
@@ -30,14 +30,16 @@ const stopsToAdd = ref<{
   name: string
   placeName: string | null
   subtitle: string | null
+  terminus: boolean
 }[]>([])
+const stopsList = ref<HTMLDivElement | null>(null)
 const nameInput = ref<any | null>(null)
-const shortcut = computed(() => isMacOS ? '⌘ + Enter' : 'Ctrl + Enter')
+const metakey = computed(() => isMacOS ? '⌘' : 'Ctrl')
 
 watch(stopName, val => stopName.value = cleanName(val))
 watch(placeName, val => placeName.value = cleanName(val))
 watch(subtitle, val => subtitle.value = cleanName(val))
-watch([meta_enter, ctrl_enter], () => submitStop())
+watch([meta_enter, ctrl_enter], () => addAllStops())
 watch(visible, (val) => {
   if (!val) reset()
 })
@@ -49,11 +51,15 @@ function submitStop() {
       name: stopName.value,
       placeName: placeName.value,
       subtitle: subtitle.value,
+      terminus: false,
     })
     stopName.value = ''
     placeName.value = ''
     subtitle.value = ''
     nameInput.value?.$el.focus()
+    nextTick(() => {
+      if (stopsList.value) stopsList.value.scrollTop = stopsList.value.scrollHeight
+    })
   }
 }
 
@@ -79,7 +85,7 @@ function addAllStops() {
       interestPoint: false,
       preventSubtitleOverlapping: true,
       closed: false,
-      terminus: false,
+      terminus: stop.terminus,
       connections: [],
     },
   } satisfies Stop))
@@ -110,22 +116,44 @@ function addAllStops() {
     </template>
     <div class="flex flex-col gap-4">
       <i18n-t keypath="ui.dialogs.warp_add.notice" tag="p">
-        <template #shortcut>
-          <kbd>{{ shortcut }}</kbd>
+        <template #nextShortcut>
+          <kbd>Enter</kbd>
+        </template>
+        <template #submitShortcut>
+          <kbd>{{ metakey }}</kbd>&nbsp;+&nbsp;<kbd>Enter</kbd>
         </template>
       </i18n-t>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex flex-col gap-2">
           <div class="flex flex-col gap-1">
             <label>{{ $t('ui.dialogs.warp_add.stop_name') }}</label>
-            <Textarea
-              ref="nameInput"
-              v-model="stopName"
-              pt:root:class="important-h-auto"
-              :spellcheck="false"
-              auto-resize
-              autofocus
-            />
+            <InputGroup>
+              <Textarea
+                ref="nameInput"
+                v-model="stopName"
+                pt:root:class="w-full important-h-auto"
+                :spellcheck="false"
+                auto-resize
+                autofocus
+                @keydown.enter="(e: KeyboardEvent) => {
+                  if (e.key === 'Enter' && !e.shiftKey) {
+                    e.preventDefault()
+                    submitStop()
+                  }
+                }"
+              />
+              <Button
+                severity="secondary"
+                icon="i-tabler-plus"
+                tabindex="-1"
+                @click="submitStop()"
+              />
+            </InputGroup>
+            <i18n-t keypath="ui.dialogs.warp_add.linebreak" tag="span" class="text-xs opacity-50">
+              <template #shortcut>
+                <kbd>Shift</kbd>&nbsp;+&nbsp;<kbd>Enter</kbd>
+              </template>
+            </i18n-t>
           </div>
 
           <div class="flex flex-col gap-1">
@@ -133,15 +161,24 @@ function addAllStops() {
             <InputText
               v-model="placeName"
               :spellcheck="false"
+              @keydown.enter="(e: KeyboardEvent) => {
+                e.preventDefault()
+                submitStop()
+              }"
             />
           </div>
 
           <div class="flex flex-col gap-1">
             <label>{{ $t('ui.dialogs.warp_add.subtitle') }}</label>
-            <InputText v-model="subtitle" :spellcheck="false" />
+            <InputText
+              v-model="subtitle"
+              :spellcheck="false"
+              @keydown.enter="(e: KeyboardEvent) => {
+                e.preventDefault()
+                submitStop()
+              }"
+            />
           </div>
-
-          <Divider pt:root:class="important-my-2" />
 
           <div class="flex flex-col gap-1">
             <label>{{ $t('ui.dialogs.warp_add.direction.title') }}</label>
@@ -168,42 +205,59 @@ function addAllStops() {
           </div>
         </div>
 
-        <div class="flex flex-col gap-1">
-          <label>{{ $t('ui.dialogs.warp_add.stops_list') }}</label>
-          <VueDraggable
-            v-model="stopsToAdd"
-            class="stops flex flex-col w-full overflow-y-auto flex-grow"
-            :animation="150"
-            handle=".element-handle"
-          >
-            <div
-              v-for="(item, index) in stopsToAdd" :key="item.id"
-              class="stop px-2 py-1 flex flex-row items-center gap-4"
-            >
-              <i class="element-handle i-tabler-menu-2 text-[var(--p-gray-500)] text-.75em cursor-grab ml-2" />
-              <div class="flex flex-grow flex-col text-truncate">
-                <span>{{ item.name }}</span>
-                <div class="flex flex-row items-center gap-1 text-truncate opacity-50">
-                  <span v-if="item.placeName">{{ item.placeName }}</span>
-                  <span v-if="item.placeName && item.subtitle">•</span>
-                  <span v-if="item.subtitle">{{ item.subtitle }}</span>
+        <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1 flex-grow">
+            <label>{{ $t('ui.dialogs.warp_add.stops_list') }}</label>
+            <div ref="stopsList" class="stops overflow-y-auto flex-grow max-h-25em">
+              <VueDraggable
+                v-if="stopsToAdd.length > 0"
+                v-model="stopsToAdd"
+                class="flex flex-col"
+                :animation="150"
+                handle=".element-handle"
+              >
+                <div
+                  v-for="(item, index) in stopsToAdd" :key="item.id"
+                  class="stop px-2 py-1 flex flex-row items-center gap-4"
+                >
+                  <i class="element-handle i-tabler-menu-2 text-[var(--p-gray-500)] text-.75em cursor-grab ml-2" />
+                  <div class="flex flex-grow flex-col text-truncate">
+                    <span>{{ item.name }}</span>
+                    <div class="flex flex-row items-center gap-1 text-truncate text-xs opacity-50">
+                      <span v-if="item.placeName">{{ item.placeName }}</span>
+                      <span v-if="item.placeName && item.subtitle">•</span>
+                      <span v-if="item.subtitle">{{ item.subtitle }}</span>
+                    </div>
+                  </div>
+                  <div class="flex flex-row items-center">
+                    <Button
+                      v-tooltip.left="$t('ui.dialogs.stop_properties.terminus')"
+                      class="flex-shrink-0"
+                      :icon="item.terminus ? 'i-tabler-directions-filled' : 'i-tabler-directions'"
+                      size="small"
+                      severity="secondary"
+                      rounded
+                      text
+                      @click="stopsToAdd[index].terminus = !stopsToAdd[index].terminus"
+                    />
+                    <Button
+                      class="flex-shrink-0"
+                      icon="i-tabler-trash"
+                      size="small"
+                      severity="danger"
+                      rounded
+                      text
+                      @click="stopsToAdd.splice(index, 1)"
+                    />
+                  </div>
                 </div>
-              </div>
-              <Button
-                class="flex-shrink-0"
-                icon="i-tabler-trash"
-                size="small"
-                severity="danger"
-                rounded
-                text
-                @click="stopsToAdd.splice(index, 1)"
-              />
-            </div>
+              </VueDraggable>
 
-            <div v-if="stopsToAdd.length === 0" class="px-2 py-10 flex flex-row items-center justify-center h-full">
-              <span class="text-[var(--p-gray-500)]">{{ $t('ui.dialogs.warp_add.stops_list_empty') }}</span>
+              <div v-else class="px-2 py-10 flex flex-row items-center justify-center h-full">
+                <span class="text-[var(--p-gray-500)]">{{ $t('ui.dialogs.warp_add.stops_list_empty') }}</span>
+              </div>
             </div>
-          </VueDraggable>
+          </div>
         </div>
       </div>
     </div>
@@ -227,28 +281,6 @@ function addAllStops() {
     </template>
   </Dialog>
 </template>
-
-<style lang="scss">
-kbd {
-  background-color: var(--p-gray-100);
-  border-radius: 0.25em;
-  padding: 0.1em 0.25em;
-  box-shadow: 0 0 0 1px var(--p-gray-300);
-  font-family: 'JetBrains Mono', 'Fira Code', 'Courier New', monospace;
-  font-size: 0.9em;
-  line-height: 1;
-  color: var(--p-gray-700);
-  margin: 0 0.125em;
-  border: 1px solid var(--p-gray-300);
-
-  .dark-mode & {
-    background-color: var(--p-gray-800);
-    box-shadow: 0 0 0 1px var(--p-gray-600);
-    color: var(--p-gray-100);
-    border: 1px solid var(--p-gray-600);
-  }
-}
-</style>
 
 <style scoped lang="scss">
 .stops {

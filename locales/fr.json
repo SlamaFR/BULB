@@ -60,8 +60,8 @@
       "thick": "Épaisse"
     },
     "map_size": {
-      "custom": "Personnalisée",
       "big": "Très grand",
+      "custom": "Personnalisée",
       "huge": "Énorme",
       "large": "Grand",
       "normal": "Normal"
@@ -318,7 +318,8 @@
           "title": "Sens d’insertion"
         },
         "header": "Assistant WarpAdd",
-        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d’appuyer sur {shortcut} pour passer à l’arrêt suivant.",
+        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de remplir les informations d’un arrêt, puis d’appuyer sur {nextShortcut} pour passer à l’arrêt suivant. Une fois tous les arrêts saisis, vous pouvez appuyer sur {submitShortcut} pour terminer.",
+        "linebreak": "Appuyez sur {shortcut} pour sauter une ligne",
         "positioning": {
           "left": "Au début",
           "right": "À la fin",

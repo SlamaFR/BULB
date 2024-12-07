@@ -36,8 +36,8 @@
       "custom": "特注の色"
     },
     "map_size": {
-      "custom": "特注の色",
       "big": "XL",
+      "custom": "特注の色",
       "huge": "XXL",
       "large": "L",
       "normal": "M"
@@ -226,6 +226,9 @@
         "header": "駅のプロパティ",
         "interest_point": "興味ポイント",
         "stop_name": "名前",
+        "stop_type": {
+          "terminus": "終着駅"
+        },
         "subtitle": "副題",
         "terminus": "終着駅"
       },
@@ -250,7 +253,7 @@
       "warp_add": {
         "add_all_stops": "全駅を追加する",
         "header": "WarpAddアシスタント",
-        "notice": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、{shortcut}キーを押して次の駅に移動します。",
+        "notice-old": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、{shortcut}キーを押して次の駅に移動します。",
         "reset": "リセット",
         "stop_name": "駅の名前",
         "stops_list": "駅一覧",

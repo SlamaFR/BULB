@@ -36,8 +36,8 @@
       "custom": "Personalizado"
     },
     "map_size": {
-      "custom": "Personalizado",
       "big": "Muy grande",
+      "custom": "Personalizado",
       "huge": "Enorme",
       "large": "Grande",
       "normal": "Normal"
@@ -226,6 +226,9 @@
         "header": "Propiedades de la parada",
         "interest_point": "Punto de interés",
         "stop_name": "Nombre",
+        "stop_type": {
+          "terminus": "Final de línea"
+        },
         "subtitle": "Subtítulo",
         "terminus": "Final de línea"
       },
@@ -250,7 +253,7 @@
       "warp_add": {
         "add_all_stops": "Añadir las paradas",
         "header": "Asistente WarpAdd",
-        "notice": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escriba el nombre de una parada y luego presione {shortcut} para pasar a la parada siguiente.",
+        "notice-old": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escriba el nombre de una parada y luego presione {shortcut} para pasar a la parada siguiente.",
         "reset": "Reiniciar",
         "stop_name": "Nombre de la parada",
         "stops_list": "Lista de paradas",

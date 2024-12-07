@@ -60,8 +60,8 @@
       "thick": "Thick"
     },
     "map_size": {
-      "custom": "Custom",
       "big": "Big",
+      "custom": "Custom",
       "huge": "Huge",
       "large": "Large",
       "normal": "Normal"
@@ -318,7 +318,8 @@
           "title": "Insert direction"
         },
         "header": "WarpAdd Assistant",
-        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type the name of a stop, then press {shortcut} to move to the next stop.",
+        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type in the stop details, then press {nextShortcut} to move to the next stop. Once all stops are entered, you can press {submitShortcut} to finish.",
+        "linebreak": "Press {shortcut} to insert a line break",
         "positioning": {
           "left": "Start",
           "right": "End",
