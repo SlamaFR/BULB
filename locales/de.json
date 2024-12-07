@@ -220,9 +220,6 @@
         "spacer_export_notice": "Anmerkung: Die Hilfspfeile werden beim Export nicht angezeigt."
       },
       "stop_properties": {
-        "accessible_no": "",
-        "accessible_undefined": "",
-        "accessible_yes": "",
         "city_name": "Ort",
         "closed": "Aufgelassen",
         "header": "Haltestelle: Optionen",

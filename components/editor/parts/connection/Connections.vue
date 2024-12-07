@@ -7,8 +7,10 @@ import { isMode, isService } from '~/utils/types'
 
 const {
   connections,
+  reverse = false,
 } = defineProps<{
   connections: Connection[]
+  reverse?: boolean
 }>()
 
 const stopContext = inject<StopContext>(StopContextKey)
@@ -29,27 +31,44 @@ watch([hasConnections, width, namesWidth], ([visible, _width, _namesWidth]) => {
 </script>
 
 <template>
-  <div v-if="hasConnections" ref="el" class="connections-box">
-    <VerticalLine large />
-    <div v-for="connection in connections" :key="connection.id" class="connection-group">
-      <ModeConnection v-if="isMode(connection)" :connection="connection" />
-      <ServiceConnection v-else-if="isService(connection)" :connection="connection" />
-      <span v-else>?</span>
+  <div v-if="hasConnections" ref="el" class="connections-box" :class="{ reverse }">
+    <div v-if="!reverse" class="flex flex-col items-center w-1em">
+      <VerticalLine large />
+    </div>
+    <div class="connection-groups">
+      <div v-for="connection in connections" :key="connection.id" class="connection-group">
+        <ModeConnection v-if="isMode(connection)" :connection="connection" />
+        <ServiceConnection v-else-if="isService(connection)" :connection="connection" />
+        <span v-else>?</span>
+      </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.debug .connections-box {
-  outline: 1px solid red;
+.connections-box {
+  display: flex;
+  flex-direction: column;
+
+  &.reverse {
+    flex-direction: column-reverse;
+  }
+
+  .debug & {
+    outline: 1px solid red;
+  }
+}
+
+.connection-groups {
+  display: flex;
+  flex-direction: column;
 }
 
 .connection-group {
-  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  align-items: start;
   gap: .125em;
-  padding-bottom: .5em;
+  margin-top: .0625em;
+  align-items: start;
 }
 </style>

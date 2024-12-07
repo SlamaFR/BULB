@@ -79,6 +79,7 @@ function moveOut(event: DraggableEvent<BranchElement>) {
         :key="element.id"
         v-model="elements[i]"
         :data-id="element.id"
+        :reverse="branch.$branch.invertedElements"
       />
     </VueDraggable>
     <div ref="line" class="line">

@@ -14,25 +14,23 @@ const {
 
 <style scoped lang="scss">
 .sep-line {
-  min-width: .0625em;
-  max-width: .0625em;
+  background: var(--blue-ratp-paper);
+  display: block;
   width: .0625em;
-  margin: .0625em 0 .0625em .5em;
-  transform: translateX(-50%);
-  background-color: var(--blue-ratp-paper);
+  min-height: .25em;
   border-radius: .25em;
+  height: calc(100%);
 
   &.large {
-    height: .75em;
+    min-height: .375em;
   }
 
-  &.inner {
-    position: absolute;
-    height: calc(100% - 1em - (.0625em * 2));
-  }
-
-  .connection-group:last-child & {
+  :not(.reverse) > .connection-groups .connection-group:last-child & {
     display: none;
+  }
+
+  .reverse > .connection-groups .connection-group:last-child & {
+    min-height: .375em;
   }
 }
 </style>

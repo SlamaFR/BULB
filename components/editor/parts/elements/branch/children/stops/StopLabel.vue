@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import { inject } from 'vue'
+import { LineContextKey } from '~/utils/symbols'
+
 const props = defineProps<{
   value: string
   placeName: string | null
@@ -6,11 +9,14 @@ const props = defineProps<{
   preventSubtitleOverlapping: boolean
   interestPoint?: boolean
   terminus?: boolean
+  reverse: boolean
   accessible: boolean | 'undefined' | undefined
 }>()
+
+const lineContext = inject<LineContext>(LineContextKey)!
 </script>
 
 <template>
-  <TerminusLabel v-if="props.terminus" v-bind="props" />
-  <RegularLabel v-else v-bind="props" :prevent-subtitle-overlapping="preventSubtitleOverlapping" />
+  <StopTerminusLabel v-if="props.terminus && lineContext.frameTerminusNames.value" v-bind="props" />
+  <StopRegularLabel v-else v-bind="props" :prevent-subtitle-overlapping="preventSubtitleOverlapping" />
 </template>

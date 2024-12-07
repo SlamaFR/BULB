@@ -35,6 +35,7 @@ function clone(element: Element): BranchElement {
           subtitle: '',
           placeName: '',
           accessible: 'undefined',
+          reverse: false,
           interestPoint: false,
           preventSubtitleOverlapping: true,
           terminus: false,

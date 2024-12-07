@@ -17,6 +17,7 @@ export const useProject = defineStore('project', () => {
     lineStyle: 'PLAIN',
     dotsColorPolicy: 'INHERIT',
     fullyAccessible: false,
+    frameTerminusNames: true,
     mapSize: 15,
     topology: [{
       id: '1',
@@ -36,6 +37,7 @@ export const useProject = defineStore('project', () => {
     line.lineStyle = 'PLAIN'
     line.dotsColorPolicy = 'INHERIT'
     line.fullyAccessible = false
+    line.frameTerminusNames = true
     line.mapSize = 15
     line.topology = [{
       id: '1',

@@ -22,6 +22,7 @@ provide<LineContext>(LineContextKey, {
   lineThickness: computed(() => Number.parseFloat(line.value.lineThickness ?? '1') || 1),
   lineStyle: computed(() => line.value.lineStyle ?? 'PLAIN'),
   dotsColorPolicy: computed(() => line.value.dotsColorPolicy ?? 'INHERIT'),
+  frameTerminusNames: computed(() => line.value.frameTerminusNames),
 })
 
 function doExport() {
