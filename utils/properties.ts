@@ -12,7 +12,7 @@ export function modeToLineThickness(mode: Mode): string {
     case 'RER':
     case 'TRAIN':
     case 'TRAIN_RER':
-      return '1.375'
+      return '1.5'
     default:
       return '0.375'
   }

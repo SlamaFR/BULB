@@ -10,7 +10,7 @@ interface LineThicknessChoice {
 const THICKNESSES: LineThicknessChoice[] = [
   { label: 'data.line_thickness.normal', value: '0.375' },
   { label: 'data.line_thickness.medium', value: '0.625' },
-  { label: 'data.line_thickness.thick', value: '1.375' },
+  { label: 'data.line_thickness.thick', value: '1.5' },
   { label: 'data.line_thickness.custom', value: '' },
 ]
 
@@ -54,8 +54,7 @@ function close() {
     <template #value="slotProps">
       <div v-if="slotProps.value" class="flex items-center gap-1">
         <span>{{ $t(slotProps.value.label.toLowerCase()) }}</span>
-        <span v-if="slotProps.value.value" class="opacity-50">{{ slotProps.value.value }}</span>
-        <span v-if="!slotProps.value.value">({{ thickness || '1' }})</span>
+        <span class="opacity-50">{{ slotProps.value.value || thickness || '1' }}</span>
       </div>
     </template>
     <template #option="slotProps">
