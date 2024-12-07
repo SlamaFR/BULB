@@ -1,12 +1,19 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { ref } from 'vue'
-import LineThicknessSelect from '~/components/ui/LineThicknessSelect.vue'
+import { ref, watch } from 'vue'
 import { useProject } from '~/stores/useProject'
+import { modeToDotsColorPolicy, modeToLineStyle, modeToLineThickness } from '~/utils/properties'
 
 const { line } = storeToRefs(useProject())
 
 const showPresetSelector = ref(false)
+
+watch(() => line.value.mode, (val) => {
+  if (!val) return
+  line.value.lineThickness = modeToLineThickness(val)
+  line.value.lineStyle = modeToLineStyle(val)
+  line.value.dotsColorPolicy = modeToDotsColorPolicy(val)
+})
 
 function updateColor(newColor: string | null) {
   if (newColor !== null) line.value.color = newColor
