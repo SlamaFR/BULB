@@ -32,7 +32,7 @@ const leftMargin = computed(() => `max(${margins.leftMargin.name}, ${margins.lef
 const rightMargin = computed(() => `max(${margins.rightMargin.name}, ${margins.rightMargin.subtitle}, ${margins.rightMargin.connections})`)
 const namesMargin = computed(() => `min(-.125em, -${Math.max(0, lineContext.lineThickness.value - 0.375) / 2}em)`)
 const connectionsMargin = computed(() => `max(.125em, ${Math.max(0, lineContext.lineThickness.value - 0.825) / 2}em)`)
-const inverted = computed(() => stop.value.$stop.reverse || reverse)
+const inverted = computed(() => !!stop.value.$stop.reverse !== reverse)
 
 const names = ref()
 const { width } = useElementSize(names)
@@ -103,6 +103,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth, inverted })
   <StopPropertiesDialog
     v-model:visible="showPropertiesDialog"
     v-model="stop"
+    :allow-city="lineContext.frameTerminusNames.value"
   />
   <ConnectionsEditor
     v-model:visible="showConnectionsEditor"

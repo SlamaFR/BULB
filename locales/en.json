@@ -99,6 +99,7 @@
   },
   "misc": {
     "beta": "Beta",
+    "new": "New",
     "temporary": "Temporary"
   },
   "ui": {
@@ -262,17 +263,30 @@
         "spacer_export_notice": "Notice: The spacer will become invisible at render time."
       },
       "stop_properties": {
-        "accessible": "Wheelchair accessibility",
-        "accessible_no": "No",
-        "accessible_undefined": "Undefined",
-        "accessible_yes": "Yes",
+        "accessible": {
+          "title": "Wheelchair accessibility",
+          "no": "No",
+          "yes": "Yes",
+          "undefined": "Undefined"
+        },
         "city_name": "City",
         "closed": "Closed",
         "header": "Stop properties",
         "interest_point": "Interest point",
         "inverted_elements": "Inverted elements",
         "preventOverlapping": "Prevent name and subtitle from coliding",
+        "reverse": "Reversed",
         "stop_name": "Name",
+        "stop_state": {
+          "close": "Closed",
+          "open": "Open",
+          "title": "Stop state"
+        },
+        "stop_type": {
+          "regular": "Regular",
+          "terminus": "Terminus",
+          "title": "Stop type"
+        },
         "subtitle": "Subtitle",
         "terminus": "Terminus"
       },

@@ -99,6 +99,7 @@
   },
   "misc": {
     "beta": "Bêta",
+    "new": "Nouveau",
     "temporary": "Temporaire"
   },
   "ui": {
@@ -262,17 +263,30 @@
         "spacer_export_notice": "Remarque : l’espacement deviendra invisible au moment du rendu."
       },
       "stop_properties": {
-        "accessible": "Accessibilité UFR",
-        "accessible_no": "Non",
-        "accessible_undefined": "Indéfinie",
-        "accessible_yes": "Oui",
+        "accessible": {
+          "title": "Accessibilité UFR",
+          "no": "Non",
+          "yes": "Oui",
+          "undefined": "Indéfinie"
+        },
         "city_name": "Ville",
         "closed": "Fermé",
         "header": "Propriétés d’arrêt",
         "interest_point": "Point d’intérêt",
         "inverted_elements": "Élements inversés",
         "preventOverlapping": "Empêcher la colision du nom et du sous-titre",
+        "reverse": "Inversé",
         "stop_name": "Nom",
+        "stop_state": {
+          "close": "Fermé",
+          "open": "Ouvert",
+          "title": "État de l’arrêt"
+        },
+        "stop_type": {
+          "regular": "Normal",
+          "terminus": "Terminus",
+          "title": "Type d’arrêt"
+        },
         "subtitle": "Sous-titre",
         "terminus": "Terminus"
       },
