@@ -249,7 +249,7 @@
       "warp_add": {
         "add_all_stops": "全駅を追加する",
         "header": "WarpAddアシスタント",
-        "notice": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、<kbd>Tab</kbd>キーを押して次の駅に移動します。",
+        "notice": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、{shortcut}キーを押して次の駅に移動します。",
         "reset": "リセット",
         "stop_name": "駅の名前",
         "stops_list": "駅一覧",

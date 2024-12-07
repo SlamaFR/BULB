@@ -264,10 +264,10 @@
       },
       "stop_properties": {
         "accessible": {
-          "title": "Wheelchair accessibility",
           "no": "No",
-          "yes": "Yes",
-          "undefined": "Undefined"
+          "title": "Wheelchair accessibility",
+          "undefined": "Undefined",
+          "yes": "Yes"
         },
         "city_name": "City",
         "closed": "Closed",
@@ -310,12 +310,24 @@
       },
       "warp_add": {
         "add_all_stops": "Add stops",
+        "city_name": "City",
+        "direction": {
+          "left": "Leftward",
+          "right": "Rightward",
+          "title": "Insert direction"
+        },
+        "positioning": {
+          "left": "Start",
+          "right": "End",
+          "title": "Positioning"
+        },
         "header": "WarpAdd Assistant",
-        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type the name of a stop, then press <kbd>Tab</kbd> to move to the next stop.",
+        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type the name of a stop, then press {shortcut} to move to the next stop.",
         "reset": "Reset",
         "stop_name": "Stop name",
         "stops_list": "Stops list",
-        "stops_list_empty": "No stop"
+        "stops_list_empty": "No stop",
+        "subtitle": "Subtitle"
       }
     },
     "map_editor": {

@@ -249,7 +249,7 @@
       "warp_add": {
         "add_all_stops": "Haltestellen hinzufügen",
         "header": "WarpAdd",
-        "notice": "WarpAdd ermöglicht das schnelle Hinzufügen von Haltestellen. Nach dem Eintippen eines Haltestellennamens kann mit <kbd>Tab</kbd> direkt zur nächsten Haltestelle gesprungen werden.",
+        "notice": "WarpAdd ermöglicht das schnelle Hinzufügen von Haltestellen. Nach dem Eintippen eines Haltestellennamens kann mit {shortcut} direkt zur nächsten Haltestelle gesprungen werden.",
         "reset": "Zurücksetzen",
         "stop_name": "Haltestellenname",
         "stops_list": "Liste der Haltestellen",

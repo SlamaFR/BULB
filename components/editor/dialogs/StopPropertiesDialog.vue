@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { watch } from 'vue'
+import { cleanName } from '~/utils/text'
 
 const { allowCity } = defineProps<{
   allowCity: boolean
@@ -22,15 +23,9 @@ const stopTypeOptions = [
   { label: 'ui.dialogs.stop_properties.stop_type.terminus', value: true },
 ]
 
-watch(() => stop.value.$stop.name, val => stop.value.$stop.name = mapName(val))
-watch(() => stop.value.$stop.placeName, val => stop.value.$stop.placeName = mapName(val))
-watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = mapName(val))
-
-function mapName(name: string | null) {
-  return name
-    ?.replace(/ – | - | — /g, ' – ')
-    ?.replace(/'/g, '’') ?? ''
-}
+watch(() => stop.value.$stop.name, val => stop.value.$stop.name = cleanName(val))
+watch(() => stop.value.$stop.placeName, val => stop.value.$stop.placeName = cleanName(val))
+watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanName(val))
 </script>
 
 <template>

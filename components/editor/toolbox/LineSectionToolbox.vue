@@ -41,6 +41,7 @@ function clone(element: Element): LineElement {
           elementSpacing: 0,
           marginLeft: 0,
           marginRight: 0,
+          invertedElements: false,
           elements: [],
         },
       }
@@ -70,6 +71,7 @@ function clone(element: Element): LineElement {
                     $branch: {
                       elementSpacing: 0,
                       elements: [],
+                      invertedElements: false,
                     },
                   },
                 ],
@@ -85,6 +87,7 @@ function clone(element: Element): LineElement {
                     $branch: {
                       elementSpacing: 0,
                       elements: [],
+                      invertedElements: false,
                     },
                   },
                 ],

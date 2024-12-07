@@ -1,31 +1,70 @@
 <script setup lang="ts">
+import { isMacOS } from '@basitcodeenv/vue3-device-detect'
+import { useMagicKeys } from '@vueuse/core'
 import { v4 as uuidv4 } from 'uuid'
-import { ref, watch } from 'vue'
+import { computed, ref, watch } from 'vue'
 import { VueDraggable } from 'vue-draggable-plus'
+import { cleanName } from '~/utils/text'
 
 const visible = defineModel<boolean>('visible', { required: true })
 const branch = defineModel<Branch>({ required: true })
 
+const addDirectionOptions = [
+  { label: 'ui.dialogs.warp_add.direction.left', value: true },
+  { label: 'ui.dialogs.warp_add.direction.right', value: false },
+]
+const addPositioningOptions = [
+  { label: 'ui.dialogs.warp_add.positioning.left', value: true },
+  { label: 'ui.dialogs.warp_add.positioning.right', value: false },
+]
+
+const { meta_enter, ctrl_enter } = useMagicKeys()
+
 const stopName = ref('')
-const stopsToAdd = ref<{ id: string, name: string }[]>([])
+const placeName = ref('')
+const subtitle = ref('')
+const reverseOrder = ref(false)
+const insertLeft = ref(false)
+const stopsToAdd = ref<{
+  id: string
+  name: string
+  placeName: string | null
+  subtitle: string | null
+}[]>([])
+const nameInput = ref<any | null>(null)
+const shortcut = computed(() => isMacOS ? '⌘ + Enter' : 'Ctrl + Enter')
 
-watch(stopName, val => stopName.value = mapName(val))
-
-function mapName(name: string | null) {
-  return name
-    ?.replace(/ – | - | —/g, ' – ')
-    ?.replace(/'/g, '’') ?? ''
-}
+watch(stopName, val => stopName.value = cleanName(val))
+watch(placeName, val => placeName.value = cleanName(val))
+watch(subtitle, val => subtitle.value = cleanName(val))
+watch([meta_enter, ctrl_enter], () => submitStop())
+watch(visible, (val) => {
+  if (!val) reset()
+})
 
 function submitStop() {
   if (stopName.value) {
-    stopsToAdd.value.push({ id: uuidv4(), name: stopName.value })
+    stopsToAdd.value.push({
+      id: uuidv4(),
+      name: stopName.value,
+      placeName: placeName.value,
+      subtitle: subtitle.value,
+    })
     stopName.value = ''
+    placeName.value = ''
+    subtitle.value = ''
+    nameInput.value?.$el.focus()
   }
 }
 
 function reset() {
+  stopName.value = ''
+  placeName.value = ''
+  subtitle.value = ''
+  reverseOrder.value = false
+  insertLeft.value = false
   stopsToAdd.value = []
+  nameInput.value?.$el.focus()
 }
 
 function addAllStops() {
@@ -33,8 +72,8 @@ function addAllStops() {
     id: stop.id,
     $stop: {
       name: stop.name,
-      placeName: '',
-      subtitle: '',
+      placeName: stop.placeName,
+      subtitle: stop.subtitle,
       accessible: 'undefined',
       reverse: false,
       interestPoint: false,
@@ -44,8 +83,14 @@ function addAllStops() {
       connections: [],
     },
   } satisfies Stop))
-  branch.value.$branch.elements.push(...stops)
-  stopsToAdd.value = []
+
+  if (reverseOrder.value) stops.reverse()
+  if (insertLeft.value) {
+    branch.value.$branch.elements.unshift(...stops)
+  } else {
+    branch.value.$branch.elements.push(...stops)
+  }
+
   visible.value = false
 }
 </script>
@@ -60,24 +105,74 @@ function addAllStops() {
     <template #header>
       <div class="flex flex-row gap-2 items-center">
         <span class="p-dialog-title">{{ $t('ui.dialogs.warp_add.header') }}</span>
-        <Beta />
+        <New />
       </div>
     </template>
     <div class="flex flex-col gap-4">
-      <p v-html="$t('ui.dialogs.warp_add.notice')" />
+      <i18n-t keypath="ui.dialogs.warp_add.notice" tag="p">
+        <template #shortcut>
+          <kbd>{{ shortcut }}</kbd>
+        </template>
+      </i18n-t>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="flex flex-col gap-1">
-          <label>{{ $t('ui.dialogs.warp_add.stop_name') }}</label>
-          <InputGroup>
-            <InputText v-model="stopName" @keydown.tab.prevent="submitStop()" />
-            <Button icon="i-tabler-plus" @click="submitStop()" />
-          </InputGroup>
+        <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.warp_add.stop_name') }}</label>
+            <Textarea
+              ref="nameInput"
+              v-model="stopName"
+              pt:root:class="important-h-auto"
+              :spellcheck="false"
+              auto-resize
+              autofocus
+            />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.warp_add.city_name') }}</label>
+            <InputText
+              v-model="placeName"
+              :spellcheck="false"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.warp_add.subtitle') }}</label>
+            <InputText v-model="subtitle" :spellcheck="false" />
+          </div>
+
+          <Divider pt:root:class="important-my-2" />
+
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.warp_add.direction.title') }}</label>
+            <SelectButton
+              v-model="reverseOrder"
+              pt:pc-toggle-button:root:class="flex-grow"
+              :options="addDirectionOptions"
+              :option-label="option => $t(option.label)"
+              option-value="value"
+              :allow-empty="false"
+            />
+          </div>
+
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.warp_add.positioning.title') }}</label>
+            <SelectButton
+              v-model="insertLeft"
+              pt:pc-toggle-button:root:class="flex-grow"
+              :options="addPositioningOptions"
+              :option-label="option => $t(option.label)"
+              option-value="value"
+              :allow-empty="false"
+            />
+          </div>
         </div>
+
         <div class="flex flex-col gap-1">
           <label>{{ $t('ui.dialogs.warp_add.stops_list') }}</label>
           <VueDraggable
             v-model="stopsToAdd"
-            class="stops flex flex-col w-full overflow-y-auto h-15em"
+            class="stops flex flex-col w-full overflow-y-auto flex-grow"
             :animation="150"
             handle=".element-handle"
           >
@@ -86,7 +181,14 @@ function addAllStops() {
               class="stop px-2 py-1 flex flex-row items-center gap-4"
             >
               <i class="element-handle i-tabler-menu-2 text-[var(--p-gray-500)] text-.75em cursor-grab ml-2" />
-              <span class="flex-grow text-truncate min-w-0">{{ item.name }}</span>
+              <div class="flex flex-grow flex-col text-truncate">
+                <span>{{ item.name }}</span>
+                <div class="flex flex-row items-center gap-1 text-truncate opacity-50">
+                  <span v-if="item.placeName">{{ item.placeName }}</span>
+                  <span v-if="item.placeName && item.subtitle">•</span>
+                  <span v-if="item.subtitle">{{ item.subtitle }}</span>
+                </div>
+              </div>
               <Button
                 class="flex-shrink-0"
                 icon="i-tabler-trash"
@@ -104,7 +206,10 @@ function addAllStops() {
           </VueDraggable>
         </div>
       </div>
-      <div class="flex flex-col sm:flex-row items-center sm:mt-4 gap-1">
+    </div>
+
+    <template #footer>
+      <div class="flex flex-grow flex-col sm:flex-row items-center gap-2">
         <Button
           :label="$t('ui.dialogs.warp_add.reset')"
           class="w-full sm:w-auto"
@@ -119,7 +224,7 @@ function addAllStops() {
           @click="addAllStops()"
         />
       </div>
-    </div>
+    </template>
   </Dialog>
 </template>
 
@@ -147,10 +252,12 @@ kbd {
 
 <style scoped lang="scss">
 .stops {
+  background: var(--p-textarea-background);
   border: 1px solid var(--p-inputtext-border-color);
   border-radius: .375em;
 
   .stop {
+    background: var(--p-dialog-background);
     border-bottom: 1px solid var(--p-inputtext-border-color);
   }
 }

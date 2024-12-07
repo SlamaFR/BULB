@@ -249,7 +249,7 @@
       "warp_add": {
         "add_all_stops": "Aggiungere tutte le fermate",
         "header": "Assistente WarpAdd",
-        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere <kbd>Tab</kbd> per passare a quella successiva.",
+        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {shortcut} per passare a quella successiva.",
         "reset": "Ripristinare tutto",
         "stop_name": "Nome fermata",
         "stops_list": "Lista fermate",
