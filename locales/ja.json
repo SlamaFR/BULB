@@ -36,10 +36,11 @@
       "custom": "特注の色"
     },
     "map_size": {
-      "big": "XL (30em)",
-      "huge": "XXL (50em)",
-      "large": "L (20em)",
-      "normal": "M (15em)"
+      "custom": "特注の色",
+      "big": "XL",
+      "huge": "XXL",
+      "large": "L",
+      "normal": "M"
     },
     "mode": {
       "bike": "自転車",

@@ -36,10 +36,11 @@
       "custom": "benutzerdefiniert"
     },
     "map_size": {
-      "big": "Sehr groß (30em)",
-      "huge": "Riesig (50em)",
-      "large": "Groß (20em)",
-      "normal": "Normal (15em)"
+      "custom": "benutzerdefiniert",
+      "big": "Sehr groß",
+      "huge": "Riesig",
+      "large": "Groß",
+      "normal": "Normal"
     },
     "mode": {
       "bike": "Fahrrad",

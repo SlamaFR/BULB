@@ -36,10 +36,11 @@
       "custom": "Personalizado"
     },
     "map_size": {
-      "big": "Muy grande (30em)",
-      "huge": "Enorme (50em)",
-      "large": "Grande (20em)",
-      "normal": "Normal (15em)"
+      "custom": "Personalizado",
+      "big": "Muy grande",
+      "huge": "Enorme",
+      "large": "Grande",
+      "normal": "Normal"
     },
     "mode": {
       "bike": "Bicicleta",

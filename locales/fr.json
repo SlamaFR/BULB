@@ -60,10 +60,11 @@
       "thick": "Épaisse"
     },
     "map_size": {
-      "big": "Très grand (30em)",
-      "huge": "Énorme (50em)",
-      "large": "Grand (20em)",
-      "normal": "Normal (15em)"
+      "custom": "Personnalisée",
+      "big": "Très grand",
+      "huge": "Énorme",
+      "large": "Grand",
+      "normal": "Normal"
     },
     "mode": {
       "bike": "Vélo",
@@ -316,13 +317,13 @@
           "right": "Gauche à droite",
           "title": "Sens d’insertion"
         },
+        "header": "Assistant WarpAdd",
+        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d’appuyer sur {shortcut} pour passer à l’arrêt suivant.",
         "positioning": {
           "left": "Au début",
           "right": "À la fin",
           "title": "Positionnement"
         },
-        "header": "Assistant WarpAdd",
-        "notice": "L’assistant WarpAdd permet d’ajouter rapidement des arrêts à une branche. Il suffit de taper le nom d’un arrêt, puis d’appuyer sur {shortcut} pour passer à l’arrêt suivant.",
         "reset": "Réinitialiser",
         "stop_name": "Nom de l’arrêt",
         "stops_list": "Liste des arrêts",

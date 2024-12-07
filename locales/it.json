@@ -32,14 +32,11 @@
       "generic": "Generico",
       "ory": "Orly"
     },
-    "colors": {
-      "custom": "Personnalisée"
-    },
     "map_size": {
-      "big": "Molto grande (30em)",
-      "huge": "Gigante (50em)",
-      "large": "Grande (20em)",
-      "normal": "Normale (15em)"
+      "big": "Molto grande",
+      "huge": "Gigante",
+      "large": "Grande",
+      "normal": "Normale"
     },
     "mode": {
       "bike": "Bici",
