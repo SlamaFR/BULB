@@ -4,8 +4,8 @@ import { computed, inject, provide, reactive, ref } from 'vue'
 import { STOP_PADDING } from '~/utils/dimensions'
 import { LineContextKey, StopContextKey } from '~/utils/symbols'
 
-const { reverse } = defineProps<{
-  reverse: boolean
+const { reverse = false } = defineProps<{
+  reverse?: boolean
 }>()
 const stop = defineModel<Stop>({ required: true })
 const lineContext = inject<LineContext>(LineContextKey)!

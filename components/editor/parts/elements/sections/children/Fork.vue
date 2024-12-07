@@ -91,9 +91,9 @@ const linkOffsetsArrowRotations = computed(() => {
 <template>
   <div
     ref="el"
-    class="fork flex-shrink-0 overflow-clip" :style="{
+    class="fork flex-shrink-0" :style="{
       width: `${normalWidth}px`,
-      margin: `0 -${effectiveClearance - CLEARANCE}px`,
+      //margin: `0 -${effectiveClearance - CLEARANCE}px`,
     }"
   >
     <svg width="100%" :height="`${maxHeight}px`">
