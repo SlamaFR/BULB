@@ -96,7 +96,7 @@ onUnmounted(() => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: .125em;
+  gap: .25em;
 
   .reverse & {
     flex-direction: row-reverse;

@@ -2,7 +2,12 @@
 import { storeToRefs } from 'pinia'
 import { ref, watch } from 'vue'
 import { useProject } from '~/stores/useProject'
-import { modeToDotsColorPolicy, modeToLineStyle, modeToLineThickness } from '~/utils/properties'
+import {
+  modeToDotsColorPolicy,
+  modeToLineStyle,
+  modeToLineThickness,
+  modeToTerminusFramePolicy,
+} from '~/utils/properties'
 
 const { line } = storeToRefs(useProject())
 
@@ -13,6 +18,7 @@ watch(() => line.value.mode, (val) => {
   line.value.lineThickness = modeToLineThickness(val)
   line.value.lineStyle = modeToLineStyle(val)
   line.value.dotsColorPolicy = modeToDotsColorPolicy(val)
+  line.value.frameTerminusNames = modeToTerminusFramePolicy(val)
 })
 
 function updateColor(newColor: string | null) {
@@ -77,7 +83,10 @@ function updateColor(newColor: string | null) {
     </div>
 
     <div class="mt-4 flex flex-row justify-end">
-      <Button text severity="secondary" :label="$t('ui.properties.use_preset')" icon="i-tabler-adjustments" @click="showPresetSelector = true" />
+      <Button
+        text severity="secondary" :label="$t('ui.properties.use_preset')" icon="i-tabler-adjustments"
+        @click="showPresetSelector = true"
+      />
     </div>
   </div>
 

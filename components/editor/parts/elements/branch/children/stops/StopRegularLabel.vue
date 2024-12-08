@@ -48,7 +48,7 @@ watch([shift, () => interestPoint], ([_shift, _interestPoint]) => {
         <div class="title-holder">
           <TitleLabel :value="part" />
           <Wheelchair
-            v-if="index === valueParts.length - 1 && accessible !== 'undefined'" class="text-.75em"
+            v-if="index === valueParts.length - 1 && accessible !== 'undefined'"
             :off="!accessible"
           />
         </div>
@@ -86,7 +86,7 @@ watch([shift, () => interestPoint], ([_shift, _interestPoint]) => {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: .125em;
+  gap: .25em;
 
   .reverse & {
     flex-direction: row-reverse;
