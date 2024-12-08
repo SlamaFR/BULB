@@ -253,7 +253,7 @@
       "warp_add": {
         "add_all_stops": "Añadir las paradas",
         "header": "Asistente WarpAdd",
-        "notice-old": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escriba el nombre de una parada y luego presione {shortcut} para pasar a la parada siguiente.",
+        "notice": "El asistente WarpAdd permite agregar paradas rápidamente a una rama. Solo escriba el nombre de una parada y luego presione {nextShortcut} para pasar a la parada siguiente.",
         "reset": "Reiniciar",
         "stop_name": "Nombre de la parada",
         "stops_list": "Lista de paradas",
