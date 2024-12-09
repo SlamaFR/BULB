@@ -56,7 +56,7 @@
       "airport": "Flughafen",
       "bullet_train": "Fernverkehr",
       "cdgval": "CDGVAL",
-      "funicular": "Seilbahn",
+      "funicular": "Standseilbahn",
       "long_distance_bus": "Fernbus",
       "main_station": "Bahnhof",
       "orlyval": "OrlyVal",
@@ -86,7 +86,7 @@
       "browser_check": {
         "dismiss": "Alles klar",
         "header": "Browser nicht unterstützt",
-        "summary_1": "Sie nutzen <b>{browserName}</b>. Dieser Browser wird von BULB nicht offiziell unterstütz. Wenn Sie fortfahren, können unerwartete Fehler oder Abweichungen bei der grafischen Darstellung vorkommen.",
+        "summary_1": "Sie nutzen <b>{browserName}</b>. Dieser Browser wird von BULB nicht offiziell unterstützt. Wenn Sie fortfahren, können unerwartete Fehler oder Abweichungen bei der grafischen Darstellung vorkommen.",
         "summary_2": "Für eine optimale Nutzung von BULB wird ein Chromium-basierter Browser wie Google Chrome, Microsoft Edge, Opera, Brave, etc. empfohlen.",
         "supported_browsers": "Unterstützte Browser",
         "unsupported_browsers": "Nicht-unterstützte Browser"
@@ -148,8 +148,8 @@
       },
       "loading_custom_indices_prompt": {
         "accept": "Ja",
-        "header": "Chargement du projet",
-        "message": "Möchten Sie die benutzerdefinierten Liniensignale aus der Projektdatei laden. Ihre bisherigen benutzerdefinierten Liniensignale bleiben erhalten.",
+        "header": "Projekt öffnen",
+        "message": "Möchten Sie benutzerdefinierte Liniensignale aus der Projektdatei laden? Bisher angelegte benutzerdefinierte Liniensignale bleiben erhalten.",
         "reject": "Nein"
       },
       "loop_properties": {
@@ -231,7 +231,7 @@
       "troubleshooting": {
         "github": "erstellen Sie ein Issue auf GitHub",
         "header": "Problembehandlung",
-        "notice": "Folgende Informationen können bei Fehlern in BULB zur Problembehandlung beitragen. Sollten Sie einen Fehler entdecken, {github} oder {twitter}, en précisant les informations ci-dessous.",
+        "notice": "Folgende Informationen können bei Fehlern in BULB zur Problembehandlung beitragen. Sollten Sie einen Fehler entdecken, {github} oder {twitter}, und übermitteln Sie die untenstehenden Informationen.",
         "project": "Projekt",
         "technical_details": "Technische Details",
         "twitter": "kontaktieren Sie mich auf Twitter (X)"
