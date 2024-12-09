@@ -193,7 +193,7 @@
       "loading_custom_indices_prompt": {
         "accept": "Ja",
         "header": "Projekt öffnen",
-        "message": "Möchten Sie benutzerdefinierte Liniensignale aus der Projektdatei laden? Bisherige benutzerdefinierte Liniensignale bleiben erhalten.",
+        "message": "Möchten Sie benutzerdefinierte Liniensignale aus der Projektdatei laden? Bisher angelegte benutzerdefinierte Liniensignale bleiben erhalten.",
         "reject": "Nein"
       },
       "loop_properties": {
