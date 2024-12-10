@@ -31,8 +31,8 @@ function toggleSnow() {
           <Button text rounded label="FAQ" icon="i-tabler-help" @click="navigateTo('/faq')" />
           <ThemeSwitcher />
           <LocaleSwitcher />
-          <Button text rounded icon="i-tabler-brand-x" as="a" href="https://x.com/SlamaFR" target="_blank" />
-          <Divider v-if="isWinter" layout="vertical" />
+          <SocialsMenu />
+          <Divider v-if="isWinter" pt:root:class="important-mx-2" layout="vertical" />
           <Button
             v-if="isWinter" text rounded :icon="snowEnabled ? 'i-tabler-snowflake' : 'i-tabler-snowflake-off'"
             @click="toggleSnow()"
