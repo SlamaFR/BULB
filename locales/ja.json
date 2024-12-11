@@ -6,11 +6,21 @@
     "color_select": {
       "placeholder": "色彩の選択"
     },
+    "dots_color_select": {
+      "placeholder": "ポリシーを選択"
+    },
     "line_index_select": {
       "custom_indices": "特注の路線記号",
       "line_name": "{index}線",
       "official_indices": "公式の路線記号",
-      "placeholder": "路線記号の選択"
+      "placeholder": "路線記号の選択",
+      "unknown_index": "未知"
+    },
+    "line_style_select": {
+      "placeholder": "路線のスタイルの選択"
+    },
+    "line_thickness_select": {
+      "placeholder": "路線の太さを選択"
     },
     "map_size_select": {
       "placeholder": "サイズの選択"
@@ -34,6 +44,20 @@
     },
     "colors": {
       "custom": "特注の色"
+    },
+    "dots_color": {
+      "inherit": "継承",
+      "white": "白"
+    },
+    "line_style": {
+      "plain": "無地",
+      "striped": "縞々"
+    },
+    "line_thickness": {
+      "custom": "カスタム",
+      "medium": "中",
+      "normal": "普通",
+      "thick": "厚い"
     },
     "map_size": {
       "big": "XL",
@@ -68,6 +92,7 @@
     },
     "shapes": {
       "circle": "丸",
+      "cut_rectangle": "下線付き長方形",
       "lines": "線",
       "rectangle": "長方形",
       "rounded_square": "角丸四角形"
@@ -75,6 +100,7 @@
   },
   "misc": {
     "beta": "ベータ版",
+    "new": "新しい",
     "temporary": "臨時"
   },
   "ui": {
@@ -133,7 +159,23 @@
       "custom_indices": {
         "header": "特注の路線記号帳"
       },
+      "custom_line_thickness": {
+        "accept": "確定",
+        "header": "カスタム線の太さ"
+      },
+      "end_of_year_celebrations": {
+          "close": "閉じる",
+          "disable_and_close": "無効にして閉じる",
+          "header": "メリークリスマス",
+          "summary": "ホリデーシーズンのために、BULBに雪が降ります。上部バーからいつでも無効にすることができます。"
+      },
       "fork_properties": {
+        "directional_arrows": {
+          "clockwise": "右回り",
+          "counterclockwise": "左回り",
+          "none": "無し",
+          "title": "方向矢印"
+        },
         "header": "分岐線のプロパティ",
         "orientation": {
           "left": "左",
@@ -211,6 +253,7 @@
       },
       "save_project": {
         "cancel": "キャンセル",
+        "custom_indices_notice": "特注の路線記号はファイルにまとめられます",
         "header": "プロジェクトを保存",
         "project_name": "プロジェクトの名前",
         "save": "保存"
@@ -221,13 +264,29 @@
         "spacer_export_notice": "お知らせ：スペーサーはレンダリング時に見えなくなります。"
       },
       "stop_properties": {
+        "accessible": {
+          "no": "無し",
+          "title": "車椅子でのアクセス",
+          "undefined": "未定義",
+          "yes": "有り"
+        },
         "city_name": "市の名前",
         "closed": "運休",
         "header": "駅のプロパティ",
         "interest_point": "興味ポイント",
+        "inverted_elements": "逆さまの要素",
+        "preventOverlapping": "名前と副題が衝突しないようにする",
+        "reverse": "逆さま",
         "stop_name": "名前",
+        "stop_state": {
+          "close": "運休",
+          "open": "運行中",
+          "title": "駅の運行状況"
+        },
         "stop_type": {
-          "terminus": "終着駅"
+          "regular": "普通",
+          "terminus": "終着駅",
+          "title": "駅のタイプ"
         },
         "subtitle": "副題",
         "terminus": "終着駅"
@@ -252,12 +311,25 @@
       },
       "warp_add": {
         "add_all_stops": "全駅を追加する",
+        "city_name": "市の名前",
+        "direction": {
+          "left": "右から左",
+          "right": "左から右",
+          "title": "挿入の方向"
+        },
         "header": "WarpAddアシスタント",
-        "notice": "WarpAddアシスタントを使用すると、線路に駅をすばやく追加できます。駅の名前を入力し、{nextShortcut}キーを押して次の駅に移動します。",
+        "notice": "WarpAddアシスタントは、線路に素早く駅を追加することができます。駅の情報を入力したら、{nextShortcut}を押して次の駅に進みます。すべての駅の入力が完了したら、{submitShortcut}を押して終了できます。",
+        "linebreak": "{shortcut} を押して改行を挿入してください",
+        "positioning": {
+            "left": "最初に",
+            "right": "最後に",
+            "title": "位置指定"
+        },
         "reset": "リセット",
         "stop_name": "駅の名前",
         "stops_list": "駅一覧",
-        "stops_list_empty": "駅がありません"
+        "stops_list_empty": "駅がありません",
+        "subtitle": "副題"
       }
     },
     "map_editor": {
@@ -292,7 +364,12 @@
     "nag": "<b>注意</b> : このアプリケーションは現在開発中です。一部の機能はまだ利用できないか、不完全です。",
     "properties": {
       "color": "路線の色",
+      "dots_color": "駅のマークの色",
+      "frame_terminus_names": "終着駅名を枠で囲む",
+      "fully_accessible": "車椅子完全対応の路線",
       "index": "路線記号",
+      "line_style": "路線のスタイル",
+      "line_thickness": "路線の太さ",
       "mode": "交通機関",
       "size": "路線図の額のサイズ",
       "title": "プロパティ",
