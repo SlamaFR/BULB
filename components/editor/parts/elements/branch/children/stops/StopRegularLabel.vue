@@ -28,12 +28,12 @@ const shift = computed(() => {
   return goesBelowLine(valueParts.value[valueParts.value.length - 1]) && preventSubtitleOverlapping
 })
 
-watch([shift, () => interestPoint], ([_shift, _interestPoint]) => {
+watch([shift, () => interestPoint, () => subtitle], ([_shift, _interestPoint, _subtitle]) => {
   let margin = 1
   if (_shift) margin += 0.25
   if (_interestPoint) margin += 0.5
 
-  if (subtitle) {
+  if (_subtitle) {
     stopContext.margins.rightMargin.subtitle = `${margin}em`
   } else {
     stopContext.margins.rightMargin.subtitle = `0em`

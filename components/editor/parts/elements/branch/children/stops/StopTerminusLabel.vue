@@ -25,11 +25,11 @@ const frame = ref<HTMLDivElement | null>(null)
 const { stop } = useResizeObserver(frame, e => updateMargins(e[0].target as HTMLDivElement))
 watch(stopContext.inverted, () => updateMargins(frame.value!))
 
-watch([() => interestPoint], ([_interestPoint]) => {
+watch([() => interestPoint, () => subtitle], ([_interestPoint, _subtitle]) => {
   let margin = 1
   if (_interestPoint) margin += 0.5
 
-  if (subtitle) {
+  if (_subtitle) {
     stopContext.margins.rightMargin.subtitle = `${margin}em`
   } else {
     stopContext.margins.rightMargin.subtitle = `0em`
