@@ -6,11 +6,21 @@
     "color_select": {
       "placeholder": "Selezionare un colore"
     },
+    "dots_color_select": {
+      "placeholder": "Selezionare un'impostazione"
+    },
     "line_index_select": {
       "custom_indices": "Indici personalizzati",
       "line_name": "Linea {index}",
       "official_indices": "Indici ufficiali",
-      "placeholder": "Selezionare un indice"
+      "placeholder": "Selezionare un indice",
+      "unknown_index": "Sconosciuto"
+    },
+    "line_style_select": {
+      "placeholder": "Selezionare uno stile"
+    },
+    "line_thickness_select": {
+      "placeholder": "Selezionare uno spessore"
     },
     "map_size_select": {
       "placeholder": "Selezionare dimensione mappa"
@@ -32,8 +42,26 @@
       "generic": "Generico",
       "ory": "Orly"
     },
+    "colors": {
+      "custom": "Personalizzato"
+    },
+    "dots_color": {
+      "inherit": "Identico al colore linea",
+      "white": "Bianco"
+    },
+    "line_style": {
+      "plain": "Normale",
+      "striped": "In rilievo"
+    },
+    "line_thickness": {
+      "custom": "Personalizzata",
+      "medium": "Media",
+      "normal": "Normale",
+      "thick": "Spessa"
+    },
     "map_size": {
       "big": "Molto grande",
+      "custom": "Personalizzata",
       "huge": "Gigante",
       "large": "Grande",
       "normal": "Normale"
@@ -41,7 +69,7 @@
     "mode": {
       "bike": "Bici",
       "boat": "Battello",
-      "brt": "Busilien (Autobus in sede propria)",
+      "brt": "Autobus in sede riservata",
       "bus": "Autobus",
       "cable": "Funivia",
       "metro": "Metrpolitana",
@@ -64,6 +92,7 @@
     },
     "shapes": {
       "circle": "Cerchio",
+      "cut_rectangle": "Rettangolo smussato",
       "lines": "Linee",
       "rectangle": "Rettangolo",
       "rounded_square": "Quadrato arrotondato"
@@ -71,6 +100,7 @@
   },
   "misc": {
     "beta": "Beta",
+    "new": "Nuovo",
     "temporary": "Temporaneo"
   },
   "ui": {
@@ -110,9 +140,9 @@
           }
         },
         "header": "Coincidenze a “{stopName}”",
-        "mode": "Mezzi di trasporti",
+        "mode": "Mezzi di trasporto",
         "or": "o",
-        "service": "servizi di trasporti"
+        "service": "servizi di trasporto"
       },
       "custom_index_editor": {
         "color": "Colore",
@@ -129,8 +159,24 @@
       "custom_indices": {
         "header": "Elenco indici personalizzati"
       },
+      "custom_line_thickness": {
+        "accept": "OK",
+        "header": "Spessore linea personalizzato"
+      },
+      "end_of_year_celebrations": {
+        "close": "Chiudi",
+        "disable_and_close": "Disabilita e chiudi",
+        "header": "Buon Natale!",
+        "summary": "Buone feste! La neve è arrivata anche su BULB. È possibile disabilitarla in qualsiasi momento dalla barra in alto."
+      },
       "fork_properties": {
         "header": "Proprietà del bivio",
+        "directional_arrows": {
+          "clockwise": "In senso orario",
+          "counterclockwise": "In senso antiorario",
+          "none": "Nessuna",
+          "title": "Freccia di direzione"
+        },
         "orientation": {
           "left": "Verso destra",
           "right": "Verso sinistra",
@@ -221,8 +267,13 @@
         "closed": "Fermata chiusa",
         "header": "Proprietà fermata",
         "interest_point": "Punto d'interesse",
+        "inverted_elements": "Elementi invertiti",
+        "preventOverlapping": "Impedisci sovrapposizioni tra nome e sottotitolo",
+        "reverse": "Inverti etichetta",
         "stop_name": "Nome",
         "stop_type": {
+          "regular": "Normale",
+          "title": "Tipo di fermata",
           "terminus": "Capolinea"
         },
         "subtitle": "Sottotitolo",
@@ -248,12 +299,25 @@
       },
       "warp_add": {
         "add_all_stops": "Aggiungere tutte le fermate",
+        "city_name": "Città",
+        "direction": {
+          "left": "Verso sinistra",
+          "right": "Verso destra",
+          "title": "Direzione di inserimento"
+        },
         "header": "Assistente WarpAdd",
         "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {nextShortcut} per passare a quella successiva.",
+        "linebreak": "Premere {shortcut} per andare a capo",
+        "positioning": {
+          "left": "Inizio",
+          "right": "Fine",
+          "title": "Posizionamento"
+        },
         "reset": "Ripristinare tutto",
         "stop_name": "Nome fermata",
         "stops_list": "Lista fermate",
-        "stops_list_empty": "Non sono presenti fermate"
+        "stops_list_empty": "Non sono presenti fermate",
+        "subtitle": "Sottotitolo"
       }
     },
     "map_editor": {
@@ -288,7 +352,12 @@
     "nag": "<b>ATTENZIONE</b>: Applicazione è in fase di sviluppo. Alcune funzioni non sono ancora disponibili, o sono incomplete.",
     "properties": {
       "color": "Colore mappa",
+      "dots_color": "Colore punti fermate",
+      "frame_terminus_names": "Nome capolinea con riquadro",
+      "fully_accessible": "Linea interamente accessibile a PMR",
       "index": "Indice linea",
+      "line_style": "Stile linea",
+      "line_thickness": "Spessore linea",
       "mode": "Mezzo di trasporto",
       "size": "Dimensione riquadro mappa",
       "title": "Proprietà",
