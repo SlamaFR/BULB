@@ -1,5 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
+import BUS_183 from '~/assets/svg/lines/bus/183.svg'
+import BUS_393 from '~/assets/svg/lines/bus/393.svg'
 import TVM from '~/assets/svg/lines/bus/tvm.svg'
 import TZEN_1 from '~/assets/svg/lines/bus/tzen1.svg'
 import TZEN_2 from '~/assets/svg/lines/bus/tzen2.svg'
@@ -30,6 +32,10 @@ const picto = computed(() => {
       return TZEN_6
     case 'tvm':
       return TVM
+    case '393':
+      return BUS_393
+    case '183':
+      return BUS_183
   }
   return null
 })
@@ -43,6 +49,6 @@ const picto = computed(() => {
 .picto {
   min-width: 2em;
   width: 2em;
-  height: .9em;
+  height: .875em;
 }
 </style>

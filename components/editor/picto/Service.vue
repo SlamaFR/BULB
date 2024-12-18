@@ -12,6 +12,7 @@ import cdgval from '~/assets/svg/services/cdgval.svg'
 import orlyBus from '~/assets/svg/services/orlybus.svg'
 import orlyval from '~/assets/svg/services/orlyval.svg'
 import orlyvalLarge from '~/assets/svg/services/orlyval_lg.svg'
+import orlyvalLarge2 from '~/assets/svg/services/orlyval_lg_2.svg'
 import roissyBus from '~/assets/svg/services/roissybus.svg'
 
 const {
@@ -48,6 +49,8 @@ const icon = computed(() => {
       return orlyval
     case 'ORLYVAL_LARGE':
       return orlyvalLarge
+    case 'ORLYVAL_LARGE_2':
+      return orlyvalLarge2
   }
   return null
 })

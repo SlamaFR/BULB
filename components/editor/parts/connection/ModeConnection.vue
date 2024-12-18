@@ -79,7 +79,7 @@ function position(index: number) {
 }
 
 .condensed {
-  row-gap: .1em;
+  row-gap: .125em;
 
   & > div {
     font-size: .5em;

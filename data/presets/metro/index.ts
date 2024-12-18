@@ -13,6 +13,9 @@ import METRO_11 from './metro_11.json'
 import METRO_12 from './metro_12.json'
 import METRO_13 from './metro_13.json'
 import METRO_14 from './metro_14.json'
+import METRO_16 from './metro_16.json'
+import METRO_17 from './metro_17.json'
+import METRO_18 from './metro_18.json'
 
 export {
   METRO_1,
@@ -30,4 +33,7 @@ export {
   METRO_12,
   METRO_13,
   METRO_14,
+  METRO_16,
+  METRO_17,
+  METRO_18,
 }

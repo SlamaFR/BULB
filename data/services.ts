@@ -12,6 +12,7 @@ export const SERVICES: ServiceChoice[] = [
   { value: 'CDGVAL', label: 'data.services.cdgval' },
   { value: 'ORLYVAL', label: 'data.services.orlyval' },
   { value: 'ORLYVAL_LARGE', label: '\u200B' },
+  { value: 'ORLYVAL_LARGE_2', label: '\u200B' },
 ]
 
 export function findServiceByValue(value: Service | null): ServiceChoice | null {

@@ -14,7 +14,10 @@ import {
 } from '~/utils/properties'
 
 const FULL_TEMPLATE = {
-  METRO: ['1', '2', '3', '3bis', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14'],
+  METRO: ['1', '2', '3', '3bis', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '16', '17', '18'],
+  RER: ['A', 'B', 'C', 'E'],
+  TRAM: ['1', '2', '3a', '3b', '5', '6', '7', '9', '10', '11', '12', '13', '14'],
+  TRAIN: ['K', 'N', 'U', 'V'],
 }
 
 const visible = defineModel<boolean>('visible')
@@ -110,7 +113,13 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('RER', rer.value, rer.color)"
         >
-          <LineIndex mode="RER" :index="rer.value" />
+          <div class="relative">
+            <LineIndex mode="RER" :index="rer.value" />
+            <i
+              v-if="FULL_TEMPLATE.RER.includes(rer.value.$builtinLineIndex.index)"
+              class="absolute bottom-0 right-0 badge"
+            />
+          </div>
         </Button>
       </div>
     </Fieldset>
@@ -124,7 +133,13 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('TRAIN', transilien.value, transilien.color)"
         >
-          <LineIndex mode="TRAIN" :index="transilien.value" />
+          <div class="relative">
+            <LineIndex mode="TRAIN" :index="transilien.value" />
+            <i
+              v-if="FULL_TEMPLATE.TRAIN.includes(transilien.value.$builtinLineIndex.index)"
+              class="absolute bottom-0 right-0 badge"
+            />
+          </div>
         </Button>
       </div>
     </Fieldset>
@@ -138,8 +153,12 @@ function loadPreset(_mode: Mode, _index: LineIndex, _color?: string) {
           :pt="{ root: { class: 'important-p-1 important-text-5xl' } }"
           @click="loadPreset('TRAM', tram.value, tram.color)"
         >
-          <div class="bg-white rounded">
+          <div class="relative">
             <LineIndex mode="TRAM" :index="tram.value" />
+            <i
+              v-if="FULL_TEMPLATE.TRAM.includes(tram.value.$builtinLineIndex.index)"
+              class="absolute bottom-0 right-0 badge"
+            />
           </div>
         </Button>
       </div>
