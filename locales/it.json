@@ -170,13 +170,13 @@
         "summary": "Buone feste! La neve è arrivata anche su BULB. È possibile disabilitarla in qualsiasi momento dalla barra in alto."
       },
       "fork_properties": {
-        "header": "Proprietà del bivio",
         "directional_arrows": {
           "clockwise": "In senso orario",
           "counterclockwise": "In senso antiorario",
           "none": "Nessuna",
           "title": "Freccia di direzione"
         },
+        "header": "Proprietà del bivio",
         "orientation": {
           "left": "Verso destra",
           "right": "Verso sinistra",
@@ -263,6 +263,12 @@
         "spacer_export_notice": "Nota: il distanziale non viene visualizzato nel rendering finale."
       },
       "stop_properties": {
+        "accessible": {
+          "no": "No",
+          "title": "Solo carrozzina",
+          "undefined": "Sconosciuto",
+          "yes": "Sì"
+        },
         "city_name": "Città",
         "closed": "Fermata chiusa",
         "header": "Proprietà fermata",
@@ -271,6 +277,11 @@
         "preventOverlapping": "Impedisci sovrapposizioni tra nome e sottotitolo",
         "reverse": "Inverti etichetta",
         "stop_name": "Nome",
+        "stop_state": {
+          "close": "Chiusa",
+          "open": "Aperta",
+          "title": "Stato della fermata"
+        },
         "stop_type": {
           "regular": "Normale",
           "title": "Tipo di fermata",
@@ -306,7 +317,7 @@
           "title": "Direzione di inserimento"
         },
         "header": "Assistente WarpAdd",
-        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {nextShortcut} per passare a quella successiva.",
+        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {nextShortcut} per passare a quella successiva. Premere {submitShortcut} per chiudere WarpAdd quando sono state aggiunte tutte le fermate.",
         "linebreak": "Premere {shortcut} per andare a capo",
         "positioning": {
           "left": "Inizio",
