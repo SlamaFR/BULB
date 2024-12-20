@@ -42,7 +42,7 @@ watch([shift, () => interestPoint, () => subtitle], ([_shift, _interestPoint, _s
 </script>
 
 <template>
-  <div class="regular-label" :class="{ reverse, 'opacity-50 export-hide': !value }">
+  <div class="regular-label" :class="{ reverse, 'opacity-50 export-hide': valueParts.length === 0 }">
     <div class="flex gap-1em">
       <TiltedText v-for="(part, index) in valueParts" :key="`${part}-${index}`" :reverse="reverse">
         <div class="title-holder">
@@ -53,7 +53,7 @@ watch([shift, () => interestPoint, () => subtitle], ([_shift, _interestPoint, _s
           />
         </div>
       </TiltedText>
-      <TiltedText v-if="!value" :reverse="reverse">
+      <TiltedText v-if="valueParts.length === 0" :reverse="reverse">
         <TitleLabel :value="$t('ui.map_editor.toolbox.untitled_stop')" />
       </TiltedText>
     </div>

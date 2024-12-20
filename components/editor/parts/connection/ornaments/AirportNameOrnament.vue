@@ -6,14 +6,16 @@ const { name } = defineProps<{
 
 <template>
   <div class="bg-red airport-name">
-    <span>{{ name }}</span>
+    <Typography class="airport-name-label">
+      {{ name }}
+    </Typography>
   </div>
 </template>
 
 <style scoped lang="scss">
 .airport-name {
   height: 1em;
-  margin-left: -.2em;
+  margin-left: -.25em;
   padding: 0 .1875em;
   background-color: #414241;
   border-top-right-radius: .0625em;
@@ -22,8 +24,8 @@ const { name } = defineProps<{
   align-items: center;
   line-height: 1em;
 
-  span {
-    font-size: .5625em;
+  .airport-name-label {
+    font-size: .625em;
     font-weight: 600;
     color: #ffce00;
   }

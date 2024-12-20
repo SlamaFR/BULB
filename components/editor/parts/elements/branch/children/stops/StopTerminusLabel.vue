@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useResizeObserver } from '@vueuse/core'
-import { inject, onUnmounted, ref, watch } from 'vue'
+import { computed, inject, onUnmounted, ref, watch } from 'vue'
 import { StopContextKey } from '~/utils/symbols'
 
 const {
@@ -21,6 +21,7 @@ const {
 
 const stopContext = inject<StopContext>(StopContextKey)!
 
+const effectiveValue = computed(() => value.trim())
 const frame = ref<HTMLDivElement | null>(null)
 const { stop } = useResizeObserver(frame, e => updateMargins(e[0].target as HTMLDivElement))
 watch(stopContext.inverted, () => updateMargins(frame.value!))
@@ -57,9 +58,9 @@ onUnmounted(() => {
 <template>
   <div class="terminus-label" :class="{ reverse }">
     <TiltedText :reverse="reverse">
-      <div ref="frame" class="flex flex-col items-end gap-1" :class="{ 'opacity-50 export-hide': !value }">
+      <div ref="frame" class="flex flex-col items-end gap-1" :class="{ 'opacity-50 export-hide': !effectiveValue }">
         <div class="title-holder">
-          <TerminusLabel :value="value || $t('ui.map_editor.toolbox.untitled_stop')" :place-name="placeName" />
+          <TerminusLabel :value="effectiveValue || $t('ui.map_editor.toolbox.untitled_stop')" :place-name="placeName" />
           <Wheelchair v-if="accessible !== 'undefined'" :off="!accessible" />
         </div>
         <StopSubtitle v-if="subtitle && reverse" :interest-point="interestPoint" :value="subtitle" />
