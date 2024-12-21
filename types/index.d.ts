@@ -103,6 +103,7 @@ declare global {
 
   interface Project {
     version: string
+    presetBased: boolean
     line: Line
     customIndices: CustomLineIndexDescription[]
   }

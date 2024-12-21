@@ -22,7 +22,7 @@ export default function useLoadProject() {
   })
 
   const lineStore = useProject()
-  const { version, line } = storeToRefs(lineStore)
+  const { version, line, presetBased } = storeToRefs(lineStore)
   const indicesStore = storeToRefs(useCustomLineIndices())
 
   function preload(project: Project) {
@@ -47,6 +47,7 @@ export default function useLoadProject() {
   function load(project: Project, loadCustomIndices: boolean) {
     checkVersion(project.version, projectMinimumVersion)
 
+    presetBased.value = project.presetBased
     version.value = project.version
     line.value.index = project.line.index
     line.value.mode = project.line.mode

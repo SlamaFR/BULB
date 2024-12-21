@@ -22,7 +22,7 @@ const FULL_TEMPLATE = {
 
 const visible = defineModel<boolean>('visible')
 
-const { line, version } = storeToRefs(useProject())
+const { line, version, presetBased } = storeToRefs(useProject())
 const { applicationVersion } = useVersion()
 const confirm = useConfirm()
 const { t } = useI18n()
@@ -41,6 +41,7 @@ function loadFullPreset(preset: Project) {
       text: true,
     },
     accept: () => {
+      presetBased.value = true
       version.value = applicationVersion
       line.value.mode = preset.line.mode
       line.value.index = preset.line.index

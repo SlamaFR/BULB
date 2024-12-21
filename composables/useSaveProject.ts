@@ -6,7 +6,7 @@ import { getCustomIndicesIds } from '~/utils/project'
 
 export default function useSaveProject() {
   const toast = useToast()
-  const { version, line } = storeToRefs(useProject())
+  const { version, line, presetBased } = storeToRefs(useProject())
   const { indices } = storeToRefs(useCustomLineIndices())
 
   function stringifyLine() {
@@ -16,6 +16,7 @@ export default function useSaveProject() {
     return JSON.stringify({
       version: version.value,
       line: line.value,
+      presetBased: presetBased.value,
       customIndices,
     })
   }
