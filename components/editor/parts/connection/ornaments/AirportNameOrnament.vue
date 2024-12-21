@@ -25,6 +25,7 @@ const { name } = defineProps<{
   line-height: 1em;
 
   .airport-name-label {
+    margin-top: calc(2rem / 16);
     font-size: .625em;
     font-weight: 600;
     color: #ffce00;
