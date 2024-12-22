@@ -81,6 +81,7 @@
     "services": {
       "airport": "空港",
       "bullet_train": "新幹線",
+      "cdg_express": "CDG Express",
       "cdgval": "CDGVAL",
       "funicular": "ケーブルカー",
       "long_distance_bus": "高速バス",
@@ -164,10 +165,10 @@
         "header": "カスタム線の太さ"
       },
       "end_of_year_celebrations": {
-          "close": "閉じる",
-          "disable_and_close": "無効にして閉じる",
-          "header": "メリークリスマス",
-          "summary": "ホリデーシーズンのために、BULBに雪が降ります。上部バーからいつでも無効にすることができます。"
+        "close": "閉じる",
+        "disable_and_close": "無効にして閉じる",
+        "header": "メリークリスマス",
+        "summary": "ホリデーシーズンのために、BULBに雪が降ります。上部バーからいつでも無効にすることができます。"
       },
       "fork_properties": {
         "directional_arrows": {
@@ -318,12 +319,12 @@
           "title": "挿入の方向"
         },
         "header": "WarpAddアシスタント",
-        "notice": "WarpAddアシスタントは、線路に素早く駅を追加することができます。駅の情報を入力したら、{nextShortcut}を押して次の駅に進みます。すべての駅の入力が完了したら、{submitShortcut}を押して終了できます。",
         "linebreak": "{shortcut} を押して改行を挿入してください",
+        "notice": "WarpAddアシスタントは、線路に素早く駅を追加することができます。駅の情報を入力したら、{nextShortcut}を押して次の駅に進みます。すべての駅の入力が完了したら、{submitShortcut}を押して終了できます。",
         "positioning": {
-            "left": "最初に",
-            "right": "最後に",
-            "title": "位置指定"
+          "left": "最初に",
+          "right": "最後に",
+          "title": "位置指定"
         },
         "reset": "リセット",
         "stop_name": "駅の名前",

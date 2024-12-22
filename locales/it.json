@@ -81,6 +81,7 @@
     "services": {
       "airport": "Aeroporto",
       "bullet_train": "Treno ad alta velocità",
+      "cdg_express": "CDG Express",
       "cdgval": "CDGVAL",
       "funicular": "Funicolare",
       "long_distance_bus": "Pullman",
@@ -170,13 +171,13 @@
         "summary": "Buone feste! La neve è arrivata anche su BULB. È possibile disabilitarla in qualsiasi momento dalla barra in alto."
       },
       "fork_properties": {
-        "header": "Proprietà del bivio",
         "directional_arrows": {
           "clockwise": "In senso orario",
           "counterclockwise": "In senso antiorario",
           "none": "Nessuna",
           "title": "Freccia di direzione"
         },
+        "header": "Proprietà del bivio",
         "orientation": {
           "left": "Verso destra",
           "right": "Verso sinistra",
@@ -273,8 +274,8 @@
         "stop_name": "Nome",
         "stop_type": {
           "regular": "Normale",
-          "title": "Tipo di fermata",
-          "terminus": "Capolinea"
+          "terminus": "Capolinea",
+          "title": "Tipo di fermata"
         },
         "subtitle": "Sottotitolo",
         "terminus": "Capolinea"
@@ -306,8 +307,8 @@
           "title": "Direzione di inserimento"
         },
         "header": "Assistente WarpAdd",
-        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {nextShortcut} per passare a quella successiva.",
         "linebreak": "Premere {shortcut} per andare a capo",
+        "notice": "L'assistente WarpAdd permette di aggiungere rapidamente le fermate ad una linea o diramazione. Basta scrivere il nome della fermata e premere {nextShortcut} per passare a quella successiva.",
         "positioning": {
           "left": "Inizio",
           "right": "Fine",

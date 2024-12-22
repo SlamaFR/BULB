@@ -5,9 +5,9 @@
     },
     "color_select": {
       "placeholder": "Farbe wählen…"
-        },
-      "dots_color_select": {
-        "placeholder": "Muster wählen…"
+    },
+    "dots_color_select": {
+      "placeholder": "Muster wählen…"
     },
     "line_index_select": {
       "custom_indices": "Benutzerdefinierte Liniensignale",
@@ -81,6 +81,7 @@
     "services": {
       "airport": "Flughafen",
       "bullet_train": "Fernverkehr",
+      "cdg_express": "CDG Express",
       "cdgval": "CDGVAL",
       "funicular": "Standseilbahn",
       "long_distance_bus": "Fernbus",
@@ -159,23 +160,23 @@
       "custom_indices": {
         "header": "Benutzerdefinierte Liniensignale"
       },
-        "custom_line_thickness": {
-          "accept": "Anwenden",
-          "header": "Liniendicke"
-        },
-        "end_of_year_celebrations": {
-          "close": "Schließen",
-          "disable_and_close": "Deaktivieren und schließen",
-          "header": "Frohe Feiertage",
-          "summary": "Es schneit, es schneit! Der Schnee ist jederzeit über die Leiste oben deaktivierbar."
+      "custom_line_thickness": {
+        "accept": "Anwenden",
+        "header": "Liniendicke"
+      },
+      "end_of_year_celebrations": {
+        "close": "Schließen",
+        "disable_and_close": "Deaktivieren und schließen",
+        "header": "Frohe Feiertage",
+        "summary": "Es schneit, es schneit! Der Schnee ist jederzeit über die Leiste oben deaktivierbar."
       },
       "fork_properties": {
         "directional_arrows": {
-        "clockwise": "im Uhrzeigersinn",
-        "counterclockwise": "gegen den Uhrzeigersinn",
-        "none": "keine",
-        "title": "Richtungspfeile"
-      },
+          "clockwise": "im Uhrzeigersinn",
+          "counterclockwise": "gegen den Uhrzeigersinn",
+          "none": "keine",
+          "title": "Richtungspfeile"
+        },
         "header": "Gabelung: Optionen",
         "orientation": {
           "left": "links",
@@ -318,8 +319,8 @@
           "title": "Einfügerichtung"
         },
         "header": "WarpAdd",
-        "notice": "WarpAdd ermöglicht das schnelle Hinzufügen von Haltestellen. Nach dem Anlegen einer Haltestelle kann mit {nextShortcut} direkt zur nächsten Haltestelle gesprungen werden. Zum Abschließen {submitShortcut} drücken.",
         "linebreak": "Drücken Sie {shortcut} um eine Zeile zu überspringen.",
+        "notice": "WarpAdd ermöglicht das schnelle Hinzufügen von Haltestellen. Nach dem Anlegen einer Haltestelle kann mit {nextShortcut} direkt zur nächsten Haltestelle gesprungen werden. Zum Abschließen {submitShortcut} drücken.",
         "positioning": {
           "left": "Am Anfang",
           "right": "Am Ende",
@@ -366,7 +367,7 @@
       "color": "Linienfarbe",
       "dots_color": "Farbe der Haltestellen",
       "frame_terminus_names": "Endstationen umranden",
-      "fully_accessible": "Linie vollständig barrierefrei.",      
+      "fully_accessible": "Linie vollständig barrierefrei.",
       "index": "Liniensignal",
       "line_style": "Stil",
       "line_thickness": "Dicke",

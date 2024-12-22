@@ -57,6 +57,7 @@
     "services": {
       "airport": "Aeropuerto",
       "bullet_train": "Tren de alta velocidad",
+      "cdg_express": "CDG Express",
       "cdgval": "CDGVAL",
       "funicular": "Funicular",
       "long_distance_bus": "Autocar",

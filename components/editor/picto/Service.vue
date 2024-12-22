@@ -8,6 +8,7 @@ import ter from 'assets/svg/services/ter.svg'
 import tgv from 'assets/svg/services/tgv.svg'
 import { computed } from 'vue'
 import airport from '~/assets/svg/airport/airport-generic.svg'
+import cdgExpress from '~/assets/svg/services/cdg_express.svg'
 import cdgval from '~/assets/svg/services/cdgval.svg'
 import orlyBus from '~/assets/svg/services/orlybus.svg'
 import orlyval from '~/assets/svg/services/orlyval.svg'
@@ -51,6 +52,8 @@ const icon = computed(() => {
       return orlyvalLarge
     case 'ORLYVAL_LARGE_2':
       return orlyvalLarge2
+    case 'CDG_EXPRESS':
+      return cdgExpress
   }
   return null
 })

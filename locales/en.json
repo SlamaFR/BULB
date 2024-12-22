@@ -81,6 +81,7 @@
     "services": {
       "airport": "Airport",
       "bullet_train": "Bullet train",
+      "cdg_express": "CDG Express",
       "cdgval": "CDGVAL",
       "funicular": "Funicular",
       "long_distance_bus": "Long-distance bus",
@@ -318,8 +319,8 @@
           "title": "Insert direction"
         },
         "header": "WarpAdd Assistant",
-        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type in the stop details, then press {nextShortcut} to move to the next stop. Once all stops are entered, you can press {submitShortcut} to finish.",
         "linebreak": "Press {shortcut} to insert a line break",
+        "notice": "The WarpAdd Assistant allows you to quickly add stops to a branch. Simply type in the stop details, then press {nextShortcut} to move to the next stop. Once all stops are entered, you can press {submitShortcut} to finish.",
         "positioning": {
           "left": "Start",
           "right": "End",
