@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { v4 as uuidv4 } from 'uuid'
 import { computed, ref, watch } from 'vue'
+import { cleanName } from '~/utils/text'
 import { isAirport, isAirportName, isText } from '~/utils/types'
 
 const { permittedTypes = ['AIRPORT', 'TEXT'] } = defineProps<{
@@ -58,6 +59,16 @@ watch([hasOrnament, type], ([enabled, _type]) => {
     ornament.value = null
   }
 })
+
+watch(ornament, (value) => {
+  if (value === null) return
+
+  if (isAirportName(value)) {
+    value.$airportNameOrnament.name = cleanName(value.$airportNameOrnament.name)
+  } else if (isText(value)) {
+    value.$textOrnament.text = cleanName(value.$textOrnament.text)
+  }
+}, { deep: true })
 
 const positions = [
   { label: 'ui.dialogs.ornament_editor.position.below', value: 'BOTTOM' },
