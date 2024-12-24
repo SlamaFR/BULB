@@ -2,5 +2,5 @@
 import { navigateTo } from '#app'
 import { onMounted } from 'vue'
 
-onMounted(() => navigateTo('/faq', { replace: true }))
+onMounted(() => navigateTo('/editor', { replace: true }))
 </script>
