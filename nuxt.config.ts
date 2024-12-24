@@ -1,3 +1,4 @@
+import ViteYaml from '@modyfi/vite-plugin-yaml'
 import { definePreset } from '@primevue/themes'
 import Aura from '@primevue/themes/aura'
 
@@ -50,6 +51,7 @@ export default defineNuxtConfig({
         propsDestructure: true,
       },
     },
+    plugins: [ViteYaml()],
   },
 
   experimental: {

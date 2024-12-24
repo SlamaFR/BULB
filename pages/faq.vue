@@ -3,12 +3,11 @@ import { navigateTo } from '#app'
 import { definePageMeta } from '#imports'
 
 definePageMeta({
-  layout: 'blank',
+  layout: 'default',
 })
 </script>
 
 <template>
-  <Topbar />
   <div class="pt-10 container max-w-60em mx-auto flex flex-col gap-10">
     <Message severity="success" pt:text:class="flex-grow">
       <div class="flex flex-row items-center justify-between w-full">

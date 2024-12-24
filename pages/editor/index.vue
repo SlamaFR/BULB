@@ -1,7 +1,5 @@
 <template>
   <div class="flex-grow flex flex-col gap-5 h-full">
-    <Topbar />
-
     <div class="editor">
       <div class="controls flex flex-col gap-4 min-w-20em">
         <Panel :header="$t('ui.menu.title')">

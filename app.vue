@@ -34,7 +34,7 @@ html, body {
 }
 
 html, body, #__nuxt {
-  height: 100%;
+  min-height: 100%;
 }
 
 kbd {

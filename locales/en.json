@@ -105,6 +105,15 @@
     "temporary": "Temporary"
   },
   "ui": {
+    "changelog": {
+      "entries_type": {
+        "added": "Added",
+        "changed": "Changed",
+        "fixed": "Fixed",
+        "removed": "Removed"
+      },
+      "title": "Changelog"
+    },
     "dialogs": {
       "branch_properties": {
         "element_spacing": "Element spacing",

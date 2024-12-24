@@ -308,6 +308,21 @@ declare global {
     namesWidth: ComputedRef<string>
     inverted: ComputedRef<boolean>
   }
+
+  type ChangelogEntryType = 'ADDED' | 'CHANGED' | 'FIXED' | 'REMOVED'
+
+  interface ChangelogVersion {
+    version: string
+    date: string
+    entries: Partial<Record<ChangelogEntryType, ChangelogEntry[]>>
+  }
+
+  type ChangelogEntry = {
+    value: string
+    details?: string[]
+  } | string
+
+  type Changelog = ChangelogVersion[]
 }
 
 export {}

@@ -1,0 +1,222 @@
+---
+changelog:
+  - version: 1.4.3-alpha
+    date: '2024-12-24T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la page de changelog
+      CHANGED:
+        - Modification de la barre supérieure
+        - Amélioration de la mise en page
+  - version: 1.4.2-alpha
+    date: '2024-12-22T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout du service de transport "CDG Express"
+      FIXED:
+        - value: Fix de certains préréglages
+          details:
+            - Métro 17
+            - Transiliens K et V
+            - Tramways 3b, 7, 10 et 12
+  - version: 1.4.1-alpha
+    date: '2024-12-22T00:00:00.000Z'
+    entries:
+      ADDED:
+        - value: Ajout de préréglages
+          details:
+            - Métros 16, 17 et 18
+            - RER A, B, C et E
+            - Transiliens K, N, U et V
+            - Tous les tramways sauf le T4 et le T8
+        - value: Ajout d’indices de bus
+          details:
+            - 393 et 183
+        - value: Ajout du service de transport "OrlyVal (grand) 2"
+      CHANGED:
+        - Modification du filigrane
+      FIXED:
+        - Fix des étiquettes de nom d’aéroport
+        - Fix de la graisse des noms de points d’intérêt
+        - Fix des marges de sous-titres qui ne se mettaient pas à jour
+        - Fix des arrêts sans nom
+        - value: Fix de certains préréglages
+          details:
+            - Métro 13
+  - version: 1.4.0-alpha
+    date: '2024-12-11T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la possibilité de changer le style de la ligne
+        - Ajout de la possibilité de changer l’épaisseur de la ligne
+        - Ajout de la possibilité de changer la politique de couleur des points d’arrêts
+        - Ajout de la possibilité de marquer une ligne accessible UFR
+        - Ajout de la possibilité de marquer un arrêt accessible UFR ou non
+        - Ajout de la possibilité d’ajouter des flèches sur une fourche
+        - Ajout du mode de transport "Noctilien"
+        - Ajout de la forme d’indice personnalisés "Rectangle coupé"
+        - Ajout du service de transport "OrlyVal" en version large et encadrée
+        - Ajout de la possibilité d’afficher les éléments d’une branche à l’envers
+        - Ajout de l’easter-egg de Noël
+      CHANGED:
+        - Modification des marges de textes
+        - Refonte de l’assistant WarpAdd
+        - Refonte de la fenêtre des propriétés d’arrêts
+        - Les boutons à choix sont désormais de forme fluide
+        - Les correspondances piétons sont mieux gérées pour limiter les combinaisons interdites
+        - Le titre des arrêts sans nom est désormais invisible à l’export
+        - value: Modification de la barre supérieure
+          details:
+            - Ajout d’un menu "Social" contenant des liens vers GitHub, X (fka Twitter) et Discord
+            - Ajout d’un bouton pour activer/désactiver l’easter-egg de Noël
+        - Préréglages mis à jour
+      FIXED:
+        - Fix du chargement de projets
+        - Fix de la sauvegarde de projets utilisant des indices personnalisés
+  - version: 1.3.2-alpha
+    date: '2024-10-27T00:00:00.000Z'
+    entries:
+      ADDED:
+        - value: Ajout de nouvelles langues
+          details:
+            - Allemand
+            - Espagnol
+            - Italien
+      CHANGED:
+        - Changement du drapeau pour la langue "Anglais"
+  - version: 1.3.1-alpha
+    date: '2024-10-17T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix de l’état sans-titre des noms d’arrêts
+  - version: 1.3.0-alpha
+    date: '2024-10-13T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la langue "Japonais"
+        - Ajout de l’assistant WarpAdd
+        - Ajout du menu de dépannage
+        - Les branches sont désormais mise en évidence lors de la sélection d’un arrêt
+        - Ajout d’un état sans-titre aux noms d’arrêts
+        - Ajout de la possibilité de modifier les niveaux d’une boucle
+        - Ajout de l’objet "Espacement"
+        - Ajout de la possibilité de modifier les niveaux d’une boucle
+        - value: Ajout d’un champ de recherche dans certains sélecteurs
+          details:
+            - Sélecteur de couleur
+            - Sélecteur d’indice
+            - Sélecteur de service
+        - Ajout de la possibilité de modifier les niveaux d’une boucle
+        - Ajout de la version de l’application dans le projet
+        - value: Ajout de préréglages
+          details:
+            - Métro 1, 2, 3, 3bis, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 et 14
+        - Ajout de la fenêtre de propriétés des branches
+      CHANGED:
+        - Les branches adjacentes fusionnent désormais automatiquement
+        - Modification de l’apparence des notifications
+        - Modification de l’apparence du bandeau supérieur
+        - Désactivation de la correction orthographique automatique sur les champs de noms propres
+        - Prise en charge des erreurs dans l’éditeur de plans
+        - Traductions mises à jours
+        - Modification de l’animation des fenêtres
+      FIXED:
+        - Fix d’un bug pouvant empêcher la propagation des propriétés
+        - Fix d’un problème de chevauchement des objets
+  - version: 1.2.0-alpha
+    date: '2024-10-04T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout du service "Car"
+      CHANGED:
+        - Service de transport "Train à grande vitesse" renommé en "TGV"
+        - Service de transport "Train régional" renommé en "TER"
+        - Refonte du canevas de l’éditeur
+        - FAQ mise à jour
+        - Traductions mises à jour
+      FIXED:
+        - Fix des indices personnalisés coupés
+        - Fix de liens incorrects
+  - version: 1.1.3-alpha
+    date: '2024-10-01T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la forme d’indice personnalisé "Rectangle"
+        - value: Ajout d’indices de bus
+          details:
+            - Tzen 1 à 6
+            - Trans Val-de-Marne
+        - Disposition en zig-zag des indices de petite taille
+        - Ajout de la possibilité de marquer un arrêt comme étant fermé
+        - Ajout du mode "Busilien (BHNS)"
+        - Ajout du service de transport "Train à grande vitesse"
+        - Ajout du service de transport "Train régional"
+        - Ajout de la décoration "Nom d’aéroport"
+        - value: Ajout de services de transport aéroportuaires
+          details:
+            - OrlyVal (petit)
+            - OrlyVal (grand)
+            - CDGVAL
+            - OrlyBus
+            - RoissyBus
+      CHANGED:
+        - Les décorations sont désormais désactivées sur les indices de petite taille
+      FIXED:
+        - Fix de l’alignement des correspondances
+  - version: 1.1.2-alpha
+    date: '2024-09-26T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix d’un problème de hitbox sur les branches
+  - version: 1.1.1-alpha
+    date: '2024-09-26T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout d’un filigrane
+        - Ajout d’un message de limitation de responsabilité
+  - version: 1.1.0-alpha
+    date: '2024-09-25T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix d’un problème de chevauchement des noms d’arrêts
+  - version: 1.0.5-alpha
+    date: '2024-09-23T00:00:00.000Z'
+    entries:
+      CHANGED:
+        - Les fourches sont désormais arrondies au niveau des angles
+  - version: 1.0.4-alpha
+    date: '2024-09-19T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la possibilité de choisir la taille du canevas
+      FIXED:
+        - Résolution d’un bug des sélecteurs permettant de choisir aucune option
+  - version: 1.0.3-alpha
+    date: '2024-09-17T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout d’une verification du navigateur utilisé
+      CHANGED:
+        - Les lignes vides sont ignorées dans les noms d’arrêts
+  - version: 1.0.2-alpha
+    date: '2024-09-16T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix de la suppression d’un groupe de correspondances de type "Service de transport"
+        - Fix de l’alignement du bouton des correspondances
+        - Fix du chargement des projets
+        - Fix de l’exportation des projets
+        - Fix d’une typo dans les noms de couleurs
+  - version: 1.0.1-alpha
+    date: '2024-09-14T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout d’un lien vers la page de FAQ
+        - Espacement des arrêts basé sur les correspondances
+      FIXED:
+        - Fix de l’alignement des correspondances
+        - Fix d’un problème de dépassement sur le dernier arrêt
+        - Fix de la suppression d’un groupe de correspondances de type "Mode de transport"
+        - Fix du chargement des projets
+  - version: 1.0.0-alpha
+    date: '2024-09-14T00:00:00.000Z'
