@@ -105,6 +105,15 @@
     "temporary": "Temporaire"
   },
   "ui": {
+    "changelog": {
+      "entries_type": {
+        "added": "Nouveautés",
+        "changed": "Modifications",
+        "fixed": "Réparations",
+        "removed": "Suppressions"
+      },
+      "title": "Journal des modifications"
+    },
     "dialogs": {
       "branch_properties": {
         "element_spacing": "Espacement des éléments",
