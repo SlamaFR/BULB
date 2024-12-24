@@ -26,16 +26,16 @@ function showWarpAdd() {
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-1">
         <label>{{ $t('ui.dialogs.branch_properties.element_spacing') }}</label>
-        <InputText v-model="branch.$branch.elementSpacing" numeric />
+        <BInputNumber v-model="branch.$branch.elementSpacing" />
       </div>
       <div class="flex flex-row gap-4">
         <div class="flex flex-col gap-1">
           <label>{{ $t('ui.dialogs.branch_properties.margin_left') }}</label>
-          <InputText v-model="branch.$branch.marginLeft" numeric />
+          <BInputNumber v-model="branch.$branch.marginLeft" />
         </div>
         <div class="flex flex-col gap-1">
           <label>{{ $t('ui.dialogs.branch_properties.margin_right') }}</label>
-          <InputText v-model="branch.$branch.marginRight" numeric />
+          <BInputNumber v-model="branch.$branch.marginRight" />
         </div>
       </div>
       <div class="flex flex-col gap-1">

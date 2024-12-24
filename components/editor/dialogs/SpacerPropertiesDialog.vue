@@ -21,7 +21,7 @@ const spacer = defineModel<Spacer>({ required: true })
     <div class="flex flex-col gap-4 min-w-20em">
       <div class="flex flex-col gap-1">
         <label :for="`${spacer.id}_placeName`">{{ $t('ui.dialogs.spacer_properties.size') }}</label>
-        <InputText :id="`${spacer.id}_placeName`" v-model="spacer.$spacer.size" numeric />
+        <BInputNumber :id="`${spacer.id}_placeName`" v-model="spacer.$spacer.size" />
       </div>
       <div class="opacity-50">
         {{ $t('ui.dialogs.spacer_properties.spacer_export_notice') }}
