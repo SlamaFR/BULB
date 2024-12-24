@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { tryOnMounted } from '@vueuse/core'
 import { storeToRefs } from 'pinia'
-import { createSnow, showSnow } from 'pure-snow.js'
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useSnow } from '~/stores/useSnow'
 
 const snow = useSnow()
@@ -10,7 +9,6 @@ const showDialog = ref(false)
 
 const { isWinter, checkYearlyMessage } = snow
 const { snowEnabled } = storeToRefs(snow)
-watch(snowEnabled, val => showSnow(val))
 
 tryOnMounted(() => {
   if (isWinter) {
@@ -18,8 +16,6 @@ tryOnMounted(() => {
       showDialog.value = true
       snowEnabled.value = true
     }
-    createSnow()
-    showSnow(snowEnabled.value)
   }
 })
 
@@ -49,7 +45,14 @@ function toggleAndClose() {
   </Dialog>
 
   <Teleport to="body">
-    <div v-if="isWinter" id="snow" class="export-hide" />
+    <Transition name="fade">
+      <snow-effect
+        v-show="snowEnabled"
+        color="white"
+        flakes="100"
+        speed="1"
+      />
+    </Transition>
   </Teleport>
 </template>
 
@@ -57,10 +60,12 @@ function toggleAndClose() {
 #snow {
   position: fixed;
   top: 0;
+  left: 0;
   z-index: 999999;
-  height: 100vh !important;
-  width: 100vw !important;
+  height: 100lvh;
+  width: 100lvw;
   pointer-events: none;
+  touch-action: none;
 }
 
 .snowflake {
@@ -76,7 +81,7 @@ function toggleAndClose() {
   transition: opacity .5s;
 }
 
-.fade-enter, .fade-leave-to {
+.fade-enter-from, .fade-leave-to {
   opacity: 0;
 }
 </style>
