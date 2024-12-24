@@ -36,12 +36,12 @@ const alignements = [
       <div class="flex flex-row gap-4">
         <div class="flex flex-col gap-1 flex-grow">
           <label>{{ $t('ui.dialogs.parallel_branches_properties.section_1_level') }}</label>
-          <InputText v-model="parallelBranches.$parallelBranches.sections[0].$lineSection.levelOffset" numeric />
+          <BInputNumber v-model="parallelBranches.$parallelBranches.sections[0].$lineSection.levelOffset" />
         </div>
 
         <div class="flex flex-col gap-1 flex-grow">
           <label>{{ $t('ui.dialogs.parallel_branches_properties.section_2_level') }}</label>
-          <InputText v-model="parallelBranches.$parallelBranches.sections[1].$lineSection.levelOffset" numeric />
+          <BInputNumber v-model="parallelBranches.$parallelBranches.sections[1].$lineSection.levelOffset" />
         </div>
       </div>
     </div>

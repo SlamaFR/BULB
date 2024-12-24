@@ -65,7 +65,7 @@ const arrows = [
       </div>
       <div class="flex flex-col gap-1">
         <label>{{ $t('ui.dialogs.fork_properties.size_multiplier') }}</label>
-        <InputText v-model="fork.$fork.offsetMultiplier" numeric />
+        <BInputNumber v-model="fork.$fork.offsetMultiplier" />
       </div>
     </div>
 
