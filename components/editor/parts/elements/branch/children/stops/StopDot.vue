@@ -36,6 +36,7 @@ const dotColor = computed(() => {
   height: 1.125em;
   border-radius: 50%;
   background-color: v-bind(dotColor);
+  border: calc(2em / 16) solid v-bind(color);
 
   transition: filter .2s ease;
   &:hover {
@@ -44,26 +45,13 @@ const dotColor = computed(() => {
 
   &.connection {
     background-color: white;
-    border: .15em solid black;
+    border: calc(2em / 16) solid black;
   }
 
   &.terminus {
-    background-color: white;
-    border: .15em solid black;
-    outline: .25em solid v-bind(color);
-    outline-offset: calc(-1em);
-
-    &:after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: .375em;
-      height: .375em;
-      background-color: v-bind(color);
-      border-radius: 50%;
-    }
+    background-color: v-bind(color);
+    border: calc(2em / 16) solid black;
+    box-shadow: inset 0 0 0 calc(3em / 16) white;
   }
 }
 

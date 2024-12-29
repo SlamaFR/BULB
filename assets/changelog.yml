@@ -10,6 +10,7 @@ changelog:
         - Amélioration de la mise en page
         - Modification de l’easter-egg de Noël
         - Les champs numériques supportent désormais la virgule comme séparateur décimal
+        - Les points d’arrêts ont été retravaillés
   - version: 1.4.2-alpha
     date: '2024-12-22T00:00:00.000Z'
     entries:
