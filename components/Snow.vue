@@ -46,12 +46,15 @@ function toggleAndClose() {
 
   <Teleport to="body">
     <Transition name="fade">
-      <snow-effect
-        v-show="snowEnabled"
-        color="white"
-        flakes="100"
-        speed="1"
-      />
+      <div v-show="snowEnabled">
+        <ClientOnly>
+          <snow-effect
+            color="#eee"
+            :flakes="100"
+            :speed="1"
+          />
+        </ClientOnly>
+      </div>
     </Transition>
   </Teleport>
 </template>

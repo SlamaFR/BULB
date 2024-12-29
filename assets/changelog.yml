@@ -9,6 +9,7 @@ changelog:
             - Métro 17
             - RER A et B
             - Tramway 3a
+        - Fix de l’easter-egg de Noël
   - version: 1.4.3-alpha
     date: '2024-12-29T00:00:00.000Z'
     entries:

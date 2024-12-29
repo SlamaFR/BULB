@@ -12,7 +12,7 @@ export const useSnow = defineStore('snow', () => {
   const isWinter = computed(() => (now.getMonth() === 11 && now.getDate() >= 15) || (now.getMonth() === 0 && now.getDate() <= 5))
 
   function checkYearlyMessage() {
-    if (yearlyMessage.value !== currentYear) {
+    if (yearlyMessage.value !== currentYear && now.getMonth() === 11) {
       yearlyMessage.value = currentYear
       return true
     }
