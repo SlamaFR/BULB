@@ -52,6 +52,13 @@ export default defineNuxtConfig({
       },
     },
     plugins: [ViteYaml()],
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler', // or "modern"
+        },
+      },
+    },
   },
 
   experimental: {
