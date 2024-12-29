@@ -47,7 +47,7 @@ function toggleSnow() {
         </div>
       </div>
       <Button
-        class="lg:hidden"
+        pt:root:class="lg:important-hidden"
         icon="i-tabler-menu-2"
         text
         rounded
