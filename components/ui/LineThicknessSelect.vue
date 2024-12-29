@@ -71,7 +71,7 @@ function close() {
     modal
   >
     <InputGroup>
-      <InputText v-model="thickness" class="w-full" />
+      <BInputNumber v-model="thickness" class="w-full" />
       <InputGroupAddon>
         <span>em</span>
       </InputGroupAddon>
