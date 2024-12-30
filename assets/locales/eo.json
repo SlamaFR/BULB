@@ -2,7 +2,7 @@
   "eo": {
     "accept": "Jes",
     "addRule": "Aldoni regulon",
-    "am": "atm",
+    "am": "am",
     "apply": "Apliki",
     "cancel": "Nuligi",
     "choose": "Elekti",
@@ -10,12 +10,12 @@
     "chooseMonth": "Elekti monaton",
     "chooseYear": "Elekti jaron",
     "clear": "Forigi",
-    "completed": "Finiĝis",
+    "completed": "Kompletigita",
     "contains": "Enhavas",
     "custom": "Propra",
     "dateAfter": "Post la",
     "dateBefore": "Antaŭ la",
-    "dateFormat": "dd/mm/yy",
+    "dateFormat": "tt/mm/jj",
     "dateIs": "La dato estas",
     "dateIsNot": "La dato ne estas",
     "dayNames": [
@@ -45,10 +45,10 @@
       "vendr",
       "sab"
     ],
-    "emptyFilterMessage": "Neniu rezulto trovita",
+    "emptyFilterMessage": "Neniuj rezultoj trovitaj",
     "emptyMessage": "Neniu opcio disponebla",
-    "emptySearchMessage": "Neniu rezulto trovita",
-    "emptySelectionMessage": "Neniu elemento elektita",
+    "emptySearchMessage": "Neniuj rezultoj trovitaj",
+    "emptySelectionMessage": "Neniu ero elektita",
     "endsWith": "Finiĝas per",
     "equals": "Egalas al",
     "fileSizeTypes": [
@@ -111,7 +111,7 @@
     "now": "Nun",
     "passwordPrompt": "Enigu pasvorton",
     "pending": "Atendante",
-    "pm": "ptm",
+    "pm": "pm",
     "prevDecade": "Antaŭa jardeko",
     "prevHour": "Antaŭa horo",
     "prevMinute": "Antaŭa minuto",
@@ -180,12 +180,12 @@
       "star": "1 stelo",
       "stars": "{star} steloj",
       "trueLabel": "Vera",
-      "unselectAll": "Malselekti ĉiujn elementojn",
-      "unselectLabel": "Malselekti",
-      "unselectRow": "Malselektita linio",
-      "zoomImage": "Zoomigi bildon",
-      "zoomIn": "Proksimigi",
-      "zoomOut": "Malproksimigi"
+      "unselectAll": "Ĉiuj eroj malselektitaj",
+      "unselectLabel": "Malelekti",
+      "unselectRow": "Maleselectita vico",
+      "zoomImage": "Zomi bildon",
+      "zoomIn": "Zomi en",
+      "zoomOut": "Zomi eksteren"
     }
   }
 }

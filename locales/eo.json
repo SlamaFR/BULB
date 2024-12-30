@@ -1,0 +1,341 @@
+{
+  "components": {
+    "airport_select": {
+      "placeholder": "Elekti flughavenon"
+    },
+    "color_select": {
+      "placeholder": "Elekti koloron"
+    },
+    "line_index_select": {
+      "custom_indices": "Propraj indeksoj",
+      "line_name": "Linio {index}",
+      "official_indices": "Oficialaj indeksoj",
+      "placeholder": "Elekti indekson"
+    },
+    "map_size_select": {
+      "placeholder": "Elekti grandecon"
+    },
+    "mode_select": {
+      "placeholder": "Elekti modon"
+    },
+    "service_select": {
+      "placeholder": "Elekti servon"
+    },
+    "shape_select": {
+      "placeholder": "Elekti formon"
+    }
+  },
+  "data": {
+    "airports": {
+      "both": "CDG + ORY",
+      "cdg": "Charles de Gaulle",
+      "generic": "Ĝenerala",
+      "ory": "Orly"
+    },
+    "colors": {
+      "custom": "Personigita"
+    },
+    "map_size": {
+      "big": "Tre granda (30em)",
+      "huge": "Giganta (50em)",
+      "large": "Granda (20em)",
+      "normal": "Normala (15em)"
+    },
+    "mode": {
+      "bike": "Biciklo",
+      "boat": "Akva buso",
+      "brt": "Busa Rapida Transporto",
+      "bus": "Buso",
+      "cable": "Telfero",
+      "metro": "Metro",
+      "rer": "RER",
+      "tram": "Tramo",
+      "transilien": "Transilieno"
+    },
+    "services": {
+      "airport": "Flughaveno",
+      "bullet_train": "Rapida trajno",
+      "cdgval": "CDGVAL",
+      "funicular": "Funikularo",
+      "long_distance_bus": "Interurba buso",
+      "main_station": "Ĉefa stacidomo",
+      "orlyval": "OrlyVal",
+      "suburban_train": "Antaŭurba trajno",
+      "ter": "TER",
+      "tgv": "TGV"
+    },
+    "shapes": {
+      "circle": "Rondo",
+      "lines": "Linioj",
+      "rectangle": "Rektangulo",
+      "rounded_square": "Ronda kvadrato"
+    }
+  },
+  "misc": {
+    "beta": "Beta",
+    "temporary": "Provizora"
+  },
+  "ui": {
+    "dialogs": {
+      "branch_properties": {
+        "element_spacing": "Interspaco de elementoj",
+        "header": "Branĉaj propraĵoj",
+        "margin_left": "Maldekstra marĝeno",
+        "margin_right": "Dekstra marĝeno"
+      },
+      "browser_check": {
+        "dismiss": "Mi komprenis",
+        "header": "Ne subtenata retumilo",
+        "summary_1": "Ŝajnas, ke vi uzas <b>{browserName}</b> kiel retumilon. Ĉi tiu ne estas oficiale subtenata de BULB. Se vi daŭrigas, neatenditaj kondutoj povas okazi, kaj vi povus renkonti grafikajn problemojn.",
+        "summary_2": "Por la plej bona sperto, ni rekomendas uzi Chromium-bazitan retumilon kiel Google Chrome, Microsoft Edge, Opera, Brave, ktp.",
+        "supported_browsers": "Subtenataj retumiloj",
+        "unsupported_browsers": "Ne subtenataj retumiloj"
+      },
+      "connections_editor": {
+        "group": {
+          "delete": "Forigi",
+          "header": "Grupa konekto #{index}",
+          "mode": {
+            "lines": {
+              "add": "Aldoni linion",
+              "header": "Linioj"
+            },
+            "mode": "Modo"
+          },
+          "ornament": "Ornamado",
+          "pedestrian_connection": "Piedira konekto",
+          "service": {
+            "services": {
+              "add": "Aldoni servon",
+              "header": "Servoj"
+            }
+          }
+        },
+        "header": "Konektoj de “{stopName}”",
+        "mode": "Transporta reĝimo",
+        "or": "Aŭ",
+        "service": "Transporta servo"
+      },
+      "custom_index_editor": {
+        "color": "Koloro",
+        "delete": "Forigi",
+        "header": "Redaktilo de propraj indeksoj",
+        "index": "Indekso",
+        "mode": "Modo",
+        "prefix": "Prefikso",
+        "preview": "Antaŭrigardo",
+        "shape": "Formo",
+        "suffix": "Sufikso",
+        "value": "Valoro"
+      },
+      "custom_indices": {
+        "header": "Propraj indeksoj"
+      },
+      "fork_properties": {
+        "header": "Propraĵoj de disbranĉiĝo",
+        "orientation": {
+          "left": "Maldekstra",
+          "right": "Dekstra",
+          "title": "Orientiĝo"
+        },
+        "shape": {
+          "downward": "Malsupren",
+          "symmetrical": "Simetria",
+          "title": "Formo",
+          "upward": "Supren"
+        },
+        "size_multiplier": "Grandeco multiplikilo"
+      },
+      "loading_custom_indices_prompt": {
+        "accept": "Jes",
+        "header": "Ŝarĝante projekton",
+        "message": "Ĉu vi volas ŝarĝi la proprajn indeksojn en ĉi tiu projekto? Viaj ekzistantaj indeksoj ne estos perditaj.",
+        "reject": "Ne"
+      },
+      "loop_properties": {
+        "header": "Propraĵoj de duonturno",
+        "orientation": {
+          "left": "Maldekstre",
+          "right": "Dekstre",
+          "title": "Orientiĝo"
+        }
+      },
+      "new_project": {
+        "accept": "Nova projekto",
+        "header": "Ne tiel rapide!",
+        "message": "Ĉu vi memoris konservi vian nunan projekton? Se vi daŭrigos, vi perdos ĉiujn nekonservitajn ŝanĝojn.",
+        "reject": "Nuligi"
+      },
+      "new_update_available": {
+        "header": "Nova ĝisdatigo disponebla",
+        "later": "Pli poste",
+        "message": "Versio {version} de BULB estas nun disponebla. Ĉu vi volas reŝargi la paĝon por ĝisdatigi? Neniuj datumoj estos perditaj.",
+        "update": "Ĝisdatigi"
+      },
+      "ornament_editor": {
+        "airport": "Flughaveno",
+        "display_ornament": "Montri ornamadon",
+        "header": "Redaktilo de ornamado",
+        "name": "Nomo",
+        "no_ornament_available": "Neniu ornamado disponebla",
+        "ornament": {
+          "airport": "Flughaveno",
+          "airport_name": "Flughavena nomo",
+          "text": "Teksto"
+        },
+        "position": {
+          "below": "Sube",
+          "right": "Dekstre",
+          "title": "Pozicio"
+        },
+        "text": "Teksto"
+      },
+      "outdated_project": {
+        "accept": "Nova projekto",
+        "header": "Malnova projekto",
+        "message": "Ĉi tiu projekto estas malnova kaj ne plu subtenata. Se vi daŭrigas, vi povus renkonti problemojn. Estas konsilinde krei novan projekton aŭ malfermi subtenatan projekton.",
+        "reject": "Daŭrigi kun ĉi tiu projekto"
+      },
+      "parallel_branches_properties": {
+        "alignment": {
+          "fluid": "Flua",
+          "left": "Maldekstra",
+          "right": "Dekstra",
+          "title": "Harmonigo"
+        },
+        "header": "Propraĵoj de paralelaj branĉoj",
+        "section_1_level": "Nivelo de sekcio 1",
+        "section_2_level": "Nivelo de sekcio 2"
+      },
+      "save_project": {
+        "bundle_custom_indices": "Inkludi proprajn indeksojn",
+        "cancel": "Nuligi",
+        "header": "Konservi projekton",
+        "project_name": "Projekta nomo",
+        "save": "Konservi"
+      },
+      "spacer_properties": {
+        "header": "Propraĵoj de spaco",
+        "size": "Grandeco de spaco",
+        "spacer_export_notice": "Noto: la spaco fariĝos nevidebla dum la eksporto."
+      },
+      "stop_properties": {
+        "city_name": "Urbo",
+        "closed": "Fermita",
+        "header": "Propraĵoj de haltejo",
+        "interest_point": "Interesa loko",
+        "stop_name": "Nomo de haltejo",
+        "subtitle": "Subtitolo",
+        "terminus": "Fina haltejo"
+      },
+      "troubleshooting": {
+        "github": "malfermi bileton en GitHub",
+        "header": "Problemo solvado",
+        "notice": "La informoj sube povas helpi vin solvi problemojn ĉe BULB. Se vi renkontas cimon, vi povas {github} aŭ {twitter}, indikante la jenajn informojn.",
+        "project": "Projekto",
+        "technical_details": "Teknikaj detaloj",
+        "twitter": "kontakti min ĉe Twitter (X)"
+      },
+      "use_full_preset": {
+        "accept": "Ŝargi la ŝablonon",
+        "header": "Ŝargi kompletan ŝablonon",
+        "message": "Ĉi tiu ŝablono enhavas la tutan originalan planon. Ĉu vi memoris konservi vian projekton? Se vi daŭrigos, vi perdos ĉiujn nekonservitajn ŝanĝojn.",
+        "reject": "Nuligi"
+      },
+      "use_preset": {
+        "full_presets_notice": "La ŝablonoj markitaj per punkto inkluzivas la ekzistantan linian planon kun la kompleta strukturo, ĉiuj haltejoj kaj ĉiuj konektoj.",
+        "header": "Uzi ŝablonon"
+      },
+      "warp_add": {
+        "add_all_stops": "Aldoni ĉiujn haltejojn",
+        "header": "WarpAdd-asistanto",
+        "notice": "La WarpAdd-asistanto permesas rapide aldoni haltejojn al branĉo. Simple tajpu la nomon de haltejo kaj premu <kbd>Tab</kbd> por iri al la sekva haltejo.",
+        "reset": "Rekomenci",
+        "stop_name": "Nomo de haltejo",
+        "stops_list": "Listo de haltejoj",
+        "stops_list_empty": "Neniu haltejo"
+      }
+    },
+    "map_editor": {
+      "error": {
+        "detail": "Bonvolu reŝargi la paĝon. Se la problemo daŭras, via projekto eble estas malnova aŭ difektita.",
+        "new_project": "Nova projekto",
+        "reload": "Reŝargi la paĝon",
+        "title": "Eraro okazis"
+      },
+      "title": "Mapredaktilo",
+      "toolbox": {
+        "branch": "Branĉo",
+        "delete": "Forigi",
+        "fork": "Disbranĉiĝo",
+        "loop": "Duonturno",
+        "parallel_branches": "Paralelaj branĉoj",
+        "spacer": "Spaco",
+        "stop": "Haltejo",
+        "untitled_stop": "Haltejo sen nomo"
+      },
+      "watermark": "Kreita uzante BULB"
+    },
+    "menu": {
+      "custom_indices": "Propraj indeksoj",
+      "export": "Eksporti",
+      "new_project": "Nova projekto",
+      "open": "Malfermi",
+      "save": "Konservi",
+      "title": "Ĉefa menuo",
+      "troubleshooting": "Problemo solvado"
+    },
+    "nag": "<b>REMEMORO</b> : Programo en evoluado. Iuj funkcioj ne estas ankoraŭ disponeblaj aŭ kompletaj.",
+    "properties": {
+      "color": "Koloro de la plano",
+      "index": "Indekso de linio",
+      "mode": "Transporta reĝimo",
+      "size": "Kadra grandeco",
+      "title": "Propraĵoj",
+      "use_preset": "Uzi ŝablonon"
+    },
+    "toasts": {
+      "adjacent_branches": {
+        "detail": "Branĉoj ne povas esti poziciigitaj apude",
+        "title": "Loko malpermesita"
+      },
+      "branch_merge": {
+        "detail": "Apudaj branĉoj estis kunfanditaj",
+        "title": "Branĉoj kunfanditaj"
+      },
+      "export": {
+        "failure": {
+          "detail": "La projekto ne povis esti eksportita",
+          "title": "Eksporto malsukcesis"
+        },
+        "success": {
+          "detail": "La projekto estis sukcese eksportita",
+          "title": "Eksporto sukcesis"
+        }
+      },
+      "load": {
+        "failure": {
+          "detail": {
+            "corrupted": "La projektdosiero estas nevalida aŭ difektita",
+            "unreadable": "La dosiero ne povis esti legita"
+          },
+          "title": "Ŝarĝado malsukcesis"
+        },
+        "success": {
+          "detail": "La projekto estis sukcese ŝarĝita",
+          "title": "Ŝarĝado sukcesis"
+        }
+      },
+      "save": {
+        "success": {
+          "detail": "La projekto estis sukcese konservita",
+          "title": "Konservado sukcesis"
+        }
+      }
+    },
+    "topbar": {
+      "FAQ": "Demandoj kaj Respondoj",
+      "catch_phrase": "Ne malbone, ĉu? Ĝi estas franca 🇫🇷"
+    }
+  }
+}
