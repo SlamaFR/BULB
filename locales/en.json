@@ -265,6 +265,15 @@
         "section_1_level": "Section 1 level",
         "section_2_level": "Section 2 level"
       },
+      "pdf_export_notice": {
+        "header": "Exporting to PDF",
+        "message_1": "In order to generate the map in PDF format, a new page will open. Once the map is visible, a print dialog will appear. You can then choose to print the map or save it as a PDF.",
+        "message_2": "If you do not see the print dialog, check that pop-ups are allowed for this site. Alternatively, you can press {printShortcut}.",
+        "unexpected_behaviors_notice": "Exporting with this method may lead to unexpected behaviors, such as missing or misaligned elements. If you encounter issues, try exporting in PNG format.",
+        "dont_show_again": "Do not show again",
+        "cancel": "Cancel",
+        "proceed": "Continue"
+      },
       "save_project": {
         "cancel": "Cancel",
         "custom_indices_notice": "Custom indices will be bundled in the file",
@@ -368,7 +377,8 @@
     },
     "menu": {
       "custom_indices": "Custom indices",
-      "export": "Export",
+      "export": "Export to PNG",
+      "export_pdf": "Export to PDF",
       "new_project": "New project",
       "open": "Open",
       "save": "Save",

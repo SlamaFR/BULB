@@ -10,6 +10,8 @@ const ignores = [
   '.env',
   'dist',
   '.DS_Store',
+  'dev/*',
+  '**/*.json',
 ]
 
 export default antfu({

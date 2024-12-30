@@ -265,6 +265,15 @@
         "section_1_level": "Niveau de la section 1",
         "section_2_level": "Niveau de la section 2"
       },
+      "pdf_export_notice": {
+        "header": "Exportation au format PDF",
+        "message_1": "Afin de générer le plan au format PDF, une nouvelle page va s’ouvrir. Une fois que le plan sera visible, une boîte de dialogue d’impression apparaîtra. Vous pourrez alors choisir d’imprimer le plan ou de l’enregistrer au format PDF.",
+        "message_2": "Si vous ne voyez pas la boîte de dialogue d’impression, vérifiez que les fenêtres contextuelles sont autorisées pour ce site. Alternativement, vous pouvez appuyez sur {printShortcut}.",
+        "unexpected_behaviors_notice": "L’exportation avec cette méthode peut entraîner des comportements inattendus, tels que des éléments manquants ou mal positionnés. Si vous rencontrez des problèmes, essayez d’exporter au format PNG.",
+        "dont_show_again": "Ne plus afficher ce message",
+        "cancel": "Annuler",
+        "proceed": "Continuer"
+      },
       "save_project": {
         "cancel": "Annuler",
         "custom_indices_notice": "Les indices personnalisés seront inclus dans le fichier",
@@ -368,7 +377,8 @@
     },
     "menu": {
       "custom_indices": "Indices personnalisés",
-      "export": "Exporter",
+      "export": "Exporter au format PNG",
+      "export_pdf": "Exporter au format PDF",
       "new_project": "Nouveau projet",
       "open": "Ouvrir",
       "save": "Sauvegarder",
