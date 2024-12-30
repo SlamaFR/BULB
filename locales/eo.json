@@ -152,7 +152,6 @@
         "message": "Ĉu vi volas ŝarĝi la proprajn indeksojn en ĉi tiu projekto? Viaj ekzistantaj indeksoj ne estos perditaj.",
         "reject": "Ne"
       },
-      },
       "loop_properties": {
         "header": "Propraĵoj de duonturno",
         "orientation": {
@@ -338,3 +337,5 @@
       "FAQ": "Demandoj kaj Respondoj",
       "catch_phrase": "Ne malbone, ĉu? Ĝi estas franca 🇫🇷"
     }
+  }
+}

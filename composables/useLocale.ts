@@ -33,11 +33,11 @@ export default function useLocale(fallback = 'en') {
       case 'es':
         config.locale = es
         break
-      case 'it':
-        config.locale = it
-        break
       case 'eo':
         config.locale = eo
+        break
+      case 'it':
+        config.locale = it
         break
       case 'en':
       default:
