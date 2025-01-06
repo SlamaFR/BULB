@@ -1,5 +1,10 @@
 ---
 changelog:
+  - version: 1.4.5-alpha
+    date: '2025-01-06T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix de l’easter-egg de Noël toujours visible après la période des fêtes
   - version: 1.4.4-alpha
     date: '2024-12-29T00:00:00.000Z'
     entries:

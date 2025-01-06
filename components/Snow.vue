@@ -44,7 +44,7 @@ function toggleAndClose() {
     </template>
   </Dialog>
 
-  <Teleport to="body">
+  <Teleport v-if="isWinter" to="body">
     <Transition name="fade">
       <div v-show="snowEnabled">
         <ClientOnly>
