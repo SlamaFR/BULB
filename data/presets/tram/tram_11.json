@@ -1,1 +1,289 @@
-{"version":"1.4.0-alpha","line":{"mode":"TRAM","index":{"mode":"TRAM","$builtinLineIndex":{"index":"11"}},"color":"#f78f4b","lineThickness":"0.625","lineStyle":"STRIPED","dotsColorPolicy":"INHERIT","fullyAccessible":true,"frameTerminusNames":true,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"ae89aca5-81ad-4b68-9b2d-c623f74ead51","$branch":{"elementSpacing":"10","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"9dc42204-140e-447b-ac1c-30cbeef2a014","$stop":{"name":"Épinay-sur-Seine","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"ef9cb08c-c473-46cd-8bb6-fdb178be9352","$modeConnection":{"mode":"RER","elements":[{"id":"2c0c7048-77a6-4f80-8619-96f6bdac8e20","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"C"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"7b45ad72-c48a-4e11-8eed-814d5e1e79ac","$modeConnection":{"mode":"TRAM","elements":[{"id":"896491fa-d03b-4a11-881e-26c5bd52dbc1","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"8"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"15024dd8-6697-4c07-998c-e4c9eeaf0098","$stop":{"name":"Épinay – Villetaneuse","placeName":"","subtitle":"Montmagny","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"715cae26-dfcd-47a5-87ed-e4ccfa604460","$modeConnection":{"mode":"TRAIN","elements":[{"id":"a34460c9-ecbd-43a8-a231-a4e22b2c14f4","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"H"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"afa13c3c-2963-48b8-b7d1-d27fa7181b0f","$stop":{"name":"Villetaneuse – Université","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"7471a9ed-7827-4d45-91cd-b7e54de81998","$modeConnection":{"mode":"TRAM","elements":[{"id":"a81dfd48-b932-402c-a40b-798fef588b34","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"8"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"41a9b62d-ebc6-45ad-9815-4d79f05ad42b","$stop":{"name":"Pierrefitte – Stains","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"626ce031-e156-4f07-a564-2f57dfeaebcc","$modeConnection":{"mode":"RER","elements":[{"id":"a2a14e97-690c-4a5a-847b-ab2a08554884","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"D"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"fc0f507d-2e9a-4cc6-b10b-96b890896120","$stop":{"name":"Stains – La Cerisaie","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"1cd442ee-0c23-4f23-bb0e-dda97312166b","$stop":{"name":"Dugny – La Courneuve","placeName":"","subtitle":"Parc Georges Valbon","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"bdbe7112-3afa-480f-af3c-cb066ad83e18","$stop":{"name":"Le Bourget","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"0bba69d4-3b0e-4036-afa4-30b89ca50034","$modeConnection":{"mode":"RER","elements":[{"id":"7d26e4a9-28f3-40bc-bb04-78b4433d2791","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"4c46979e-0071-4acb-8e4c-366964e8f190","position":"RIGHT","$airportOrnament":{"airport":"BOTH"}}}}],"walk":false}}]}}]}}]}}],"lineWidth":0.375},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "TRAM",
+    "index": {
+      "mode": "TRAM",
+      "$builtinLineIndex": {
+        "index": "11"
+      }
+    },
+    "color": "#f78f4b",
+    "lineThickness": "0.625",
+    "lineStyle": "STRIPED",
+    "dotsColorPolicy": "INHERIT",
+    "fullyAccessible": true,
+    "frameTerminusNames": true,
+    "mapSize": 15,
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "ae89aca5-81ad-4b68-9b2d-c623f74ead51",
+              "$branch": {
+                "elementSpacing": "10",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "9dc42204-140e-447b-ac1c-30cbeef2a014",
+                    "$stop": {
+                      "name": "Épinay-sur-Seine",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "ef9cb08c-c473-46cd-8bb6-fdb178be9352",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "2c0c7048-77a6-4f80-8619-96f6bdac8e20",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "C"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "7b45ad72-c48a-4e11-8eed-814d5e1e79ac",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "896491fa-d03b-4a11-881e-26c5bd52dbc1",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "8"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "15024dd8-6697-4c07-998c-e4c9eeaf0098",
+                    "$stop": {
+                      "name": "Épinay – Villetaneuse",
+                      "placeName": "",
+                      "subtitle": "Montmagny",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "715cae26-dfcd-47a5-87ed-e4ccfa604460",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "a34460c9-ecbd-43a8-a231-a4e22b2c14f4",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "H"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "afa13c3c-2963-48b8-b7d1-d27fa7181b0f",
+                    "$stop": {
+                      "name": "Villetaneuse – Université",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "7471a9ed-7827-4d45-91cd-b7e54de81998",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "a81dfd48-b932-402c-a40b-798fef588b34",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "8"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "41a9b62d-ebc6-45ad-9815-4d79f05ad42b",
+                    "$stop": {
+                      "name": "Pierrefitte – Stains",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "626ce031-e156-4f07-a564-2f57dfeaebcc",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "a2a14e97-690c-4a5a-847b-ab2a08554884",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "D"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "fc0f507d-2e9a-4cc6-b10b-96b890896120",
+                    "$stop": {
+                      "name": "Stains – La Cerisaie",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "1cd442ee-0c23-4f23-bb0e-dda97312166b",
+                    "$stop": {
+                      "name": "Dugny – La Courneuve",
+                      "placeName": "",
+                      "subtitle": "Parc Georges Valbon",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "bdbe7112-3afa-480f-af3c-cb066ad83e18",
+                    "$stop": {
+                      "name": "Le Bourget",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "0bba69d4-3b0e-4036-afa4-30b89ca50034",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "7d26e4a9-28f3-40bc-bb04-78b4433d2791",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "4c46979e-0071-4acb-8e4c-366964e8f190",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "lineWidth": 0.375
+  },
+  "customIndices": []
+}

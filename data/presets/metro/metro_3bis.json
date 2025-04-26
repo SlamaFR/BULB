@@ -1,1 +1,168 @@
-{"version":"1.4.0-alpha","line":{"mode":"METRO","index":{"mode":"METRO","$builtinLineIndex":{"index":"3bis"}},"color":"#87d3df","lineThickness":"0.375","lineStyle":"PLAIN","dotsColorPolicy":"INHERIT","topology":[{"id":"1","$lineSection":{"elements":[{"id":"1a40f043-4d00-4ed3-abb5-f1cd33fdb769","$branch":{"elementSpacing":10,"marginLeft":0,"marginRight":0,"elements":[{"id":"b2d4ab12-8d38-47f0-bbc5-e059e2c5627e","$stop":{"name":"Porte des Lilas","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":true,"connections":[{"id":"c4129ed6-4da0-4032-81cb-3c8711299d73","$modeConnection":{"mode":"METRO","elements":[{"id":"15b85269-c438-47af-8c60-628c79fbcdd0","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"11"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"1f6ee3ea-db15-4b89-8ef3-8ccd3aa7c26b","$modeConnection":{"mode":"TRAM","elements":[{"id":"b5157214-e674-4fd5-ab27-8dfe32a6a8e3","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"3b"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"2544d93b-7e87-432b-abc8-1d98001b4462","$stop":{"name":"Saint-Fargeau","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"43ed9500-080c-4f51-a172-67442feb5951","$stop":{"name":"Pelleport","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"94dd4d21-fd12-4af7-86f6-41a4acf0fb0a","$stop":{"name":"Gambetta","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":true,"connections":[{"id":"26bf7bba-8943-4d73-baf8-87f3ee668e61","$modeConnection":{"mode":"METRO","elements":[{"id":"bcc37f46-7398-40f8-afb4-68ef4240ae95","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"3"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}}],"invertedElements":false}}]}}],"mapSize":15,"fullyAccessible":false,"frameTerminusNames":true},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "mode": "METRO",
+      "$builtinLineIndex": {
+        "index": "3bis"
+      }
+    },
+    "color": "#87d3df",
+    "lineThickness": "0.375",
+    "lineStyle": "PLAIN",
+    "dotsColorPolicy": "INHERIT",
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "1a40f043-4d00-4ed3-abb5-f1cd33fdb769",
+              "$branch": {
+                "elementSpacing": 10,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "elements": [
+                  {
+                    "id": "b2d4ab12-8d38-47f0-bbc5-e059e2c5627e",
+                    "$stop": {
+                      "name": "Porte des Lilas",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "c4129ed6-4da0-4032-81cb-3c8711299d73",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "15b85269-c438-47af-8c60-628c79fbcdd0",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "11"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "1f6ee3ea-db15-4b89-8ef3-8ccd3aa7c26b",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "b5157214-e674-4fd5-ab27-8dfe32a6a8e3",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "3b"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "2544d93b-7e87-432b-abc8-1d98001b4462",
+                    "$stop": {
+                      "name": "Saint-Fargeau",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "43ed9500-080c-4f51-a172-67442feb5951",
+                    "$stop": {
+                      "name": "Pelleport",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "94dd4d21-fd12-4af7-86f6-41a4acf0fb0a",
+                    "$stop": {
+                      "name": "Gambetta",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "26bf7bba-8943-4d73-baf8-87f3ee668e61",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "bcc37f46-7398-40f8-afb4-68ef4240ae95",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "3"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  }
+                ],
+                "invertedElements": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "mapSize": 15,
+    "fullyAccessible": false,
+    "frameTerminusNames": true
+  },
+  "customIndices": []
+}

@@ -1,1 +1,904 @@
-{"version":"1.4.0-alpha","line":{"mode":"METRO","index":{"mode":"METRO","$builtinLineIndex":{"index":"5"}},"color":"#f78f4b","mapSize":20,"lineThickness":"0.375","lineStyle":"PLAIN","dotsColorPolicy":"INHERIT","topology":[{"id":"1","$lineSection":{"elements":[{"id":"bf0f60b0-7618-43e4-b46b-c0462b75399d","$branch":{"elementSpacing":0,"marginLeft":0,"marginRight":0,"elements":[{"id":"8ad488ec-7fb9-4eba-a33a-d5b2867bd904","$stop":{"name":"Bobigny\nPablo Picasso","subtitle":"Préfecture – Hôtel du Département","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":true,"connections":[{"id":"70223722-935a-4544-8fd1-473f1ae1fbd6","$modeConnection":{"mode":"TRAM","elements":[{"id":"cdd195eb-8ae5-4616-947f-7c70ce4bc55c","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"1"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"fd591ee4-966d-40c1-88aa-3402add2257e","$stop":{"name":"Bobigny – Pantin\nRaymond Queneau","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"71c27abc-be43-4b1c-9099-0cacd4725199","$stop":{"name":"Église de Pantin","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"62f4c092-33da-4a88-8262-0dd5efe3851a","$stop":{"name":"Hoche","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"865bcc3f-a890-418a-a4e1-81e9a4d11ce0","$stop":{"name":"Porte de Pantin","subtitle":"Parc de la Villette","placeName":"","interestPoint":true,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"bd39f876-68de-4228-8a13-bcc8b0b013ea","$modeConnection":{"mode":"TRAM","elements":[{"id":"13e176ff-df31-46f6-9d1c-033e7a7b541d","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"3b"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"43cabfbb-d75a-474e-8281-ef8b7ebd1750","$stop":{"name":"Ourcq","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"7932f6a6-a047-47ad-a31a-e24ee6819f8e","$stop":{"name":"Laumière","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"3c1ebc60-ebfe-47e3-b2a0-bdce2fc3ea01","$stop":{"name":"Jaurès","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"402e054c-d850-49f0-8d63-89fe0e47782d","$modeConnection":{"mode":"METRO","elements":[{"id":"548bdf0b-825a-4b53-9de8-45a1e65d0405","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"2"}},"walk":false,"ornament":null}},{"id":"cebff0cc-1c67-4152-bdcb-51529f9f1053","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"7bis"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"1dd0079b-0823-46e4-9640-618c3d6a635b","$stop":{"name":"Stalingrad","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"fcb297fc-1d15-4d83-ab9e-7297864927a5","$modeConnection":{"mode":"METRO","elements":[{"id":"178431b7-436c-4c78-b372-775a8ac91af2","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"2"}},"walk":false,"ornament":null}},{"id":"48e7d3ca-fd59-4b6f-812d-5f453760fb8f","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"7"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"b73cd4ad-7595-4413-9bc9-944890d1e4b0","$stop":{"name":"Gare du Nord","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"85e3c1f2-10a6-4710-9503-651b86f1616e","$modeConnection":{"mode":"METRO","elements":[{"id":"47743d71-7b33-42ca-9f20-e5ba7b4f2c5b","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"4"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"d2d397bf-3810-4232-b9d4-655d041a9236","$modeConnection":{"mode":"RER","elements":[{"id":"5f422098-9806-4ff8-9521-d1c1f4dc7023","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"position":"BOTTOM","$airportOrnament":{"airport":"BOTH"}}}},{"id":"adfcd08b-db79-44a4-96e1-ec3081e06df1","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"D"}},"walk":false,"ornament":null}},{"id":"7b331aa1-ba55-4368-8376-a433b10b2733","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"E"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"da54a922-0630-499d-bfbf-2bca41711583","$modeConnection":{"mode":"TRAIN","elements":[{"id":"633176be-b1fc-46e5-93cd-a8c8abf0188c","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"H"}},"walk":false,"ornament":null}},{"id":"d23eb025-6d96-4850-ad98-669e41ff9bc9","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"K"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"2918f904-6ce5-4fce-93a4-11acc9298122","$serviceConnection":{"elements":[{"id":"56975f2c-0c4d-4eee-a735-3c1041fefadd","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"9fe7afb8-1c8f-4f2b-93c1-b87397178d7d","$stop":{"name":"Gare de l’Est","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"7d1328a4-a97d-4cb5-b13c-0ed21bdc4f42","$modeConnection":{"mode":"METRO","elements":[{"id":"7a7a096b-f8b4-4475-83a8-58ba5e465b83","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"4"}},"walk":false,"ornament":null}},{"id":"14592731-8b82-4d86-bd68-1b45949637f9","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"7"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"2ccd46c9-44c4-49f0-a986-3341db01f8fe","$modeConnection":{"mode":"TRAIN","elements":[{"id":"cd79b4b8-4fa1-4d3e-a6d6-862c9ea092bb","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"P"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"e6b3bb8a-f0b1-4bdc-90d0-a70469fbc29e","$serviceConnection":{"elements":[{"id":"f85ecfa6-5018-469e-b37e-bd95fbefef07","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"2050043f-fe61-45e9-a174-3285b976ccb9","$stop":{"name":"Jacques Bonsergent","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"2d041a29-09d6-4c70-94b5-879433be46ce","$stop":{"name":"République","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"2d2a98e3-ec41-4dbc-91da-1928537a1f7d","$modeConnection":{"mode":"METRO","elements":[{"id":"e9687dd4-3519-4fa1-b842-99d6e71b7dcd","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"3"}},"walk":false,"ornament":null}},{"id":"c1d35f82-c74a-4872-8db2-77c575746a48","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"8"}},"walk":false,"ornament":null}},{"id":"32594ca6-a2f5-478f-8049-434847f3ad88","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"9"}},"walk":false,"ornament":null}},{"id":"90bb2081-40cf-4fe2-8d52-948f724e6694","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"11"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"930b241e-67d4-4fac-a6a6-1c4e7430df2a","$stop":{"name":"Oberkampf","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"4aa47285-6778-4e85-b50b-e54dc51cc148","$modeConnection":{"mode":"METRO","elements":[{"id":"d7d6250f-de0a-4d2c-a80f-dfa3d7bb6032","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"9"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"03eaffab-3ab5-4b2e-94f6-ee6b7898e7c7","$stop":{"name":"Richard-Lenoir","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"06c62564-daa8-4107-b57b-4fd09925118a","$stop":{"name":"Bréguet – Sabin","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"8f8605c3-e34d-48dc-91b7-d4c5d8f61c29","$stop":{"name":"Bastille","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"a9a299ab-69b4-42ea-a8c2-9c69bd1e1482","$modeConnection":{"mode":"METRO","elements":[{"id":"ceab7055-20ac-49a1-95d8-6e8e5e93772b","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"1"}},"walk":false,"ornament":null}},{"id":"1fd3cb25-3c42-4924-b248-0660ab4244b4","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"8"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"72d6725a-fc93-429f-b4b5-d405acfc76ce","$stop":{"name":"Quai de la Rapée","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"78ce5d57-70d8-4326-ad72-9034a181ae59","$stop":{"name":"Gare d’Austerlitz","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[{"id":"dd3d9fae-991e-4861-a270-369f9451dde1","$modeConnection":{"mode":"METRO","elements":[{"id":"4a19486f-3168-43f0-8ee3-1b28cce1d896","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"10"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"c0e5e235-e9b6-4372-b3f7-ef3c1b9c0eb6","$modeConnection":{"mode":"RER","elements":[{"id":"385d9f1c-11dc-4063-a017-72e7a0f59593","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"C"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"ad7dfaed-2ff1-407b-b111-4d1040b3a34e","$serviceConnection":{"elements":[{"id":"5c11700a-5e1e-48ba-92b7-9f1869bf241b","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}},{"id":"f5c7f518-f74c-42ad-8bdd-d474de2e79fe","$stop":{"name":"Saint-Marcel","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"6d924967-488e-4768-b97f-2c2885780714","$stop":{"name":"Campo-Formio","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":false,"connections":[],"accessible":"undefined","closed":false,"reverse":false}},{"id":"bd6d74e1-abbf-4dec-be6d-a2063815bb7c","$stop":{"name":"Place d’Italie","subtitle":"","placeName":"","interestPoint":false,"preventSubtitleOverlapping":true,"terminus":true,"connections":[{"id":"9afcc955-8350-4d4a-ba09-8bc4842bb8b8","$modeConnection":{"mode":"METRO","elements":[{"id":"8b6d08ca-d671-4e18-855e-99db229fc159","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"6"}},"walk":false,"ornament":null}},{"id":"03dade16-81f1-4c5f-a480-c5ffe3ff32fc","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"7"}},"walk":false,"ornament":null}}],"walk":false}}],"accessible":"undefined","closed":false,"reverse":false}}],"invertedElements":false}}]}}],"fullyAccessible":false,"frameTerminusNames":true},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "mode": "METRO",
+      "$builtinLineIndex": {
+        "index": "5"
+      }
+    },
+    "color": "#f78f4b",
+    "mapSize": 20,
+    "lineThickness": "0.375",
+    "lineStyle": "PLAIN",
+    "dotsColorPolicy": "INHERIT",
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "bf0f60b0-7618-43e4-b46b-c0462b75399d",
+              "$branch": {
+                "elementSpacing": 0,
+                "marginLeft": 0,
+                "marginRight": 0,
+                "elements": [
+                  {
+                    "id": "8ad488ec-7fb9-4eba-a33a-d5b2867bd904",
+                    "$stop": {
+                      "name": "Bobigny\nPablo Picasso",
+                      "subtitle": "Préfecture – Hôtel du Département",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "70223722-935a-4544-8fd1-473f1ae1fbd6",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "cdd195eb-8ae5-4616-947f-7c70ce4bc55c",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "1"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "fd591ee4-966d-40c1-88aa-3402add2257e",
+                    "$stop": {
+                      "name": "Bobigny – Pantin\nRaymond Queneau",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "71c27abc-be43-4b1c-9099-0cacd4725199",
+                    "$stop": {
+                      "name": "Église de Pantin",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "62f4c092-33da-4a88-8262-0dd5efe3851a",
+                    "$stop": {
+                      "name": "Hoche",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "865bcc3f-a890-418a-a4e1-81e9a4d11ce0",
+                    "$stop": {
+                      "name": "Porte de Pantin",
+                      "subtitle": "Parc de la Villette",
+                      "placeName": "",
+                      "interestPoint": true,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "bd39f876-68de-4228-8a13-bcc8b0b013ea",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "13e176ff-df31-46f6-9d1c-033e7a7b541d",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "3b"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "43cabfbb-d75a-474e-8281-ef8b7ebd1750",
+                    "$stop": {
+                      "name": "Ourcq",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "7932f6a6-a047-47ad-a31a-e24ee6819f8e",
+                    "$stop": {
+                      "name": "Laumière",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "3c1ebc60-ebfe-47e3-b2a0-bdce2fc3ea01",
+                    "$stop": {
+                      "name": "Jaurès",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "402e054c-d850-49f0-8d63-89fe0e47782d",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "548bdf0b-825a-4b53-9de8-45a1e65d0405",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "2"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "cebff0cc-1c67-4152-bdcb-51529f9f1053",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "7bis"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "1dd0079b-0823-46e4-9640-618c3d6a635b",
+                    "$stop": {
+                      "name": "Stalingrad",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "fcb297fc-1d15-4d83-ab9e-7297864927a5",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "178431b7-436c-4c78-b372-775a8ac91af2",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "2"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "48e7d3ca-fd59-4b6f-812d-5f453760fb8f",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "7"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "b73cd4ad-7595-4413-9bc9-944890d1e4b0",
+                    "$stop": {
+                      "name": "Gare du Nord",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "85e3c1f2-10a6-4710-9503-651b86f1616e",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "47743d71-7b33-42ca-9f20-e5ba7b4f2c5b",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "4"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "d2d397bf-3810-4232-b9d4-655d041a9236",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "5f422098-9806-4ff8-9521-d1c1f4dc7023",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "position": "BOTTOM",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "id": "adfcd08b-db79-44a4-96e1-ec3081e06df1",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "D"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "7b331aa1-ba55-4368-8376-a433b10b2733",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "E"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "da54a922-0630-499d-bfbf-2bca41711583",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "633176be-b1fc-46e5-93cd-a8c8abf0188c",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "H"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "d23eb025-6d96-4850-ad98-669e41ff9bc9",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "K"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "2918f904-6ce5-4fce-93a4-11acc9298122",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "56975f2c-0c4d-4eee-a735-3c1041fefadd",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "9fe7afb8-1c8f-4f2b-93c1-b87397178d7d",
+                    "$stop": {
+                      "name": "Gare de l’Est",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "7d1328a4-a97d-4cb5-b13c-0ed21bdc4f42",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "7a7a096b-f8b4-4475-83a8-58ba5e465b83",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "4"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "14592731-8b82-4d86-bd68-1b45949637f9",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "7"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "2ccd46c9-44c4-49f0-a986-3341db01f8fe",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "cd79b4b8-4fa1-4d3e-a6d6-862c9ea092bb",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "P"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "e6b3bb8a-f0b1-4bdc-90d0-a70469fbc29e",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "f85ecfa6-5018-469e-b37e-bd95fbefef07",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "2050043f-fe61-45e9-a174-3285b976ccb9",
+                    "$stop": {
+                      "name": "Jacques Bonsergent",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "2d041a29-09d6-4c70-94b5-879433be46ce",
+                    "$stop": {
+                      "name": "République",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "2d2a98e3-ec41-4dbc-91da-1928537a1f7d",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "e9687dd4-3519-4fa1-b842-99d6e71b7dcd",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "3"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "c1d35f82-c74a-4872-8db2-77c575746a48",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "8"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "32594ca6-a2f5-478f-8049-434847f3ad88",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "9"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "90bb2081-40cf-4fe2-8d52-948f724e6694",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "11"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "930b241e-67d4-4fac-a6a6-1c4e7430df2a",
+                    "$stop": {
+                      "name": "Oberkampf",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "4aa47285-6778-4e85-b50b-e54dc51cc148",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "d7d6250f-de0a-4d2c-a80f-dfa3d7bb6032",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "9"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "03eaffab-3ab5-4b2e-94f6-ee6b7898e7c7",
+                    "$stop": {
+                      "name": "Richard-Lenoir",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "06c62564-daa8-4107-b57b-4fd09925118a",
+                    "$stop": {
+                      "name": "Bréguet – Sabin",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "8f8605c3-e34d-48dc-91b7-d4c5d8f61c29",
+                    "$stop": {
+                      "name": "Bastille",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "a9a299ab-69b4-42ea-a8c2-9c69bd1e1482",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "ceab7055-20ac-49a1-95d8-6e8e5e93772b",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "1"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "1fd3cb25-3c42-4924-b248-0660ab4244b4",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "8"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "72d6725a-fc93-429f-b4b5-d405acfc76ce",
+                    "$stop": {
+                      "name": "Quai de la Rapée",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "78ce5d57-70d8-4326-ad72-9034a181ae59",
+                    "$stop": {
+                      "name": "Gare d’Austerlitz",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "dd3d9fae-991e-4861-a270-369f9451dde1",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "4a19486f-3168-43f0-8ee3-1b28cce1d896",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "10"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "c0e5e235-e9b6-4372-b3f7-ef3c1b9c0eb6",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "385d9f1c-11dc-4063-a017-72e7a0f59593",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "C"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "ad7dfaed-2ff1-407b-b111-4d1040b3a34e",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "5c11700a-5e1e-48ba-92b7-9f1869bf241b",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "f5c7f518-f74c-42ad-8bdd-d474de2e79fe",
+                    "$stop": {
+                      "name": "Saint-Marcel",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "6d924967-488e-4768-b97f-2c2885780714",
+                    "$stop": {
+                      "name": "Campo-Formio",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": false,
+                      "connections": [],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  },
+                  {
+                    "id": "bd6d74e1-abbf-4dec-be6d-a2063815bb7c",
+                    "$stop": {
+                      "name": "Place d’Italie",
+                      "subtitle": "",
+                      "placeName": "",
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "9afcc955-8350-4d4a-ba09-8bc4842bb8b8",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "8b6d08ca-d671-4e18-855e-99db229fc159",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "6"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "03dade16-81f1-4c5f-a480-c5ffe3ff32fc",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "7"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ],
+                      "accessible": "undefined",
+                      "closed": false,
+                      "reverse": false
+                    }
+                  }
+                ],
+                "invertedElements": false
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "fullyAccessible": false,
+    "frameTerminusNames": true
+  },
+  "customIndices": []
+}
