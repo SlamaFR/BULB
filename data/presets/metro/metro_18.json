@@ -1,1 +1,458 @@
-{"version":"1.4.0-alpha","line":{"mode":"METRO","index":{"mode":"METRO","$builtinLineIndex":{"index":"18"}},"color":"#00b397","lineThickness":"0.375","lineStyle":"PLAIN","dotsColorPolicy":"INHERIT","fullyAccessible":true,"frameTerminusNames":true,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"43327f2c-2d09-4225-925b-78c4c5f65c26","$branch":{"elementSpacing":"5","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"cbaa35f1-0d75-416d-a38d-858f52e55e24","$stop":{"name":"Versailles – Chantiers","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"6e9ea139-d3af-4a0d-b9d3-ef89fed1b1f8","$modeConnection":{"mode":"RER","elements":[{"id":"f4a4dc90-0e7d-41a7-97f2-efdc32aa7fdf","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"C"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"85cc5aba-6ba5-4f04-80bf-24db68a418e8","$modeConnection":{"mode":"TRAIN","elements":[{"id":"2aa5c987-be15-4aed-a702-9ad621ae3a38","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"N"}},"walk":false,"ornament":null}},{"id":"e60f0fc9-7d8c-40e8-8806-240c1678ee1a","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"U"}},"walk":false,"ornament":null}},{"id":"63a8befd-5ce1-4d26-a082-74d9aca46e7d","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"V"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"2d2229a5-a47d-448f-86cb-a987babfa9c1","$serviceConnection":{"elements":[{"id":"08a2ab1d-b071-48b8-9eca-c89da65d2c0e","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}]}},{"id":"e1280cf2-3d45-4fe2-ad34-5de0df1c0132","$stop":{"name":"Satory","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"e94204b1-e3c5-428f-8850-712db41eef2b","$stop":{"name":"Guyancourt","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"b24cf546-e2ef-475b-907e-4b47e4cb13bd","$stop":{"name":"Christ de Saclay","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"fd5a5a62-d366-4e4e-b06e-c36679359c9e","$stop":{"name":"Moulon Campus","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"03cec05d-e427-416c-82d2-cc83085df451","$stop":{"name":"Marguerite Perey","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"c2d1f4ea-fb8d-4e03-83e0-b399f57737c1","$stop":{"name":"Massy – Palaiseau","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"ff73ef4a-78de-43ab-8bfd-13017488b535","$modeConnection":{"mode":"RER","elements":[{"id":"7c3a9a45-8383-4a11-9563-c5627e030924","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"e28c71a6-8001-4af6-bf34-d1c6a4f9f784","position":"RIGHT","$airportOrnament":{"airport":"BOTH"}}}},{"id":"2d1471c1-7e77-4b87-9dbb-7e744135e5bc","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"C"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"dba8dd33-9796-4fc3-82d6-00d99df3a340","$modeConnection":{"mode":"TRAIN","elements":[{"id":"47b5f014-3bd4-4387-a6a8-08b4a6af20a2","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"V"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"6b329b73-9e5d-490a-9ea0-89ce3389f7e0","$modeConnection":{"mode":"TRAM","elements":[{"id":"55d4a920-e399-41c1-97aa-ab11aa198d0d","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"12"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"760c2266-7a73-4ed5-bc3e-d18bebd5af94","$serviceConnection":{"elements":[{"id":"db0a013c-1044-4eba-a4d8-5aaf90a78036","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}]}},{"id":"00ca9121-4e34-42cd-8e3a-c10149390b81","$stop":{"name":"Massy – Opéra","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"a2472de8-05fa-4c30-945d-757fad3dbb65","$stop":{"name":"Antonypôle – Wissous Centre","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"13893701-d2b7-42b8-9c29-2d57700d48bf","$stop":{"name":"Aéroport d’Orly","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"07417df0-fb65-4d42-b3de-ed284ec03e6b","$serviceConnection":{"elements":[{"id":"81614853-0011-44ff-b4f1-66cb6473746f","$serviceConnectionElement":{"service":"AIRPORT","ornament":{"id":"16605288-994a-4e03-a464-3852c6672557","position":"RIGHT","$airportNameOrnament":{"name":"Orly"}}}}],"walk":false}},{"id":"d73a8d34-d434-4620-b20d-1210ba71af97","$modeConnection":{"mode":"METRO","elements":[{"id":"ec5508c0-b261-4dbd-921d-2a1ca5c755dd","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"14"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"6da28dda-0b0c-40d6-9ef3-dcba890aa1fc","$modeConnection":{"mode":"TRAM","elements":[{"id":"cddf2445-afad-479c-a539-97427069dea3","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"7"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"5a206245-340c-4980-89c2-d0617f796388","$serviceConnection":{"elements":[{"id":"d5e6fb40-04ea-4df2-9480-895189e1a9ae","$serviceConnectionElement":{"service":"ORLY_BUS","ornament":null}},{"id":"93cdd15f-1fbb-4b6b-9a1b-5837052d05ca","$serviceConnectionElement":{"service":"ORLYVAL_LARGE","ornament":null}}],"walk":false}}]}}]}}]}}]},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "mode": "METRO",
+      "$builtinLineIndex": {
+        "index": "18"
+      }
+    },
+    "color": "#00b397",
+    "lineThickness": "0.375",
+    "lineStyle": "PLAIN",
+    "dotsColorPolicy": "INHERIT",
+    "fullyAccessible": true,
+    "frameTerminusNames": true,
+    "mapSize": 15,
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "43327f2c-2d09-4225-925b-78c4c5f65c26",
+              "$branch": {
+                "elementSpacing": "5",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "cbaa35f1-0d75-416d-a38d-858f52e55e24",
+                    "$stop": {
+                      "name": "Versailles – Chantiers",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "6e9ea139-d3af-4a0d-b9d3-ef89fed1b1f8",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "f4a4dc90-0e7d-41a7-97f2-efdc32aa7fdf",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "C"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "85cc5aba-6ba5-4f04-80bf-24db68a418e8",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "2aa5c987-be15-4aed-a702-9ad621ae3a38",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "N"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "e60f0fc9-7d8c-40e8-8806-240c1678ee1a",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "U"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "63a8befd-5ce1-4d26-a082-74d9aca46e7d",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "V"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "2d2229a5-a47d-448f-86cb-a987babfa9c1",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "08a2ab1d-b071-48b8-9eca-c89da65d2c0e",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "e1280cf2-3d45-4fe2-ad34-5de0df1c0132",
+                    "$stop": {
+                      "name": "Satory",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "e94204b1-e3c5-428f-8850-712db41eef2b",
+                    "$stop": {
+                      "name": "Guyancourt",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "b24cf546-e2ef-475b-907e-4b47e4cb13bd",
+                    "$stop": {
+                      "name": "Christ de Saclay",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "fd5a5a62-d366-4e4e-b06e-c36679359c9e",
+                    "$stop": {
+                      "name": "Moulon Campus",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "03cec05d-e427-416c-82d2-cc83085df451",
+                    "$stop": {
+                      "name": "Marguerite Perey",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "c2d1f4ea-fb8d-4e03-83e0-b399f57737c1",
+                    "$stop": {
+                      "name": "Massy – Palaiseau",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "ff73ef4a-78de-43ab-8bfd-13017488b535",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "7c3a9a45-8383-4a11-9563-c5627e030924",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "e28c71a6-8001-4af6-bf34-d1c6a4f9f784",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "id": "2d1471c1-7e77-4b87-9dbb-7e744135e5bc",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "C"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "dba8dd33-9796-4fc3-82d6-00d99df3a340",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "47b5f014-3bd4-4387-a6a8-08b4a6af20a2",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "V"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "6b329b73-9e5d-490a-9ea0-89ce3389f7e0",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "55d4a920-e399-41c1-97aa-ab11aa198d0d",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "12"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "760c2266-7a73-4ed5-bc3e-d18bebd5af94",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "db0a013c-1044-4eba-a4d8-5aaf90a78036",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "00ca9121-4e34-42cd-8e3a-c10149390b81",
+                    "$stop": {
+                      "name": "Massy – Opéra",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "a2472de8-05fa-4c30-945d-757fad3dbb65",
+                    "$stop": {
+                      "name": "Antonypôle – Wissous Centre",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "13893701-d2b7-42b8-9c29-2d57700d48bf",
+                    "$stop": {
+                      "name": "Aéroport d’Orly",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "07417df0-fb65-4d42-b3de-ed284ec03e6b",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "81614853-0011-44ff-b4f1-66cb6473746f",
+                                "$serviceConnectionElement": {
+                                  "service": "AIRPORT",
+                                  "ornament": {
+                                    "id": "16605288-994a-4e03-a464-3852c6672557",
+                                    "position": "RIGHT",
+                                    "$airportNameOrnament": {
+                                      "name": "Orly"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "d73a8d34-d434-4620-b20d-1210ba71af97",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "ec5508c0-b261-4dbd-921d-2a1ca5c755dd",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "14"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "6da28dda-0b0c-40d6-9ef3-dcba890aa1fc",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "cddf2445-afad-479c-a539-97427069dea3",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "7"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "5a206245-340c-4980-89c2-d0617f796388",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "93cdd15f-1fbb-4b6b-9a1b-5837052d05ca",
+                                "$serviceConnectionElement": {
+                                  "service": "ORLYVAL_LARGE",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customIndices": []
+}

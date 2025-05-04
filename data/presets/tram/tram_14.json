@@ -1,1 +1,138 @@
-{"version":"1.4.0-alpha","line":{"mode":"TRAM","index":{"mode":"TRAM","$builtinLineIndex":{"index":"14"}},"color":"#00b397","lineThickness":"0.625","lineStyle":"STRIPED","dotsColorPolicy":"INHERIT","fullyAccessible":false,"frameTerminusNames":true,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"b889120b-ca55-41d5-b63e-2d2440cba2f0","$branch":{"elementSpacing":"15","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"7530a41d-2a8c-459f-8acc-73281d9880b5","$stop":{"name":"Esbly","placeName":"","subtitle":"","accessible":true,"reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"0069e115-646d-48ae-b378-5e6d6d288953","$modeConnection":{"mode":"TRAIN","elements":[{"id":"02ab7ace-5a0a-4364-a455-dbdcef2a3479","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"P"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"afc924aa-7bde-4872-878a-f02ffd235fbe","$stop":{"name":"Montry – Condé","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"5cbe356d-443c-42a7-ae4b-aa088f85666c","$stop":{"name":"Couilly – Saint-Germain\nQuincy","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"ebb6dd7d-013a-40f6-b20e-2e874756d57a","$stop":{"name":"Villiers – Montbarbin","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"1b2f259a-09ab-493c-b758-b6a7174eef92","$stop":{"name":"Crécy-la-Chapelle","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[]}}]}}]}}]},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "TRAM",
+    "index": {
+      "mode": "TRAM",
+      "$builtinLineIndex": {
+        "index": "14"
+      }
+    },
+    "color": "#00b397",
+    "lineThickness": "0.625",
+    "lineStyle": "STRIPED",
+    "dotsColorPolicy": "INHERIT",
+    "fullyAccessible": false,
+    "frameTerminusNames": true,
+    "mapSize": 15,
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "b889120b-ca55-41d5-b63e-2d2440cba2f0",
+              "$branch": {
+                "elementSpacing": "15",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "7530a41d-2a8c-459f-8acc-73281d9880b5",
+                    "$stop": {
+                      "name": "Esbly",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": true,
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "0069e115-646d-48ae-b378-5e6d6d288953",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "02ab7ace-5a0a-4364-a455-dbdcef2a3479",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "P"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "afc924aa-7bde-4872-878a-f02ffd235fbe",
+                    "$stop": {
+                      "name": "Montry – Condé",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "5cbe356d-443c-42a7-ae4b-aa088f85666c",
+                    "$stop": {
+                      "name": "Couilly – Saint-Germain\nQuincy",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "ebb6dd7d-013a-40f6-b20e-2e874756d57a",
+                    "$stop": {
+                      "name": "Villiers – Montbarbin",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "1b2f259a-09ab-493c-b758-b6a7174eef92",
+                    "$stop": {
+                      "name": "Crécy-la-Chapelle",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": []
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customIndices": []
+}
