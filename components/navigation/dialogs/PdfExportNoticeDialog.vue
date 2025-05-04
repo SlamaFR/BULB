@@ -1,21 +1,24 @@
 <script setup lang="ts">
 import { isMacOS } from '@basitcodeenv/vue3-device-detect'
-import { useLocalStorage } from '@vueuse/core'
 import { computed, ref } from 'vue'
-import usePdfExportMap from '~/composables/usePdfExportMap'
 
+const emit = defineEmits<{
+  complete: [boolean]
+  cancel: [void]
+}>()
 const visible = defineModel<boolean>('visible', { required: true })
 const metakey = computed(() => isMacOS ? '⌘' : 'Ctrl')
 
-const skipPdfExportNotice = useLocalStorage('skipPdfExportNotice', false)
-const pdfExport = usePdfExportMap()
-const reminder = ref(skipPdfExportNotice.value)
+const reminder = ref(false)
 
-function doExport() {
-  skipPdfExportNotice.value = reminder.value
+function submit() {
+  emit('complete', reminder.value)
   visible.value = false
+}
 
-  pdfExport()
+function cancel() {
+  emit('cancel')
+  visible.value = false
 }
 </script>
 
@@ -47,12 +50,14 @@ function doExport() {
 
       <div class="mt-4 flex items-center">
         <Checkbox v-model="reminder" binary input-id="pdf_export_dont_remind" />
-        <label for="pdf_export_dont_remind" class="ml-2">{{ $t('ui.dialogs.pdf_export_notice.dont_show_again') }}</label>
+        <label for="pdf_export_dont_remind" class="ml-2">{{
+          $t('ui.dialogs.pdf_export_notice.dont_show_again')
+        }}</label>
       </div>
 
       <div class="flex flex-row items-center justify-end flex-grow gap-4">
-        <Button :label="$t('ui.dialogs.pdf_export_notice.cancel')" text severity="secondary" @click="visible = false" />
-        <Button :label="$t('ui.dialogs.pdf_export_notice.proceed')" @click="doExport()" />
+        <Button :label="$t('ui.dialogs.pdf_export_notice.cancel')" text severity="secondary" @click="cancel" />
+        <Button :label="$t('ui.dialogs.pdf_export_notice.proceed')" @click="submit" />
       </div>
     </div>
   </Dialog>
