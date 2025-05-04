@@ -48,7 +48,7 @@ function toggleAndClose() {
     <Transition name="fade">
       <div v-show="snowEnabled">
         <ClientOnly>
-          <snow-effect
+          <SnowEffectComponent
             color="#eee"
             :flakes="100"
             :speed="1"

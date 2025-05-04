@@ -9,7 +9,7 @@ const { applicationVersion } = useVersion()
 const { line, outdated, presetBased } = storeToRefs(useProject())
 
 const now = useNow()
-const date = useDateFormat(now.value, 'D.MM.YYYY')
+const date = useDateFormat(now.value, 'DD.MM.YYYY')
 </script>
 
 <template>

@@ -15,11 +15,11 @@ const SIZES: SizeChoice[] = [
   { label: 'data.map_size.custom', value: '' },
 ]
 
-function findMapSizeByValue(value: string | null) {
+function findMapSizeByValue(value: string | number | null) {
   return SIZES.find(size => size.value === value) ?? { label: 'data.map_size.custom', value: '' }
 }
 
-const size = defineModel<string | null>({ required: true })
+const size = defineModel<string | number | null>({ required: true })
 const selectedSize = ref<SizeChoice | null>(findMapSizeByValue(size.value))
 const showCustomDialog = ref(false)
 

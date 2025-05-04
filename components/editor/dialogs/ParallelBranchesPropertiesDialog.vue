@@ -33,7 +33,7 @@ const alignements = [
         />
       </div>
 
-      <div class="flex flex-row gap-4">
+      <div class="flex max-lg:flex-col flex-row gap-4">
         <div class="flex flex-col gap-1 flex-grow">
           <label>{{ $t('ui.dialogs.parallel_branches_properties.section_1_level') }}</label>
           <BInputNumber v-model="parallelBranches.$parallelBranches.sections[0].$lineSection.levelOffset" />

@@ -19,6 +19,7 @@
     "@iconify-json/tabler": "^1.2.13",
     "@iconify/tools": "^4.1.1",
     "@intlify/unplugin-vue-i18n": "^6.0.2",
+    "@le-pepe/nuxt-snow-effect": "^1.2.2",
     "@le-pepe/snow-effect": "^0.1.13",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@nuxt/fonts": "^0.10.3",

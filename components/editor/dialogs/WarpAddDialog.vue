@@ -104,16 +104,11 @@ function addAllStops() {
 <template>
   <Dialog
     v-model:visible="visible"
+    :header="$t('ui.dialogs.warp_add.header')"
     append-to="self"
     class="max-w-full sm:max-w-45em"
     modal
   >
-    <template #header>
-      <div class="flex flex-row gap-2 items-center">
-        <span class="p-dialog-title">{{ $t('ui.dialogs.warp_add.header') }}</span>
-        <New />
-      </div>
-    </template>
     <div class="flex flex-col gap-4">
       <i18n-t keypath="ui.dialogs.warp_add.notice" tag="p">
         <template #nextShortcut>

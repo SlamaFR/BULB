@@ -68,7 +68,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div id="canvas-holder" class="relative inline-block opacity-0">
+  <div id="canvas-holder" class="absolute top-0 inline-block opacity-0">
     <LineCanvas id="canvas" ref="el" />
   </div>
 </template>
@@ -90,6 +90,10 @@ onMounted(() => {
 
 .export-hide {
   display: none !important;
+}
+
+html, body, #__nuxt {
+  min-height: 0;
 }
 
 @page {

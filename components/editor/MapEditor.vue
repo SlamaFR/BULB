@@ -29,8 +29,8 @@ function doExport() {
   exportMap(el.value)
 }
 
-function onError(e: Error) {
-  console.log(e)
+function onError(e: unknown) {
+  console.error(e)
   error.value = true
 }
 
@@ -43,21 +43,19 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 
 <template>
   <div class="map-editor">
-    <div class="flex flex-grow overflow-x-auto">
-      <div class="deadzone">
-        <div ref="el">
-          <NuxtErrorBoundary v-if="!error" @error="onError">
-            <LineCanvas />
-          </NuxtErrorBoundary>
-          <LineCanvasError v-if="error" />
-        </div>
+    <div class="editor-content">
+      <div ref="el" class="dead-zone">
+        <NuxtErrorBoundary v-if="!error" @error="onError">
+          <LineCanvas />
+        </NuxtErrorBoundary>
+        <LineCanvasError v-if="error" />
       </div>
     </div>
-    <div class="toolbox">
+    <div class="editor-toolbox">
       <LineSectionToolbox />
       <ToolboxSep />
       <BranchToolbox />
-      <div class="flex-grow" />
+      <div class="flex-grow min-w-1em" />
       <Trash />
     </div>
   </div>
@@ -75,36 +73,42 @@ onBeforeUnmount(() => exportSignal.off(doExport))
   border: 1px solid var(--p-content-border-color);
   color: var(--p-gray-700);
   height: 100%;
+  max-height: 100%;
 
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr auto;
 }
 
-.deadzone {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 100%;
-  flex-grow: 1;
-  padding: 5em;
-  background: repeating-linear-gradient(45deg, var(--p-gray-50) 0, var(--p-gray-50) 1em, var(--p-gray-100) calc(1em + 1px), var(--p-gray-100) 2em);
-  background-size: 100% 100%;
-}
-
-.toolbox {
+.editor-toolbox {
   padding: 1rem;
   display: flex;
   flex-direction: row;
   align-items: center;
   border-top: 1px solid var(--p-slate-200);
   overflow-x: auto;
-  position: sticky;
-  bottom: 0;
-  z-index: 100;
   background: var(--p-slate-50);
 
   & > * {
     flex-shrink: 0;
   }
+}
+
+.editor-content {
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.dead-zone {
+  display: flex;
+  align-items: center;
+  padding: 5em;
+  flex-grow: 1;
+  min-width: 100%;
+  background: repeating-linear-gradient(45deg, var(--p-gray-50) 0, var(--p-gray-50) 1em, var(--p-gray-100) calc(1em + 1px), var(--p-gray-100) 2em);
+  background-size: 100% 100%;
 }
 </style>

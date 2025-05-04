@@ -90,6 +90,7 @@ export default defineNuxtConfig({
     '@pinia-plugin-persistedstate/nuxt',
     '@primevue/nuxt-module',
     '@nuxt/fonts',
+    '@le-pepe/nuxt-snow-effect',
   ],
 
   colorMode: {
