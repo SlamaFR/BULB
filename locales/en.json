@@ -439,7 +439,9 @@
       }
     },
     "topbar": {
-      "FAQ": "FAQ",
+      "editor": "Map editor",
+      "faq": "FAQ",
+      "changelog": "Changelog",
       "catch_phrase": "Not bad, is it? That’s French 🇫🇷"
     }
   }

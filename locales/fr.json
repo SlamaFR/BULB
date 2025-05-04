@@ -439,7 +439,9 @@
       }
     },
     "topbar": {
-      "FAQ": "FAQ",
+      "editor": "Éditeur de plan",
+      "faq": "FAQ",
+      "changelog": "Journal des modifications",
       "catch_phrase": "Pas mal non ? C’est français 🇫🇷"
     }
   }

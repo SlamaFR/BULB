@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { navigateTo } from '#app'
+import { navigateTo, useRoute } from '#app'
 import { storeToRefs } from 'pinia'
 import { ref } from 'vue'
 import useVersion from '~/composables/useVersion'
@@ -7,6 +7,7 @@ import { useSnow } from '~/stores/useSnow'
 
 const { applicationVersion } = useVersion()
 const { snowEnabled, isWinter } = storeToRefs(useSnow())
+const route = useRoute()
 
 const showMenu = ref(false)
 
@@ -25,10 +26,34 @@ function toggleSnow() {
         </h1>
         <small class="text-gray"><span>v</span>{{ applicationVersion }}</small>
       </div>
-      <div class="hidden lg:flex flex-row items-center">
-        <Button text rounded label="Editeur" icon="i-tabler-pencil" @click="navigateTo('/editor')" />
-        <Button text rounded label="FAQ" icon="i-tabler-help" @click="navigateTo('/faq')" />
-        <Button text rounded label="Changelog" icon="i-tabler-checklist" @click="navigateTo('/changelog')" />
+      <div class="hidden lg:flex flex-row items-center gap-2">
+        <Button
+          :label="$t('ui.topbar.editor')"
+          icon="i-tabler-map"
+          :text="route.path !== '/editor'"
+          rounded
+          size="small"
+          severity="secondary"
+          @click="navigateTo('/editor')"
+        />
+        <Button
+          :label="$t('ui.topbar.changelog')"
+          icon="i-tabler-checklist"
+          :text="route.path !== '/changelog'"
+          rounded
+          size="small"
+          severity="secondary"
+          @click="navigateTo('/changelog')"
+        />
+        <Button
+          :label="$t('ui.topbar.faq')"
+          icon="i-tabler-help"
+          :text="route.path !== '/faq'"
+          rounded
+          size="small"
+          severity="secondary"
+          @click="navigateTo('/faq')"
+        />
       </div>
     </template>
 
