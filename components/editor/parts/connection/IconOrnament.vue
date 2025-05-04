@@ -14,8 +14,8 @@ const {
   <div
     class="container"
     :class="{
-      'right': ornament?.position === 'RIGHT',
-      'bottom': ornament?.position === 'BOTTOM',
+      'ornament-right': ornament?.position === 'RIGHT',
+      'ornament-bottom': ornament?.position === 'BOTTOM',
       'with-pedestrian': walk,
     }"
   >
@@ -43,11 +43,11 @@ const {
   gap: .125em;
   width: max-content;
 
-  &.bottom {
+  &.ornament-bottom {
     flex-direction: column;
   }
 
-  &.left {
+  &.ornament-left {
     flex-direction: row-reverse;
   }
 
@@ -61,7 +61,7 @@ const {
   grid-column: span 2;
 }
 
-.right {
+.ornament-right {
   height: 1em;
   min-width: 2.125em;
   grid-column: span 2;
@@ -71,7 +71,7 @@ const {
   }
 }
 
-.bottom {
+.ornament-bottom {
   height: 2.125em;
   grid-row: span 2;
 
@@ -90,7 +90,7 @@ const {
   color: var(--blue-ratp-paper);
 }
 
-.bottom .joint {
+.ornament-bottom .joint {
   position: absolute;
   left: 50%;
   min-width: .0625em;
@@ -102,7 +102,7 @@ const {
   z-index: -1;
 }
 
-.right .joint {
+.ornament-right .joint {
   position: absolute;
   top: 50%;
   width: .25em;
