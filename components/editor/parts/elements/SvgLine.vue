@@ -16,7 +16,7 @@ const {
 
 const roundedPath = computed(() => {
   try {
-    return roundCorners(path, 500).path
+    return roundCorners(path, 200).path
   } catch (e: any) {
     return path
   }

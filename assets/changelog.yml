@@ -5,6 +5,7 @@ changelog:
     entries:
       ADDED:
         - Ajout de la possibilité de choisir une taille de cadre personnalisée
+        - Introduction de l’exportation au format PDF
       FIXED:
         - value: Fix de certains préréglages
           details:

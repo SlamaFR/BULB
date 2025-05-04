@@ -9,7 +9,7 @@
       }
     },
     "color": "#f78f4b",
-    "mapSize": 20,
+    "mapSize": "20",
     "lineThickness": "0.375",
     "lineStyle": "PLAIN",
     "dotsColorPolicy": "INHERIT",
