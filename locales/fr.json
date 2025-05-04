@@ -173,6 +173,10 @@
         "accept": "Terminé",
         "header": "Épaisseur de ligne personnalisée"
       },
+      "custom_map_size": {
+        "accept": "Terminé",
+        "header": "Taille du cadre personnalisée"
+      },
       "end_of_year_celebrations": {
         "close": "Fermer",
         "disable_and_close": "Désactiver et fermer",

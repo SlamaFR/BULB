@@ -173,6 +173,10 @@
         "accept": "Done",
         "header": "Custom line thickness"
       },
+      "custom_map_size": {
+        "accept": "Done",
+        "header": "Custom frame size"
+      },
       "end_of_year_celebrations": {
         "close": "Close",
         "disable_and_close": "Disable and close",

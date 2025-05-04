@@ -1,5 +1,10 @@
 ---
 changelog:
+  - version: 1.4.6-alpha
+    date: '1970-01-01T00:00:00.000Z'
+    entries:
+      ADDED:
+        - Ajout de la possibilité de choisir une taille de cadre personnalisée
   - version: 1.4.5-alpha
     date: '2025-01-06T00:00:00.000Z'
     entries:

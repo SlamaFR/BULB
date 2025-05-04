@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue'
 
-const model = defineModel<number | undefined>({ required: true })
+const model = defineModel<string | number | null | undefined>({ required: true })
 
 const currentValue = ref<string>(model.value?.toString() ?? '')
 watch(currentValue, (value) => {
