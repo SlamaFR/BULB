@@ -1,1 +1,473 @@
-{"version":"1.4.1-alpha","line":{"mode":"TRAIN","index":{"mode":"TRAIN","$builtinLineIndex":{"index":"K"}},"color":"#9b993b","lineThickness":"1.5","lineStyle":"PLAIN","dotsColorPolicy":"WHITE","fullyAccessible":false,"frameTerminusNames":false,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"e762c30e-20ee-408a-a4b9-06944c98e8ad","$branch":{"elementSpacing":"5","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"97027468-4ed8-4f08-837e-d7b82afe8707","$stop":{"name":"Paris – Gare du Nord","placeName":"","subtitle":"","accessible":true,"reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"df9ff6dd-54cc-4f86-9943-f2e239070c6c","$modeConnection":{"mode":"RER","elements":[{"id":"7a3bedd7-d127-47b6-9aa9-1121c4d8506a","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"75bc4ef3-d21e-494d-af31-a5e410d048d9","position":"BOTTOM","$airportOrnament":{"airport":"BOTH"}}}},{"id":"fc04a028-270a-40bc-8b3d-1b272f75aedb","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"D"}},"walk":false,"ornament":null}},{"id":"9cde9b8c-b2be-4ee0-8318-afeb7bed5356","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"E"}},"walk":false,"ornament":{"id":"b7e19e52-34e1-4766-9123-5f34d1e122a0","position":"RIGHT","$textOrnament":{"text":"Magenta"}}}}],"walk":false}},{"id":"5897016d-6f1d-44e7-b107-0697aec62ff3","$modeConnection":{"mode":"METRO","elements":[{"id":"726e8945-4143-458a-bbe7-7d80b18c9928","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"2"}},"walk":false,"ornament":null}},{"id":"b6878175-1263-4c79-975d-51e2b765982d","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"4"}},"walk":false,"ornament":null}},{"id":"a20d8a7e-3e5b-4559-b651-9f45c22a38fe","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"5"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"4ef6eff5-1a80-48cb-9d0f-b715eaed7e11","$serviceConnection":{"elements":[{"id":"23bfd379-778a-403f-9ab4-72bf4c4f7262","$serviceConnectionElement":{"service":"MAIN_STATION","ornament":null}}],"walk":false}}]}},{"id":"95c182a8-bc41-4989-92db-b2d41c95a323","$stop":{"name":"Aulnay-sous-Bois","placeName":"","subtitle":"","accessible":true,"reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"2c04b320-b4e0-411f-ba7d-c3af9e55b481","$modeConnection":{"mode":"RER","elements":[{"id":"ec020bcd-69da-4904-bada-56583f905b26","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"c6b90d2e-a15c-4ef0-9b5d-a5718b161212","position":"RIGHT","$airportOrnament":{"airport":"BOTH"}}}}],"walk":false}}]}},{"id":"ac1e84f4-7a6b-4725-bef5-531684e08daf","$stop":{"name":"Mitry – Claye","placeName":"","subtitle":"","accessible":true,"reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"105f1444-2aac-45e4-abb8-22bf581639fb","$modeConnection":{"mode":"RER","elements":[{"id":"0c75dfcd-12b6-4465-b119-97164aa1e4c0","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"3983e614-3944-442d-b801-3aab0b40f268","position":"RIGHT","$airportOrnament":{"airport":"ORY"}}}}],"walk":false}}]}},{"id":"df52d281-b8b0-427f-bb32-37c2fc98b4e0","$stop":{"name":"Compans","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"bbb3dfd8-2577-4ebc-be91-c0282ad4379d","$stop":{"name":"Thieux – Nantouillet","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"873b07f6-d88a-4bf7-80f0-d4a9bec543d1","$stop":{"name":"Dammartin – Juilly\nSaint-Mard","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"2671cce6-d502-42f6-afb7-fcd45ceec111","$serviceConnection":{"elements":[{"id":"e0540963-0a57-45ea-b20b-a4d028b467f3","$serviceConnectionElement":{"service":"TER","ornament":null}}],"walk":false}}]}},{"id":"3f152241-b5bd-45a2-be3e-e9bd8d91ae93","$stop":{"name":"Le Plessis-Belleville","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"ff863338-0e78-486f-98a5-0d5ebca5bf9b","$stop":{"name":"Nanteuil-le-Haudouin","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"ce350f4f-8ce0-4f51-b17a-b6aef60dba38","$stop":{"name":"Ormoy-Villiers","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"a57b19eb-1c5c-48e7-a6c0-4cb1f838ba1b","$stop":{"name":"Crépy-en-Valois","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"3521f471-ea2a-4338-9fda-e6b5c929a465","$serviceConnection":{"elements":[{"id":"c6f56384-1027-4eb7-bc70-4aa3512f4ade","$serviceConnectionElement":{"service":"TER","ornament":null}}],"walk":false}}]}}]}}]}}]},"customIndices":[]}
+{
+  "version": "1.4.5-alpha",
+  "line": {
+    "mode": "TRAIN",
+    "index": {
+      "mode": "TRAIN",
+      "$builtinLineIndex": {
+        "index": "K"
+      }
+    },
+    "color": "#9b993b",
+    "lineThickness": "1.5",
+    "lineStyle": "PLAIN",
+    "dotsColorPolicy": "WHITE",
+    "fullyAccessible": false,
+    "frameTerminusNames": false,
+    "mapSize": "20",
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "e762c30e-20ee-408a-a4b9-06944c98e8ad",
+              "$branch": {
+                "elementSpacing": "5",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "97027468-4ed8-4f08-837e-d7b82afe8707",
+                    "$stop": {
+                      "name": "Paris – Gare du Nord",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": true,
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "df9ff6dd-54cc-4f86-9943-f2e239070c6c",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "7a3bedd7-d127-47b6-9aa9-1121c4d8506a",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "75bc4ef3-d21e-494d-af31-a5e410d048d9",
+                                    "position": "BOTTOM",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "id": "fc04a028-270a-40bc-8b3d-1b272f75aedb",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "D"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "9cde9b8c-b2be-4ee0-8318-afeb7bed5356",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "E"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "b7e19e52-34e1-4766-9123-5f34d1e122a0",
+                                    "position": "RIGHT",
+                                    "$textOrnament": {
+                                      "text": "Magenta"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "693a772c-ad2f-4cf1-9288-96609bd20ee0",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "726e8945-4143-458a-bbe7-7d80b18c9928",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "H"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "b6878175-1263-4c79-975d-51e2b765982d",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "P"
+                                    }
+                                  },
+                                  "walk": true,
+                                  "ornament": {
+                                    "id": "19580e34-6bd6-4ef2-a410-ee4093d04d6d",
+                                    "position": "RIGHT",
+                                    "$textOrnament": {
+                                      "text": "Paris Est"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "5897016d-6f1d-44e7-b107-0697aec62ff3",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "726e8945-4143-458a-bbe7-7d80b18c9928",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "2"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "b6878175-1263-4c79-975d-51e2b765982d",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "4"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "a20d8a7e-3e5b-4559-b651-9f45c22a38fe",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "5"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "fbf06942-1a5b-4198-bc82-6553fe605ff1",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "4fd49f60-b4d2-484f-9393-af245d1a2f0e",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "7"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "c12e943c-d871-4a7c-9f0c-e7b7a9a388c0",
+                                    "position": "RIGHT",
+                                    "$textOrnament": {
+                                      "text": "Gare de l’Est"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": true
+                          }
+                        },
+                        {
+                          "id": "8a1ec94d-1695-45d0-a024-24211af864cd",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "086c2e80-de09-46a9-b743-65c40ecc0fed",
+                                "$serviceConnectionElement": {
+                                  "service": "MAIN_STATION",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "95c182a8-bc41-4989-92db-b2d41c95a323",
+                    "$stop": {
+                      "name": "Aulnay-sous-Bois",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": true,
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "2c04b320-b4e0-411f-ba7d-c3af9e55b481",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "ec020bcd-69da-4904-bada-56583f905b26",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "c6b90d2e-a15c-4ef0-9b5d-a5718b161212",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "ac1e84f4-7a6b-4725-bef5-531684e08daf",
+                    "$stop": {
+                      "name": "Mitry – Claye",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": true,
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "105f1444-2aac-45e4-abb8-22bf581639fb",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "0c75dfcd-12b6-4465-b119-97164aa1e4c0",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "3983e614-3944-442d-b801-3aab0b40f268",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "ORY"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "df52d281-b8b0-427f-bb32-37c2fc98b4e0",
+                    "$stop": {
+                      "name": "Compans",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "bbb3dfd8-2577-4ebc-be91-c0282ad4379d",
+                    "$stop": {
+                      "name": "Thieux – Nantouillet",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "873b07f6-d88a-4bf7-80f0-d4a9bec543d1",
+                    "$stop": {
+                      "name": "Dammartin – Juilly\nSaint-Mard",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "2671cce6-d502-42f6-afb7-fcd45ceec111",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "e0540963-0a57-45ea-b20b-a4d028b467f3",
+                                "$serviceConnectionElement": {
+                                  "service": "TER",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "3f152241-b5bd-45a2-be3e-e9bd8d91ae93",
+                    "$stop": {
+                      "name": "Le Plessis-Belleville",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "ff863338-0e78-486f-98a5-0d5ebca5bf9b",
+                    "$stop": {
+                      "name": "Nanteuil-le-Haudouin",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "ce350f4f-8ce0-4f51-b17a-b6aef60dba38",
+                    "$stop": {
+                      "name": "Ormoy-Villiers",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "a57b19eb-1c5c-48e7-a6c0-4cb1f838ba1b",
+                    "$stop": {
+                      "name": "Crépy-en-Valois",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "3521f471-ea2a-4338-9fda-e6b5c929a465",
+                          "$serviceConnection": {
+                            "elements": [
+                              {
+                                "id": "c6f56384-1027-4eb7-bc70-4aa3512f4ade",
+                                "$serviceConnectionElement": {
+                                  "service": "TER",
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customIndices": []
+}

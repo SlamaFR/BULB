@@ -1,1 +1,596 @@
-{"version":"1.4.0-alpha","line":{"mode":"METRO","index":{"mode":"METRO","$builtinLineIndex":{"index":"16"}},"color":"#f59fb3","lineThickness":"0.375","lineStyle":"PLAIN","dotsColorPolicy":"INHERIT","fullyAccessible":true,"frameTerminusNames":true,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"afe6bc26-db02-4acf-b8d2-4c07f4265474","$branch":{"elementSpacing":"5","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"0aa29070-eb93-4a90-91f1-51d7bc936889","$stop":{"name":"Saint-Denis – Pleyel","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"f42fe1a2-1606-4fc8-a7d1-5be91af185df","$modeConnection":{"mode":"METRO","elements":[{"id":"2dace87d-75a1-45e8-a09c-78269b5d459f","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"14"}},"walk":false,"ornament":{"id":"f0b3ad9d-ef33-4435-8779-7f5059723ee2","position":"BOTTOM","$airportOrnament":{"airport":"ORY"}}}},{"id":"d0023de2-43e2-4a5b-8a0a-0bc6c12d4d86","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"15"}},"walk":false,"ornament":null}},{"id":"14e78f29-9f1c-4431-855b-424a484e9697","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"17"}},"walk":false,"ornament":{"id":"ca7fea74-d95e-4c8d-9e59-298a320d149d","position":"BOTTOM","$airportOrnament":{"airport":"CDG"}}}}],"walk":false}},{"id":"035bd42e-06bc-4c96-bc53-4196529e28c5","$modeConnection":{"mode":"METRO","elements":[{"id":"7548f896-724a-42ff-8514-ba5142519c06","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"13"}},"walk":false,"ornament":null}}],"walk":true}},{"id":"62bd8183-fd9d-4172-be26-12e464d5be0a","$modeConnection":{"mode":"RER","elements":[{"id":"54b639d7-3e61-4add-8339-3099e5ddcb27","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"D"}},"walk":false,"ornament":null}}],"walk":true}}]}},{"id":"00de8d55-ed1f-4886-b123-b25b5ee6e1c1","$stop":{"name":"La Courneuve – Six Routes","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"8cdd8f5b-b465-4511-993a-c21ecdb64715","$modeConnection":{"mode":"METRO","elements":[{"id":"3fe98e9b-da8c-4e01-b0f4-220dcc5fe090","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"17"}},"walk":false,"ornament":{"id":"6f00ab4a-0602-4a94-bd3a-6ac978b4387b","position":"RIGHT","$airportOrnament":{"airport":"CDG"}}}}],"walk":false}},{"id":"fd82850e-435c-4e7b-9dc9-04be77b683eb","$modeConnection":{"mode":"TRAM","elements":[{"id":"6e3398dd-561e-4308-8fc6-550becb42698","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"1"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"4735d268-a38f-44ef-9e64-b349574f478c","$stop":{"name":"Le Bourget","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"46968daf-7ef7-4c5a-91ac-e5b451d92092","$modeConnection":{"mode":"METRO","elements":[{"id":"b9d57a9e-cbe4-4091-ab56-a9e15146bc17","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"7"}},"walk":false,"ornament":null}},{"id":"29caef57-9130-4bf7-87bc-f58d014f9ad5","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"17"}},"walk":false,"ornament":{"id":"9d4664e3-fab6-43ca-8116-b0cc6587c837","position":"RIGHT","$airportOrnament":{"airport":"CDG"}}}}],"walk":false}},{"id":"5c07c124-a0b7-4680-90e4-8bc184dc67fa","$modeConnection":{"mode":"RER","elements":[{"id":"70c46fd4-1fd7-4357-a63e-276c72861449","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"394c0c5d-fa87-4326-a148-c194270743f7","position":"RIGHT","$airportOrnament":{"airport":"BOTH"}}}}],"walk":false}},{"id":"e1e20f94-1e01-4473-aaf2-d16dc2dfed83","$modeConnection":{"mode":"TRAM","elements":[{"id":"69ced43c-1d74-4a86-b05e-cfadf6549084","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"11"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"41c0082b-e92c-4b9d-b21c-4f1909b913c8","$stop":{"name":"Parc du Blanc-Mesnil","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"08d9e28d-5166-4580-a830-6fb8404fc940","$stop":{"name":"Aulnay – Val Francilia","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"2980d7b7-f01a-44b3-b3bf-33b0abe518d8","$stop":{"name":"Sevran – Beaudottes","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"273b0a76-a6c6-4e70-9700-c52d34c46b0c","$modeConnection":{"mode":"RER","elements":[{"id":"49d6029a-7b5d-4030-b995-cb6997fe45fa","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"864511f9-e83f-46f9-a661-fcb49b43df0e","position":"RIGHT","$airportOrnament":{"airport":"BOTH"}}}}],"walk":false}}]}},{"id":"43aa216a-aad8-4d04-9718-82182766ae3a","$stop":{"name":"Sevran – Livry","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"46785287-66ec-499c-8805-e3a1c886de79","$modeConnection":{"mode":"RER","elements":[{"id":"b4ab106d-6b61-4f3b-ac56-d9cc3a48c910","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"B"}},"walk":false,"ornament":{"id":"35c56ef5-7911-40b3-9cd0-cef8dc0640af","position":"RIGHT","$airportOrnament":{"airport":"ORY"}}}}],"walk":false}}]}},{"id":"0e53e593-7a33-499f-aed8-c7e2df7e385b","$stop":{"name":"Clichy – Montfermeil","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"dbd276fe-313b-43a1-a955-03cfa47a6edd","$modeConnection":{"mode":"TRAM","elements":[{"id":"4c84571d-2a48-4c4a-94eb-884c091bd04f","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"4"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"386f99a7-9d39-4def-9580-946512c687e8","$stop":{"name":"Chelles – Gournay","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"4172381a-e19a-4016-8c21-1769509c4b04","$modeConnection":{"mode":"RER","elements":[{"id":"575dd092-eb7d-4ddb-8306-46ec8335e760","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"E"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"fd794eff-8650-4a34-a84e-b78221b7fab0","$modeConnection":{"mode":"TRAIN","elements":[{"id":"5ed8e713-ed42-43f9-ba80-b142497feb2c","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"P"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"a4cc1a2c-383f-4880-aa9d-5f6e4cc527d6","$stop":{"name":"Noisy – Champs","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"d4b5042b-80ca-4249-8ee5-1bf425c712d4","$modeConnection":{"mode":"METRO","elements":[{"id":"60b0d50e-4d8c-4dbf-bde4-915171e61295","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"11"}},"walk":false,"ornament":null}},{"id":"02150ae0-f3ef-4945-be6e-b09f8b951914","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"15"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"1e7ce29b-b7d0-41f8-ae58-7403b2bf1aa5","$modeConnection":{"mode":"RER","elements":[{"id":"98574454-4ccc-4209-8bb4-580dcb5af3af","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"A"}},"walk":false,"ornament":null}}],"walk":false}}]}}]}}]}}]},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "METRO",
+    "index": {
+      "mode": "METRO",
+      "$builtinLineIndex": {
+        "index": "16"
+      }
+    },
+    "color": "#f59fb3",
+    "lineThickness": "0.375",
+    "lineStyle": "PLAIN",
+    "dotsColorPolicy": "INHERIT",
+    "fullyAccessible": true,
+    "frameTerminusNames": true,
+    "mapSize": 15,
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "afe6bc26-db02-4acf-b8d2-4c07f4265474",
+              "$branch": {
+                "elementSpacing": "5",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "0aa29070-eb93-4a90-91f1-51d7bc936889",
+                    "$stop": {
+                      "name": "Saint-Denis – Pleyel",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "f42fe1a2-1606-4fc8-a7d1-5be91af185df",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "2dace87d-75a1-45e8-a09c-78269b5d459f",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "14"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "f0b3ad9d-ef33-4435-8779-7f5059723ee2",
+                                    "position": "BOTTOM",
+                                    "$airportOrnament": {
+                                      "airport": "ORY"
+                                    }
+                                  }
+                                }
+                              },
+                              {
+                                "id": "d0023de2-43e2-4a5b-8a0a-0bc6c12d4d86",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "15"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              },
+                              {
+                                "id": "14e78f29-9f1c-4431-855b-424a484e9697",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "17"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "ca7fea74-d95e-4c8d-9e59-298a320d149d",
+                                    "position": "BOTTOM",
+                                    "$airportOrnament": {
+                                      "airport": "CDG"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "035bd42e-06bc-4c96-bc53-4196529e28c5",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "7548f896-724a-42ff-8514-ba5142519c06",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "13"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": true
+                          }
+                        },
+                        {
+                          "id": "62bd8183-fd9d-4172-be26-12e464d5be0a",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "54b639d7-3e61-4add-8339-3099e5ddcb27",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "D"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": true
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "00de8d55-ed1f-4886-b123-b25b5ee6e1c1",
+                    "$stop": {
+                      "name": "La Courneuve – Six Routes",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "8cdd8f5b-b465-4511-993a-c21ecdb64715",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "3fe98e9b-da8c-4e01-b0f4-220dcc5fe090",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "17"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "6f00ab4a-0602-4a94-bd3a-6ac978b4387b",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "CDG"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "fd82850e-435c-4e7b-9dc9-04be77b683eb",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "6e3398dd-561e-4308-8fc6-550becb42698",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "1"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "4735d268-a38f-44ef-9e64-b349574f478c",
+                    "$stop": {
+                      "name": "Le Bourget",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "46968daf-7ef7-4c5a-91ac-e5b451d92092",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "29caef57-9130-4bf7-87bc-f58d014f9ad5",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "17"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "9d4664e3-fab6-43ca-8116-b0cc6587c837",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "CDG"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "5c07c124-a0b7-4680-90e4-8bc184dc67fa",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "70c46fd4-1fd7-4357-a63e-276c72861449",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "394c0c5d-fa87-4326-a148-c194270743f7",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "e1e20f94-1e01-4473-aaf2-d16dc2dfed83",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "69ced43c-1d74-4a86-b05e-cfadf6549084",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "11"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "41c0082b-e92c-4b9d-b21c-4f1909b913c8",
+                    "$stop": {
+                      "name": "Parc du Blanc-Mesnil",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "08d9e28d-5166-4580-a830-6fb8404fc940",
+                    "$stop": {
+                      "name": "Aulnay – Val Francilia",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "2980d7b7-f01a-44b3-b3bf-33b0abe518d8",
+                    "$stop": {
+                      "name": "Sevran – Beaudottes",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "273b0a76-a6c6-4e70-9700-c52d34c46b0c",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "49d6029a-7b5d-4030-b995-cb6997fe45fa",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "864511f9-e83f-46f9-a661-fcb49b43df0e",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "BOTH"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "43aa216a-aad8-4d04-9718-82182766ae3a",
+                    "$stop": {
+                      "name": "Sevran – Livry",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "46785287-66ec-499c-8805-e3a1c886de79",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "b4ab106d-6b61-4f3b-ac56-d9cc3a48c910",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "B"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": {
+                                    "id": "35c56ef5-7911-40b3-9cd0-cef8dc0640af",
+                                    "position": "RIGHT",
+                                    "$airportOrnament": {
+                                      "airport": "ORY"
+                                    }
+                                  }
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "0e53e593-7a33-499f-aed8-c7e2df7e385b",
+                    "$stop": {
+                      "name": "Clichy – Montfermeil",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "dbd276fe-313b-43a1-a955-03cfa47a6edd",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "4c84571d-2a48-4c4a-94eb-884c091bd04f",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "4"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "386f99a7-9d39-4def-9580-946512c687e8",
+                    "$stop": {
+                      "name": "Chelles – Gournay",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "4172381a-e19a-4016-8c21-1769509c4b04",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "575dd092-eb7d-4ddb-8306-46ec8335e760",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "E"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "fd794eff-8650-4a34-a84e-b78221b7fab0",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "5ed8e713-ed42-43f9-ba80-b142497feb2c",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "P"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "a4cc1a2c-383f-4880-aa9d-5f6e4cc527d6",
+                    "$stop": {
+                      "name": "Noisy – Champs",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "d4b5042b-80ca-4249-8ee5-1bf425c712d4",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "02150ae0-f3ef-4945-be6e-b09f8b951914",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "15"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "1e7ce29b-b7d0-41f8-ae58-7403b2bf1aa5",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "98574454-4ccc-4209-8bb4-580dcb5af3af",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "A"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "customIndices": []
+}

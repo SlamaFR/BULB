@@ -5,6 +5,13 @@ changelog:
     entries:
       ADDED:
         - Ajout de la possibilité de choisir une taille de cadre personnalisée
+      FIXED:
+        - value: Fix de certains préréglages
+          details:
+            - Métros 3, 4, 6, 14, 16 et 18
+            - RER A, B et C
+            - Transilien K
+            - Tramways 1, 3a, 6, 7, 10 et 12
   - version: 1.4.5-alpha
     date: '2025-01-06T00:00:00.000Z'
     entries:

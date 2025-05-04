@@ -1,1 +1,470 @@
-{"version":"1.4.0-alpha","line":{"mode":"TRAM","index":{"mode":"TRAM","$builtinLineIndex":{"index":"6"}},"color":"#ed1c2a","lineThickness":"0.625","lineStyle":"STRIPED","dotsColorPolicy":"INHERIT","fullyAccessible":true,"frameTerminusNames":true,"mapSize":15,"topology":[{"id":"1","$lineSection":{"elements":[{"id":"8e83dee8-3b08-41f5-8d4e-4bbbdc3cf0b4","$branch":{"elementSpacing":"1.25","marginLeft":0,"marginRight":0,"invertedElements":false,"elements":[{"id":"2fd5a663-97c1-402b-a12e-48e359b56c9f","$stop":{"name":"Viroflay – Rive Droite","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"557ce408-f56b-40c0-bc14-6d618924ebe6","$modeConnection":{"mode":"TRAIN","elements":[{"id":"4177f16f-457d-47b8-aaa1-42778447e072","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"L"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"2a7466c0-c9d3-4053-8153-eea796772fe0","$stop":{"name":"Viroflay – Rive Gauche","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"bc240740-f987-441b-9096-b4a070dc0805","$modeConnection":{"mode":"RER","elements":[{"id":"0e37a72b-49db-489b-9924-5cc595b76fd3","$modeConnectionElement":{"lineIndex":{"mode":"RER","$builtinLineIndex":{"index":"C"}},"walk":false,"ornament":null}}],"walk":false}},{"id":"fb7048b9-278a-4cd4-9885-fd10d8ffed0a","$modeConnection":{"mode":"TRAIN","elements":[{"id":"4c80484d-9bbb-4313-b9ad-19886d7448fc","$modeConnectionElement":{"lineIndex":{"mode":"TRAIN","$builtinLineIndex":{"index":"N"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"a1c717ec-6cbc-4bfc-b022-6a1d9dd2c728","$stop":{"name":"Robert Wagner","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"9eece822-e406-45e5-99d2-13c2d9e5059f","$stop":{"name":"L’Onde","placeName":"","subtitle":"Maison des Arts","accessible":"undefined","reverse":false,"interestPoint":true,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"1c2ea57f-aa66-4f25-a815-f9ea5774f8d4","$stop":{"name":"Mairie de Vélizy","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"bac48f02-c5d9-4dd7-ab79-d517a7d503d9","$stop":{"name":"Louvois","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"5edf539d-e97d-4f59-9909-7b55b9824c55","$stop":{"name":"Inovel Parc Nord","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"51f6489f-c905-4f21-a7e0-02339662fb64","$stop":{"name":"Dewoitine","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"a7c6672f-3a5f-4cc8-bfcf-e8d6bc93a73b","$stop":{"name":"Vélizy 2","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"ce381fc6-d3ac-4d24-a764-cafcd87b96d1","$stop":{"name":"Medon-la-Forêt","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"2ec145c5-4aa6-45a2-80e5-9f9f47a14edd","$stop":{"name":"Georges Millandy","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"28ce1c12-7737-4c68-a51e-9f1a252eb2bf","$stop":{"name":"Georges Pompidou","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"b4e690a5-d248-43ae-a8f1-549e68aeee1a","$stop":{"name":"Pavé Blanc","placeName":"","subtitle":"Parc Novéos","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"f7e9078e-2b91-4e56-adeb-38389726a085","$stop":{"name":"Mail de la Plaine","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"a4832f77-ebe8-4a5f-97b9-c76974dd27c1","$stop":{"name":"Hôpital Béclère","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[{"id":"001b71cb-a1e0-4826-b6f0-e0beca733460","$modeConnection":{"mode":"TRAM","elements":[{"id":"851913ac-0489-4f25-986d-ab2e3d1613bd","$modeConnectionElement":{"lineIndex":{"mode":"TRAM","$builtinLineIndex":{"index":"10"}},"walk":false,"ornament":null}}],"walk":false}}]}},{"id":"ace47b68-bd49-499a-b173-81d9df314733","$stop":{"name":"Soleil Levant","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"79ac702d-0188-4088-8b7e-8d6057ebea3c","$stop":{"name":"Division Leclerc","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"e1195eb3-de5c-4c62-91e8-ecbfa908e724","$stop":{"name":"Parc André Malraux","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"18ee0937-cf5c-4a06-a9d2-d9b145653fb3","$stop":{"name":"Centre de Châtillon","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"0f84baf4-fe7b-44ea-bfe8-065bc46f6e9e","$stop":{"name":"Vauban","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":false,"connections":[]}},{"id":"3060185c-9069-4b6a-bb4a-a3893ea31f8f","$stop":{"name":"Châtillon – Montrouge","placeName":"","subtitle":"","accessible":"undefined","reverse":false,"interestPoint":false,"preventSubtitleOverlapping":true,"closed":false,"terminus":true,"connections":[{"id":"8200deed-4b8c-41d8-8ed1-ba7915b7c922","$modeConnection":{"mode":"METRO","elements":[{"id":"1e6d443d-b498-406a-9ce3-f01c20c8f77a","$modeConnectionElement":{"lineIndex":{"mode":"METRO","$builtinLineIndex":{"index":"13"}},"walk":false,"ornament":null}}],"walk":false}}]}}]}}]}}],"lineWidth":0.375},"customIndices":[]}
+{
+  "version": "1.4.0-alpha",
+  "line": {
+    "mode": "TRAM",
+    "index": {
+      "mode": "TRAM",
+      "$builtinLineIndex": {
+        "index": "6"
+      }
+    },
+    "color": "#ed1c2a",
+    "lineThickness": "0.625",
+    "lineStyle": "STRIPED",
+    "dotsColorPolicy": "INHERIT",
+    "fullyAccessible": true,
+    "frameTerminusNames": true,
+    "mapSize": 15,
+    "topology": [
+      {
+        "id": "1",
+        "$lineSection": {
+          "elements": [
+            {
+              "id": "8e83dee8-3b08-41f5-8d4e-4bbbdc3cf0b4",
+              "$branch": {
+                "elementSpacing": "1.25",
+                "marginLeft": 0,
+                "marginRight": 0,
+                "invertedElements": false,
+                "elements": [
+                  {
+                    "id": "2fd5a663-97c1-402b-a12e-48e359b56c9f",
+                    "$stop": {
+                      "name": "Viroflay – Rive Droite",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "557ce408-f56b-40c0-bc14-6d618924ebe6",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "4177f16f-457d-47b8-aaa1-42778447e072",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "L"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "2a7466c0-c9d3-4053-8153-eea796772fe0",
+                    "$stop": {
+                      "name": "Viroflay – Rive Gauche",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "bc240740-f987-441b-9096-b4a070dc0805",
+                          "$modeConnection": {
+                            "mode": "RER",
+                            "elements": [
+                              {
+                                "id": "0e37a72b-49db-489b-9924-5cc595b76fd3",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "RER",
+                                    "$builtinLineIndex": {
+                                      "index": "C"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        },
+                        {
+                          "id": "fb7048b9-278a-4cd4-9885-fd10d8ffed0a",
+                          "$modeConnection": {
+                            "mode": "TRAIN",
+                            "elements": [
+                              {
+                                "id": "4c80484d-9bbb-4313-b9ad-19886d7448fc",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAIN",
+                                    "$builtinLineIndex": {
+                                      "index": "N"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "a1c717ec-6cbc-4bfc-b022-6a1d9dd2c728",
+                    "$stop": {
+                      "name": "Robert Wagner",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "9eece822-e406-45e5-99d2-13c2d9e5059f",
+                    "$stop": {
+                      "name": "L’Onde",
+                      "placeName": "",
+                      "subtitle": "Maison des Arts",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": true,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "1c2ea57f-aa66-4f25-a815-f9ea5774f8d4",
+                    "$stop": {
+                      "name": "Mairie de Vélizy",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "bac48f02-c5d9-4dd7-ab79-d517a7d503d9",
+                    "$stop": {
+                      "name": "Louvois",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "5edf539d-e97d-4f59-9909-7b55b9824c55",
+                    "$stop": {
+                      "name": "Inovel Parc Nord",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "51f6489f-c905-4f21-a7e0-02339662fb64",
+                    "$stop": {
+                      "name": "Dewoitine",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "a7c6672f-3a5f-4cc8-bfcf-e8d6bc93a73b",
+                    "$stop": {
+                      "name": "Vélizy 2",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "ce381fc6-d3ac-4d24-a764-cafcd87b96d1",
+                    "$stop": {
+                      "name": "Meudon-la-Forêt",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "2ec145c5-4aa6-45a2-80e5-9f9f47a14edd",
+                    "$stop": {
+                      "name": "Georges Millandy",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "28ce1c12-7737-4c68-a51e-9f1a252eb2bf",
+                    "$stop": {
+                      "name": "Georges Pompidou",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "b4e690a5-d248-43ae-a8f1-549e68aeee1a",
+                    "$stop": {
+                      "name": "Pavé Blanc",
+                      "placeName": "",
+                      "subtitle": "Parc Novéos",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "f7e9078e-2b91-4e56-adeb-38389726a085",
+                    "$stop": {
+                      "name": "Mail de la Plaine",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "a4832f77-ebe8-4a5f-97b9-c76974dd27c1",
+                    "$stop": {
+                      "name": "Hôpital Béclère",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": [
+                        {
+                          "id": "001b71cb-a1e0-4826-b6f0-e0beca733460",
+                          "$modeConnection": {
+                            "mode": "TRAM",
+                            "elements": [
+                              {
+                                "id": "851913ac-0489-4f25-986d-ab2e3d1613bd",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "TRAM",
+                                    "$builtinLineIndex": {
+                                      "index": "10"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "id": "ace47b68-bd49-499a-b173-81d9df314733",
+                    "$stop": {
+                      "name": "Soleil Levant",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "79ac702d-0188-4088-8b7e-8d6057ebea3c",
+                    "$stop": {
+                      "name": "Division Leclerc",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "e1195eb3-de5c-4c62-91e8-ecbfa908e724",
+                    "$stop": {
+                      "name": "Parc André Malraux",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "18ee0937-cf5c-4a06-a9d2-d9b145653fb3",
+                    "$stop": {
+                      "name": "Centre de Châtillon",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "0f84baf4-fe7b-44ea-bfe8-065bc46f6e9e",
+                    "$stop": {
+                      "name": "Vauban",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": false,
+                      "connections": []
+                    }
+                  },
+                  {
+                    "id": "3060185c-9069-4b6a-bb4a-a3893ea31f8f",
+                    "$stop": {
+                      "name": "Châtillon – Montrouge",
+                      "placeName": "",
+                      "subtitle": "",
+                      "accessible": "undefined",
+                      "reverse": false,
+                      "interestPoint": false,
+                      "preventSubtitleOverlapping": true,
+                      "closed": false,
+                      "terminus": true,
+                      "connections": [
+                        {
+                          "id": "8200deed-4b8c-41d8-8ed1-ba7915b7c922",
+                          "$modeConnection": {
+                            "mode": "METRO",
+                            "elements": [
+                              {
+                                "id": "1e6d443d-b498-406a-9ce3-f01c20c8f77a",
+                                "$modeConnectionElement": {
+                                  "lineIndex": {
+                                    "mode": "METRO",
+                                    "$builtinLineIndex": {
+                                      "index": "13"
+                                    }
+                                  },
+                                  "walk": false,
+                                  "ornament": null
+                                }
+                              }
+                            ],
+                            "walk": false
+                          }
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    ],
+    "lineWidth": 0.375
+  },
+  "customIndices": []
+}
