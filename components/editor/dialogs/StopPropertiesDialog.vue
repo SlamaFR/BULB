@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { useBreakpoints } from '#imports'
+import { breakpointsTailwind } from '@vueuse/core'
 import { watch } from 'vue'
 import { cleanName } from '~/utils/text'
 
@@ -23,6 +25,9 @@ const stopTypeOptions = [
   { label: 'ui.dialogs.stop_properties.stop_type.terminus', value: true },
 ]
 
+const breakpoints = useBreakpoints(breakpointsTailwind)
+const horizontal = breakpoints.greaterOrEqual('lg')
+
 watch(() => stop.value.$stop.name, val => stop.value.$stop.name = cleanName(val))
 watch(() => stop.value.$stop.placeName, val => stop.value.$stop.placeName = cleanName(val))
 watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanName(val))
@@ -31,16 +36,10 @@ watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanN
 <template>
   <Dialog
     v-model:visible="visible"
+    :header="$t('ui.dialogs.stop_properties.header')"
     modal
   >
-    <template #header>
-      <div class="flex flex-row items-center gap-2">
-        <span class="p-dialog-title" data-pc-section="title">{{ $t('ui.dialogs.stop_properties.header') }}</span>
-        <New />
-      </div>
-    </template>
-
-    <div class="flex flex-row gap-2">
+    <div class="flex max-lg:flex-col flex-row gap-2">
       <div class="flex flex-col gap-4 min-w-20em">
         <div class="flex flex-col gap-1">
           <label :for="`${stop.id}_title`">{{ $t('ui.dialogs.stop_properties.stop_name') }}</label>
@@ -73,7 +72,8 @@ watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanN
         </div>
       </div>
 
-      <Divider layout="vertical" pt:root:class="important-my-1" />
+      <Divider v-if="horizontal" layout="vertical" pt:root:class="important-my-1" />
+      <Divider v-else layout="horizontal" pt:root:class="important-mx-1" />
 
       <div class="flex flex-col gap-4 min-w-20em">
         <div class="flex flex-col gap-1">

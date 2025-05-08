@@ -1,39 +1,82 @@
-<template>
-  <div class="flex-grow flex flex-col gap-5 h-full">
-    <div class="editor">
-      <div class="controls flex flex-col gap-4 min-w-20em">
-        <Panel :header="$t('ui.menu.title')">
-          <MainMenu />
-        </Panel>
-        <Panel :header="$t('ui.properties.title')">
-          <GeneralMapSettings />
-        </Panel>
-      </div>
+<script setup lang="ts">
+import { definePageMeta } from '#imports'
 
-      <div class="canvas flex flex-col gap-4">
-        <Panel
-          :header="$t('ui.map_editor.title')"
-          pt:root:class="flex flex-col flex-grow"
-          pt:content-container:class="flex-grow"
-          pt:content:class="h-full"
-        >
-          <MapEditor />
-        </Panel>
-      </div>
+definePageMeta({
+  layout: 'default-fixed-size',
+})
+</script>
+
+<template>
+  <div class="layout">
+    <div class="menus">
+      <Panel :header="$t('ui.menu.title')">
+        <MainMenu />
+      </Panel>
+      <Panel :header="$t('ui.properties.title')">
+        <GeneralMapSettings />
+      </Panel>
     </div>
+
+    <Panel
+      :header="$t('ui.map_editor.title')"
+      pt:root:class="flex flex-col min-h-0 max-h-full"
+      pt:content-container:class="flex-grow min-h-0"
+      pt:content:class="h-full"
+    >
+      <MapEditor />
+    </Panel>
   </div>
 
   <BrowserCheck />
 </template>
 
 <style scoped lang="scss">
-.editor {
+.layout {
+  //grid grid-cols-[auto_1fr] gap-2 min-h-0 max-h-full
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  max-width: 100%;
-  min-width: 0;
-  flex-grow: 1;
+  grid-template-columns: auto 1fr;
+  gap: .5rem;
+  min-height: 0;
+  max-height: 100%;
+}
+
+.menus {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  min-width: 20em;
+  overflow-y: auto;
+}
+
+@media (max-width: 1024px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .menus {
+    order: 1;
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 641px) {
+  .menus {
+    min-width: 0;
+    order: 1;
+    flex-direction: row;
+
+    > * {
+      flex-grow: 1;
+    }
+  }
+}
+
+/*
+.canvas {
+  display: flex;
+  flex-direction: column;
   gap: 1rem;
+  min-width: 0;
 }
 
 @media (max-width: 640px) {
@@ -74,4 +117,6 @@
     }
   }
 }
+
+ */
 </style>

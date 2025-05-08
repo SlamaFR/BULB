@@ -76,7 +76,7 @@ function onStart(e: DraggableEvent<Element>) {
         </div>
       </div>
       <div class="preview h-full flex items-center">
-        <BranchElement :model-value="clone(element)" />
+        <BranchElement :model-value="clone(element)" :reverse="false" />
       </div>
     </div>
   </VueDraggable>
@@ -99,6 +99,7 @@ function onStart(e: DraggableEvent<Element>) {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
     span {
       font-size: 1rem;
@@ -109,11 +110,16 @@ function onStart(e: DraggableEvent<Element>) {
       cursor: grabbing;
     }
 
-    & > .item {
+    &:hover {
+      box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.05);
+    }
+
+    & .item {
       display: block;
     }
 
-    & > :not(.item) {
+    & .preview {
       display: none;
     }
   }

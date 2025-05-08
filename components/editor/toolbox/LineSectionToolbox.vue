@@ -147,6 +147,7 @@ function clone(element: Element): LineElement {
     display: flex;
     flex-direction: column;
     align-items: center;
+    transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
     span {
       font-size: 1rem;
@@ -155,6 +156,11 @@ function clone(element: Element): LineElement {
 
     &:active {
       cursor: grabbing;
+    }
+
+    &:hover {
+      box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.25);
+      transform: scale(1.05);
     }
 
     & .item {
