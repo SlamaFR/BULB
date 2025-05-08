@@ -14,8 +14,8 @@ const { line } = storeToRefs(useProject())
 const el = ref()
 
 const { width, height } = useElementSize(el)
-const pageWidth = computed(() => `${(width.value / PIXEL_DENSITY).toFixed(7)}in`)
-const pageHeight = computed(() => `${(height.value / PIXEL_DENSITY).toFixed(7)}in`)
+const pageWidth = computed(() => `${((width.value + 1) / PIXEL_DENSITY).toFixed(7)}in`)
+const pageHeight = computed(() => `${((height.value + 1) / PIXEL_DENSITY).toFixed(7)}in`)
 
 provide<LineContext>(LineContextKey, {
   color: computed(() => line.value.color ?? '#000000'),
@@ -90,5 +90,9 @@ onMounted(() => {
 
 .export-hide {
   display: none !important;
+}
+
+@page {
+  margin: 0 !important;
 }
 </style>
