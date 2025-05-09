@@ -104,6 +104,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth, inverted })
     v-model:visible="showPropertiesDialog"
     v-model="stop"
     :allow-city="lineContext.frameTerminusNames.value"
+    @open-connections="showConnectionsEditor = true"
   />
   <ConnectionsEditor
     v-model:visible="showConnectionsEditor"

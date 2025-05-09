@@ -6,6 +6,9 @@ import { cleanName } from '~/utils/text'
 const { allowCity } = defineProps<{
   allowCity: boolean
 }>()
+const emit = defineEmits<{
+  openConnections: []
+}>()
 const visible = defineModel<boolean>('visible', { required: true })
 const stop = defineModel<Stop>({ required: true })
 const accessibilityOptions = [
@@ -30,6 +33,11 @@ const horizontal = breakpoints.greaterOrEqual('lg')
 watch(() => stop.value.$stop.name, val => stop.value.$stop.name = cleanName(val))
 watch(() => stop.value.$stop.placeName, val => stop.value.$stop.placeName = cleanName(val))
 watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanName(val))
+
+function openConnectionsEditor() {
+  emit('openConnections')
+  visible.value = false
+}
 </script>
 
 <template>
@@ -129,6 +137,10 @@ watch(() => stop.value.$stop.subtitle, val => stop.value.$stop.subtitle = cleanN
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="flex justify-end gap-4 mt-8">
+      <Button label="Modifier les correspondances" @click="openConnectionsEditor" />
     </div>
   </Dialog>
 </template>
