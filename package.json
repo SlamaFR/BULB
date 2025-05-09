@@ -16,12 +16,12 @@
   "devDependencies": {
     "@antfu/eslint-config": "^3.12.0",
     "@basitcodeenv/vue3-device-detect": "^1.0.3",
-    "@iconify-json/tabler": "^1.2.13",
-    "@iconify/tools": "^4.1.1",
-    "@intlify/unplugin-vue-i18n": "^6.0.2",
+    "@iconify-json/tabler": "^1.2.17",
+    "@iconify/tools": "^4.1.2",
+    "@intlify/unplugin-vue-i18n": "^6.0.8",
     "@le-pepe/nuxt-snow-effect": "^1.2.2",
     "@le-pepe/snow-effect": "^0.1.13",
-    "@modyfi/vite-plugin-yaml": "^1.1.0",
+    "@modyfi/vite-plugin-yaml": "^1.1.1",
     "@nuxt/fonts": "^0.10.3",
     "@nuxt/kit": "^3.14.1592",
     "@nuxtjs/color-mode": "^3.5.2",
@@ -39,7 +39,7 @@
     "consola": "^3.3.0",
     "dotenv": "^16.4.7",
     "eslint": "^9.17.0",
-    "html-to-image": "^1.11.11",
+    "html-to-image": "1.11.11",
     "html2canvas": "^1.4.1",
     "nuxt": "^3.14.1592",
     "pinia": "^2.3.0",
@@ -50,6 +50,6 @@
     "uuid": "^11.0.3",
     "vitest": "^2.1.8",
     "vue-draggable-plus": "^0.6.0",
-    "vue-i18n": "^9.14.2"
+    "vue-i18n": "^9.14.4"
   }
 }
