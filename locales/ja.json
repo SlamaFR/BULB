@@ -355,7 +355,8 @@
     },
     "menu": {
       "custom_indices": "特注の路線記号",
-      "export": "エクスポート",
+      "export": "PNGにエクスポート",
+      "export_pdf": "PDFにエクスポート",
       "new_project": "新しいプロジェクト",
       "open": "開く",
       "save": "保存",

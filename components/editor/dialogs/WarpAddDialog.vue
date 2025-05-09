@@ -224,24 +224,26 @@ function addAllStops() {
                       <span v-if="item.subtitle">{{ item.subtitle }}</span>
                     </div>
                   </div>
-                  <div class="flex flex-row items-center">
+                  <div class="flex flex-row items-center gap-1">
                     <Button
                       v-tooltip.left="$t('ui.dialogs.stop_properties.terminus')"
                       class="flex-shrink-0"
-                      :icon="item.terminus ? 'i-tabler-directions-filled' : 'i-tabler-directions'"
+                      icon="i-tabler-track"
+                      :severity="item.terminus ? 'primary' : 'secondary'"
+                      :variant="item.terminus ? undefined : 'text'"
+                      pt:root:class="important-h-2rem w-2rem"
                       size="small"
-                      severity="secondary"
                       rounded
-                      text
                       @click="stopsToAdd[index].terminus = !stopsToAdd[index].terminus"
                     />
                     <Button
                       class="flex-shrink-0"
                       icon="i-tabler-trash"
-                      size="small"
                       severity="danger"
                       rounded
                       text
+                      pt:root:class="important-h-2rem w-2rem"
+                      size="small"
                       @click="stopsToAdd.splice(index, 1)"
                     />
                   </div>

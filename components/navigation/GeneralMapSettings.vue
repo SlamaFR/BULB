@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { storeToRefs } from 'pinia'
-import { ref, watch } from 'vue'
+import { watch } from 'vue'
 import { useProject } from '~/stores/useProject'
 import {
   modeToDotsColorPolicy,
@@ -10,8 +10,6 @@ import {
 } from '~/utils/properties'
 
 const { line } = storeToRefs(useProject())
-
-const showPresetSelector = ref(false)
 
 watch(() => line.value.mode, (val) => {
   if (!val) return
@@ -81,14 +79,5 @@ function updateColor(newColor: string | null) {
         <MapSizeSelect v-model="line.mapSize" />
       </div>
     </div>
-
-    <div class="mt-4 flex flex-row justify-end">
-      <Button
-        text severity="secondary" :label="$t('ui.properties.use_preset')" icon="i-tabler-adjustments"
-        @click="showPresetSelector = true"
-      />
-    </div>
   </div>
-
-  <PresetSelector v-model:visible="showPresetSelector" />
 </template>

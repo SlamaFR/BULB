@@ -19,8 +19,8 @@ function toggleSnow() {
     <template #start>
       <div class="flex flex-row gap-2 items-start mr-4">
         <h1 class="text-3xl">
-          <strong class="text-nowrap hidden xl:block">Beautiful Urban Line Builder</strong>
-          <strong class="text-nowrap xl:hidden visible">BULB</strong>
+          <strong class="text-nowrap hidden 2xl:block">Beautiful Urban Line Builder</strong>
+          <strong class="text-nowrap 2xl:hidden visible">BULB</strong>
         </h1>
         <small class="text-gray text-nowrap"><span>v</span>{{ applicationVersion }}</small>
       </div>
@@ -45,7 +45,7 @@ function toggleSnow() {
 
     <template #end>
       <div class="hidden lg:flex flex-row gap-4 items-center">
-        <div class="hidden lg:block truncate">
+        <div class="hidden xl:block truncate">
           {{ $t('ui.topbar.catch_phrase') }}
         </div>
         <div class="flex flex-row gap-1 items-center">

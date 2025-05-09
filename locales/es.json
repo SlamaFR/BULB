@@ -283,7 +283,8 @@
     },
     "menu": {
       "custom_indices": "Índices personalizados",
-      "export": "Exportar",
+      "export": "Exportar como PNG",
+      "export_pdf": "Exportar como PDF",
       "new_project": "Nuevo proyecto",
       "open": "Abrir",
       "save": "Guardar",

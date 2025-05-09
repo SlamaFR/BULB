@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import wheelchair from '~/assets/svg/wheelchair.svg'
 import wheelchairOff from '~/assets/svg/wheelchair-off.svg'
+import wheelchair from '~/assets/svg/wheelchair.svg'
 
 const {
   off = false,

@@ -2,6 +2,7 @@
 import { useConfirm } from 'primevue/useconfirm'
 import { ref } from 'vue'
 import { useI18n } from 'vue-i18n'
+import OpenPresetButton from '~/components/navigation/menu/OpenPresetButton.vue'
 import useLoadProject from '~/composables/useLoadProject'
 import { useProject } from '~/stores/useProject'
 
@@ -61,6 +62,7 @@ function newProject() {
       text
       @click="importProject()"
     />
+    <OpenPresetButton />
     <Button
       pt:root:class="important-justify-start"
       :label="$t('ui.menu.save')"

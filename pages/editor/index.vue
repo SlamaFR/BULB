@@ -32,7 +32,6 @@ definePageMeta({
 
 <style scoped lang="scss">
 .layout {
-  //grid grid-cols-[auto_1fr] gap-2 min-h-0 max-h-full
   display: grid;
   grid-template-columns: auto 1fr;
   gap: .5rem;
@@ -70,53 +69,4 @@ definePageMeta({
     }
   }
 }
-
-/*
-.canvas {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  min-width: 0;
-}
-
-@media (max-width: 640px) {
-  .editor {
-    display: flex;
-    flex-direction: column;
-
-    .controls {
-      min-width: 0;
-      order: 1;
-    }
-
-    .canvas {
-      min-width: 0;
-      order: -1;
-    }
-  }
-}
-
-@media (max-width: 1024px) and (min-width: 641px) {
-  .editor {
-    display: flex;
-    flex-direction: column;
-
-    .controls {
-      min-width: 0;
-      order: 1;
-      flex-direction: row;
-
-      > * {
-        flex-grow: 1;
-      }
-    }
-
-    .canvas {
-      min-width: 0;
-      order: -1;
-    }
-  }
-}
-
- */
 </style>

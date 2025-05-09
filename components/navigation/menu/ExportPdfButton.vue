@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { isMobile } from '@basitcodeenv/vue3-device-detect'
 import { useLocalStorage } from '@vueuse/core'
 import { ref } from 'vue'
 import usePdfExportMap from '~/composables/usePdfExportMap'
@@ -25,6 +26,7 @@ function onDialogComplete(dontShowAgain: boolean) {
 
 <template>
   <Button
+    v-show="!isMobile"
     pt:root:class="important-justify-start"
     :label="$t('ui.menu.export_pdf')"
     icon="i-tabler-file-type-pdf"
@@ -32,5 +34,5 @@ function onDialogComplete(dontShowAgain: boolean) {
     @click="doExport()"
   />
 
-  <PdfExportNoticeDialog v-model:visible="showPdfExportNotice" @complete="onDialogComplete" @cancel="onDialogCancel" />
+  <PdfExportNoticeDialog v-model:visible="showPdfExportNotice" @complete="onDialogComplete" />
 </template>

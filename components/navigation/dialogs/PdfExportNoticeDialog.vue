@@ -4,7 +4,6 @@ import { computed, ref } from 'vue'
 
 const emit = defineEmits<{
   complete: [boolean]
-  cancel: [void]
 }>()
 const visible = defineModel<boolean>('visible', { required: true })
 const metakey = computed(() => isMacOS ? '⌘' : 'Ctrl')
@@ -17,7 +16,6 @@ function submit() {
 }
 
 function cancel() {
-  emit('cancel')
   visible.value = false
 }
 </script>

@@ -10,7 +10,7 @@ const SOCIALS = [
   },
   {
     label: 'GitHub',
-    value: 'https://github.com/SlamaFR',
+    value: 'https://github.com/SlamaFR/BULB',
     icon: 'i-tabler-brand-github',
   },
   {

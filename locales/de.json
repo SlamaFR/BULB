@@ -355,7 +355,8 @@
     },
     "menu": {
       "custom_indices": "Benutzerdefinierte Liniensignale",
-      "export": "Exportieren",
+      "export": "Als PNG exportieren",
+      "export_pdf": "Als PDF exportieren",
       "new_project": "Neues Projekt",
       "open": "Öffnen",
       "save": "Speichern",

@@ -11,7 +11,7 @@
   flex-direction: row;
   align-items: center;
   height: 100%;
-  padding: 1.25em;
+  padding: 1em .75em;
 
   .sep {
     height: 100%;

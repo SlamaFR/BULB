@@ -135,7 +135,7 @@ function clone(element: Element): LineElement {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1rem;
+  gap: .5rem;
 
   .toolbox-item {
     cursor: grab;

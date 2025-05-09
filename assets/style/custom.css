@@ -11,7 +11,7 @@ body {
 }
 
 .dark-mode body {
-  background: var(--p-surface-800);
+  background: black;
 }
 
 :root {

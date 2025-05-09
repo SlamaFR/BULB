@@ -6,7 +6,7 @@ export default function useExportMap() {
 
   function exportMap(mapContainer: HTMLElement) {
     htmlToImage.toBlob(mapContainer, {
-      pixelRatio: 8,
+      pixelRatio: 4,
       canvasWidth: mapContainer.clientWidth,
       canvasHeight: mapContainer.clientHeight,
       filter: element => !element.className?.toString()?.includes('export-hide'),

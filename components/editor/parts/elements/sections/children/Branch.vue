@@ -135,7 +135,9 @@ function moveOut(event: DraggableEvent<BranchElement>) {
 
   &.positiveRightMargin {
     padding-right: v-bind(rightMargin);
-  }.section-element + .section-element & {
+  }
+
+  .section-element + .section-element & {
      .line {
        padding-left: 0;
        clip: rect(auto, calc(v-bind(branchLength) * 1px + 1em), auto, 0);

@@ -44,9 +44,11 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 <template>
   <div class="map-editor">
     <div class="editor-content">
-      <div ref="el" class="dead-zone">
+      <div class="dead-zone">
         <NuxtErrorBoundary v-if="!error" @error="onError">
-          <LineCanvas />
+          <div ref="el">
+            <LineCanvas />
+          </div>
         </NuxtErrorBoundary>
         <LineCanvasError v-if="error" />
       </div>
@@ -80,7 +82,7 @@ onBeforeUnmount(() => exportSignal.off(doExport))
 }
 
 .editor-toolbox {
-  padding: 1rem;
+  padding: .5rem;
   display: flex;
   flex-direction: row;
   align-items: center;

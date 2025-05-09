@@ -358,7 +358,7 @@
     "map_editor": {
       "error": {
         "detail": "Veuillez recharger la page. Si le problème persiste, votre projet pourrait être obsolète ou corrompu.",
-        "new_project": "Nouveau project",
+        "new_project": "Nouveau projet",
         "reload": "Recharger la page",
         "title": "Une erreur est survenue"
       },
