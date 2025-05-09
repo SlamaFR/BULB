@@ -87,7 +87,7 @@ export default defineNuxtConfig({
     '@nuxtjs/critters',
     '@nuxtjs/color-mode',
     '@pinia/nuxt',
-    '@pinia-plugin-persistedstate/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
     '@primevue/nuxt-module',
     '@nuxt/fonts',
     '@le-pepe/nuxt-snow-effect',

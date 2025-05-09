@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { DraggableEvent } from 'vue-draggable-plus'
 import { v4 as uuidv4 } from 'uuid'
 import { ref } from 'vue'
-import { type DraggableEvent, VueDraggable } from 'vue-draggable-plus'
+import { VueDraggable } from 'vue-draggable-plus'
 import useElementGrabbing from '~/composables/useElementGrabbing'
 
 interface Element {

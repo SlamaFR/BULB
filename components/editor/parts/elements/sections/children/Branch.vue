@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { DraggableEvent, SortableEvent } from 'vue-draggable-plus'
 import { useCssVar, useElementSize } from '@vueuse/core'
 import { computed, inject, ref } from 'vue'
-import { type DraggableEvent, type SortableEvent, VueDraggable } from 'vue-draggable-plus'
+import { VueDraggable } from 'vue-draggable-plus'
 import useElementGrabbing from '~/composables/useElementGrabbing'
 import { LineContextKey } from '~/utils/symbols'
 

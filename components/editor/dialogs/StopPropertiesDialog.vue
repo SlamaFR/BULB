@@ -1,6 +1,5 @@
 <script setup lang="ts">
-import { useBreakpoints } from '#imports'
-import { breakpointsTailwind } from '@vueuse/core'
+import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
 import { watch } from 'vue'
 import { cleanName } from '~/utils/text'
 

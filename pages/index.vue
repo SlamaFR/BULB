@@ -4,3 +4,7 @@ import { onMounted } from 'vue'
 
 onMounted(() => navigateTo('/editor', { replace: true }))
 </script>
+
+<template>
+  BULB
+</template>

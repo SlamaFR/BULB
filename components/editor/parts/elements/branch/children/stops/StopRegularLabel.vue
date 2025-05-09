@@ -9,15 +9,15 @@ const {
   subtitle = '',
   interestPoint = false,
   accessible = 'undefined',
-  reverse,
+  reverse = false,
 } = defineProps<{
   value: string
   preventSubtitleOverlapping: boolean
   placeName: string | null
-  subtitle: string | null
-  accessible: boolean | 'undefined' | undefined
+  subtitle?: string | null
+  accessible?: boolean | 'undefined' | undefined
   interestPoint?: boolean
-  reverse: boolean
+  reverse?: boolean
 }>()
 
 const stopContext = inject<StopContext>(StopContextKey)!

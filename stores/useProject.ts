@@ -1,4 +1,3 @@
-import { persistedState } from '#build/imports'
 import { defineStore } from 'pinia'
 import { computed, reactive, ref } from 'vue'
 import useVersion from '~/composables/useVersion'
@@ -58,7 +57,7 @@ export const useProject = defineStore('project', () => {
   }
 }, {
   persist: {
-    storage: persistedState.localStorage,
+    storage: localStorage,
     serializer: {
       serialize(value: Record<string, any>) {
         return JSON.stringify(value)

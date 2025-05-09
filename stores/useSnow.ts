@@ -1,4 +1,3 @@
-import { persistedState } from '#build/imports'
 import { defineStore } from 'pinia'
 import { computed, ref } from 'vue'
 
@@ -27,6 +26,6 @@ export const useSnow = defineStore('snow', () => {
   }
 }, {
   persist: {
-    storage: persistedState.localStorage,
+    storage: localStorage,
   },
 })

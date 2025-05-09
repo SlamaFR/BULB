@@ -1,4 +1,3 @@
-import { persistedState } from '#build/imports'
 import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
 import { ref } from 'vue'
@@ -46,6 +45,6 @@ export const useCustomLineIndices = defineStore('customLineIndices', () => {
   }
 }, {
   persist: {
-    storage: persistedState.localStorage,
+    storage: localStorage,
   },
 })

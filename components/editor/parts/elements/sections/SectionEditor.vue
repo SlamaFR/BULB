@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import type { SortableEvent } from 'vue-draggable-plus'
 import { useToast } from 'primevue/usetoast'
 import { computed } from 'vue'
-import { type SortableEvent, VueDraggable } from 'vue-draggable-plus'
+import { VueDraggable } from 'vue-draggable-plus'
 import { isBranch } from '~/utils/types'
 
 const {

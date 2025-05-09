@@ -9,14 +9,14 @@ const {
   subtitle = '',
   interestPoint = false,
   accessible = 'undefined',
-  reverse,
+  reverse = false,
 } = defineProps<{
   value: string
-  placeName: string | null
-  subtitle: string | null
+  placeName?: string | null
+  subtitle?: string | null
   interestPoint?: boolean
-  reverse: boolean
-  accessible: boolean | 'undefined' | undefined
+  reverse?: boolean
+  accessible?: boolean | 'undefined' | undefined
 }>()
 
 const stopContext = inject<StopContext>(StopContextKey)!
