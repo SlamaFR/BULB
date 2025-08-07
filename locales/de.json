@@ -50,8 +50,8 @@
       "white": "weiß"
     },
     "line_style": {
-      "plain": "durchgehend",
-      "striped": "strichliert"
+      "plain": "gefüllt",
+      "striped": "abgesetzt"
     },
     "line_thickness": {
       "custom": "benutzerdefiniert",
@@ -95,8 +95,8 @@
       "circle": "Kreis",
       "cut_rectangle": "Rechteck (Absetzstreifen)",
       "lines": "Linie",
-      "rectangle": "Quadrat",
-      "rounded_square": "Rechteck"
+      "rectangle": "Rechteck",
+      "rounded_square": "Quadrat"
     }
   },
   "misc": {
@@ -105,6 +105,15 @@
     "temporary": "temporär"
   },
   "ui": {
+        "changelog": {
+      "entries_type": {
+        "added": "Neuerungen",
+        "changed": "Änderungen",
+        "fixed": "Bugfixes",
+        "removed": "entfernt"
+      },
+      "title": "Changelog"
+    },
     "dialogs": {
       "branch_properties": {
         "element_spacing": "Abstand",
@@ -153,7 +162,7 @@
         "mode": "Transportmittel",
         "prefix": "Prefix",
         "preview": "Vorschau",
-        "shape": "Formen",
+        "shape": "Form",
         "suffix": "Suffix",
         "value": "Bezeichnung"
       },
@@ -163,6 +172,10 @@
       "custom_line_thickness": {
         "accept": "Anwenden",
         "header": "Liniendicke"
+      },
+      "custom_map_size": {
+        "accept": "Anwenden",
+        "header": "Größe des Rahmens"
       },
       "end_of_year_celebrations": {
         "close": "Schließen",
@@ -249,8 +262,17 @@
           "title": "Orientierung"
         },
         "header": "Paralleler Abschnitt: Optionen",
-        "section_1_level": "Ebene des Abschnitt 1",
-        "section_2_level": "Ebene des Abschnitt 2"
+        "section_1_level": "Ebene des Abschnitts 1",
+        "section_2_level": "Ebene des Abschnitts 2"
+      },
+      "pdf_export_notice": {
+        "header": "Als PDF exportieren",
+        "message_1": "Um das Linienband als PDF zu geniereren, wird eine neue Seite geöffnet. Sobald das Linienband sichtbar ist, wird der Druckdialog erscheinen, wo ausgewählt werden kann, das Linienband zu drucken oder als PDF zu speichern.",
+        "message_2": "Wenn der Druckdialog nicht erscheint, bitte sicherstellen, dass Pop-Ups für diese Seite erlaubt sind. Alternativ kann {printShortcut} gedrückt werden.",
+        "unexpected_behaviors_notice": "Ein Export mit dieser Methode kann zu unerwarteten Ergebnissen führen, wie fehlenden oder fehlplatzierten Elementen. Falls es Probleme gibt, bitte auf den PNG-Export zurückgreifen.",
+        "dont_show_again": "Nicht mehr anzeigen",
+        "cancel": "Abbrechen",
+        "proceed": "Fortfahren"
       },
       "save_project": {
         "cancel": "Abbrechen",
@@ -295,7 +317,7 @@
       "troubleshooting": {
         "github": "erstellen Sie ein Issue auf GitHub",
         "header": "Problembehandlung",
-        "notice": "Folgende Informationen können bei Fehlern in BULB zur Problembehandlung beitragen. Sollten Sie einen Fehler entdecken, {github} oder {twitter}, und übermitteln Sie die untenstehenden Informationen.",
+        "notice": "Folgende Informationen können bei Fehlern in BULB zur Problembehandlung beitragen. Sollten Sie einen Fehler entdecken, {github} oder {twitter} und übermitteln Sie die untenstehenden Informationen.",
         "project": "Projekt",
         "technical_details": "Technische Details",
         "twitter": "kontaktieren Sie mich auf Twitter (X)"
@@ -368,7 +390,7 @@
       "color": "Linienfarbe",
       "dots_color": "Farbe der Haltestellen",
       "frame_terminus_names": "Endstationen umranden",
-      "fully_accessible": "Linie vollständig barrierefrei.",
+      "fully_accessible": "Linie vollständig barrierefrei",
       "index": "Liniensignal",
       "line_style": "Stil",
       "line_thickness": "Dicke",
@@ -417,7 +439,9 @@
       }
     },
     "topbar": {
+      "editor": "Linien-Editor",
       "faq": "FAQ",
+      "changelog": "Changelog",
       "catch_phrase": "Nicht schlecht, was? Made in France 🇫🇷"
     }
   }
