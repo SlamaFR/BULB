@@ -25,7 +25,9 @@ const dotColor = computed(() => {
 
 <template>
   <div class="w-1em h-1em flex items-center justify-center relative">
-    <div class="absolute dot dynamic-part" :class="{ terminus, connection: connection || closed }" />
+    <div class="absolute dot dynamic-part" :class="{ terminus, connection: connection || closed }">
+      <span v-if="terminus" class="inner-dot" :style="{ backgroundColor: dotColor }"></span>
+    </div>
     <img v-if="closed" class="absolute closed" src="~/assets/svg/closed.svg">
   </div>
 </template>
@@ -52,7 +54,18 @@ const dotColor = computed(() => {
     background-color: v-bind(color);
     border: calc(2em / 16) solid black;
     box-shadow: inset 0 0 0 calc(3em / 16) white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
+}
+
+.inner-dot {
+  width: 0.55em;
+  height: 0.55em;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 transparent;
+  pointer-events: none;
 }
 
 .closed {

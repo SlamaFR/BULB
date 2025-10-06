@@ -182,6 +182,7 @@ declare global {
     $stop: {
       name: string
       subtitle: string | null
+      branch_color?: string | null
       placeName: string | null
       accessible: boolean | 'undefined'
       preventSubtitleOverlapping: boolean

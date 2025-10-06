@@ -293,6 +293,7 @@
           "undefined": "Undefined",
           "yes": "Yes"
         },
+        "branch_color": "Branch color",
         "city_name": "City",
         "closed": "Closed",
         "header": "Stop properties",

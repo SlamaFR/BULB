@@ -76,7 +76,7 @@ provide<StopContext>(StopContextKey, { margins, namesWidth, inverted })
             class="branch-element-handle z-1"
             :terminus="stop.$stop.terminus"
             :connection="stop.$stop.connections.length > 0"
-            :color="lineContext.color.value"
+            :color="stop.$stop.branch_color ?? lineContext.color.value"
             :closed="stop.$stop.closed"
             @click="(e: Event) => e.stopPropagation()"
           />
