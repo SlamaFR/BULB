@@ -145,7 +145,16 @@ function openConnectionsEditor() {
         <div class="flex flex-col gap-1">
           <div class="flex flex-col gap-1">
             <label>{{ $t('ui.dialogs.stop_properties.branch_color') }}</label>
-            <ColorSelect v-model="stopColor" clearable />
+            <div class="flex items-center gap-2">
+              <ColorSelect v-model="stopColor" clearable />
+              <Button
+                v-if="stop.$stop.branch_color !== undefined && stop.$stop.branch_color !== null"
+                text
+                rounded
+                icon="i-tabler-x"
+                @click="() => { stopColor = null }"
+              />
+            </div>
           </div>
         </div>
       </div>
