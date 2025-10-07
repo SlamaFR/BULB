@@ -70,7 +70,8 @@
                                   ],
                                   "accessible": "undefined",
                                   "closed": false,
-                                  "reverse": false
+                                  "reverse": false,
+                                  "branch_color": "#4c90cd"
                                 }
                               },
                               {
@@ -371,7 +372,8 @@
                                   ],
                                   "accessible": "undefined",
                                   "closed": false,
-                                  "reverse": false
+                                  "reverse": false,
+                                  "branch_color": "#ffcd02"
                                 }
                               },
                               {
