@@ -72,9 +72,6 @@ function updateColor(newColor: string | null) {
       <div class="flex flex-col gap-1 flex-auto">
         <div class="flex flex-row items-center gap-2">
           <span class="text-nowrap">{{ $t('ui.properties.size') }}</span>
-          <Tag class="text-xs" severity="warn">
-            {{ $t('misc.temporary') }}
-          </Tag>
         </div>
         <MapSizeSelect v-model="line.mapSize" />
       </div>

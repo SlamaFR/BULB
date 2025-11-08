@@ -16,7 +16,7 @@ const {
   color: string
 }>()
 
-const NARROW_CHARS = ['1', 'I', 'l']
+const NARROW_CHARS = ['1']
 
 const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'var(--dark-text)')
 </script>
@@ -69,14 +69,13 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
   display: flex;
   flex-direction: row;
   align-items: start;
-  font-family: "Parisine Std", sans-serif;
+  font-family: "Parisine Ptf", sans-serif;
   font-weight: 600;
   font-size: 0.75em;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding-bottom: .125em;
   color: v-bind(textColor);
 
   .narrow {

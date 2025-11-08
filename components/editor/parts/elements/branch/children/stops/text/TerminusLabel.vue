@@ -34,7 +34,6 @@ const placeNameParts = computed(() => placeName?.split('\n').filter(part => part
   flex-direction: column;
   background-color: var(--blue-ratp-paper);
   color: white;
-  font-family: 'Parisine Std', sans-serif;
   font-weight: bold;
   width: fit-content;
 

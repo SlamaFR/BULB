@@ -15,7 +15,6 @@ const { value } = defineProps<{
 <style scoped lang="scss">
 .title {
   color: var(--blue-ratp-paper);
-  font-family: 'Parisine Std', sans-serif;
   font-weight: bold;
 }
 

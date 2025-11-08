@@ -24,7 +24,6 @@ const valueParts = computed(() => value.split('\n').filter(part => part.trim() !
   gap: .0625em;
   background-color: var(--place-brown);
   color: white;
-  font-family: 'Parisine Std', sans-serif;
   font-weight: bold;
   font-style: italic;
   width: fit-content;

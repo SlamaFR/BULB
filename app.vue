@@ -25,8 +25,6 @@ useLocale()
   --place-brown: #80551A;
   --gray: #414241;
   --background-color: #eaeaea;
-
-  --font-shift-correction: -.0625em;
 }
 
 html, body {

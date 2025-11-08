@@ -7,6 +7,8 @@
 }
 
 body {
+  -webkit-font-smoothing: antialiased;
+  -webkit-backface-visibility: hidden;
   background: var(--p-surface-50);
 }
 
@@ -43,4 +45,36 @@ body {
   --p-message-success-background: color-mix(in srgb, var(--p-green-900), transparent 25%);
   --p-message-success-border-color: var(--p-green-900);
   --p-message-success-color: var(--p-green-100);
+}
+
+@font-face {
+  font-family: "Parisine Ptf";
+  src: url("assets/fonts/ParisinePtf-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  descent-override: 0%;
+}
+
+@font-face {
+  font-family: "Parisine Ptf";
+  src: url("assets/fonts/ParisinePtf-Bold.woff2") format("woff2");
+  font-weight: bold;
+  font-style: normal;
+  descent-override: 0%;
+}
+
+@font-face {
+  font-family: "Parisine Ptf";
+  src: url("assets/fonts/ParisinePtf-Italic.woff2") format("woff2");
+  font-weight: normal;
+  font-style: italic;
+  descent-override: 0%;
+}
+
+@font-face {
+  font-family: "Parisine Ptf";
+  src: url("assets/fonts/ParisinePtf-BoldItalic.woff2") format("woff2");
+  font-weight: bold;
+  font-style: italic;
+  descent-override: 0%;
 }

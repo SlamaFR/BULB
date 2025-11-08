@@ -74,12 +74,6 @@ export default defineNuxtConfig({
     '~/assets/style/custom.css',
   ],
 
-  fonts: {
-    families: [
-      { name: 'Parisine Std', provider: 'local', weights: ['normal', 'bold'], styles: ['normal', 'italic'] },
-    ],
-  },
-
   // plugin configurations
   modules: [
     '@vueuse/nuxt',
