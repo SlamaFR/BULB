@@ -16,7 +16,7 @@ const {
   color: string
 }>()
 
-const NARROW_CHARS = ['1']
+const NARROW_CHARS = []
 
 const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'var(--dark-text)')
 </script>
@@ -77,6 +77,10 @@ const textColor = computed(() => textContrast(color) ? 'var(--light-text)' : 'va
   left: 50%;
   transform: translate(-50%, -50%);
   color: v-bind(textColor);
+
+  & span {
+    text-box: trim-both cap alphabetic;
+  }
 
   .narrow {
     letter-spacing: -.1em;

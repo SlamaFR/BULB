@@ -11,6 +11,7 @@
   text-wrap: nowrap;
   height: fit-content;
   width: fit-content;
+  text-box: trim-both cap alphabetic;
 
   .debug & {
     outline: 1px solid orange;

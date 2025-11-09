@@ -8,7 +8,7 @@
 
 body {
   -webkit-font-smoothing: antialiased;
-  -webkit-backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
   background: var(--p-surface-50);
 }
 
@@ -52,7 +52,6 @@ body {
   src: url("assets/fonts/ParisinePtf-Regular.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;
-  descent-override: 0%;
 }
 
 @font-face {
@@ -60,7 +59,6 @@ body {
   src: url("assets/fonts/ParisinePtf-Bold.woff2") format("woff2");
   font-weight: bold;
   font-style: normal;
-  descent-override: 0%;
 }
 
 @font-face {
@@ -68,7 +66,6 @@ body {
   src: url("assets/fonts/ParisinePtf-Italic.woff2") format("woff2");
   font-weight: normal;
   font-style: italic;
-  descent-override: 0%;
 }
 
 @font-face {
@@ -76,5 +73,4 @@ body {
   src: url("assets/fonts/ParisinePtf-BoldItalic.woff2") format("woff2");
   font-weight: bold;
   font-style: italic;
-  descent-override: 0%;
 }

@@ -59,7 +59,7 @@ const date = useDateFormat(now.value, 'DD.MM.YYYY')
 <style scoped lang="scss">
 .content {
   font-size: var(--font-size);
-  font-family: 'Parisine-Ptf', sans-serif;
+  font-family: 'Parisine Ptf', sans-serif;
   outline: 1px solid var(--p-gray-200);
   box-sizing: content-box;
 
