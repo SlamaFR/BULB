@@ -1,5 +1,10 @@
 ---
 changelog:
+  - version: 1.5.2-alpha
+    date: '2025-11-09T00:00:00.000Z'
+    entries:
+      FIXED:
+        - Fix du rendu de la police qui pouvait être incorrect sur certains systèmes d’exploitation
   - version: 1.5.1-alpha
     date: '2025-11-08T00:00:00.000Z'
     entries:
