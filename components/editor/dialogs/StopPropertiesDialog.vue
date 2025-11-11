@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { breakpointsTailwind, useBreakpoints } from '@vueuse/core'
-import { watch } from 'vue'
+import { watch, computed } from 'vue'
 import { cleanName } from '~/utils/text'
 
 const { allowCity } = defineProps<{
@@ -29,6 +29,11 @@ const stopTypeOptions = [
 
 const breakpoints = useBreakpoints(breakpointsTailwind)
 const horizontal = breakpoints.greaterOrEqual('lg')
+
+const stopColor = computed<string | null>({
+  get: () => stop.value.$stop.branch_color ?? null,
+  set: (v: string | null) => { stop.value.$stop.branch_color = v }
+})
 
 watch(() => stop.value.$stop.name, val => stop.value.$stop.name = cleanName(val))
 watch(() => stop.value.$stop.placeName, val => stop.value.$stop.placeName = cleanName(val))
@@ -133,6 +138,22 @@ function openConnectionsEditor() {
               <label :for="`${stop.id}_interestPoint`" class="ml-2">{{
                 $t('ui.dialogs.stop_properties.interest_point')
               }}</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-1">
+          <div class="flex flex-col gap-1">
+            <label>{{ $t('ui.dialogs.stop_properties.branch_color') }}</label>
+            <div class="flex items-center gap-2">
+              <ColorSelect v-model="stopColor" clearable />
+              <Button
+                v-if="stop.$stop.branch_color !== undefined && stop.$stop.branch_color !== null"
+                text
+                rounded
+                icon="i-tabler-x"
+                @click="() => { stopColor = null }"
+              />
             </div>
           </div>
         </div>

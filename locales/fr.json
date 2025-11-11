@@ -293,6 +293,7 @@
           "undefined": "Indéfinie",
           "yes": "Oui"
         },
+        "branch_color": "Couleur de branche",
         "city_name": "Ville",
         "closed": "Fermé",
         "header": "Propriétés d’arrêt",
